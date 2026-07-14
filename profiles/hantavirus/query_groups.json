@@ -1,0 +1,191 @@
+{
+  "schema_version": "1.0",
+  "profile_id": "hantavirus",
+  "languages": [
+    "en",
+    "zh"
+  ],
+  "groups": [
+    {
+      "group_id": "identity",
+      "display_name": "Pathogen identity / 病原身份",
+      "anchors": [
+        "hantavirus",
+        "Orthohantavirus",
+        "Hantaviridae",
+        "汉坦病毒"
+      ],
+      "expansions": [
+        "Hantaan virus",
+        "Seoul virus",
+        "Puumala virus",
+        "Andes virus",
+        "Sin Nombre virus"
+      ],
+      "must_pair": [],
+      "negative_terms": [
+        "fictional"
+      ],
+      "priority": 100,
+      "query_budget": 3
+    },
+    {
+      "group_id": "clinical",
+      "display_name": "Clinical disease / 临床疾病",
+      "anchors": [
+        "hantavirus pulmonary syndrome",
+        "hemorrhagic fever with renal syndrome",
+        "汉坦病毒肺综合征",
+        "肾综合征出血热"
+      ],
+      "expansions": [
+        "HCPS",
+        "HPS",
+        "HFRS"
+      ],
+      "must_pair": [
+        "hantavirus"
+      ],
+      "negative_terms": [],
+      "priority": 95,
+      "query_budget": 2
+    },
+    {
+      "group_id": "outbreak",
+      "display_name": "Outbreak and surveillance / 疫情与监测",
+      "anchors": [
+        "hantavirus outbreak",
+        "hantavirus surveillance",
+        "汉坦病毒 病例",
+        "汉坦病毒 监测"
+      ],
+      "expansions": [
+        "case",
+        "cluster",
+        "incidence",
+        "seroprevalence",
+        "alert",
+        "暴发",
+        "确诊",
+        "预警"
+      ],
+      "must_pair": [
+        "hantavirus"
+      ],
+      "negative_terms": [],
+      "priority": 90,
+      "query_budget": 2
+    },
+    {
+      "group_id": "host_ecology",
+      "display_name": "Host ecology / 宿主生态",
+      "anchors": [
+        "hantavirus rodent reservoir",
+        "汉坦病毒 啮齿动物"
+      ],
+      "expansions": [
+        "reservoir",
+        "host",
+        "shrew",
+        "bat",
+        "wildlife",
+        "occupational exposure",
+        "储存宿主",
+        "宿主监测"
+      ],
+      "must_pair": [
+        "hantavirus"
+      ],
+      "negative_terms": [],
+      "priority": 80,
+      "query_budget": 1
+    },
+    {
+      "group_id": "genomics",
+      "display_name": "Genomics and evolution / 基因组与进化",
+      "anchors": [
+        "hantavirus genome phylogeny",
+        "汉坦病毒 基因组"
+      ],
+      "expansions": [
+        "sequencing",
+        "evolution",
+        "reassortment",
+        "recombination",
+        "molecular epidemiology",
+        "系统发育",
+        "重配"
+      ],
+      "must_pair": [
+        "hantavirus"
+      ],
+      "negative_terms": [],
+      "priority": 75,
+      "query_budget": 1
+    },
+    {
+      "group_id": "diagnosis",
+      "display_name": "Diagnosis / 诊断",
+      "anchors": [
+        "hantavirus diagnosis PCR serology",
+        "汉坦病毒 诊断"
+      ],
+      "expansions": [
+        "RT-PCR",
+        "IgM",
+        "IgG",
+        "antigen",
+        "neutralization",
+        "血清学"
+      ],
+      "must_pair": [
+        "hantavirus"
+      ],
+      "negative_terms": [],
+      "priority": 70,
+      "query_budget": 1
+    },
+    {
+      "group_id": "intervention",
+      "display_name": "Vaccine treatment / 疫苗治疗",
+      "anchors": [
+        "hantavirus vaccine treatment",
+        "汉坦病毒 疫苗 治疗"
+      ],
+      "expansions": [
+        "antiviral",
+        "neutralizing antibody",
+        "immunogenicity",
+        "clinical trial",
+        "抗病毒"
+      ],
+      "must_pair": [
+        "hantavirus"
+      ],
+      "negative_terms": [],
+      "priority": 65,
+      "query_budget": 1
+    },
+    {
+      "group_id": "risk",
+      "display_name": "Environmental risk / 环境风险",
+      "anchors": [
+        "hantavirus climate land use risk",
+        "汉坦病毒 环境 风险"
+      ],
+      "expansions": [
+        "rainfall",
+        "temperature",
+        "rodent density",
+        "occupational risk",
+        "生态风险"
+      ],
+      "must_pair": [
+        "hantavirus"
+      ],
+      "negative_terms": [],
+      "priority": 60,
+      "query_budget": 1
+    }
+  ]
+}

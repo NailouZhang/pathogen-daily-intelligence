@@ -1,0 +1,170 @@
+{
+  "schema_version": "1.0",
+  "sources": [
+    {
+      "source_id": "pubmed",
+      "name": "PubMed",
+      "category": "scholarly",
+      "adapter": "pubmed",
+      "reliability_tier": "A",
+      "enabled": true,
+      "languages": [
+        "en"
+      ],
+      "base_url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/"
+    },
+    {
+      "source_id": "europe_pmc",
+      "name": "Europe PMC",
+      "category": "scholarly",
+      "adapter": "europe_pmc",
+      "reliability_tier": "A",
+      "enabled": true,
+      "languages": [
+        "en"
+      ],
+      "base_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/"
+    },
+    {
+      "source_id": "crossref",
+      "name": "Crossref",
+      "category": "scholarly",
+      "adapter": "crossref",
+      "reliability_tier": "A",
+      "enabled": true,
+      "languages": [
+        "en"
+      ],
+      "base_url": "https://api.crossref.org/"
+    },
+    {
+      "source_id": "semantic_scholar",
+      "name": "Semantic Scholar",
+      "category": "scholarly",
+      "adapter": "semantic_scholar",
+      "reliability_tier": "B",
+      "enabled": true,
+      "languages": [
+        "en"
+      ],
+      "base_url": "https://api.semanticscholar.org/graph/v1/"
+    },
+    {
+      "source_id": "who_don",
+      "name": "WHO Disease Outbreak News",
+      "category": "official",
+      "adapter": "official_page",
+      "organization_type": "international_public_health",
+      "country_or_region": "global",
+      "authority_level": "international",
+      "reliability_tier": "A",
+      "enabled": true,
+      "languages": [
+        "en"
+      ],
+      "allowed_domains": [
+        "who.int"
+      ],
+      "list_url": "https://www.who.int/emergencies/disease-outbreak-news"
+    },
+    {
+      "source_id": "reliefweb",
+      "name": "ReliefWeb",
+      "category": "discoverer",
+      "adapter": "reliefweb",
+      "organization_type": "humanitarian_aggregator",
+      "country_or_region": "global",
+      "reliability_tier": "B",
+      "enabled": true,
+      "languages": [
+        "en"
+      ],
+      "base_url": "https://api.reliefweb.int/v2/reports"
+    },
+    {
+      "source_id": "gdelt",
+      "name": "GDELT DOC 2.0",
+      "category": "discoverer",
+      "adapter": "gdelt",
+      "organization_type": "news_discoverer",
+      "country_or_region": "global",
+      "reliability_tier": "D",
+      "enabled": true,
+      "languages": [
+        "en",
+        "zh"
+      ],
+      "base_url": "https://api.gdeltproject.org/api/v2/doc/doc"
+    },
+    {
+      "source_id": "google_news_en",
+      "name": "Google News RSS English",
+      "category": "discoverer",
+      "adapter": "google_news",
+      "organization_type": "news_discoverer",
+      "country_or_region": "global",
+      "reliability_tier": "D",
+      "enabled": true,
+      "languages": [
+        "en"
+      ],
+      "locale": {
+        "hl": "en-US",
+        "gl": "US",
+        "ceid": "US:en"
+      }
+    },
+    {
+      "source_id": "google_news_zh",
+      "name": "Google News RSS Chinese",
+      "category": "discoverer",
+      "adapter": "google_news",
+      "organization_type": "news_discoverer",
+      "country_or_region": "global",
+      "reliability_tier": "D",
+      "enabled": true,
+      "languages": [
+        "zh"
+      ],
+      "locale": {
+        "hl": "zh-CN",
+        "gl": "CN",
+        "ceid": "CN:zh-Hans"
+      }
+    },
+    {
+      "source_id": "cdc_registry",
+      "name": "US CDC",
+      "category": "official",
+      "adapter": "registry_only",
+      "organization_type": "national_public_health",
+      "country_or_region": "United States",
+      "reliability_tier": "A",
+      "enabled": false,
+      "languages": [
+        "en"
+      ],
+      "allowed_domains": [
+        "cdc.gov"
+      ],
+      "notes": "Enable after selecting and testing a disease-specific RSS, API, sitemap, or search page."
+    },
+    {
+      "source_id": "ecdc_registry",
+      "name": "ECDC",
+      "category": "official",
+      "adapter": "registry_only",
+      "organization_type": "regional_public_health",
+      "country_or_region": "Europe",
+      "reliability_tier": "A",
+      "enabled": false,
+      "languages": [
+        "en"
+      ],
+      "allowed_domains": [
+        "ecdc.europa.eu"
+      ],
+      "notes": "Enable after selecting and testing a stable RSS, API, sitemap, or search page."
+    }
+  ]
+}

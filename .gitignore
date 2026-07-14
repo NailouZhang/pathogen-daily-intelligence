@@ -1,0 +1,13 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+.env
+.streamlit/secrets.toml
+runtime/*
+!runtime/.gitkeep
+build/
+dist/
+/tmp/
+*.log
+.DS_Store

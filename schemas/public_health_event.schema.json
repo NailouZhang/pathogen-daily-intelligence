@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "PublicHealthEvent",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "event_id",
+    "event_version",
+    "event_type",
+    "source_articles"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string"
+    },
+    "event_id": {
+      "type": "string"
+    },
+    "event_version": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "event_type": {
+      "type": "string"
+    },
+    "source_articles": {
+      "type": "array"
+    }
+  },
+  "additionalProperties": true
+}

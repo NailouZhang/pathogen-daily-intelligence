@@ -1,0 +1,113 @@
+schema_version: "1.0"
+profile_id: hantavirus
+profile_version: "1.0.0-seed"
+lifecycle_status: approved_for_search
+display_names:
+  zh: 汉坦病毒
+  en: Hantavirus
+seed_names:
+  - Hantaviridae
+  - Orthohantavirus
+  - hantavirus
+focus_diseases:
+  - 肾综合征出血热
+  - 汉坦病毒肺综合征
+  - hemorrhagic fever with renal syndrome
+  - hantavirus pulmonary syndrome
+  - hantavirus cardiopulmonary syndrome
+known_virus_names:
+  - Hantaan virus
+  - Seoul virus
+  - Puumala virus
+  - Dobrava-Belgrade virus
+  - Sin Nombre virus
+  - Andes virus
+  - Laguna Negra virus
+  - Tula virus
+  - Bayou virus
+  - Black Creek Canal virus
+  - Choclo virus
+  - Prospect Hill virus
+priority_languages:
+  - en
+  - zh
+geographic_focus:
+  - global
+priority_topics:
+  - outbreak
+  - public health surveillance
+  - epidemiology
+  - human case
+  - reservoir host
+  - rodent surveillance
+  - host ecology
+  - genome
+  - phylogeny
+  - evolution
+  - reassortment
+  - recombination
+  - diagnosis
+  - serology
+  - vaccine
+  - treatment
+  - environmental risk
+  - climate
+  - land use
+ambiguous_terms:
+  - term: HPS
+    standalone_allowed: false
+    must_cooccur_with: [hantavirus, orthohantavirus, hantavirus pulmonary syndrome]
+  - term: HCPS
+    standalone_allowed: false
+    must_cooccur_with: [hantavirus, orthohantavirus, hantavirus cardiopulmonary syndrome]
+  - term: HFRS
+    standalone_allowed: false
+    must_cooccur_with: [hantavirus, hemorrhagic fever with renal syndrome, 肾综合征出血热]
+negative_terms:
+  - fictional
+  - game character
+  - stock market
+known_official_domains:
+  - who.int
+  - cdc.gov
+  - ecdc.europa.eu
+search_policy:
+  window_days: 7
+  timezone: Asia/Shanghai
+  max_query_groups_per_source: 8
+  max_results_per_group: 25
+  request_timeout_seconds: 20
+  max_runtime_minutes: 35
+llm_policy:
+  primary_provider: gemini
+  fallback_providers: [github_models, groq, deterministic]
+  max_items_per_issue: 12
+  max_retries_per_provider: 2
+  daily_synthesis: true
+editorial_preferences:
+  website_title: 汉坦病毒每日情报
+  website_subtitle: Hantavirus Daily Intelligence
+  default_email_audience: 综合版
+  show_empty_sections: false
+  image_policy: disabled_by_default
+  max_headlines: 3
+  max_events: 8
+  max_papers: 10
+taxonomy:
+  ictv_release: null
+  family: null
+  subfamily: null
+  genera: []
+  species: []
+  historical_changes: []
+provenance:
+  - source_id: manual_seed_v1
+    source_name: User-provided seed configuration
+    source_url: null
+    retrieved_at: null
+    content_hash: null
+    release_version: null
+    language: bilingual
+    parser_version: manual
+notes:
+  - Seed names are approved for search only and are not represented as a complete ICTV-verified species list.

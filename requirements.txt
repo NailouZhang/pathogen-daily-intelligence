@@ -1,0 +1,12 @@
+streamlit>=1.48,<2
+pandas>=2.2,<3
+plotly>=5.24,<7
+requests>=2.32,<3
+PyYAML>=6.0,<7
+feedparser>=6.0,<7
+beautifulsoup4>=4.12,<5
+lxml>=5.3,<7
+python-dateutil>=2.9,<3
+jsonschema>=4.23,<5
+rapidfuzz>=3.10,<4
+pytest>=8.3,<10

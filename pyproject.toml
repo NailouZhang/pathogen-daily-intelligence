@@ -1,0 +1,10 @@
+[project]
+name = "pathogen-daily-intelligence"
+version = "1.0.0"
+description = "GitHub Actions + Streamlit bilingual pathogen daily intelligence system"
+requires-python = ">=3.11"
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
+addopts = "-q"

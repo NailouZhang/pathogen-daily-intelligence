@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ScholarlyWork",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "work_id",
+    "identifiers",
+    "title",
+    "source_records",
+    "first_seen_at"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string"
+    },
+    "work_id": {
+      "type": "string"
+    },
+    "identifiers": {
+      "type": "object"
+    },
+    "title": {
+      "type": "object",
+      "required": [
+        "original"
+      ]
+    },
+    "source_records": {
+      "type": "array"
+    },
+    "first_seen_at": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  },
+  "additionalProperties": true
+}

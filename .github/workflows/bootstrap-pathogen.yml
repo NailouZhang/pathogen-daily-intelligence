@@ -1,0 +1,36 @@
+name: Bootstrap Pathogen
+
+on:
+  workflow_dispatch:
+    inputs:
+      profile_id:
+        description: Profile directory name
+        required: true
+        default: hantavirus
+
+permissions:
+  contents: read
+
+jobs:
+  bootstrap:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: python -m pip install -r requirements.txt
+      - name: Compile candidate profile and audit report
+        run: |
+          rm -rf /tmp/pdi-bootstrap
+          python scripts/bootstrap_pathogen.py \
+            --profile "${{ inputs.profile_id }}" \
+            --output-dir /tmp/pdi-bootstrap
+      - name: Upload review artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: pathogen-bootstrap-${{ inputs.profile_id }}-${{ github.run_number }}
+          path: /tmp/pdi-bootstrap
+          if-no-files-found: error

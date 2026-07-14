@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "NewsArticle",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "article_id",
+    "canonical_url",
+    "source",
+    "title"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string"
+    },
+    "article_id": {
+      "type": "string"
+    },
+    "canonical_url": {
+      "type": "string"
+    },
+    "source": {
+      "type": "object"
+    },
+    "title": {
+      "type": "object",
+      "required": [
+        "original"
+      ]
+    }
+  },
+  "additionalProperties": true
+}
