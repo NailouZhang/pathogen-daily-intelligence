@@ -11,7 +11,7 @@
     "end": "2026-07-13",
     "timezone": "Asia/Shanghai"
   },
-  "generated_at": "2026-07-14T10:52:30+00:00",
+  "generated_at": "2026-07-14T10:54:53+00:00",
   "statistics": {
     "scholarly_raw": 3,
     "scholarly_unique": 2,
@@ -114,7 +114,7 @@
         "error": "LLM disabled by command option.",
         "retry_count": 0,
         "fallback_used": false,
-        "generated_at": "2026-07-14T10:52:30+00:00",
+        "generated_at": "2026-07-14T10:54:53+00:00",
         "validation_status": "not_applicable",
         "unsupported_claim_count": 0
       }
@@ -134,7 +134,7 @@
       }
     },
     "partial_failures": [],
-    "content_hash": "ed24d11225aa2e240ad887e7d88d4dc4"
+    "content_hash": "758fe3080853000bf8a5955641e19dee"
   },
   "outputs": {
     "latest_json": "data/latest.json",
