@@ -9,7 +9,7 @@ from urllib.parse import urlsplit
 from bs4 import BeautifulSoup
 
 from .http import HttpClient
-from .utils import canonicalize_url, normalize_space, sentence_split, utc_now_iso
+from .utils import canonicalize_url, ensure_dict_field, normalize_space, sentence_split, utc_now_iso
 
 _PAYWALL_MARKERS = (
     "subscribe to continue",
@@ -213,11 +213,11 @@ def enrich_news_articles(articles: list[dict[str, Any]], profile: dict[str, Any]
             if not article:
                 continue
             audit = result.get("audit") or {}
-            article.setdefault("retrieval_audit", {})["content_fetch"] = audit
+            ensure_dict_field(article, "retrieval_audit")["content_fetch"] = audit
             audits.append({"object_type": "news_article", "object_id": article_id, **audit})
             if audit.get("status") != "success":
                 continue
-            content = article.setdefault("content", {})
+            content = ensure_dict_field(article, "content")
             content.setdefault("original_excerpt", content.get("excerpt"))
             content["analysis_text"] = result.get("analysis_text")
             content["translation_text"] = str(result.get("analysis_text") or "")[:max_translation_chars] or content.get("excerpt")
@@ -229,7 +229,7 @@ def enrich_news_articles(articles: list[dict[str, Any]], profile: dict[str, Any]
             final_url = canonicalize_url(result.get("final_url"))
             if final_url:
                 article["canonical_url"] = final_url
-                article.setdefault("fingerprints", {})["resolved_url"] = final_url
+                ensure_dict_field(article, "fingerprints")["resolved_url"] = final_url
 
     return {
         "attempted": len(candidates),
@@ -356,11 +356,11 @@ def enrich_scholarly_works(works: list[dict[str, Any]], profile: dict[str, Any])
         current = work_map.get(result.get("work_id"))
         if not current:
             continue
-        current.setdefault("processing_audit", {})["open_fulltext"] = audit
+        ensure_dict_field(current, "processing_audit")["open_fulltext"] = audit
         if audit.get("status") != "success":
             continue
         if not current.get("abstract", {}).get("original") and result.get("abstract"):
-            current.setdefault("abstract", {})["original"] = result["abstract"]
+            ensure_dict_field(current, "abstract")["original"] = result["abstract"]
             current["abstract"]["source"] = "europe_pmc_fulltext_xml"
             current["abstract"]["sentences"] = sentence_split(result["abstract"], "A")
         current["full_text"] = {
@@ -370,7 +370,7 @@ def enrich_scholarly_works(works: list[dict[str, Any]], profile: dict[str, Any])
             "sections": result.get("sections") or [],
             "retrieved_at": audit.get("retrieved_at"),
         }
-        current.setdefault("quality", {})["full_text_enriched"] = True
+        ensure_dict_field(current, "quality")["full_text_enriched"] = True
         current["quality"]["has_abstract"] = bool(current.get("abstract", {}).get("original"))
 
     return {

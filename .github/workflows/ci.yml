@@ -35,3 +35,16 @@ jobs:
           python scripts/run_daily.py --profile hantavirus --output-dir /tmp/pdi-ci-demo --demo --disable-llm
           test -s /tmp/pdi-ci-demo/data/latest.json
           test -s /tmp/pdi-ci-demo/site/index.html
+      - name: No-credential LLM fallback smoke test
+        env:
+          GITHUB_MODELS_TOKEN: ""
+          GITHUB_TOKEN: ""
+          GEMINI_API_KEY: ""
+          GOOGLE_AI_STUDIO_API_KEY: ""
+          GROQ_API_KEY: ""
+        run: |
+          rm -rf /tmp/pdi-ci-no-model
+          python scripts/run_daily.py --profile hantavirus --output-dir /tmp/pdi-ci-no-model --demo
+          test -s /tmp/pdi-ci-no-model/data/latest.json
+          test -s /tmp/pdi-ci-no-model/site/index.html
+          grep -q 'translation_audit' /tmp/pdi-ci-no-model/data/entities/scholarly_works.jsonl

@@ -1,17 +1,17 @@
 {
   "schema_version": "1.3",
-  "issue_id": "hantavirus:2026-07-14:r1",
+  "issue_id": "hantavirus:2026-07-15:r1",
   "issue_revision": 1,
-  "issue_date": "2026-07-14",
+  "issue_date": "2026-07-15",
   "issue_number": null,
   "profile_id": "hantavirus",
   "profile_version": "1.3.0",
   "coverage_window": {
-    "start": "2026-07-07",
-    "end": "2026-07-13",
+    "start": "2026-07-08",
+    "end": "2026-07-14",
     "timezone": "Asia/Shanghai"
   },
-  "generated_at": "2026-07-14T12:29:47+00:00",
+  "generated_at": "2026-07-14T22:56:03+00:00",
   "statistics": {
     "scholarly_raw": 3,
     "scholarly_unique": 2,
@@ -141,7 +141,7 @@
         "error": "LLM disabled; validated source or demo translations were retained.",
         "retry_count": 0,
         "fallback_used": false,
-        "generated_at": "2026-07-14T12:29:47+00:00",
+        "generated_at": "2026-07-14T22:56:03+00:00",
         "validation_status": "not_applicable",
         "unsupported_claim_count": 0
       }
@@ -188,13 +188,13 @@
       "daily_synthesis",
       "render_and_publish"
     ],
-    "content_hash": "efd7ee37e3987fcec3a35a08f8e14a5a"
+    "content_hash": "6a9a608195f05ea3d8513b0c30aa030b"
   },
   "outputs": {
     "latest_json": "data/latest.json",
     "site_index": "site/index.html",
     "email_html": "email/latest.html",
-    "issue_archive": "data/archive/2026/07/14/issue.json",
+    "issue_archive": "data/archive/2026/07/15/issue.json",
     "content_audit": "data/audit/content_enrichment.json",
     "llm_audit": "data/audit/llm_runs.jsonl",
     "object_audit": "data/audit/object_audit.jsonl"

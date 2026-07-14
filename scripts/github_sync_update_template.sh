@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 OLD_DIR="$HOME/下载/pathogen-daily-intelligence"
-ZIP_FILE="$HOME/下载/pathogen_daily_intelligence_v1_3_multimodel_deep_content_audit.zip"
+ZIP_FILE="$HOME/下载/pathogen_daily_intelligence_v1_3_1_null_safe_audit_recovery.zip"
 REMOTE_URL="git@github.com:NailouZhang/pathogen-daily-intelligence.git"
-COMMIT_MSG="v1.3：增加新闻正文理解、文献深度审计与多模型顺序兜底"
+COMMIT_MSG="v1.3.1：修复翻译审计空值崩溃并强化全模型失败兜底"
 
 set -euo pipefail
 
@@ -19,7 +19,7 @@ trap 'rm -rf "$TMP_DIR"' EXIT
 unzip -q "$ZIP_FILE" -d "$TMP_DIR"
 SRC_DIR="$(find "$TMP_DIR" -type f -name app.py -printf '%h\n' | head -n 1)"
 [ -n "$SRC_DIR" ] && [ -f "$SRC_DIR/app.py" ] || { echo "错误：ZIP 中没有 app.py。"; exit 1; }
-grep -q 'version = "1.3.0"' "$SRC_DIR/pyproject.toml" || { echo "错误：不是 v1.3 工程包。"; exit 1; }
+grep -q 'version = "1.3.1"' "$SRC_DIR/pyproject.toml" || { echo "错误：不是 v1.3.1 工程包。"; exit 1; }
 
 rsync -av --delete \
   --exclude '.git/' \
@@ -35,7 +35,7 @@ echo "即将提交的变化："
 git diff --cached --stat
 
 if git diff --cached --quiet; then
-    echo "当前 main 已经是 v1.3。"
+    echo "当前 main 已经是 v1.3.1。"
 else
     git commit -m "$COMMIT_MSG"
 fi
@@ -59,5 +59,5 @@ sleep 5
 RUN_ID="$(gh run list --workflow daily-intelligence.yml --branch main --event workflow_dispatch --limit 1 --json databaseId --jq '.[0].databaseId')"
 gh run watch "$RUN_ID" --exit-status
 
-echo "v1.3 更新完成："
+echo "v1.3.1 更新完成："
 echo "https://nailouzhang.github.io/pathogen-daily-intelligence/"

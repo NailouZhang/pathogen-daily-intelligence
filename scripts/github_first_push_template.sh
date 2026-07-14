@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-ZIP_FILE="$HOME/下载/pathogen_daily_intelligence_v1_3_multimodel_deep_content_audit.zip"
+ZIP_FILE="$HOME/下载/pathogen_daily_intelligence_v1_3_1_null_safe_audit_recovery.zip"
 NEW_DIR="$HOME/下载/pathogen-daily-intelligence"
 GITHUB_OWNER="请替换为你的GitHub用户名"
 REPO_NAME="pathogen-daily-intelligence"
-COMMIT_MSG="v1.3：上线新闻正文理解与多模型审计病原每日情报 GitHub Pages + Streamlit 版本"
+COMMIT_MSG="v1.3.1：上线空值安全审计与全模型失败兜底版本"
 
 TMP_DIR="$(mktemp -d)"
 trap 'rm -rf "$TMP_DIR"' EXIT

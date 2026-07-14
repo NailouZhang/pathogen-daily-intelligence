@@ -11,23 +11,23 @@ from .markup import (
     restore_scientific_markup,
     strip_scientific_markup,
 )
-from .utils import content_hash, normalize_space, utc_now_iso
+from .utils import content_hash, ensure_dict_field, normalize_space, utc_now_iso
 
-TRANSLATION_PROMPT_VERSION = "bilingual-translation-v1.3"
+TRANSLATION_PROMPT_VERSION = "bilingual-translation-v1.3.1"
 
 
 def _source_fields(item: dict[str, Any], kind: str) -> tuple[str, str | None, str | None]:
     if kind == "work":
         return (
-            str(item.get("title", {}).get("original") or ""),
-            item.get("abstract", {}).get("original"),
-            item.get("title", {}).get("language"),
+            str((item.get("title") or {}).get("original") or ""),
+            (item.get("abstract") or {}).get("original"),
+            (item.get("title") or {}).get("language"),
         )
     return (
-        str(item.get("title", {}).get("original") or ""),
-        item.get("content", {}).get("translation_text")
-        or item.get("content", {}).get("excerpt"),
-        item.get("title", {}).get("language"),
+        str((item.get("title") or {}).get("original") or ""),
+        (item.get("content") or {}).get("translation_text")
+        or (item.get("content") or {}).get("excerpt"),
+        (item.get("title") or {}).get("language"),
     )
 
 
@@ -71,11 +71,11 @@ def deterministic_copy_for_chinese(item: dict[str, Any], kind: str) -> bool:
     if len(summary) > 720:
         summary = summary[:720].rstrip() + "……"
     if kind == "work":
-        item.setdefault("title", {})["translated_zh"] = title
-        item.setdefault("abstract", {})["translated_zh"] = body
+        ensure_dict_field(item, "title")["translated_zh"] = title
+        ensure_dict_field(item, "abstract")["translated_zh"] = body
     else:
-        item.setdefault("title", {})["translated_zh"] = title
-        item.setdefault("content", {})["translated_excerpt_zh"] = body
+        ensure_dict_field(item, "title")["translated_zh"] = title
+        ensure_dict_field(item, "content")["translated_excerpt_zh"] = body
     item["display_summary"] = {
         "zh": summary or None,
         "en": None,
@@ -184,11 +184,11 @@ def apply_translation(
         plain = normalize_space(strip_scientific_markup(body))
         summary_en = plain[:720].rstrip() + ("…" if len(plain) > 720 else "")
 
-    item.setdefault("title", {})["translated_zh"] = translated_title
+    ensure_dict_field(item, "title")["translated_zh"] = translated_title
     if kind == "work":
-        item.setdefault("abstract", {})["translated_zh"] = translated_text
+        ensure_dict_field(item, "abstract")["translated_zh"] = translated_text
     else:
-        item.setdefault("content", {})["translated_excerpt_zh"] = translated_text
+        ensure_dict_field(item, "content")["translated_excerpt_zh"] = translated_text
     item["display_summary"] = {
         "zh": fields.get("display_summary_zh") or translated_text,
         "en": summary_en,
@@ -205,15 +205,16 @@ def apply_translation(
 
 def ensure_bilingual_placeholders(item: dict[str, Any], kind: str) -> None:
     """Keep the Chinese-first UI honest when no validated translation is available."""
-    item.setdefault("display_summary", {})
-    item["display_summary"].setdefault("zh", None)
+    display_summary = ensure_dict_field(item, "display_summary")
+    display_summary.setdefault("zh", None)
     title, body, _ = _source_fields(item, kind)
     plain = normalize_space(strip_scientific_markup(body or ""))
-    item["display_summary"].setdefault(
+    display_summary.setdefault(
         "en",
         plain[:720].rstrip() + ("…" if len(plain) > 720 else "") if plain else None,
     )
-    item.setdefault("translation_audit", {
+    audit = ensure_dict_field(item, "translation_audit")
+    defaults = {
         "provider": "deterministic",
         "model": None,
         "prompt_version": TRANSLATION_PROMPT_VERSION,
@@ -221,24 +222,26 @@ def ensure_bilingual_placeholders(item: dict[str, Any], kind: str) -> None:
         "generated_at": utc_now_iso(),
         "fallback_used": True,
         "validation_status": "translation_unavailable",
-        "source_language": item.get("title", {}).get("language"),
+        "source_language": (item.get("title") or {}).get("language"),
         "target_language": "zh-CN",
-    })
+    }
+    for key, value in defaults.items():
+        audit.setdefault(key, value)
 
 
 def apply_event_bilingual(events: list[dict[str, Any]], articles: Iterable[dict[str, Any]]) -> None:
     article_map = {a.get("article_id"): a for a in articles}
     for event in events:
-        primary_id = event.get("primary_source", {}).get("article_id")
+        primary_id = (event.get("primary_source") or {}).get("article_id")
         primary = article_map.get(primary_id)
-        original = event.get("summary") or (primary or {}).get("title", {}).get("original")
-        translated = (primary or {}).get("title", {}).get("translated_zh")
+        original = event.get("summary") or ((primary or {}).get("title") or {}).get("original")
+        translated = ((primary or {}).get("title") or {}).get("translated_zh")
         event["summary_original"] = original
         event["summary_zh"] = translated
         display = (primary or {}).get("display_summary") or {}
         event["display_summary"] = {
             "zh": display.get("zh"),
-            "en": display.get("en") or (primary or {}).get("content", {}).get("excerpt"),
+            "en": display.get("en") or ((primary or {}).get("content") or {}).get("excerpt"),
         }
         event["translation_audit"] = (primary or {}).get("translation_audit")
         event["ai_analysis"] = (primary or {}).get("ai_analysis")

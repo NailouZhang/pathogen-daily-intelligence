@@ -33,19 +33,19 @@ from .translation import (
     translation_cache_key,
     validate_translation_fields,
 )
-from .utils import content_hash, utc_now_iso, write_json
+from .utils import content_hash, ensure_dict_field, utc_now_iso, write_json
 from .validation import validate_ai_output, validate_schema
 
 
 def _evidence_for_work(work: dict[str, Any]) -> list[dict[str, str]]:
-    evidence = list(work.get("abstract", {}).get("sentences") or [])
-    for section in work.get("full_text", {}).get("sections", []):
+    evidence = list((work.get("abstract") or {}).get("sentences") or [])
+    for section in (work.get("full_text") or {}).get("sections", []):
         evidence.extend(section.get("sentences") or [])
     return evidence
 
 
 def _evidence_for_article(article: dict[str, Any]) -> list[dict[str, str]]:
-    return article.get("content", {}).get("sentences") or []
+    return (article.get("content") or {}).get("sentences") or []
 
 
 def _source_health_disabled(profile: dict[str, Any]) -> list[dict[str, Any]]:
@@ -129,15 +129,15 @@ def _save_cache(cache: dict[str, Any], key: str, output: dict[str, Any], audit: 
 
 
 def _has_valid_existing_translation(item: dict[str, Any], kind: str) -> bool:
-    translated_title = item.get("title", {}).get("translated_zh")
+    translated_title = (item.get("title") or {}).get("translated_zh")
     if not translated_title:
         return False
     if kind == "work":
-        source_text = item.get("abstract", {}).get("original")
-        translated_text = item.get("abstract", {}).get("translated_zh")
+        source_text = (item.get("abstract") or {}).get("original")
+        translated_text = (item.get("abstract") or {}).get("translated_zh")
     else:
-        source_text = item.get("content", {}).get("translation_text") or item.get("content", {}).get("excerpt")
-        translated_text = item.get("content", {}).get("translated_excerpt_zh")
+        source_text = (item.get("content") or {}).get("translation_text") or (item.get("content") or {}).get("excerpt")
+        translated_text = (item.get("content") or {}).get("translated_excerpt_zh")
     return not source_text or bool(translated_text)
 
 
@@ -148,11 +148,11 @@ def _apply_model_translation(
     mapping: dict[str, str],
     audit: dict[str, Any],
 ) -> tuple[bool, list[str]]:
-    title = item.get("title", {}).get("original") or ""
+    title = (item.get("title") or {}).get("original") or ""
     source_text = (
-        item.get("abstract", {}).get("original")
+        (item.get("abstract") or {}).get("original")
         if kind == "work"
-        else item.get("content", {}).get("translation_text") or item.get("content", {}).get("excerpt")
+        else (item.get("content") or {}).get("translation_text") or (item.get("content") or {}).get("excerpt")
     )
     raw_fields = extract_translation_fields(raw_output, kind)
     validation = validate_translation_fields(title, source_text, raw_fields, mapping)
@@ -202,13 +202,13 @@ def _run_validated_analysis(
     cached, cached_audit = _cache_hit(cache, cache_key)
     _prepared, mapping = prepare_translation_item(item, kind)
     validation_evidence = evidence + [
-        {"id": "T0", "text": item.get("title", {}).get("original") or ""}
+        {"id": "T0", "text": (item.get("title") or {}).get("original") or ""}
     ]
     source_text = (
-        item.get("abstract", {}).get("original")
+        (item.get("abstract") or {}).get("original")
         if kind == "work"
         else item.get("content", {}).get("analysis_text")
-        or item.get("content", {}).get("excerpt")
+        or (item.get("content") or {}).get("excerpt")
     )
 
     attempts: list[dict[str, Any]] = []
@@ -231,7 +231,7 @@ def _run_validated_analysis(
         ai_validation = validate_ai_output(output, validation_evidence, approved_terms)
         raw_fields = extract_translation_fields(output, kind)
         translation_validation = validate_translation_fields(
-            item.get("title", {}).get("original") or "",
+            (item.get("title") or {}).get("original") or "",
             source_text,
             raw_fields,
             mapping,
@@ -255,7 +255,7 @@ def _run_validated_analysis(
         accepted_audit = _aggregate_attempt_audit(
             task_name, record_id, attempts, attempt, []
         )
-        item.setdefault("processing_audit", {})["llm_analysis"] = accepted_audit
+        ensure_dict_field(item, "processing_audit")["llm_analysis"] = accepted_audit
         _save_cache(cache, cache_key, output, accepted_audit)
         return restored_output, accepted_audit
 
@@ -298,7 +298,7 @@ def _run_validated_analysis(
     final_audit = _aggregate_attempt_audit(
         task_name, record_id, attempts, None, all_errors
     )
-    item.setdefault("processing_audit", {})["llm_analysis"] = final_audit
+    ensure_dict_field(item, "processing_audit")["llm_analysis"] = final_audit
     return {}, final_audit
 
 def _run_analysis_for_work(
@@ -315,9 +315,9 @@ def _run_analysis_for_work(
         "identifiers": work.get("identifiers", {}),
         "title": prepared["title"],
         "title_evidence": {"id": "T0", "text": prepared["title"]},
-        "abstract_sentences": _protect_evidence(work.get("abstract", {}).get("sentences") or [], mapping),
+        "abstract_sentences": _protect_evidence((work.get("abstract") or {}).get("sentences") or [], mapping),
         "open_full_text_evidence": _protect_evidence(
-            [row for section in work.get("full_text", {}).get("sections", []) for row in section.get("sentences", [])],
+            [row for section in (work.get("full_text") or {}).get("sections", []) for row in section.get("sentences", [])],
             mapping,
         ),
         "source_metadata": work.get("source_records", []),
@@ -339,7 +339,7 @@ def _run_analysis_for_article(
     evidence = _evidence_for_article(article)
     task = (
         "official_notice_analysis"
-        if article.get("source", {}).get("reliability_tier") == "A"
+        if (article.get("source") or {}).get("reliability_tier") == "A"
         else "media_news_analysis"
     )
     payload = {
@@ -351,7 +351,7 @@ def _run_analysis_for_article(
         "title_evidence": {"id": "T0", "text": prepared["title"]},
         "translation_source_text": prepared.get("text"),
         "content_sentences": _protect_evidence(evidence, mapping),
-        "content_extraction_audit": article.get("retrieval_audit", {}).get("content_fetch"),
+        "content_extraction_audit": (article.get("retrieval_audit") or {}).get("content_fetch"),
         "entities_from_rules": article.get("entities", {}),
         "protected_placeholders": prepared["protected_placeholders"],
     }
@@ -362,8 +362,8 @@ def _run_analysis_for_article(
 
 def _translation_source_text(item: dict[str, Any], kind: str) -> str | None:
     if kind == "work":
-        return item.get("abstract", {}).get("original")
-    return item.get("content", {}).get("translation_text") or item.get("content", {}).get("excerpt")
+        return (item.get("abstract") or {}).get("original")
+    return (item.get("content") or {}).get("translation_text") or (item.get("content") or {}).get("excerpt")
 
 
 def _translate_remaining_items(
@@ -378,18 +378,19 @@ def _translate_remaining_items(
     for item, kind in items:
         record_id = str(item.get("work_id") if kind == "work" else item.get("article_id"))
         if _has_valid_existing_translation(item, kind):
-            item.setdefault(
-                "translation_audit",
-                {
-                    "provider": "source_or_demo",
-                    "model": None,
-                    "status": "existing",
-                    "validation_status": "passed",
-                    "generated_at": utc_now_iso(),
-                    "fallback_used": False,
-                    "attempt_chain": [],
-                },
-            )
+            existing_audit = ensure_dict_field(item, "translation_audit")
+            if not existing_audit:
+                existing_audit.update(
+                    {
+                        "provider": "source_or_demo",
+                        "model": None,
+                        "status": "existing",
+                        "validation_status": "passed",
+                        "generated_at": utc_now_iso(),
+                        "fallback_used": False,
+                        "attempt_chain": [],
+                    }
+                )
             continue
         if deterministic_copy_for_chinese(item, kind):
             continue
@@ -466,7 +467,7 @@ def _translate_remaining_items(
                     continue
                 fields = extract_translation_fields(raw, kind)
                 validation = validate_translation_fields(
-                    item.get("title", {}).get("original") or "",
+                    (item.get("title") or {}).get("original") or "",
                     _translation_source_text(item, kind),
                     fields,
                     mapping,
@@ -490,7 +491,7 @@ def _translate_remaining_items(
                     "accepted_provider_index": provider_index,
                 }
                 apply_translation(item, kind, restored, item_audit)
-                item.setdefault("processing_audit", {})["translation"] = item_audit
+                ensure_dict_field(item, "processing_audit")["translation"] = item_audit
                 _save_cache(cache, cache_key, restored, item_audit)
                 translated_in_call += 1
                 pending.pop(record_id, None)
@@ -508,14 +509,15 @@ def _translate_remaining_items(
 
     for record_id, (item, kind, _prepared, _mapping, _cache_key) in pending.items():
         ensure_bilingual_placeholders(item, kind)
-        item.setdefault("translation_audit", {}).update(
+        translation_audit = ensure_dict_field(item, "translation_audit")
+        translation_audit.update(
             {
                 "attempt_chain": attempt_history.get(record_id, []),
                 "fallback_used": bool(attempt_history.get(record_id)),
                 "validation_status": "translation_unavailable_after_all_providers",
             }
         )
-        item.setdefault("processing_audit", {})["translation"] = item.get("translation_audit")
+        ensure_dict_field(item, "processing_audit")["translation"] = dict(translation_audit)
 
 
 def _run_daily_synthesis(
@@ -663,7 +665,7 @@ def _translate_and_analyse(
             {
                 "item_id": work["work_id"],
                 "type": "work",
-                "title": work.get("title", {}).get("translated_zh") or work.get("title", {}).get("original"),
+                "title": work.get("title", {}).get("translated_zh") or (work.get("title") or {}).get("original"),
                 "analysis": work.get("ai_analysis"),
             }
             for work in works
@@ -715,7 +717,7 @@ def _write_audit_outputs(
                 "object_id": article.get("article_id"),
                 "translation_audit": article.get("translation_audit"),
                 "processing_audit": article.get("processing_audit"),
-                "content_fetch": article.get("retrieval_audit", {}).get("content_fetch"),
+                "content_fetch": (article.get("retrieval_audit") or {}).get("content_fetch"),
             }
         )
     (audit_dir / "object_audit.jsonl").write_text(
@@ -723,6 +725,51 @@ def _write_audit_outputs(
         + ("\n" if object_rows else ""),
         encoding="utf-8",
     )
+
+
+
+
+def _apply_deterministic_bilingual_fallback(
+    works: list[dict[str, Any]],
+    articles: list[dict[str, Any]],
+    events: list[dict[str, Any]],
+    *,
+    reason: str,
+    error: str | None = None,
+) -> None:
+    """Guarantee publishable bilingual placeholders when the LLM layer is unavailable.
+
+    This boundary is intentionally broader than provider-level error handling. A
+    programming or data-shape error inside LLM orchestration must be audited, but
+    must not prevent deterministic JSON/HTML/RSS publication.
+    """
+    for item, kind in [
+        *[(work, "work") for work in works],
+        *[(article, "article") for article in articles],
+    ]:
+        if _has_valid_existing_translation(item, kind):
+            audit = ensure_dict_field(item, "translation_audit")
+            if not audit:
+                audit.update(
+                    {
+                        "provider": "source_or_demo",
+                        "model": None,
+                        "status": "existing",
+                        "validation_status": "passed",
+                        "generated_at": utc_now_iso(),
+                        "fallback_used": False,
+                    }
+                )
+        else:
+            deterministic_copy_for_chinese(item, kind)
+            ensure_bilingual_placeholders(item, kind)
+        processing = ensure_dict_field(item, "processing_audit")
+        processing["llm_orchestration"] = {
+            "status": reason,
+            "error": error,
+            "processed_at": utc_now_iso(),
+        }
+    apply_event_bilingual(events, articles)
 
 
 def run_daily_pipeline(
@@ -799,43 +846,40 @@ def run_daily_pipeline(
     daily_synthesis = None
     llm_cache = dict(previous_state.get("llm_cache", {}))
     if not disable_llm:
-        daily_synthesis, llm_audit, llm_cache = _translate_and_analyse(
-            root, profile, works, articles, events, llm_cache
-        )
+        try:
+            daily_synthesis, llm_audit, llm_cache = _translate_and_analyse(
+                root, profile, works, articles, events, llm_cache
+            )
+        except Exception as exc:  # final safety boundary: publish deterministic output
+            error = f"{type(exc).__name__}: {exc}"
+            _apply_deterministic_bilingual_fallback(
+                works,
+                articles,
+                events,
+                reason="orchestration_failed_deterministic_fallback",
+                error=error,
+            )
+            llm_audit.append(
+                {
+                    "task_name": "llm_orchestration",
+                    "provider": "deterministic",
+                    "model": None,
+                    "status": "failed",
+                    "error": error,
+                    "retry_count": 0,
+                    "fallback_used": True,
+                    "generated_at": utc_now_iso(),
+                    "validation_status": "orchestration_failed_fallback_published",
+                    "unsupported_claim_count": 0,
+                }
+            )
     else:
-        for work in works:
-            if _has_valid_existing_translation(work, "work"):
-                work.setdefault(
-                    "translation_audit",
-                    {
-                        "provider": "source_or_demo",
-                        "model": None,
-                        "status": "existing",
-                        "validation_status": "passed",
-                        "generated_at": utc_now_iso(),
-                        "fallback_used": False,
-                    },
-                )
-            else:
-                deterministic_copy_for_chinese(work, "work")
-                ensure_bilingual_placeholders(work, "work")
-        for article in articles:
-            if _has_valid_existing_translation(article, "article"):
-                article.setdefault(
-                    "translation_audit",
-                    {
-                        "provider": "source_or_demo",
-                        "model": None,
-                        "status": "existing",
-                        "validation_status": "passed",
-                        "generated_at": utc_now_iso(),
-                        "fallback_used": False,
-                    },
-                )
-            else:
-                deterministic_copy_for_chinese(article, "article")
-                ensure_bilingual_placeholders(article, "article")
-        apply_event_bilingual(events, articles)
+        _apply_deterministic_bilingual_fallback(
+            works,
+            articles,
+            events,
+            reason="llm_disabled",
+        )
         llm_audit.append(
             {
                 "task_name": "all",
@@ -852,7 +896,7 @@ def run_daily_pipeline(
         )
 
     state = {
-        "schema_version": "1.3",
+        "schema_version": "1.3.1",
         "updated_at": utc_now_iso(),
         "work_ids": sorted(seen_works | {work["work_id"] for work in works}),
         "article_ids": sorted(

@@ -59,6 +59,22 @@ def canonicalize_url(value: str | None) -> str:
     return urlunsplit((parts.scheme.lower(), parts.netloc.lower(), path, urlencode(query), ""))
 
 
+
+
+def ensure_dict_field(container: dict[str, Any], key: str, default: dict[str, Any] | None = None) -> dict[str, Any]:
+    """Return a mutable dictionary field, replacing null/invalid legacy values safely.
+
+    Historical JSON entities may contain ``null`` for fields that later became
+    mutable audit dictionaries. ``dict.setdefault`` does not replace an existing
+    null value, so mutation code must use this helper instead.
+    """
+    current = container.get(key)
+    if isinstance(current, dict):
+        return current
+    replacement = dict(default or {})
+    container[key] = replacement
+    return replacement
+
 def deep_get(data: dict[str, Any], path: str, default: Any = None) -> Any:
     cur: Any = data
     for part in path.split("."):
