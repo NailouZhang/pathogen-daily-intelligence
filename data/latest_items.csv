@@ -1,44 +1,5 @@
 ﻿item_type,item_id,title,decision,source_count
-scholarly_work,work-09e9d4db3e9b27d5d04c4f8f,Drivers of Host-Pathogen Community Assemblages in European Forests and Urban Green Spaces.,headline,1
-scholarly_work,work-eff16bd1991afc42885881ed,Hantavirus on a Cruise Ship: What COVID-19 Taught Us.,headline,1
-scholarly_work,work-24595e6f0f7e4676a68be705,Preparing for the Next Pandemic: Learning From COVID-19 to Build What Comes Next.,headline,1
-scholarly_work,work-e3cb5c555876b2b40ccfb58a,"Watching the Ship, Missing the Forest: Why Ecological Spillover, Reservoir Ecology, and Environmental Change Remain the True Hantavirus Threats in North America.",brief,1
-scholarly_work,work-dcbbc9fbd8008d9b406c3f47,"Hantavirus infections in a changing world: epidemiology, pathogenesis, and one health challenges.",headline,2
-scholarly_work,work-42d5a401efd4a0641cc92f0b,"Serologic Evidence of Hantavirus Exposure in Humans, Italy, 2004-2018.",headline,1
-scholarly_work,work-26d41b33804b556d0e838645,Hantavirus on a Nature Cruise and the Risk of a Pandemic.,brief,1
-scholarly_work,work-412a01ebc11cdf225065abdc,The 2026 Andes virus outbreak: What genomic stability reveals about virulence.,brief,1
-scholarly_work,work-332fb645e31ec2d1b01591bd,First detection and genetic characterisation of Porcine Circovirus 2 from wild Rattus species in Malaysia,headline,1
-scholarly_work,work-261800c4a15fce7cab542257,Hantavirus - Once Again in the News.,brief,1
-scholarly_work,work-01da7473125c2b44ffa3cf9e,The Orthohantavirus G<sub>N</sub>/G<sub>C</sub> Spikes: Molecular Determinants of Infection and Targets for Antiviral Immune Interventions.,headline,2
-scholarly_work,work-7da09839fc167eff558a71fb,Distribution and richness of Orthohantavirus reservoir hosts: Implications for zoonotic risk in Southern South America.,headline,4
-public_health_event,event-f6855b99bb28ae38a6599bed,Hantavirus Outbreak Connected to Cruise Ship is Officially Over,brief,1
-public_health_event,event-ae8ff58f8931759c7cc8c1e3,Oceanwide Expeditions CEO responds to hantavirus incident,brief,1
-public_health_event,event-d189959c10d6d0c0eaa65c37,Keystone Health Shares Hantavirus Prevention and Safety Guidance - Franklin County Free Press,brief,1
-public_health_event,event-49dec3433c7148c7844bbe7d,Early signs of hantavirus you need to know - MSN,brief,1
-public_health_event,event-5a1755d2ac739c5e4c89baa1,Hantavirus Outbreak Calls Attention to Industry’s Role in Health Emergencies - Think Global Health,brief,1
-public_health_event,event-294366222a9250cfed72eac4,Hantavirus outbreak offers lessons for the next pandemic - Earth.com,brief,1
-public_health_event,event-5a0e5a8bfa33e5d4ec48f5e0,WHO declares cruise ship hantavirus outbreak over - TRT World,brief,1
-public_health_event,event-5cc4d04242a4d835b1881320,Mapped: The countries affected by the cruise ship Hantavirus outbreak that has killed three people - AOL.com,brief,1
-public_health_event,event-aac525b17e6e6ae255add6ae,U.S. citizens on hantavirus cruise ship monitored at Nebraska Medicine - American Hospital Association,brief,1
-public_health_event,event-95260297f153d5fa0c22aa69,Hantavirus outbreak from cruise ship officially ends - The Star,brief,1
-public_health_event,event-0d81d28b6ca935105db5f011,"RCL, NCLH, CCL: Cruise Stocks Get Hit As Rare Hantavirus Outbreak Sparks Travel Fears - Stocktwits",brief,1
-public_health_event,event-990467ecf8eb7120850b541e,"Trump Calls Iran Strikes A ‘Trifle,’ And The Latest On The Hantavirus Outbreak Six Flags (o8ggSUz5AN) - Mshale",brief,1
-public_health_event,event-26e7dd1b81fc7bc46018f409,Five passengers from hantavirus-stricken cruise ship depart quarantine in Omaha - Omaha World-Herald,brief,1
-public_health_event,event-5b9560c986d176c8b4e6d91c,"After the hantavirus outbreak, here’s what cruise travelers should know - MSN",brief,1
-public_health_event,event-56c515a82d2d8b036a2528b3,"Bend doctor helping passengers while stuck on hantavirus-stricken cruise ship, Bynum says - Central Oregon Daily",brief,1
-public_health_event,event-005a059e9e7c417faf566763,"Apparent hantavirus outbreak kills 3 on cruise ship, sickens at least 3 more - AOL.com",brief,1
-public_health_event,event-880ee123fa2d4aff68616956,Three dead and British tourist in intensive care after hantavirus outbreak on polar expedition ship - AOL.com,brief,1
-public_health_event,event-f5626c18508f4245845ad9f5,WHO says hantavirus outbreak linked to ship is over - MSN,brief,2
-public_health_event,event-52a54fef6d889a3c2cde19a3,Hantavirus-stricken cruise ship docks in the Netherlands for disinfection - 1019por.com,brief,1
-public_health_event,event-aedd09548fb78aca026fe5c9,Inflammatix Collaborates with University of Nebraska Medical Center to Support Rapid Response to the Hantavirus Outbreak Using TriVerity - AOL.com,brief,1
-public_health_event,event-a4fa3c0f45c46dd71c510577,"No hantavirus outbreak at Rhodes University, officials confirm - sundayindependent.co.za",brief,1
-public_health_event,event-2366198c49f5736420192412,Spain to accept cruise ship with hantavirus outbreak on board - Turkmenportal.com,brief,1
-public_health_event,event-c46464efb63e9a4abadb16c1,涉汉坦病毒邮轮乘客陆续疏散归国 世卫组织：全球传播风险“低” - 财联社,brief,1
-public_health_event,event-5ae9bd68779ca49e62a8effd,汉坦病毒邮轮疫情“零号病人”身份曝光 - 凤凰网,brief,1
-public_health_event,event-e78493ffc14aeae528f023d8,"病死率31.7%!阿根廷今年新增42例汉坦病毒感染病例,已向多国提供检测试剂以协助调查 - 新浪财经",brief,2
-public_health_event,event-f73a567099489bb97583c34d,综述：人工智能在汉坦病毒肺综合征胸部影像中的应用：罕见疾病影像实践考量 - 生物通,brief,1
-public_health_event,event-a21311e7a80c6c2f1966e80f,突发公共卫生警报！豪华探险邮轮疑现汉坦病毒疫情，3人死亡、世卫组织紧急介入 - FX168,brief,1
-public_health_event,event-7d9545116a0224a06f8b0715,多国现汉坦病毒本土病例！和邮轮疫情无关 - 搜狐网,brief,1
-public_health_event,event-10c027eb3b8928947f1d4efe,禽流感 埃博拉 汉坦病毒……为什么感觉传染病越来越多了？ - SBS,brief,1
-public_health_event,event-a580ffd5c3d07545fa00ee2a,当地时间2日，世卫组织总干事谭德塞宣布，与邮轮有关的汉坦病毒疫情已结束，最后一名接触者完成了隔离且病毒检测结果呈阴性。此次疫情共导致13人感染、3人死亡。 - 搜狐网,brief,1
-public_health_event,event-cc5073548c66ca0c1e8b73ef,涉汉坦病毒邮轮随船医生感染，肿瘤医生游客接手 - 快媒体,brief,1
+scholarly_work,work-73f1eaf696703fc538cfea5a,正汉坦病毒 G<sub>N</sub>/G<sub>C</sub> 刺突蛋白：感染的分子决定因素及抗病毒免疫干预靶点,headline,2
+scholarly_work,work-13027ca10282877605faf40a,肾综合征出血热的血清学监测,archive,1
+public_health_event,event-69c8aee084c29f3476f0bacb,实验室确认智利 2 例汉坦病毒肺综合征病例,headline,2
+public_health_event,event-b87be16dc51d2fc35341cfca,中国开展汉坦病毒啮齿动物宿主监测,headline,1
