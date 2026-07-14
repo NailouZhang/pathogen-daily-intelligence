@@ -63,6 +63,24 @@
         },
         "sentences": {
           "type": "array"
+        },
+        "original_excerpt": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "analysis_text": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "translation_text": {
+          "type": [
+            "string",
+            "null"
+          ]
         }
       },
       "additionalProperties": true
@@ -90,6 +108,18 @@
         "object",
         "null"
       ]
+    },
+    "ai_analysis": {
+      "type": [
+        "object",
+        "null"
+      ]
+    },
+    "processing_audit": {
+      "type": "object"
+    },
+    "retrieval_audit": {
+      "type": "object"
     }
   },
   "additionalProperties": true

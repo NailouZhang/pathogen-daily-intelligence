@@ -60,6 +60,26 @@ def fetch_json(path: str, fallback: Path | None = None, timeout: int = 12) -> An
     return {}
 
 
+
+def fetch_text(path: str, fallback: Path | None = None, timeout: int = 12) -> str:
+    """Read a generated text/JSONL asset from intelligence-data with local fallback."""
+    token = _secret("GITHUB_DATA_TOKEN", "") or _secret("GITHUB_TOKEN", "")
+    url = _content_url(path, api=bool(token))
+    if url:
+        headers = {"Accept": "application/vnd.github.raw+json"}
+        if token:
+            headers["Authorization"] = f"Bearer {token}"
+            headers["X-GitHub-Api-Version"] = "2022-11-28"
+        try:
+            response = requests.get(url, headers=headers, timeout=timeout)
+            response.raise_for_status()
+            return response.text
+        except Exception:
+            pass
+    if fallback and fallback.exists():
+        return fallback.read_text(encoding="utf-8")
+    return ""
+
 def latest_issue() -> dict[str, Any]:
     root = project_root()
     return fetch_json("data/latest.json", root / "data/demo/latest.json") or {}
@@ -217,6 +237,85 @@ def _streamlit_bilingual_values(item: dict[str, Any], kind: str) -> dict[str, An
     }
 
 
+
+def _audit_chain(audit: dict[str, Any]) -> str:
+    labels: list[str] = []
+    for attempt in audit.get("attempt_chain") or []:
+        provider = str(attempt.get("provider") or "unknown")
+        status = str(attempt.get("validation_status") or attempt.get("status") or "unknown")
+        label = f"{provider}:{status}"
+        if label not in labels:
+            labels.append(label)
+    return " → ".join(labels)
+
+
+def _render_analysis_details(item: dict[str, Any], kind: str) -> None:
+    import streamlit as st
+
+    analysis = item.get("ai_analysis") or {}
+    label = "深度解读与证据" if analysis else "深度解读未通过校验"
+    with st.expander(label, expanded=False):
+        if not analysis:
+            st.info("该条目没有通过证据 ID、数字和实体校验的模型解读；页面仅保留来源内容和翻译。")
+        elif kind == "work":
+            study = analysis.get("study") or {}
+            c1, c2 = st.columns(2)
+            c1.markdown(f"**研究类型：** {study.get('study_type') or '未明确'}")
+            coverage = analysis.get("evidence_coverage") or {}
+            c2.markdown(f"**证据范围：** {coverage.get('level') or '未明确'}")
+            for title, value in [("研究问题", study.get("research_question")), ("研究设计", study.get("design")), ("样本或数据", study.get("sample_or_dataset"))]:
+                if isinstance(value, dict) and value.get("text"):
+                    st.markdown(f"**{title}：** {value['text']}  `{', '.join(value.get('evidence_ids') or [])}`")
+            if study.get("methods"):
+                st.markdown("**方法：**")
+                for row in study["methods"]:
+                    st.markdown(f"- {row.get('method')}  `{', '.join(row.get('evidence_ids') or [])}`")
+            if analysis.get("key_findings"):
+                st.markdown("**关键发现：**")
+                for row in analysis["key_findings"]:
+                    st.markdown(f"- {row.get('finding')}  `{', '.join(row.get('evidence_ids') or [])}`")
+            if analysis.get("quantitative_results"):
+                st.markdown("**定量结果：**")
+                for row in analysis["quantitative_results"]:
+                    text = " ".join(str(x) for x in [row.get('value'), row.get('unit'), row.get('context')] if x)
+                    st.markdown(f"- {text}  `{', '.join(row.get('evidence_ids') or [])}`")
+            significance = analysis.get("significance") or {}
+            if significance.get("statement"):
+                st.markdown(f"**意义：** {significance['statement']}  `{', '.join(significance.get('evidence_ids') or [])}`")
+            limitations = analysis.get("limitations") or {}
+            if limitations.get("author_reported") or limitations.get("evidence_gaps"):
+                st.markdown("**局限与证据缺口：**")
+                for row in limitations.get("author_reported") or []:
+                    st.markdown(f"- 作者报告：{row.get('limitation')}  `{', '.join(row.get('evidence_ids') or [])}`")
+                for row in limitations.get("evidence_gaps") or []:
+                    st.markdown(f"- 证据缺口：{row if isinstance(row, str) else row.get('text')}")
+            strength = analysis.get("evidence_strength") or {}
+            if strength:
+                st.markdown(f"**证据强度：** {strength.get('level') or 'unclear'}；{strength.get('basis') or ''}")
+        else:
+            for title, key, child in [("官方行动", "official_actions", "official_action"), ("实验室发现", "laboratory_findings", "laboratory_finding"), ("本次变化", "what_changed", "what_changed"), ("待核实说法", "claims_requiring_confirmation", "claim"), ("已确认说法", "confirmed_claims", "claim")]:
+                rows = analysis.get(key) or []
+                if rows:
+                    st.markdown(f"**{title}：**")
+                    for row in rows:
+                        if isinstance(row, dict):
+                            st.markdown(f"- {row.get(child) or row.get('text')}  `{', '.join(row.get('evidence_ids') or [])}`")
+                        else:
+                            st.markdown(f"- {row}")
+            risk = analysis.get("risk_assessment") or {}
+            if isinstance(risk, dict) and risk.get("statement"):
+                st.markdown(f"**来源风险评估：** {risk['statement']}（归因：{risk.get('attributed_to') or '未明确'}）")
+            quality = analysis.get("source_content_quality") or {}
+            if quality:
+                st.markdown(f"**正文覆盖：** {quality.get('level') or '未明确'}；{quality.get('note') or ''}")
+            if analysis.get("uncertainties"):
+                st.markdown("**不确定性：**")
+                for row in analysis["uncertainties"]:
+                    st.markdown(f"- {row if isinstance(row, str) else row.get('text')}")
+        with st.expander("查看完整结构化模型输出", expanded=False):
+            st.json(analysis, expanded=False)
+
+
 def render_bilingual_card(item: dict[str, Any], kind: str, key_prefix: str = "card") -> None:
     import streamlit as st
 
@@ -241,12 +340,26 @@ def render_bilingual_card(item: dict[str, Any], kind: str, key_prefix: str = "ca
             f'<p>{safe_scientific_html(summary)}</p></div>',
             unsafe_allow_html=True,
         )
+        _render_analysis_details(item, kind)
         if values.get("url"):
             st.link_button("查看原始来源", str(values["url"]))
         audit = item.get("translation_audit") or {}
+        chain = _audit_chain(audit)
         st.caption(
             f"翻译：{audit.get('provider') or '不可用'} · {audit.get('validation_status') or 'unknown'}"
+            + (f" · {chain}" if chain else "")
         )
+        if kind == "article":
+            fetch = item.get("retrieval_audit", {}).get("content_fetch") or {}
+            st.caption(
+                f"正文抓取：{fetch.get('status') or '未执行'} · {fetch.get('method') or '无'} · "
+                f"证据句 {fetch.get('sentence_count') or len(item.get('content', {}).get('sentences') or [])}"
+            )
+        elif kind == "work":
+            full = item.get("full_text") or {}
+            st.caption(
+                "文献证据：" + ("摘要 + Europe PMC 开放全文片段" if full.get("available") else "标题/摘要")
+            )
 
 
 def newspaper_css() -> str:

@@ -6,8 +6,10 @@ from .utils import normalize_space, utc_now_iso
 
 
 def _text_item(item:dict[str,Any],kind:str)->str:
-    if kind=="work":return " ".join([item.get("title",{}).get("original") or "",item.get("abstract",{}).get("original") or ""])
-    return " ".join([item.get("title",{}).get("original") or "",item.get("content",{}).get("excerpt") or ""])
+    if kind=="work":
+        full_text=" ".join(section.get("text") or "" for section in item.get("full_text",{}).get("sections",[]))
+        return " ".join([item.get("title",{}).get("original") or "",item.get("abstract",{}).get("original") or "",full_text])
+    return " ".join([item.get("title",{}).get("original") or "",item.get("content",{}).get("analysis_text") or item.get("content",{}).get("excerpt") or ""])
 
 
 def relevance(item:dict[str,Any],profile:dict[str,Any],kind:str)->tuple[str,list[str]]:
@@ -52,7 +54,8 @@ def classify_article(article:dict[str,Any],profile:dict[str,Any],event:dict[str,
     elif rel=="combined":score+=0.2
     if event and event.get("material_change"):score+=0.2;reasons.append("MATERIAL_EVENT_CHANGE")
     if event and event.get("official_status")=="official":score+=0.1;reasons.append("OFFICIAL_SOURCE_PRESENT")
-    if article.get("content",{}).get("excerpt"):score+=0.05
+    if article.get("content",{}).get("analysis_text"):score+=0.1;reasons.append("FULLER_CONTENT_EXTRACTED")
+    elif article.get("content",{}).get("excerpt"):score+=0.05
     decision="archive"
     missing_date=not article.get("published_at")
     if missing_date:reasons.append("MISSING_PUBLISHED_DATE")

@@ -103,6 +103,48 @@
         "object",
         "null"
       ]
+    },
+    "full_text": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "properties": {
+        "available": {
+          "type": "boolean"
+        },
+        "source": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "sections": {
+          "type": "array"
+        },
+        "retrieved_at": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": true
+    },
+    "ai_analysis": {
+      "type": [
+        "object",
+        "null"
+      ]
+    },
+    "processing_audit": {
+      "type": "object"
     }
   },
   "additionalProperties": true

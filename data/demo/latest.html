@@ -8,7 +8,7 @@ a{color:var(--red)} sub,sup{line-height:0;font-size:.72em} .page{max-width:1280p
 .mast h1{font-size:clamp(34px,6vw,68px);letter-spacing:.12em;margin:0} .mast p{margin:.2rem 0;color:var(--muted);letter-spacing:.12em} .date{font-size:14px;border-bottom:1px solid var(--line);padding:10px 0;text-align:center}
 .toolbar{display:flex;justify-content:flex-end;gap:8px;padding:10px 0;border-bottom:1px solid var(--line)} button{font:inherit} .global-language,.language-toggle{border:1px solid var(--line);background:var(--button);color:var(--ink);padding:5px 10px;cursor:pointer;border-radius:0} .global-language:hover,.language-toggle:hover{border-color:var(--red);color:var(--red)}
 .stats{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:2px solid var(--ink)} .stats div{text-align:center;padding:14px;border-right:1px solid var(--line)} .stats div:last-child{border-right:0} .stats strong{font-size:27px;display:block;color:var(--red)} .stats span{font-size:13px}
-section{border-top:1px solid var(--ink);margin-top:26px;padding-top:7px} section h2{font-size:22px;letter-spacing:.12em;margin:0 0 12px} .columns{columns:3 290px;column-gap:30px;column-rule:1px solid var(--line)} .story{break-inside:avoid;border-bottom:1px solid var(--line);padding:0 0 18px;margin:0 0 18px} .story h3{font-size:20px;line-height:1.38;margin:.25rem 0} .story p{margin:.45rem 0} .kicker{font-size:12px;color:var(--red);font-weight:700;letter-spacing:.06em} .meta,.muted,.audit-note{color:var(--muted);font-size:13px} .audit-note{margin-top:6px;font-size:11px} .links{font-size:13px;margin-top:7px} .language-toggle{margin:5px 0 8px;font-size:12px} .translation-status{color:var(--red)} .translation-status.unavailable{color:var(--muted)} .event-note{font-size:13px} table{width:100%;border-collapse:collapse;font-size:13px} th,td{text-align:left;border-bottom:1px solid var(--line);padding:7px} footer{border-top:3px double var(--ink);margin-top:35px;padding-top:16px;font-size:12px;color:var(--muted)}
+section{border-top:1px solid var(--ink);margin-top:26px;padding-top:7px} section h2{font-size:22px;letter-spacing:.12em;margin:0 0 12px} .columns{columns:3 290px;column-gap:30px;column-rule:1px solid var(--line)} .story{break-inside:avoid;border-bottom:1px solid var(--line);padding:0 0 18px;margin:0 0 18px} .story h3{font-size:20px;line-height:1.38;margin:.25rem 0} .story p{margin:.45rem 0} .kicker{font-size:12px;color:var(--red);font-weight:700;letter-spacing:.06em} .meta,.muted,.audit-note{color:var(--muted);font-size:13px} .audit-note{margin-top:6px;font-size:11px} .links{font-size:13px;margin-top:7px} .language-toggle{margin:5px 0 8px;font-size:12px} .translation-status{color:var(--red)} .translation-status.unavailable{color:var(--muted)} .event-note{font-size:13px} .analysis-details{border-top:1px dotted var(--line);border-bottom:1px dotted var(--line);margin:10px 0;padding:7px 0;font-size:13px} .analysis-details summary{cursor:pointer;color:var(--red);font-weight:700} .analysis-details h4{margin:.65rem 0 .2rem;font-size:14px} .analysis-details ul{margin:.2rem 0 .6rem;padding-left:1.2rem} .evidence-id{color:var(--muted);font-size:11px} table{width:100%;border-collapse:collapse;font-size:13px} th,td{text-align:left;border-bottom:1px solid var(--line);padding:7px} footer{border-top:3px double var(--ink);margin-top:35px;padding-top:16px;font-size:12px;color:var(--muted)}
 [hidden]{display:none!important}
 @media(max-width:800px){.page{padding:15px 18px 45px}.stats{grid-template-columns:repeat(2,1fr)}.columns{columns:1}.toolbar{justify-content:center}}
 @media print{body{background:white}.page{max-width:none;padding:0}a{color:black;text-decoration:none}.toolbar,.language-toggle,.audit-note{display:none!important}.lang-en{display:none!important}.lang-zh{display:block!important}}
@@ -16,7 +16,7 @@ section{border-top:1px solid var(--ink);margin-top:26px;padding-top:7px} section
 <header class="mast"><h1>汉坦病毒每日情报</h1><p>Hantavirus Daily Intelligence</p></header>
 <div class="date">2026-07-14 · 覆盖窗口 2026-07-07—2026-07-13 · Asia/Shanghai</div>
 <div class="toolbar"><button type="button" class="global-language" data-language="en">全部显示英文</button><button type="button" class="global-language" data-language="zh">全部显示中文</button></div>
-<div class="stats"><div><strong>2</strong><span>入选文献</span></div><div><strong>2</strong><span>公共卫生事件</span></div><div><strong>2</strong><span>官方事件</span></div><div><strong>4</strong><span>中文翻译</span></div></div>
+<div class="stats"><div><strong>2</strong><span>入选文献</span></div><div><strong>2</strong><span>公共卫生事件</span></div><div><strong>2</strong><span>官方事件</span></div><div><strong>5</strong><span>中文翻译</span></div></div>
 <section><h2>今日要闻</h2><div class="columns">
     <article class="story event bilingual-card" id="event-event-69c8aee084c29f3476f0bacb">
       <div class="kicker">公共卫生事件 · official</div>
@@ -33,6 +33,7 @@ section{border-top:1px solid var(--ink);margin-top:26px;padding-top:7px} section
     
       <div class="meta">Chile · human_case · 确诊 2</div>
       <p class="event-note">该事件由 2 篇文章聚合；事件版本 v1。</p>
+      <details class="analysis-details"><summary>查看正文理解、官方确认与不确定性</summary><h4>官方行动</h4><ul><li>开展流行病学调查 <span class="evidence-id">[N1]</span></li></ul><h4>实验室发现</h4><ul><li>2 例病例经实验室确认 <span class="evidence-id">[N1]</span></li></ul><h4>本次变化</h4><ul><li>本次通报新增 2 例实验室确认病例及调查行动。 <span class="evidence-id">[N1]</span></li></ul><p class="muted"><strong>正文覆盖：</strong>partial；Demo 只提供一条官方通报证据句。</p></details>
       <div class="links"><a href="https://example.org/notices/hantavirus-cases">Demonstration Health Authority</a></div>
       <div class="audit-note">翻译：不可用 · unknown</div>
     </article>
@@ -52,6 +53,7 @@ section{border-top:1px solid var(--ink);margin-top:26px;padding-top:7px} section
     
       <div class="meta">China · host_surveillance · 病例数字未明确报告</div>
       <p class="event-note">该事件由 1 篇文章聚合；事件版本 v1。</p>
+      <details class="analysis-details"><summary>查看正文理解、官方确认与不确定性</summary><p class="muted">该事件尚无通过证据校验的正文级解读。</p></details>
       <div class="links"><a href="https://lab.example.org/zh/rodent-surveillance">Demonstration Public Health Laboratory</a></div>
       <div class="audit-note">翻译：不可用 · unknown</div>
     </article>
@@ -70,6 +72,7 @@ section{border-top:1px solid var(--ink);margin-top:26px;padding-top:7px} section
       <button type="button" class="language-toggle" data-card-id="work-work-73f1eaf696703fc538cfea5a" aria-expanded="false">显示英文</button>
     
       <div class="meta">Demonstration Journal of Viral Surveillance · 2026-07-14 · Demo Zhang, Example Li</div>
+      <details class="analysis-details"><summary>查看研究设计、关键发现与证据审计</summary><p><strong>研究问题：</strong>正汉坦病毒刺突蛋白如何参与感染，并能否作为抗病毒免疫干预靶点？ <span class="evidence-id">[A1]</span></p><p><strong>研究设计：</strong>对分子机制和潜在干预靶点进行综述性整合。 <span class="evidence-id">[A1]</span></p><p><strong>研究类型：</strong>narrative review</p><h4>关键发现</h4><ul><li>G<sub>N</sub>/G<sub>C</sub> 刺突蛋白参与细胞进入，并被讨论为潜在抗病毒免疫干预靶点。 <span class="evidence-id">[A1]</span></li></ul><p><strong>意义：</strong>为理解病毒进入和候选免疫干预靶点提供综述性线索。 <span class="evidence-id">[A1]</span></p><h4>局限与证据缺口</h4><ul><li>演示摘要未提供系统检索方法、纳入标准或定量证据。</li></ul><p><strong>证据强度：</strong>low；当前 Demo 仅提供摘要级综述证据。 <span class="evidence-id">[A1, A2]</span></p><p class="muted"><strong>解读证据范围：</strong>abstract</p></details>
       <div class="links"><a href="https://doi.org/10.0000/demo.hanta.2026">DOI</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/99900001">PMID</a></div>
       <div class="audit-note">翻译：不可用 · unknown</div>
     </article>
@@ -89,6 +92,7 @@ section{border-top:1px solid var(--ink);margin-top:26px;padding-top:7px} section
     
       <div class="meta">Chile · human_case · 确诊 2</div>
       <p class="event-note">该事件由 2 篇文章聚合；事件版本 v1。</p>
+      <details class="analysis-details"><summary>查看正文理解、官方确认与不确定性</summary><h4>官方行动</h4><ul><li>开展流行病学调查 <span class="evidence-id">[N1]</span></li></ul><h4>实验室发现</h4><ul><li>2 例病例经实验室确认 <span class="evidence-id">[N1]</span></li></ul><h4>本次变化</h4><ul><li>本次通报新增 2 例实验室确认病例及调查行动。 <span class="evidence-id">[N1]</span></li></ul><p class="muted"><strong>正文覆盖：</strong>partial；Demo 只提供一条官方通报证据句。</p></details>
       <div class="links"><a href="https://example.org/notices/hantavirus-cases">Demonstration Health Authority</a></div>
       <div class="audit-note">翻译：不可用 · unknown</div>
     </article>
@@ -108,6 +112,7 @@ section{border-top:1px solid var(--ink);margin-top:26px;padding-top:7px} section
     
       <div class="meta">China · host_surveillance · 病例数字未明确报告</div>
       <p class="event-note">该事件由 1 篇文章聚合；事件版本 v1。</p>
+      <details class="analysis-details"><summary>查看正文理解、官方确认与不确定性</summary><p class="muted">该事件尚无通过证据校验的正文级解读。</p></details>
       <div class="links"><a href="https://lab.example.org/zh/rodent-surveillance">Demonstration Public Health Laboratory</a></div>
       <div class="audit-note">翻译：不可用 · unknown</div>
     </article>
@@ -126,6 +131,7 @@ section{border-top:1px solid var(--ink);margin-top:26px;padding-top:7px} section
       <button type="button" class="language-toggle" data-card-id="work-work-73f1eaf696703fc538cfea5a" aria-expanded="false">显示英文</button>
     
       <div class="meta">Demonstration Journal of Viral Surveillance · 2026-07-14 · Demo Zhang, Example Li</div>
+      <details class="analysis-details"><summary>查看研究设计、关键发现与证据审计</summary><p><strong>研究问题：</strong>正汉坦病毒刺突蛋白如何参与感染，并能否作为抗病毒免疫干预靶点？ <span class="evidence-id">[A1]</span></p><p><strong>研究设计：</strong>对分子机制和潜在干预靶点进行综述性整合。 <span class="evidence-id">[A1]</span></p><p><strong>研究类型：</strong>narrative review</p><h4>关键发现</h4><ul><li>G<sub>N</sub>/G<sub>C</sub> 刺突蛋白参与细胞进入，并被讨论为潜在抗病毒免疫干预靶点。 <span class="evidence-id">[A1]</span></li></ul><p><strong>意义：</strong>为理解病毒进入和候选免疫干预靶点提供综述性线索。 <span class="evidence-id">[A1]</span></p><h4>局限与证据缺口</h4><ul><li>演示摘要未提供系统检索方法、纳入标准或定量证据。</li></ul><p><strong>证据强度：</strong>low；当前 Demo 仅提供摘要级综述证据。 <span class="evidence-id">[A1, A2]</span></p><p class="muted"><strong>解读证据范围：</strong>abstract</p></details>
       <div class="links"><a href="https://doi.org/10.0000/demo.hanta.2026">DOI</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/99900001">PMID</a></div>
       <div class="audit-note">翻译：不可用 · unknown</div>
     </article>
@@ -144,6 +150,7 @@ section{border-top:1px solid var(--ink);margin-top:26px;padding-top:7px} section
       <button type="button" class="language-toggle" data-card-id="work-work-13027ca10282877605faf40a" aria-expanded="false">显示英文</button>
     
       <div class="meta">Demo Epidemiology Reports · 2026-07-14 · Example Wang</div>
+      <details class="analysis-details"><summary>查看研究设计、关键发现与证据审计</summary><p class="muted">该文献尚无通过证据校验的深度解读。</p></details>
       <div class="links"><a href="https://doi.org/10.0000/demo.hfrs.2026">DOI</a></div>
       <div class="audit-note">翻译：不可用 · unknown</div>
     </article>

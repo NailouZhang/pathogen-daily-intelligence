@@ -24,6 +24,10 @@ def main() -> int:
         ".github/workflows/refresh-pathogen-profile.yml",
         "profiles/hantavirus/manifest.yaml",
         "schemas/daily_issue.schema.json",
+        "docs/全流程与LLM审计逻辑.md",
+        "prompt_review/PROMPT_INDEX.md",
+        "prompt_review/PRODUCTION_PROMPTS_COMBINED.md",
+        "pages/7_LLM提示词与审计.py",
     ]
     missing = [x for x in required if not (ROOT / x).exists()]
     if missing:
@@ -35,6 +39,10 @@ def main() -> int:
     errors = list(Draft202012Validator(schema).iter_errors(profile))
     if errors:
         raise SystemExit("Profile schema errors: " + "; ".join(e.message for e in errors[:10]))
+    for prompt in (ROOT / "prompts").glob("*.txt"):
+        review = ROOT / "prompt_review" / "production_prompts" / prompt.name
+        if not review.exists() or review.read_text(encoding="utf-8") != prompt.read_text(encoding="utf-8"):
+            raise SystemExit(f"Prompt review copy is missing or stale: {prompt.name}")
     print("Project validation passed.")
     return 0
 

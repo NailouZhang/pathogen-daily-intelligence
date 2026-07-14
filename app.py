@@ -12,7 +12,7 @@ work_map = {work.get("work_id"): work for work in works}
 event_map = {event.get("event_id"): event for event in events}
 
 st.title("汉坦病毒每日情报")
-st.caption("Hantavirus Daily Intelligence · 中文默认 · 每卡片可切换英文")
+st.caption("Hantavirus Daily Intelligence · 正文理解 · 多模型顺序兜底 · 证据审计")
 
 if not issue:
     st.warning("尚未读取到日报。请先运行 GitHub Actions 的 daily-intelligence workflow，或使用包内 Demo 数据。")
@@ -25,11 +25,12 @@ st.markdown(
 )
 
 stats = issue.get("statistics", {})
-cols = st.columns(4)
+cols = st.columns(5)
 cols[0].metric("入选文献", stats.get("scholarly_selected", 0))
 cols[1].metric("公共卫生事件", stats.get("public_health_events", 0))
 cols[2].metric("已译文献", stats.get("translated_works", 0))
-cols[3].metric("已译事件", stats.get("translated_events", 0))
+cols[3].metric("已译新闻", stats.get("translated_articles", 0))
+cols[4].metric("回退成功", stats.get("translation_fallback_successes", 0))
 
 lead = issue.get("lead_story")
 if lead:

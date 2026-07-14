@@ -21,7 +21,11 @@ def build_daily_issue(
     dedup_counts: dict[str, Any],
     llm_audit: list[dict[str, Any]],
     daily_synthesis: dict[str, Any] | None = None,
+    content_audit: dict[str, Any] | None = None,
+    articles: list[dict[str, Any]] | None = None,
 ) -> dict[str, Any]:
+    content_audit = content_audit or {}
+    articles = articles or []
     headline_works = [w for w in works if _decision(w, "work") == "headline"]
     brief_works = [w for w in works if _decision(w, "work") == "brief"]
     headline_events = [e for e in events if _decision(e, "event") == "headline"]
@@ -100,7 +104,18 @@ def build_daily_issue(
 
     supporting_ids = {w["work_id"] for w in works} | {e["event_id"] for e in events}
     synthesis = daily_synthesis or {}
-    synthesis_support = [x for x in synthesis.get("supporting_item_ids", []) if x in supporting_ids]
+    overview_value = synthesis.get("daily_overview")
+    if isinstance(overview_value, dict):
+        overview_text = overview_value.get("text")
+        overview_support = overview_value.get("supporting_item_ids") or []
+    else:
+        overview_text = overview_value
+        overview_support = []
+    synthesis_support = [
+        x
+        for x in [*(synthesis.get("supporting_item_ids", []) or []), *overview_support]
+        if x in supporting_ids
+    ]
 
     issue_id = f"{profile['profile_id']}:{window.issue_date}:r1"
     statistics = {
@@ -118,10 +133,27 @@ def build_daily_issue(
         "topics": dict(topics),
         "source_failures": sum(h.get("status") in {"failed", "partial"} for h in source_health),
         "llm_fallbacks": sum(bool(a.get("fallback_used")) for a in llm_audit),
+        "llm_validated_runs": sum(a.get("validation_status") == "passed" for a in llm_audit),
+        "llm_failed_runs": sum(a.get("validation_status") == "failed" for a in llm_audit),
         "translated_works": sum(bool(w.get("title", {}).get("translated_zh")) for w in works),
+        "translated_articles": sum(bool(a.get("title", {}).get("translated_zh")) for a in articles),
         "translated_events": sum(bool(e.get("summary_zh")) for e in events),
+        "translation_fallback_successes": sum(
+            bool((w.get("translation_audit") or {}).get("fallback_used")) and bool(w.get("title", {}).get("translated_zh"))
+            for w in works
+        ) + sum(
+            bool((a.get("translation_audit") or {}).get("fallback_used")) and bool(a.get("title", {}).get("translated_zh"))
+            for a in articles
+        ),
         "translation_unavailable": sum(not bool(w.get("title", {}).get("translated_zh")) for w in works)
-        + sum(not bool(e.get("summary_zh")) for e in events),
+        + sum(not bool(a.get("title", {}).get("translated_zh")) for a in articles),
+        "news_content_fetch_attempted": (content_audit.get("news") or {}).get("attempted", 0),
+        "news_content_fetch_success": (content_audit.get("news") or {}).get("success", 0),
+        "news_content_fetch_failed": (content_audit.get("news") or {}).get("failed", 0),
+        "open_fulltext_fetch_attempted": (content_audit.get("scholarly") or {}).get("attempted", 0),
+        "open_fulltext_fetch_success": (content_audit.get("scholarly") or {}).get("success", 0),
+        "validated_work_analyses": sum(bool(w.get("ai_analysis")) for w in works),
+        "validated_article_analyses": sum(bool(a.get("ai_analysis")) for a in articles),
     }
 
     sections = [
@@ -153,6 +185,18 @@ def build_daily_issue(
         data_quality_notes.append("本期存在接口失败或部分完成，来源覆盖并不完整。")
     if any(a.get("provider") == "deterministic" for a in llm_audit):
         data_quality_notes.append("部分或全部 AI 任务已降级为无模型模式。")
+    if statistics["news_content_fetch_failed"]:
+        data_quality_notes.append(
+            f"{statistics['news_content_fetch_failed']} 篇新闻未能抓取到可分析正文，相关条目仅使用 RSS、元描述或已有摘要。"
+        )
+    if statistics["open_fulltext_fetch_success"]:
+        data_quality_notes.append(
+            f"{statistics['open_fulltext_fetch_success']} 篇开放获取文献补充了 Europe PMC 全文中的方法、结果、讨论或结论证据。"
+        )
+    if statistics["translation_fallback_successes"]:
+        data_quality_notes.append(
+            f"{statistics['translation_fallback_successes']} 条翻译由备用模型在首选模型未通过校验后完成。"
+        )
     missing_zh = [w for w in works if not w.get("title", {}).get("translated_zh")]
     missing_zh += [e for e in events if not e.get("summary_zh")]
     if missing_zh:
@@ -160,7 +204,7 @@ def build_daily_issue(
 
     generated_at = utc_now_iso()
     issue = {
-        "schema_version": "1.1",
+        "schema_version": "1.3",
         "issue_id": issue_id,
         "issue_revision": 1,
         "issue_date": window.issue_date,
@@ -178,23 +222,40 @@ def build_daily_issue(
         "sections": sections,
         "daily_observations": [
             {
-                "text": synthesis.get("daily_overview"),
+                "text": overview_text,
                 "supporting_item_ids": synthesis_support,
             }
         ]
-        if synthesis.get("daily_overview")
+        if overview_text
         else [],
         "source_health": source_health,
         "data_quality_notes": data_quality_notes,
         "watchlist": synthesis.get("watchlist", []) if synthesis else [],
         "generation_audit": {
-            "schema_version": "1.1",
+            "schema_version": "1.3",
             "profile_version": profile.get("profile_version"),
-            "rule_version": "1.1",
-            "prompt_version": "1.2",
+            "rule_version": "1.3",
+            "prompt_version": "1.3",
             "llm_runs": llm_audit,
             "dedup_counts": dedup_counts,
             "partial_failures": [h for h in source_health if h.get("status") in {"failed", "partial"}],
+            "content_enrichment": {
+                "news": {k: v for k, v in (content_audit.get("news") or {}).items() if k != "audits"},
+                "scholarly": {k: v for k, v in (content_audit.get("scholarly") or {}).items() if k != "audits"},
+            },
+            "pipeline_stages": [
+                "profile_and_query_plan",
+                "multi_source_collection",
+                "entity_deduplication",
+                "bounded_content_enrichment",
+                "rule_entity_annotation",
+                "event_clustering",
+                "editorial_filtering",
+                "sequential_multimodel_translation_and_analysis",
+                "evidence_validation",
+                "daily_synthesis",
+                "render_and_publish",
+            ],
             "content_hash": stable_hash(issue_id + generated_at, 32),
         },
         "outputs": {},

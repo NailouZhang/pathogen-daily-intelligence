@@ -49,14 +49,15 @@ def extract_entities(text: str, lexicon: list[dict[str,Any]]) -> dict[str,Any]:
 
 
 def annotate_work(work: dict[str,Any],lexicon:list[dict[str,Any]])->dict[str,Any]:
-    text=" ".join([work.get("title",{}).get("original") or "",work.get("abstract",{}).get("original") or ""])
+    full_text=" ".join(section.get("text") or "" for section in work.get("full_text",{}).get("sections",[]))
+    text=" ".join([work.get("title",{}).get("original") or "",work.get("abstract",{}).get("original") or "",full_text])
     ent=extract_entities(text,lexicon)
     work["entities"].update({"pathogens":ent["pathogens"],"hosts":ent["hosts"],"countries":ent["countries"]})
     return work
 
 
 def annotate_article(article:dict[str,Any],lexicon:list[dict[str,Any]])->dict[str,Any]:
-    text=" ".join([article.get("title",{}).get("original") or "",article.get("content",{}).get("excerpt") or ""])
+    text=" ".join([article.get("title",{}).get("original") or "",article.get("content",{}).get("analysis_text") or article.get("content",{}).get("excerpt") or ""])
     ent=extract_entities(text,lexicon)
     article["entities"].update({"pathogens":ent["pathogens"],"hosts":ent["hosts"],"event_type":ent["event_type"],"country":ent["countries"][0] if ent["countries"] else None,"confirmed_cases":ent["case_counts"]["confirmed"],"probable_cases":ent["case_counts"]["probable"],"suspected_cases":ent["case_counts"]["suspected"],"deaths":ent["case_counts"]["deaths"]})
     return article

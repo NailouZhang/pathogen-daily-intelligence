@@ -19,3 +19,11 @@ def test_daily_workflow_uses_tmp_data_branch_and_staging_first():
 def test_three_operational_workflows_exist():
     for name in ["bootstrap-pathogen.yml", "daily-intelligence.yml", "refresh-pathogen-profile.yml"]:
         assert (ROOT / ".github/workflows" / name).is_file()
+
+
+def test_actions_use_node24_compatible_major_versions():
+    for path in (ROOT / ".github/workflows").glob("*.yml"):
+        text = path.read_text(encoding="utf-8")
+        assert "actions/checkout@v4" not in text
+        assert "actions/setup-python@v5" not in text
+        assert "actions/upload-artifact@v4" not in text

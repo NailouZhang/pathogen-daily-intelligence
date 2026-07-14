@@ -1,4 +1,4 @@
-# v1.2 离线 Demo
+# v1.3 离线 Demo
 
 该目录由 `scripts/run_daily.py --demo --disable-llm` 生成，用于在尚未连接 `intelligence-data` 分支时启动 Streamlit。
 

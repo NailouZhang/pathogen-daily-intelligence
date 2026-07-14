@@ -36,6 +36,15 @@
     },
     "generation_audit": {
       "type": "object"
+    },
+    "data_quality_notes": {
+      "type": "array"
+    },
+    "source_health": {
+      "type": "array"
+    },
+    "outputs": {
+      "type": "object"
     }
   },
   "additionalProperties": true

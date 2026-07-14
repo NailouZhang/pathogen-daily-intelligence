@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-ZIP_FILE="$HOME/下载/pathogen_daily_intelligence_v1_github_streamlit_bilingual_mature.zip"
+ZIP_FILE="$HOME/下载/pathogen_daily_intelligence_v1_3_multimodel_deep_content_audit.zip"
 NEW_DIR="$HOME/下载/pathogen-daily-intelligence"
 GITHUB_OWNER="请替换为你的GitHub用户名"
 REPO_NAME="pathogen-daily-intelligence"
-COMMIT_MSG="v1.2：上线中文默认双语病原每日情报 GitHub Pages + Streamlit 版本"
+COMMIT_MSG="v1.3：上线新闻正文理解与多模型审计病原每日情报 GitHub Pages + Streamlit 版本"
 
 TMP_DIR="$(mktemp -d)"
 trap 'rm -rf "$TMP_DIR"' EXIT
@@ -33,7 +33,7 @@ git commit -m "$COMMIT_MSG"
 
 if command -v gh >/dev/null 2>&1; then
   gh auth status
-  gh repo create "$GITHUB_OWNER/$REPO_NAME" --private --source=. --remote=origin --push
+  gh repo create "$GITHUB_OWNER/$REPO_NAME" --public --source=. --remote=origin --push
 else
   echo "未检测到 gh。请先在 GitHub 网页创建空仓库：$GITHUB_OWNER/$REPO_NAME"
   echo "然后运行："

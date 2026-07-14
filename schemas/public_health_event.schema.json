@@ -67,6 +67,18 @@
         "object",
         "null"
       ]
+    },
+    "ai_analysis": {
+      "type": [
+        "object",
+        "null"
+      ]
+    },
+    "analysis_source_article_id": {
+      "type": [
+        "string",
+        "null"
+      ]
     }
   },
   "additionalProperties": true

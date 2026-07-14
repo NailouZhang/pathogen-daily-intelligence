@@ -13,7 +13,7 @@ from .markup import (
 )
 from .utils import content_hash, normalize_space, utc_now_iso
 
-TRANSLATION_PROMPT_VERSION = "bilingual-translation-v1.2"
+TRANSLATION_PROMPT_VERSION = "bilingual-translation-v1.3"
 
 
 def _source_fields(item: dict[str, Any], kind: str) -> tuple[str, str | None, str | None]:
@@ -25,7 +25,8 @@ def _source_fields(item: dict[str, Any], kind: str) -> tuple[str, str | None, st
         )
     return (
         str(item.get("title", {}).get("original") or ""),
-        item.get("content", {}).get("excerpt"),
+        item.get("content", {}).get("translation_text")
+        or item.get("content", {}).get("excerpt"),
         item.get("title", {}).get("language"),
     )
 
@@ -67,8 +68,8 @@ def deterministic_copy_for_chinese(item: dict[str, Any], kind: str) -> bool:
     if not is_chinese:
         return False
     summary = normalize_space(strip_scientific_markup(body or ""))
-    if len(summary) > 360:
-        summary = summary[:360].rstrip() + "……"
+    if len(summary) > 720:
+        summary = summary[:720].rstrip() + "……"
     if kind == "work":
         item.setdefault("title", {})["translated_zh"] = title
         item.setdefault("abstract", {})["translated_zh"] = body
@@ -99,13 +100,27 @@ def extract_translation_fields(output: dict[str, Any], kind: str) -> dict[str, A
         translated_text = output.get("translated_abstract_zh") or output.get("translated_text_zh")
     else:
         translated_text = output.get("translated_excerpt_zh") or output.get("translated_text_zh")
+    takeaway = output.get("one_sentence_takeaway")
+    if isinstance(takeaway, dict):
+        takeaway = takeaway.get("text")
     return {
         "translated_title_zh": title,
         "translated_text_zh": translated_text,
-        "display_summary_zh": output.get("display_summary_zh") or output.get("one_sentence_takeaway"),
+        "display_summary_zh": output.get("display_summary_zh") or takeaway,
         "display_summary_en": output.get("display_summary_en"),
         "uncertainties": output.get("uncertainties") or [],
     }
+
+
+def restore_scientific_object(value: Any, mapping: dict[str, str]) -> Any:
+    """Recursively restore protected scientific markup in validated model output."""
+    if isinstance(value, dict):
+        return {key: restore_scientific_object(child, mapping) for key, child in value.items()}
+    if isinstance(value, list):
+        return [restore_scientific_object(child, mapping) for child in value]
+    if isinstance(value, str):
+        return restore_scientific_markup(value, mapping)
+    return value
 
 
 def restore_translation_fields(fields: dict[str, Any], mapping: dict[str, str]) -> dict[str, Any]:
@@ -167,7 +182,7 @@ def apply_translation(
     summary_en = fields.get("display_summary_en")
     if not summary_en and body:
         plain = normalize_space(strip_scientific_markup(body))
-        summary_en = plain[:360].rstrip() + ("…" if len(plain) > 360 else "")
+        summary_en = plain[:720].rstrip() + ("…" if len(plain) > 720 else "")
 
     item.setdefault("title", {})["translated_zh"] = translated_title
     if kind == "work":
@@ -196,7 +211,7 @@ def ensure_bilingual_placeholders(item: dict[str, Any], kind: str) -> None:
     plain = normalize_space(strip_scientific_markup(body or ""))
     item["display_summary"].setdefault(
         "en",
-        plain[:360].rstrip() + ("…" if len(plain) > 360 else "") if plain else None,
+        plain[:720].rstrip() + ("…" if len(plain) > 720 else "") if plain else None,
     )
     item.setdefault("translation_audit", {
         "provider": "deterministic",
@@ -226,3 +241,5 @@ def apply_event_bilingual(events: list[dict[str, Any]], articles: Iterable[dict[
             "en": display.get("en") or (primary or {}).get("content", {}).get("excerpt"),
         }
         event["translation_audit"] = (primary or {}).get("translation_audit")
+        event["ai_analysis"] = (primary or {}).get("ai_analysis")
+        event["analysis_source_article_id"] = primary_id

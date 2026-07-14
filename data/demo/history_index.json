@@ -21,9 +21,20 @@
       },
       "source_failures": 0,
       "llm_fallbacks": 0,
+      "llm_validated_runs": 0,
+      "llm_failed_runs": 0,
       "translated_works": 2,
+      "translated_articles": 3,
       "translated_events": 2,
-      "translation_unavailable": 0
+      "translation_fallback_successes": 0,
+      "translation_unavailable": 0,
+      "news_content_fetch_attempted": 0,
+      "news_content_fetch_success": 0,
+      "news_content_fetch_failed": 0,
+      "open_fulltext_fetch_attempted": 0,
+      "open_fulltext_fetch_success": 0,
+      "validated_work_analyses": 1,
+      "validated_article_analyses": 1
     }
   }
 ]

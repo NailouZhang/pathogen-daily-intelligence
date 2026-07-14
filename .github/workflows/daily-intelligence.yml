@@ -39,12 +39,12 @@ jobs:
       issue_date: ${{ steps.issue.outputs.issue_date }}
     steps:
       - name: Checkout main branch for executable code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           ref: main
           fetch-depth: 0
 
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: "3.12"
           cache: pip
@@ -108,7 +108,7 @@ jobs:
           PY
 
       - name: Upload complete recovery artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: daily-intelligence-${{ steps.issue.outputs.issue_date }}-${{ github.run_number }}
           path: /tmp/pdi_out

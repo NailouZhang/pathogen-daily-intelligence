@@ -1,17 +1,17 @@
 {
-  "schema_version": "1.1",
+  "schema_version": "1.3",
   "issue_id": "hantavirus:2026-07-14:r1",
   "issue_revision": 1,
   "issue_date": "2026-07-14",
   "issue_number": null,
   "profile_id": "hantavirus",
-  "profile_version": "1.0.0-seed",
+  "profile_version": "1.3.0",
   "coverage_window": {
     "start": "2026-07-07",
     "end": "2026-07-13",
     "timezone": "Asia/Shanghai"
   },
-  "generated_at": "2026-07-14T11:33:36+00:00",
+  "generated_at": "2026-07-14T12:29:47+00:00",
   "statistics": {
     "scholarly_raw": 3,
     "scholarly_unique": 2,
@@ -30,16 +30,27 @@
     },
     "source_failures": 0,
     "llm_fallbacks": 0,
+    "llm_validated_runs": 0,
+    "llm_failed_runs": 0,
     "translated_works": 2,
+    "translated_articles": 3,
     "translated_events": 2,
-    "translation_unavailable": 0
+    "translation_fallback_successes": 0,
+    "translation_unavailable": 0,
+    "news_content_fetch_attempted": 0,
+    "news_content_fetch_success": 0,
+    "news_content_fetch_failed": 0,
+    "open_fulltext_fetch_attempted": 0,
+    "open_fulltext_fetch_success": 0,
+    "validated_work_analyses": 1,
+    "validated_article_analyses": 1
   },
   "lead_story": {
     "item_type": "public_health_event",
     "item_id": "event-69c8aee084c29f3476f0bacb",
     "title": "实验室确认智利 2 例汉坦病毒肺综合征病例",
     "title_original": "Laboratory confirms 2 hantavirus pulmonary syndrome cases in Chile",
-    "score": 1.0
+    "score": 1.05
   },
   "sections": [
     {
@@ -117,19 +128,20 @@
   ],
   "watchlist": [],
   "generation_audit": {
-    "schema_version": "1.1",
-    "profile_version": "1.0.0-seed",
-    "rule_version": "1.1",
-    "prompt_version": "1.2",
+    "schema_version": "1.3",
+    "profile_version": "1.3.0",
+    "rule_version": "1.3",
+    "prompt_version": "1.3",
     "llm_runs": [
       {
+        "task_name": "all",
         "provider": "deterministic",
         "model": null,
         "status": "disabled",
-        "error": "LLM disabled by command option; validated source or demo translations were retained.",
+        "error": "LLM disabled; validated source or demo translations were retained.",
         "retry_count": 0,
         "fallback_used": false,
-        "generated_at": "2026-07-14T11:33:36+00:00",
+        "generated_at": "2026-07-14T12:29:47+00:00",
         "validation_status": "not_applicable",
         "unsupported_claim_count": 0
       }
@@ -149,12 +161,42 @@
       }
     },
     "partial_failures": [],
-    "content_hash": "574bddd7008dea6483bc6660585a4087"
+    "content_enrichment": {
+      "news": {
+        "attempted": 0,
+        "success": 0,
+        "failed": 0,
+        "mode": "demo"
+      },
+      "scholarly": {
+        "attempted": 0,
+        "success": 0,
+        "failed": 0,
+        "mode": "demo"
+      }
+    },
+    "pipeline_stages": [
+      "profile_and_query_plan",
+      "multi_source_collection",
+      "entity_deduplication",
+      "bounded_content_enrichment",
+      "rule_entity_annotation",
+      "event_clustering",
+      "editorial_filtering",
+      "sequential_multimodel_translation_and_analysis",
+      "evidence_validation",
+      "daily_synthesis",
+      "render_and_publish"
+    ],
+    "content_hash": "efd7ee37e3987fcec3a35a08f8e14a5a"
   },
   "outputs": {
     "latest_json": "data/latest.json",
     "site_index": "site/index.html",
     "email_html": "email/latest.html",
-    "issue_archive": "data/archive/2026/07/14/issue.json"
+    "issue_archive": "data/archive/2026/07/14/issue.json",
+    "content_audit": "data/audit/content_enrichment.json",
+    "llm_audit": "data/audit/llm_runs.jsonl",
+    "object_audit": "data/audit/object_audit.jsonl"
   }
 }

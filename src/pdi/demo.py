@@ -7,6 +7,46 @@ from .utils import sentence_split, utc_now_iso
 
 def demo_source_results(issue_date: str) -> tuple[list[dict[str, Any]], list[dict[str, Any]], list[dict[str, Any]]]:
     retrieved = utc_now_iso()
+    paper_analysis = {
+        "one_sentence_takeaway": {
+            "text": "该综述讨论正汉坦病毒糖蛋白刺突参与细胞进入的作用及其作为免疫干预靶点的潜力。",
+            "evidence_ids": ["A1"],
+        },
+        "study": {
+            "research_question": {"text": "正汉坦病毒刺突蛋白如何参与感染，并能否作为抗病毒免疫干预靶点？", "evidence_ids": ["A1"]},
+            "study_type": "narrative review",
+            "design": {"text": "对分子机制和潜在干预靶点进行综述性整合。", "evidence_ids": ["A1"]},
+            "sample_or_dataset": {"text": None, "evidence_ids": []},
+            "methods": [],
+        },
+        "key_findings": [
+            {"finding": "G<sub>N</sub>/G<sub>C</sub> 刺突蛋白参与细胞进入，并被讨论为潜在抗病毒免疫干预靶点。", "evidence_ids": ["A1"], "quantitative": False, "interpretation_boundary": "演示性综述，不是新的实验研究。"}
+        ],
+        "quantitative_results": [],
+        "significance": {"statement": "为理解病毒进入和候选免疫干预靶点提供综述性线索。", "evidence_ids": ["A1"], "scope": "机制综述"},
+        "limitations": {"author_reported": [], "evidence_gaps": ["演示摘要未提供系统检索方法、纳入标准或定量证据。"]},
+        "evidence_strength": {"level": "low", "basis": "当前 Demo 仅提供摘要级综述证据。", "evidence_ids": ["A1", "A2"]},
+        "evidence_coverage": {"level": "abstract", "sections_used": ["abstract"], "note": "Demo 仅提供摘要证据。"},
+        "uncertainties": [],
+    }
+    official_analysis = {
+        "event_type": "human_case_report",
+        "official_status": "laboratory_confirmed",
+        "case_counts": {
+            "confirmed": {"value": "2", "evidence_ids": ["N1"]},
+            "probable": {"value": None, "evidence_ids": []},
+            "suspected": {"value": None, "evidence_ids": []},
+            "deaths": {"value": None, "evidence_ids": []},
+            "as_of": {"value": None, "evidence_ids": []},
+        },
+        "locations": [{"name": "Chile", "level": "country", "evidence_ids": ["N1"]}],
+        "official_actions": [{"official_action": "开展流行病学调查", "evidence_ids": ["N1"]}],
+        "laboratory_findings": [{"laboratory_finding": "2 例病例经实验室确认", "evidence_ids": ["N1"]}],
+        "what_changed": [{"what_changed": "本次通报新增 2 例实验室确认病例及调查行动。", "evidence_ids": ["N1"]}],
+        "risk_assessment": {"statement": None, "attributed_to": None, "evidence_ids": []},
+        "source_content_quality": {"level": "partial", "note": "Demo 只提供一条官方通报证据句。"},
+        "uncertainties": [],
+    }
     paper_title = "The Orthohantavirus G<sub>N</sub>/G<sub>C</sub> Spikes: Molecular Determinants of Infection and Targets for Antiviral Immune Interventions."
     paper_title_zh = "正汉坦病毒 G<sub>N</sub>/G<sub>C</sub> 刺突蛋白：感染的分子决定因素及抗病毒免疫干预靶点"
     paper_abstract = (
@@ -31,6 +71,7 @@ def demo_source_results(issue_date: str) -> tuple[list[dict[str, Any]], list[dic
             "translated_abstract_zh": paper_abstract_zh,
             "display_summary_zh": "综述正汉坦病毒 G<sub>N</sub>/G<sub>C</sub> 刺突蛋白参与细胞进入的分子机制及其作为抗病毒免疫干预靶点的潜力。",
             "display_summary_en": "A review of Orthohantavirus G<sub>N</sub>/G<sub>C</sub> spike biology and their potential as antiviral immune-intervention targets.",
+            "demo_ai_analysis": paper_analysis,
             "abstract_sentences": sentence_split(paper_abstract, "A"),
             "authors": ["Demo Zhang", "Example Li"],
             "journal": "Demonstration Journal of Viral Surveillance",
@@ -57,6 +98,7 @@ def demo_source_results(issue_date: str) -> tuple[list[dict[str, Any]], list[dic
             "translated_abstract_zh": paper_abstract_zh,
             "display_summary_zh": "综述正汉坦病毒 G<sub>N</sub>/G<sub>C</sub> 刺突蛋白参与细胞进入的分子机制及其作为抗病毒免疫干预靶点的潜力。",
             "display_summary_en": "A review of Orthohantavirus G<sub>N</sub>/G<sub>C</sub> spike biology and their potential as antiviral immune-intervention targets.",
+            "demo_ai_analysis": paper_analysis,
             "abstract_sentences": sentence_split(paper_abstract, "A"),
             "authors": ["Demo Zhang", "Example Li"],
             "journal": "Demonstration Journal of Viral Surveillance",
@@ -105,6 +147,7 @@ def demo_source_results(issue_date: str) -> tuple[list[dict[str, Any]], list[dic
             "translated_excerpt_zh": "该机构报告智利出现 2 例经实验室确认的汉坦病毒肺综合征病例，并宣布开展流行病学调查。",
             "display_summary_zh": "智利卫生机构报告 2 例实验室确认病例，并启动流行病学调查。",
             "display_summary_en": "The Chilean authority reported 2 laboratory-confirmed cases and initiated an epidemiological investigation.",
+            "demo_ai_analysis": official_analysis,
             "content_sentences": sentence_split(
                 "The authority reported 2 laboratory-confirmed cases of hantavirus pulmonary syndrome in Chile and announced epidemiological investigation.",
                 "N",
