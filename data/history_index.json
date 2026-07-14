@@ -1,0 +1,26 @@
+[
+  {
+    "issue_date": "2026-07-14",
+    "issue_id": "hantavirus:2026-07-14:r1",
+    "path": "archive/2026/07/14/issue.json",
+    "statistics": {
+      "scholarly_raw": 3,
+      "scholarly_unique": 2,
+      "scholarly_selected": 2,
+      "news_raw": 3,
+      "news_unique": 3,
+      "public_health_events": 2,
+      "new_or_updated_events": 2,
+      "official_events": 2,
+      "countries": 2,
+      "pathogens": 5,
+      "hosts": 2,
+      "topics": {
+        "genomics": 1,
+        "clinical": 1
+      },
+      "source_failures": 0,
+      "llm_fallbacks": 0
+    }
+  }
+]

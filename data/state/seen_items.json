@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.0",
+  "updated_at": "2026-07-14T09:10:44+00:00",
+  "work_ids": [
+    "work-13027ca10282877605faf40a",
+    "work-6529a04b2887b1cca4d806da"
+  ],
+  "article_ids": [
+    "article-5cc480ab21f0113ebfc3aa98",
+    "article-8ca04c332ba6a33d05ecbf8c",
+    "article-fb6c38eaf2718ed9d750bb28"
+  ],
+  "events": [
+    {
+      "event_id": "event-69c8aee084c29f3476f0bacb",
+      "event_version": 1,
+      "title": "Laboratory confirms 2 hantavirus pulmonary syndrome cases in Chile",
+      "pathogens": [
+        "hantavirus",
+        "hantavirus pulmonary syndrome"
+      ],
+      "country": "Chile",
+      "event_type": "human_case",
+      "published_at": "2026-07-14",
+      "case_counts": {
+        "confirmed": 2,
+        "probable": null,
+        "suspected": null,
+        "deaths": null
+      },
+      "change_history": []
+    },
+    {
+      "event_id": "event-b87be16dc51d2fc35341cfca",
+      "event_version": 1,
+      "title": "中国开展汉坦病毒啮齿动物宿主监测",
+      "pathogens": [
+        "汉坦病毒"
+      ],
+      "country": "China",
+      "event_type": "host_surveillance",
+      "published_at": "2026-07-14",
+      "case_counts": {
+        "confirmed": null,
+        "probable": null,
+        "suspected": null,
+        "deaths": null
+      },
+      "change_history": []
+    }
+  ]
+}
