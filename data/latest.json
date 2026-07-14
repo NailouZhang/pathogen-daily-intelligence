@@ -11,15 +11,15 @@
     "end": "2026-07-13",
     "timezone": "Asia/Shanghai"
   },
-  "generated_at": "2026-07-14T09:10:44+00:00",
+  "generated_at": "2026-07-14T10:08:52+00:00",
   "statistics": {
     "scholarly_raw": 3,
     "scholarly_unique": 2,
-    "scholarly_selected": 2,
+    "scholarly_selected": 1,
     "news_raw": 3,
     "news_unique": 3,
     "public_health_events": 2,
-    "new_or_updated_events": 2,
+    "new_or_updated_events": 0,
     "official_events": 2,
     "countries": 2,
     "pathogens": 5,
@@ -32,35 +32,24 @@
     "llm_fallbacks": 0
   },
   "lead_story": {
-    "item_type": "public_health_event",
-    "item_id": "event-69c8aee084c29f3476f0bacb",
-    "title": "Laboratory confirms 2 hantavirus pulmonary syndrome cases in Chile",
-    "score": 1.0
+    "item_type": "scholarly_work",
+    "item_id": "work-6529a04b2887b1cca4d806da",
+    "title": "Genomic surveillance of orthohantaviruses across rodent reservoirs",
+    "score": 0.85
   },
   "sections": [
     {
       "section_id": "lead",
       "title": "今日要闻",
       "item_ids": [
-        "event-69c8aee084c29f3476f0bacb",
-        "event-b87be16dc51d2fc35341cfca",
         "work-6529a04b2887b1cca4d806da"
-      ]
-    },
-    {
-      "section_id": "events",
-      "title": "疫情与公共卫生",
-      "item_ids": [
-        "event-69c8aee084c29f3476f0bacb",
-        "event-b87be16dc51d2fc35341cfca"
       ]
     },
     {
       "section_id": "research",
       "title": "学术文献",
       "item_ids": [
-        "work-6529a04b2887b1cca4d806da",
-        "work-13027ca10282877605faf40a"
+        "work-6529a04b2887b1cca4d806da"
       ]
     }
   ],
@@ -125,7 +114,7 @@
         "error": "LLM disabled by command option.",
         "retry_count": 0,
         "fallback_used": false,
-        "generated_at": "2026-07-14T09:10:44+00:00",
+        "generated_at": "2026-07-14T10:08:52+00:00",
         "validation_status": "not_applicable",
         "unsupported_claim_count": 0
       }
@@ -145,7 +134,7 @@
       }
     },
     "partial_failures": [],
-    "content_hash": "52d221874dea4dde61ee54ec3d518946"
+    "content_hash": "669888678f56047b85c7de6214bf3e2b"
   },
   "outputs": {
     "latest_json": "data/latest.json",

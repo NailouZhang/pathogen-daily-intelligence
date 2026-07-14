@@ -6,11 +6,11 @@
     "statistics": {
       "scholarly_raw": 3,
       "scholarly_unique": 2,
-      "scholarly_selected": 2,
+      "scholarly_selected": 1,
       "news_raw": 3,
       "news_unique": 3,
       "public_health_events": 2,
-      "new_or_updated_events": 2,
+      "new_or_updated_events": 0,
       "official_events": 2,
       "countries": 2,
       "pathogens": 5,
