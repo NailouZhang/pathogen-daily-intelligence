@@ -1,42 +1,45 @@
 #!/usr/bin/env bash
+
+ZIP_FILE="$HOME/下载/pathogen_daily_intelligence_v1_1_github_actions_streamlit_private_repo.zip"
+NEW_DIR="$HOME/下载/pathogen-daily-intelligence"
+REMOTE_URL="git@github.com:NailouZhang/pathogen-daily-intelligence.git"
+COMMIT_MSG="v1.1：初始化 GitHub Actions + Streamlit 私有仓库病原每日情报系统"
+
 set -euo pipefail
 
-ZIP_FILE="$HOME/下载/pathogen_daily_intelligence_v1_github_streamlit_bilingual_mature.zip"
-NEW_DIR="$HOME/下载/pathogen-daily-intelligence"
-GITHUB_OWNER="请替换为你的GitHub用户名"
-REPO_NAME="pathogen-daily-intelligence"
-COMMIT_MSG="v1.0：上线中英双语病原每日情报 GitHub Actions + Streamlit 成熟首版"
+if [ ! -f "$ZIP_FILE" ]; then
+    echo "错误：未找到工程包：$ZIP_FILE"
+    exit 1
+fi
+
+if [ -e "$NEW_DIR/.git" ]; then
+    echo "错误：$NEW_DIR 已经是 Git 仓库，请改用 github_sync_update_template.sh。"
+    exit 1
+fi
 
 TMP_DIR="$(mktemp -d)"
 trap 'rm -rf "$TMP_DIR"' EXIT
 unzip -q "$ZIP_FILE" -d "$TMP_DIR"
-SRC_DIR="$(find "$TMP_DIR" -type f -name app.py -printf '%h\n' | head -n 1)"
+SRC_DIR="$(find "$TMP_DIR" -type f -name "app.py" -printf '%h\n' | head -n 1)"
 
 if [ -z "$SRC_DIR" ] || [ ! -f "$SRC_DIR/app.py" ]; then
-  echo "错误：ZIP 中未找到 app.py"
-  exit 1
+    echo "错误：未在 ZIP 中找到 app.py。"
+    exit 1
 fi
 
 mkdir -p "$NEW_DIR"
 rsync -av --delete \
-  --exclude '.git/' \
-  --exclude '.streamlit/secrets.toml' \
-  --exclude 'runtime/*' \
+  --exclude ".git/" \
+  --exclude ".streamlit/secrets.toml" \
+  --exclude "runtime/*" \
+  --exclude ".env" \
   "$SRC_DIR"/ "$NEW_DIR"/
 
 cd "$NEW_DIR"
 git init -b main
-git config user.name "${GIT_AUTHOR_NAME:-Buildingzhang}"
-git config user.email "${GIT_AUTHOR_EMAIL:-buildingzhang@outlook.com}"
+git config user.name >/dev/null 2>&1 || git config user.name "NailouZhang"
+git config user.email >/dev/null 2>&1 || git config user.email "buildingzhang@outlook.com"
 git add -A
 git commit -m "$COMMIT_MSG"
-
-if command -v gh >/dev/null 2>&1; then
-  gh auth status
-  gh repo create "$GITHUB_OWNER/$REPO_NAME" --private --source=. --remote=origin --push
-else
-  echo "未检测到 gh。请先在 GitHub 网页创建空仓库：$GITHUB_OWNER/$REPO_NAME"
-  echo "然后运行："
-  echo "git remote add origin https://github.com/$GITHUB_OWNER/$REPO_NAME.git"
-  echo "git push -u origin main"
-fi
+git remote add origin "$REMOTE_URL"
+git push -u origin main
