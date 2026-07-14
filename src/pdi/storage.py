@@ -30,8 +30,8 @@ def save_outputs(output_dir:Path,issue:dict[str,Any],works:list[dict[str,Any]],a
     (site/archive_rel).mkdir(parents=True,exist_ok=True);(site/archive_rel/"index.html").write_text(html_text,encoding="utf-8")
     (output_dir/"email").mkdir(parents=True,exist_ok=True);(output_dir/"email"/"latest.html").write_text(email_html,encoding="utf-8")
     items=[]
-    for w in works:items.append({"item_type":"scholarly_work","item_id":w["work_id"],"title":w.get("title",{}).get("original"),"decision":w.get("filter_result",{}).get("decision"),"source_count":w.get("quality",{}).get("source_count")})
-    for e in events:items.append({"item_type":"public_health_event","item_id":e["event_id"],"title":e.get("summary"),"decision":e.get("display_decision"),"source_count":len(e.get("source_articles",[]))})
+    for w in works:items.append({"item_type":"scholarly_work","item_id":w["work_id"],"title":w.get("title",{}).get("translated_zh") or "中文标题暂不可用","decision":w.get("filter_result",{}).get("decision"),"source_count":w.get("quality",{}).get("source_count")})
+    for e in events:items.append({"item_type":"public_health_event","item_id":e["event_id"],"title":e.get("summary_zh") or "中文标题暂不可用","decision":e.get("display_decision"),"source_count":len(e.get("source_articles",[]))})
     with (data/"latest_items.csv").open("w",encoding="utf-8-sig",newline="") as f:
         writer=csv.DictWriter(f,fieldnames=["item_type","item_id","title","decision","source_count"]);writer.writeheader();writer.writerows(items)
     manifest={"latest_json":"data/latest.json","site_index":"site/index.html","email_html":"email/latest.html","issue_archive":(Path("data")/archive_rel/"issue.json").as_posix()}

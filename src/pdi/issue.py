@@ -33,7 +33,8 @@ def build_daily_issue(
             {
                 "item_type": "public_health_event",
                 "item_id": event["event_id"],
-                "title": event.get("summary"),
+                "title": event.get("summary_zh") or "中文标题暂不可用",
+                "title_original": event.get("summary_original") or event.get("summary"),
                 "score": event.get("display_score", 0),
             }
         )
@@ -42,7 +43,8 @@ def build_daily_issue(
             {
                 "item_type": "scholarly_work",
                 "item_id": work["work_id"],
-                "title": work.get("title", {}).get("translated_zh") or work.get("title", {}).get("original"),
+                "title": work.get("title", {}).get("translated_zh") or "中文标题暂不可用",
+                "title_original": work.get("title", {}).get("original"),
                 "score": work.get("filter_result", {}).get("score", 0),
             }
         )
@@ -116,6 +118,10 @@ def build_daily_issue(
         "topics": dict(topics),
         "source_failures": sum(h.get("status") in {"failed", "partial"} for h in source_health),
         "llm_fallbacks": sum(bool(a.get("fallback_used")) for a in llm_audit),
+        "translated_works": sum(bool(w.get("title", {}).get("translated_zh")) for w in works),
+        "translated_events": sum(bool(e.get("summary_zh")) for e in events),
+        "translation_unavailable": sum(not bool(w.get("title", {}).get("translated_zh")) for w in works)
+        + sum(not bool(e.get("summary_zh")) for e in events),
     }
 
     sections = [
@@ -147,10 +153,14 @@ def build_daily_issue(
         data_quality_notes.append("本期存在接口失败或部分完成，来源覆盖并不完整。")
     if any(a.get("provider") == "deterministic" for a in llm_audit):
         data_quality_notes.append("部分或全部 AI 任务已降级为无模型模式。")
+    missing_zh = [w for w in works if not w.get("title", {}).get("translated_zh")]
+    missing_zh += [e for e in events if not e.get("summary_zh")]
+    if missing_zh:
+        data_quality_notes.append(f"{len(missing_zh)} 条内容尚无通过校验的中文翻译，页面将明确提示并保留英文原文按钮。")
 
     generated_at = utc_now_iso()
     issue = {
-        "schema_version": "1.0",
+        "schema_version": "1.1",
         "issue_id": issue_id,
         "issue_revision": 1,
         "issue_date": window.issue_date,
@@ -178,10 +188,10 @@ def build_daily_issue(
         "data_quality_notes": data_quality_notes,
         "watchlist": synthesis.get("watchlist", []) if synthesis else [],
         "generation_audit": {
-            "schema_version": "1.0",
+            "schema_version": "1.1",
             "profile_version": profile.get("profile_version"),
-            "rule_version": "1.0",
-            "prompt_version": "1.0",
+            "rule_version": "1.1",
+            "prompt_version": "1.2",
             "llm_runs": llm_audit,
             "dedup_counts": dedup_counts,
             "partial_failures": [h for h in source_health if h.get("status") in {"failed", "partial"}],

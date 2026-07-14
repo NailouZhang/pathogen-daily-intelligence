@@ -5,7 +5,7 @@ ZIP_FILE="$HOME/下载/pathogen_daily_intelligence_v1_github_streamlit_bilingual
 NEW_DIR="$HOME/下载/pathogen-daily-intelligence"
 GITHUB_OWNER="请替换为你的GitHub用户名"
 REPO_NAME="pathogen-daily-intelligence"
-COMMIT_MSG="v1.0：上线中英双语病原每日情报 GitHub Actions + Streamlit 成熟首版"
+COMMIT_MSG="v1.2：上线中文默认双语病原每日情报 GitHub Pages + Streamlit 版本"
 
 TMP_DIR="$(mktemp -d)"
 trap 'rm -rf "$TMP_DIR"' EXIT

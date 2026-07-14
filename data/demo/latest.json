@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.0",
+  "schema_version": "1.1",
   "issue_id": "hantavirus:2026-07-14:r1",
   "issue_revision": 1,
   "issue_date": "2026-07-14",
@@ -11,7 +11,7 @@
     "end": "2026-07-13",
     "timezone": "Asia/Shanghai"
   },
-  "generated_at": "2026-07-14T08:16:41+00:00",
+  "generated_at": "2026-07-14T11:33:36+00:00",
   "statistics": {
     "scholarly_raw": 3,
     "scholarly_unique": 2,
@@ -29,12 +29,16 @@
       "clinical": 1
     },
     "source_failures": 0,
-    "llm_fallbacks": 0
+    "llm_fallbacks": 0,
+    "translated_works": 2,
+    "translated_events": 2,
+    "translation_unavailable": 0
   },
   "lead_story": {
     "item_type": "public_health_event",
     "item_id": "event-69c8aee084c29f3476f0bacb",
-    "title": "Laboratory confirms 2 hantavirus pulmonary syndrome cases in Chile",
+    "title": "实验室确认智利 2 例汉坦病毒肺综合征病例",
+    "title_original": "Laboratory confirms 2 hantavirus pulmonary syndrome cases in Chile",
     "score": 1.0
   },
   "sections": [
@@ -44,7 +48,7 @@
       "item_ids": [
         "event-69c8aee084c29f3476f0bacb",
         "event-b87be16dc51d2fc35341cfca",
-        "work-6529a04b2887b1cca4d806da"
+        "work-73f1eaf696703fc538cfea5a"
       ]
     },
     {
@@ -59,7 +63,7 @@
       "section_id": "research",
       "title": "学术文献",
       "item_ids": [
-        "work-6529a04b2887b1cca4d806da",
+        "work-73f1eaf696703fc538cfea5a",
         "work-13027ca10282877605faf40a"
       ]
     }
@@ -113,19 +117,19 @@
   ],
   "watchlist": [],
   "generation_audit": {
-    "schema_version": "1.0",
+    "schema_version": "1.1",
     "profile_version": "1.0.0-seed",
-    "rule_version": "1.0",
-    "prompt_version": "1.0",
+    "rule_version": "1.1",
+    "prompt_version": "1.2",
     "llm_runs": [
       {
         "provider": "deterministic",
         "model": null,
         "status": "disabled",
-        "error": "LLM disabled by command option.",
+        "error": "LLM disabled by command option; validated source or demo translations were retained.",
         "retry_count": 0,
         "fallback_used": false,
-        "generated_at": "2026-07-14T08:16:41+00:00",
+        "generated_at": "2026-07-14T11:33:36+00:00",
         "validation_status": "not_applicable",
         "unsupported_claim_count": 0
       }
@@ -145,7 +149,7 @@
       }
     },
     "partial_failures": [],
-    "content_hash": "6166970b769f028d33cc40e911f09e02"
+    "content_hash": "574bddd7008dea6483bc6660585a4087"
   },
   "outputs": {
     "latest_json": "data/latest.json",

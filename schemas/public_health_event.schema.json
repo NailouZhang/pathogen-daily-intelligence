@@ -25,6 +25,48 @@
     },
     "source_articles": {
       "type": "array"
+    },
+    "summary": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "summary_original": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "summary_zh": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "display_summary": {
+      "type": "object",
+      "properties": {
+        "zh": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "en": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "translation_audit": {
+      "type": [
+        "object",
+        "null"
+      ]
     }
   },
   "additionalProperties": true

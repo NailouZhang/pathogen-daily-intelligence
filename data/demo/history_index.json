@@ -20,7 +20,10 @@
         "clinical": 1
       },
       "source_failures": 0,
-      "llm_fallbacks": 0
+      "llm_fallbacks": 0,
+      "translated_works": 2,
+      "translated_events": 2,
+      "translation_unavailable": 0
     }
   }
 ]

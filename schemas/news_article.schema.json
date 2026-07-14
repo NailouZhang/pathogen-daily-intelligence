@@ -26,6 +26,69 @@
       "type": "object",
       "required": [
         "original"
+      ],
+      "properties": {
+        "original": {
+          "type": "string"
+        },
+        "translated_zh": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "language": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": true
+    },
+    "content": {
+      "type": "object",
+      "properties": {
+        "excerpt": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "translated_excerpt_zh": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "sentences": {
+          "type": "array"
+        }
+      },
+      "additionalProperties": true
+    },
+    "display_summary": {
+      "type": "object",
+      "properties": {
+        "zh": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "en": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "translation_audit": {
+      "type": [
+        "object",
+        "null"
       ]
     }
   },

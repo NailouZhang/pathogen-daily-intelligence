@@ -24,7 +24,25 @@
       "type": "object",
       "required": [
         "original"
-      ]
+      ],
+      "properties": {
+        "original": {
+          "type": "string"
+        },
+        "translated_zh": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "language": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": true
     },
     "source_records": {
       "type": "array"
@@ -32,6 +50,57 @@
     "first_seen_at": {
       "type": [
         "string",
+        "null"
+      ]
+    },
+    "abstract": {
+      "type": "object",
+      "properties": {
+        "original": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "translated_zh": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "source": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "sentences": {
+          "type": "array"
+        }
+      },
+      "additionalProperties": true
+    },
+    "display_summary": {
+      "type": "object",
+      "properties": {
+        "zh": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "en": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "translation_audit": {
+      "type": [
+        "object",
         "null"
       ]
     }

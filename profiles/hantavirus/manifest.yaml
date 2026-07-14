@@ -82,6 +82,8 @@ llm_policy:
   primary_provider: gemini
   fallback_providers: [github_models, groq, deterministic]
   max_items_per_issue: 12
+  translation_batch_size: 6
+  translation_cache_max_entries: 2500
   max_retries_per_provider: 2
   daily_synthesis: true
 editorial_preferences:
@@ -93,6 +95,9 @@ editorial_preferences:
   max_headlines: 3
   max_events: 8
   max_papers: 10
+  default_content_language: zh-CN
+  per_card_english_toggle: true
+  scientific_markup_allowlist: [sub, sup, i, em, strong, b, br]
 taxonomy:
   ictv_release: null
   family: null
