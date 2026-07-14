@@ -1,5 +1,33 @@
 ﻿item_type,item_id,title,decision,source_count
-scholarly_work,work-73f1eaf696703fc538cfea5a,正汉坦病毒 G<sub>N</sub>/G<sub>C</sub> 刺突蛋白：感染的分子决定因素及抗病毒免疫干预靶点,headline,2
-scholarly_work,work-13027ca10282877605faf40a,肾综合征出血热的血清学监测,archive,1
-public_health_event,event-69c8aee084c29f3476f0bacb,实验室确认智利 2 例汉坦病毒肺综合征病例,headline,2
-public_health_event,event-b87be16dc51d2fc35341cfca,中国开展汉坦病毒啮齿动物宿主监测,headline,1
+scholarly_work,work-2cdb02d818069f2e82dfc182,中文标题暂不可用,headline,2
+scholarly_work,work-a1bc9934d74d4b2aeeca4e22,汉坦病毒感染在变化的世界中的流行病学、发病机制及一体化健康挑战,headline,1
+scholarly_work,work-fa60db2c179aaa2187c0f001,正汉坦病毒GN/GC刺突蛋白：感染的分子决定因素及抗病毒免疫干预的靶点,headline,1
+public_health_event,event-d189959c10d6d0c0eaa65c37,Keystone Health 分享汉坦病毒预防和安全指导 - 富兰克林县自由报,brief,1
+public_health_event,event-49dec3433c7148c7844bbe7d,你需要了解的汉坦病毒早期症状 - MSN,brief,1
+public_health_event,event-5a1755d2ac739c5e4c89baa1,汉坦病毒疫情引发对行业在健康紧急事件中作用的关注 - 全球健康思考,brief,1
+public_health_event,event-294366222a9250cfed72eac4,汉坦病毒爆发为下一次大流行提供教训 - Earth.com,brief,1
+public_health_event,event-5a0e5a8bfa33e5d4ec48f5e0,世卫组织宣布邮轮汉坦病毒疫情结束 - TRT世界,brief,1
+public_health_event,event-5cc4d04242a4d835b1881320,地图显示：受邮轮汉坦病毒疫情影响的国家，该疫情已导致三人死亡 - AOL.com,brief,1
+public_health_event,event-aac525b17e6e6ae255add6ae,美国公民在汉坦病毒邮轮上接受内布拉斯加医学监测 - 美国医院协会,brief,1
+public_health_event,event-95260297f153d5fa0c22aa69,邮轮汉坦病毒疫情正式结束 - 星报,brief,1
+public_health_event,event-0d81d28b6ca935105db5f011,RCL、NCLH、CCL：罕见汉坦病毒爆发引发旅行恐慌，邮轮股遭受打击 - Stocktwits,brief,1
+public_health_event,event-990467ecf8eb7120850b541e,特朗普称伊朗袭击为‘小事’，以及六旗公园汉坦病毒疫情最新情况,brief,1
+public_health_event,event-5b9560c986d176c8b4e6d91c,汉坦病毒爆发后，邮轮旅客应知事项 - MSN,brief,1
+public_health_event,event-26e7dd1b81fc7bc46018f409,来自汉坦病毒感染邮轮的五名乘客在奥马哈解除隔离 - 奥马哈世界先驱报,brief,1
+public_health_event,event-56c515a82d2d8b036a2528b3,Bend医生在受汉坦病毒影响的邮轮上帮助乘客，Bynum说 - 中俄勒冈日报,brief,1
+public_health_event,event-005a059e9e7c417faf566763,中文标题暂不可用,brief,1
+public_health_event,event-880ee123fa2d4aff68616956,极地探险船汉坦病毒爆发致3人死亡，英国游客重症监护 - AOL.com,brief,1
+public_health_event,event-f5626c18508f4245845ad9f5,世卫组织称与船只相关的汉坦病毒爆发已结束 - MSN,brief,2
+public_health_event,event-52a54fef6d889a3c2cde19a3,汉坦病毒感染的游轮停靠荷兰进行消毒 - 1019por.com,brief,1
+public_health_event,event-aedd09548fb78aca026fe5c9,Inflammatix与内布拉斯加大学医学中心合作，利用TriVerity支持汉坦病毒爆发的快速响应 - AOL.com,brief,1
+public_health_event,event-a4fa3c0f45c46dd71c510577,官方确认罗德斯大学无汉坦病毒爆发,brief,1
+public_health_event,event-2366198c49f5736420192412,西班牙将接纳船上发生汉坦病毒爆发的游轮,brief,1
+public_health_event,event-c46464efb63e9a4abadb16c1,涉汉坦病毒邮轮乘客陆续疏散归国 世卫组织：全球传播风险“低” - 财联社,brief,1
+public_health_event,event-5ae9bd68779ca49e62a8effd,汉坦病毒邮轮疫情“零号病人”身份曝光 - 凤凰网,brief,1
+public_health_event,event-e78493ffc14aeae528f023d8,"病死率31.7%!阿根廷今年新增42例汉坦病毒感染病例,已向多国提供检测试剂以协助调查 - 新浪财经",brief,2
+public_health_event,event-f73a567099489bb97583c34d,综述：人工智能在汉坦病毒肺综合征胸部影像中的应用：罕见疾病影像实践考量 - 生物通,brief,1
+public_health_event,event-a21311e7a80c6c2f1966e80f,突发公共卫生警报！豪华探险邮轮疑现汉坦病毒疫情，3人死亡、世卫组织紧急介入 - FX168,brief,1
+public_health_event,event-7d9545116a0224a06f8b0715,多国现汉坦病毒本土病例！和邮轮疫情无关 - 搜狐网,brief,1
+public_health_event,event-10c027eb3b8928947f1d4efe,禽流感 埃博拉 汉坦病毒……为什么感觉传染病越来越多了？ - SBS,brief,1
+public_health_event,event-a580ffd5c3d07545fa00ee2a,当地时间2日，世卫组织总干事谭德塞宣布，与邮轮有关的汉坦病毒疫情已结束，最后一名接触者完成了隔离且病毒检测结果呈阴性。此次疫情共导致13人感染、3人死亡。 - 搜狐网,brief,1
+public_health_event,event-cc5073548c66ca0c1e8b73ef,涉汉坦病毒邮轮随船医生感染，肿瘤医生游客接手 - 快媒体,brief,1
