@@ -1,5 +1,3 @@
-# Demo data
+# Offline demo data
 
-These files are deterministic, non-production demonstration records used when Streamlit cannot yet read `intelligence-data`.
-
-The UI must always label this source as **包内 Demo**. Demo records are never silently presented as production intelligence.
+These deterministic records exist only so the Streamlit dashboard can start before a GitHub workflow has produced the first live issue. URLs, identifiers, organisations, and case reports marked as demonstrations are synthetic and must not be treated as real surveillance information.

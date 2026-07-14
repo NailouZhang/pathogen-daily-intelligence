@@ -15,7 +15,7 @@ permissions:
   contents: read
 
 concurrency:
-  group: pathogen-profile-refresh-${{ github.repository }}
+  group: pathogen-profile-refresh
   cancel-in-progress: false
 
 jobs:
@@ -24,8 +24,8 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 40
     steps:
-      - uses: actions/checkout@v6
-      - uses: actions/setup-python@v6
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
           cache: pip
@@ -38,7 +38,7 @@ jobs:
           python scripts/refresh_profile.py \
             --profile "$PROFILE_ID" \
             --output-dir /tmp/pdi-profile-refresh
-      - uses: actions/upload-artifact@v7
+      - uses: actions/upload-artifact@v4
         with:
           name: pathogen-profile-refresh-${{ github.run_number }}
           path: /tmp/pdi-profile-refresh

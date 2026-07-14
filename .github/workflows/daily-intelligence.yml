@@ -21,14 +21,14 @@ on:
         type: boolean
         default: false
 
-# GitHub Pages is intentionally not used in v1.1. Generated data and static HTML
-# are persisted to intelligence-data, and Streamlit is the production frontend.
 permissions:
   contents: write
+  pages: write
+  id-token: write
   models: read
 
 concurrency:
-  group: daily-pathogen-intelligence-${{ github.repository }}
+  group: daily-pathogen-intelligence
   cancel-in-progress: false
 
 jobs:
@@ -37,17 +37,14 @@ jobs:
     timeout-minutes: 60
     outputs:
       issue_date: ${{ steps.issue.outputs.issue_date }}
-      data_commit: ${{ steps.persist.outputs.data_commit }}
-      data_changed: ${{ steps.persist.outputs.data_changed }}
     steps:
       - name: Checkout main branch for executable code
-        uses: actions/checkout@v6
+        uses: actions/checkout@v4
         with:
           ref: main
           fetch-depth: 0
 
-      - name: Set up Python
-        uses: actions/setup-python@v6
+      - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
           cache: pip
@@ -90,8 +87,6 @@ jobs:
           GITHUB_MODELS_MODEL: ${{ vars.GITHUB_MODELS_MODEL }}
           GROQ_MODEL: ${{ vars.GROQ_MODEL }}
           PDI_USER_AGENT: ${{ vars.PDI_USER_AGENT }}
-          PDI_WORKFLOW_RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
-          PDI_GITHUB_SHA: ${{ github.sha }}
         run: |
           ARGS=(--profile "$PROFILE_ID" --output-dir /tmp/pdi_out --state-dir /tmp/pdi_out/data/state)
           if [ "$DEMO_MODE" = "true" ]; then ARGS+=(--demo); fi
@@ -104,24 +99,26 @@ jobs:
           test -s /tmp/pdi_out/data/latest.json
           test -s /tmp/pdi_out/site/index.html
           test -s /tmp/pdi_out/site/feed.xml
-          test -s /tmp/pdi_out/email/latest.html
           python - <<'PY' >> "$GITHUB_OUTPUT"
           import json
           from pathlib import Path
           issue = json.loads(Path('/tmp/pdi_out/data/latest.json').read_text(encoding='utf-8'))
           assert issue.get('issue_id')
-          assert issue.get('profile_id')
-          assert issue.get('generation_audit')
           print('issue_date=' + issue['issue_date'])
           PY
 
       - name: Upload complete recovery artifact
-        uses: actions/upload-artifact@v7
+        uses: actions/upload-artifact@v4
         with:
           name: daily-intelligence-${{ steps.issue.outputs.issue_date }}-${{ github.run_number }}
           path: /tmp/pdi_out
           if-no-files-found: error
           retention-days: 30
+
+      - name: Upload GitHub Pages artifact
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: /tmp/pdi_out/site
 
       - name: Send optional HTML email
         continue-on-error: true
@@ -138,10 +135,7 @@ jobs:
             --subject "汉坦病毒每日情报 ${{ steps.issue.outputs.issue_date }}"
 
       - name: Persist data and static history to intelligence-data branch
-        id: persist
-        shell: bash
         run: |
-          set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
@@ -158,42 +152,27 @@ jobs:
           rsync -a --delete /tmp/pdi_out/data/ data/
           rsync -a --delete /tmp/pdi_out/site/ site/
 
-          # New untracked files are invisible to an ordinary unstaged git diff.
-          # Stage first, then inspect the staged tree.
+          # Stage first: a plain unstaged diff does not include brand-new files.
           git add -A data site
           if git diff --cached --quiet -- data site; then
             echo "No durable intelligence changes to commit."
-            echo "data_changed=false" >> "$GITHUB_OUTPUT"
-            if git rev-parse HEAD >/dev/null 2>&1; then
-              echo "data_commit=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
-            fi
             exit 0
           fi
-
           echo "Files staged for intelligence-data:"
           git diff --cached --stat -- data site
           git commit -m "chore: publish pathogen intelligence ${{ steps.issue.outputs.issue_date }}"
-
           if [ "$DATA_BRANCH_EXISTS" = "true" ]; then
             git pull --rebase --autostash origin intelligence-data
           fi
           git push origin HEAD:intelligence-data
 
-          echo "data_changed=true" >> "$GITHUB_OUTPUT"
-          echo "data_commit=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
-
-      - name: Write workflow summary
-        if: always()
-        shell: bash
-        run: |
-          {
-            echo "## Pathogen Daily Intelligence"
-            echo
-            echo "- Issue date: \`${{ steps.issue.outputs.issue_date || 'not generated' }}\`"
-            echo "- Data branch: \`intelligence-data\`"
-            echo "- Data changed: \`${{ steps.persist.outputs.data_changed || 'unknown' }}\`"
-            echo "- Data commit: \`${{ steps.persist.outputs.data_commit || 'unavailable' }}\`"
-            echo "- Production frontend: Streamlit Community Cloud"
-            echo "- Static HTML: retained inside the recovery artifact and \`intelligence-data/site/\`"
-            echo "- Workflow run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
-          } >> "$GITHUB_STEP_SUMMARY"
+  deploy-pages:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
