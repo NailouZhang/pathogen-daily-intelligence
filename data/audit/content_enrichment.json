@@ -1,16 +1,713 @@
 {
-  "news": {
-    "attempted": 0,
-    "success": 0,
-    "failed": 0,
-    "audits": [],
-    "mode": "demo"
-  },
   "scholarly": {
-    "attempted": 0,
+    "attempted": 3,
     "success": 0,
-    "failed": 0,
-    "audits": [],
-    "mode": "demo"
+    "failed": 3,
+    "audits": [
+      {
+        "object_type": "scholarly_work",
+        "object_id": "work-6d0ee8999060254ab3fcec9d",
+        "status": "failed",
+        "pmcid": "13353473",
+        "source": "Europe PMC Open Access fullTextXML",
+        "retrieved_at": "2026-07-14T23:08:25+00:00",
+        "error": "404 Client Error: Not Found for url: https://www.ebi.ac.uk/europepmc/webservices/rest/13353473/fullTextXML",
+        "http": {
+          "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/13353473/fullTextXML",
+          "status_code": 404,
+          "elapsed_ms": 180,
+          "attempts": 2,
+          "error": "404 Client Error: Not Found for url: https://www.ebi.ac.uk/europepmc/webservices/rest/13353473/fullTextXML",
+          "response_headers": {}
+        }
+      },
+      {
+        "object_type": "scholarly_work",
+        "object_id": "work-27e7175bb1ee38f32ab9f6e8",
+        "status": "failed",
+        "pmcid": "13349160",
+        "source": "Europe PMC Open Access fullTextXML",
+        "retrieved_at": "2026-07-14T23:08:28+00:00",
+        "error": "404 Client Error: Not Found for url: https://www.ebi.ac.uk/europepmc/webservices/rest/13349160/fullTextXML",
+        "http": {
+          "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/13349160/fullTextXML",
+          "status_code": 404,
+          "elapsed_ms": 178,
+          "attempts": 2,
+          "error": "404 Client Error: Not Found for url: https://www.ebi.ac.uk/europepmc/webservices/rest/13349160/fullTextXML",
+          "response_headers": {}
+        }
+      },
+      {
+        "object_type": "scholarly_work",
+        "object_id": "work-dcbbc9fbd8008d9b406c3f47",
+        "status": "failed",
+        "pmcid": "2863364",
+        "source": "Europe PMC Open Access fullTextXML",
+        "retrieved_at": "2026-07-14T23:08:30+00:00",
+        "error": "404 Client Error: Not Found for url: https://www.ebi.ac.uk/europepmc/webservices/rest/2863364/fullTextXML",
+        "http": {
+          "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/2863364/fullTextXML",
+          "status_code": 404,
+          "elapsed_ms": 186,
+          "attempts": 2,
+          "error": "404 Client Error: Not Found for url: https://www.ebi.ac.uk/europepmc/webservices/rest/2863364/fullTextXML",
+          "response_headers": {}
+        }
+      }
+    ]
+  },
+  "news": {
+    "attempted": 24,
+    "success": 22,
+    "failed": 2,
+    "audits": [
+      {
+        "object_type": "news_article",
+        "object_id": "article-59b86c5c9ceb5f1766e41b1a",
+        "status": "success",
+        "requested_url": "https://www.who.int/mega-menu/emergencies/news/disease-outbreak-news",
+        "final_url": "https://www.who.int/emergencies/disease-outbreak-news",
+        "method": "css:[role='main']",
+        "retrieved_at": "2026-07-14T23:08:32+00:00",
+        "char_count": 810,
+        "sentence_count": 5,
+        "error": null,
+        "copyright_policy": "bounded evidence extraction; full publisher page is not persisted",
+        "http": {
+          "url": "https://www.who.int/mega-menu/emergencies/news/disease-outbreak-news",
+          "status_code": 200,
+          "elapsed_ms": 133,
+          "attempts": 1,
+          "error": null,
+          "response_headers": {
+            "Content-Type": "text/html; charset=utf-8",
+            "ETag": "\"a47acb65-dd6b-4cbf-ab40-ac22c682e42e\"",
+            "Last-Modified": "Mon, 13 Jul 2026 12:48:32 GMT"
+          }
+        },
+        "content_type": "text/html; charset=utf-8",
+        "truncated": false,
+        "metadata": {}
+      },
+      {
+        "object_type": "news_article",
+        "object_id": "article-c84e9b5a852980e924a119c3",
+        "status": "success",
+        "requested_url": "https://www.who.int/mega-menu/emergencies/who-in-emergencies/surveillance",
+        "final_url": "https://www.who.int/emergencies/surveillance",
+        "method": "css:[role='main']",
+        "retrieved_at": "2026-07-14T23:08:32+00:00",
+        "char_count": 3246,
+        "sentence_count": 27,
+        "error": null,
+        "copyright_policy": "bounded evidence extraction; full publisher page is not persisted",
+        "http": {
+          "url": "https://www.who.int/mega-menu/emergencies/who-in-emergencies/surveillance",
+          "status_code": 200,
+          "elapsed_ms": 144,
+          "attempts": 1,
+          "error": null,
+          "response_headers": {
+            "Content-Type": "text/html; charset=utf-8",
+            "ETag": "\"d742250e-263d-4248-874d-38b0447cb152\"",
+            "Last-Modified": "Tue, 14 Jul 2026 22:23:50 GMT"
+          }
+        },
+        "content_type": "text/html; charset=utf-8",
+        "truncated": false,
+        "metadata": {}
+      },
+      {
+        "object_type": "news_article",
+        "object_id": "article-996dcad1badaecf029d13b1e",
+        "status": "success",
+        "requested_url": "https://www.who.int/mega-menu/emergencies/news/rapid-risk-assessment",
+        "final_url": "https://www.who.int/emergencies/risk-assessment/rapid-risk-assessment",
+        "method": "css:[role='main']",
+        "retrieved_at": "2026-07-14T23:08:32+00:00",
+        "char_count": 4229,
+        "sentence_count": 24,
+        "error": null,
+        "copyright_policy": "bounded evidence extraction; full publisher page is not persisted",
+        "http": {
+          "url": "https://www.who.int/mega-menu/emergencies/news/rapid-risk-assessment",
+          "status_code": 200,
+          "elapsed_ms": 183,
+          "attempts": 1,
+          "error": null,
+          "response_headers": {
+            "Content-Type": "text/html; charset=utf-8",
+            "ETag": "\"0b96c3c4-9c19-42f8-9114-6a924a59e136\"",
+            "Last-Modified": "Tue, 14 Jul 2026 22:28:58 GMT"
+          }
+        },
+        "content_type": "text/html; charset=utf-8",
+        "truncated": false,
+        "metadata": {}
+      },
+      {
+        "object_type": "news_article",
+        "object_id": "article-86c4aaec22e9cee1b7c7a537",
+        "status": "success",
+        "requested_url": "https://www.bbc.co.uk/news/articles/cp3x37lw1ndo",
+        "final_url": "https://www.bbc.co.uk/news/articles/cp3x37lw1ndo",
+        "method": "css:article",
+        "retrieved_at": "2026-07-14T23:08:32+00:00",
+        "char_count": 2782,
+        "sentence_count": 17,
+        "error": null,
+        "copyright_policy": "bounded evidence extraction; full publisher page is not persisted",
+        "http": {
+          "url": "https://www.bbc.co.uk/news/articles/cp3x37lw1ndo",
+          "status_code": 200,
+          "elapsed_ms": 135,
+          "attempts": 1,
+          "error": null,
+          "response_headers": {
+            "Content-Type": "text/html"
+          }
+        },
+        "content_type": "text/html",
+        "truncated": false,
+        "metadata": {}
+      },
+      {
+        "object_type": "news_article",
+        "object_id": "article-544a6a652d57ccfa104ac4e2",
+        "status": "success",
+        "requested_url": "https://www.alwatan.com.sa/article/1182727",
+        "final_url": "https://www.alwatan.com.sa/article/1182727",
+        "method": "paragraph_fallback",
+        "retrieved_at": "2026-07-14T23:08:32+00:00",
+        "char_count": 2213,
+        "sentence_count": 8,
+        "error": null,
+        "copyright_policy": "bounded evidence extraction; full publisher page is not persisted",
+        "http": {
+          "url": "https://www.alwatan.com.sa/article/1182727",
+          "status_code": 200,
+          "elapsed_ms": 332,
+          "attempts": 1,
+          "error": null,
+          "response_headers": {
+            "Content-Type": "text/html",
+            "Last-Modified": "Tue, 14 Jul 2026 23:08:32 GMT"
+          }
+        },
+        "content_type": "text/html",
+        "truncated": false,
+        "metadata": {}
+      },
+      {
+        "object_type": "news_article",
+        "object_id": "article-5c8ceed5085a7e253f61a431",
+        "status": "success",
+        "requested_url": "https://radaronline.com/p/gene-hackman-betsy-arakawa-grave-plaques-honored-deaths",
+        "final_url": "https://radaronline.com/p/gene-hackman-betsy-arakawa-grave-plaques-honored-deaths/",
+        "method": "jsonld_articleBody",
+        "retrieved_at": "2026-07-14T23:08:32+00:00",
+        "char_count": 1620,
+        "sentence_count": 11,
+        "error": null,
+        "copyright_policy": "bounded evidence extraction; full publisher page is not persisted",
+        "http": {
+          "url": "https://radaronline.com/p/gene-hackman-betsy-arakawa-grave-plaques-honored-deaths",
+          "status_code": 200,
+          "elapsed_ms": 215,
+          "attempts": 1,
+          "error": null,
+          "response_headers": {
+            "Content-Type": "text/html; charset=utf-8",
+            "ETag": "W/\"24a4f-gj2DV3pVEVVk+IZg4G2EtGJre+o\""
+          }
+        },
+        "content_type": "text/html; charset=utf-8",
+        "truncated": false,
+        "metadata": {
+          "headline": "Gene Hackman and Betsy Arakawa Receive Grave Plaques After Tragic Deaths",
+          "date_published": "2026-07-12T16:00:00.000Z",
+          "date_modified": "2026-07-12T16:00:00.053Z"
+        }
+      },
+      {
+        "object_type": "news_article",
+        "object_id": "article-c3f386dae5df9fd4ab416832",
+        "status": "success",
+        "requested_url": "https://www.miragenews.com/hantavirus-infections-neurological-effects-1709818",
+        "final_url": "https://www.miragenews.com/hantavirus-infections-neurological-effects-1709818",
+        "method": "css:article",
+        "retrieved_at": "2026-07-14T23:08:32+00:00",
+        "char_count": 297,
+        "sentence_count": 2,
+        "error": null,
+        "copyright_policy": "bounded evidence extraction; full publisher page is not persisted",
+        "http": {
+          "url": "https://www.miragenews.com/hantavirus-infections-neurological-effects-1709818",
+          "status_code": 200,
+          "elapsed_ms": 110,
+          "attempts": 1,
+          "error": null,
+          "response_headers": {
+            "Content-Type": "text/html; charset=utf-8",
+            "Last-Modified": "Tue, 14 Jul 2026 23:08:33 GMT"
+          }
+        },
+        "content_type": "text/html; charset=utf-8",
+        "truncated": false,
+        "metadata": {}
+      },
+      {
+        "object_type": "news_article",
+        "object_id": "article-2b4c43298b747a33739da4e5",
+        "status": "success",
+        "requested_url": "https://www.theepochtimes.com/us/us-citizen-tests-positive-for-ebola-in-africa-cdc-6060423",
+        "final_url": "https://www.theepochtimes.com/us/us-citizen-tests-positive-for-ebola-in-africa-cdc-6060423",
+        "method": "css:article",
+        "retrieved_at": "2026-07-14T23:08:33+00:00",
+        "char_count": 2124,
+        "sentence_count": 20,
+        "error": null,
+        "copyright_policy": "bounded evidence extraction; full publisher page is not persisted",
+        "http": {
+          "url": "https://www.theepochtimes.com/us/us-citizen-tests-positive-for-ebola-in-africa-cdc-6060423",
+          "status_code": 200,
+          "elapsed_ms": 203,
+          "attempts": 1,
+          "error": null,
+          "response_headers": {
+            "Content-Type": "text/html; charset=utf-8",
+            "last-modified": "Tue, 14 Jul 2026 23:08:33 GMT"
+          }
+        },
+        "content_type": "text/html; charset=utf-8",
+        "truncated": false,
+        "metadata": {}
+      },
+      {
+        "object_type": "news_article",
+        "object_id": "article-5ba66eb69b415422f3ab1868",
+        "status": "success",
+        "requested_url": "https://wattsupwiththat.com/2026/07/07/hantavirus-outbreak-connected-to-cruise-ship-is-officially-over",
+        "final_url": "https://wattsupwiththat.com/2026/07/07/hantavirus-outbreak-connected-to-cruise-ship-is-officially-over/",
+        "method": "css:main",
+        "retrieved_at": "2026-07-14T23:08:32+00:00",
+        "char_count": 6083,
+        "sentence_count": 40,
+        "error": null,
+        "copyright_policy": "bounded evidence extraction; full publisher page is not persisted",
+        "http": {
+          "url": "https://wattsupwiththat.com/2026/07/07/hantavirus-outbreak-connected-to-cruise-ship-is-officially-over",
+          "status_code": 200,
+          "elapsed_ms": 1403,
+          "attempts": 1,
+          "error": null,
+          "response_headers": {
+            "Content-Type": "text/html; charset=UTF-8",
+            "Last-Modified": "Sat, 11 Jul 2026 02:38:08 GMT"
+          }
+        },
+        "content_type": "text/html; charset=UTF-8",
+        "truncated": true,
+        "metadata": {}
+      },
+      {
+        "object_type": "news_article",
+        "object_id": "article-be1188b007943868388d9ea2",
+        "status": "success",
+        "requested_url": "https://www.dailystar.co.uk/news/latest-news/horror-paralyzing-mosquito-borne-illness-37415529",
+        "final_url": "https://www.dailystar.co.uk/news/latest-news/horror-paralyzing-mosquito-borne-illness-37415529",
+        "method": "jsonld_articleBody",
+        "retrieved_at": "2026-07-14T23:08:33+00:00",
+        "char_count": 2338,
+        "sentence_count": 15,
+        "error": null,
+        "copyright_policy": "bounded evidence extraction; full publisher page is not persisted",
+        "http": {
+          "url": "https://www.dailystar.co.uk/news/latest-news/horror-paralyzing-mosquito-borne-illness-37415529",
+          "status_code": 200,
+          "elapsed_ms": 863,
+          "attempts": 1,
+          "error": null,
+          "response_headers": {
+            "Content-Type": "text/html; charset=utf-8"
+          }
+        },
+        "content_type": "text/html; charset=utf-8",
+        "truncated": false,
+        "metadata": {
+          "headline": "Horror paralyzing mosquito-borne illness surges in US as World Cup marches on - full list",
+          "date_published": "2026-07-10T17:50:18Z",
+          "date_modified": "2026-07-10T17:50:23Z"
+        }
+      },
+      {
+        "object_type": "news_article",
+        "object_id": "article-4c0f02b5dddbb4c04b2be893",
+        "status": "failed",
+        "requested_url": "https://www.kuow.org/health",
+        "final_url": "https://www.kuow.org/health",
+        "method": "paragraph_fallback",
+        "retrieved_at": "2026-07-14T23:08:33+00:00",
+        "char_count": 0,
+        "sentence_count": 0,
+        "error": "NO_MAIN_ARTICLE_TEXT",
+        "copyright_policy": "bounded evidence extraction; full publisher page is not persisted",
+        "http": {
+          "url": "https://www.kuow.org/health",
+          "status_code": 200,
+          "elapsed_ms": 685,
+          "attempts": 1,
+          "error": null,
+          "response_headers": {
+            "Content-Type": "text/html;charset=UTF-8"
+          }
+        },
+        "content_type": "text/html;charset=UTF-8"
+      },
+      {
+        "object_type": "news_article",
+        "object_id": "article-e24b7da70ed78c50ba2d6225",
+        "status": "success",
+        "requested_url": "https://www.winnipegfreepress.com/breakingnews/2026/07/09/trial-by-virus",
+        "final_url": "https://www.winnipegfreepress.com/breakingnews/2026/07/09/trial-by-virus",
+        "method": "css:[role='main']",
+        "retrieved_at": "2026-07-14T23:08:32+00:00",
+        "char_count": 5583,
+        "sentence_count": 40,
+        "error": null,
+        "copyright_policy": "bounded evidence extraction; full publisher page is not persisted",
+        "http": {
+          "url": "https://www.winnipegfreepress.com/breakingnews/2026/07/09/trial-by-virus",
+          "status_code": 200,
+          "elapsed_ms": 1545,
+          "attempts": 1,
+          "error": null,
+          "response_headers": {
+            "Content-Type": "text/html; charset=UTF-8"
+          }
+        },
+        "content_type": "text/html; charset=UTF-8",
+        "truncated": true,
+        "metadata": {}
+      },
+      {
+        "object_type": "news_article",
+        "object_id": "article-2c5ea08811df5eb51344ad6f",
+        "status": "success",
+        "requested_url": "https://nationalpost.com/news/canada/lawsuit-reveals-bitter-14-year-rivalry-between-infectious-disease-specialists",
+        "final_url": "https://nationalpost.com/news/canada/lawsuit-reveals-bitter-14-year-rivalry-between-infectious-disease-specialists",
+        "method": "css:article",
+        "retrieved_at": "2026-07-14T23:08:34+00:00",
+        "char_count": 5920,
+        "sentence_count": 40,
+        "error": null,
+        "copyright_policy": "bounded evidence extraction; full publisher page is not persisted",
+        "http": {
+          "url": "https://nationalpost.com/news/canada/lawsuit-reveals-bitter-14-year-rivalry-between-infectious-disease-specialists",
+          "status_code": 200,
+          "elapsed_ms": 219,
+          "attempts": 1,
+          "error": null,
+          "response_headers": {
+            "content-type": "text/html; charset=utf-8",
+            "last-modified": "Tue, 14 Jul 2026 23:05:43 GMT"
+          }
+        },
+        "content_type": "text/html; charset=utf-8",
+        "truncated": true,
+        "metadata": {}
+      },
+      {
+        "object_type": "news_article",
+        "object_id": "article-af7989e04f716fa5931f2733",
+        "status": "success",
+        "requested_url": "https://en.shafaqna.com/462081/saudi-arabia-calls-on-travelers-to-follow-health-guideline-during-summer",
+        "final_url": "https://en.shafaqna.com/462081/saudi-arabia-calls-on-travelers-to-follow-health-guideline-during-summer/",
+        "method": "css:article",
+        "retrieved_at": "2026-07-14T23:08:32+00:00",
+        "char_count": 364,
+        "sentence_count": 2,
+        "error": null,
+        "copyright_policy": "bounded evidence extraction; full publisher page is not persisted",
+        "http": {
+          "url": "https://en.shafaqna.com/462081/saudi-arabia-calls-on-travelers-to-follow-health-guideline-during-summer",
+          "status_code": 200,
+          "elapsed_ms": 2337,
+          "attempts": 1,
+          "error": null,
+          "response_headers": {
+            "Content-Type": "text/html; charset=UTF-8"
+          }
+        },
+        "content_type": "text/html; charset=UTF-8",
+        "truncated": false,
+        "metadata": {}
+      },
+      {
+        "object_type": "news_article",
+        "object_id": "article-992294c5d4598217c801ec22",
+        "status": "success",
+        "requested_url": "https://www.dostor.org/5631683",
+        "final_url": "https://www.dostor.org/5631683",
+        "method": "css:article",
+        "retrieved_at": "2026-07-14T23:08:34+00:00",
+        "char_count": 3962,
+        "sentence_count": 21,
+        "error": null,
+        "copyright_policy": "bounded evidence extraction; full publisher page is not persisted",
+        "http": {
+          "url": "https://www.dostor.org/5631683",
+          "status_code": 200,
+          "elapsed_ms": 452,
+          "attempts": 1,
+          "error": null,
+          "response_headers": {
+            "Content-Type": "text/html; charset=utf-8",
+            "Last-Modified": "Wed, 15 Jul 2026 00:08:58 GMT"
+          }
+        },
+        "content_type": "text/html; charset=utf-8",
+        "truncated": false,
+        "metadata": {}
+      },
+      {
+        "object_type": "news_article",
+        "object_id": "article-05951e2f624084fe762ae023",
+        "status": "success",
+        "requested_url": "https://arabic.cnn.com/travel/article/2026/07/10/europe-vacation-summer-chaos-border-lines-fuel-shortages",
+        "final_url": "https://arabic.cnn.com/travel/article/2026/07/10/europe-vacation-summer-chaos-border-lines-fuel-shortages",
+        "method": "css:article",
+        "retrieved_at": "2026-07-14T23:08:34+00:00",
+        "char_count": 3679,
+        "sentence_count": 26,
+        "error": null,
+        "copyright_policy": "bounded evidence extraction; full publisher page is not persisted",
+        "http": {
+          "url": "https://arabic.cnn.com/travel/article/2026/07/10/europe-vacation-summer-chaos-border-lines-fuel-shortages",
+          "status_code": 200,
+          "elapsed_ms": 177,
+          "attempts": 1,
+          "error": null,
+          "response_headers": {
+            "content-type": "text/html; charset=utf-8"
+          }
+        },
+        "content_type": "text/html; charset=utf-8",
+        "truncated": false,
+        "metadata": {}
+      },
+      {
+        "object_type": "news_article",
+        "object_id": "article-89b87662ae17c2a0bc761622",
+        "status": "success",
+        "requested_url": "https://www.thehindu.com/sci-tech/health/health-matters-newsletter-what-happens-when-your-disease-isnt-simple/article71192513.ece",
+        "final_url": "https://www.thehindu.com/sci-tech/health/health-matters-newsletter-what-happens-when-your-disease-isnt-simple/article71192513.ece",
+        "method": "css:[itemprop='articleBody']",
+        "retrieved_at": "2026-07-14T23:08:35+00:00",
+        "char_count": 6033,
+        "sentence_count": 40,
+        "error": null,
+        "copyright_policy": "bounded evidence extraction; full publisher page is not persisted",
+        "http": {
+          "url": "https://www.thehindu.com/sci-tech/health/health-matters-newsletter-what-happens-when-your-disease-isnt-simple/article71192513.ece",
+          "status_code": 200,
+          "elapsed_ms": 565,
+          "attempts": 1,
+          "error": null,
+          "response_headers": {
+            "Content-Type": "text/html; charset=UTF-8",
+            "Last-Modified": "Wed, 08 Jul 2026 09:01:16 GMT"
+          }
+        },
+        "content_type": "text/html; charset=UTF-8",
+        "truncated": true,
+        "metadata": {}
+      },
+      {
+        "object_type": "news_article",
+        "object_id": "article-79f84a5d9c03b7bb13c9fad4",
+        "status": "success",
+        "requested_url": "https://www.travelextra.ie/oceanwide-expeditions-ceo-responds-to-hantavirus-incident",
+        "final_url": "https://www.travelextra.ie/oceanwide-expeditions-ceo-responds-to-hantavirus-incident/",
+        "method": "css:article",
+        "retrieved_at": "2026-07-14T23:08:34+00:00",
+        "char_count": 1151,
+        "sentence_count": 9,
+        "error": null,
+        "copyright_policy": "bounded evidence extraction; full publisher page is not persisted",
+        "http": {
+          "url": "https://www.travelextra.ie/oceanwide-expeditions-ceo-responds-to-hantavirus-incident",
+          "status_code": 200,
+          "elapsed_ms": 1755,
+          "attempts": 1,
+          "error": null,
+          "response_headers": {
+            "Content-Type": "text/html; charset=UTF-8"
+          }
+        },
+        "content_type": "text/html; charset=UTF-8",
+        "truncated": false,
+        "metadata": {}
+      },
+      {
+        "object_type": "news_article",
+        "object_id": "article-318f67c54c489e31a021d0f5",
+        "status": "success",
+        "requested_url": "https://www1.folha.uol.com.br/equilibrioesaude/2026/07/cientistas-criam-catalogo-para-identificar-virus-com-potencial-pandemico.shtml",
+        "final_url": "https://www1.folha.uol.com.br/equilibrioesaude/2026/07/cientistas-criam-catalogo-para-identificar-virus-com-potencial-pandemico.shtml",
+        "method": "css:main",
+        "retrieved_at": "2026-07-14T23:08:35+00:00",
+        "char_count": 4738,
+        "sentence_count": 40,
+        "error": null,
+        "copyright_policy": "bounded evidence extraction; full publisher page is not persisted",
+        "http": {
+          "url": "https://www1.folha.uol.com.br/equilibrioesaude/2026/07/cientistas-criam-catalogo-para-identificar-virus-com-potencial-pandemico.shtml",
+          "status_code": 200,
+          "elapsed_ms": 968,
+          "attempts": 1,
+          "error": null,
+          "response_headers": {
+            "Content-Type": "text/html"
+          }
+        },
+        "content_type": "text/html",
+        "truncated": true,
+        "metadata": {}
+      },
+      {
+        "object_type": "news_article",
+        "object_id": "article-786579762e42a6ebd0f49767",
+        "status": "failed",
+        "requested_url": "https://www.news-medical.net/news/20260711/New-viral-library-helps-scientists-study-thousands-of-proteins.aspx",
+        "final_url": "https://www.news-medical.net/news/20260711/New-viral-library-helps-scientists-study-thousands-of-proteins.aspx",
+        "method": "paragraph_fallback",
+        "retrieved_at": "2026-07-14T23:08:36+00:00",
+        "char_count": 0,
+        "sentence_count": 0,
+        "error": "NO_MAIN_ARTICLE_TEXT",
+        "copyright_policy": "bounded evidence extraction; full publisher page is not persisted",
+        "http": {
+          "url": "https://www.news-medical.net/news/20260711/New-viral-library-helps-scientists-study-thousands-of-proteins.aspx",
+          "status_code": 200,
+          "elapsed_ms": 366,
+          "attempts": 1,
+          "error": null,
+          "response_headers": {
+            "Content-Type": "text/html; charset=utf-8",
+            "Last-Modified": "Tue, 14 Jul 2026 23:08:36 GMT"
+          }
+        },
+        "content_type": "text/html; charset=utf-8"
+      },
+      {
+        "object_type": "news_article",
+        "object_id": "article-4a54b0e25b2515f16342a11b",
+        "status": "success",
+        "requested_url": "https://blueprint.ng/pabs-finalise-agreement-against-future-pandemics-who-tells-member-states",
+        "final_url": "https://blueprint.ng/pabs-finalise-agreement-against-future-pandemics-who-tells-member-states/",
+        "method": "css:article",
+        "retrieved_at": "2026-07-14T23:08:35+00:00",
+        "char_count": 2237,
+        "sentence_count": 20,
+        "error": null,
+        "copyright_policy": "bounded evidence extraction; full publisher page is not persisted",
+        "http": {
+          "url": "https://blueprint.ng/pabs-finalise-agreement-against-future-pandemics-who-tells-member-states",
+          "status_code": 200,
+          "elapsed_ms": 998,
+          "attempts": 1,
+          "error": null,
+          "response_headers": {
+            "Content-Type": "text/html; charset=UTF-8",
+            "Last-Modified": "Tue, 14 Jul 2026 02:50:14 GMT"
+          }
+        },
+        "content_type": "text/html; charset=UTF-8",
+        "truncated": false,
+        "metadata": {}
+      },
+      {
+        "object_type": "news_article",
+        "object_id": "article-1e4e85e76b629eec3f6c889d",
+        "status": "success",
+        "requested_url": "https://www.rcreader.com/commentary/the-infectious-disease-frenzy-david-bell",
+        "final_url": "https://www.rcreader.com/commentary/the-infectious-disease-frenzy-david-bell",
+        "method": "css:[role='main']",
+        "retrieved_at": "2026-07-14T23:08:36+00:00",
+        "char_count": 5406,
+        "sentence_count": 40,
+        "error": null,
+        "copyright_policy": "bounded evidence extraction; full publisher page is not persisted",
+        "http": {
+          "url": "https://www.rcreader.com/commentary/the-infectious-disease-frenzy-david-bell",
+          "status_code": 200,
+          "elapsed_ms": 471,
+          "attempts": 1,
+          "error": null,
+          "response_headers": {
+            "Content-Type": "text/html; charset=utf-8"
+          }
+        },
+        "content_type": "text/html; charset=utf-8",
+        "truncated": true,
+        "metadata": {}
+      },
+      {
+        "object_type": "news_article",
+        "object_id": "article-9c2409b3b8e14c93215533a9",
+        "status": "success",
+        "requested_url": "https://nypost.com/2026/07/09/lifestyle/heres-how-to-keep-nyc-rats-at-bay",
+        "final_url": "https://nypost.com/2026/07/09/lifestyle/heres-how-to-keep-nyc-rats-at-bay/",
+        "method": "css:article",
+        "retrieved_at": "2026-07-14T23:08:35+00:00",
+        "char_count": 5805,
+        "sentence_count": 40,
+        "error": null,
+        "copyright_policy": "bounded evidence extraction; full publisher page is not persisted",
+        "http": {
+          "url": "https://nypost.com/2026/07/09/lifestyle/heres-how-to-keep-nyc-rats-at-bay",
+          "status_code": 200,
+          "elapsed_ms": 1544,
+          "attempts": 1,
+          "error": null,
+          "response_headers": {
+            "Content-Type": "text/html; charset=UTF-8"
+          }
+        },
+        "content_type": "text/html; charset=UTF-8",
+        "truncated": true,
+        "metadata": {}
+      },
+      {
+        "object_type": "news_article",
+        "object_id": "article-e7507de4642d097cc8d7c2f0",
+        "status": "success",
+        "requested_url": "https://www.timeslive.co.za/news/2026-07-08-a-matter-of-time-sas-hospitals-are-ready-for-ebola-cases-if-they-arrive",
+        "final_url": "https://www.timeslive.co.za/news/2026-07-08-a-matter-of-time-sas-hospitals-are-ready-for-ebola-cases-if-they-arrive/",
+        "method": "css:[role='main']",
+        "retrieved_at": "2026-07-14T23:08:34+00:00",
+        "char_count": 4307,
+        "sentence_count": 24,
+        "error": null,
+        "copyright_policy": "bounded evidence extraction; full publisher page is not persisted",
+        "http": {
+          "url": "https://www.timeslive.co.za/news/2026-07-08-a-matter-of-time-sas-hospitals-are-ready-for-ebola-cases-if-they-arrive",
+          "status_code": 200,
+          "elapsed_ms": 3067,
+          "attempts": 1,
+          "error": null,
+          "response_headers": {
+            "Content-Type": "text/html; charset=utf-8",
+            "ETag": "W/\"6ff14-25555ZE9qdScwLXTezpHqLaEtek\"",
+            "Last-Modified": "Tue, 14 Jul 2026 23:08:37 GMT"
+          }
+        },
+        "content_type": "text/html; charset=utf-8",
+        "truncated": false,
+        "metadata": {}
+      }
+    ]
   }
 }

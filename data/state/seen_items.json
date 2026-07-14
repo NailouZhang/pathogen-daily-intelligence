@@ -1,66 +1,116 @@
 {
-  "schema_version": "1.3",
-  "updated_at": "2026-07-14T12:37:58+00:00",
+  "schema_version": "1.3.1",
+  "updated_at": "2026-07-14T23:41:10+00:00",
   "work_ids": [
     "work-01da7473125c2b44ffa3cf9e",
+    "work-022d2844f7e0f41c99e3ea2e",
     "work-09e9d4db3e9b27d5d04c4f8f",
     "work-13027ca10282877605faf40a",
+    "work-223a274b923eac7969858513",
     "work-24595e6f0f7e4676a68be705",
     "work-261800c4a15fce7cab542257",
     "work-26d41b33804b556d0e838645",
+    "work-27e7175bb1ee38f32ab9f6e8",
     "work-2cdb02d818069f2e82dfc182",
+    "work-2d2e4f54c266687af3997bad",
+    "work-2ed2c23da8de25e6381d9773",
     "work-332fb645e31ec2d1b01591bd",
+    "work-38096a8ee9a17314e18e8c2f",
+    "work-3a5a556ab26a45599b179bb7",
     "work-412a01ebc11cdf225065abdc",
     "work-42d5a401efd4a0641cc92f0b",
+    "work-45dc0effc2be14e57bb9a9f3",
+    "work-4b33ac051acc6fdd4fa69a76",
+    "work-4e6fdb832cc844fd4c42559a",
+    "work-4ec4af2a41c738c2ec7368ec",
+    "work-52f0f8a07584b61d567c51c1",
+    "work-55dfdf34da7da05be7b6db07",
+    "work-59f6b11e54e7563fd94e02c7",
+    "work-629ae44f75988610391b7789",
     "work-6529a04b2887b1cca4d806da",
+    "work-66f32e8e1a417f8e95bd87d6",
+    "work-6bd76419bc07c0e4c8e54476",
+    "work-6d0ee8999060254ab3fcec9d",
     "work-73f1eaf696703fc538cfea5a",
+    "work-742c824dcd18e4d816ed0899",
+    "work-76726b35df07d23f40bcd7c1",
+    "work-7d014cdadb5b7d0b30801947",
     "work-7da09839fc167eff558a71fb",
+    "work-7e351f22e6695dd61b2f75ea",
+    "work-814082c42acdbdb256033c83",
+    "work-881650894c5e99aff88fa938",
+    "work-90cfba1581543f5567fd6a58",
+    "work-910487abfc978e54575ea821",
+    "work-9d66674bd085d605ea52fa4e",
+    "work-9f8c513c0967d74425579255",
     "work-a1bc9934d74d4b2aeeca4e22",
+    "work-a83c405da824d75b2195f8ac",
+    "work-a847c2bbe589c6f8c498448d",
+    "work-cf1c659e39d0964dd3f1873b",
     "work-dcbbc9fbd8008d9b406c3f47",
+    "work-dce7df0a43c5750e75d9c84d",
+    "work-df793002d26be893c01a7f77",
     "work-e3cb5c555876b2b40ccfb58a",
     "work-eff16bd1991afc42885881ed",
-    "work-fa60db2c179aaa2187c0f001"
+    "work-f3ba602508b81bfe9a409bae",
+    "work-f4283513b67684253f886efd",
+    "work-fa60db2c179aaa2187c0f001",
+    "work-febe47a2ee1ccf80d8dd1ef3",
+    "work-ff93b835680f244248c356a9"
   ],
   "article_ids": [
     "article-000832bc12c521493b9a2d14",
+    "article-038a73cba3dd10642e4d2ea2",
     "article-049a1264ba13e45a17ef1f73",
     "article-05951e2f624084fe762ae023",
     "article-06297c9129beafedcab03fd3",
+    "article-0ed5b4de37afa6096406e680",
     "article-10fce38529457ba0fb4c5fdc",
+    "article-13a8e29243ca5ded6178c66c",
     "article-13cfebee3a33965f8a0a59ed",
     "article-157a7d6a942d03cedbf8f7d0",
+    "article-1e4e85e76b629eec3f6c889d",
     "article-1ecd39aa22add9e8db4c6370",
     "article-21ced2190a4540a516975904",
     "article-2432ec3f2016a0673585a347",
     "article-2b4c43298b747a33739da4e5",
+    "article-2c5ea08811df5eb51344ad6f",
     "article-2e6d68de857c88217d8f5db9",
     "article-2fe6890014662036551f6e14",
     "article-318f67c54c489e31a021d0f5",
+    "article-348a1de765627560e2cdc627",
     "article-3952eb9705cde48e7336ffc3",
     "article-3bf2407bbf6914c1c8c52aaf",
     "article-3d77eef4fd0189155736d265",
     "article-4479e878db5f84bfb1f002ec",
     "article-4a54b0e25b2515f16342a11b",
     "article-4be9815404945aaa485d20f5",
+    "article-4c0f02b5dddbb4c04b2be893",
     "article-544a6a652d57ccfa104ac4e2",
     "article-59b86c5c9ceb5f1766e41b1a",
     "article-5b3e3b8dc721d4404681bc41",
+    "article-5b7c12c53eb919fbf9d8ace7",
     "article-5ba66eb69b415422f3ab1868",
     "article-5ba862ebf29dd9568e048837",
     "article-5c8ceed5085a7e253f61a431",
     "article-5cc480ab21f0113ebfc3aa98",
+    "article-5dd8a6f36f0cd5345344e7cf",
     "article-6023b42ffed68491c4765acf",
     "article-6196f58d6431c76b0865f386",
     "article-6e2aa137f4fc22376f6b795c",
+    "article-786579762e42a6ebd0f49767",
     "article-79a2b7569517d9115dcc4436",
     "article-79f84a5d9c03b7bb13c9fad4",
     "article-7c0a657fd115f47e926cc143",
     "article-7f675d1d5c0ce2f0c344f8d6",
     "article-7fa1cf89da6846f3b8b4de80",
+    "article-86c4aaec22e9cee1b7c7a537",
     "article-897ee56325c8bd52f7e96d13",
     "article-89b87662ae17c2a0bc761622",
     "article-8ca04c332ba6a33d05ecbf8c",
     "article-8d966342f594129565393174",
+    "article-901fa461ffaf9fe1af8babed",
+    "article-91258dacc5a5b172229bca64",
     "article-9799b6bb23ddae465d72a3c4",
     "article-992294c5d4598217c801ec22",
     "article-996dcad1badaecf029d13b1e",
@@ -80,33 +130,38 @@
     "article-bcc3574cc23aeab928c15666",
     "article-be1188b007943868388d9ea2",
     "article-c00e94b55aefb16713da10ee",
+    "article-c3f386dae5df9fd4ab416832",
+    "article-c7853d085f8ff9b389d2cf4c",
     "article-c84e9b5a852980e924a119c3",
     "article-d07d6a5ba1d76f706f82441a",
     "article-d69570174365269267ec20a3",
+    "article-da2eac770af5279c6ce1ae6e",
     "article-df040394f7550e9299386b5c",
     "article-e24b7da70ed78c50ba2d6225",
+    "article-e33a766661f4930834bfbc9b",
     "article-e406afb37a1be62ac87144b3",
     "article-e54fe57c7472521ea97a800a",
+    "article-e5e05a5e28c0413f8600d44f",
     "article-e7507de4642d097cc8d7c2f0",
     "article-e9d8f8d41a14593e155fce44",
     "article-ea0578687c3cd9fea0c39946",
     "article-f075cae532fa1840343768d9",
+    "article-f2bfdb639e66dfc25461c5c0",
     "article-fb6c38eaf2718ed9d750bb28"
   ],
   "events": [
     {
-      "event_id": "event-69c8aee084c29f3476f0bacb",
+      "event_id": "event-43364f29ffb706aa37b9c469",
       "event_version": 1,
-      "title": "Laboratory confirms 2 hantavirus pulmonary syndrome cases in Chile",
+      "title": "Hantavirus Outbreak Connected to Cruise Ship is Officially Over",
       "pathogens": [
-        "hantavirus",
-        "hantavirus pulmonary syndrome"
+        "hantavirus"
       ],
-      "country": "Chile",
-      "event_type": "human_case",
-      "published_at": "2026-07-14",
+      "country": "China",
+      "event_type": "outbreak",
+      "published_at": "2026",
       "case_counts": {
-        "confirmed": 2,
+        "confirmed": 12,
         "probable": null,
         "suspected": null,
         "deaths": null
@@ -114,15 +169,719 @@
       "change_history": []
     },
     {
-      "event_id": "event-b87be16dc51d2fc35341cfca",
+      "event_id": "event-4b6ef807bbe74eeb33a66c7d",
       "event_version": 1,
-      "title": "中国开展汉坦病毒啮齿动物宿主监测",
+      "title": "Saudi Arabia calls on travelers to follow health guideline during summer – Shafaqna English",
+      "pathogens": [
+        "hantavirus"
+      ],
+      "country": null,
+      "event_type": "outbreak",
+      "published_at": "2026",
+      "case_counts": {
+        "confirmed": null,
+        "probable": null,
+        "suspected": null,
+        "deaths": null
+      },
+      "change_history": []
+    },
+    {
+      "event_id": "event-af1e43e3338091184fb67bc2",
+      "event_version": 1,
+      "title": "Public to be told how to prepare for cyber - attack and weather emergencies",
+      "pathogens": [
+        "hantavirus"
+      ],
+      "country": "Russia",
+      "event_type": "outbreak",
+      "published_at": "2026",
+      "case_counts": {
+        "confirmed": null,
+        "probable": null,
+        "suspected": null,
+        "deaths": null
+      },
+      "change_history": []
+    },
+    {
+      "event_id": "event-d7a64bad8c1d4510997fbb52",
+      "event_version": 1,
+      "title": "Gene Hackman and Betsy Arakawa Receive Grave Plaques After Tragic Deaths",
+      "pathogens": [
+        "hantavirus",
+        "hantavirus pulmonary syndrome"
+      ],
+      "country": null,
+      "event_type": "other",
+      "published_at": "2026",
+      "case_counts": {
+        "confirmed": null,
+        "probable": null,
+        "suspected": null,
+        "deaths": null
+      },
+      "change_history": []
+    },
+    {
+      "event_id": "event-f9a54b940eaa783f92566d20",
+      "event_version": 1,
+      "title": "Hantavirus Infection Neurological Effects Uncovered",
+      "pathogens": [
+        "hantavirus"
+      ],
+      "country": null,
+      "event_type": "other",
+      "published_at": "2026",
+      "case_counts": {
+        "confirmed": null,
+        "probable": null,
+        "suspected": null,
+        "deaths": null
+      },
+      "change_history": []
+    },
+    {
+      "event_id": "event-079ec8abc463bbb934681fcd",
+      "event_version": 1,
+      "title": "Trial by virus – Winnipeg Free Press",
+      "pathogens": [
+        "hantavirus"
+      ],
+      "country": "Argentina",
+      "event_type": "outbreak",
+      "published_at": "2026",
+      "case_counts": {
+        "confirmed": null,
+        "probable": null,
+        "suspected": null,
+        "deaths": null
+      },
+      "change_history": []
+    },
+    {
+      "event_id": "event-a02968a8d69dc5dbcbf967ec",
+      "event_version": 1,
+      "title": "US Citizen Tests Positive for Ebola in Africa : CDC",
+      "pathogens": [
+        "hantavirus"
+      ],
+      "country": "United States",
+      "event_type": "outbreak",
+      "published_at": "2026",
+      "case_counts": {
+        "confirmed": 56,
+        "probable": null,
+        "suspected": null,
+        "deaths": 648
+      },
+      "change_history": []
+    },
+    {
+      "event_id": "event-1d2222e804399fbec38e145f",
+      "event_version": 1,
+      "title": "A matter of time : SA hospitals are ready for Ebola cases if they arrive",
+      "pathogens": [
+        "hantavirus"
+      ],
+      "country": null,
+      "event_type": "outbreak",
+      "published_at": "2026",
+      "case_counts": {
+        "confirmed": null,
+        "probable": null,
+        "suspected": null,
+        "deaths": null
+      },
+      "change_history": []
+    },
+    {
+      "event_id": "event-015c532cc4f9714e4eefcd55",
+      "event_version": 1,
+      "title": "Health Matters newsletter : What happens when your disease isnt simple ?",
+      "pathogens": [
+        "hantavirus"
+      ],
+      "country": null,
+      "event_type": "outbreak",
+      "published_at": "2026",
+      "case_counts": {
+        "confirmed": null,
+        "probable": null,
+        "suspected": null,
+        "deaths": null
+      },
+      "change_history": []
+    },
+    {
+      "event_id": "event-3092072eb672e563b653db57",
+      "event_version": 1,
+      "title": "PABS : Finalise agreement against future pandemics , WHO tells member states",
+      "pathogens": [
+        "hantavirus"
+      ],
+      "country": null,
+      "event_type": "outbreak",
+      "published_at": "2026",
+      "case_counts": {
+        "confirmed": null,
+        "probable": null,
+        "suspected": null,
+        "deaths": null
+      },
+      "change_history": []
+    },
+    {
+      "event_id": "event-8f2cd59be79ca3a66d6f8daf",
+      "event_version": 1,
+      "title": "Exclusive | Here how to keep NYC rats at bay",
+      "pathogens": [
+        "hantavirus"
+      ],
+      "country": null,
+      "event_type": "other",
+      "published_at": "2026",
+      "case_counts": {
+        "confirmed": null,
+        "probable": null,
+        "suspected": null,
+        "deaths": null
+      },
+      "change_history": []
+    },
+    {
+      "event_id": "event-d467085e6690c6a700e7051c",
+      "event_version": 1,
+      "title": "The Infectious Disease Frenzy",
+      "pathogens": [
+        "hantavirus"
+      ],
+      "country": null,
+      "event_type": "outbreak",
+      "published_at": "2026",
+      "case_counts": {
+        "confirmed": null,
+        "probable": null,
+        "suspected": null,
+        "deaths": null
+      },
+      "change_history": []
+    },
+    {
+      "event_id": "event-d189959c10d6d0c0eaa65c37",
+      "event_version": 1,
+      "title": "Keystone Health Shares Hantavirus Prevention and Safety Guidance - Franklin County Free Press",
+      "pathogens": [
+        "hantavirus"
+      ],
+      "country": null,
+      "event_type": "other",
+      "published_at": "2026",
+      "case_counts": {
+        "confirmed": null,
+        "probable": null,
+        "suspected": null,
+        "deaths": null
+      },
+      "change_history": []
+    },
+    {
+      "event_id": "event-08ef411c1ba02d516b3d6947",
+      "event_version": 1,
+      "title": "Neurological Symptoms Linked to Hantavirus Infection Revealed - Bioengineer.org",
+      "pathogens": [
+        "hantavirus"
+      ],
+      "country": null,
+      "event_type": "other",
+      "published_at": "2026",
+      "case_counts": {
+        "confirmed": null,
+        "probable": null,
+        "suspected": null,
+        "deaths": null
+      },
+      "change_history": []
+    },
+    {
+      "event_id": "event-49dec3433c7148c7844bbe7d",
+      "event_version": 1,
+      "title": "Early signs of hantavirus you need to know - MSN",
+      "pathogens": [
+        "hantavirus"
+      ],
+      "country": null,
+      "event_type": "other",
+      "published_at": "2026",
+      "case_counts": {
+        "confirmed": null,
+        "probable": null,
+        "suspected": null,
+        "deaths": null
+      },
+      "change_history": []
+    },
+    {
+      "event_id": "event-5a1755d2ac739c5e4c89baa1",
+      "event_version": 1,
+      "title": "Hantavirus Outbreak Calls Attention to Industry’s Role in Health Emergencies - Think Global Health",
+      "pathogens": [
+        "hantavirus"
+      ],
+      "country": null,
+      "event_type": "outbreak",
+      "published_at": "2026",
+      "case_counts": {
+        "confirmed": null,
+        "probable": null,
+        "suspected": null,
+        "deaths": null
+      },
+      "change_history": []
+    },
+    {
+      "event_id": "event-294366222a9250cfed72eac4",
+      "event_version": 1,
+      "title": "Hantavirus outbreak offers lessons for the next pandemic - Earth.com",
+      "pathogens": [
+        "hantavirus"
+      ],
+      "country": null,
+      "event_type": "outbreak",
+      "published_at": "2026",
+      "case_counts": {
+        "confirmed": null,
+        "probable": null,
+        "suspected": null,
+        "deaths": null
+      },
+      "change_history": []
+    },
+    {
+      "event_id": "event-5a0e5a8bfa33e5d4ec48f5e0",
+      "event_version": 1,
+      "title": "WHO declares cruise ship hantavirus outbreak over - TRT World",
+      "pathogens": [
+        "hantavirus"
+      ],
+      "country": null,
+      "event_type": "outbreak",
+      "published_at": "2026",
+      "case_counts": {
+        "confirmed": null,
+        "probable": null,
+        "suspected": null,
+        "deaths": null
+      },
+      "change_history": []
+    },
+    {
+      "event_id": "event-5cc4d04242a4d835b1881320",
+      "event_version": 1,
+      "title": "Mapped: The countries affected by the cruise ship Hantavirus outbreak that has killed three people - AOL.com",
+      "pathogens": [
+        "hantavirus"
+      ],
+      "country": null,
+      "event_type": "outbreak",
+      "published_at": "2026",
+      "case_counts": {
+        "confirmed": null,
+        "probable": null,
+        "suspected": null,
+        "deaths": null
+      },
+      "change_history": []
+    },
+    {
+      "event_id": "event-aac525b17e6e6ae255add6ae",
+      "event_version": 1,
+      "title": "U.S. citizens on hantavirus cruise ship monitored at Nebraska Medicine - American Hospital Association",
+      "pathogens": [
+        "hantavirus"
+      ],
+      "country": "United States",
+      "event_type": "other",
+      "published_at": "2026",
+      "case_counts": {
+        "confirmed": null,
+        "probable": null,
+        "suspected": null,
+        "deaths": null
+      },
+      "change_history": []
+    },
+    {
+      "event_id": "event-95260297f153d5fa0c22aa69",
+      "event_version": 1,
+      "title": "Hantavirus outbreak from cruise ship officially ends - The Star",
+      "pathogens": [
+        "hantavirus"
+      ],
+      "country": null,
+      "event_type": "outbreak",
+      "published_at": "2026",
+      "case_counts": {
+        "confirmed": null,
+        "probable": null,
+        "suspected": null,
+        "deaths": null
+      },
+      "change_history": []
+    },
+    {
+      "event_id": "event-990467ecf8eb7120850b541e",
+      "event_version": 1,
+      "title": "Trump Calls Iran Strikes A ‘Trifle,’ And The Latest On The Hantavirus Outbreak Six Flags (o8ggSUz5AN) - Mshale",
+      "pathogens": [
+        "hantavirus"
+      ],
+      "country": null,
+      "event_type": "outbreak",
+      "published_at": "2026",
+      "case_counts": {
+        "confirmed": null,
+        "probable": null,
+        "suspected": null,
+        "deaths": null
+      },
+      "change_history": []
+    },
+    {
+      "event_id": "event-26e7dd1b81fc7bc46018f409",
+      "event_version": 1,
+      "title": "Five passengers from hantavirus-stricken cruise ship depart quarantine in Omaha - Omaha World-Herald",
+      "pathogens": [
+        "hantavirus"
+      ],
+      "country": null,
+      "event_type": "other",
+      "published_at": "2026",
+      "case_counts": {
+        "confirmed": null,
+        "probable": null,
+        "suspected": null,
+        "deaths": null
+      },
+      "change_history": []
+    },
+    {
+      "event_id": "event-5b9560c986d176c8b4e6d91c",
+      "event_version": 1,
+      "title": "After the hantavirus outbreak, here’s what cruise travelers should know - MSN",
+      "pathogens": [
+        "hantavirus"
+      ],
+      "country": null,
+      "event_type": "outbreak",
+      "published_at": "2026",
+      "case_counts": {
+        "confirmed": null,
+        "probable": null,
+        "suspected": null,
+        "deaths": null
+      },
+      "change_history": []
+    },
+    {
+      "event_id": "event-56c515a82d2d8b036a2528b3",
+      "event_version": 1,
+      "title": "Bend doctor helping passengers while stuck on hantavirus-stricken cruise ship, Bynum says - Central Oregon Daily",
+      "pathogens": [
+        "hantavirus"
+      ],
+      "country": null,
+      "event_type": "other",
+      "published_at": "2026",
+      "case_counts": {
+        "confirmed": null,
+        "probable": null,
+        "suspected": null,
+        "deaths": null
+      },
+      "change_history": []
+    },
+    {
+      "event_id": "event-52a54fef6d889a3c2cde19a3",
+      "event_version": 1,
+      "title": "Hantavirus-stricken cruise ship docks in the Netherlands for disinfection - 1019por.com",
+      "pathogens": [
+        "hantavirus"
+      ],
+      "country": null,
+      "event_type": "other",
+      "published_at": "2026",
+      "case_counts": {
+        "confirmed": null,
+        "probable": null,
+        "suspected": null,
+        "deaths": null
+      },
+      "change_history": []
+    },
+    {
+      "event_id": "event-005a059e9e7c417faf566763",
+      "event_version": 1,
+      "title": "Apparent hantavirus outbreak kills 3 on cruise ship, sickens at least 3 more - AOL.com",
+      "pathogens": [
+        "hantavirus"
+      ],
+      "country": null,
+      "event_type": "outbreak",
+      "published_at": "2026",
+      "case_counts": {
+        "confirmed": null,
+        "probable": null,
+        "suspected": null,
+        "deaths": null
+      },
+      "change_history": []
+    },
+    {
+      "event_id": "event-f5626c18508f4245845ad9f5",
+      "event_version": 1,
+      "title": "WHO says hantavirus outbreak linked to ship is over - MSN",
+      "pathogens": [
+        "hantavirus"
+      ],
+      "country": null,
+      "event_type": "outbreak",
+      "published_at": "2026",
+      "case_counts": {
+        "confirmed": null,
+        "probable": null,
+        "suspected": null,
+        "deaths": null
+      },
+      "change_history": []
+    },
+    {
+      "event_id": "event-ba7c988a663ccb06a0f81eb0",
+      "event_version": 1,
+      "title": "From Hantavirus to Healthcare Preparedness: How Emerging Health Threats Are Reshaping Infection Prevention and Patient Trust - Medical Tourism Magazine",
+      "pathogens": [
+        "hantavirus"
+      ],
+      "country": null,
+      "event_type": "other",
+      "published_at": "2026",
+      "case_counts": {
+        "confirmed": null,
+        "probable": null,
+        "suspected": null,
+        "deaths": null
+      },
+      "change_history": []
+    },
+    {
+      "event_id": "event-2366198c49f5736420192412",
+      "event_version": 1,
+      "title": "Spain to accept cruise ship with hantavirus outbreak on board - Turkmenportal.com",
+      "pathogens": [
+        "hantavirus"
+      ],
+      "country": null,
+      "event_type": "outbreak",
+      "published_at": "2026",
+      "case_counts": {
+        "confirmed": null,
+        "probable": null,
+        "suspected": null,
+        "deaths": null
+      },
+      "change_history": []
+    },
+    {
+      "event_id": "event-893fd07227150587a47c6fcc",
+      "event_version": 1,
+      "title": "Hantavirus outbreak suspected on Atlantic cruise ship as WHO confirms at least one case - Goodreturns",
+      "pathogens": [
+        "hantavirus"
+      ],
+      "country": null,
+      "event_type": "outbreak",
+      "published_at": "2026",
+      "case_counts": {
+        "confirmed": null,
+        "probable": null,
+        "suspected": null,
+        "deaths": null
+      },
+      "change_history": []
+    },
+    {
+      "event_id": "event-18f46ce4e14246a3ffa46d17",
+      "event_version": 1,
+      "title": "Fiji monitors deadly hantavirus outbreak - Fiji Sun",
+      "pathogens": [
+        "hantavirus"
+      ],
+      "country": null,
+      "event_type": "outbreak",
+      "published_at": "2026",
+      "case_counts": {
+        "confirmed": null,
+        "probable": null,
+        "suspected": null,
+        "deaths": null
+      },
+      "change_history": []
+    },
+    {
+      "event_id": "event-aeb2e1fde570e7a530cbd5c5",
+      "event_version": 1,
+      "title": "US monitoring hantavirus cruise passengers; dozens left ship after 1st death - MSN",
+      "pathogens": [
+        "hantavirus"
+      ],
+      "country": null,
+      "event_type": "other",
+      "published_at": "2026",
+      "case_counts": {
+        "confirmed": null,
+        "probable": null,
+        "suspected": null,
+        "deaths": null
+      },
+      "change_history": []
+    },
+    {
+      "event_id": "event-c46464efb63e9a4abadb16c1",
+      "event_version": 1,
+      "title": "涉汉坦病毒邮轮乘客陆续疏散归国 世卫组织：全球传播风险“低” - 财联社",
       "pathogens": [
         "汉坦病毒"
       ],
-      "country": "China",
-      "event_type": "host_surveillance",
-      "published_at": "2026-07-14",
+      "country": null,
+      "event_type": "other",
+      "published_at": "2026",
+      "case_counts": {
+        "confirmed": null,
+        "probable": null,
+        "suspected": null,
+        "deaths": null
+      },
+      "change_history": []
+    },
+    {
+      "event_id": "event-5ae9bd68779ca49e62a8effd",
+      "event_version": 1,
+      "title": "汉坦病毒邮轮疫情“零号病人”身份曝光 - 凤凰网",
+      "pathogens": [
+        "汉坦病毒"
+      ],
+      "country": null,
+      "event_type": "outbreak",
+      "published_at": "2026",
+      "case_counts": {
+        "confirmed": null,
+        "probable": null,
+        "suspected": null,
+        "deaths": null
+      },
+      "change_history": []
+    },
+    {
+      "event_id": "event-e78493ffc14aeae528f023d8",
+      "event_version": 1,
+      "title": "病死率31.7%!阿根廷今年新增42例汉坦病毒感染病例,已向多国提供检测试剂以协助调查 - 新浪财经",
+      "pathogens": [
+        "汉坦病毒"
+      ],
+      "country": "Argentina",
+      "event_type": "other",
+      "published_at": "2026",
+      "case_counts": {
+        "confirmed": null,
+        "probable": null,
+        "suspected": null,
+        "deaths": null
+      },
+      "change_history": []
+    },
+    {
+      "event_id": "event-f73a567099489bb97583c34d",
+      "event_version": 1,
+      "title": "综述：人工智能在汉坦病毒肺综合征胸部影像中的应用：罕见疾病影像实践考量 - 生物通",
+      "pathogens": [
+        "汉坦病毒",
+        "汉坦病毒肺综合征"
+      ],
+      "country": null,
+      "event_type": "other",
+      "published_at": "2026",
+      "case_counts": {
+        "confirmed": null,
+        "probable": null,
+        "suspected": null,
+        "deaths": null
+      },
+      "change_history": []
+    },
+    {
+      "event_id": "event-a21311e7a80c6c2f1966e80f",
+      "event_version": 1,
+      "title": "突发公共卫生警报！豪华探险邮轮疑现汉坦病毒疫情，3人死亡、世卫组织紧急介入 - FX168",
+      "pathogens": [
+        "汉坦病毒"
+      ],
+      "country": null,
+      "event_type": "outbreak",
+      "published_at": "2026",
+      "case_counts": {
+        "confirmed": null,
+        "probable": null,
+        "suspected": null,
+        "deaths": null
+      },
+      "change_history": []
+    },
+    {
+      "event_id": "event-a580ffd5c3d07545fa00ee2a",
+      "event_version": 1,
+      "title": "当地时间2日，世卫组织总干事谭德塞宣布，与邮轮有关的汉坦病毒疫情已结束，最后一名接触者完成了隔离且病毒检测结果呈阴性。此次疫情共导致13人感染、3人死亡。 - 搜狐网",
+      "pathogens": [
+        "汉坦病毒"
+      ],
+      "country": null,
+      "event_type": "outbreak",
+      "published_at": "2026",
+      "case_counts": {
+        "confirmed": null,
+        "probable": null,
+        "suspected": null,
+        "deaths": null
+      },
+      "change_history": []
+    },
+    {
+      "event_id": "event-10c027eb3b8928947f1d4efe",
+      "event_version": 1,
+      "title": "禽流感 埃博拉 汉坦病毒……为什么感觉传染病越来越多了？ - SBS",
+      "pathogens": [
+        "汉坦病毒"
+      ],
+      "country": null,
+      "event_type": "other",
+      "published_at": "2026",
+      "case_counts": {
+        "confirmed": null,
+        "probable": null,
+        "suspected": null,
+        "deaths": null
+      },
+      "change_history": []
+    },
+    {
+      "event_id": "event-cc5073548c66ca0c1e8b73ef",
+      "event_version": 1,
+      "title": "涉汉坦病毒邮轮随船医生感染，肿瘤医生游客接手 - 快媒体",
+      "pathogens": [
+        "汉坦病毒"
+      ],
+      "country": null,
+      "event_type": "other",
+      "published_at": "2026",
       "case_counts": {
         "confirmed": null,
         "probable": null,
@@ -1336,6 +2095,2438 @@
         "validation_errors": []
       },
       "saved_at": "2026-07-14T11:52:30+00:00"
+    },
+    "analysis:literature_analysis:7fa57768eac9214d75f9f79ef6a3f976389ef19b65a89998d7f65d81cfe3566c": {
+      "output": {
+        "translated_title_zh": "船上汉塔病毒：COVID-19 给我们的启示",
+        "translated_abstract_zh": "在 COVID-19 大流行初期，对气溶胶传播机制（SARS-CoV-2 的主要传播方式）的认识延迟，导致早期关于非药物干预措施的建议不足，以及关于如何降低感染风险的初始信息传递不佳。我们重点介绍了 MV Hondius 邮轮上安第斯病毒（ANDV）传播的关键流行病学细节，以及阿根廷先前报告的已确认人际传播的疫情，这些共同表明，在可接受的环境条件下，气溶胶传播可能是 ANDV 在源病例与易感接触者之间传播的关键机制。",
+        "display_summary_zh": "本研究旨在探讨安第斯病毒在邮轮及阿根廷疫情中的传播机制。作者对 MV Hondius 邮轮上以及阿根廷先前报告的疫情流行病学细节进行了描述性分析。研究发现，气溶胶传播可能是安第斯病毒在源病例与易感接触者之间传播的关键机制。此发现强调了在未来疫情防控中考虑气溶胶传播的重要性。研究仅基于有限的病例描述，缺乏更广泛的数据支持。",
+        "display_summary_en": "The authors review epidemiological details of Andes virus transmission on the MV Hondius cruise ship and prior outbreaks in Argentina. They suggest aerosol spread may be a key mechanism of transmission between source cases and susceptible contacts in permissible environmental settings. The findings highlight the importance of considering aerosol transmission in future outbreak investigations and control measures.",
+        "one_sentence_takeaway": {
+          "text": "气溶胶传播可能是安第斯病毒在邮轮和阿根廷疫情中的关键传播机制。",
+          "evidence_ids": [
+            "A2"
+          ]
+        },
+        "study": {
+          "research_question": {
+            "text": "是否气溶胶传播是安第斯病毒在邮轮和阿根廷疫情中的关键传播机制？",
+            "evidence_ids": [
+              "A2"
+            ]
+          },
+          "study_type": "observational",
+          "design": {
+            "text": "描述性分析疫情流行病学细节",
+            "evidence_ids": [
+              "A2"
+            ]
+          },
+          "sample_or_dataset": {
+            "text": "MV Hondius 邮轮上的安第斯病毒传播事件及阿根廷先前报告的已确认人际传播疫情",
+            "evidence_ids": [
+              "A2"
+            ]
+          },
+          "methods": [
+            {
+              "method": "流行病学细节回顾",
+              "evidence_ids": [
+                "A2"
+              ]
+            }
+          ]
+        },
+        "entities": {
+          "viruses": [
+            "Andes virus (ANDV)"
+          ],
+          "hosts": [],
+          "countries": [
+            "Argentina"
+          ],
+          "populations": []
+        },
+        "key_findings": [
+          {
+            "finding": "气溶胶传播可能是安第斯病毒在源病例与易感接触者之间传播的关键机制。",
+            "evidence_ids": [
+              "A2"
+            ],
+            "quantitative": false,
+            "interpretation_boundary": null
+          }
+        ],
+        "quantitative_results": [],
+        "significance": {
+          "statement": "此发现强调了在未来疫情防控中考虑气溶胶传播的重要性。",
+          "evidence_ids": [
+            "A2"
+          ],
+          "scope": null
+        },
+        "limitations": {
+          "author_reported": [],
+          "evidence_gaps": []
+        },
+        "evidence_strength": {
+          "level": "unclear",
+          "basis": "仅基于摘要中的有限描述",
+          "evidence_ids": [
+            "A2"
+          ]
+        },
+        "evidence_coverage": {
+          "level": "abstract",
+          "sections_used": [
+            "abstract"
+          ],
+          "note": null
+        },
+        "categories": [
+          "transmission",
+          "aerosol",
+          "cruise ship"
+        ],
+        "audience_tags": [
+          "public health",
+          "infectious disease"
+        ],
+        "display_priority": "medium",
+        "uncertainties": []
+      },
+      "audit": {
+        "task_name": "literature_analysis",
+        "record_id": "work-eff16bd1991afc42885881ed",
+        "provider": "groq",
+        "model": "openai/gpt-oss-20b",
+        "status": "success",
+        "generated_at": "2026-07-14T23:10:25+00:00",
+        "fallback_used": true,
+        "validation_status": "passed",
+        "validation_errors": [],
+        "unsupported_claim_count": 0,
+        "attempt_chain": [
+          {
+            "provider": "github_models",
+            "model": "openai/gpt-4.1-mini",
+            "status": "success",
+            "error": null,
+            "retry_count": 0,
+            "fallback_used": false,
+            "input_hash": "7fa57768eac9214d75f9f79ef6a3f976389ef19b65a89998d7f65d81cfe3566c",
+            "generated_at": "2026-07-14T23:10:22+00:00",
+            "task_name": "literature_analysis",
+            "validation_status": "failed",
+            "validation_errors": [
+              "TITLE_NUMBER_CHANGED_OR_DROPPED:19",
+              "TEXT_NUMBER_CHANGED_OR_DROPPED:2",
+              "TEXT_NUMBER_CHANGED_OR_DROPPED:19"
+            ],
+            "unsupported_claim_count": 0
+          },
+          {
+            "provider": "gemini",
+            "model": "gemini-2.0-flash-lite-001",
+            "status": "failed",
+            "error": "RuntimeError: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-lite-001:generateContent?key=AIzaSyDniNpZT-6W2YrqpgB5VnNOb1OsQLlJ_YA",
+            "retry_count": 1,
+            "fallback_used": true,
+            "input_hash": "7fa57768eac9214d75f9f79ef6a3f976389ef19b65a89998d7f65d81cfe3566c",
+            "generated_at": "2026-07-14T23:10:23+00:00",
+            "task_name": "literature_analysis",
+            "validation_status": "failed",
+            "validation_errors": [
+              "NO_OUTPUT"
+            ]
+          },
+          {
+            "provider": "groq",
+            "model": "openai/gpt-oss-20b",
+            "status": "success",
+            "error": null,
+            "retry_count": 0,
+            "fallback_used": true,
+            "input_hash": "7fa57768eac9214d75f9f79ef6a3f976389ef19b65a89998d7f65d81cfe3566c",
+            "generated_at": "2026-07-14T23:10:25+00:00",
+            "task_name": "literature_analysis",
+            "validation_status": "passed",
+            "validation_errors": [],
+            "unsupported_claim_count": 0
+          }
+        ]
+      },
+      "saved_at": "2026-07-14T23:10:25+00:00"
+    },
+    "analysis:literature_analysis:84dca54212d2a54e34f2a5ec1ab3bbc266e123cc92a91ec930ea74210ae01dfc": {
+      "output": {
+        "translated_title_zh": "变化世界中的汉坦病毒感染：流行病学、发病机制与一体化健康挑战",
+        "translated_abstract_zh": "汉坦病毒感染是一种具有全球重要性的动物源性疾病，表现为显著的发病率和死亡率，并具有复杂的生态动态。汉坦病毒主要通过啮齿动物宿主传播，导致两种主要临床综合征：出血热伴肾综合征（HFRS）和汉坦病毒心肺综合征（HCPS）。尽管历史上汉坦病毒感染局限于特定地理区域，近期环境变化、人类与动物接触增加以及全球流动性增强，促使其流行病学模式发生演变。本文综述了当前关于汉坦病毒传播、全球流行病学、病理生理机制、临床表现及治疗方法的知识。特别关注了与棕色大鼠和宠物啮齿动物相关的城市汉坦病毒——首尔病毒（SEOV）的新兴全球流行病学。此外，探讨了疫苗开发、监测以及在汉坦病毒感染预防和控制中整合一体化健康策略所面临的新挑战。加强多学科方法和改进早期检测仍是减轻这些感染全球影响的关键。",
+        "display_summary_zh": "本综述旨在总结汉坦病毒感染的流行病学、发病机制及其在全球变化背景下的挑战。研究基于现有文献，涵盖汉坦病毒的传播途径、临床表现及治疗策略。发现汉坦病毒主要通过啮齿动物传播，导致两种主要疾病：出血热伴肾综合征和汉坦病毒心肺综合征。环境变化和人类活动增加导致流行病学模式变化，特别是首尔病毒在城市环境中的传播引起关注。文章强调了疫苗研发和监测的重要性，并提出整合一体化健康策略以应对未来挑战。研究指出加强多学科合作和早期诊断是控制汉坦病毒感染的关键，但未提供具体的实验数据或临床试验结果。",
+        "display_summary_en": "This review summarizes current knowledge on hantavirus infections, focusing on their epidemiology, pathogenesis, and emerging challenges in a changing world. It highlights that hantaviruses, primarily transmitted by rodent reservoirs, cause two main clinical syndromes: hemorrhagic fever with renal syndrome and hantavirus cardiopulmonary syndrome. Environmental changes and increased human-animal interactions have altered epidemiological patterns, notably with the urban-associated Seoul virus. The review underscores the importance of vaccine development, surveillance, and One Health strategies, emphasizing multidisciplinary approaches and early detection to mitigate global impacts. However, it does not present new experimental or clinical data.",
+        "one_sentence_takeaway": {
+          "text": "汉坦病毒感染因环境变化和人类活动增加而呈现新的流行病学特征，需通过多学科合作和一体化健康策略加强预防和控制。",
+          "evidence_ids": [
+            "A1",
+            "A2",
+            "A3",
+            "A5",
+            "A6",
+            "A7"
+          ]
+        },
+        "study": {
+          "research_question": {
+            "text": "汉坦病毒感染在全球环境变化背景下的流行病学特征、发病机制及防控挑战有哪些？",
+            "evidence_ids": [
+              "A1",
+              "A3",
+              "A4",
+              "A6"
+            ]
+          },
+          "study_type": "review",
+          "design": {
+            "text": "综述现有文献，汇总汉坦病毒的传播、流行病学、病理生理、临床表现及治疗进展。",
+            "evidence_ids": [
+              "A4"
+            ]
+          },
+          "sample_or_dataset": {
+            "text": "基于全球范围内关于汉坦病毒的文献资料和研究报告。",
+            "evidence_ids": [
+              "A4"
+            ]
+          },
+          "methods": [
+            {
+              "method": "文献综述",
+              "evidence_ids": [
+                "A4"
+              ]
+            }
+          ]
+        },
+        "entities": {
+          "viruses": [
+            "汉坦病毒",
+            "首尔病毒 (SEOV)"
+          ],
+          "hosts": [
+            "啮齿动物",
+            "棕色大鼠",
+            "宠物啮齿动物"
+          ],
+          "countries": [],
+          "populations": []
+        },
+        "key_findings": [
+          {
+            "finding": "汉坦病毒主要通过啮齿动物宿主传播，导致出血热伴肾综合征和汉坦病毒心肺综合征两种主要临床综合征。",
+            "evidence_ids": [
+              "A1",
+              "A2"
+            ],
+            "quantitative": false,
+            "interpretation_boundary": "基于综述文献，无具体病例数或统计数据。"
+          },
+          {
+            "finding": "环境变化、人类与动物接触增加及全球流动性增强，促使汉坦病毒流行病学模式发生演变。",
+            "evidence_ids": [
+              "A3"
+            ],
+            "quantitative": false,
+            "interpretation_boundary": "描述性总结，无具体定量分析。"
+          },
+          {
+            "finding": "首尔病毒作为一种与城市环境相关的汉坦病毒，正呈现出新的全球流行病学趋势。",
+            "evidence_ids": [
+              "A5"
+            ],
+            "quantitative": false,
+            "interpretation_boundary": "基于文献综述，未提供具体流行数据。"
+          },
+          {
+            "finding": "疫苗开发、监测和一体化健康策略的整合是当前汉坦病毒防控面临的重要挑战。",
+            "evidence_ids": [
+              "A6"
+            ],
+            "quantitative": false,
+            "interpretation_boundary": "提出未来方向和挑战，缺乏具体实施数据。"
+          },
+          {
+            "finding": "加强多学科合作和早期检测对于减轻汉坦病毒感染的全球影响至关重要。",
+            "evidence_ids": [
+              "A7"
+            ],
+            "quantitative": false,
+            "interpretation_boundary": "基于专家观点和文献总结。"
+          }
+        ],
+        "quantitative_results": [],
+        "significance": {
+          "statement": "本综述强调了汉坦病毒感染在全球环境变化背景下的新兴流行病学特征及防控挑战，提示需加强多学科合作和一体化健康策略以有效应对。",
+          "evidence_ids": [
+            "A3",
+            "A5",
+            "A6",
+            "A7"
+          ],
+          "scope": "全球汉坦病毒感染防控"
+        },
+        "limitations": {
+          "author_reported": [],
+          "evidence_gaps": [
+            "缺乏具体的实验数据和临床试验结果。",
+            "未提供详细的流行病学统计数据。",
+            "全文不可用，分析仅基于摘要。"
+          ]
+        },
+        "evidence_strength": {
+          "level": "moderate",
+          "basis": "基于文献综述，提供了广泛的知识总结，但缺乏原始数据支持。",
+          "evidence_ids": [
+            "A1",
+            "A2",
+            "A3",
+            "A4",
+            "A5",
+            "A6",
+            "A7"
+          ]
+        },
+        "evidence_coverage": {
+          "level": "abstract",
+          "sections_used": [
+            "abstract"
+          ],
+          "note": "无全文开放获取，仅基于摘要内容进行分析。"
+        },
+        "categories": [],
+        "audience_tags": [],
+        "display_priority": "medium",
+        "uncertainties": []
+      },
+      "audit": {
+        "task_name": "literature_analysis",
+        "record_id": "work-dcbbc9fbd8008d9b406c3f47",
+        "provider": "github_models",
+        "model": "openai/gpt-4.1-mini",
+        "status": "success",
+        "generated_at": "2026-07-14T23:11:25+00:00",
+        "fallback_used": false,
+        "validation_status": "passed",
+        "validation_errors": [],
+        "unsupported_claim_count": 0,
+        "attempt_chain": [
+          {
+            "provider": "github_models",
+            "model": "openai/gpt-4.1-mini",
+            "status": "success",
+            "error": null,
+            "retry_count": 0,
+            "fallback_used": false,
+            "input_hash": "84dca54212d2a54e34f2a5ec1ab3bbc266e123cc92a91ec930ea74210ae01dfc",
+            "generated_at": "2026-07-14T23:11:25+00:00",
+            "task_name": "literature_analysis",
+            "validation_status": "passed",
+            "validation_errors": [],
+            "unsupported_claim_count": 0
+          }
+        ]
+      },
+      "saved_at": "2026-07-14T23:11:25+00:00"
+    },
+    "analysis:media_news_analysis:e161373974006c8f53496f57b4e512a73dda2e34412b5b5d1ab11c207a3edfa2": {
+      "output": {
+        "translated_title_zh": "沙特阿拉伯呼吁旅客在夏季遵守健康准则 – Shafaqna 英文",
+        "translated_excerpt_zh": "沙特阿拉伯当局建议旅客在夏季遵守健康准则。该当局表示，他们将继续与国际卫生组织协调，监测全球流行病学形势，包括多国出现的汉坦病毒、埃博拉病毒病、黄热病和季节性流感疫情。",
+        "display_summary_zh": "沙特阿拉伯当局在一篇新闻稿中呼吁旅客在夏季遵守健康准则。报道指出，当局正与国际卫生组织合作，监测全球流行病学形势。文中提及多国出现汉坦病毒、埃博拉病毒病、黄热病和季节性流感疫情，但未提供官方确认。未提及确诊病例、疑似病例或死亡人数。报道未包含任何行动建议或进一步措施。",
+        "display_summary_en": "Saudi authorities urged travelers to follow health guidelines during summer. They said they are monitoring the global epidemiological situation with international health organizations, citing outbreaks of hantavirus, Ebola, yellow fever, and seasonal influenza in several countries. No official confirmation of these outbreaks or case counts is provided. No further actions or measures are mentioned.",
+        "event_type": "outbreak",
+        "event_date": {
+          "value": null,
+          "precision": "unknown",
+          "evidence_ids": []
+        },
+        "locations": [],
+        "pathogens": [],
+        "hosts": [],
+        "case_counts": {
+          "confirmed": {
+            "value": null,
+            "evidence_ids": []
+          },
+          "probable": {
+            "value": null,
+            "evidence_ids": []
+          },
+          "suspected": {
+            "value": null,
+            "evidence_ids": []
+          },
+          "deaths": {
+            "value": null,
+            "evidence_ids": []
+          }
+        },
+        "original_authority_cited": [
+          {
+            "name": "Saudi Arabian authorities",
+            "claim": "advised travelers to follow health guidelines during the summer",
+            "evidence_ids": [
+              "N1"
+            ]
+          },
+          {
+            "name": "Saudi Arabian authorities",
+            "claim": "continues to monitor the global epidemiological situation in coordination with international health organizations, including outbreaks of Hantavirus, Ebola virus disease, yellow fever, and seasonal influenza in several countries",
+            "evidence_ids": [
+              "N2"
+            ]
+          }
+        ],
+        "source_chain": [
+          {
+            "from": "Shafaqna English",
+            "to": "Saudi Arabian authorities",
+            "relationship": "quotes",
+            "evidence_ids": [
+              "N1",
+              "N2"
+            ]
+          }
+        ],
+        "official_confirmation_found": false,
+        "confirmed_claims": [
+          {
+            "claim": "Saudi Arabian authorities advised travelers to follow health guidelines during the summer",
+            "evidence_ids": [
+              "N1"
+            ]
+          },
+          {
+            "claim": "Saudi Arabian authorities continue to monitor the global epidemiological situation in coordination with international health organizations, including outbreaks of Hantavirus, Ebola virus disease, yellow fever, and seasonal influenza in several countries",
+            "evidence_ids": [
+              "N2"
+            ]
+          }
+        ],
+        "claims_requiring_confirmation": [],
+        "sensational_language_detected": false,
+        "sensational_phrases": [],
+        "source_content_quality": {
+          "level": "full",
+          "note": null
+        },
+        "uncertainties": [
+          "No official confirmation of the mentioned outbreaks or case counts is provided"
+        ],
+        "evidence_ids": [
+          "T0",
+          "N1",
+          "N2"
+        ]
+      },
+      "audit": {
+        "task_name": "media_news_analysis",
+        "record_id": "article-af7989e04f716fa5931f2733",
+        "provider": "groq",
+        "model": "openai/gpt-oss-20b",
+        "status": "success",
+        "generated_at": "2026-07-14T23:14:15+00:00",
+        "fallback_used": true,
+        "validation_status": "passed",
+        "validation_errors": [],
+        "unsupported_claim_count": 0,
+        "attempt_chain": [
+          {
+            "provider": "github_models",
+            "model": "openai/gpt-4.1-mini",
+            "status": "success",
+            "error": null,
+            "retry_count": 0,
+            "fallback_used": false,
+            "input_hash": "e161373974006c8f53496f57b4e512a73dda2e34412b5b5d1ab11c207a3edfa2",
+            "generated_at": "2026-07-14T23:14:12+00:00",
+            "task_name": "media_news_analysis",
+            "validation_status": "failed",
+            "validation_errors": [
+              "Unsupported numeric token at display_summary_zh: 2026",
+              "Unsupported numeric token at display_summary_en: 2026",
+              "Unsupported numeric token at event_date.value: 2026"
+            ],
+            "unsupported_claim_count": 3
+          },
+          {
+            "provider": "gemini",
+            "model": "gemini-2.0-flash-lite-001",
+            "status": "failed",
+            "error": "RuntimeError: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-lite-001:generateContent?key=AIzaSyDniNpZT-6W2YrqpgB5VnNOb1OsQLlJ_YA",
+            "retry_count": 1,
+            "fallback_used": true,
+            "input_hash": "e161373974006c8f53496f57b4e512a73dda2e34412b5b5d1ab11c207a3edfa2",
+            "generated_at": "2026-07-14T23:14:14+00:00",
+            "task_name": "media_news_analysis",
+            "validation_status": "failed",
+            "validation_errors": [
+              "NO_OUTPUT"
+            ]
+          },
+          {
+            "provider": "groq",
+            "model": "openai/gpt-oss-20b",
+            "status": "success",
+            "error": null,
+            "retry_count": 0,
+            "fallback_used": true,
+            "input_hash": "e161373974006c8f53496f57b4e512a73dda2e34412b5b5d1ab11c207a3edfa2",
+            "generated_at": "2026-07-14T23:14:15+00:00",
+            "task_name": "media_news_analysis",
+            "validation_status": "passed",
+            "validation_errors": [],
+            "unsupported_claim_count": 0
+          }
+        ]
+      },
+      "saved_at": "2026-07-14T23:14:15+00:00"
+    },
+    "analysis:media_news_analysis:ba8b2d06c7bbad753d7377d53d105d0854f963ae3cd246316ffceb1f7e001ad9": {
+      "output": {
+        "translated_title_zh": "汉坦病毒感染的神经系统影响被发现",
+        "translated_excerpt_zh": "关于这项研究：汉坦病毒感染的神经系统表现虽不常见，但可能非常严重。需要进行前瞻性研究和实验模型，以更好地描述这些表现，理解其病理生理机制，确定治疗靶点，并制定管理指南。",
+        "display_summary_zh": "报道介绍了一项关于汉坦病毒感染神经系统影响的研究。研究指出，虽然神经系统表现不常见，但可能非常严重。文章强调需要通过前瞻性研究和实验模型来深入了解这些表现的机制，寻找治疗方法，并制定相应的管理指南。该报道未提供具体病例数据或官方确认信息，相关结论仍需进一步验证。",
+        "display_summary_en": "The report discusses a study on neurological effects of hantavirus infection, noting that such manifestations are uncommon but can be severe. It highlights the need for prospective studies and experimental models to better characterize these effects, understand pathophysiology, identify therapeutic targets, and develop management guidelines. No specific case data or official confirmation is provided, and findings require further validation.",
+        "event_type": "other",
+        "event_date": {
+          "value": null,
+          "precision": "unknown",
+          "evidence_ids": []
+        },
+        "locations": [],
+        "pathogens": [
+          "hantavirus"
+        ],
+        "hosts": [],
+        "case_counts": {
+          "confirmed": {
+            "value": null,
+            "evidence_ids": []
+          },
+          "probable": {
+            "value": null,
+            "evidence_ids": []
+          },
+          "suspected": {
+            "value": null,
+            "evidence_ids": []
+          },
+          "deaths": {
+            "value": null,
+            "evidence_ids": []
+          }
+        },
+        "original_authority_cited": [],
+        "source_chain": [],
+        "official_confirmation_found": false,
+        "confirmed_claims": [
+          {
+            "claim": "Neurological manifestations of hantavirus infection are uncommon but can be severe.",
+            "evidence_ids": [
+              "N1"
+            ]
+          }
+        ],
+        "claims_requiring_confirmation": [
+          {
+            "claim": "Prospective studies and experimental models are needed to better characterize these manifestations, understand pathophysiology, identify therapeutic targets, and develop guidelines for management.",
+            "evidence_ids": [
+              "N2"
+            ]
+          }
+        ],
+        "sensational_language_detected": false,
+        "sensational_phrases": [],
+        "source_content_quality": {
+          "level": "partial",
+          "note": "Only a brief summary of a study is provided without detailed data or official statements."
+        },
+        "uncertainties": [
+          "No specific case counts or locations are provided.",
+          "No official confirmation or detailed study results are included."
+        ],
+        "evidence_ids": [
+          "T0",
+          "N1",
+          "N2"
+        ]
+      },
+      "audit": {
+        "task_name": "media_news_analysis",
+        "record_id": "article-c3f386dae5df9fd4ab416832",
+        "provider": "github_models",
+        "model": "openai/gpt-4.1-mini",
+        "status": "success",
+        "generated_at": "2026-07-14T23:15:19+00:00",
+        "fallback_used": false,
+        "validation_status": "passed",
+        "validation_errors": [],
+        "unsupported_claim_count": 0,
+        "attempt_chain": [
+          {
+            "provider": "github_models",
+            "model": "openai/gpt-4.1-mini",
+            "status": "success",
+            "error": null,
+            "retry_count": 0,
+            "fallback_used": false,
+            "input_hash": "ba8b2d06c7bbad753d7377d53d105d0854f963ae3cd246316ffceb1f7e001ad9",
+            "generated_at": "2026-07-14T23:15:19+00:00",
+            "task_name": "media_news_analysis",
+            "validation_status": "passed",
+            "validation_errors": [],
+            "unsupported_claim_count": 0
+          }
+        ]
+      },
+      "saved_at": "2026-07-14T23:15:19+00:00"
+    },
+    "analysis:media_news_analysis:044374d37f4c8b04230ea3d305dc7c3f32024359ffb97b038f53e0ef3b499e37": {
+      "output": {
+        "translated_title_zh": "Keystone Health 分享汉坦病毒预防和安全指导 - 富兰克林县自由报",
+        "translated_excerpt_zh": "Keystone Health 分享了关于汉坦病毒的预防和安全指导。该信息由富兰克林县自由报报道。",
+        "display_summary_zh": "据富兰克林县自由报报道，Keystone Health 分享了有关汉坦病毒的预防和安全指导。报道中未提供具体的病例数或死亡数据，也未提及官方确认的疫情爆发。该报道主要聚焦于预防措施和安全建议，尚无进一步的官方确认信息。",
+        "display_summary_en": "Keystone Health has shared prevention and safety guidance regarding hantavirus, as reported by Franklin County Free Press. The report does not provide specific case or death counts, nor does it mention any official outbreak confirmation. The focus is on prevention measures and safety advice, with no further official confirmation available.",
+        "event_type": "other",
+        "event_date": {
+          "value": null,
+          "precision": "unknown",
+          "evidence_ids": []
+        },
+        "locations": [],
+        "pathogens": [
+          "hantavirus"
+        ],
+        "hosts": [],
+        "case_counts": {
+          "confirmed": {
+            "value": null,
+            "evidence_ids": []
+          },
+          "probable": {
+            "value": null,
+            "evidence_ids": []
+          },
+          "suspected": {
+            "value": null,
+            "evidence_ids": []
+          },
+          "deaths": {
+            "value": null,
+            "evidence_ids": []
+          }
+        },
+        "original_authority_cited": [
+          {
+            "name": "Keystone Health",
+            "claim": "Shares hantavirus prevention and safety guidance",
+            "evidence_ids": [
+              "N1"
+            ]
+          }
+        ],
+        "source_chain": [
+          {
+            "from": "Keystone Health",
+            "to": "Franklin County Free Press",
+            "relationship": "quotes",
+            "evidence_ids": [
+              "N1"
+            ]
+          }
+        ],
+        "official_confirmation_found": false,
+        "confirmed_claims": [
+          {
+            "claim": "Keystone Health shares hantavirus prevention and safety guidance",
+            "evidence_ids": [
+              "N1"
+            ]
+          }
+        ],
+        "claims_requiring_confirmation": [],
+        "sensational_language_detected": false,
+        "sensational_phrases": [],
+        "source_content_quality": {
+          "level": "title_or_snippet_only",
+          "note": "Only title and a single snippet sentence are provided without detailed content."
+        },
+        "uncertainties": [
+          "No specific case or death counts are provided.",
+          "No official confirmation of an outbreak or public health event is mentioned."
+        ],
+        "evidence_ids": [
+          "T0",
+          "N1"
+        ]
+      },
+      "audit": {
+        "task_name": "media_news_analysis",
+        "record_id": "article-8d966342f594129565393174",
+        "provider": "github_models",
+        "model": "openai/gpt-4.1-mini",
+        "status": "success",
+        "generated_at": "2026-07-14T23:19:53+00:00",
+        "fallback_used": false,
+        "validation_status": "passed",
+        "validation_errors": [],
+        "unsupported_claim_count": 0,
+        "attempt_chain": [
+          {
+            "provider": "github_models",
+            "model": "openai/gpt-4.1-mini",
+            "status": "success",
+            "error": null,
+            "retry_count": 0,
+            "fallback_used": false,
+            "input_hash": "044374d37f4c8b04230ea3d305dc7c3f32024359ffb97b038f53e0ef3b499e37",
+            "generated_at": "2026-07-14T23:19:53+00:00",
+            "task_name": "media_news_analysis",
+            "validation_status": "passed",
+            "validation_errors": [],
+            "unsupported_claim_count": 0
+          }
+        ]
+      },
+      "saved_at": "2026-07-14T23:19:53+00:00"
+    },
+    "analysis:media_news_analysis:d872bf3ad1c0b6209df52f2b716c27ac24ed445f72aa97cb7084b2406ddc4c0f": {
+      "output": {
+        "translated_title_zh": "揭示汉坦病毒感染相关的神经系统症状 - Bioengineer.org",
+        "translated_excerpt_zh": "Bioengineer.org报道了汉坦病毒感染与神经系统症状之间的关联。",
+        "display_summary_zh": "据Bioengineer.org报道，汉坦病毒感染与神经系统症状有关联。报道未提供具体的病例数、死亡数或官方确认信息。该信息基于新闻标题和简短内容，缺乏详细数据和权威声明，需进一步确认。",
+        "display_summary_en": "Bioengineer.org reports a link between hantavirus infection and neurological symptoms. No specific case numbers, deaths, or official confirmations are provided. The information is based on the news title and brief content, lacking detailed data and authoritative statements, requiring further verification.",
+        "event_type": "other",
+        "event_date": {
+          "value": null,
+          "precision": "unknown",
+          "evidence_ids": []
+        },
+        "locations": [],
+        "pathogens": [
+          "hantavirus"
+        ],
+        "hosts": [],
+        "case_counts": {
+          "confirmed": {
+            "value": null,
+            "evidence_ids": []
+          },
+          "probable": {
+            "value": null,
+            "evidence_ids": []
+          },
+          "suspected": {
+            "value": null,
+            "evidence_ids": []
+          },
+          "deaths": {
+            "value": null,
+            "evidence_ids": []
+          }
+        },
+        "original_authority_cited": [],
+        "source_chain": [
+          {
+            "from": "Bioengineer.org",
+            "to": "Google News RSS English",
+            "relationship": "reprints",
+            "evidence_ids": [
+              "N1"
+            ]
+          }
+        ],
+        "official_confirmation_found": false,
+        "confirmed_claims": [],
+        "claims_requiring_confirmation": [
+          {
+            "claim": "Neurological symptoms are linked to hantavirus infection",
+            "evidence_ids": [
+              "T0",
+              "N1"
+            ]
+          }
+        ],
+        "sensational_language_detected": false,
+        "sensational_phrases": [],
+        "source_content_quality": {
+          "level": "title_or_snippet_only",
+          "note": "Only the article title and a brief snippet are available, lacking detailed content."
+        },
+        "uncertainties": [
+          "No detailed data on cases, deaths, or official confirmation.",
+          "No specific locations or dates provided."
+        ],
+        "evidence_ids": [
+          "T0",
+          "N1"
+        ]
+      },
+      "audit": {
+        "task_name": "media_news_analysis",
+        "record_id": "article-e5e05a5e28c0413f8600d44f",
+        "provider": "github_models",
+        "model": "openai/gpt-4.1-mini",
+        "status": "success",
+        "generated_at": "2026-07-14T23:19:59+00:00",
+        "fallback_used": false,
+        "validation_status": "passed",
+        "validation_errors": [],
+        "unsupported_claim_count": 0,
+        "attempt_chain": [
+          {
+            "provider": "github_models",
+            "model": "openai/gpt-4.1-mini",
+            "status": "success",
+            "error": null,
+            "retry_count": 0,
+            "fallback_used": false,
+            "input_hash": "d872bf3ad1c0b6209df52f2b716c27ac24ed445f72aa97cb7084b2406ddc4c0f",
+            "generated_at": "2026-07-14T23:19:59+00:00",
+            "task_name": "media_news_analysis",
+            "validation_status": "passed",
+            "validation_errors": [],
+            "unsupported_claim_count": 0
+          }
+        ]
+      },
+      "saved_at": "2026-07-14T23:19:59+00:00"
+    },
+    "analysis:media_news_analysis:8b4bb8a22a8193264b86ceb9e7ad9fe3c2dfb6319340da3c15cfd3b6e0d0675a": {
+      "output": {
+        "translated_title_zh": "你需要了解的汉坦病毒早期症状 - MSN",
+        "translated_excerpt_zh": "你需要了解的汉坦病毒早期症状 - MSN",
+        "display_summary_zh": "该报道标题为“你需要了解的汉坦病毒早期症状”，来源为MSN新闻。内容仅为标题和链接，未提供具体的病例数据、官方确认或权威引用。报道涉及的病原体为汉坦病毒，但无具体时间、地点或病例信息。该报道未确认任何官方声明或疫情爆发，仅为一般性健康信息提示。",
+        "display_summary_en": "The report titled 'Early signs of hantavirus you need to know' from MSN provides general information about hantavirus early symptoms. No specific case numbers, locations, dates, or official confirmations are provided. The content is limited to a headline and link without detailed evidence or authority statements.",
+        "event_type": "other",
+        "event_date": {
+          "value": null,
+          "precision": "unknown",
+          "evidence_ids": []
+        },
+        "locations": [],
+        "pathogens": [
+          "hantavirus"
+        ],
+        "hosts": [],
+        "case_counts": {
+          "confirmed": {
+            "value": null,
+            "evidence_ids": []
+          },
+          "probable": {
+            "value": null,
+            "evidence_ids": []
+          },
+          "suspected": {
+            "value": null,
+            "evidence_ids": []
+          },
+          "deaths": {
+            "value": null,
+            "evidence_ids": []
+          }
+        },
+        "original_authority_cited": [],
+        "source_chain": [
+          {
+            "from": "MSN",
+            "to": "Google News RSS English",
+            "relationship": "reprints",
+            "evidence_ids": [
+              "N1"
+            ]
+          }
+        ],
+        "official_confirmation_found": false,
+        "confirmed_claims": [],
+        "claims_requiring_confirmation": [],
+        "sensational_language_detected": false,
+        "sensational_phrases": [],
+        "source_content_quality": {
+          "level": "title_or_snippet_only",
+          "note": "Only headline and link provided, no detailed content."
+        },
+        "uncertainties": [],
+        "evidence_ids": [
+          "T0",
+          "N1"
+        ]
+      },
+      "audit": {
+        "task_name": "media_news_analysis",
+        "record_id": "article-ea0578687c3cd9fea0c39946",
+        "provider": "github_models",
+        "model": "openai/gpt-4.1-mini",
+        "status": "success",
+        "generated_at": "2026-07-14T23:20:06+00:00",
+        "fallback_used": false,
+        "validation_status": "passed",
+        "validation_errors": [],
+        "unsupported_claim_count": 0,
+        "attempt_chain": [
+          {
+            "provider": "github_models",
+            "model": "openai/gpt-4.1-mini",
+            "status": "success",
+            "error": null,
+            "retry_count": 0,
+            "fallback_used": false,
+            "input_hash": "8b4bb8a22a8193264b86ceb9e7ad9fe3c2dfb6319340da3c15cfd3b6e0d0675a",
+            "generated_at": "2026-07-14T23:20:06+00:00",
+            "task_name": "media_news_analysis",
+            "validation_status": "passed",
+            "validation_errors": [],
+            "unsupported_claim_count": 0
+          }
+        ]
+      },
+      "saved_at": "2026-07-14T23:20:06+00:00"
+    },
+    "analysis:media_news_analysis:234214cf378c3c3518a08d3af16099225bd674e4cdd6b6049d48d07808b87b5c": {
+      "output": {
+        "translated_title_zh": "汉坦病毒疫情引发对工业在公共卫生紧急事件中作用的关注 - Think Global Health",
+        "translated_excerpt_zh": "标题为“汉坦病毒疫情引发对工业在公共卫生紧急事件中作用的关注”，来源为Think Global Health。内容仅包含标题信息，未提供具体疫情数据、时间、地点或官方确认信息。",
+        "display_summary_zh": "报道标题指出汉坦病毒疫情引发了对工业在公共卫生紧急事件中作用的关注，来源为Think Global Health。当前仅有标题信息，缺乏具体的疫情时间、地点、病例数或死亡数等详细数据。报道中未见官方确认该疫情的声明，也未引用权威机构的具体言论。整体信息有限，无法确认疫情的规模或影响。",
+        "display_summary_en": "The report titled 'Hantavirus Outbreak Calls Attention to Industry’s Role in Health Emergencies' from Think Global Health highlights concerns about industry involvement in health emergencies related to hantavirus. Only the title is provided without detailed information on the outbreak's timing, location, case counts, or official confirmation. No authoritative statements or official data are included, leaving the outbreak's scope and impact unverified.",
+        "event_type": "outbreak",
+        "event_date": {
+          "value": null,
+          "precision": "unknown",
+          "evidence_ids": []
+        },
+        "locations": [],
+        "pathogens": [
+          "hantavirus"
+        ],
+        "hosts": [
+          {
+            "name": "mouse",
+            "role": "reservoir",
+            "evidence_ids": []
+          }
+        ],
+        "case_counts": {
+          "confirmed": {
+            "value": null,
+            "evidence_ids": []
+          },
+          "probable": {
+            "value": null,
+            "evidence_ids": []
+          },
+          "suspected": {
+            "value": null,
+            "evidence_ids": []
+          },
+          "deaths": {
+            "value": null,
+            "evidence_ids": []
+          }
+        },
+        "original_authority_cited": [],
+        "source_chain": [
+          {
+            "from": "Google News RSS English",
+            "to": "Think Global Health",
+            "relationship": "unknown",
+            "evidence_ids": [
+              "T0",
+              "N1"
+            ]
+          }
+        ],
+        "official_confirmation_found": false,
+        "confirmed_claims": [],
+        "claims_requiring_confirmation": [
+          {
+            "claim": "There is a hantavirus outbreak",
+            "evidence_ids": [
+              "T0",
+              "N1"
+            ]
+          },
+          {
+            "claim": "Industry plays a role in health emergencies related to hantavirus",
+            "evidence_ids": [
+              "T0",
+              "N1"
+            ]
+          }
+        ],
+        "sensational_language_detected": false,
+        "sensational_phrases": [],
+        "source_content_quality": {
+          "level": "title_or_snippet_only",
+          "note": "Only the article title and source are provided without detailed content."
+        },
+        "uncertainties": [
+          "No specific date or location for the hantavirus outbreak is provided.",
+          "No case counts or death numbers are reported.",
+          "No official confirmation or authoritative statements are included."
+        ],
+        "evidence_ids": [
+          "T0",
+          "N1"
+        ]
+      },
+      "audit": {
+        "task_name": "media_news_analysis",
+        "record_id": "article-aa6ab8665dd273de28fcf5ba",
+        "provider": "github_models",
+        "model": "openai/gpt-4.1-mini",
+        "status": "success",
+        "generated_at": "2026-07-14T23:20:14+00:00",
+        "fallback_used": false,
+        "validation_status": "passed",
+        "validation_errors": [],
+        "unsupported_claim_count": 0,
+        "attempt_chain": [
+          {
+            "provider": "github_models",
+            "model": "openai/gpt-4.1-mini",
+            "status": "success",
+            "error": null,
+            "retry_count": 0,
+            "fallback_used": false,
+            "input_hash": "234214cf378c3c3518a08d3af16099225bd674e4cdd6b6049d48d07808b87b5c",
+            "generated_at": "2026-07-14T23:20:14+00:00",
+            "task_name": "media_news_analysis",
+            "validation_status": "passed",
+            "validation_errors": [],
+            "unsupported_claim_count": 0
+          }
+        ]
+      },
+      "saved_at": "2026-07-14T23:20:14+00:00"
+    },
+    "translation:work:work-e3cb5c555876b2b40ccfb58a:8f8ad853ec57bbe8f6e1e0fe0ec66f9234d4c33cd4d1c57add924c78f447d50b": {
+      "output": {
+        "translated_title_zh": "只顾看船，忽视森林：为何生态溢出、宿主生态和环境变化仍是北美汉坦病毒的真正威胁",
+        "translated_text_zh": null,
+        "display_summary_zh": null,
+        "display_summary_en": null,
+        "uncertainties": []
+      },
+      "audit": {
+        "provider": "github_models",
+        "model": "openai/gpt-4.1-mini",
+        "status": "success",
+        "error": null,
+        "retry_count": 0,
+        "fallback_used": false,
+        "input_hash": "6396d734dc301bd16aed56a591e17eba9a6826d4cc1f4259046882f8c8daeab2",
+        "generated_at": "2026-07-14T23:20:48+00:00",
+        "task_name": "bilingual_translation_batch",
+        "record_id": "work-e3cb5c555876b2b40ccfb58a",
+        "validation_status": "passed",
+        "validation_errors": [],
+        "attempt_chain": [
+          {
+            "provider": "github_models",
+            "model": "openai/gpt-4.1-mini",
+            "status": "success",
+            "error": null,
+            "retry_count": 0,
+            "fallback_used": false,
+            "input_hash": "6396d734dc301bd16aed56a591e17eba9a6826d4cc1f4259046882f8c8daeab2",
+            "generated_at": "2026-07-14T23:20:48+00:00",
+            "task_name": "bilingual_translation_batch",
+            "record_id": "work-e3cb5c555876b2b40ccfb58a",
+            "validation_status": "passed",
+            "validation_errors": []
+          }
+        ],
+        "accepted_provider_index": 0
+      },
+      "saved_at": "2026-07-14T23:20:48+00:00"
+    },
+    "translation:work:work-26d41b33804b556d0e838645:40a74911db3962bef122969fa7b064791a6ad9b13bd9393f4599cde4a688c543": {
+      "output": {
+        "translated_title_zh": "自然游轮上的汉坦病毒及大流行风险",
+        "translated_text_zh": null,
+        "display_summary_zh": null,
+        "display_summary_en": null,
+        "uncertainties": []
+      },
+      "audit": {
+        "provider": "github_models",
+        "model": "openai/gpt-4.1-mini",
+        "status": "success",
+        "error": null,
+        "retry_count": 0,
+        "fallback_used": false,
+        "input_hash": "6396d734dc301bd16aed56a591e17eba9a6826d4cc1f4259046882f8c8daeab2",
+        "generated_at": "2026-07-14T23:20:48+00:00",
+        "task_name": "bilingual_translation_batch",
+        "record_id": "work-26d41b33804b556d0e838645",
+        "validation_status": "passed",
+        "validation_errors": [],
+        "attempt_chain": [
+          {
+            "provider": "github_models",
+            "model": "openai/gpt-4.1-mini",
+            "status": "success",
+            "error": null,
+            "retry_count": 0,
+            "fallback_used": false,
+            "input_hash": "6396d734dc301bd16aed56a591e17eba9a6826d4cc1f4259046882f8c8daeab2",
+            "generated_at": "2026-07-14T23:20:48+00:00",
+            "task_name": "bilingual_translation_batch",
+            "record_id": "work-26d41b33804b556d0e838645",
+            "validation_status": "passed",
+            "validation_errors": []
+          }
+        ],
+        "accepted_provider_index": 0
+      },
+      "saved_at": "2026-07-14T23:20:48+00:00"
+    },
+    "translation:work:work-261800c4a15fce7cab542257:a79715515e2721551e4e475454e4fc3f41274098622c07aad2524a2d9bc3b9db": {
+      "output": {
+        "translated_title_zh": "汉坦病毒——再次成为新闻焦点",
+        "translated_text_zh": null,
+        "display_summary_zh": null,
+        "display_summary_en": null,
+        "uncertainties": []
+      },
+      "audit": {
+        "provider": "github_models",
+        "model": "openai/gpt-4.1-mini",
+        "status": "success",
+        "error": null,
+        "retry_count": 0,
+        "fallback_used": false,
+        "input_hash": "a8a3f15e35d09df6b3fb4dfd2539e0534846a791541be32a0f6670e31643145d",
+        "generated_at": "2026-07-14T23:21:36+00:00",
+        "task_name": "bilingual_translation_batch",
+        "record_id": "work-261800c4a15fce7cab542257",
+        "validation_status": "passed",
+        "validation_errors": [],
+        "attempt_chain": [
+          {
+            "provider": "github_models",
+            "model": "openai/gpt-4.1-mini",
+            "status": "success",
+            "error": null,
+            "retry_count": 0,
+            "fallback_used": false,
+            "input_hash": "a8a3f15e35d09df6b3fb4dfd2539e0534846a791541be32a0f6670e31643145d",
+            "generated_at": "2026-07-14T23:21:36+00:00",
+            "task_name": "bilingual_translation_batch",
+            "record_id": "work-261800c4a15fce7cab542257",
+            "validation_status": "passed",
+            "validation_errors": []
+          }
+        ],
+        "accepted_provider_index": 0
+      },
+      "saved_at": "2026-07-14T23:21:36+00:00"
+    },
+    "translation:work:work-38096a8ee9a17314e18e8c2f:f89fc8ef80368712d0fa07c6bfb0552ef031e9bbe8d6622c91463f93362f6c25": {
+      "output": {
+        "translated_title_zh": "充分利用浅层基因组掠取技术研究茄属（茄科）刺状谱系的系统分类学潜力",
+        "translated_text_zh": "前言 基因组掠取（GS）是一种经济高效的植物系统发育基因组学方法，但其从不同基因组区室，特别是全基因组SNP中恢复信息性数据集的能力，在茄属中尚未充分探讨。方法 我们评估了浅层GS在南美刺状茄属谱系系统发育推断中的应用，回收了质体、线粒体和核基因组数据集，包括编码区和全基因组SNP。采用最大似然和共祖方法，在不同SNP过滤策略下推断系统发育树。结果 GS成功回收了完整的质体基因组、细胞器编码区和大量SNP数据集，但未能稳定组装线粒体基因组或回收低拷贝核基因。基于SNP的分析，尤其是核基因组SNP，产生了稳定且支持度高的系统发育树，且不同推断方法结果大致一致。相比之下，编码区数据集，特别是线粒体基因组，表现出较大拓扑不一致，揭示了细胞核与细胞器基因组间的冲突。讨论 结果表明，浅层GS是生成信息丰富SNP数据集以推断茄属系统发育的有效策略，尽管在回收完整线粒体基因组和低拷贝核基因位点方面存在局限。基于SNP的分析显著扩展了GS的系统发育潜力，提供了系统学研究的实用且经济的替代方案。",
+        "display_summary_zh": "本研究评估了浅层基因组掠取技术在南美刺状茄属系统发育中的应用，成功回收了质体基因组和大量SNP数据，但未能稳定组装线粒体基因组和低拷贝核基因。基于核基因组SNP的系统发育分析结果稳定且支持度高，显示不同推断方法间一致性好。线粒体编码区数据表现出较大拓扑冲突，揭示了细胞核与细胞器基因组间的冲突。研究表明浅层GS是茄属系统发育研究中生成SNP数据的有效且经济的方法。",
+        "display_summary_en": "This study evaluated shallow genome skimming for phylogenetic inference in South American prickly Solanum lineages. It successfully recovered plastid genomes and large SNP datasets but failed to consistently assemble mitochondrial genomes or low-copy nuclear genes. SNP-based analyses, especially from nuclear genomes, produced stable and well-supported phylogenies. Mitochondrial coding regions showed greater topological discordance, indicating cytonuclear conflict. The results demonstrate shallow genome skimming as an effective and cost-efficient strategy for Solanum systematics.",
+        "uncertainties": []
+      },
+      "audit": {
+        "provider": "github_models",
+        "model": "openai/gpt-4.1-mini",
+        "status": "success",
+        "error": null,
+        "retry_count": 0,
+        "fallback_used": false,
+        "input_hash": "53808255be1b99260aab225e8a9cf5a668d84114cdc9733759734bce8b65fecf",
+        "generated_at": "2026-07-14T23:22:29+00:00",
+        "task_name": "bilingual_translation_batch",
+        "record_id": "work-38096a8ee9a17314e18e8c2f",
+        "validation_status": "passed",
+        "validation_errors": [],
+        "attempt_chain": [
+          {
+            "provider": "github_models",
+            "model": "openai/gpt-4.1-mini",
+            "status": "success",
+            "error": null,
+            "retry_count": 0,
+            "fallback_used": false,
+            "input_hash": "53808255be1b99260aab225e8a9cf5a668d84114cdc9733759734bce8b65fecf",
+            "generated_at": "2026-07-14T23:22:29+00:00",
+            "task_name": "bilingual_translation_batch",
+            "record_id": "work-38096a8ee9a17314e18e8c2f",
+            "validation_status": "passed",
+            "validation_errors": []
+          }
+        ],
+        "accepted_provider_index": 0
+      },
+      "saved_at": "2026-07-14T23:22:29+00:00"
+    },
+    "translation:work:work-7d014cdadb5b7d0b30801947:74bda6113483e20ffcd5dbaa2568c92736520c2b127c1de452d3bd14592bc7cc": {
+      "output": {
+        "translated_title_zh": "气候缓解与适应组合的气候-环境质量筛选框架：综述与行动路线图",
+        "translated_text_zh": "气候缓解和适应通常通过碳指标进行评估，但气候行动也会在空气、水、土壤、生态系统、公共健康和社区之间重新分配影响。本文综述聚焦于气候-环境质量（CEQ）筛选框架，用于早期气候组合设计。CEQ被提出为一种启发式决策支持协议，而非生命周期评估、环境影响评估、综合评估建模、法律咨询或经过验证的定量指数的替代。我们综合了近期关于技术脱碳、基于自然和土地管理的解决方案、治理与金融以及社区实施的证据，同时区分了高置信度共识声明与依赖情境的证据及示例。该框架通过结合气候效益置信度、环境质量协同效益或权衡风险、公平性和接受度敏感性以及保障/监测报告验证（MRV）准备度，将干预措施分类为无悔、条件性、机会性或避免/降优。我们增加了明确的校准指导、不确定性规则及一个农场-流域示例，展示CEQ如何将广泛的气候声明转化为透明的筛选判断。综合结果支持对清洁能源、能效和甲烷减排等选项的高置信度，前提是保障可信；而生物能源与碳捕集封存（BECCS）、土壤碳信用、硝化抑制剂、湿地恢复、碳捕集与封存/利用（CCS/CCUS）及碳市场则视为依赖情境的选项，需保守核算和本地校准。因此，CEQ最佳用作透明的筛选和学习工具，帮助决策者判断气候组合不仅低碳，而且保护环境质量并具社会持久性。",
+        "display_summary_zh": "本文提出了一个气候-环境质量（CEQ）筛选框架，用于早期气候缓解与适应组合的设计。该框架结合气候效益置信度、环境质量协同效益或权衡风险、公平性和接受度敏感性以及保障准备度，将干预措施分类为无悔、条件性、机会性或避免/降优。研究综合了技术脱碳、自然基和土地管理解决方案、治理与金融及社区实施的最新证据，明确了不同气候行动的适用性和不确定性。CEQ被定位为启发式决策支持工具，强调透明筛选和本地校准的重要性。该框架支持对清洁能源、能效和甲烷减排的高置信度，同时对BECCS、土壤碳信用等需谨慎对待。",
+        "display_summary_en": "This review presents a Climate-Environmental Quality (CEQ) screening framework for early-stage climate portfolio design. The framework classifies interventions based on climate-benefit confidence, environmental co-benefits or trade-offs, equity, acceptance sensitivity, and safeguards readiness. It synthesizes recent evidence on decarbonization technologies, nature-based solutions, governance, finance, and community implementation. CEQ serves as a transparent decision-support tool to help ensure climate portfolios are low-carbon, environmentally protective, and socially durable.",
+        "uncertainties": []
+      },
+      "audit": {
+        "provider": "github_models",
+        "model": "openai/gpt-4.1-mini",
+        "status": "success",
+        "error": null,
+        "retry_count": 0,
+        "fallback_used": false,
+        "input_hash": "36e297916ac87318d168db7a016636bf862ce1ea25310353a820874f93c30814",
+        "generated_at": "2026-07-14T23:28:40+00:00",
+        "task_name": "bilingual_translation_batch",
+        "record_id": "work-7d014cdadb5b7d0b30801947",
+        "validation_status": "passed",
+        "validation_errors": [],
+        "attempt_chain": [
+          {
+            "provider": "github_models",
+            "model": "openai/gpt-4.1-mini",
+            "status": "success",
+            "error": null,
+            "retry_count": 0,
+            "fallback_used": false,
+            "input_hash": "36e297916ac87318d168db7a016636bf862ce1ea25310353a820874f93c30814",
+            "generated_at": "2026-07-14T23:28:40+00:00",
+            "task_name": "bilingual_translation_batch",
+            "record_id": "work-7d014cdadb5b7d0b30801947",
+            "validation_status": "passed",
+            "validation_errors": []
+          }
+        ],
+        "accepted_provider_index": 0
+      },
+      "saved_at": "2026-07-14T23:28:40+00:00"
+    },
+    "translation:work:work-f3ba602508b81bfe9a409bae:b203bf27e9315fcfa5def73d8da9242d08c79b6223e1d81443057aef3280f8ec": {
+      "output": {
+        "translated_title_zh": "揭示红树林动态层级驱动因素的陆海耦合框架",
+        "translated_text_zh": null,
+        "display_summary_zh": null,
+        "display_summary_en": null,
+        "uncertainties": []
+      },
+      "audit": {
+        "provider": "github_models",
+        "model": "openai/gpt-4.1-mini",
+        "status": "success",
+        "error": null,
+        "retry_count": 0,
+        "fallback_used": false,
+        "input_hash": "36e297916ac87318d168db7a016636bf862ce1ea25310353a820874f93c30814",
+        "generated_at": "2026-07-14T23:28:40+00:00",
+        "task_name": "bilingual_translation_batch",
+        "record_id": "work-f3ba602508b81bfe9a409bae",
+        "validation_status": "passed",
+        "validation_errors": [],
+        "attempt_chain": [
+          {
+            "provider": "github_models",
+            "model": "openai/gpt-4.1-mini",
+            "status": "success",
+            "error": null,
+            "retry_count": 0,
+            "fallback_used": false,
+            "input_hash": "36e297916ac87318d168db7a016636bf862ce1ea25310353a820874f93c30814",
+            "generated_at": "2026-07-14T23:28:40+00:00",
+            "task_name": "bilingual_translation_batch",
+            "record_id": "work-f3ba602508b81bfe9a409bae",
+            "validation_status": "passed",
+            "validation_errors": []
+          }
+        ],
+        "accepted_provider_index": 0
+      },
+      "saved_at": "2026-07-14T23:28:40+00:00"
+    },
+    "translation:work:work-f4283513b67684253f886efd:5686f4c5b43c31fd26bc7e76f623b69e99ec85cac6fd7761cad917866c697723": {
+      "output": {
+        "translated_title_zh": "鱼粉替代水产饲料中的功能添加剂：可持续水产养殖的精准策略",
+        "translated_text_zh": null,
+        "display_summary_zh": null,
+        "display_summary_en": null,
+        "uncertainties": []
+      },
+      "audit": {
+        "provider": "github_models",
+        "model": "openai/gpt-4.1-mini",
+        "status": "success",
+        "error": null,
+        "retry_count": 0,
+        "fallback_used": false,
+        "input_hash": "36e297916ac87318d168db7a016636bf862ce1ea25310353a820874f93c30814",
+        "generated_at": "2026-07-14T23:28:40+00:00",
+        "task_name": "bilingual_translation_batch",
+        "record_id": "work-f4283513b67684253f886efd",
+        "validation_status": "passed",
+        "validation_errors": [],
+        "attempt_chain": [
+          {
+            "provider": "github_models",
+            "model": "openai/gpt-4.1-mini",
+            "status": "success",
+            "error": null,
+            "retry_count": 0,
+            "fallback_used": false,
+            "input_hash": "36e297916ac87318d168db7a016636bf862ce1ea25310353a820874f93c30814",
+            "generated_at": "2026-07-14T23:28:40+00:00",
+            "task_name": "bilingual_translation_batch",
+            "record_id": "work-f4283513b67684253f886efd",
+            "validation_status": "passed",
+            "validation_errors": []
+          }
+        ],
+        "accepted_provider_index": 0
+      },
+      "saved_at": "2026-07-14T23:28:40+00:00"
+    },
+    "translation:work:work-2d2e4f54c266687af3997bad:ec617cda79f7ad549a647062a6595f5b5ebdc1fa12e1472ed07c87364d81cd4a": {
+      "output": {
+        "translated_title_zh": "利用集成机器学习与SHAP评估土耳其半干旱孔亚封闭流域的山洪易发性",
+        "translated_text_zh": null,
+        "display_summary_zh": null,
+        "display_summary_en": null,
+        "uncertainties": []
+      },
+      "audit": {
+        "provider": "github_models",
+        "model": "openai/gpt-4.1-mini",
+        "status": "success",
+        "error": null,
+        "retry_count": 0,
+        "fallback_used": false,
+        "input_hash": "87c89d8cdd4a93cbf4b8552f060c8df71e04b90582665939b061aa701489a194",
+        "generated_at": "2026-07-14T23:29:38+00:00",
+        "task_name": "bilingual_translation_batch",
+        "record_id": "work-2d2e4f54c266687af3997bad",
+        "validation_status": "passed",
+        "validation_errors": [],
+        "attempt_chain": [
+          {
+            "provider": "github_models",
+            "model": "openai/gpt-4.1-mini",
+            "status": "success",
+            "error": null,
+            "retry_count": 0,
+            "fallback_used": false,
+            "input_hash": "87c89d8cdd4a93cbf4b8552f060c8df71e04b90582665939b061aa701489a194",
+            "generated_at": "2026-07-14T23:29:38+00:00",
+            "task_name": "bilingual_translation_batch",
+            "record_id": "work-2d2e4f54c266687af3997bad",
+            "validation_status": "passed",
+            "validation_errors": []
+          }
+        ],
+        "accepted_provider_index": 0
+      },
+      "saved_at": "2026-07-14T23:29:38+00:00"
+    },
+    "translation:article:article-4c0f02b5dddbb4c04b2be893:ad7d977155223d09a266c70a789908184435c8f61613dc9088357916c53a4de9": {
+      "output": {
+        "translated_title_zh": "健康",
+        "translated_text_zh": null,
+        "display_summary_zh": null,
+        "display_summary_en": null,
+        "uncertainties": []
+      },
+      "audit": {
+        "provider": "github_models",
+        "model": "openai/gpt-4.1-mini",
+        "status": "success",
+        "error": null,
+        "retry_count": 0,
+        "fallback_used": false,
+        "input_hash": "bc13f7cb06e18fa0f2369c3f0e47d676985f7b8b157be9f4fbeeef7e8d11d921",
+        "generated_at": "2026-07-14T23:33:12+00:00",
+        "task_name": "bilingual_translation_batch",
+        "record_id": "article-4c0f02b5dddbb4c04b2be893",
+        "validation_status": "passed",
+        "validation_errors": [],
+        "attempt_chain": [
+          {
+            "provider": "github_models",
+            "model": "openai/gpt-4.1-mini",
+            "status": "success",
+            "error": null,
+            "retry_count": 0,
+            "fallback_used": false,
+            "input_hash": "bc13f7cb06e18fa0f2369c3f0e47d676985f7b8b157be9f4fbeeef7e8d11d921",
+            "generated_at": "2026-07-14T23:33:12+00:00",
+            "task_name": "bilingual_translation_batch",
+            "record_id": "article-4c0f02b5dddbb4c04b2be893",
+            "validation_status": "passed",
+            "validation_errors": []
+          }
+        ],
+        "accepted_provider_index": 0
+      },
+      "saved_at": "2026-07-14T23:33:12+00:00"
+    },
+    "translation:article:article-348a1de765627560e2cdc627:3fc6dcd558ec301c71ec9a80852bf5db22eef80ea2a49c8ac843e4e414534b36": {
+      "output": {
+        "translated_title_zh": "每年发现新的感染人类病毒 - SelectScience 新闻",
+        "translated_text_zh": null,
+        "display_summary_zh": null,
+        "display_summary_en": null,
+        "uncertainties": []
+      },
+      "audit": {
+        "provider": "github_models",
+        "model": "openai/gpt-4.1-mini",
+        "status": "success",
+        "error": null,
+        "retry_count": 0,
+        "fallback_used": false,
+        "input_hash": "8d5d797c553471a12c388beacc888e57af5860d07979acd71bac9575ca5acd50",
+        "generated_at": "2026-07-14T23:36:11+00:00",
+        "task_name": "bilingual_translation_batch",
+        "record_id": "article-348a1de765627560e2cdc627",
+        "validation_status": "passed",
+        "validation_errors": [],
+        "attempt_chain": [
+          {
+            "provider": "github_models",
+            "model": "openai/gpt-4.1-mini",
+            "status": "success",
+            "error": null,
+            "retry_count": 0,
+            "fallback_used": false,
+            "input_hash": "8d5d797c553471a12c388beacc888e57af5860d07979acd71bac9575ca5acd50",
+            "generated_at": "2026-07-14T23:36:11+00:00",
+            "task_name": "bilingual_translation_batch",
+            "record_id": "article-348a1de765627560e2cdc627",
+            "validation_status": "passed",
+            "validation_errors": []
+          }
+        ],
+        "accepted_provider_index": 0
+      },
+      "saved_at": "2026-07-14T23:36:11+00:00"
+    },
+    "translation:article:article-f2bfdb639e66dfc25461c5c0:b6d31f0ddbf67d208e4d1cb51c1d2279c7954db458017cf780ed2c71543ba5d7": {
+      "output": {
+        "translated_title_zh": "背包旅行的变革者：这种超轻型熊袋能防止动物侵扰",
+        "translated_text_zh": null,
+        "display_summary_zh": null,
+        "display_summary_en": null,
+        "uncertainties": []
+      },
+      "audit": {
+        "provider": "github_models",
+        "model": "openai/gpt-4.1-mini",
+        "status": "success",
+        "error": null,
+        "retry_count": 0,
+        "fallback_used": false,
+        "input_hash": "8d5d797c553471a12c388beacc888e57af5860d07979acd71bac9575ca5acd50",
+        "generated_at": "2026-07-14T23:36:11+00:00",
+        "task_name": "bilingual_translation_batch",
+        "record_id": "article-f2bfdb639e66dfc25461c5c0",
+        "validation_status": "passed",
+        "validation_errors": [],
+        "attempt_chain": [
+          {
+            "provider": "github_models",
+            "model": "openai/gpt-4.1-mini",
+            "status": "success",
+            "error": null,
+            "retry_count": 0,
+            "fallback_used": false,
+            "input_hash": "8d5d797c553471a12c388beacc888e57af5860d07979acd71bac9575ca5acd50",
+            "generated_at": "2026-07-14T23:36:11+00:00",
+            "task_name": "bilingual_translation_batch",
+            "record_id": "article-f2bfdb639e66dfc25461c5c0",
+            "validation_status": "passed",
+            "validation_errors": []
+          }
+        ],
+        "accepted_provider_index": 0
+      },
+      "saved_at": "2026-07-14T23:36:11+00:00"
+    },
+    "translation:article:article-da2eac770af5279c6ce1ae6e:bfaa675cb772539fd2d1fb0fac800cacb369622674c5ffc23840d48b5df3eec0": {
+      "output": {
+        "translated_title_zh": "贸易：研究显示罗马尼亚消费者仍感压力但对耐用消费品表现出新兴趣",
+        "translated_text_zh": null,
+        "display_summary_zh": null,
+        "display_summary_en": null,
+        "uncertainties": []
+      },
+      "audit": {
+        "provider": "github_models",
+        "model": "openai/gpt-4.1-mini",
+        "status": "success",
+        "error": null,
+        "retry_count": 0,
+        "fallback_used": false,
+        "input_hash": "8d5d797c553471a12c388beacc888e57af5860d07979acd71bac9575ca5acd50",
+        "generated_at": "2026-07-14T23:36:11+00:00",
+        "task_name": "bilingual_translation_batch",
+        "record_id": "article-da2eac770af5279c6ce1ae6e",
+        "validation_status": "passed",
+        "validation_errors": [],
+        "attempt_chain": [
+          {
+            "provider": "github_models",
+            "model": "openai/gpt-4.1-mini",
+            "status": "success",
+            "error": null,
+            "retry_count": 0,
+            "fallback_used": false,
+            "input_hash": "8d5d797c553471a12c388beacc888e57af5860d07979acd71bac9575ca5acd50",
+            "generated_at": "2026-07-14T23:36:11+00:00",
+            "task_name": "bilingual_translation_batch",
+            "record_id": "article-da2eac770af5279c6ce1ae6e",
+            "validation_status": "passed",
+            "validation_errors": []
+          }
+        ],
+        "accepted_provider_index": 0
+      },
+      "saved_at": "2026-07-14T23:36:11+00:00"
+    },
+    "translation:article:article-c7853d085f8ff9b389d2cf4c:0a2a2d5b8d10f4c766f6b0c1c9f08ea0a527081adab929fcf382e61cadabd58d": {
+      "output": {
+        "translated_title_zh": "南非医院已准备好应对埃博拉病例",
+        "translated_text_zh": null,
+        "display_summary_zh": null,
+        "display_summary_en": null,
+        "uncertainties": []
+      },
+      "audit": {
+        "provider": "github_models",
+        "model": "openai/gpt-4.1-mini",
+        "status": "success",
+        "error": null,
+        "retry_count": 0,
+        "fallback_used": false,
+        "input_hash": "8d5d797c553471a12c388beacc888e57af5860d07979acd71bac9575ca5acd50",
+        "generated_at": "2026-07-14T23:36:11+00:00",
+        "task_name": "bilingual_translation_batch",
+        "record_id": "article-c7853d085f8ff9b389d2cf4c",
+        "validation_status": "passed",
+        "validation_errors": [],
+        "attempt_chain": [
+          {
+            "provider": "github_models",
+            "model": "openai/gpt-4.1-mini",
+            "status": "success",
+            "error": null,
+            "retry_count": 0,
+            "fallback_used": false,
+            "input_hash": "8d5d797c553471a12c388beacc888e57af5860d07979acd71bac9575ca5acd50",
+            "generated_at": "2026-07-14T23:36:11+00:00",
+            "task_name": "bilingual_translation_batch",
+            "record_id": "article-c7853d085f8ff9b389d2cf4c",
+            "validation_status": "passed",
+            "validation_errors": []
+          }
+        ],
+        "accepted_provider_index": 0
+      },
+      "saved_at": "2026-07-14T23:36:11+00:00"
+    },
+    "translation:article:article-4479e878db5f84bfb1f002ec:3482d0ea6c9e7d864dc709d413908a8a7bab818d9caa10db49d5e7ec96b78cdb": {
+      "output": {
+        "translated_title_zh": "汉坦病毒爆发为下一次大流行提供教训 - Earth.com",
+        "translated_text_zh": "汉坦病毒爆发为下一次大流行提供教训 - Earth.com",
+        "display_summary_zh": "文章讨论了汉坦病毒爆发事件，并指出该事件为未来可能发生的大流行提供了宝贵的经验教训。具体的教训内容和细节未在文本中详细说明。",
+        "display_summary_en": "The article discusses a hantavirus outbreak and suggests it offers valuable lessons for the next pandemic. Specific details of these lessons are not provided in the text.",
+        "uncertainties": []
+      },
+      "audit": {
+        "provider": "github_models",
+        "model": "openai/gpt-4.1-mini",
+        "status": "success",
+        "error": null,
+        "retry_count": 0,
+        "fallback_used": false,
+        "input_hash": "8d5d797c553471a12c388beacc888e57af5860d07979acd71bac9575ca5acd50",
+        "generated_at": "2026-07-14T23:36:11+00:00",
+        "task_name": "bilingual_translation_batch",
+        "record_id": "article-4479e878db5f84bfb1f002ec",
+        "validation_status": "passed",
+        "validation_errors": [],
+        "attempt_chain": [
+          {
+            "provider": "github_models",
+            "model": "openai/gpt-4.1-mini",
+            "status": "success",
+            "error": null,
+            "retry_count": 0,
+            "fallback_used": false,
+            "input_hash": "8d5d797c553471a12c388beacc888e57af5860d07979acd71bac9575ca5acd50",
+            "generated_at": "2026-07-14T23:36:11+00:00",
+            "task_name": "bilingual_translation_batch",
+            "record_id": "article-4479e878db5f84bfb1f002ec",
+            "validation_status": "passed",
+            "validation_errors": []
+          }
+        ],
+        "accepted_provider_index": 0
+      },
+      "saved_at": "2026-07-14T23:36:11+00:00"
+    },
+    "translation:article:article-06297c9129beafedcab03fd3:8ec36426977d802083952519c960c52eeae7630d77200d88191865dbea143dfc": {
+      "output": {
+        "translated_title_zh": "世卫组织宣布邮轮汉坦病毒疫情结束 - TRT世界",
+        "translated_text_zh": "<a href=\"https://news.google.com/rss/articles/CBMiWEFVX3lxTE9laFZWU01nbjB1a1VnekVveTlfbEJRcmduYlhsVnZVb2R3VUhxT3ZnX0c3ODBMYXhJZnU1bGQzamlUSHcwQjJYWWVBSE9rVnl2RFlUX001Z2M?oc=5\" target=\"_blank\">世卫组织宣布邮轮汉坦病毒疫情结束</a> <font color=\"#6f6f6f\">TRT世界</font>",
+        "display_summary_zh": "世卫组织宣布邮轮上的汉坦病毒疫情已经结束。该报道来自TRT世界。文章未提供具体疫情细节或病例数。",
+        "display_summary_en": "The WHO has declared the hantavirus outbreak on a cruise ship over. The report is from TRT World. No specific details or case numbers are provided in the text.",
+        "uncertainties": []
+      },
+      "audit": {
+        "provider": "github_models",
+        "model": "openai/gpt-4.1-mini",
+        "status": "success",
+        "error": null,
+        "retry_count": 0,
+        "fallback_used": false,
+        "input_hash": "03f420378830b3940f4ec712b726e221418d669a199f4cd4eef878456a7f6119",
+        "generated_at": "2026-07-14T23:36:53+00:00",
+        "task_name": "bilingual_translation_batch",
+        "record_id": "article-06297c9129beafedcab03fd3",
+        "validation_status": "passed",
+        "validation_errors": [],
+        "attempt_chain": [
+          {
+            "provider": "github_models",
+            "model": "openai/gpt-4.1-mini",
+            "status": "success",
+            "error": null,
+            "retry_count": 0,
+            "fallback_used": false,
+            "input_hash": "03f420378830b3940f4ec712b726e221418d669a199f4cd4eef878456a7f6119",
+            "generated_at": "2026-07-14T23:36:53+00:00",
+            "task_name": "bilingual_translation_batch",
+            "record_id": "article-06297c9129beafedcab03fd3",
+            "validation_status": "passed",
+            "validation_errors": []
+          }
+        ],
+        "accepted_provider_index": 0
+      },
+      "saved_at": "2026-07-14T23:36:53+00:00"
+    },
+    "translation:article:article-a82ed9e381137aff080b4379:a7e1703e09431287f1d7e211b48c99e2748faa89585511032a7aeaab9485795b": {
+      "output": {
+        "translated_title_zh": "地图：受邮轮汉坦病毒疫情影响的国家，该疫情已导致三人死亡 - AOL.com",
+        "translated_text_zh": "<a href=\"https://news.google.com/rss/articles/CBMigwFBVV95cUxPR05YaE5fQXpjZHFZdTk0a1hhSTFuUlJKU25McGtmOGpDMUQ1Wngxc1g3M3E0aHhwbkNrT1VKaUtNeW5HMkxuM3pHSUUxeWg5ejE3NjgwaGIzQ1p6dGlVMjZ2cU5fWFZ1cEx1SGNDSmFQT25tUDh5N2lncC1XemEwQS1STQ?oc=5\" target=\"_blank\">地图：受邮轮汉坦病毒疫情影响的国家，该疫情已导致三人死亡</a> <font color=\"#6f6f6f\">AOL.com</font>",
+        "display_summary_zh": "该报道提供了一张地图，显示了受邮轮汉坦病毒疫情影响的国家。该疫情已造成三人死亡。报道来自AOL.com，但未提供更多具体细节。",
+        "display_summary_en": "The article provides a map showing countries affected by the cruise ship hantavirus outbreak. The outbreak has resulted in three deaths. The source is AOL.com, with no further details given.",
+        "uncertainties": []
+      },
+      "audit": {
+        "provider": "github_models",
+        "model": "openai/gpt-4.1-mini",
+        "status": "success",
+        "error": null,
+        "retry_count": 0,
+        "fallback_used": false,
+        "input_hash": "03f420378830b3940f4ec712b726e221418d669a199f4cd4eef878456a7f6119",
+        "generated_at": "2026-07-14T23:36:53+00:00",
+        "task_name": "bilingual_translation_batch",
+        "record_id": "article-a82ed9e381137aff080b4379",
+        "validation_status": "passed",
+        "validation_errors": [],
+        "attempt_chain": [
+          {
+            "provider": "github_models",
+            "model": "openai/gpt-4.1-mini",
+            "status": "success",
+            "error": null,
+            "retry_count": 0,
+            "fallback_used": false,
+            "input_hash": "03f420378830b3940f4ec712b726e221418d669a199f4cd4eef878456a7f6119",
+            "generated_at": "2026-07-14T23:36:53+00:00",
+            "task_name": "bilingual_translation_batch",
+            "record_id": "article-a82ed9e381137aff080b4379",
+            "validation_status": "passed",
+            "validation_errors": []
+          }
+        ],
+        "accepted_provider_index": 0
+      },
+      "saved_at": "2026-07-14T23:36:53+00:00"
+    },
+    "translation:article:article-21ced2190a4540a516975904:dd022d2220629e3d36f07cab4ed64ee0e504cf3f9111d01afc2adceb859d89fb": {
+      "output": {
+        "translated_title_zh": "美国公民在内布拉斯加医学中心接受汉坦病毒邮轮监测 - 美国医院协会",
+        "translated_text_zh": "<a href=\"https://news.google.com/rss/articles/CBMiigFBVV95cUxObThPUXJIallvX2NlWFlKamszaUZ4cTcxSG41akhqQmNTblNVWDVoUmVSUTV3cnd0LW9xdzlFVUs4ekgtRTBjNDQ0emxtdUJNTkxSM1pMeG9sUGVmYldPOUNLZFJQNEhWZWNGd2lGRHFHLU1jZkVWUVVXTnpSLVJkY2xINnB0TVNMNnc?oc=5\" target=\"_blank\">美国公民在内布拉斯加医学中心接受汉坦病毒邮轮监测</a> <font color=\"#6f6f6f\">美国医院协会</font>",
+        "display_summary_zh": "报道指出，美国公民因汉坦病毒邮轮疫情在内布拉斯加医学中心接受监测。该信息来自美国医院协会，未提供具体病例数或监测结果。",
+        "display_summary_en": "U.S. citizens from the hantavirus-affected cruise ship are being monitored at Nebraska Medicine. The report is from the American Hospital Association, with no specific case numbers or monitoring outcomes provided.",
+        "uncertainties": []
+      },
+      "audit": {
+        "provider": "github_models",
+        "model": "openai/gpt-4.1-mini",
+        "status": "success",
+        "error": null,
+        "retry_count": 0,
+        "fallback_used": false,
+        "input_hash": "03f420378830b3940f4ec712b726e221418d669a199f4cd4eef878456a7f6119",
+        "generated_at": "2026-07-14T23:36:53+00:00",
+        "task_name": "bilingual_translation_batch",
+        "record_id": "article-21ced2190a4540a516975904",
+        "validation_status": "passed",
+        "validation_errors": [],
+        "attempt_chain": [
+          {
+            "provider": "github_models",
+            "model": "openai/gpt-4.1-mini",
+            "status": "success",
+            "error": null,
+            "retry_count": 0,
+            "fallback_used": false,
+            "input_hash": "03f420378830b3940f4ec712b726e221418d669a199f4cd4eef878456a7f6119",
+            "generated_at": "2026-07-14T23:36:53+00:00",
+            "task_name": "bilingual_translation_batch",
+            "record_id": "article-21ced2190a4540a516975904",
+            "validation_status": "passed",
+            "validation_errors": []
+          }
+        ],
+        "accepted_provider_index": 0
+      },
+      "saved_at": "2026-07-14T23:36:53+00:00"
+    },
+    "translation:article:article-79a2b7569517d9115dcc4436:3db000690190cf6f286bdd8ef58db7435249af7390525abe19d5bf07997df931": {
+      "output": {
+        "translated_title_zh": "邮轮汉坦病毒疫情正式结束 - The Star",
+        "translated_text_zh": "<a href=\"https://news.google.com/rss/articles/CBMiqwFBVV95cUxPNC1UZ0tfaEphYXNYX29BZXcwRHVXMGFqMXRfWFBBeGxhMWR6dk1YaHR5M1M1NWJKamZYeWw3UVQ1WXJwX0ZrRFlHREZ4S0hUOVU2eTVFWV9TVXR4aVBYTEVsVDBDcVl5RTF1bXZXMDY2RDhLeVRybHFiT3R1dHJpbXVRZ1VmXzFSbWVlNHpoUWVpU3hBWFVHNFFLVDUzSmh5Z1E0Z1B0a0l2aHM?oc=5\" target=\"_blank\">邮轮汉坦病毒疫情正式结束</a> <font color=\"#6f6f6f\">The Star</font>",
+        "display_summary_zh": "The Star报道，邮轮上的汉坦病毒疫情已正式结束。文章未提供疫情期间的具体数据或后续措施。",
+        "display_summary_en": "The Star reports that the hantavirus outbreak on the cruise ship has officially ended. No specific data or follow-up measures are detailed in the article.",
+        "uncertainties": []
+      },
+      "audit": {
+        "provider": "github_models",
+        "model": "openai/gpt-4.1-mini",
+        "status": "success",
+        "error": null,
+        "retry_count": 0,
+        "fallback_used": false,
+        "input_hash": "03f420378830b3940f4ec712b726e221418d669a199f4cd4eef878456a7f6119",
+        "generated_at": "2026-07-14T23:36:53+00:00",
+        "task_name": "bilingual_translation_batch",
+        "record_id": "article-79a2b7569517d9115dcc4436",
+        "validation_status": "passed",
+        "validation_errors": [],
+        "attempt_chain": [
+          {
+            "provider": "github_models",
+            "model": "openai/gpt-4.1-mini",
+            "status": "success",
+            "error": null,
+            "retry_count": 0,
+            "fallback_used": false,
+            "input_hash": "03f420378830b3940f4ec712b726e221418d669a199f4cd4eef878456a7f6119",
+            "generated_at": "2026-07-14T23:36:53+00:00",
+            "task_name": "bilingual_translation_batch",
+            "record_id": "article-79a2b7569517d9115dcc4436",
+            "validation_status": "passed",
+            "validation_errors": []
+          }
+        ],
+        "accepted_provider_index": 0
+      },
+      "saved_at": "2026-07-14T23:36:53+00:00"
+    },
+    "translation:article:article-6e2aa137f4fc22376f6b795c:8d78886772935fac7911fab1a1aa289aaa062957b17375aa711635084e7cc8f6": {
+      "output": {
+        "translated_title_zh": "特朗普称伊朗袭击为‘小事’，以及汉坦病毒疫情最新情况 - Mshale",
+        "translated_text_zh": "<a href=\"https://news.google.com/rss/articles/CBMiYEFVX3lxTFBINlJ3b0R2WG1YLW5nSUdxN05kMDlsaEtRQUxNdVliVW9xdkZTVlZQSk9JZnNfT2lUQ0gzS0R0WEtzQmNfVGtuZl9vcWFVclA5bzBuUlpaQXMzcHU1ZGQ1Rg?oc=5\" target=\"_blank\">特朗普称伊朗袭击为‘小事’，以及汉坦病毒疫情最新情况</a> <font color=\"#6f6f6f\">Mshale</font>",
+        "display_summary_zh": "该报道包含特朗普对伊朗袭击的评论及汉坦病毒疫情的最新情况。具体疫情细节未在文本中体现。",
+        "display_summary_en": "The article includes Trump's comment on Iran strikes and the latest on the hantavirus outbreak. Specific details about the outbreak are not provided in the text.",
+        "uncertainties": []
+      },
+      "audit": {
+        "provider": "github_models",
+        "model": "openai/gpt-4.1-mini",
+        "status": "success",
+        "error": null,
+        "retry_count": 0,
+        "fallback_used": false,
+        "input_hash": "03f420378830b3940f4ec712b726e221418d669a199f4cd4eef878456a7f6119",
+        "generated_at": "2026-07-14T23:36:53+00:00",
+        "task_name": "bilingual_translation_batch",
+        "record_id": "article-6e2aa137f4fc22376f6b795c",
+        "validation_status": "passed",
+        "validation_errors": [],
+        "attempt_chain": [
+          {
+            "provider": "github_models",
+            "model": "openai/gpt-4.1-mini",
+            "status": "success",
+            "error": null,
+            "retry_count": 0,
+            "fallback_used": false,
+            "input_hash": "03f420378830b3940f4ec712b726e221418d669a199f4cd4eef878456a7f6119",
+            "generated_at": "2026-07-14T23:36:53+00:00",
+            "task_name": "bilingual_translation_batch",
+            "record_id": "article-6e2aa137f4fc22376f6b795c",
+            "validation_status": "passed",
+            "validation_errors": []
+          }
+        ],
+        "accepted_provider_index": 0
+      },
+      "saved_at": "2026-07-14T23:36:53+00:00"
+    },
+    "translation:article:article-9fdfa5f671132897573c6cf5:711eb6a436edb1a82acde32cae1ea72ea047a68c1356b3caa01e210c032fd27f": {
+      "output": {
+        "translated_title_zh": "五名来自汉坦病毒感染邮轮的乘客解除奥马哈隔离 - 奥马哈世界先驱报",
+        "translated_text_zh": "<a href=\"https://news.google.com/rss/articles/CBMioAFBVV95cUxPMFhrVTRKdWFVd2lLTmpaT0NLOVdOaGktZGxEX1NYbUxnNFZ3bDRFdEtDcFMzWTJSVE9FOHRCeGlXa05ZamxjQVMwVE5UU0ZoY0xHVU8xRC02YTNxS3RTdXBEVjBQd2RSV18yVkRVdURuaTFoaDA5VWN6Zl9KanZUMnlXc1pTTllmR01XYWlzOEtxcXNjWXgybzZEMVJ0aTM1?oc=5\" target=\"_blank\">五名来自汉坦病毒感染邮轮的乘客解除奥马哈隔离</a> <font color=\"#6f6f6f\">奥马哈世界先驱报</font>",
+        "display_summary_zh": "奥马哈世界先驱报报道，五名来自受汉坦病毒影响邮轮的乘客已解除隔离。报道未提供这些乘客的健康状况或后续监测信息。",
+        "display_summary_en": "Five passengers from the hantavirus-affected cruise ship have been released from quarantine in Omaha. The report does not provide information on their health status or follow-up monitoring.",
+        "uncertainties": []
+      },
+      "audit": {
+        "provider": "github_models",
+        "model": "openai/gpt-4.1-mini",
+        "status": "success",
+        "error": null,
+        "retry_count": 0,
+        "fallback_used": false,
+        "input_hash": "03f420378830b3940f4ec712b726e221418d669a199f4cd4eef878456a7f6119",
+        "generated_at": "2026-07-14T23:36:53+00:00",
+        "task_name": "bilingual_translation_batch",
+        "record_id": "article-9fdfa5f671132897573c6cf5",
+        "validation_status": "passed",
+        "validation_errors": [],
+        "attempt_chain": [
+          {
+            "provider": "github_models",
+            "model": "openai/gpt-4.1-mini",
+            "status": "success",
+            "error": null,
+            "retry_count": 0,
+            "fallback_used": false,
+            "input_hash": "03f420378830b3940f4ec712b726e221418d669a199f4cd4eef878456a7f6119",
+            "generated_at": "2026-07-14T23:36:53+00:00",
+            "task_name": "bilingual_translation_batch",
+            "record_id": "article-9fdfa5f671132897573c6cf5",
+            "validation_status": "passed",
+            "validation_errors": []
+          }
+        ],
+        "accepted_provider_index": 0
+      },
+      "saved_at": "2026-07-14T23:36:53+00:00"
+    },
+    "translation:article:article-b3dcfbb6cc8a74355286c126:66382aae3e4dfd070d846ba57d211ae83e3738c3a563b74cff9b45a96cfc8d61": {
+      "output": {
+        "translated_title_zh": "汉坦病毒爆发后，邮轮旅客应知事项 - MSN",
+        "translated_text_zh": "<a href=\"https://news.google.com/rss/articles/CBMigwNBVV95cUxOWnhYT3RsOGIzYWZqSmpJTElZSmxRYldWV1ljMmRGMVBWV3BENWZWLWd2UzhjRl9xQUJzdkloSDBDQXcxcEJNeUFoWU9Yb1Q4ZGxPOU9Ob1NBbXJaSG9IV0dranRpUWRXVS0tMExKRzZqcHdVOXJhb3otb19SMWVLNy1KXzFQb1o1Y0gwZjY0bEFyVmlyX3FCZUFDLW1kekNrdFEtT1l2c0l4OFlCWkRfcjdRYllkcV92TXhmcDV5OGNxSFk0dVQxZ196LUJrWXRSNXJ5SzZEODc4UFJaeDhOZWgzR01mMHFHRE5hcW1GZzhSYlVtSS1CaHRSQndqRUd3VThEMjBiclZaUE1hUzIteGlYUnY4bVk3UC1aZFQxVW1IOENPVzhjUHhKTkh1aGhsRGRKT3YzTHVnalRNVHg4SWlkU282Z0VrSWVXWkNNNnBaSzd4NnlfZVM1Y01Rd2RrUGpfXzBhbDlfbTBfZ2tDb2xMVms4VUxsM1BmTENYQTV5WnM?oc=5\" target=\"_blank\">汉坦病毒爆发后，邮轮旅客应知事项</a> <font color=\"#6f6f6f\">MSN</font>",
+        "display_summary_zh": "本文标题为“汉坦病毒爆发后，邮轮旅客应知事项”，由MSN发布。文章内容涉及汉坦病毒爆发事件及其对邮轮旅客的影响。具体细节未在摘要中提供，全文链接可供进一步阅读。",
+        "display_summary_en": "The article titled 'After the hantavirus outbreak, here’s what cruise travelers should know' was published by MSN. It discusses the hantavirus outbreak and its implications for cruise travelers. Detailed content is not provided in the summary, but a link to the full article is available.",
+        "uncertainties": []
+      },
+      "audit": {
+        "provider": "github_models",
+        "model": "openai/gpt-4.1-mini",
+        "status": "success",
+        "error": null,
+        "retry_count": 0,
+        "fallback_used": false,
+        "input_hash": "861bf1bc5742c7741992c761acbb290d28745dd0908b5d76cf4d3f8c9acdf866",
+        "generated_at": "2026-07-14T23:37:44+00:00",
+        "task_name": "bilingual_translation_batch",
+        "record_id": "article-b3dcfbb6cc8a74355286c126",
+        "validation_status": "passed",
+        "validation_errors": [],
+        "attempt_chain": [
+          {
+            "provider": "github_models",
+            "model": "openai/gpt-4.1-mini",
+            "status": "success",
+            "error": null,
+            "retry_count": 0,
+            "fallback_used": false,
+            "input_hash": "861bf1bc5742c7741992c761acbb290d28745dd0908b5d76cf4d3f8c9acdf866",
+            "generated_at": "2026-07-14T23:37:44+00:00",
+            "task_name": "bilingual_translation_batch",
+            "record_id": "article-b3dcfbb6cc8a74355286c126",
+            "validation_status": "passed",
+            "validation_errors": []
+          }
+        ],
+        "accepted_provider_index": 0
+      },
+      "saved_at": "2026-07-14T23:37:44+00:00"
+    },
+    "translation:article:article-0ed5b4de37afa6096406e680:985d9cd75e1300c5956209f79d95896e66cc8aacf6e0b7ac7b752c6d313dd580": {
+      "output": {
+        "translated_title_zh": "塔可钟因腹泻寄生虫爆发面临调查 - The American Bazaar",
+        "translated_text_zh": "<a href=\"https://news.google.com/rss/articles/CBMivgFBVV95cUxNam5ibXIyQXFneC1CX3RpaXFjNUJ3Tm5STTY1SmNXOVJhN3dySVVtcHYzR1FhWXZGTTAwdzRPWmk0VGlpLWhFVE5zSTg0R0hXOE5lQW5YZFFfV1dUeEhsOUtoS0VJb05WNEZ2WmVjcEJUWHo3RWFKa2ZUTjlYV2xMaVBReXpkVzE0U1VLTXJXR1Y3SndyY2RZOWJibEFsbUFraFlXdTNqcU9CWnhQaE0zbXZCWU5XbTJSRHhjSWhn?oc=5\" target=\"_blank\">塔可钟因腹泻寄生虫爆发面临调查</a> <font color=\"#6f6f6f\">The American Bazaar</font>",
+        "display_summary_zh": "标题为“塔可钟因腹泻寄生虫爆发面临调查”，由The American Bazaar发布。文章报道了塔可钟餐厅因腹泻寄生虫爆发而接受调查的情况。具体细节未在摘要中提供，全文链接可供查阅。",
+        "display_summary_en": "The article titled 'Taco Bell faces investigation over diarrhea-causing parasite outbreak' was published by The American Bazaar. It reports on an investigation into Taco Bell following an outbreak of diarrhea-causing parasites. Detailed information is not included in the summary, but a link to the full article is provided.",
+        "uncertainties": []
+      },
+      "audit": {
+        "provider": "github_models",
+        "model": "openai/gpt-4.1-mini",
+        "status": "success",
+        "error": null,
+        "retry_count": 0,
+        "fallback_used": false,
+        "input_hash": "861bf1bc5742c7741992c761acbb290d28745dd0908b5d76cf4d3f8c9acdf866",
+        "generated_at": "2026-07-14T23:37:44+00:00",
+        "task_name": "bilingual_translation_batch",
+        "record_id": "article-0ed5b4de37afa6096406e680",
+        "validation_status": "passed",
+        "validation_errors": [],
+        "attempt_chain": [
+          {
+            "provider": "github_models",
+            "model": "openai/gpt-4.1-mini",
+            "status": "success",
+            "error": null,
+            "retry_count": 0,
+            "fallback_used": false,
+            "input_hash": "861bf1bc5742c7741992c761acbb290d28745dd0908b5d76cf4d3f8c9acdf866",
+            "generated_at": "2026-07-14T23:37:44+00:00",
+            "task_name": "bilingual_translation_batch",
+            "record_id": "article-0ed5b4de37afa6096406e680",
+            "validation_status": "passed",
+            "validation_errors": []
+          }
+        ],
+        "accepted_provider_index": 0
+      },
+      "saved_at": "2026-07-14T23:37:44+00:00"
+    },
+    "translation:article:article-13a8e29243ca5ded6178c66c:45cb0ddfc7053a05033f36840537c618c31a65d271509cbdc1360b029fde1ab0": {
+      "output": {
+        "translated_title_zh": "从汉坦病毒到医疗准备：新兴健康威胁如何重塑感染预防和患者信任 - Medical Tourism Magazine",
+        "translated_text_zh": "<a href=\"https://news.google.com/rss/articles/CBMigAJBVV95cUxOU2lBY196cTROSlZydzFVaEJ1RU9pVWV6b1h5ZzBJZm55Q3RWSFdXOThibm5QdUtmbHZ6VlpYdm96LTB4cnVVUW5CbWx4TjJ1eFNrS3dxZk5XWEFFbmpZSEI0eUdYX1I0ODBTalZWWmFBQno0WllZZ2htNmtBVzVabW9BazIyYlBEUGR2NlNSc0Q4Z0NvTzNaOHVveXU2ODVlRVluak01Y1lWSnpqQmJDVks4dmgxYzMzQi1KNzA4NlNnVXFNMlFkb1JCMXEwcVlHcFd6SmZlS0IzTUwza3pnLTZIM01JNGZPYTJ5bjNkeHl6eWNCNVFXUm53dVJjaGRU?oc=5\" target=\"_blank\">从汉坦病毒到医疗准备：新兴健康威胁如何重塑感染预防和患者信任</a> <font color=\"#6f6f6f\">Medical Tourism Magazine</font>",
+        "display_summary_zh": "标题为“从汉坦病毒到医疗准备：新兴健康威胁如何重塑感染预防和患者信任”，由Medical Tourism Magazine发布。文章探讨了新兴健康威胁对感染预防措施和患者信任的影响。具体内容未在摘要中详细说明，全文链接可供查阅。",
+        "display_summary_en": "The article titled 'From Hantavirus to Healthcare Preparedness: How Emerging Health Threats Are Reshaping Infection Prevention and Patient Trust' was published by Medical Tourism Magazine. It discusses how emerging health threats impact infection prevention and patient trust. Detailed content is not provided in the summary, but a link to the full article is available.",
+        "uncertainties": []
+      },
+      "audit": {
+        "provider": "github_models",
+        "model": "openai/gpt-4.1-mini",
+        "status": "success",
+        "error": null,
+        "retry_count": 0,
+        "fallback_used": false,
+        "input_hash": "861bf1bc5742c7741992c761acbb290d28745dd0908b5d76cf4d3f8c9acdf866",
+        "generated_at": "2026-07-14T23:37:44+00:00",
+        "task_name": "bilingual_translation_batch",
+        "record_id": "article-13a8e29243ca5ded6178c66c",
+        "validation_status": "passed",
+        "validation_errors": [],
+        "attempt_chain": [
+          {
+            "provider": "github_models",
+            "model": "openai/gpt-4.1-mini",
+            "status": "success",
+            "error": null,
+            "retry_count": 0,
+            "fallback_used": false,
+            "input_hash": "861bf1bc5742c7741992c761acbb290d28745dd0908b5d76cf4d3f8c9acdf866",
+            "generated_at": "2026-07-14T23:37:44+00:00",
+            "task_name": "bilingual_translation_batch",
+            "record_id": "article-13a8e29243ca5ded6178c66c",
+            "validation_status": "passed",
+            "validation_errors": []
+          }
+        ],
+        "accepted_provider_index": 0
+      },
+      "saved_at": "2026-07-14T23:37:44+00:00"
+    },
+    "translation:article:article-5dd8a6f36f0cd5345344e7cf:0ec1a22d6843b15f28c745e4cd458440a1245aa4233379748febe46a0d9a6ef2": {
+      "output": {
+        "translated_title_zh": "世卫确认至少一例病例，大西洋邮轮疑似发生汉坦病毒爆发 - Goodreturns",
+        "translated_text_zh": "<a href=\"https://news.google.com/rss/articles/CBMirwFBVV95cUxPTWpHc3RCNlZONngySm00dXFPbVdybzRzYkdhTVMyZGtkbG1nRVVIbEdrczFQS0NHNjBYVmJTa3RaLTI3cFBOWFcxVFpOM1FoeWNXTDJDZkxkblVyN1JjakdhTndzamJveXVuQUVsbGZJNVVIeHh5NFFRVm9VQXM2aHFibWczeU5oZGZ4eGhaTVZhSEQtVmwxdTNaQnNyTkI1Z3FtVDB3YlJHMElLYW9v?oc=5\" target=\"_blank\">世卫确认至少一例病例，大西洋邮轮疑似发生汉坦病毒爆发</a> <font color=\"#6f6f6f\">Goodreturns</font>",
+        "display_summary_zh": "世卫组织确认大西洋邮轮上至少出现一例汉坦病毒感染病例。该报道来自Goodreturns，指出邮轮上疑似发生汉坦病毒爆发。具体病例数和疫情发展情况未在文本中详细说明。",
+        "display_summary_en": "The WHO has confirmed at least one case of hantavirus infection on an Atlantic cruise ship. The report from Goodreturns indicates a suspected hantavirus outbreak on the ship. Specific case numbers and outbreak details are not provided in the text.",
+        "uncertainties": []
+      },
+      "audit": {
+        "provider": "github_models",
+        "model": "openai/gpt-4.1-mini",
+        "status": "success",
+        "error": null,
+        "retry_count": 0,
+        "fallback_used": false,
+        "input_hash": "8538be293334e4b26935628919fae1227fb42be898a023cba0092bfff6f54a43",
+        "generated_at": "2026-07-14T23:38:16+00:00",
+        "task_name": "bilingual_translation_batch",
+        "record_id": "article-5dd8a6f36f0cd5345344e7cf",
+        "validation_status": "passed",
+        "validation_errors": [],
+        "attempt_chain": [
+          {
+            "provider": "github_models",
+            "model": "openai/gpt-4.1-mini",
+            "status": "success",
+            "error": null,
+            "retry_count": 0,
+            "fallback_used": false,
+            "input_hash": "8538be293334e4b26935628919fae1227fb42be898a023cba0092bfff6f54a43",
+            "generated_at": "2026-07-14T23:38:16+00:00",
+            "task_name": "bilingual_translation_batch",
+            "record_id": "article-5dd8a6f36f0cd5345344e7cf",
+            "validation_status": "passed",
+            "validation_errors": []
+          }
+        ],
+        "accepted_provider_index": 0
+      },
+      "saved_at": "2026-07-14T23:38:16+00:00"
+    },
+    "translation:article:article-e33a766661f4930834bfbc9b:a6aec65d3ff5c6dbffd2205a3a168d80cb3d54e131dc3157053e1b92bf3629bc": {
+      "output": {
+        "translated_title_zh": "斐济监测致命汉坦病毒爆发 - 斐济太阳报",
+        "translated_text_zh": "<a href=\"https://news.google.com/rss/articles/CBMigAFBVV95cUxOWHUzZmRGbHRGYnBSUG5yNUl5Y2hKWlNPVnRyNmdQRkFUcml6VkZhRXRYWFpxUzAtQ1FQTUhuMndtSEluck0xOGk5bkJJN2M0T284aUUwY3pDYjRlRjBwTWljTHZwT1dJUWd1eXdFSnVuTzJfa2ZtMEVZcjB4SmZXTQ?oc=5\" target=\"_blank\">斐济监测致命汉坦病毒爆发</a> <font color=\"#6f6f6f\">斐济太阳报</font>",
+        "display_summary_zh": "斐济正在监测一起致命的汉坦病毒爆发。该报道来自斐济太阳报，关注当地对汉坦病毒疫情的监控。具体疫情规模和防控措施未在文本中详细说明。",
+        "display_summary_en": "Fiji is monitoring a deadly hantavirus outbreak. The report from Fiji Sun focuses on local surveillance of the hantavirus situation. Specific outbreak scale and control measures are not detailed in the text.",
+        "uncertainties": []
+      },
+      "audit": {
+        "provider": "github_models",
+        "model": "openai/gpt-4.1-mini",
+        "status": "success",
+        "error": null,
+        "retry_count": 0,
+        "fallback_used": false,
+        "input_hash": "8538be293334e4b26935628919fae1227fb42be898a023cba0092bfff6f54a43",
+        "generated_at": "2026-07-14T23:38:16+00:00",
+        "task_name": "bilingual_translation_batch",
+        "record_id": "article-e33a766661f4930834bfbc9b",
+        "validation_status": "passed",
+        "validation_errors": [],
+        "attempt_chain": [
+          {
+            "provider": "github_models",
+            "model": "openai/gpt-4.1-mini",
+            "status": "success",
+            "error": null,
+            "retry_count": 0,
+            "fallback_used": false,
+            "input_hash": "8538be293334e4b26935628919fae1227fb42be898a023cba0092bfff6f54a43",
+            "generated_at": "2026-07-14T23:38:16+00:00",
+            "task_name": "bilingual_translation_batch",
+            "record_id": "article-e33a766661f4930834bfbc9b",
+            "validation_status": "passed",
+            "validation_errors": []
+          }
+        ],
+        "accepted_provider_index": 0
+      },
+      "saved_at": "2026-07-14T23:38:16+00:00"
+    },
+    "translation:article:article-91258dacc5a5b172229bca64:a41d83d4a6e385895f1fedc7b96e07d367682a8bb2c4e7bb657c307e2fbb421b": {
+      "output": {
+        "translated_title_zh": "美国监测汉坦病毒邮轮乘客；首例死亡后数十人离船 - MSN",
+        "translated_text_zh": "<a href=\"https://news.google.com/rss/articles/CBMi2wFBVV95cUxPZVV3a2FRS1pDb25WNWxQLWRXcHpuUFMtNHN6Y0gyU0daZGo2bnpPV3B5T3JqblpHNkZlNnlIM1JDQTNNMzBmcjl5TnJhSFhnZ2tpVmVVLWwzZ0J6d21MMGpCOVRyMFp4QzlZUXh0UFpJOGYwcGxMa2FLR2JtSlNlUjFmTTBpRWF6dXJkMzY4VnJicnhEM2QtUVU4TjdXSmhEb19FbGh4QUs0UlcxNUxFQTN1c3FmcGtwWGxjTHNyb3ZMc084eHVOSDRRdHpnLV9NalBxREloWWZ2OVk?oc=5\" target=\"_blank\">美国监测汉坦病毒邮轮乘客；首例死亡后数十人离船</a> <font color=\"#6f6f6f\">MSN</font>",
+        "display_summary_zh": "美国正在监测汉坦病毒感染的邮轮乘客。首例死亡事件发生后，数十名乘客离开了邮轮。该报道来自MSN，未详细说明疫情的具体情况和后续措施。",
+        "display_summary_en": "The U.S. is monitoring cruise passengers for hantavirus infection. After the first death, dozens of passengers left the ship. The report is from MSN and does not detail the outbreak specifics or follow-up actions.",
+        "uncertainties": []
+      },
+      "audit": {
+        "provider": "github_models",
+        "model": "openai/gpt-4.1-mini",
+        "status": "success",
+        "error": null,
+        "retry_count": 0,
+        "fallback_used": false,
+        "input_hash": "8538be293334e4b26935628919fae1227fb42be898a023cba0092bfff6f54a43",
+        "generated_at": "2026-07-14T23:38:16+00:00",
+        "task_name": "bilingual_translation_batch",
+        "record_id": "article-91258dacc5a5b172229bca64",
+        "validation_status": "passed",
+        "validation_errors": [],
+        "attempt_chain": [
+          {
+            "provider": "github_models",
+            "model": "openai/gpt-4.1-mini",
+            "status": "success",
+            "error": null,
+            "retry_count": 0,
+            "fallback_used": false,
+            "input_hash": "8538be293334e4b26935628919fae1227fb42be898a023cba0092bfff6f54a43",
+            "generated_at": "2026-07-14T23:38:16+00:00",
+            "task_name": "bilingual_translation_batch",
+            "record_id": "article-91258dacc5a5b172229bca64",
+            "validation_status": "passed",
+            "validation_errors": []
+          }
+        ],
+        "accepted_provider_index": 0
+      },
+      "saved_at": "2026-07-14T23:38:16+00:00"
+    },
+    "translation:work:work-24595e6f0f7e4676a68be705:2f013ebddee410d7ba6d02cfbbc65fcfaa704c83d78197abb6599ccd6ac23094": {
+      "output": {
+        "translated_title_zh": "为下一场疫情做准备：从 COVID-19 学习，构建未来的防御",
+        "translated_text_zh": "世卫组织的努力是基于我们在 COVID-19 期间学到的经验以及今天禽流感、汉坦病毒和埃博拉疫情所教给我们的内容，以加强大流行病的准备工作。",
+        "display_summary_zh": "世卫组织正致力于提升大流行病准备能力，借鉴 COVID-19 期间的经验教训，并关注当前禽流感、汉坦病毒和埃博拉疫情所揭示的挑战。通过整合这些知识，世卫组织旨在为未来可能出现的新疫情制定更有效的防御策略。",
+        "display_summary_en": "The WHO is working to strengthen pandemic preparedness by drawing lessons from COVID-19 and the current outbreaks of avian influenza, hantavirus, and Ebola. By integrating these insights, the organization aims to develop more effective strategies for future pandemics.",
+        "uncertainties": []
+      },
+      "audit": {
+        "provider": "groq",
+        "model": "openai/gpt-oss-20b",
+        "status": "success",
+        "error": null,
+        "retry_count": 0,
+        "fallback_used": true,
+        "input_hash": "e937a60a4c2b1c04fda244798dce7f428bc39dcd2d6663b455481192563d986e",
+        "generated_at": "2026-07-14T23:39:05+00:00",
+        "task_name": "translation_repair",
+        "record_id": "work-24595e6f0f7e4676a68be705",
+        "validation_status": "passed",
+        "validation_errors": [],
+        "attempt_chain": [
+          {
+            "provider": "github_models",
+            "model": "openai/gpt-4.1-mini",
+            "status": "success",
+            "error": null,
+            "retry_count": 0,
+            "fallback_used": false,
+            "input_hash": "6396d734dc301bd16aed56a591e17eba9a6826d4cc1f4259046882f8c8daeab2",
+            "generated_at": "2026-07-14T23:20:48+00:00",
+            "task_name": "bilingual_translation_batch",
+            "record_id": "work-24595e6f0f7e4676a68be705",
+            "validation_status": "failed",
+            "validation_errors": [
+              "TITLE_NUMBER_CHANGED_OR_DROPPED:19",
+              "TEXT_NUMBER_CHANGED_OR_DROPPED:19"
+            ]
+          },
+          {
+            "provider": "gemini",
+            "model": "gemini-2.0-flash-lite-001",
+            "status": "failed",
+            "error": "RuntimeError: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-lite-001:generateContent?key=AIzaSyDniNpZT-6W2YrqpgB5VnNOb1OsQLlJ_YA",
+            "retry_count": 1,
+            "fallback_used": true,
+            "input_hash": "de6b5f67d8743fbe308e64fa5b99ee5669c118f27e19459dfefd142278d25124",
+            "generated_at": "2026-07-14T23:38:19+00:00",
+            "task_name": "translation_repair",
+            "record_id": "work-24595e6f0f7e4676a68be705",
+            "validation_status": "failed",
+            "validation_errors": [
+              "MISSING_RECORD_IN_MODEL_OUTPUT"
+            ]
+          },
+          {
+            "provider": "groq",
+            "model": "openai/gpt-oss-20b",
+            "status": "success",
+            "error": null,
+            "retry_count": 0,
+            "fallback_used": true,
+            "input_hash": "e937a60a4c2b1c04fda244798dce7f428bc39dcd2d6663b455481192563d986e",
+            "generated_at": "2026-07-14T23:39:05+00:00",
+            "task_name": "translation_repair",
+            "record_id": "work-24595e6f0f7e4676a68be705",
+            "validation_status": "passed",
+            "validation_errors": []
+          }
+        ],
+        "accepted_provider_index": 2
+      },
+      "saved_at": "2026-07-14T23:39:05+00:00"
+    },
+    "translation:work:work-a83c405da824d75b2195f8ac:1d75d44293ed8cf4a6374a797b637cbae3377f67bc9b8f22c4aab4f6308c9e3a": {
+      "output": {
+        "translated_title_zh": "LeafRank：一种用于从单细胞系统发育树推断相对适应度的系统发育动力学框架，适用于染色体不稳定肿瘤",
+        "translated_text_zh": "肿瘤中存在具有多样化生长潜能的癌细胞，这些潜能塑造了进化轨迹，但在全基因组复制（WGD）和染色体不稳定的情况下，这种适应度多样性仍难以量化。我们提出了 LeafRank，一种利用单细胞 DNA‑测序系统发育树推断个体细胞相对适应度的数学框架。通过多型分支过程模型，LeafRank 整合完整的树拓扑结构，包括分支长度和分叉模式，以估计在由稀有驱动事件驱动的突发进化模式下的边际适应度概率。为考虑 WGD 后异常率升高，我们引入了一种树重标策略，以校正谱系特异性的基因组不稳定性。与聚焦于预定义亚克隆的方法不同，LeafRank 对所有采样细胞进行排名，从而实现对生长异质性的灵活评估。仿真显示，在空间和非空间虚拟肿瘤中均具有高精度。将其应用于卵巢癌，LeafRank 揭示了 WGD 肿瘤中的方向性和并行选择，并识别出在高适应度谱系中富集的反复复制数事件。WGD 谱系并未表现出即时生长优势，而是通过随后的改变获得适应度。",
+        "display_summary_zh": "LeafRank 是一种基于单细胞 DNA‑测序系统发育树的数学框架，用于推断癌细胞的相对适应度。它利用多型分支过程模型整合完整树拓扑，估计在稀有驱动事件驱动的突发进化模式下的适应度概率，并通过树重标策略校正 WGD 后的基因组不稳定性。该方法对所有采样细胞进行排名，能够灵活评估生长异质性。仿真验证显示其在空间和非空间虚拟肿瘤中具有高精度。\\n在卵巢癌样本中，LeafRank 发现 WGD 肿瘤存在方向性和并行选择，并识别出高适应度谱系中富集的复制数事件。",
+        "display_summary_en": "LeafRank is a mathematical framework that uses single-cell DNA‑seq phylogenies to infer the relative fitness of cancer cells. It employs a multi-type branching process model to integrate full tree topology, estimating fitness probabilities under punctuated evolutionary regimes driven by rare driver events, and introduces a tree‑rescaling strategy to adjust for lineage‑specific genomic instability following WGD. Unlike methods that focus on predefined subclones, LeafRank ranks all sampled cells, enabling flexible assessment of growth heterogeneity. Simulations demonstrate high accuracy across spatial and non‑spatial virtual tumors. Applied to ovarian cancer, LeafRank reveals directional and parallel selection in WGD tumors and identifies recurrent copy‑number events enriched in high‑fitness lineages.",
+        "uncertainties": []
+      },
+      "audit": {
+        "provider": "groq",
+        "model": "openai/gpt-oss-20b",
+        "status": "success",
+        "error": null,
+        "retry_count": 0,
+        "fallback_used": true,
+        "input_hash": "049633ef2655cf2f18f093f14f0547784d5c1cffd17af7c818b4e8d90188af6a",
+        "generated_at": "2026-07-14T23:39:28+00:00",
+        "task_name": "translation_repair",
+        "record_id": "work-a83c405da824d75b2195f8ac",
+        "validation_status": "passed",
+        "validation_errors": [],
+        "attempt_chain": [
+          {
+            "provider": "github_models",
+            "model": "openai/gpt-4.1-mini",
+            "status": "failed",
+            "error": "RuntimeError: HTTPSConnectionPool(host='models.github.ai', port=443): Read timed out. (read timeout=75)",
+            "retry_count": 1,
+            "fallback_used": false,
+            "input_hash": "1526fc2be58358e0200622ca8e327289d88c2e7d64dfc27dc4f03975abe3a63d",
+            "generated_at": "2026-07-14T23:27:32+00:00",
+            "task_name": "bilingual_translation_batch",
+            "record_id": "work-a83c405da824d75b2195f8ac",
+            "validation_status": "failed",
+            "validation_errors": [
+              "MISSING_RECORD_IN_MODEL_OUTPUT"
+            ]
+          },
+          {
+            "provider": "gemini",
+            "model": "gemini-2.0-flash-lite-001",
+            "status": "failed",
+            "error": "RuntimeError: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-lite-001:generateContent?key=AIzaSyDniNpZT-6W2YrqpgB5VnNOb1OsQLlJ_YA",
+            "retry_count": 1,
+            "fallback_used": true,
+            "input_hash": "3a97bb55d551077009ad4c3bd23c74191555f81ed3d48a3ca4f1a1d72a4b6969",
+            "generated_at": "2026-07-14T23:38:30+00:00",
+            "task_name": "translation_repair",
+            "record_id": "work-a83c405da824d75b2195f8ac",
+            "validation_status": "failed",
+            "validation_errors": [
+              "MISSING_RECORD_IN_MODEL_OUTPUT"
+            ]
+          },
+          {
+            "provider": "groq",
+            "model": "openai/gpt-oss-20b",
+            "status": "success",
+            "error": null,
+            "retry_count": 0,
+            "fallback_used": true,
+            "input_hash": "049633ef2655cf2f18f093f14f0547784d5c1cffd17af7c818b4e8d90188af6a",
+            "generated_at": "2026-07-14T23:39:28+00:00",
+            "task_name": "translation_repair",
+            "record_id": "work-a83c405da824d75b2195f8ac",
+            "validation_status": "passed",
+            "validation_errors": []
+          }
+        ],
+        "accepted_provider_index": 2
+      },
+      "saved_at": "2026-07-14T23:39:28+00:00"
+    },
+    "analysis:daily_synthesis:fe7ef35ae81446867dc0d2f61bbf85bdd8092ba3a0dbcbaf9fcef174291ad619": {
+      "output": {
+        "lead_candidates": [
+          {
+            "item_id": "event-43364f29ffb706aa37b9c469",
+            "reason": "汉坦病毒邮轮疫情官方宣布结束，涉及多起感染和死亡病例，具有较大公共卫生影响",
+            "supporting_item_ids": [
+              "event-43364f29ffb706aa37b9c469",
+              "event-5a0e5a8bfa33e5d4ec48f5e0",
+              "event-5cc4d04242a4d835b1881320",
+              "event-95260297f153d5fa0c22aa69",
+              "event-5a1755d2ac739c5e4c89baa1",
+              "event-a580ffd5c3d07545fa00ee2a",
+              "event-005a059e9e7c417faf566763",
+              "event-f5626c18508f4245845ad9f5",
+              "event-a21311e7a80c6c2f1966e80f",
+              "event-aeb2e1fde570e7a530cbd5c5",
+              "event-c46464efb63e9a4abadb16c1",
+              "event-5ae9bd68779ca49e62a8effd"
+            ]
+          },
+          {
+            "item_id": "work-dcbbc9fbd8008d9b406c3f47",
+            "reason": "汉坦病毒感染综述揭示环境变化和人类活动增加导致流行病学模式演变，强调多学科合作和一体化健康策略",
+            "supporting_item_ids": [
+              "work-dcbbc9fbd8008d9b406c3f47"
+            ]
+          }
+        ],
+        "daily_overview": {
+          "text": "当前汉坦病毒相关报道主要聚焦于一场涉及邮轮的汉坦病毒疫情，该疫情已被世卫组织宣布结束，累计13人感染，3人死亡。相关机构持续监测疫情并发布预防指导。研究方面，汉坦病毒感染的神经系统影响被发现，尽管不常见但可能严重，需进一步研究。综述指出环境变化和人类活动增加导致汉坦病毒流行病学模式变化，特别是城市环境中首尔病毒的传播趋势。沙特阿拉伯等国家呼吁旅客遵守健康准则，关注包括汉坦病毒在内的多种传染病。当前证据不足以判断汉坦病毒疫情的全球趋势，但防控和监测仍是重点。",
+          "supporting_item_ids": [
+            "event-43364f29ffb706aa37b9c469",
+            "event-5a0e5a8bfa33e5d4ec48f5e0",
+            "event-5cc4d04242a4d835b1881320",
+            "event-95260297f153d5fa0c22aa69",
+            "event-a580ffd5c3d07545fa00ee2a",
+            "event-f9a54b940eaa783f92566d20",
+            "event-08ef411c1ba02d516b3d6947",
+            "event-4b6ef807bbe74eeb33a66c7d",
+            "work-dcbbc9fbd8008d9b406c3f47"
+          ]
+        },
+        "major_events": [
+          {
+            "summary": "世卫组织宣布与邮轮相关的汉坦病毒疫情结束，累计13人感染，3人死亡，最后一名接触者完成隔离且病毒检测阴性。",
+            "supporting_item_ids": [
+              "event-43364f29ffb706aa37b9c469",
+              "event-5a0e5a8bfa33e5d4ec48f5e0",
+              "event-95260297f153d5fa0c22aa69",
+              "event-a580ffd5c3d07545fa00ee2a",
+              "event-f5626c18508f4245845ad9f5"
+            ]
+          },
+          {
+            "summary": "沙特阿拉伯当局呼吁旅客在夏季遵守健康准则，持续监测包括汉坦病毒、埃博拉、黄热病和季节性流感在内的全球流行病学形势。",
+            "supporting_item_ids": [
+              "event-4b6ef807bbe74eeb33a66c7d"
+            ]
+          }
+        ],
+        "research_highlights": [
+          {
+            "summary": "汉坦病毒感染的神经系统表现虽不常见但可能严重，需开展前瞻性研究和实验模型以深入理解其机制并制定管理指南。",
+            "supporting_item_ids": [
+              "event-f9a54b940eaa783f92566d20",
+              "event-08ef411c1ba02d516b3d6947",
+              "work-df793002d26be893c01a7f77"
+            ]
+          },
+          {
+            "summary": "综述指出汉坦病毒感染因环境变化和人类活动增加呈现新的流行病学特征，特别是城市环境中首尔病毒的传播趋势，强调疫苗研发、监测和一体化健康策略的重要性。",
+            "supporting_item_ids": [
+              "work-dcbbc9fbd8008d9b406c3f47"
+            ]
+          },
+          {
+            "summary": "研究表明气溶胶传播可能是安第斯病毒在邮轮和阿根廷疫情中的关键传播机制，提示未来疫情防控需重视气溶胶传播途径。",
+            "supporting_item_ids": [
+              "work-eff16bd1991afc42885881ed"
+            ]
+          }
+        ],
+        "geographic_signals": [
+          {
+            "summary": "汉坦病毒邮轮疫情涉及多个国家，病毒传播和消毒措施在荷兰等地进行，阿根廷报告新增病例并向多国提供检测试剂。",
+            "supporting_item_ids": [
+              "event-52a54fef6d889a3c2cde19a3",
+              "event-e78493ffc14aeae528f023d8",
+              "work-eff16bd1991afc42885881ed"
+            ]
+          },
+          {
+            "summary": "沙特阿拉伯关注全球多国汉坦病毒疫情，持续与国际卫生组织协调监测。",
+            "supporting_item_ids": [
+              "event-4b6ef807bbe74eeb33a66c7d"
+            ]
+          }
+        ],
+        "pathogen_signals": [
+          {
+            "summary": "汉坦病毒持续引发关注，涉及多种临床表现，包括出血热伴肾综合征和汉坦病毒心肺综合征，且神经系统症状被发现。",
+            "supporting_item_ids": [
+              "work-dcbbc9fbd8008d9b406c3f47",
+              "event-f9a54b940eaa783f92566d20",
+              "event-08ef411c1ba02d516b3d6947"
+            ]
+          },
+          {
+            "summary": "安第斯病毒（ANDV）在邮轮和阿根廷疫情中可能通过气溶胶传播，提示病毒传播机制多样化。",
+            "supporting_item_ids": [
+              "work-eff16bd1991afc42885881ed"
+            ]
+          }
+        ],
+        "host_signals": [
+          {
+            "summary": "汉坦病毒主要通过啮齿动物宿主传播，特别是棕色大鼠和宠物啮齿动物，首尔病毒在城市环境中呈现新兴流行趋势。",
+            "supporting_item_ids": [
+              "work-dcbbc9fbd8008d9b406c3f47",
+              "event-5a1755d2ac739c5e4c89baa1"
+            ]
+          }
+        ],
+        "contradictions": [],
+        "watchlist": [
+          {
+            "summary": "汉坦病毒神经系统影响的研究尚处于初步阶段，缺乏具体病例数据和官方确认，需关注未来相关研究进展。",
+            "supporting_item_ids": [
+              "event-f9a54b940eaa783f92566d20",
+              "event-08ef411c1ba02d516b3d6947"
+            ]
+          },
+          {
+            "summary": "沙特阿拉伯提及多国汉坦病毒疫情但无官方确认，需关注全球疫情监测和官方通报。",
+            "supporting_item_ids": [
+              "event-4b6ef807bbe74eeb33a66c7d"
+            ]
+          }
+        ],
+        "data_quality_notes": [
+          "多数报道缺乏具体病例数、死亡数、时间和地点信息，官方确认有限。",
+          "部分研究和报道仅基于标题或摘要，缺乏详细数据和权威声明。",
+          "汉坦病毒疫情相关信息多为未确认状态，需谨慎解读。"
+        ],
+        "supporting_item_ids": [
+          "event-43364f29ffb706aa37b9c469",
+          "event-5a0e5a8bfa33e5d4ec48f5e0",
+          "event-5cc4d04242a4d835b1881320",
+          "event-95260297f153d5fa0c22aa69",
+          "event-a580ffd5c3d07545fa00ee2a",
+          "event-f9a54b940eaa783f92566d20",
+          "event-08ef411c1ba02d516b3d6947",
+          "event-4b6ef807bbe74eeb33a66c7d",
+          "work-dcbbc9fbd8008d9b406c3f47",
+          "work-eff16bd1991afc42885881ed",
+          "work-df793002d26be893c01a7f77",
+          "event-5a1755d2ac739c5e4c89baa1"
+        ]
+      },
+      "audit": {
+        "task_name": "daily_synthesis",
+        "record_id": "daily_issue",
+        "provider": "github_models",
+        "model": "openai/gpt-4.1-mini",
+        "status": "success",
+        "generated_at": "2026-07-14T23:41:10+00:00",
+        "fallback_used": true,
+        "validation_status": "passed",
+        "validation_errors": [],
+        "unsupported_claim_count": 0,
+        "attempt_chain": [
+          {
+            "provider": "gemini",
+            "model": "gemini-2.0-flash-lite-001",
+            "status": "failed",
+            "error": "RuntimeError: 429 Client Error: Too Many Requests for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-lite-001:generateContent?key=AIzaSyDniNpZT-6W2YrqpgB5VnNOb1OsQLlJ_YA",
+            "retry_count": 1,
+            "fallback_used": false,
+            "input_hash": "fe7ef35ae81446867dc0d2f61bbf85bdd8092ba3a0dbcbaf9fcef174291ad619",
+            "generated_at": "2026-07-14T23:40:17+00:00",
+            "task_name": "daily_synthesis",
+            "validation_status": "failed",
+            "validation_errors": [
+              "NO_OUTPUT"
+            ]
+          },
+          {
+            "provider": "github_models",
+            "model": "openai/gpt-4.1-mini",
+            "status": "success",
+            "error": null,
+            "retry_count": 0,
+            "fallback_used": true,
+            "input_hash": "fe7ef35ae81446867dc0d2f61bbf85bdd8092ba3a0dbcbaf9fcef174291ad619",
+            "generated_at": "2026-07-14T23:41:10+00:00",
+            "task_name": "daily_synthesis",
+            "validation_status": "passed",
+            "validation_errors": [],
+            "unsupported_claim_count": 0
+          }
+        ]
+      },
+      "saved_at": "2026-07-14T23:41:10+00:00"
     }
   }
 }

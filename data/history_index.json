@@ -1,5 +1,46 @@
 [
   {
+    "issue_date": "2026-07-15",
+    "issue_id": "hantavirus:2026-07-15:r1",
+    "path": "archive/2026/07/15/issue.json",
+    "statistics": {
+      "scholarly_raw": 52,
+      "scholarly_unique": 48,
+      "scholarly_selected": 12,
+      "news_raw": 78,
+      "news_unique": 75,
+      "public_health_events": 41,
+      "new_or_updated_events": 41,
+      "official_events": 0,
+      "countries": 7,
+      "pathogens": 10,
+      "hosts": 5,
+      "topics": {
+        "clinical": 2,
+        "identity": 11,
+        "host_ecology": 2,
+        "genomics": 16,
+        "risk": 20
+      },
+      "source_failures": 4,
+      "llm_fallbacks": 104,
+      "llm_validated_runs": 18,
+      "llm_failed_runs": 18,
+      "translated_works": 12,
+      "translated_articles": 50,
+      "translated_events": 31,
+      "translation_fallback_successes": 10,
+      "translation_unavailable": 61,
+      "news_content_fetch_attempted": 24,
+      "news_content_fetch_success": 22,
+      "news_content_fetch_failed": 2,
+      "open_fulltext_fetch_attempted": 3,
+      "open_fulltext_fetch_success": 0,
+      "validated_work_analyses": 2,
+      "validated_article_analyses": 6
+    }
+  },
+  {
     "issue_date": "2026-07-14",
     "issue_id": "hantavirus:2026-07-14:r1",
     "path": "archive/2026/07/14/issue.json",
