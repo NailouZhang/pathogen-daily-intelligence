@@ -1,6 +1,6 @@
 {
   "schema_version": "1.5.0",
-  "updated_at": "2026-07-15T02:25:15+00:00",
+  "updated_at": "2026-07-15T03:52:19+00:00",
   "work_ids": [
     "work-01da7473125c2b44ffa3cf9e",
     "work-022d2844f7e0f41c99e3ea2e",
@@ -91,6 +91,7 @@
     "article-2b4c43298b747a33739da4e5",
     "article-2c5ea08811df5eb51344ad6f",
     "article-2e6d68de857c88217d8f5db9",
+    "article-2e738478523a53d906913bee",
     "article-2fe6890014662036551f6e14",
     "article-318f67c54c489e31a021d0f5",
     "article-348a1de765627560e2cdc627",
@@ -105,6 +106,7 @@
     "article-4c0f02b5dddbb4c04b2be893",
     "article-544a6a652d57ccfa104ac4e2",
     "article-552379ec13d0cde7e64fa661",
+    "article-56a5afd6ef02b4b131864486",
     "article-59b86c5c9ceb5f1766e41b1a",
     "article-5b3e3b8dc721d4404681bc41",
     "article-5b7c12c53eb919fbf9d8ace7",
@@ -123,6 +125,7 @@
     "article-7c0a657fd115f47e926cc143",
     "article-7f675d1d5c0ce2f0c344f8d6",
     "article-7fa1cf89da6846f3b8b4de80",
+    "article-818822ccbec7309d04609639",
     "article-82def86ae52b5acae4d4fb52",
     "article-86c4aaec22e9cee1b7c7a537",
     "article-897ee56325c8bd52f7e96d13",
@@ -155,7 +158,9 @@
     "article-b6987e2a39b68a76e069ef7f",
     "article-bcc3574cc23aeab928c15666",
     "article-be1188b007943868388d9ea2",
+    "article-bf84f5982379f41b862401b4",
     "article-c00e94b55aefb16713da10ee",
+    "article-c110e1ec68d7999045625ece",
     "article-c3f386dae5df9fd4ab416832",
     "article-c7853d085f8ff9b389d2cf4c",
     "article-c84e9b5a852980e924a119c3",
@@ -174,6 +179,7 @@
     "article-ea0578687c3cd9fea0c39946",
     "article-ebce011be9d6767d693d2d71",
     "article-ed2e4a6ad4f11a8d3b21e8cc",
+    "article-ede6cb838f6b0fee1bf01e81",
     "article-f075cae532fa1840343768d9",
     "article-f2bfdb639e66dfc25461c5c0",
     "article-fa250f2b5b94733f8b89d04f",
@@ -181,115 +187,6 @@
     "article-fb6c38eaf2718ed9d750bb28"
   ],
   "events": [
-    {
-      "event_id": "event-f6855b99bb28ae38a6599bed",
-      "event_version": 1,
-      "title": "Hantavirus Outbreak Connected to Cruise Ship is Officially Over",
-      "pathogens": [
-        "hantavirus"
-      ],
-      "country": null,
-      "event_type": "outbreak",
-      "published_at": "2026",
-      "case_counts": {
-        "confirmed": null,
-        "probable": null,
-        "suspected": null,
-        "deaths": null
-      },
-      "change_history": []
-    },
-    {
-      "event_id": "event-ff6b7516cfba3bf56e1f1898",
-      "event_version": 1,
-      "title": "Gene Hackman and Betsy Arakawa Receive Grave Plaques After Tragic Deaths",
-      "pathogens": [
-        "hantavirus",
-        "hantavirus pulmonary syndrome"
-      ],
-      "country": null,
-      "event_type": "other",
-      "published_at": "2026",
-      "case_counts": {
-        "confirmed": null,
-        "probable": null,
-        "suspected": null,
-        "deaths": null
-      },
-      "change_history": []
-    },
-    {
-      "event_id": "event-f9a54b940eaa783f92566d20",
-      "event_version": 1,
-      "title": "Hantavirus Infection Neurological Effects Uncovered",
-      "pathogens": [
-        "hantavirus"
-      ],
-      "country": null,
-      "event_type": "other",
-      "published_at": "2026",
-      "case_counts": {
-        "confirmed": null,
-        "probable": null,
-        "suspected": null,
-        "deaths": null
-      },
-      "change_history": []
-    },
-    {
-      "event_id": "event-864478194902cb98ed04dd8e",
-      "event_version": 1,
-      "title": "Trial by virus – Winnipeg Free Press",
-      "pathogens": [
-        "hantavirus"
-      ],
-      "country": "Canada",
-      "event_type": "outbreak",
-      "published_at": "2026",
-      "case_counts": {
-        "confirmed": null,
-        "probable": null,
-        "suspected": null,
-        "deaths": null
-      },
-      "change_history": []
-    },
-    {
-      "event_id": "event-6e71d44bf871054e3f83f432",
-      "event_version": 1,
-      "title": "Health",
-      "pathogens": [
-        "hantavirus"
-      ],
-      "country": null,
-      "event_type": "other",
-      "published_at": "2026",
-      "case_counts": {
-        "confirmed": null,
-        "probable": null,
-        "suspected": null,
-        "deaths": null
-      },
-      "change_history": []
-    },
-    {
-      "event_id": "event-079ec8abc463bbb934681fcd",
-      "event_version": 1,
-      "title": "Oceanwide Expeditions CEO responds to hantavirus incident",
-      "pathogens": [
-        "hantavirus"
-      ],
-      "country": "Argentina",
-      "event_type": "outbreak",
-      "published_at": "2026",
-      "case_counts": {
-        "confirmed": null,
-        "probable": null,
-        "suspected": null,
-        "deaths": null
-      },
-      "change_history": []
-    },
     {
       "event_id": "event-b48e49f0a7bcc25cadfcef0c",
       "event_version": 1,
@@ -489,9 +386,9 @@
       "change_history": []
     },
     {
-      "event_id": "event-f5626c18508f4245845ad9f5",
+      "event_id": "event-5b9560c986d176c8b4e6d91c",
       "event_version": 1,
-      "title": "WHO says hantavirus outbreak linked to ship is over - MSN",
+      "title": "After the hantavirus outbreak, here’s what cruise travelers should know - MSN",
       "pathogens": [
         "hantavirus"
       ],
@@ -543,6 +440,60 @@
       "change_history": []
     },
     {
+      "event_id": "event-f5626c18508f4245845ad9f5",
+      "event_version": 1,
+      "title": "WHO says hantavirus outbreak linked to ship is over - MSN",
+      "pathogens": [
+        "hantavirus"
+      ],
+      "country": null,
+      "event_type": "outbreak",
+      "published_at": "2026",
+      "case_counts": {
+        "confirmed": null,
+        "probable": null,
+        "suspected": null,
+        "deaths": null
+      },
+      "change_history": []
+    },
+    {
+      "event_id": "event-d5e0105a8cc17f1d62a6d580",
+      "event_version": 1,
+      "title": "Hantavirus outbreak linked to cruise ship over, WHO says - MSN",
+      "pathogens": [
+        "hantavirus"
+      ],
+      "country": null,
+      "event_type": "outbreak",
+      "published_at": "2026",
+      "case_counts": {
+        "confirmed": null,
+        "probable": null,
+        "suspected": null,
+        "deaths": null
+      },
+      "change_history": []
+    },
+    {
+      "event_id": "event-2314a24f3c1e2e2b192cf6c4",
+      "event_version": 1,
+      "title": "CDC coordinates with World Health Organization amid hantavirus scare - MSN",
+      "pathogens": [
+        "hantavirus"
+      ],
+      "country": null,
+      "event_type": "other",
+      "published_at": "2026",
+      "case_counts": {
+        "confirmed": null,
+        "probable": null,
+        "suspected": null,
+        "deaths": null
+      },
+      "change_history": []
+    },
+    {
       "event_id": "event-2366198c49f5736420192412",
       "event_version": 1,
       "title": "Spain to accept cruise ship with hantavirus outbreak on board - Turkmenportal.com",
@@ -551,6 +502,24 @@
       ],
       "country": null,
       "event_type": "outbreak",
+      "published_at": "2026",
+      "case_counts": {
+        "confirmed": null,
+        "probable": null,
+        "suspected": null,
+        "deaths": null
+      },
+      "change_history": []
+    },
+    {
+      "event_id": "event-5b666e99815f96d2e4c459ad",
+      "event_version": 1,
+      "title": "US hantavirus cruise passengers flown to quarantine center after positive test - MSN",
+      "pathogens": [
+        "hantavirus"
+      ],
+      "country": null,
+      "event_type": "other",
       "published_at": "2026",
       "case_counts": {
         "confirmed": null,
@@ -615,14 +584,14 @@
       "change_history": []
     },
     {
-      "event_id": "event-272bdcebe566ec98a899f498",
+      "event_id": "event-93ddc22d7ee772e09637d168",
       "event_version": 1,
-      "title": "Hantavirus outbreak suspected on MV Hondius as Cape Verde blocks passengers from disembarking - Goodreturns",
+      "title": "CDC ends US hantavirus response - MSN",
       "pathogens": [
         "hantavirus"
       ],
       "country": null,
-      "event_type": "outbreak",
+      "event_type": "other",
       "published_at": "2026",
       "case_counts": {
         "confirmed": null,
@@ -633,14 +602,14 @@
       "change_history": []
     },
     {
-      "event_id": "event-93ddc22d7ee772e09637d168",
+      "event_id": "event-272bdcebe566ec98a899f498",
       "event_version": 1,
-      "title": "CDC ends US hantavirus response - MSN",
+      "title": "Hantavirus outbreak suspected on MV Hondius as Cape Verde blocks passengers from disembarking - Goodreturns",
       "pathogens": [
         "hantavirus"
       ],
       "country": null,
-      "event_type": "other",
+      "event_type": "outbreak",
       "published_at": "2026",
       "case_counts": {
         "confirmed": null,
@@ -677,24 +646,6 @@
       ],
       "country": null,
       "event_type": "other",
-      "published_at": "2026",
-      "case_counts": {
-        "confirmed": null,
-        "probable": null,
-        "suspected": null,
-        "deaths": null
-      },
-      "change_history": []
-    },
-    {
-      "event_id": "event-1e0f5398e094794beb99c081",
-      "event_version": 1,
-      "title": "CDC classifies hantavirus outbreak as a 'Level 3' emergency response - MSN",
-      "pathogens": [
-        "hantavirus"
-      ],
-      "country": null,
-      "event_type": "outbreak",
       "published_at": "2026",
       "case_counts": {
         "confirmed": null,
@@ -940,24 +891,6 @@
       "change_history": []
     },
     {
-      "event_id": "event-a580ffd5c3d07545fa00ee2a",
-      "event_version": 1,
-      "title": "当地时间2日，世卫组织总干事谭德塞宣布，与邮轮有关的汉坦病毒疫情已结束，最后一名接触者完成了隔离且病毒检测结果呈阴性。此次疫情共导致13人感染、3人死亡。 - 搜狐网",
-      "pathogens": [
-        "汉坦病毒"
-      ],
-      "country": null,
-      "event_type": "outbreak",
-      "published_at": "2026",
-      "case_counts": {
-        "confirmed": null,
-        "probable": null,
-        "suspected": null,
-        "deaths": null
-      },
-      "change_history": []
-    },
-    {
       "event_id": "event-10c027eb3b8928947f1d4efe",
       "event_version": 1,
       "title": "禽流感 埃博拉 汉坦病毒……为什么感觉传染病越来越多了？ - SBS",
@@ -996,7 +929,56 @@
   ],
   "scholarly_recovery_queue": [
     {
-      "work_id": "work-04a2c2a44a2bbc82da85d9fa",
+      "work_id": "work-412a01ebc11cdf225065abdc",
+      "evidence_level": "E0",
+      "attempt_count": 1,
+      "first_queued_date": "2026-07-15",
+      "last_attempt_date": "2026-07-15",
+      "next_retry_date": "2026-07-16",
+      "expires_date": "2026-08-14",
+      "reason_codes": [
+        "ABSTRACT_NOT_RETRIEVED",
+        "FULLTEXT_NOT_RETRIEVED"
+      ],
+      "source_record": {
+        "record_type": "scholarly_source",
+        "source_id": "recovery_queue",
+        "source_record_id": "work-412a01ebc11cdf225065abdc",
+        "query_group": "recovery_retry",
+        "query": "internal evidence recovery queue",
+        "identifiers": {
+          "doi": "10.1080/21505594.2026.2698897",
+          "pmid": "42423644",
+          "pmcid": "PMC6932758",
+          "europe_pmc_id": "42423644",
+          "semantic_scholar_id": "190e52c31b6137cb6b7fcfb9b2ed37a97bcaca21",
+          "arxiv": null
+        },
+        "title": "The 2026 Andes virus outbreak: What genomic stability reveals about virulence.",
+        "abstract": null,
+        "abstract_sentences": [],
+        "authors": [
+          "Kung JL",
+          "Sanchez DJ"
+        ],
+        "journal": "Virulence",
+        "publisher": null,
+        "published_date": "2026-07-09",
+        "published_date_precision": "day",
+        "availability_date": "2026-07-09",
+        "availability_basis": "online_date",
+        "online_date": "2026-07-09",
+        "print_date": "2026-12-01",
+        "issue_date": null,
+        "publication_types": [],
+        "language": "eng",
+        "url": "https://europepmc.org/article/MED/42423644",
+        "retrieved_at": "2026-07-15T03:52:19+00:00",
+        "recovery_context": {}
+      }
+    },
+    {
+      "work_id": "work-b26a31446c4e97be9b22232e",
       "evidence_level": "E1",
       "attempt_count": 1,
       "first_queued_date": "2026-07-15",
@@ -1009,90 +991,141 @@
       "source_record": {
         "record_type": "scholarly_source",
         "source_id": "recovery_queue",
-        "source_record_id": "work-04a2c2a44a2bbc82da85d9fa",
+        "source_record_id": "work-b26a31446c4e97be9b22232e",
         "query_group": "recovery_retry",
         "query": "internal evidence recovery queue",
         "identifiers": {
-          "doi": "10.3390/zoonoticdis6030028",
-          "pmid": null,
-          "pmcid": null,
-          "europe_pmc_id": null,
-          "semantic_scholar_id": "77d3d297e64cb44909ea431e5a55f492bcf5a923",
+          "doi": "10.1007/s12539-020-00413-4",
+          "pmid": "42434045",
+          "pmcid": "PMC7826498",
+          "europe_pmc_id": "42434045",
+          "semantic_scholar_id": null,
           "arxiv": null
         },
-        "title": "Rat Hepatitis E Virus (Rocahepevirus ratti): Global Evidence, Knowledge Gaps, and Zoonotic Risks",
-        "abstract": "Rat hepatitis E virus (rHEV) is an emerging zoonotic pathogen, increasingly detected in human, animal, and environmental samples globally. Although rHEV shares the same subfamily as human hepatitis E virus (HEV; Paslahepevirus balayani), which is endemic across Africa, little is known about rHEV ecology on the continent beyond an isolated travel-related case linked to the Democratic Republic of Congo and Gabon. As a rodent-borne virus, rHEV poses a public health risk due to the widespread presence of the synanthropic reservoir Rattus norvegicus. Limited data on hepatitis of unknown origin further emphasise the need for active surveillance to understand the distribution, epidemiology, and impact of rHEV on human health. This review summarises our current knowledge on the global distribution of rHEV in humans, animals, and the environment, highlighting the importance of ongoing surveillance through the One Health Approach. Monitoring the virus in countries such as Nigeria, a country with a significant pig population and documented circulation of hepatitis E virus (HEV), could improve healthcare for immunocompromised and at-risk populations. Furthermore, the viral evolution may facilitate host adaptation and transmission, thereby complicating control efforts. These factors underscore the necessity for targeted research and intervention strategies to address the emerging threat of rHEV effectively.",
+        "title": "2026 Cruise Ship-associated Andes Hantavirus Outbreak and Public Health Response.",
+        "abstract": "Andes virus (ANDV) is an exceptional hantavirus for which human-to-human transmission has been repeatedly reported, and it causes hantavirus cardiopulmonary syndrome with high lethality in South America. This review aims to summarize the epidemiological and clinical features of hantavirus infections and their transmission routes, and to examine transmission patterns within a confined, high-density environment and future public health response strategies, using the 2026 ANDV outbreak on the MV Hondius cruise ship as a case study. Drawing on publicly available reports from the World Health Organization (WHO), the European Centre for Disease Prevention and Control, the Pan American Health Organization, and the Korea Disease Control and Prevention Agency, as well as relevant literature, we reviewed the characteristics of hantavirus infections and this outbreak. The MV Hondius departed from Ushuaia, Argentina, on April 1, 2026. On May 2, the UK International Health Regulations (IHR) National Focal Point formally alerted the WHO to a cluster of severe acute respiratory illnesses. By May 27, 13 individuals (11 confirmed and 2 probable cases) had been infected, and 3 had died. Genomic analysis revealed no more than one single-nucleotide polymorphism difference among patients, indicating onboard human-to-human transmission following a single or a very small number of zoonotic spillover events; the effective reproduction number was estimated to be 0.7 on May 22. Major factors contributing to transmission included advanced age (mean, approximately 65 years), shared cabins, communal indoor spaces, and close caregiving or clinical contact. This outbreak demonstrates that pathogens with limited human-to-human transmissibility can nevertheless be amplified in a closed, high-density environment. Prompt identification, international coordination under the IHR, and efficient risk communication were central to controlling the outbreak, and preparedness for potential importation requires routine assessment of travel history, surveillance for suspected cases, and access to rapid diagnostic testing.",
         "abstract_sentences": [
           {
             "id": "A1",
-            "text": "Rat hepatitis E virus (rHEV) is an emerging zoonotic pathogen, increasingly detected in human, animal, and environmental samples globally."
+            "text": "Andes virus (ANDV) is an exceptional hantavirus for which human-to-human transmission has been repeatedly reported, and it causes hantavirus cardiopulmonary syndrome with high lethality in South America."
           },
           {
             "id": "A2",
-            "text": "Although rHEV shares the same subfamily as human hepatitis E virus (HEV; Paslahepevirus balayani), which is endemic across Africa, little is known about rHEV ecology on the continent beyond an isolated travel-related case linked to the Democratic Republic of Congo and Gabon."
+            "text": "This review aims to summarize the epidemiological and clinical features of hantavirus infections and their transmission routes, and to examine transmission patterns within a confined, high-density environment and future public health response strategies, using the 2026 ANDV outbreak on the MV Hondius cruise ship as a case study."
           },
           {
             "id": "A3",
-            "text": "As a rodent-borne virus, rHEV poses a public health risk due to the widespread presence of the synanthropic reservoir Rattus norvegicus."
+            "text": "Drawing on publicly available reports from the World Health Organization (WHO), the European Centre for Disease Prevention and Control, the Pan American Health Organization, and the Korea Disease Control and Prevention Agency, as well as relevant literature, we reviewed the characteristics of hantavirus infections and this outbreak."
           },
           {
             "id": "A4",
-            "text": "Limited data on hepatitis of unknown origin further emphasise the need for active surveillance to understand the distribution, epidemiology, and impact of rHEV on human health."
+            "text": "The MV Hondius departed from Ushuaia, Argentina, on April 1, 2026."
           },
           {
             "id": "A5",
-            "text": "This review summarises our current knowledge on the global distribution of rHEV in humans, animals, and the environment, highlighting the importance of ongoing surveillance through the One Health Approach."
+            "text": "On May 2, the UK International Health Regulations (IHR) National Focal Point formally alerted the WHO to a cluster of severe acute respiratory illnesses."
           },
           {
             "id": "A6",
-            "text": "Monitoring the virus in countries such as Nigeria, a country with a significant pig population and documented circulation of hepatitis E virus (HEV), could improve healthcare for immunocompromised and at-risk populations."
+            "text": "By May 27, 13 individuals (11 confirmed and 2 probable cases) had been infected, and 3 had died."
           },
           {
             "id": "A7",
-            "text": "Furthermore, the viral evolution may facilitate host adaptation and transmission, thereby complicating control efforts."
+            "text": "Genomic analysis revealed no more than one single-nucleotide polymorphism difference among patients, indicating onboard human-to-human transmission following a single or a very small number of zoonotic spillover events; the effective reproduction number was estimated to be 0.7 on May 22."
           },
           {
             "id": "A8",
-            "text": "These factors underscore the necessity for targeted research and intervention strategies to address the emerging threat of rHEV effectively."
+            "text": "Major factors contributing to transmission included advanced age (mean, approximately 65 years), shared cabins, communal indoor spaces, and close caregiving or clinical contact."
+          },
+          {
+            "id": "A9",
+            "text": "This outbreak demonstrates that pathogens with limited human-to-human transmissibility can nevertheless be amplified in a closed, high-density environment."
+          },
+          {
+            "id": "A10",
+            "text": "Prompt identification, international coordination under the IHR, and efficient risk communication were central to controlling the outbreak, and preparedness for potential importation requires routine assessment of travel history, surveillance for suspected cases, and access to rapid diagnostic testing."
           }
         ],
         "authors": [
-          "D. Kabantiyok",
-          "A. Bitrus",
-          "O. Owolodun",
-          "D. Omoniwa",
-          "O. Adegboye",
-          "Noemi Schäfer",
-          "Daniel Sauter",
-          "S. Sridhar",
-          "C. Meseko"
+          "Jin Yong Kim"
         ],
-        "journal": "Zoonotic Diseases",
+        "journal": "Public health weekly report",
         "publisher": null,
-        "published_date": "2026-07-08",
+        "published_date": "2026-07-11",
         "published_date_precision": "day",
-        "availability_date": "2026-07-08",
-        "availability_basis": "publication_date",
-        "online_date": null,
+        "availability_date": "2026-07-11",
+        "availability_basis": "source_created_date",
+        "online_date": "2026-06-16",
         "print_date": null,
-        "issue_date": null,
-        "publication_types": [
-          "JournalArticle",
-          "Review"
+        "issue_date": "2026",
+        "publication_types": [],
+        "language": "eng",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42434045/",
+        "retrieved_at": "2026-07-15T03:52:19+00:00",
+        "recovery_context": {}
+      }
+    },
+    {
+      "work_id": "work-e3cb5c555876b2b40ccfb58a",
+      "evidence_level": "E1",
+      "attempt_count": 1,
+      "first_queued_date": "2026-07-15",
+      "last_attempt_date": "2026-07-15",
+      "next_retry_date": "2026-07-16",
+      "expires_date": "2026-08-14",
+      "reason_codes": [
+        "FULLTEXT_NOT_RETRIEVED"
+      ],
+      "source_record": {
+        "record_type": "scholarly_source",
+        "source_id": "recovery_queue",
+        "source_record_id": "work-e3cb5c555876b2b40ccfb58a",
+        "query_group": "recovery_retry",
+        "query": "internal evidence recovery queue",
+        "identifiers": {
+          "doi": "10.1093/infdis/jiag359",
+          "pmid": "42430654",
+          "pmcid": null,
+          "europe_pmc_id": "42430654",
+          "semantic_scholar_id": null,
+          "arxiv": null
+        },
+        "title": "Watching the Ship, Missing the Forest: Why Ecological Spillover, Reservoir Ecology, and Environmental Change Remain the True Hantavirus Threats in North America.",
+        "abstract": "Hantavirus emergence in North America is driven by interactions among reservoir ecology, environmental variability, landscape conditions, and human exposure, with ongoing environmental change increasing spillover opportunities, altering the geography of risk, and challenging traditional public health surveillance systems.",
+        "abstract_sentences": [
+          {
+            "id": "A1",
+            "text": "Hantavirus emergence in North America is driven by interactions among reservoir ecology, environmental variability, landscape conditions, and human exposure, with ongoing environmental change increasing spillover opportunities, altering the geography of risk, and challenging traditional public health surveillance systems."
+          }
         ],
-        "language": null,
-        "url": "https://www.semanticscholar.org/paper/77d3d297e64cb44909ea431e5a55f492bcf5a923",
-        "retrieved_at": "2026-07-15T02:25:15+00:00",
+        "authors": [
+          "Charles LE",
+          "Nuzzo JB",
+          "Bagdasarian N"
+        ],
+        "journal": "The Journal of infectious diseases",
+        "publisher": null,
+        "published_date": "2026-07-10",
+        "published_date_precision": "day",
+        "availability_date": "2026-07-10",
+        "availability_basis": "online_date",
+        "online_date": "2026-07-10",
+        "print_date": "2026-07-01",
+        "issue_date": null,
+        "publication_types": [],
+        "language": "eng",
+        "url": "https://europepmc.org/article/MED/42430654",
+        "retrieved_at": "2026-07-15T03:52:19+00:00",
         "recovery_context": {}
       }
     },
     {
       "work_id": "work-09e9d4db3e9b27d5d04c4f8f",
       "evidence_level": "E1",
-      "attempt_count": 1,
+      "attempt_count": 2,
       "first_queued_date": "2026-07-15",
       "last_attempt_date": "2026-07-15",
-      "next_retry_date": "2026-07-16",
+      "next_retry_date": "2026-07-18",
       "expires_date": "2026-08-14",
       "reason_codes": [
         "FULLTEXT_NOT_RETRIEVED"
@@ -1199,17 +1232,17 @@
         "publication_types": [],
         "language": "eng",
         "url": "https://europepmc.org/article/MED/42439788",
-        "retrieved_at": "2026-07-15T02:25:15+00:00",
+        "retrieved_at": "2026-07-15T03:52:19+00:00",
         "recovery_context": {}
       }
     },
     {
       "work_id": "work-24595e6f0f7e4676a68be705",
       "evidence_level": "E1",
-      "attempt_count": 1,
+      "attempt_count": 2,
       "first_queued_date": "2026-07-15",
       "last_attempt_date": "2026-07-15",
-      "next_retry_date": "2026-07-16",
+      "next_retry_date": "2026-07-18",
       "expires_date": "2026-08-14",
       "reason_codes": [
         "FULLTEXT_NOT_RETRIEVED"
@@ -1225,7 +1258,7 @@
           "pmid": "42434385",
           "pmcid": "PMC13350923",
           "europe_pmc_id": "42434385",
-          "semantic_scholar_id": null,
+          "semantic_scholar_id": "dc37f610eff7500782f8bee0333b7988a4c9f435",
           "arxiv": null
         },
         "title": "Preparing for the Next Pandemic: Learning From COVID-19 to Build What Comes Next.",
@@ -1251,17 +1284,17 @@
         "publication_types": [],
         "language": "eng",
         "url": "https://europepmc.org/article/MED/42434385",
-        "retrieved_at": "2026-07-15T02:25:15+00:00",
+        "retrieved_at": "2026-07-15T03:52:19+00:00",
         "recovery_context": {}
       }
     },
     {
       "work_id": "work-261800c4a15fce7cab542257",
       "evidence_level": "E0",
-      "attempt_count": 1,
+      "attempt_count": 2,
       "first_queued_date": "2026-07-15",
       "last_attempt_date": "2026-07-15",
-      "next_retry_date": "2026-07-16",
+      "next_retry_date": "2026-07-18",
       "expires_date": "2026-08-14",
       "reason_codes": [
         "ABSTRACT_NOT_RETRIEVED",
@@ -1299,17 +1332,17 @@
         "publication_types": [],
         "language": "eng",
         "url": "https://europepmc.org/article/MED/42419496",
-        "retrieved_at": "2026-07-15T02:25:15+00:00",
+        "retrieved_at": "2026-07-15T03:52:19+00:00",
         "recovery_context": {}
       }
     },
     {
       "work_id": "work-26d41b33804b556d0e838645",
       "evidence_level": "E1",
-      "attempt_count": 1,
+      "attempt_count": 2,
       "first_queued_date": "2026-07-15",
       "last_attempt_date": "2026-07-15",
-      "next_retry_date": "2026-07-16",
+      "next_retry_date": "2026-07-18",
       "expires_date": "2026-08-14",
       "reason_codes": [
         "FULLTEXT_NOT_RETRIEVED"
@@ -1353,17 +1386,17 @@
         "publication_types": [],
         "language": "eng",
         "url": "https://europepmc.org/article/MED/42424042",
-        "retrieved_at": "2026-07-15T02:25:15+00:00",
+        "retrieved_at": "2026-07-15T03:52:19+00:00",
         "recovery_context": {}
       }
     },
     {
       "work_id": "work-6eef5c5c90eeadcada4f4eb6",
       "evidence_level": "E1",
-      "attempt_count": 1,
+      "attempt_count": 2,
       "first_queued_date": "2026-07-15",
       "last_attempt_date": "2026-07-15",
-      "next_retry_date": "2026-07-16",
+      "next_retry_date": "2026-07-18",
       "expires_date": "2026-08-14",
       "reason_codes": [
         "FULLTEXT_NOT_RETRIEVED"
@@ -1445,73 +1478,17 @@
         "publication_types": [],
         "language": "eng",
         "url": "https://pubmed.ncbi.nlm.nih.gov/42446888/",
-        "retrieved_at": "2026-07-15T02:25:15+00:00",
-        "recovery_context": {}
-      }
-    },
-    {
-      "work_id": "work-7cc638ddc8ee234f30b363ee",
-      "evidence_level": "E1",
-      "attempt_count": 1,
-      "first_queued_date": "2026-07-15",
-      "last_attempt_date": "2026-07-15",
-      "next_retry_date": "2026-07-16",
-      "expires_date": "2026-08-14",
-      "reason_codes": [
-        "FULLTEXT_NOT_RETRIEVED"
-      ],
-      "source_record": {
-        "record_type": "scholarly_source",
-        "source_id": "recovery_queue",
-        "source_record_id": "work-7cc638ddc8ee234f30b363ee",
-        "query_group": "recovery_retry",
-        "query": "internal evidence recovery queue",
-        "identifiers": {
-          "doi": "10.1093/infdis/jiag359",
-          "pmid": "42430654",
-          "pmcid": null,
-          "europe_pmc_id": "42430654",
-          "semantic_scholar_id": "f7b166f0292ab3c33386c257aeb7941a2edad0bc",
-          "arxiv": null
-        },
-        "title": "Watching the Ship, Missing the Forest: Why Ecological Spillover, Reservoir Ecology, and Environmental Change Remain the True Hantavirus Threats in North America.",
-        "abstract": "Hantavirus emergence in North America is driven by interactions among reservoir ecology, environmental variability, landscape conditions, and human exposure, with ongoing environmental change increasing spillover opportunities, altering the geography of risk, and challenging traditional public health surveillance systems.",
-        "abstract_sentences": [
-          {
-            "id": "A1",
-            "text": "Hantavirus emergence in North America is driven by interactions among reservoir ecology, environmental variability, landscape conditions, and human exposure, with ongoing environmental change increasing spillover opportunities, altering the geography of risk, and challenging traditional public health surveillance systems."
-          }
-        ],
-        "authors": [
-          "Charles LE",
-          "Nuzzo JB",
-          "Bagdasarian N"
-        ],
-        "journal": "The Journal of infectious diseases",
-        "publisher": null,
-        "published_date": "2026-07-10",
-        "published_date_precision": "day",
-        "availability_date": "2026-07-10",
-        "availability_basis": "online_date",
-        "online_date": "2026-07-10",
-        "print_date": "2026-07-01",
-        "issue_date": null,
-        "publication_types": [
-          "JournalArticle"
-        ],
-        "language": "eng",
-        "url": "https://europepmc.org/article/MED/42430654",
-        "retrieved_at": "2026-07-15T02:25:15+00:00",
+        "retrieved_at": "2026-07-15T03:52:19+00:00",
         "recovery_context": {}
       }
     },
     {
       "work_id": "work-7da09839fc167eff558a71fb",
       "evidence_level": "E1",
-      "attempt_count": 1,
+      "attempt_count": 2,
       "first_queued_date": "2026-07-15",
       "last_attempt_date": "2026-07-15",
-      "next_retry_date": "2026-07-16",
+      "next_retry_date": "2026-07-18",
       "expires_date": "2026-08-14",
       "reason_codes": [
         "FULLTEXT_NOT_RETRIEVED"
@@ -1586,17 +1563,17 @@
         "publication_types": [],
         "language": "eng",
         "url": "https://pubmed.ncbi.nlm.nih.gov/42435789/",
-        "retrieved_at": "2026-07-15T02:25:15+00:00",
+        "retrieved_at": "2026-07-15T03:52:19+00:00",
         "recovery_context": {}
       }
     },
     {
       "work_id": "work-dcbbc9fbd8008d9b406c3f47",
       "evidence_level": "E1",
-      "attempt_count": 1,
+      "attempt_count": 2,
       "first_queued_date": "2026-07-15",
       "last_attempt_date": "2026-07-15",
-      "next_retry_date": "2026-07-16",
+      "next_retry_date": "2026-07-18",
       "expires_date": "2026-08-14",
       "reason_codes": [
         "FULLTEXT_NOT_RETRIEVED"
@@ -1663,17 +1640,17 @@
         "publication_types": [],
         "language": "eng",
         "url": "https://pubmed.ncbi.nlm.nih.gov/42430118/",
-        "retrieved_at": "2026-07-15T02:25:15+00:00",
+        "retrieved_at": "2026-07-15T03:52:19+00:00",
         "recovery_context": {}
       }
     },
     {
       "work_id": "work-eff16bd1991afc42885881ed",
       "evidence_level": "E1",
-      "attempt_count": 1,
+      "attempt_count": 2,
       "first_queued_date": "2026-07-15",
       "last_attempt_date": "2026-07-15",
-      "next_retry_date": "2026-07-16",
+      "next_retry_date": "2026-07-18",
       "expires_date": "2026-08-14",
       "reason_codes": [
         "FULLTEXT_NOT_RETRIEVED"
@@ -1720,17 +1697,17 @@
         "publication_types": [],
         "language": "eng",
         "url": "https://europepmc.org/article/MED/42435452",
-        "retrieved_at": "2026-07-15T02:25:15+00:00",
+        "retrieved_at": "2026-07-15T03:52:19+00:00",
         "recovery_context": {}
       }
     },
     {
       "work_id": "work-fb272e575c9aa9e9f3f71b3b",
       "evidence_level": "E1",
-      "attempt_count": 1,
+      "attempt_count": 2,
       "first_queued_date": "2026-07-15",
       "last_attempt_date": "2026-07-15",
-      "next_retry_date": "2026-07-16",
+      "next_retry_date": "2026-07-18",
       "expires_date": "2026-08-14",
       "reason_codes": [
         "FULLTEXT_NOT_RETRIEVED"
@@ -1746,7 +1723,7 @@
           "pmid": "42421388",
           "pmcid": null,
           "europe_pmc_id": "42421388",
-          "semantic_scholar_id": null,
+          "semantic_scholar_id": "12a54c7008f65a568a75c67efa6a807840211e0f",
           "arxiv": null
         },
         "title": "Hantavirus Infection: Review of Clinical Management.",
@@ -1827,7 +1804,7 @@
         "publication_types": [],
         "language": "eng",
         "url": "https://pubmed.ncbi.nlm.nih.gov/42421388/",
-        "retrieved_at": "2026-07-15T02:25:15+00:00",
+        "retrieved_at": "2026-07-15T03:52:19+00:00",
         "recovery_context": {}
       }
     }
