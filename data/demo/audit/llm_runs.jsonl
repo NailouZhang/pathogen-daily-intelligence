@@ -1,1 +1,0 @@
-{"task_name": "all", "provider": "deterministic", "model": null, "status": "disabled", "error": "LLM disabled; validated source or demo translations were retained.", "retry_count": 0, "fallback_used": false, "generated_at": "2026-07-15T03:10:22+00:00", "validation_status": "not_applicable", "unsupported_claim_count": 0}

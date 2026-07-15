@@ -1,0 +1,243 @@
+{
+  "schema_version": "2.0",
+  "profile_id": "hantavirus",
+  "display_name_en": "Hantavirus",
+  "display_name_zh": "汉坦病毒",
+  "taxonomy": {},
+  "english_terms": [
+    "Hantaviridae",
+    "Orthohantavirus",
+    "hantavirus",
+    "hantaviruses",
+    "Hantaan virus",
+    "Seoul virus",
+    "Puumala virus",
+    "Dobrava-Belgrade virus",
+    "Sin Nombre virus",
+    "Andes virus",
+    "Laguna Negra virus",
+    "Tula virus",
+    "Bayou virus",
+    "Black Creek Canal virus",
+    "Choclo virus",
+    "Prospect Hill virus",
+    "hemorrhagic fever with renal syndrome",
+    "HFRS",
+    "hantavirus pulmonary syndrome",
+    "HPS",
+    "hantavirus cardiopulmonary syndrome",
+    "HCPS"
+  ],
+  "chinese_terms": [
+    "肾综合征出血热",
+    "汉坦病毒肺综合征",
+    "汉坦病毒心肺综合征"
+  ],
+  "virus_names": [
+    "Hantaan virus",
+    "Seoul virus",
+    "Puumala virus",
+    "Dobrava-Belgrade virus",
+    "Sin Nombre virus",
+    "Andes virus",
+    "Laguna Negra virus",
+    "Tula virus",
+    "Bayou virus",
+    "Black Creek Canal virus",
+    "Choclo virus",
+    "Prospect Hill virus"
+  ],
+  "disease_names_en": [
+    "hemorrhagic fever with renal syndrome",
+    "HFRS",
+    "hantavirus pulmonary syndrome",
+    "HPS",
+    "hantavirus cardiopulmonary syndrome",
+    "HCPS"
+  ],
+  "disease_names_zh": [
+    "肾综合征出血热",
+    "汉坦病毒肺综合征",
+    "汉坦病毒心肺综合征"
+  ],
+  "hosts": [
+    "rodent",
+    "small mammal",
+    "shrew",
+    "mole",
+    "bat"
+  ],
+  "transmission_terms": [
+    "zoonosis",
+    "rodent excreta",
+    "aerosol transmission",
+    "person-to-person transmission"
+  ],
+  "negative_terms": [
+    "fictional",
+    "game",
+    "stock"
+  ],
+  "translation_glossary": [
+    {
+      "source": "Hantaviridae",
+      "target": "汉坦病毒科"
+    },
+    {
+      "source": "Orthohantavirus",
+      "target": "正汉坦病毒"
+    },
+    {
+      "source": "hantavirus",
+      "target": "汉坦病毒"
+    },
+    {
+      "source": "Hantaan virus",
+      "target": "汉滩病毒"
+    },
+    {
+      "source": "Seoul virus",
+      "target": "首尔病毒"
+    },
+    {
+      "source": "Puumala virus",
+      "target": "普马拉病毒"
+    },
+    {
+      "source": "Andes virus",
+      "target": "安第斯病毒"
+    },
+    {
+      "source": "hemorrhagic fever with renal syndrome",
+      "target": "肾综合征出血热"
+    },
+    {
+      "source": "hantavirus pulmonary syndrome",
+      "target": "汉坦病毒肺综合征"
+    },
+    {
+      "source": "hantavirus cardiopulmonary syndrome",
+      "target": "汉坦病毒心肺综合征"
+    }
+  ],
+  "query_groups": [
+    {
+      "id": "core_taxonomy",
+      "purpose": "Core taxonomy and named viruses",
+      "terms": [
+        "Hantaviridae",
+        "Orthohantavirus",
+        "hantavirus",
+        "Hantaan virus",
+        "Seoul virus",
+        "Puumala virus",
+        "Andes virus"
+      ],
+      "topics": [],
+      "negative_terms": [
+        "fictional",
+        "game"
+      ]
+    },
+    {
+      "id": "clinical",
+      "purpose": "Human disease, clinical manifestations and management",
+      "terms": [
+        "hantavirus",
+        "Orthohantavirus",
+        "Hantaan virus",
+        "Seoul virus",
+        "Puumala virus",
+        "Andes virus"
+      ],
+      "topics": [
+        "infection",
+        "disease",
+        "clinical",
+        "diagnosis",
+        "treatment",
+        "intensive care",
+        "neurological",
+        "renal",
+        "pulmonary"
+      ]
+    },
+    {
+      "id": "epidemiology",
+      "purpose": "Outbreaks, cases and surveillance",
+      "terms": [
+        "hantavirus",
+        "Orthohantavirus",
+        "Hantaan virus",
+        "Seoul virus",
+        "Puumala virus",
+        "Andes virus"
+      ],
+      "topics": [
+        "outbreak",
+        "case",
+        "surveillance",
+        "epidemiology",
+        "incidence",
+        "seroprevalence",
+        "public health"
+      ]
+    },
+    {
+      "id": "host_ecology",
+      "purpose": "Reservoir hosts and environmental drivers",
+      "terms": [
+        "hantavirus",
+        "Orthohantavirus"
+      ],
+      "topics": [
+        "rodent",
+        "reservoir",
+        "host",
+        "ecology",
+        "spillover",
+        "climate",
+        "land use",
+        "occupational exposure"
+      ]
+    },
+    {
+      "id": "genomics",
+      "purpose": "Genome, evolution and molecular epidemiology",
+      "terms": [
+        "hantavirus",
+        "Orthohantavirus"
+      ],
+      "topics": [
+        "genome",
+        "sequencing",
+        "phylogeny",
+        "evolution",
+        "reassortment",
+        "recombination",
+        "molecular epidemiology"
+      ]
+    },
+    {
+      "id": "intervention",
+      "purpose": "Diagnostics, vaccines and therapeutics",
+      "terms": [
+        "hantavirus",
+        "Orthohantavirus"
+      ],
+      "topics": [
+        "PCR",
+        "serology",
+        "antigen",
+        "antibody",
+        "vaccine",
+        "antiviral",
+        "therapeutic",
+        "clinical trial"
+      ]
+    }
+  ],
+  "authoritative_sources": [],
+  "generated_by": "bundled_seed",
+  "generated_at": "2026-07-15T06:52:49+00:00"
+}

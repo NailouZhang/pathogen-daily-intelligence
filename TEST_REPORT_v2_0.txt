@@ -1,0 +1,30 @@
+Pathogen Daily Intelligence v2.0 validation report
+==================================================
+
+Validated in the packaging environment:
+- Python compileall: passed
+- Pytest: 13 tests passed
+- GitHub Actions YAML parsing: passed
+- Bash update script syntax: passed
+- Deterministic seven-day demo pipeline: passed
+- data/latest.json generation: passed
+- history/state generation: passed
+- GitHub Pages index.html generation: passed
+- RSS feed generation: passed
+- compact per-card en/zh control: passed
+- separate research/review/news five-element prompt checks: passed
+- deterministic DOI/title deduplication test: passed
+- cross-category scholarly-news linking test: passed
+- Google News boilerplate removal test: passed
+- forbidden hantavirus mistranslation repair test: passed
+- numeric preservation translation test: passed
+- negative-only unrelated paper relevance test: passed
+
+Not falsely claimed as tested here:
+- Real PubMed/Europe PMC/Crossref/Semantic Scholar/OpenAlex/bioRxiv/medRxiv responses
+- Real ICTV/ViralZone bootstrap retrieval
+- Real Gemini or Groq inference with the user's keys
+- Real Google/MyMemory Python translation fallback
+- Publisher-specific HTML/PDF availability and licensing
+
+Those dynamic checks execute in the user's GitHub Actions environment and are written to data/audit/ without aborting the entire issue when an individual source or record fails.

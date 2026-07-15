@@ -1,39 +1,27 @@
-from src.pdi.dedup import deduplicate_news, deduplicate_scholarly
-from src.pdi.demo import demo_source_results
+from src.pdi2.dedup import attach_news_to_papers, dedup_news, dedup_papers
 
 
-def test_scholarly_identifier_dedup():
-    scholarly, _, _ = demo_source_results("2026-07-14")
-    works, counts = deduplicate_scholarly(scholarly)
-    assert counts["raw"] == 3
-    assert len(works) == 2
-    merged = next(w for w in works if w["identifiers"].get("pmid") == "99900001")
-    assert merged["quality"]["source_count"] == 2
-
-
-def test_news_url_tracking_removed_and_kept_unique():
-    _, news, _ = demo_source_results("2026-07-14")
-    articles, counts = deduplicate_news(news)
-    assert counts["raw"] == 3
-    assert len(articles) == 3
-    assert all("utm_" not in a["canonical_url"] for a in articles)
-
-
-def test_cross_source_doi_links_pubmed_and_crossref_records():
-    base = {
-        "title": "A shared hantavirus study",
-        "abstract": "Hantavirus study.",
-        "abstract_sentences": [],
-        "authors": ["A Researcher"],
-        "published_date": "2026-07-14",
-        "published_date_precision": "day",
-        "journal": "Journal",
-        "retrieved_at": "2026-07-14T00:00:00+00:00",
-    }
+def test_paper_doi_dedup_prefers_longer_abstract():
     records = [
-        {**base, "source_id": "pubmed", "source_record_id": "1", "identifiers": {"pmid": "1", "doi": "10.1/shared"}},
-        {**base, "source_id": "crossref", "source_record_id": "10.1/shared", "identifiers": {"doi": "10.1/shared"}},
+        {"source": "A", "doi": "10.1/demo", "title": "A study", "abstract": "short", "authors": ["Smith"]},
+        {"source": "B", "doi": "10.1/demo", "title": "A study", "abstract": "a much longer abstract", "authors": ["Smith"]},
     ]
-    works, counts = deduplicate_scholarly(records)
-    assert len(works) == 1
-    assert counts["merged"] == 1
+    out = dedup_papers(records)
+    assert len(out) == 1
+    assert out[0]["abstract"] == "a much longer abstract"
+
+
+def test_news_dedup():
+    records = [
+        {"source": "A", "title": "WHO declares hantavirus outbreak over", "url": "a"},
+        {"source": "B", "title": "WHO says hantavirus outbreak is over", "url": "b"},
+    ]
+    assert len(dedup_news(records)) == 1
+
+
+def test_news_about_paper_can_attach():
+    papers = dedup_papers([{"source": "PubMed", "title": "Neurological manifestations of hantavirus infection", "authors": ["Nath"], "doi": "10.1/x"}])
+    news = dedup_news([{"source": "News", "title": "Neurological manifestations of hantavirus infection", "url": "x", "excerpt": "A new paper"}])
+    remaining, papers = attach_news_to_papers(news, papers)
+    assert remaining == []
+    assert papers[0]["media_mentions"]

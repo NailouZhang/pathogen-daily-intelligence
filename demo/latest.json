@@ -1,0 +1,604 @@
+{
+  "schema_version": "2.0",
+  "issue_id": "hantavirus-2026-07-15",
+  "profile_id": "hantavirus",
+  "issue_date": "2026-07-15",
+  "window_start": "2026-07-08",
+  "window_end": "2026-07-15",
+  "generated_at": "2026-07-15T07:01:58+00:00",
+  "title_zh": "汉坦病毒每日情报",
+  "title_en": "Hantavirus Daily Intelligence",
+  "profile": {
+    "schema_version": "2.0",
+    "profile_id": "hantavirus",
+    "display_name_en": "Hantavirus",
+    "display_name_zh": "汉坦病毒",
+    "taxonomy": {},
+    "english_terms": [
+      "Hantaviridae",
+      "Orthohantavirus",
+      "hantavirus",
+      "hantaviruses",
+      "Hantaan virus",
+      "Seoul virus",
+      "Puumala virus",
+      "Dobrava-Belgrade virus",
+      "Sin Nombre virus",
+      "Andes virus",
+      "Laguna Negra virus",
+      "Tula virus",
+      "Bayou virus",
+      "Black Creek Canal virus",
+      "Choclo virus",
+      "Prospect Hill virus",
+      "hemorrhagic fever with renal syndrome",
+      "HFRS",
+      "hantavirus pulmonary syndrome",
+      "HPS",
+      "hantavirus cardiopulmonary syndrome",
+      "HCPS"
+    ],
+    "chinese_terms": [
+      "肾综合征出血热",
+      "汉坦病毒肺综合征",
+      "汉坦病毒心肺综合征"
+    ],
+    "virus_names": [
+      "Hantaan virus",
+      "Seoul virus",
+      "Puumala virus",
+      "Dobrava-Belgrade virus",
+      "Sin Nombre virus",
+      "Andes virus",
+      "Laguna Negra virus",
+      "Tula virus",
+      "Bayou virus",
+      "Black Creek Canal virus",
+      "Choclo virus",
+      "Prospect Hill virus"
+    ],
+    "disease_names_en": [
+      "hemorrhagic fever with renal syndrome",
+      "HFRS",
+      "hantavirus pulmonary syndrome",
+      "HPS",
+      "hantavirus cardiopulmonary syndrome",
+      "HCPS"
+    ],
+    "disease_names_zh": [
+      "肾综合征出血热",
+      "汉坦病毒肺综合征",
+      "汉坦病毒心肺综合征"
+    ],
+    "hosts": [
+      "rodent",
+      "small mammal",
+      "shrew",
+      "mole",
+      "bat"
+    ],
+    "transmission_terms": [
+      "zoonosis",
+      "rodent excreta",
+      "aerosol transmission",
+      "person-to-person transmission"
+    ],
+    "negative_terms": [
+      "fictional",
+      "game",
+      "stock"
+    ],
+    "translation_glossary": [
+      {
+        "source": "Hantaviridae",
+        "target": "汉坦病毒科"
+      },
+      {
+        "source": "Orthohantavirus",
+        "target": "正汉坦病毒"
+      },
+      {
+        "source": "hantavirus",
+        "target": "汉坦病毒"
+      },
+      {
+        "source": "Hantaan virus",
+        "target": "汉滩病毒"
+      },
+      {
+        "source": "Seoul virus",
+        "target": "首尔病毒"
+      },
+      {
+        "source": "Puumala virus",
+        "target": "普马拉病毒"
+      },
+      {
+        "source": "Andes virus",
+        "target": "安第斯病毒"
+      },
+      {
+        "source": "hemorrhagic fever with renal syndrome",
+        "target": "肾综合征出血热"
+      },
+      {
+        "source": "hantavirus pulmonary syndrome",
+        "target": "汉坦病毒肺综合征"
+      },
+      {
+        "source": "hantavirus cardiopulmonary syndrome",
+        "target": "汉坦病毒心肺综合征"
+      }
+    ],
+    "query_groups": [
+      {
+        "id": "core_taxonomy",
+        "purpose": "Core taxonomy and named viruses",
+        "terms": [
+          "Hantaviridae",
+          "Orthohantavirus",
+          "hantavirus",
+          "Hantaan virus",
+          "Seoul virus",
+          "Puumala virus",
+          "Andes virus"
+        ],
+        "topics": [],
+        "negative_terms": [
+          "fictional",
+          "game"
+        ]
+      },
+      {
+        "id": "clinical",
+        "purpose": "Human disease, clinical manifestations and management",
+        "terms": [
+          "hantavirus",
+          "Orthohantavirus",
+          "Hantaan virus",
+          "Seoul virus",
+          "Puumala virus",
+          "Andes virus"
+        ],
+        "topics": [
+          "infection",
+          "disease",
+          "clinical",
+          "diagnosis",
+          "treatment",
+          "intensive care",
+          "neurological",
+          "renal",
+          "pulmonary"
+        ]
+      },
+      {
+        "id": "epidemiology",
+        "purpose": "Outbreaks, cases and surveillance",
+        "terms": [
+          "hantavirus",
+          "Orthohantavirus",
+          "Hantaan virus",
+          "Seoul virus",
+          "Puumala virus",
+          "Andes virus"
+        ],
+        "topics": [
+          "outbreak",
+          "case",
+          "surveillance",
+          "epidemiology",
+          "incidence",
+          "seroprevalence",
+          "public health"
+        ]
+      },
+      {
+        "id": "host_ecology",
+        "purpose": "Reservoir hosts and environmental drivers",
+        "terms": [
+          "hantavirus",
+          "Orthohantavirus"
+        ],
+        "topics": [
+          "rodent",
+          "reservoir",
+          "host",
+          "ecology",
+          "spillover",
+          "climate",
+          "land use",
+          "occupational exposure"
+        ]
+      },
+      {
+        "id": "genomics",
+        "purpose": "Genome, evolution and molecular epidemiology",
+        "terms": [
+          "hantavirus",
+          "Orthohantavirus"
+        ],
+        "topics": [
+          "genome",
+          "sequencing",
+          "phylogeny",
+          "evolution",
+          "reassortment",
+          "recombination",
+          "molecular epidemiology"
+        ]
+      },
+      {
+        "id": "intervention",
+        "purpose": "Diagnostics, vaccines and therapeutics",
+        "terms": [
+          "hantavirus",
+          "Orthohantavirus"
+        ],
+        "topics": [
+          "PCR",
+          "serology",
+          "antigen",
+          "antibody",
+          "vaccine",
+          "antiviral",
+          "therapeutic",
+          "clinical trial"
+        ]
+      }
+    ],
+    "authoritative_sources": [],
+    "generated_by": "bundled_seed",
+    "generated_at": "2026-07-15T06:52:49+00:00"
+  },
+  "query_plan": [
+    {
+      "group_id": "core_taxonomy",
+      "purpose": "Core taxonomy and named viruses",
+      "terms": [
+        "Hantaviridae",
+        "Orthohantavirus",
+        "hantavirus",
+        "Hantaan virus",
+        "Seoul virus",
+        "Puumala virus",
+        "Andes virus"
+      ],
+      "topics": [],
+      "scholarly_query": "(Hantaviridae OR Orthohantavirus OR hantavirus OR \"Hantaan virus\" OR \"Seoul virus\" OR \"Puumala virus\" OR \"Andes virus\")",
+      "news_query": "(Hantaviridae OR Orthohantavirus OR hantavirus OR \"Hantaan virus\" OR \"Seoul virus\" OR \"Puumala virus\" OR \"Andes virus\") -fictional -game"
+    },
+    {
+      "group_id": "clinical",
+      "purpose": "Human disease, clinical manifestations and management",
+      "terms": [
+        "hantavirus",
+        "Orthohantavirus",
+        "Hantaan virus",
+        "Seoul virus",
+        "Puumala virus",
+        "Andes virus"
+      ],
+      "topics": [
+        "infection",
+        "disease",
+        "clinical",
+        "diagnosis",
+        "treatment",
+        "intensive care",
+        "neurological",
+        "renal",
+        "pulmonary"
+      ],
+      "scholarly_query": "(hantavirus OR Orthohantavirus OR \"Hantaan virus\" OR \"Seoul virus\" OR \"Puumala virus\" OR \"Andes virus\") AND (infection OR disease OR clinical OR diagnosis OR treatment OR \"intensive care\" OR neurological OR renal OR pulmonary)",
+      "news_query": "(hantavirus OR Orthohantavirus OR \"Hantaan virus\" OR \"Seoul virus\" OR \"Puumala virus\" OR \"Andes virus\") (infection OR disease OR clinical OR diagnosis OR treatment OR \"intensive care\" OR neurological OR renal OR pulmonary) -fictional -game -stock"
+    },
+    {
+      "group_id": "epidemiology",
+      "purpose": "Outbreaks, cases and surveillance",
+      "terms": [
+        "hantavirus",
+        "Orthohantavirus",
+        "Hantaan virus",
+        "Seoul virus",
+        "Puumala virus",
+        "Andes virus"
+      ],
+      "topics": [
+        "outbreak",
+        "case",
+        "surveillance",
+        "epidemiology",
+        "incidence",
+        "seroprevalence",
+        "public health"
+      ],
+      "scholarly_query": "(hantavirus OR Orthohantavirus OR \"Hantaan virus\" OR \"Seoul virus\" OR \"Puumala virus\" OR \"Andes virus\") AND (outbreak OR case OR surveillance OR epidemiology OR incidence OR seroprevalence OR \"public health\")",
+      "news_query": "(hantavirus OR Orthohantavirus OR \"Hantaan virus\" OR \"Seoul virus\" OR \"Puumala virus\" OR \"Andes virus\") (outbreak OR case OR surveillance OR epidemiology OR incidence OR seroprevalence OR \"public health\") -fictional -game -stock"
+    },
+    {
+      "group_id": "host_ecology",
+      "purpose": "Reservoir hosts and environmental drivers",
+      "terms": [
+        "hantavirus",
+        "Orthohantavirus"
+      ],
+      "topics": [
+        "rodent",
+        "reservoir",
+        "host",
+        "ecology",
+        "spillover",
+        "climate",
+        "land use",
+        "occupational exposure"
+      ],
+      "scholarly_query": "(hantavirus OR Orthohantavirus) AND (rodent OR reservoir OR host OR ecology OR spillover OR climate OR \"land use\" OR \"occupational exposure\")",
+      "news_query": "(hantavirus OR Orthohantavirus) (rodent OR reservoir OR host OR ecology OR spillover OR climate OR \"land use\" OR \"occupational exposure\") -fictional -game -stock"
+    },
+    {
+      "group_id": "genomics",
+      "purpose": "Genome, evolution and molecular epidemiology",
+      "terms": [
+        "hantavirus",
+        "Orthohantavirus"
+      ],
+      "topics": [
+        "genome",
+        "sequencing",
+        "phylogeny",
+        "evolution",
+        "reassortment",
+        "recombination",
+        "molecular epidemiology"
+      ],
+      "scholarly_query": "(hantavirus OR Orthohantavirus) AND (genome OR sequencing OR phylogeny OR evolution OR reassortment OR recombination OR \"molecular epidemiology\")",
+      "news_query": "(hantavirus OR Orthohantavirus) (genome OR sequencing OR phylogeny OR evolution OR reassortment OR recombination OR \"molecular epidemiology\") -fictional -game -stock"
+    },
+    {
+      "group_id": "intervention",
+      "purpose": "Diagnostics, vaccines and therapeutics",
+      "terms": [
+        "hantavirus",
+        "Orthohantavirus"
+      ],
+      "topics": [
+        "PCR",
+        "serology",
+        "antigen",
+        "antibody",
+        "vaccine",
+        "antiviral",
+        "therapeutic",
+        "clinical trial"
+      ],
+      "scholarly_query": "(hantavirus OR Orthohantavirus) AND (PCR OR serology OR antigen OR antibody OR vaccine OR antiviral OR therapeutic OR \"clinical trial\")",
+      "news_query": "(hantavirus OR Orthohantavirus) (PCR OR serology OR antigen OR antibody OR vaccine OR antiviral OR therapeutic OR \"clinical trial\") -fictional -game -stock"
+    }
+  ],
+  "papers": [
+    {
+      "source": "Demo PubMed",
+      "source_ids": {
+        "pmid": "00000001"
+      },
+      "doi": "10.0000/demo.research",
+      "title": "Serologic evidence of hantavirus exposure in forest workers",
+      "abstract": "A cross-sectional study tested 371 forest workers for hantavirus antibodies. Hantavirus IgG was detected in 7.3% of participants. Exposure was associated with frequent rodent contact. The study was limited by its single-region design and lack of longitudinal follow-up.",
+      "authors": [
+        "Demo Author"
+      ],
+      "journal": "Demo Virology",
+      "year": 2026,
+      "volume": "1",
+      "issue": "1",
+      "pages": "1-8",
+      "online_date": "2026-07-15",
+      "availability_date": "2026-07-15",
+      "availability_date_basis": "online_date",
+      "publication_types": [
+        "Journal Article"
+      ],
+      "url": "https://example.org/research",
+      "relevance_score": 0.53,
+      "sources": [
+        "Demo PubMed"
+      ],
+      "source_records": [
+        {
+          "source": "Demo PubMed",
+          "source_ids": {
+            "pmid": "00000001"
+          },
+          "doi": "10.0000/demo.research",
+          "title": "Serologic evidence of hantavirus exposure in forest workers",
+          "abstract": "A cross-sectional study tested 371 forest workers for hantavirus antibodies. Hantavirus IgG was detected in 7.3% of participants. Exposure was associated with frequent rodent contact. The study was limited by its single-region design and lack of longitudinal follow-up.",
+          "authors": [
+            "Demo Author"
+          ],
+          "journal": "Demo Virology",
+          "year": 2026,
+          "volume": "1",
+          "issue": "1",
+          "pages": "1-8",
+          "online_date": "2026-07-15",
+          "availability_date": "2026-07-15",
+          "availability_date_basis": "online_date",
+          "publication_types": [
+            "Journal Article"
+          ],
+          "url": "https://example.org/research",
+          "relevance_score": 0.53
+        }
+      ],
+      "paper_id": "paper-c794ae2b3703b08b",
+      "rank": 1,
+      "evidence_level": "E1",
+      "paper_type": "research",
+      "analysis": {
+        "status": "fallback_source_extract",
+        "kind": "research",
+        "analysis": {
+          "background": "A cross-sectional study tested 371 forest workers for hantavirus antibodies.",
+          "methods": "Hantavirus IgG was detected in 7.3% of participants.",
+          "results": "Exposure was associated with frequent rodent contact. The study was limited by its single-region design and lack of longitudinal follow-up.",
+          "contribution": "需阅读全文进一步判断。",
+          "limitations": "当前仅依据已获得的摘要或正文片段，未进行超出证据的推断。"
+        },
+        "summary_en": "",
+        "error": "[]"
+      },
+      "title_zh": "林业工作者汉坦病毒暴露的血清学证据",
+      "analysis_zh": {
+        "background": "林业工作者经常接触啮齿动物,可能存在未识别的汉坦病毒暴露风险。",
+        "methods": "采用横断面设计,对371名林业工作者检测汉坦病毒抗体并评估啮齿动物接触史。",
+        "results": "7.3%的参与者检出汉坦病毒IgG;频繁接触啮齿动物与血清阳性相关。",
+        "contribution": "结果提示职业人群应加强啮齿动物暴露监测和针对性防护。",
+        "limitations": "研究仅覆盖单一区域,且缺少纵向随访,不能直接推断感染时间和因果关系。"
+      },
+      "summary_zh": "背景：林业工作者经常接触啮齿动物,可能存在未识别的汉坦病毒暴露风险。 方法：采用横断面设计,对371名林业工作者检测汉坦病毒抗体并评估啮齿动物接触史。 结果：7.3%的参与者检出汉坦病毒IgG;频繁接触啮齿动物与血清阳性相关。 贡献：结果提示职业人群应加强啮齿动物暴露监测和针对性防护。 局限：研究仅覆盖单一区域,且缺少纵向随访,不能直接推断感染时间和因果关系。",
+      "translation_audit": {
+        "title": {
+          "status": "demo",
+          "provider": "deterministic_demo"
+        },
+        "fields": {}
+      }
+    },
+    {
+      "source": "Demo Europe PMC",
+      "source_ids": {
+        "pmid": "00000002"
+      },
+      "doi": "10.0000/demo.review",
+      "title": "Hantavirus infections in a changing world: a narrative review",
+      "abstract": "This review discusses hantavirus epidemiology, reservoir ecology, pathogenesis, diagnosis, and prevention. Evidence indicates that environmental change and human contact with rodent reservoirs alter spillover risk. Gaps include limited prospective surveillance and few licensed countermeasures. Future work should integrate One Health surveillance and standardized clinical studies.",
+      "authors": [
+        "Review Author"
+      ],
+      "journal": "Demo Reviews",
+      "year": 2026,
+      "online_date": "2026-07-15",
+      "availability_date": "2026-07-15",
+      "availability_date_basis": "online_date",
+      "publication_types": [
+        "Review"
+      ],
+      "url": "https://example.org/review",
+      "relevance_score": 0.53,
+      "sources": [
+        "Demo Europe PMC"
+      ],
+      "source_records": [
+        {
+          "source": "Demo Europe PMC",
+          "source_ids": {
+            "pmid": "00000002"
+          },
+          "doi": "10.0000/demo.review",
+          "title": "Hantavirus infections in a changing world: a narrative review",
+          "abstract": "This review discusses hantavirus epidemiology, reservoir ecology, pathogenesis, diagnosis, and prevention. Evidence indicates that environmental change and human contact with rodent reservoirs alter spillover risk. Gaps include limited prospective surveillance and few licensed countermeasures. Future work should integrate One Health surveillance and standardized clinical studies.",
+          "authors": [
+            "Review Author"
+          ],
+          "journal": "Demo Reviews",
+          "year": 2026,
+          "online_date": "2026-07-15",
+          "availability_date": "2026-07-15",
+          "availability_date_basis": "online_date",
+          "publication_types": [
+            "Review"
+          ],
+          "url": "https://example.org/review",
+          "relevance_score": 0.53
+        }
+      ],
+      "paper_id": "paper-f58e7a9dd92a48fb",
+      "rank": 2,
+      "evidence_level": "E1",
+      "paper_type": "review",
+      "analysis": {
+        "status": "fallback_source_extract",
+        "kind": "review",
+        "analysis": {
+          "background": "This review discusses hantavirus epidemiology, reservoir ecology, pathogenesis, diagnosis, and prevention.",
+          "main_directions": "Evidence indicates that environmental change and human contact with rodent reservoirs alter spillover risk. Gaps include limited prospective surveillance and few licensed countermeasures.",
+          "current_state": "Future work should integrate One Health surveillance and standardized clinical studies.",
+          "gaps": "当前仅依据已获得的摘要或正文片段，未进行超出证据的推断。",
+          "future_research": "需根据全文进一步判断。"
+        },
+        "summary_en": "",
+        "error": "[]"
+      },
+      "title_zh": "变化世界中的汉坦病毒感染：叙述性综述",
+      "analysis_zh": {
+        "background": "环境变化与人兽接触增加正在改变汉坦病毒的传播和溢出风险。",
+        "main_directions": "综述流行病学、储存宿主生态、致病机制、诊断和预防等主要方向。",
+        "current_state": "现有证据支持环境与宿主生态变化会影响人群暴露,但不同地区的监测能力不均。",
+        "gaps": "前瞻性监测、标准化临床研究和获批干预措施仍然不足。",
+        "future_research": "应推进一体化健康监测、长期宿主生态研究和可比的临床队列研究。"
+      },
+      "summary_zh": "背景：环境变化与人兽接触增加正在改变汉坦病毒的传播和溢出风险。 主要方向：综述流行病学、储存宿主生态、致病机制、诊断和预防等主要方向。 研究现状：现有证据支持环境与宿主生态变化会影响人群暴露,但不同地区的监测能力不均。 不足：前瞻性监测、标准化临床研究和获批干预措施仍然不足。 后续研究：应推进一体化健康监测、长期宿主生态研究和可比的临床队列研究。",
+      "translation_audit": {
+        "title": {
+          "status": "demo",
+          "provider": "deterministic_demo"
+        },
+        "fields": {}
+      }
+    }
+  ],
+  "news": [
+    {
+      "source": "Demo News",
+      "title": "Health authority reports a suspected hantavirus case",
+      "url": "https://example.org/news",
+      "published_date": "2026-07-15",
+      "excerpt": "On Tuesday, the regional health authority reported one suspected hantavirus case in County A. The patient is stable and confirmatory testing is under way. Officials advised residents to avoid contact with rodent droppings. No additional cases have been reported.",
+      "publisher": "Demo Public Health News",
+      "language": "en",
+      "relevance_score": 0.53,
+      "news_id": "news-e98ad4327659c4c3",
+      "duplicate_sources": [],
+      "content": "On Tuesday, the regional health authority reported one suspected hantavirus case in County A. The patient is stable and confirmatory testing is under way. Officials advised residents to avoid contact with rodent droppings. No additional cases have been reported.",
+      "content_status": "partial",
+      "resolved_url": "https://example.org/news",
+      "analysis": {
+        "status": "fallback_source_extract",
+        "analysis": {
+          "time": "2026-07-15",
+          "location": "未从现有证据中明确报告",
+          "event": "On Tuesday, the regional health authority reported one suspected hantavirus case in County A.",
+          "impact": "The patient is stable and confirmatory testing is under way. Officials advised residents to avoid contact with rodent droppings.",
+          "status": "No additional cases have been reported."
+        },
+        "error": "[]"
+      },
+      "title_zh": "卫生部门报告一例疑似汉坦病毒病例",
+      "analysis_zh": {
+        "time": "本周二报告。",
+        "location": "A县。",
+        "event": "地区卫生部门报告1例疑似汉坦病毒病例,正在进行确证检测。",
+        "impact": "患者病情稳定;部门同时提醒居民避免接触啮齿动物排泄物。",
+        "status": "截至报道时未发现新增病例,事件仍处于调查和实验室确认阶段。"
+      },
+      "summary_zh": "时间：本周二报告。 地点：A县。 事件：地区卫生部门报告1例疑似汉坦病毒病例,正在进行确证检测。 影响：患者病情稳定;部门同时提醒居民避免接触啮齿动物排泄物。 状态：截至报道时未发现新增病例,事件仍处于调查和实验室确认阶段。",
+      "translation_audit": {
+        "title": {
+          "status": "demo",
+          "provider": "deterministic_demo"
+        },
+        "fields": {}
+      }
+    }
+  ],
+  "metrics": {
+    "raw_papers": 2,
+    "papers": 2,
+    "research": 1,
+    "reviews": 1,
+    "raw_news": 1,
+    "news": 1,
+    "translated": 3
+  }
+}
