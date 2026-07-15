@@ -1,0 +1,304 @@
+{
+  "schema_version": "2.0",
+  "profile_id": "hantavirus",
+  "display_name_en": "Hantavirus",
+  "display_name_zh": "汉坦病毒",
+  "taxonomy": {},
+  "english_terms": [
+    "Hantaviridae",
+    "Orthohantavirus",
+    "hantavirus",
+    "hantaviruses",
+    "Hantaan virus",
+    "Seoul virus",
+    "Puumala virus",
+    "Dobrava-Belgrade virus",
+    "Sin Nombre virus",
+    "Andes virus",
+    "Laguna Negra virus",
+    "Tula virus",
+    "Bayou virus",
+    "Black Creek Canal virus",
+    "Choclo virus",
+    "Prospect Hill virus",
+    "hemorrhagic fever with renal syndrome",
+    "HFRS",
+    "hantavirus pulmonary syndrome",
+    "HPS",
+    "hantavirus cardiopulmonary syndrome",
+    "HCPS"
+  ],
+  "chinese_terms": [
+    "肾综合征出血热",
+    "汉坦病毒肺综合征",
+    "汉坦病毒心肺综合征"
+  ],
+  "virus_names": [
+    "Hantaan virus",
+    "Seoul virus",
+    "Puumala virus",
+    "Dobrava-Belgrade virus",
+    "Sin Nombre virus",
+    "Andes virus",
+    "Laguna Negra virus",
+    "Tula virus",
+    "Bayou virus",
+    "Black Creek Canal virus",
+    "Choclo virus",
+    "Prospect Hill virus"
+  ],
+  "disease_names_en": [
+    "hemorrhagic fever with renal syndrome",
+    "HFRS",
+    "hantavirus pulmonary syndrome",
+    "HPS",
+    "hantavirus cardiopulmonary syndrome",
+    "HCPS"
+  ],
+  "disease_names_zh": [
+    "肾综合征出血热",
+    "汉坦病毒肺综合征",
+    "汉坦病毒心肺综合征"
+  ],
+  "hosts": [
+    "rodent",
+    "small mammal",
+    "shrew",
+    "mole",
+    "bat"
+  ],
+  "transmission_terms": [
+    "zoonosis",
+    "rodent excreta",
+    "aerosol transmission",
+    "person-to-person transmission"
+  ],
+  "negative_terms": [
+    "fictional",
+    "game",
+    "stock"
+  ],
+  "translation_glossary": [
+    {
+      "source": "Hantaviridae",
+      "target": "汉坦病毒科"
+    },
+    {
+      "source": "Orthohantavirus",
+      "target": "正汉坦病毒"
+    },
+    {
+      "source": "hantavirus",
+      "target": "汉坦病毒"
+    },
+    {
+      "source": "Hantaan virus",
+      "target": "汉滩病毒"
+    },
+    {
+      "source": "Seoul virus",
+      "target": "首尔病毒"
+    },
+    {
+      "source": "Puumala virus",
+      "target": "普马拉病毒"
+    },
+    {
+      "source": "Andes virus",
+      "target": "安第斯病毒"
+    },
+    {
+      "source": "hemorrhagic fever with renal syndrome",
+      "target": "肾综合征出血热"
+    },
+    {
+      "source": "hantavirus pulmonary syndrome",
+      "target": "汉坦病毒肺综合征"
+    },
+    {
+      "source": "hantavirus cardiopulmonary syndrome",
+      "target": "汉坦病毒心肺综合征"
+    }
+  ],
+  "query_groups": [
+    {
+      "id": "core_taxonomy",
+      "purpose": "Core taxonomy and named viruses",
+      "terms": [
+        "Hantaviridae",
+        "Orthohantavirus",
+        "hantavirus",
+        "Hantaan virus",
+        "Seoul virus",
+        "Puumala virus",
+        "Andes virus"
+      ],
+      "topics": [],
+      "negative_terms": [
+        "fictional",
+        "game"
+      ]
+    },
+    {
+      "id": "clinical",
+      "purpose": "Human disease, clinical manifestations and management",
+      "terms": [
+        "hantavirus",
+        "Orthohantavirus",
+        "Hantaan virus",
+        "Seoul virus",
+        "Puumala virus",
+        "Andes virus"
+      ],
+      "topics": [
+        "infection",
+        "disease",
+        "clinical",
+        "diagnosis",
+        "treatment",
+        "intensive care",
+        "neurological",
+        "renal",
+        "pulmonary"
+      ]
+    },
+    {
+      "id": "epidemiology",
+      "purpose": "Outbreaks, cases and surveillance",
+      "terms": [
+        "hantavirus",
+        "Orthohantavirus",
+        "Hantaan virus",
+        "Seoul virus",
+        "Puumala virus",
+        "Andes virus"
+      ],
+      "topics": [
+        "outbreak",
+        "case",
+        "surveillance",
+        "epidemiology",
+        "incidence",
+        "seroprevalence",
+        "public health"
+      ]
+    },
+    {
+      "id": "host_ecology",
+      "purpose": "Reservoir hosts and environmental drivers",
+      "terms": [
+        "hantavirus",
+        "Orthohantavirus"
+      ],
+      "topics": [
+        "rodent",
+        "reservoir",
+        "host",
+        "ecology",
+        "spillover",
+        "climate",
+        "land use",
+        "occupational exposure"
+      ]
+    },
+    {
+      "id": "genomics",
+      "purpose": "Genome, evolution and molecular epidemiology",
+      "terms": [
+        "hantavirus",
+        "Orthohantavirus"
+      ],
+      "topics": [
+        "genome",
+        "sequencing",
+        "phylogeny",
+        "evolution",
+        "reassortment",
+        "recombination",
+        "molecular epidemiology"
+      ]
+    },
+    {
+      "id": "intervention",
+      "purpose": "Diagnostics, vaccines and therapeutics",
+      "terms": [
+        "hantavirus",
+        "Orthohantavirus"
+      ],
+      "topics": [
+        "PCR",
+        "serology",
+        "antigen",
+        "antibody",
+        "vaccine",
+        "antiviral",
+        "therapeutic",
+        "clinical trial"
+      ]
+    }
+  ],
+  "authoritative_sources": [
+    {
+      "url": "https://ictv.global/report/chapter/hantaviridae/hantaviridae",
+      "retrieved_at": "2026-07-15T07:13:49+00:00",
+      "text": "Family: Hantaviridae | ICTV Skip to main content Home About About the ICTV About Virus Taxonomic Classification Charge to the ICTV Statutes Code Organization ICTV History Membership Membership Executive Committee Executive Committee History Life Members National Members Support Personnel Study Groups Recent Updates Taxonomy Taxonomy Browser Visual Taxonomy Browser Release History Master Species Lists Virus Metadata Resource Taxon Etymology Proposals Approved Proposals Pending Proposals Proposal Template Files Search Find the Species TaxaBLAST Search Website Text Search Report Current Report Chapters Chapter List: Image Chapter List: Text About the ICTV Report Virion Diagrams Virus Properties Help and Information Report Templates Past (9th) Report Chapters Information General Information Information Reports Binomial Nomenclature EC Meeting Reports Plenary Session Reports Meeting Reports News Newsletters Study Group Info Study Group Info Flaviviridae: HCV Hepeviridae Study Group Picornaviridae Study Group Virology Division News Foundations of Virology Forum Archive Help FAQs How-To videos Using the Taxonomy Browser Using the Visual Taxonomy Browser What is the ICTV Master Species List? Using the Master Species List Using the Virus Metadata Resource Using the Find the Species tool Using the ICTV Report Webinar Webinar on Virus Taxonomy Webinar on Finding Information GitHub Repository Zenodo Repository Email ICTV Help ‏‏‎ ‎ ICTV Report Book: Hantaviridae Family: Hantaviridae Subfamily: Actantavirinae Genus: Actinovirus Genus: Percilovirus Subfamily: Agantavirinae Genus: Agnathovirus Subfamily: Mammantavirinae Genus: Loanvirus Genus: Mobatvirus Genus: Orthohantavirus Genus: Thottimvirus Subfamily: Repantavirinae Genus: Reptillovirus Authors: Hantaviridae Citation: Hantaviridae References: Hantaviridae Resources: Hantaviridae Species List: Hantaviridae Family: Hantaviridae Steven B. Bradfute, Charles H. Calisher, Boris Klempa, Jonas Klingström, Jens H. Kuhn, Lies Laenen, Nicole D. Tischler and Piet Maes The citation for this ICTV Report chapter is the summary published as: Bradfute, S. B., Calisher, C. H., Klempa, B., Klingström, J., Kuhn, J. H., Laenen, L., Tischler, N. D., & Maes, P. (2024). ICTV Virus Taxonomy Profile: Hantaviridae 2024, Journal of General Virology 105, 001975 Corresponding author: Piet Maes ( [email protected] ) Edited by: Holly Hughes and Evelien Adriaenssens Posted: March 2024, updated June 2024 Summary Hantaviridae is a family for negative-sense RNA viruses with genomes of about 10.5–14.6 kb (Table 1 Hantaviridae ). The family includes eight genera ( Actinovirus and Percilovirus (subfamily Actantavirinae ), Agnathovirus (subfamily Agantavirinae ), Loanvirus , Mobatvirus , Orthohantavirus and Thottimvirus (subfamily Mammantavirinae ), and Reptillovirus (subfamily Repantavirinae ). These viruses are maintained in and/or transmitted by small mammals, but also by fish and reptiles. Several orthohantaviruses can infect humans, causing mild, severe, and sometimes-fatal diseases. Hantavirids produce enveloped virions containing three single-stranded RNA segments with open reading frames (ORFs) that encode a nucleoprotein (N), a glycoprotein precursor (GPC), and large (L) protein containing an RNA-directed RNA polymerase (RdRP) domain. Table 1 Hantaviridae. Characteristics of members of the family Hantaviridae. Characteristic Description* Example Hantaan virus (S segment: M14626; M segment: M14627; L segment: X55901), species Orthohantavirus hantanense Virion Enveloped, pleomorphic virions 80–160 nm in diameter with heterodimeric surface spikes Genome Three single-stranded RNA molecules (segments): small (S; 1.0–3.0 kb), medium (M; 3.4–4.8 kb), and large (L; 5.3–6.8 kb) Replication Ribonucleoprotein (RNP) complexes containing anti-genomic RNA serve as coding templates for synthesis of genomic RNA Translation Proteins are produced from capped and non-polyadenylated mRNAs. The 5′-cap structure is obtained via cap-snatching from cellular mRNAs Host range Fish (actinoviruses, agnathoviruses, perciloviruses), mammals (orthohantaviruses), and reptiles (reptilloviruses) Taxonomy Realm Riboviria , kingdom Orthornavirae , phylum Negarnaviricota , class Bunyaviricetes , order Elliovirales ; the family includes four subfamilies, eight genera, and 55 species * mostly based on experiments with mammalian orthohantaviruses Viruses assigned to each of the seven genera form genus-specifc monophyletic clades based on phylogenetic analysis of concatenated L protein/RdRP, glycoprotein and N sequences. Viruses from all seven genera share one or more of the following characteristics: (i) enveloped pleomorphic virions; (ii) tri-segmented, negative-sense RNA genome without polyadenylated tracts at the 3′-end; (iii) genomic sequence complementarity at the 5′- and 3′-ends; and (iv) capped but not polyadenylated virus mRNAs ( Maes et al., 2004 ). Piscine Hosts Genus Actinovirus . Viruses in this genus infect actinopterygian (percid, ogcocephalid, and triacanthodid, and possibly goblid and melanotaeniid) fish. Genus Agnathovirus . Viruses in this genus infect agnathan (myxinid) fish. Genus Percilovirus . Viruses in this genus infect actinopterygian ( gobiid, lophiid ) fish. Mammalian Hosts Genus Loanvirus. Viruses in this genus infect rhinolophid, verspertillionid, and possibly nycterid bats and possibly murid rodents. Genus Mobatvirus. Viruses in this genus infect emballonurid, hipposiderid, pteropodid and possibly molossid, and vespertillionid bats and soricid and talpid eulipotyphla. Genus Orthohantavirus. Viruses assigned to this genus infect soricid and talpid eulipotyphla and muroid and possibly dipodoid rodents. Genus Thottimvirus. Viruses in this genus infect soricid and possibly talpid eulipotyphla. Reptilian Hosts Genus Reptillovirus . Viruses in this genus infect gekkonid and possibly scincid reptiles. Virion Morphology Only known for members of the genus Orthohantavirus (see Orthohantavirus genus page). Physicochemical and physical properties Only known for members of the genus Orthohantavirus (see Orthohantavirus genus page). Nucleic acid Hantavirids have tri-segmented, negative-sense RNA genomes (S, M, and L segments). The viral mRNAs are not polyadenylated and contain a 5′-methylated cap and several non-templated nucleotides at the 5′-end that are derived from host cell mRNAs via cap snatching ( Schmaljohn et al., 1985 , Jonsson and Schmaljohn 2001 , Vaheri et al., 2013 ). Further information is only known for members of the genus Orthohantavirus (see Orthohantavirus genus page). Proteins Hantavirids typically express three structural proteins. The most abundant structural protein in a hantavirion is N, which encapsidates the hantaviral genomic segments. The least abundant protein is L, which mediates viral genome replication and transcription. Two glycoprotein subunits, G N and G C , are produced from GPC and mediate entry of hantavirions ( Schmaljohn et al., 1985 , Spiropoulou 2001 , Vaheri et al., 2013 ). Specifics are only known for members of the genus Orthohantavirus (see Orthohantavirus genus page). Lipids Not reported but are likely derived from the Golgi apparatus and/or the host cell plasma membrane and therefore likely composed of phospholipids, glycolipids, fatty acids, and sterols. Carbohydrates Only known for members of the genus Orthohantavirus (see Orthohantavirus genus page). Genome organization and replication S RNA encodes N and in some viruses NSs ( Jääskeläinen et al., 2007 , Vera-Otarola et al., 2012 ), M RNA encodes GPC, and the L RNA encodes L with its RdRP, helicase, and endonuclease domains ( Jonsson and Schmaljohn 2001 ) (Figure 1 Hantaviridae ). Specifics are only known for members of the genus Orthohantavirus (see Orthohantavirus genus page). Figure 1 Hantaviridae . Genome organization of representative hantaviruses. The 5′- and 3′- ends of all segments are complementary at their termini, likely promoting the formation of panhandle RNP complexes within the virion . GPC , glycoprotein precursor gene; L , large (protein) gene; N , nucleoprotein gene. Biology Hantavirids have been found in actinopterygian (gobiid, lophiid, percid, ogcocephalid, and triacanthodid, and possibly goblid and melanotaeniid) and agnathan (myxinid) fish; in emballonurid, hipposiderid, pteropodid, rhinolophid, verspertillionid, and possibly molossid and nycterid bats; in soricid and talpid eulipotyphla; in muroid and possibly dipodoid rodents; in gekkonid and possibly scincid reptiles; and potentially in coleopteran and plectopteran insects (see genus pages for details). Only orthohantaviruses are known to cause diseases (see Orthohantavirus genus page). Antigenicity Systematic antigenicity studies have only been reported for orthohantaviruses (see Orthohantavirus genus page). Derivation of names Actantavirinae : after the fish class Act inopterygii and h anta virus Actinovirus : after the fish class Actino pterygii Agantavirinae : after the fish infraphylum Ag natha and h anta virus Agnathovirus : after the fish infraphylum Agnatha andesense : after the Andes mountain range, South America artybashense : after Artybash (Артыбаш), Altai Republic (Республика Алтай), Russia asamaense : after the Asama River, Japan asikkalaense : after Asikkala , Finland bayoui : after the Latin bayou us , meaning bayou bernense: after Bern , Switzerland boweense : after Bowé , Guinea brugesense : after Bruges , Belgium brunaense : after the Latin Bruna , meaning Brno, Czech Republic caobangense : after Cao Bằng Province, Vietnam carrizalense : after Carrizal virus chocloense : after the cantina (bar) “El Choclo ”, Panama dabieshanense : after 大別山 ( Dàbiéshān ), China dakrongense : after Đakrông, Quảng Trị Province, Vietnam delgaditoense : after Caño Delgadito , Venezuela dobravaense : after Dobrava in Slovenia eptatreti : after the fish genus Eptatret us fugongense : after 福贡县 ( Fúgòng County), China gobbii : after wolfsnout goby (family Gobiidae) halieutaeae : after the fish genus Halieutaea hantanense : after 한탄강 ( Hantan River), South Korea Hantaviridae : after Hanta an virus hemidactyli : after the reptilian genus Hemidactyl us imjinense : after 임진강 ( Imjin river), South Korea jejuense : after 제주도 ( Jeju Island), South Korea kenkemeense : after Кенкеме ( Kenkeme river), Russia khabarovskense : after Хабаровск ( Khabarovsk ), Russia laibinense : after 来宾 ( Láibīn ), China lankaense : after Sri Lanka lenaense : after Ле́на ( Lena river), Russia Loanvirus : after 龙泉 ( Ló ngqu án) , China longquanense : after 龙泉 ( Lóngquán ), China lophii : after the fish genus Lophi us luxiense : after 泸溪县 ( Lúxī County), China Mammantavirinae : after the animal class Mamm alia and h anta virus mamorense : after Rio Mamoré virus maporalense : after Hato Maporal farm, Venezuela Mobatvirus : after mo le and bat montanoense : after a geographical feature or location ( Montaño ) in or near Leonardo Bravo municipality, Mexico nigrorivense : after the Latin nigro , meaning black and the Latin riv us , meaning river novaense : after Nova , Hungary Orthohantavirus : from the Ancient Greek ὀρθός ( orthó s ), meaning straight, right, proper and Hanta an virus Percilovirus : from the host order names Perciformes and Lophiiformes prospectense : after Prospect Hill, USA puumalaense : after Puumala Municipality, Finland quezonense : after Quezon Memorial National Park, Philippines Repantavirinae : after the animal class Rep tilia and h anta virus Reptillovirus : after the animal class Reptil ia robinaense : after Robina , Australia rockportense : after Rockport , USA sangassouense : after Sangassou , Guinea seoulense : after Seoul , South Korea sinnombreense : after Sin Nombre canyon, USA tatenalense : after historic Tatenale , England thailandense : after Thailand thottapalayamense : after Thottapalayam , India Thottimvirus : after Thott opalayam virus tigrayense : after ትግራይ ( Tigray Region), Ethiopia triacanthodis : after the fish genus Triacanthod es tulaense : after Тула ( Tula ), Russia xuansonense : after Xuân Sơn , Vietnam wufangense : after after Wùfēng (吾锋), Fújiàn Province (福建省), China Subfamily, genus and species demarcation criteria The availability of at least coding-complete sequences of all three genome segments may be sufficient for hantavirid classification in the absence of a cultured isolate. Demarcation of genera is based upon DivErsity pArtitioning by hieRarchical Clustering (DEmARC) analysis) using concatenated deduced S, M, and L segment expression product sequences ( Hantaviridae: current classification and future perspectives, Viruses, 11, 9, e0788\">Laenen et al., 2019 ). DEmARC analysis gave a frequency distribution of Pairwise Evolutionary Distance (PED) values of which the threshold of 0.1 gave an optimal clustering cost of zero and is used as the hantavirid species demarcation criterium. Genera are demarked by a PED-value threshold of 0.95 and subfamilies are demarcated based on their distinct clustering in a Bayesian maximum clade credibility tree and a PED-value threshold of 3.5. Relationships within the family Phylogenetic relationships across the family have been estimated using Bayesian maximum clade credibility trees generated from complete N, GPC, and L amino-acid sequences; similar topologies are obtained with concatenated N and GPC sequences (Figure 2 Hantaviridae ). Figure 2 Hantaviridae . Maximum likelihood phylogenetic tree inferred using IQ-TREE. The tree was constructed based on 53 concatenated S and M segment (amino acid) sequences using the LG+R9 model of sequence evolution. Branch lengths represent the estimated number of substitutions per site. Bootstrap support values (>70%) are indicated at nodes, reflecting the degree of confidence in the branching pattern. Relationships with other taxa Hantavirids are closely related to bunyaviral crulivirids, fimovirids, peribunyavirids, phasmavirids, tulasvirids, and tospovirids ( Wolf et al., 2018 , Herath et al., 2020 ). Related, unclassified viruses Virus name Accession number Virus abbreviation Reference coleopteran hanta-related virus OKIAV221 L: MT153497 ( Käfer et al., 2019 ) plecopteran hanta-related virus OKIAV215 L: MT153434 ( Käfer et al., 2019 ) Virus names and virus abbreviations are not official ICTV designations. Additional unclassified hantavirids that are probable members of established genera are listed under individual genus descriptions. International Committee on Taxonomy of Viruses Unless otherwise noted, this work is licensed under the CC BY 4.0, Creative Commons Attribution 4.0 International License Support is provided by the National Institute of Allergy and Infectious Diseases, U.S. National Institutes of Health, Award U24AI162625 Copyright © 2026 ICTV | Privacy | Disclaimer |",
+      "content_hash": "e3da2ccdd1b017f379adcd615ab5bc920a57f120a23cf799d8d883eaba5ff64d"
+    },
+    {
+      "url": "https://ictv.global/report/chapter/hantaviridae/hantaviridae/mammantavirinae/orthohantavirus",
+      "retrieved_at": "2026-07-15T07:13:49+00:00",
+      "text": "Genus: Orthohantavirus | ICTV Skip to main content Home About About the ICTV About Virus Taxonomic Classification Charge to the ICTV Statutes Code Organization ICTV History Membership Membership Executive Committee Executive Committee History Life Members National Members Support Personnel Study Groups Recent Updates Taxonomy Taxonomy Browser Visual Taxonomy Browser Release History Master Species Lists Virus Metadata Resource Taxon Etymology Proposals Approved Proposals Pending Proposals Proposal Template Files Search Find the Species TaxaBLAST Search Website Text Search Report Current Report Chapters Chapter List: Image Chapter List: Text About the ICTV Report Virion Diagrams Virus Properties Help and Information Report Templates Past (9th) Report Chapters Information General Information Information Reports Binomial Nomenclature EC Meeting Reports Plenary Session Reports Meeting Reports News Newsletters Study Group Info Study Group Info Flaviviridae: HCV Hepeviridae Study Group Picornaviridae Study Group Virology Division News Foundations of Virology Forum Archive Help FAQs How-To videos Using the Taxonomy Browser Using the Visual Taxonomy Browser What is the ICTV Master Species List? Using the Master Species List Using the Virus Metadata Resource Using the Find the Species tool Using the ICTV Report Webinar Webinar on Virus Taxonomy Webinar on Finding Information GitHub Repository Zenodo Repository Email ICTV Help ‏‏‎ ‎ ICTV Report Book: Hantaviridae Family: Hantaviridae Subfamily: Actantavirinae Genus: Actinovirus Genus: Percilovirus Subfamily: Agantavirinae Genus: Agnathovirus Subfamily: Mammantavirinae Genus: Loanvirus Genus: Mobatvirus Genus: Orthohantavirus Genus: Thottimvirus Subfamily: Repantavirinae Genus: Reptillovirus Authors: Hantaviridae Citation: Hantaviridae References: Hantaviridae Resources: Hantaviridae Species List: Hantaviridae Subfamily: Mammantavirinae Genus: Orthohantavirus Distinguishing features Sixty different viruses are classified in the genus Orthohantavius. These viruses typically infect specific soricid and talpid eulipotyphla and muroid and possibly dipodoid rodents. Orthohantaviruses are the only hantavirids known to cause disease in humans ( Schmaljohn and Hjelle 1997 , Jonsson et al., 2010 , Kuhn and Schmaljohn 2023 , Vial et al., 2023 ). Virion Morphology Orthohantavirions are pleomorphic in shape, mostly spherical of 80–160 nm in diameter ( Huiskonen et al., 2010 ), and surrounded by a membrane envelope that is decorated with glycoprotein (GP) spikes composed of G N and G C subunits (Figure 1 Orthohantavirus ). The virion envelope is 5 nm thick and is decorated with square shaped spikes, consisting of tetrameric G N -G C heterodimers, which protrude 10 nM from the membrane forming a surface lattice of local symmetry interrupted by empty membrane spots ( Hung et al., 1983 , Huiskonen et al., 2010 , Battisti et al., 2011 , Parvate et al., 2019 , Serris et al., 2020 , Guardado-Calvo and Rey 2021 ). Isolated ribonucleoprotein (RNP) complexes are composed of individual segment genomic RNA encapsidated by nucleoprotein (N) ( Tao et al., 1987 , Huiskonen et al., 2010 , Battisti et al., 2011 , Hepojoki et al., 2012 , Guo et al., 2016 , Arragain et al., 2019 ). Virions assemble and bud from the Golgi complex or cell surface membranes, depending on the virus ( Goldsmith et al., 1995 , Parvate et al., 2019 ). Figure 1 Orthohantavirus. A, B) Electron micrographs of Tula virus particles adapted from ( Huiskonen et al., 2010 ). C) Schematic illustration of an orthohantavirus particle. Shown is a spherical and enveloped (grey) particle with glycoprotein spikes (G N yellow, G C blue) inserted in a bilaminar lipid envelope. The S (small), M (medium), and L (large) RNP (ribonucleoprotein) complexes inside the particle consist of N (nucleoprotein, green) and L (large protein, pink). ViralZone image reproduced courtesy of SwissBioPics. Physicochemical and physical properties Virion buoyant densities in sucrose and CsCl are 1.15–1.18 ( White et al., 1982 ) and 1.20–1.21 g cm −3 , respectively ( Schmaljohn et al., 1983 ). Virions are sensitive to chemical inactivation with, for instance, methanol, paraformaldehyde, acetone/methanol, N -ethylmaleimide or detergents, as well as physical methods such as heat, gamma irradiation or UV irradiation ( Kraus et al., 2005 , Strandin et al., 2011 , Elveborg et al., 2022 ). Nucleic acid Orthohantavirus genomes are linear tri-segmented RNA molecules of negative polarity. The genomes are about 11.1–12.3 kb in length (small [S] segment: 1.2–2.1 kb; medium [M] segment: 3.4–3.8 kb; large [L] segment: 6.5–6.6 kb). Proteins Orthohantaviruses typically express three structural proteins (Table 1 Orthohantavirus ). The most abundant structural protein in an orthohantavirion is N, which encapsidates the orthohantaviral genomic segments. The least abundant protein is L, which mediates viral genome replication and transcription. Two glycoprotein subunits, G N and G C , mediate virion entry. G N and G C and non-structural proteins are encoded as a precursor polyprotein. Table 1 Orthohantavirus . Location and function of orthohantavirus structural proteins. Protein Location, mass, and function Reference Nucleoprotein (N) Structural virion protein (about 48 kD). Oligomerizes and encapsidates orthohantaviral genomic segments and hence component of RNPs. Binds to L and G N ( Mir et al., 2010 , Reuter and Krüger 2018 , Arragain et al., 2019 ) Nonstructural protein (NSs) Non-structural protein encoded by some orhtohantaviruses. Has type I interferon inhibitory activity. May occur as multiple isoforms. ( Vera-Otarola et al., 2020 , Binder et al., 2021 ) Glycoprotein (GP) Structural virion protein consisting of two subunits (G N : about 70-75 kD, G C : about 50-55 kD). Produced via proteolytic cleavage from the genome-encoded precursor GPC. Projects from virion membranes as tetrameric GP spikes composed of G N and G C heterodimers. GP mediates cell- receptor binding; as a class II fusion machine it induces virion-cell membrane fusion and, thereby cell entry. G N binds to N and RNA ( Spiropoulou et al., 2003 , Tischler et al., 2005 , Cifuentes-Muñoz et al., 2014 , Li et al., 2016 , Willensky et al., 2016 , Rissanen et al., 2017 , Zhu et al., 2018 , Bignon et al., 2019 , Sperber et al., 2019 ) Large protein (L) Structural virion protein (246 kD) with RdRP, helicase, and endoribonuclease domains. Component of the RNP inside virions. Binds to N and RNA. Oligomerizes and mediates transcription and replication of viral RNA segments. Mediates cap-snatching for viral mRNA capping. ( Kukkonen et al., 2005 , Cheng et al., 2014 , Rothenberger et al., 2016 , Jeeva et al., 2019 , Durieux Trouilleton et al., 2023 ) Genome organization and replication The orthohantavirus genome consists of three negative-sense RNA molecules, termed S (small), M (medium), and L (large) (Figure 2 Orthohantavirus ). Figure 2 Orthohantavirus. Schematic representation of orthohantavirus genome organization. Orthohantavirus genomic segments assume circular forms via non-covalent binding of complementary and highly conserved 3′- and 5′-terminal sequences. Genomic segment reassortment mostly occurs among viruses belonging to the same species but interspecies reassortment likely occurs occasionally ( Klempa 2018 , Petazzi et al., 2021 ). Orthohantavirus infection starts with virion attachment, mediated by G N and G C , to cell-surface attachment factors and entry via the endosomal route ( Shtanko et al., 2014 ) (Figure 3 Orthohantavirus ). Figure 3 Orthohantavirus . Lifecycle of orthohantaviruses. (1) Virion attachment; (2) virion uptake; (3) virion-cell membrane fusion; (4) transcription; (5) translation; (6) replication; (7) virion assembly; and (8) virion egress. After engaging a cellular receptor, protocadherin 1 in the case of American orthohantaviruses, virion-membrane fusion results in early or late endosomal release, depending on the virus, of the virion RNP complex into the cytoplasm in a pH-dependent manner ( Jangra et al., 2018 , Mittler et al., 2019 , Torriani et al., 2019 , Dieterle et al., 2021 ). During primary transcription L generates uncapped antigenomic RNA molecules that are then capped using host cell-derived capped primers (cap snatching). L and S segment-transcribed mRNAs are translated by free ribosomes ( Garcin et al., 1995 , Jeeva et al., 2019 , Meier et al., 2021 ). M segment-transcribed mRNA is translated by membrane-bound ribosomes, with the expressed GPC which is likely co-translationally cleaved by cellular proteases to yield G N and G C . The synthesis of the antigenome by L protein serves as a template for genomic RNA replication. Secondary transcription amplifies the synthesis of mRNAs and genome replication. During morphogenesis, G N and G C accumulate in the Golgi apparatus, modified host membranes are acquired, and virions bud into the Golgi. Biology Genus Orthohantavirus includes 38 species for 60 distinct viruses. These viruses and their unclassified, potential relatives, subclinically, and often chronically, infect specific soricid and talpid eulipotyphla, and muroid and possibly dipodoid rodents ( Jonsson et al., 2010 , Wu et al., 2018 , Chen et al., 2023 , Kuhn and Schmaljohn 2023 ). Orthohantaviruses are overall distributed worldwide, but the individual geographic distribution is dependent on host range. At least some orthohantaviruses may not be as restricted to a particular host as originally thought, but may be carried by animals of multiple hosts ( Goodfellow et al., 2021 , Quizon et al., 2022 , Gu et al., 2023 ). Orthohantaviruses are the only hantavirids known to cause disease (all in humans) and all disease-causing viruses are rodent-borne. Human infection may occur after inhalation of aerosolized excreta or secreta of infected rodents or direct rodent contact. The two WHO-recognized orthohantavirus-caused diseases are hemorrhagic fever with renal syndrome (HFRS), caused by Asian and European viruses (in particular Dobrava virus [DOBV], Hantaan virus [HTNV], Puumala virus [PUUV] and Seoul virus [SEOV]), and hantavirus pulmonary syndrome (HPS), a frequently lethal disease caused by viruses from the Americas (in particular Andes virus [ANDV] and Sin Nombre virus [SNV]) ( Vial et al., 2023 ). The hamster model of wild-type ANDV infection is lethal and largely mimics human HPS ( Hooper et al., 2001 ). After SNV infection in nonhuman primates, some animals develop an HPS-like disease, but cell passage of SNV can result in mutations that render the virus non-pathogenic in this model ( Safronetz et al., 2014 ). Many rodent models result in a chronic, asymptomatic infection, and these have been used in early-stage therapeutic studies ( Strandin et al., 2020 ). However, recent advances have been made in development of an HFRS mouse model using HTNV variants ( Wei et al., 2022 ). Orthohantavirus animal models are reviewed in ( Golden et al., 2015 ). Antigenicity There is considerable serum cross-reactivity between the nucleocapsids of hantavirids, but neutralizing antibodies targeting Gn/Gc are more specific. SNV was first identified as a hantavirid based on cross-reactivity of patient sera with other orthohantavirus antigens ( 1993 ). Similarly, rodents that carried SNV were identified in serosurveys using non-SNV orthohantavirus antigens, since SNV had not been isolated at the time ( Childs et al., 1994 ). Species demarcation criteria Demarcation of species is based upon DivErsity pArtitioning by hieRarchical Clustering (DEmARC) analysis) using concatenated deduced S, M, and L segment expression product sequences ( Laenen et al., 2019 ). Phylogenetic relationships across the genus have been estimated using maximum likelihood trees generated from complete N, GPC and L amino-acid sequences, and for N and GPC amino-acid sequences (Figure 2 Hantaviridae ). Related, unclassified viruses Virus name Accession number Virus abbreviation Reference Academ virus S: MK340905 ; M: OL871119 ; L: MH784614 * ACDV ( Yashina et al., 2022 ) Alto Paraguay virus APV ( Chu et al., 2003 , Bellomo et al., 2021 ) Amga virus S: KF974360 ; M: KF974359 ; L: KF974361 * ( Bennett et al., 2014 ) Anajatuba virus S: DQ451829 * ANAJV ( Rosa et al., 2005 ) Ash River virus S: KY962807 ; L: KY962808 * ARRV ( Arai et al., 2008 ) Asturias virus S: KY040518 ; M: KY040519 *; L: KY040520 * ASTV ( Gu et al., 2023 ) Azagny virus S: JF276226 *; M: JF276227 *; L: JF276228 * AZGV ( Kang et al., 2011a ) Belgrade virus ( Gligic et al., 1992 ) Biya river virus L: MN624147 * Bloodland Lake virus Blue River virus M: AF030551 BRV ( Morzunov et al., 1998 ) Boginia virus M: JX990966 *; L: JX990965 * BOGV ( Gu et al., 2013 ) Calabazo virus S: AF395443 *; M: AF402331 * ( Vincent et al., 2000 ) Camp Ripley virus S: KF958464 *; M: EF540773 *; L: KF958465 RPLV ( Arai et al., 2007 ) CGRn9415 virus S: EF990902 ; M: EF990916 ; L: EF990930 * ( Zou et al., 2008a ) Dode virus S: MG637438 ; M: MG637437 *; L: MG637436 * ( 云南蝙蝠携< face=\"Microsoft JhengHei, sans-serif\">带新型汉坦病毒及其基因组分析[Genomic sequence analysis of a hantavirus found in Yunnan bat], Chin J Exp Clin Vir [< face=\"MS Gothic\">中< face=\"Microsoft JhengHei, sans-serif\">华实验和临床病毒学杂志], 32, 140-4\">Deng et al., 2018 ) Fox Creek virus ( Plyusnin et al., 2011 ) hantavirus sp. strain Tamarin/BRA/SM22/2014 S: MN129183 * HoJo virus M: D00376 ( Schmaljohn et al., 1988 ) Iamonia virus ( Plyusnin et al., 2011 ) Isla Vista virus S: U31534 ; M: U31533 * ILV ( Song et al., 1995 ) Jemez Springs virus S: FJ686861 ; M: MK992749 *; L: MN006884 * JMSV ( Arai et al., 2008 ) jerboa hantavirus M: MG525545 *; L: MF642352 * JEHV ( Wu et al., 2018 ) Jurong virus S: GQ274940 ; M: GQ274938 ; L: GQ274936 * ( Johansson et al., 2010 ) Kielder hantavirus L: KY751731 * ( Thomason et al., 2017 ) Landiras virus S: ON944104 LDRV ( Hugot et al., 2023 ) Leakey virus M: U00469 * LEAV ( Baek et al., 1988 ) Lohja virus L: KJ136638 * ( Ling et al., 2014 ) Malacky virus S: Z48235 MCV ( Sibold et al., 1995 ) Muleshoe virus S: KX066124 ; M: KX066125 MULEV ( Rawlings et al., 1996 ) Ozark virus OZV ( Mull et al., 2023 ) Playa de Oro virus S: EF534079 ; M: EF534080 * OROV ( Chu et al., 2008 ) Powell Butte virus ( Plyusnin et al., 2011 ) prairie vole virus S: U19303 ; M: U19305 * Qiān Hú Shān virus/Qiāndǎo Lake virus S: GU566023 ; M: GU566022 *; L: GU566021 * QHSV ( Zuo et al., 2014 ) Rio Mearim virus S: DQ451828 * RIMEV ( Rosa et al., 2005 ) Río Segundo virus S: U18100 ( Hjelle et al., 1995 ) Sapporo rat virus S: OK500098 ; M: OK500097 ; L: OK500096 SRV ( Arikawa et al., 1990 ) Sarufutsu virus S: KF700097 * Shěnyáng virus S: FJ170796 ; M: FJ170804 *; L: FJ170810 * ( Zou et al., 2008b ) Taimyr virus M: U95848 * ( Dekonenko et al., 1996 ) Tanganya virus S: EF050455 *; L: EF050454 * TGNV ( Klempa et al., 2007 ) Tualatin River virus ( Plyusnin et al., 2011 ) Uurainen virus L: KJ136623 * Vladivostok virus S: AB011630 Yuánjiāng virus M: KJ857333 ; L: KJ857316 ( Zou et al., 2008b ) Virus names and virus abbreviations are not official ICTV designations. * Coding region sequence incomplete. International Committee on Taxonomy of Viruses Unless otherwise noted, this work is licensed under the CC BY 4.0, Creative Commons Attribution 4.0 International License Support is provided by the National Institute of Allergy and Infectious Diseases, U.S. National Institutes of Health, Award U24AI162625 Copyright © 2026 ICTV | Privacy | Disclaimer |",
+      "content_hash": "4fee8a518cb543c5d3094303e332109a60fb3f75268119cd503624652dbac2b5"
+    },
+    {
+      "url": "https://ictv.global/report/chapter/hantaviridae/taxonomy/hantaviridae",
+      "retrieved_at": "2026-07-15T07:13:49+00:00",
+      "text": "Species List: Hantaviridae | ICTV Skip to main content Home About About the ICTV About Virus Taxonomic Classification Charge to the ICTV Statutes Code Organization ICTV History Membership Membership Executive Committee Executive Committee History Life Members National Members Support Personnel Study Groups Recent Updates Taxonomy Taxonomy Browser Visual Taxonomy Browser Release History Master Species Lists Virus Metadata Resource Taxon Etymology Proposals Approved Proposals Pending Proposals Proposal Template Files Search Find the Species TaxaBLAST Search Website Text Search Report Current Report Chapters Chapter List: Image Chapter List: Text About the ICTV Report Virion Diagrams Virus Properties Help and Information Report Templates Past (9th) Report Chapters Information General Information Information Reports Binomial Nomenclature EC Meeting Reports Plenary Session Reports Meeting Reports News Newsletters Study Group Info Study Group Info Flaviviridae: HCV Hepeviridae Study Group Picornaviridae Study Group Virology Division News Foundations of Virology Forum Archive Help FAQs How-To videos Using the Taxonomy Browser Using the Visual Taxonomy Browser What is the ICTV Master Species List? Using the Master Species List Using the Virus Metadata Resource Using the Find the Species tool Using the ICTV Report Webinar Webinar on Virus Taxonomy Webinar on Finding Information GitHub Repository Zenodo Repository Email ICTV Help ‏‏‎ ‎ ICTV Report Book: Hantaviridae Family: Hantaviridae Subfamily: Actantavirinae Genus: Actinovirus Genus: Percilovirus Subfamily: Agantavirinae Genus: Agnathovirus Subfamily: Mammantavirinae Genus: Loanvirus Genus: Mobatvirus Genus: Orthohantavirus Genus: Thottimvirus Subfamily: Repantavirinae Genus: Reptillovirus Authors: Hantaviridae Citation: Hantaviridae References: Hantaviridae Resources: Hantaviridae Species List: Hantaviridae Species List: Hantaviridae Virus names, the choice of exemplar isolates, and virus abbreviations, are not official ICTV designations Exemplar isolate of the species International Committee on Taxonomy of Viruses Unless otherwise noted, this work is licensed under the CC BY 4.0, Creative Commons Attribution 4.0 International License Support is provided by the National Institute of Allergy and Infectious Diseases, U.S. National Institutes of Health, Award U24AI162625 Copyright © 2026 ICTV | Privacy | Disclaimer |",
+      "content_hash": "5d007eb0d01a709947f877e035388097161bd53158e5bc4b7de84fd72cca2ef9"
+    },
+    {
+      "url": "https://viralzone.expasy.org/7079",
+      "retrieved_at": "2026-07-15T07:13:51+00:00",
+      "text": "Hantaviridae ~ ViralZone Skip to main content ViralZone Hantaviridae (taxid:1980413) VIRION Enveloped, spherical. Diameter from 80 to 120nm. GENOME Segmented Negative-stranded RNA linear genome, L segment is between 6.8 and 12 kb, M segment between 3.2 and 4.9 kb and S segment between 1 and 3 kb. Encodes for four to six proteins. Some hantaviruses also encode a NSs protein on their S segment. GENE EXPRESSION The viral RNA dependent RNA polymerase (L) binds to a promoter on each encapsidated segment, and transcribes the mRNA. These are capped by L protein during synthesis using cap snatching . Transcription is terminated by a strong hairpin sequence at the end of each gene. Puumala virus expressed an additional NSs by leaky scanning in the NS gene. ENZYMES RNA-dependent RNA polymerase L Cap Snatching endonuclease L REPLICATION CYTOPLASMIC Virus attaches to host receptors though Gn-Gc glycoprotein dimer, and is endocytosed into vesicles in the host cell. Fusion of virus membrane with the vesicle membrane; ribonucleocapsid segments are released in the cytoplasm. Transcription , viral mRNAs are capped in the cytoplasm. Replication presumably starts when enough nucleoprotein is present to encapsidate neo-synthetized antigenomes and genomes. The ribonucleocapsids buds at Golgi apparatus, releasing the virion by exocytosis. DB LINKS TAXONOMY Group V: Negative sense ssRNA viruses Realm: Riboviria Kingdom: Orthornavirae Phylum: Negarnaviricota Subphylum: Polyploviricotina Class: Bunyaviricetes Order: Elliovirales Family: Hantaviridae Genus: Actinovirus Agantavirinae Agnathovirus Mammantavirinae Loanvirus Mobatvirus Orthohantavirus Thottimvirus Reptillovirus VIRUS Hantaan orthohantavirus Amga orthohantavirus Andes orthohantavirus Asama orthohantavirus Asikkala orthohantavirus Bayou orthohantavirus Black Creek Canal orthohantavirus Bowe orthohantavirus Bruges orthohantavirus Cano Delgadito orthohantavirus Cao Bang orthohantavirus Choclo orthohantavirus Dabieshan orthohantavirus Dobrava-Belgrade orthohantavirus El Moro Canyon orthohantavirus Fugong orthohantavirus Fusong orthohantavirus Imjin orthohantavirus Jeju orthohantavirus Kenkeme orthohantavirus Khabarovsk orthohantavirus Laguna Negra orthohantavirus Laibin orthohantavirus Longquan orthohantavirus Luxi orthohantavirus Maporal orthohantavirus Montano orthohantavirus Necocli orthohantavirus Nova orthohantavirus Oxbow orthohantavirus Prospect Hill orthohantavirus Puumala orthohantavirus Quezon orthohantavirus Rockport orthohantavirus Sangassou orthohantavirus Seoul orthohantavirus Sin Nombre orthohantavirus Thailand orthohantavirus Thottapalayam orthohantavirus Tula orthohantavirus Yakeshi orthohantavirus REFERENCE STRAIN Hantaan virus Sequence: L M S | Genome assembly | Proteome Host NATURAL HOST Reservoir: Rodents Occasional: Human CELL TROPISM INTERACTIONS Hantavirus: Beta3 integrin Ecology and disease GEOGRAPHY Worldwide ASSOCIATED DISEASES Human: hemorrhagic fever with renal syndrome , Hantavirus pulmonary syndrome TRANSMISSION Zoonosis , urine, saliva VACCINE None ANTIVIRAL DRUGS Experimental: Favipiravir Matching UniProtKB/Swiss-Prot entries (all links/actions below point to uniprot.org website) 45 entries grouped by protein reorder by strain 18 entries Envelopment polyprotein (M polyprotein) 9 entries RNA-directed RNA polymerase L (Protein L) (EC 2.7.7.48) (Large structural protein) (RdRp) (Replicase) (Transcriptase) 14 entries Nucleoprotein (EC 3.1.-.-) (Nucleocapsid protein) (Protein N) 4 entries Non-structural protein NS-S (NSs) These structures were created with the help of Colabfold by Jason Nomburg, Nathan Price and Jennifer Doudna ( ModelArchive ). Puumala virus (strain Sotkamo/V-2969/81) taxid:39002 Protein ModelArchive Envelopment polyprotein (M polyprotein) ma-jd-viral-59483 Nucleoprotein (EC 3.1.-.-) (Nucleocapsid protein) (Protein N) ma-jd-viral-32489",
+      "content_hash": "2c9133d86c2aecfd175aab839284ad9a19e275375461d9b4389a532def1b8cd2"
+    },
+    {
+      "url": "https://viralzone.expasy.org/213",
+      "retrieved_at": "2026-07-15T07:13:51+00:00",
+      "text": "Orthohantavirus ~ ViralZone Skip to main content ViralZone Orthohantavirus (taxid:1980442) Orthohantavirus is a genus of ssRNA- viruses in the Hantaviridae family that infect Rodents and rarely humans. In humans, these viruses can cause hemorrhagic fever with renal syndrome, or Hantavirus pulmonary syndromes. VIRION Enveloped, spherical. Diameter from 80 to 120nm. GENOME Segmented Negative-stranded RNA linear genome, L segment is between 6.8 and 12 kb, M segment between 3.2 and 4.9 kb and S segment between 1 and 3 kb. Encodes for four to six proteins. Some hantaviruses also encode a NSs protein on their S segment. GENE EXPRESSION The viral RNA dependent RNA polymerase (L) binds to a promoter on each encapsidated segment, and transcribes the mRNA. These are capped by L protein during synthesis using cap snatching . Transcription is terminated by a strong hairpin sequence at the end of each gene. mRNAs are capped by L protein during synthesis. Puumala virus expressed an additional NSs by leaky scanning in the NS gene. ENZYMES RNA-dependent RNA polymerase L Cap Snatching endonuclease L REPLICATION CYTOPLASMIC Virus attaches to host receptors though Gn-Gc glycoprotein dimer, and is endocytosed into vesicles in the host cell. Fusion of virus membrane with the vesicle membrane; ribonucleocapsid segments are released in the cytoplasm. Transcription , viral mRNAs are capped in the cytoplasm. Replication presumably starts when enough nucleoprotein is present to encapsidate neo-synthetized antigenomes and genomes. The ribonucleocapsids buds at Golgi apparatus, releasing the virion by exocytosis. DB LINKS TAXONOMY Group V: Negative sense ssRNA viruses Realm: Riboviria Kingdom: Orthornavirae Phylum: Negarnaviricota Subphylum: Polyploviricotina Class: Bunyaviricetes Order: Elliovirales Family: Hantaviridae Genus: Orthohantavirus VIRUS Hantaan orthohantavirus Amga orthohantavirus Andes orthohantavirus Asama orthohantavirus Asikkala orthohantavirus Bayou orthohantavirus Black Creek Canal orthohantavirus Bowe orthohantavirus Bruges orthohantavirus Cano Delgadito orthohantavirus Cao Bang orthohantavirus Choclo orthohantavirus Dabieshan orthohantavirus Dobrava-Belgrade orthohantavirus El Moro Canyon orthohantavirus Fugong orthohantavirus Fusong orthohantavirus Imjin orthohantavirus Jeju orthohantavirus Kenkeme orthohantavirus Khabarovsk orthohantavirus Laguna Negra orthohantavirus Laibin orthohantavirus Longquan orthohantavirus Luxi orthohantavirus Maporal orthohantavirus Montano orthohantavirus Necocli orthohantavirus Nova orthohantavirus Oxbow orthohantavirus Prospect Hill orthohantavirus Puumala orthohantavirus Quezon orthohantavirus Rockport orthohantavirus Sangassou orthohantavirus Seoul orthohantavirus Sin Nombre orthohantavirus Thailand orthohantavirus Thottapalayam orthohantavirus Tula orthohantavirus Yakeshi orthohantavirus REFERENCE STRAIN Hantaan virus Sequence: L M S | Genome assembly | Proteome Host NATURAL HOST Reservoir: Rodents Occasional: Human CELL TROPISM INTERACTIONS Hantavirus: Beta3 integrin Ecology and disease GEOGRAPHY Worldwide ASSOCIATED DISEASES Human: hemorrhagic fever with renal syndrome , Hantavirus pulmonary syndrome TRANSMISSION Zoonosis , urine, saliva Andes virus: Respiratory (Human-Human) VACCINE None ANTIVIRAL DRUGS Experimental: Favipiravir NATURAL HOST Reservoir: Rodents Occasional: Human CELL TROPISM ASSOCIATED DISEASES Human: hemorrhagic fever with renal syndrome , Hantavirus pulmonary syndrome TRANSMISSION Zoonosis , urine, saliva Matching UniProtKB/Swiss-Prot entries (all links/actions below point to uniprot.org website) 45 entries grouped by protein reorder by strain 18 entries Envelopment polyprotein (M polyprotein) 9 entries RNA-directed RNA polymerase L (Protein L) (EC 2.7.7.48) (Large structural protein) (RdRp) (Replicase) (Transcriptase) 14 entries Nucleoprotein (EC 3.1.-.-) (Nucleocapsid protein) (Protein N) 4 entries Non-structural protein NS-S (NSs) These structures were created with the help of Colabfold by Jason Nomburg, Nathan Price and Jennifer Doudna ( ModelArchive ). Puumala virus (strain Sotkamo/V-2969/81) taxid:39002 Protein ModelArchive Envelopment polyprotein (M polyprotein) ma-jd-viral-59483 Nucleoprotein (EC 3.1.-.-) (Nucleocapsid protein) (Protein N) ma-jd-viral-32489",
+      "content_hash": "fc6edbb52b849a022d801333d861465d5a29f1181f5ca14a1d4e83a99f3885ab"
+    },
+    {
+      "url": "https://viralzone.expasy.org/11849",
+      "retrieved_at": "2026-07-15T07:13:51+00:00",
+      "text": "The hantaviruses (Hantaviridae) ~ ViralZone Skip to main content ViralZone Back to Andes virus resource There are approximately 92 known viruses in the family Hantaviridae, classified into 52 species. Each species is typically adapted to a specific reservoir host, most commonly rodents, but also bats and moles. With the notable exception of Andes virus, hantaviruses are generally not transmitted from person to person. Based on their geographic distribution, evolutionary relationships, and the diseases they cause in humans, hantaviruses can be broadly divided into three major groups: New World hantaviruses (the Americas) These viruses cause Hantavirus pulmonary syndrome (HPS), a severe respiratory disease. Important examples include Sin Nombre virus and Andes virus. Annual incidence are about 100 cases per year (Andes virus) about 25 cases per year (Sin Nombre virus) Old World hantaviruses (Asia) These viruses are responsible for Hantavirus hemorrhagic fever with renal syndrome (HFRS), which is characterized by fever, hemorrhage, and acute kidney injury. Major examples include Hantaan virus and Seoul virus. Annual incidence: more than 10,000 cases worldwide Old World hantaviruses (Europe) European hantaviruses typically cause a milder form of HFRS known as Nephropathia epidemica (NE). The main causative agents are Puumala virus and Dobrava-Belgrade virus. Annual incidence: more than 1,000 cases Together, these viruses represent an important and diverse group of zoonotic pathogens that can cause severe disease following accidental transmission from their natural animal hosts to humans.",
+      "content_hash": "b6e360eb50e062830de266807d5039fbf70f64b4cb49d4ace98432a0cbd36f59"
+    },
+    {
+      "url": "https://viralzone.expasy.org/11845",
+      "retrieved_at": "2026-07-15T07:13:51+00:00",
+      "text": "Hantavirus, Andes virus ~ ViralZone Skip to main content ViralZone Hantavirus, Andes virus Andes virus fact sheet Proteome References and Variants Epidemiology Segment S Segment M Segment L Clean Virion image: (click to get svg) Hantavirus diversity Link to 2026 outbreak map DB LINKS TAXONOMY Group V: Negative sense ssRNA viruses Realm: Riboviria Kingdom: Orthornavirae Phylum: Negarnaviricota Subphylum: Polyploviricotina Class: Bunyaviricetes Order: Elliovirales Family: Hantaviridae Genus: Orthohantavirus Species: Orthohantavirus Andesense REFERENCE STRAIN ANDV/Chile/9717869/1997 Sequence: L ; M ; S ; | Genome assembly | Proteome 2026 outbreak: ANDV/Switzerland/Hu-3337/2026 Sequence: | Proteome: L ; GPC ; N ; NSs Host NATURAL HOST Reservoir: Rodents,mainly long-tailed pygmy rice rat Occasional: Human CELL TROPISM Endothelium [Endothelial cell ], Lung [Lung microvascular endothelial cell , Alveolar macrophage ], Heart [cardiac blood vessel endothelial cell ], Liver [Endothelial cell of hepatic sinusoid , Kupffer cell , Hepatocyte ], Kidney [Glomerular endothelial cell ], Spleen [Sinusoidal lining cell ], Immune system [ Dendritic cells , Macrophage ] INTERACTIONS Cell receptor: PCDH1 , Q08174 Ecology and disease GEOGRAPHY South America: southern Andes of Chile and Argentina ASSOCIATED DISEASES Human: Hantavirus cardiopulmonary syndrome (HCPS) ; Complication: Acute respiratory distress syndrome (ARDS) ; Rodent: asymptomatic, persistent infection TRANSMISSION Zoonosis , urine, saliva Andes virus: Respiratory (Human-Human) VACCINE None ANTIVIRAL DRUGS Experimental: Favipiravir ; Experimental: Ribavirin Orthohantavirus Pathogenesis and Cell Tropism Danny Noack, Marco Goeijenbier, Chantal B. E. M. Reusken, Marion P. G. Koopmans,1 and Barry H. G. Rockx Front Cell Infect Microbiol. 2020; 10: 399.",
+      "content_hash": "50f4b77842de56ad716de11fc45a154fb63bf1f4b10929bddd7e5892b2ae6bfe"
+    },
+    {
+      "url": "https://viralzone.expasy.org/search?query=hantavirus",
+      "retrieved_at": "2026-07-15T07:13:52+00:00",
+      "text": "Skip to main content ViralZone Search 16 matching pages Orthohantavirus Core content: ...(highlight not fetchable)... The hantaviruses (Hantaviridae) Core content: ...(highlight not fetchable)... Hantaviridae Core content: ...(highlight not fetchable)... Orthohantavirus andesense Core content: ...(highlight not fetchable)... DRAFT pathogen knowledgebase Core content: ...(highlight not fetchable)... Hantavirus, Andes virus Core content: ...(highlight not fetchable)... Inhibition of host TRAFs by virus Core content: ...(highlight not fetchable)... Andes proteome Core content: ...(highlight not fetchable)... ViralZone root Core content: ...(highlight not fetchable)... Fusion of virus membrane with host endosomal membrane Core content: ...(highlight not fetchable)... RIG-I inhibition Core content: ...(highlight not fetchable)... Clathrin-mediated endocytosis of virus by host Core content: ...(highlight not fetchable)... Inhibition of host RIG-I by virus Core content: ...(highlight not fetchable)... Leaky scanning Core content: ...(highlight not fetchable)... SsRNA(-) virus receptors Core content: ...(highlight not fetchable)... Human viruses table Core content: ...(highlight not fetchable)...",
+      "content_hash": "120ec0b575ee0d762c06507636b940933dfd602585302f2f4b6e513c592f7cbe"
+    },
+    {
+      "url": "https://ictv.global/search?search_api_fulltext=hantavirus",
+      "retrieved_at": "2026-07-15T07:13:52+00:00",
+      "text": "Search | ICTV Skip to main content Home About About the ICTV About Virus Taxonomic Classification Charge to the ICTV Statutes Code Organization ICTV History Membership Membership Executive Committee Executive Committee History Life Members National Members Support Personnel Study Groups Recent Updates Taxonomy Taxonomy Browser Visual Taxonomy Browser Release History Master Species Lists Virus Metadata Resource Taxon Etymology Proposals Approved Proposals Pending Proposals Proposal Template Files Search Find the Species TaxaBLAST Search Website Text Search Report Current Report Chapters Chapter List: Image Chapter List: Text About the ICTV Report Virion Diagrams Virus Properties Help and Information Report Templates Past (9th) Report Chapters Information General Information Information Reports Binomial Nomenclature EC Meeting Reports Plenary Session Reports Meeting Reports News Newsletters Study Group Info Study Group Info Flaviviridae: HCV Hepeviridae Study Group Picornaviridae Study Group Virology Division News Foundations of Virology Forum Archive Help FAQs How-To videos Using the Taxonomy Browser Using the Visual Taxonomy Browser What is the ICTV Master Species List? Using the Master Species List Using the Virus Metadata Resource Using the Find the Species tool Using the ICTV Report Webinar Webinar on Virus Taxonomy Webinar on Finding Information GitHub Repository Zenodo Repository Email ICTV Help ‏‏‎ ‎ Search Your search yielded no results. International Committee on Taxonomy of Viruses Unless otherwise noted, this work is licensed under the CC BY 4.0, Creative Commons Attribution 4.0 International License Support is provided by the National Institute of Allergy and Infectious Diseases, U.S. National Institutes of Health, Award U24AI162625 Copyright © 2026 ICTV | Privacy | Disclaimer |",
+      "content_hash": "7b973d7e89420a0f4b7c274c423c2c396aa0aa55e0367e6414b5fbdf4ec25f99"
+    },
+    {
+      "url": "https://ictv.global/search?keys=hantavirus",
+      "retrieved_at": "2026-07-15T07:13:52+00:00",
+      "text": "Search | ICTV Skip to main content Home About About the ICTV About Virus Taxonomic Classification Charge to the ICTV Statutes Code Organization ICTV History Membership Membership Executive Committee Executive Committee History Life Members National Members Support Personnel Study Groups Recent Updates Taxonomy Taxonomy Browser Visual Taxonomy Browser Release History Master Species Lists Virus Metadata Resource Taxon Etymology Proposals Approved Proposals Pending Proposals Proposal Template Files Search Find the Species TaxaBLAST Search Website Text Search Report Current Report Chapters Chapter List: Image Chapter List: Text About the ICTV Report Virion Diagrams Virus Properties Help and Information Report Templates Past (9th) Report Chapters Information General Information Information Reports Binomial Nomenclature EC Meeting Reports Plenary Session Reports Meeting Reports News Newsletters Study Group Info Study Group Info Flaviviridae: HCV Hepeviridae Study Group Picornaviridae Study Group Virology Division News Foundations of Virology Forum Archive Help FAQs How-To videos Using the Taxonomy Browser Using the Visual Taxonomy Browser What is the ICTV Master Species List? Using the Master Species List Using the Virus Metadata Resource Using the Find the Species tool Using the ICTV Report Webinar Webinar on Virus Taxonomy Webinar on Finding Information GitHub Repository Zenodo Repository Email ICTV Help ‏‏‎ ‎ Search Your search yielded no results. International Committee on Taxonomy of Viruses Unless otherwise noted, this work is licensed under the CC BY 4.0, Creative Commons Attribution 4.0 International License Support is provided by the National Institute of Allergy and Infectious Diseases, U.S. National Institutes of Health, Award U24AI162625 Copyright © 2026 ICTV | Privacy | Disclaimer |",
+      "content_hash": "7b973d7e89420a0f4b7c274c423c2c396aa0aa55e0367e6414b5fbdf4ec25f99"
+    }
+  ],
+  "generated_by": "deterministic_seed_fallback",
+  "generated_at": "2026-07-15T07:13:52+00:00"
+}

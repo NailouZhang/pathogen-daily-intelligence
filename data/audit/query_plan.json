@@ -1,0 +1,125 @@
+[
+  {
+    "group_id": "core_taxonomy",
+    "purpose": "Core taxonomy and named viruses",
+    "terms": [
+      "Hantaviridae",
+      "Orthohantavirus",
+      "hantavirus",
+      "Hantaan virus",
+      "Seoul virus",
+      "Puumala virus",
+      "Andes virus"
+    ],
+    "topics": [],
+    "scholarly_query": "(Hantaviridae OR Orthohantavirus OR hantavirus OR \"Hantaan virus\" OR \"Seoul virus\" OR \"Puumala virus\" OR \"Andes virus\")",
+    "news_query": "(Hantaviridae OR Orthohantavirus OR hantavirus OR \"Hantaan virus\" OR \"Seoul virus\" OR \"Puumala virus\" OR \"Andes virus\") -fictional -game"
+  },
+  {
+    "group_id": "clinical",
+    "purpose": "Human disease, clinical manifestations and management",
+    "terms": [
+      "hantavirus",
+      "Orthohantavirus",
+      "Hantaan virus",
+      "Seoul virus",
+      "Puumala virus",
+      "Andes virus"
+    ],
+    "topics": [
+      "infection",
+      "disease",
+      "clinical",
+      "diagnosis",
+      "treatment",
+      "intensive care",
+      "neurological",
+      "renal",
+      "pulmonary"
+    ],
+    "scholarly_query": "(hantavirus OR Orthohantavirus OR \"Hantaan virus\" OR \"Seoul virus\" OR \"Puumala virus\" OR \"Andes virus\") AND (infection OR disease OR clinical OR diagnosis OR treatment OR \"intensive care\" OR neurological OR renal OR pulmonary)",
+    "news_query": "(hantavirus OR Orthohantavirus OR \"Hantaan virus\" OR \"Seoul virus\" OR \"Puumala virus\" OR \"Andes virus\") (infection OR disease OR clinical OR diagnosis OR treatment OR \"intensive care\" OR neurological OR renal OR pulmonary) -fictional -game -stock"
+  },
+  {
+    "group_id": "epidemiology",
+    "purpose": "Outbreaks, cases and surveillance",
+    "terms": [
+      "hantavirus",
+      "Orthohantavirus",
+      "Hantaan virus",
+      "Seoul virus",
+      "Puumala virus",
+      "Andes virus"
+    ],
+    "topics": [
+      "outbreak",
+      "case",
+      "surveillance",
+      "epidemiology",
+      "incidence",
+      "seroprevalence",
+      "public health"
+    ],
+    "scholarly_query": "(hantavirus OR Orthohantavirus OR \"Hantaan virus\" OR \"Seoul virus\" OR \"Puumala virus\" OR \"Andes virus\") AND (outbreak OR case OR surveillance OR epidemiology OR incidence OR seroprevalence OR \"public health\")",
+    "news_query": "(hantavirus OR Orthohantavirus OR \"Hantaan virus\" OR \"Seoul virus\" OR \"Puumala virus\" OR \"Andes virus\") (outbreak OR case OR surveillance OR epidemiology OR incidence OR seroprevalence OR \"public health\") -fictional -game -stock"
+  },
+  {
+    "group_id": "host_ecology",
+    "purpose": "Reservoir hosts and environmental drivers",
+    "terms": [
+      "hantavirus",
+      "Orthohantavirus"
+    ],
+    "topics": [
+      "rodent",
+      "reservoir",
+      "host",
+      "ecology",
+      "spillover",
+      "climate",
+      "land use",
+      "occupational exposure"
+    ],
+    "scholarly_query": "(hantavirus OR Orthohantavirus) AND (rodent OR reservoir OR host OR ecology OR spillover OR climate OR \"land use\" OR \"occupational exposure\")",
+    "news_query": "(hantavirus OR Orthohantavirus) (rodent OR reservoir OR host OR ecology OR spillover OR climate OR \"land use\" OR \"occupational exposure\") -fictional -game -stock"
+  },
+  {
+    "group_id": "genomics",
+    "purpose": "Genome, evolution and molecular epidemiology",
+    "terms": [
+      "hantavirus",
+      "Orthohantavirus"
+    ],
+    "topics": [
+      "genome",
+      "sequencing",
+      "phylogeny",
+      "evolution",
+      "reassortment",
+      "recombination",
+      "molecular epidemiology"
+    ],
+    "scholarly_query": "(hantavirus OR Orthohantavirus) AND (genome OR sequencing OR phylogeny OR evolution OR reassortment OR recombination OR \"molecular epidemiology\")",
+    "news_query": "(hantavirus OR Orthohantavirus) (genome OR sequencing OR phylogeny OR evolution OR reassortment OR recombination OR \"molecular epidemiology\") -fictional -game -stock"
+  },
+  {
+    "group_id": "intervention",
+    "purpose": "Diagnostics, vaccines and therapeutics",
+    "terms": [
+      "hantavirus",
+      "Orthohantavirus"
+    ],
+    "topics": [
+      "PCR",
+      "serology",
+      "antigen",
+      "antibody",
+      "vaccine",
+      "antiviral",
+      "therapeutic",
+      "clinical trial"
+    ],
+    "scholarly_query": "(hantavirus OR Orthohantavirus) AND (PCR OR serology OR antigen OR antibody OR vaccine OR antiviral OR therapeutic OR \"clinical trial\")",
+    "news_query": "(hantavirus OR Orthohantavirus) (PCR OR serology OR antigen OR antibody OR vaccine OR antiviral OR therapeutic OR \"clinical trial\") -fictional -game -stock"
+  }
+]
