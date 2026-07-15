@@ -6,9 +6,9 @@
 *{box-sizing:border-box} body{margin:0;background:var(--paper);color:var(--ink);font-family:"Noto Serif SC","Source Han Serif SC","Songti SC",STSong,SimSun,serif;line-height:1.72}
 a{color:var(--red)} sub,sup{line-height:0;font-size:.72em} .page{max-width:1280px;margin:auto;padding:24px 34px 70px} .mast{text-align:center;border-top:5px double var(--ink);border-bottom:2px solid var(--ink);padding:18px 0 12px}
 .mast h1{font-size:clamp(34px,6vw,68px);letter-spacing:.12em;margin:0} .mast p{margin:.2rem 0;color:var(--muted);letter-spacing:.12em} .date{font-size:14px;border-bottom:1px solid var(--line);padding:10px 0;text-align:center}
-.toolbar{display:flex;justify-content:flex-end;gap:8px;padding:10px 0;border-bottom:1px solid var(--line)} button{font:inherit} .global-language,.language-toggle{border:1px solid var(--line);background:var(--button);color:var(--ink);padding:5px 10px;cursor:pointer;border-radius:0} .global-language:hover,.language-toggle:hover{border-color:var(--red);color:var(--red)}
+.toolbar{display:flex;justify-content:flex-end;gap:8px;padding:10px 0;border-bottom:1px solid var(--line)} button{font:inherit} .global-language{border:1px solid var(--line);background:var(--button);color:var(--ink);padding:5px 10px;cursor:pointer;border-radius:0} .global-language:hover{border-color:var(--red);color:var(--red)}
 .stats{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:2px solid var(--ink)} .stats div{text-align:center;padding:14px;border-right:1px solid var(--line)} .stats div:last-child{border-right:0} .stats strong{font-size:27px;display:block;color:var(--red)} .stats span{font-size:13px}
-section{border-top:1px solid var(--ink);margin-top:26px;padding-top:7px} section h2{font-size:22px;letter-spacing:.12em;margin:0 0 12px} .columns{columns:3 290px;column-gap:30px;column-rule:1px solid var(--line)} .story{break-inside:avoid;border-bottom:1px solid var(--line);padding:0 0 18px;margin:0 0 18px} .story h3{font-size:20px;line-height:1.38;margin:.25rem 0} .story p{margin:.45rem 0} .kicker{font-size:12px;color:var(--red);font-weight:700;letter-spacing:.06em} .meta,.muted,.audit-note{color:var(--muted);font-size:13px} .audit-note{margin-top:6px;font-size:11px} .links{font-size:13px;margin-top:7px} .language-toggle{margin:5px 0 8px;font-size:12px} .translation-status{color:var(--red)} .translation-status.unavailable{color:var(--muted)} .event-note{font-size:13px} .analysis-details{border-top:1px dotted var(--line);border-bottom:1px dotted var(--line);margin:10px 0;padding:7px 0;font-size:13px} .analysis-details summary{cursor:pointer;color:var(--red);font-weight:700} .analysis-details h4{margin:.65rem 0 .2rem;font-size:14px} .analysis-details ul{margin:.2rem 0 .6rem;padding-left:1.2rem} .evidence-id{color:var(--muted);font-size:11px} table{width:100%;border-collapse:collapse;font-size:13px} th,td{text-align:left;border-bottom:1px solid var(--line);padding:7px} footer{border-top:3px double var(--ink);margin-top:35px;padding-top:16px;font-size:12px;color:var(--muted)}
+section{border-top:1px solid var(--ink);margin-top:26px;padding-top:7px} section h2{font-size:22px;letter-spacing:.12em;margin:0 0 12px} .columns{columns:3 290px;column-gap:30px;column-rule:1px solid var(--line)} .story{position:relative;break-inside:avoid;border-bottom:1px solid var(--line);padding:0 30px 18px 0;margin:0 0 18px} .story h3{font-size:20px;line-height:1.38;margin:.25rem 0} .story p{margin:.45rem 0} .kicker{font-size:12px;color:var(--red);font-weight:700;letter-spacing:.06em;padding-right:2px} .meta,.muted,.audit-note{color:var(--muted);font-size:13px} .audit-note{margin-top:6px;font-size:11px} .links{font-size:13px;margin-top:7px} .language-toggle{position:absolute;top:0;right:0;z-index:2;display:inline-flex;align-items:center;justify-content:center;min-width:24px;height:20px;padding:0 3px;margin:0;border:0;border-bottom:1px solid var(--line);background:transparent;color:var(--muted);font:600 10px/1 system-ui,sans-serif;letter-spacing:.02em;cursor:pointer;text-transform:lowercase} .language-toggle:hover,.language-toggle:focus-visible{color:var(--red);border-color:var(--red);outline:none} .translation-status{color:var(--red)} .translation-status.unavailable{color:var(--muted)} .event-note{font-size:13px} .content-status{font-size:12px;padding:5px 7px;border-left:3px solid var(--line);background:rgba(255,255,255,.22)} .content-status.ok{border-color:#476b46} .content-status.partial{border-color:#a06a19} .content-status.missing{border-color:var(--red);color:var(--muted)} .analysis-details{border-top:1px dotted var(--line);border-bottom:1px dotted var(--line);margin:10px 0;padding:7px 0;font-size:13px} .analysis-details summary{cursor:pointer;color:var(--red);font-weight:700} .analysis-details h4{margin:.65rem 0 .2rem;font-size:14px} .analysis-details ul{margin:.2rem 0 .6rem;padding-left:1.2rem} .evidence-id{color:var(--muted);font-size:11px} table{width:100%;border-collapse:collapse;font-size:13px} th,td{text-align:left;border-bottom:1px solid var(--line);padding:7px} footer{border-top:3px double var(--ink);margin-top:35px;padding-top:16px;font-size:12px;color:var(--muted)}
 [hidden]{display:none!important}
 @media(max-width:800px){.page{padding:15px 18px 45px}.stats{grid-template-columns:repeat(2,1fr)}.columns{columns:1}.toolbar{justify-content:center}}
 @media print{body{background:white}.page{max-width:none;padding:0}a{color:black;text-decoration:none}.toolbar,.language-toggle,.audit-note{display:none!important}.lang-en{display:none!important}.lang-zh{display:block!important}}
@@ -16,901 +16,712 @@ section{border-top:1px solid var(--ink);margin-top:26px;padding-top:7px} section
 <header class="mast"><h1>汉坦病毒每日情报</h1><p>Hantavirus Daily Intelligence</p></header>
 <div class="date">2026-07-15 · 覆盖窗口 2026-07-08—2026-07-14 · Asia/Shanghai</div>
 <div class="toolbar"><button type="button" class="global-language" data-language="en">全部显示英文</button><button type="button" class="global-language" data-language="zh">全部显示中文</button></div>
-<div class="stats"><div><strong>12</strong><span>入选文献</span></div><div><strong>41</strong><span>公共卫生事件</span></div><div><strong></strong><span>官方事件</span></div><div><strong>62</strong><span>中文翻译</span></div></div>
+<div class="stats"><div><strong>16</strong><span>入选文献</span></div><div><strong>45</strong><span>公共卫生事件</span></div><div><strong></strong><span>官方事件</span></div><div><strong>73</strong><span>中文翻译</span></div></div>
 <section><h2>今日要闻</h2><div class="columns">
-    <article class="story paper bilingual-card" id="work-work-df793002d26be893c01a7f77">
-      <div class="kicker">学术文献 · headline · <span class="translation-status unavailable">中文翻译未通过校验</span></div>
-      
-      <div class="lang-panel lang-zh" data-lang="zh">
-        <h3>中文标题暂不可用</h3>
-        <p class="muted">中文摘要暂不可用；系统不会根据标题编造内容。可点击“显示英文”查看原文。</p>
-      </div>
-      <div class="lang-panel lang-en" data-lang="en" hidden>
-        <h3>Neurological Manifestations of Hantavirus Infection: A Review.</h3>
-        <p>Hantaviruses have caused several recent human disease outbreaks. They carry a high mortality rate, and some species can spread from person to person although they are typically spread from rodents to humans. Neurological complications have been documented but are poorly understood. Broadly, 2 types of syndromes have been associated with hantaviruses. The pulmonary syndrome carries a high mortality rate and can result in pulmonary and cardiac failure. Neurological involvement is typically secondary to hypoxic and ischemic injury or metabolic dysfunction. Another manifestation of the infection that is associated with some species of the virus is termed hemorrhagic fever with renal syndrome. Some patients may develop a meningoencephalitis or pituitary apoplexy resulting in sudden visual loss and pituitary dysfunction. Rarely, seizures, myelitis, and peripheral neuropathy may occur. Although…</p>
-      </div>
-      <button type="button" class="language-toggle" data-card-id="work-work-df793002d26be893c01a7f77" aria-expanded="false">显示英文</button>
-    
-      <div class="meta">JAMA neurology · 2026-07-14 · Avindra Nath</div>
-      <details class="analysis-details"><summary>查看研究设计、关键发现与证据审计</summary><p class="muted">该文献尚无通过证据校验的深度解读。</p></details>
-      <div class="links"><a href="https://doi.org/10.1001/jamaneurol.2026.2437">DOI</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/42446888">PMID</a></div>
-      <div class="audit-note">翻译：deterministic · translation_unavailable_after_all_providers · github_models:failed → gemini:failed → groq:failed</div>
-    </article>
-    
-    <article class="story paper bilingual-card" id="work-work-7da09839fc167eff558a71fb">
-      <div class="kicker">学术文献 · headline · <span class="translation-status unavailable">中文翻译未通过校验</span></div>
-      
-      <div class="lang-panel lang-zh" data-lang="zh">
-        <h3>中文标题暂不可用</h3>
-        <p class="muted">中文摘要暂不可用；系统不会根据标题编造内容。可点击“显示英文”查看原文。</p>
-      </div>
-      <div class="lang-panel lang-en" data-lang="en" hidden>
-        <h3>Distribution and richness of Orthohantavirus reservoir hosts: Implications for zoonotic risk in Southern South America.</h3>
-        <p>Orthohantaviruses represent a major zoonotic threat in Southern South America (SSA), where 13 native rodent species are recognized reservoir hosts of 15 different viral genotypes. The information on their geographic distribution remains scattered, limiting regional assessments of exposure risk. We compiled and curated occurrence records for the Orthohantavirus reservoir hosts in SSA and used ecological niche modeling to estimate their potential distributions. We integrated binary presence predictions to map reservoir and genotype richness as well as reservoir assemblages. The richness maps were combined with gridded human population data to estimate the number of people potentially exposed. Most Orthohantavirus reservoir species in SSA are distributed over eastern and northeastern Argentina, parts of Paraguay, Uruguay, and southern Brazil. Hotspots of reservoir richness were concentrated…</p>
-      </div>
-      <button type="button" class="language-toggle" data-card-id="work-work-7da09839fc167eff558a71fb" aria-expanded="false">显示英文</button>
-    
-      <div class="meta">Acta tropica · 2026-07-11 · Juan Diego Pinotti, Verónica Andreo</div>
-      <details class="analysis-details"><summary>查看研究设计、关键发现与证据审计</summary><p class="muted">该文献尚无通过证据校验的深度解读。</p></details>
-      <div class="links"><a href="https://doi.org/10.1016/j.actatropica.2026.108234">DOI</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/42435789">PMID</a></div>
-      <div class="audit-note">翻译：deterministic · translation_unavailable_after_all_providers · github_models:failed → gemini:failed → groq:failed</div>
-    </article>
-    
-    <article class="story paper bilingual-card" id="work-work-dcbbc9fbd8008d9b406c3f47">
+    <article class="story paper bilingual-card" id="work-work-e8c49c70d612a14f1cce05da">
       <div class="kicker">学术文献 · headline · <span class="translation-status">中文默认</span></div>
       
       <div class="lang-panel lang-zh" data-lang="zh">
-        <h3>变化世界中的汉坦病毒感染：流行病学、发病机制与一体化健康挑战</h3>
-        <p>本综述旨在总结汉坦病毒感染的流行病学、发病机制及其在全球变化背景下的挑战。研究基于现有文献，涵盖汉坦病毒的传播途径、临床表现及治疗策略。发现汉坦病毒主要通过啮齿动物传播，导致两种主要疾病：出血热伴肾综合征和汉坦病毒心肺综合征。环境变化和人类活动增加导致流行病学模式变化，特别是首尔病毒在城市环境中的传播引起关注。文章强调了疫苗研发和监测的重要性，并提出整合一体化健康策略以应对未来挑战。研究指出加强多学科合作和早期诊断是控制汉坦病毒感染的关键，但未提供具体的实验数据或临床试验结果。</p>
+        <h3>汉坦病毒感染中胃肠道、肝胆道和胰腺受累的谱系：叙述性综述。</h3>
+        <p>本研究旨在综述汉坦病毒感染中胃肠道、肝胆道和胰腺的受累情况。通过对2000年至2026年5月间的文献进行全面回顾，发现胃肠症状是汉坦病毒疾病最早和最常见的前驱表现，恶心、呕吐、腹痛和腹泻常在器官特异性并发症前几天出现。肝脏受累主要表现为转氨酶水平的短暂升高。尽管现有管理策略主要是支持性的，但早期的胃肠症状可能与更严重的疾病相关。当前证据有限，主要来自小规模研究，强调了需要进行大型前瞻性研究以进一步了解这些表现的机制和预后意义。</p>
       </div>
       <div class="lang-panel lang-en" data-lang="en" hidden>
-        <h3>Hantavirus infections in a changing world: epidemiology, pathogenesis, and one health challenges.</h3>
-        <p>This review summarizes current knowledge on hantavirus infections, focusing on their epidemiology, pathogenesis, and emerging challenges in a changing world. It highlights that hantaviruses, primarily transmitted by rodent reservoirs, cause two main clinical syndromes: hemorrhagic fever with renal syndrome and hantavirus cardiopulmonary syndrome. Environmental changes and increased human-animal interactions have altered epidemiological patterns, notably with the urban-associated Seoul virus. The review underscores the importance of vaccine development, surveillance, and One Health strategies, emphasizing multidisciplinary approaches and early detection to mitigate global impacts. However, it does not present new experimental or clinical data.</p>
+        <h3>Spectrum of Gastrointestinal, Hepatobiliary, and Pancreatic Involvement in Hantavirus Infection: A Narrative Review.</h3>
+        <p>This study aims to review gastrointestinal, hepatobiliary, and pancreatic involvement in hantavirus infection. A comprehensive literature review from 2000 to May 2026 found gastrointestinal symptoms to be among the earliest and most common prodromal manifestations, with nausea, vomiting, abdominal pain, and diarrhea often preceding organ-specific complications. Hepatic involvement primarily manifests as transient elevations in aminotransferase levels. Although current management strategies are mainly supportive, early gastrointestinal symptoms may be associated with more severe disease. Existing evidence is limited, primarily from small studies, highlighting the need for large prospective studies to further understand the mechanisms and prognostic significance of these manifestations.</p>
       </div>
-      <button type="button" class="language-toggle" data-card-id="work-work-dcbbc9fbd8008d9b406c3f47" aria-expanded="false">显示英文</button>
+      <button type="button" class="language-toggle" data-card-id="work-work-e8c49c70d612a14f1cce05da" aria-expanded="false" aria-label="显示英文" title="显示英文">en</button>
     
-      <div class="meta">Infection · 2026-07-10 · A Vitiello, A Zovi</div>
-      <details class="analysis-details"><summary>查看研究设计、关键发现与证据审计</summary><p><strong>研究问题：</strong>汉坦病毒感染在全球环境变化背景下的流行病学特征、发病机制及防控挑战有哪些？ <span class="evidence-id">[A1, A3, A4, A6]</span></p><p><strong>研究设计：</strong>综述现有文献，汇总汉坦病毒的传播、流行病学、病理生理、临床表现及治疗进展。 <span class="evidence-id">[A4]</span></p><p><strong>样本或数据：</strong>基于全球范围内关于汉坦病毒的文献资料和研究报告。 <span class="evidence-id">[A4]</span></p><p><strong>研究类型：</strong>review</p><h4>方法</h4><ul><li>文献综述 <span class="evidence-id">[A4]</span></li></ul><h4>关键发现</h4><ul><li>汉坦病毒主要通过啮齿动物宿主传播，导致出血热伴肾综合征和汉坦病毒心肺综合征两种主要临床综合征。 <span class="evidence-id">[A1, A2]</span></li><li>环境变化、人类与动物接触增加及全球流动性增强，促使汉坦病毒流行病学模式发生演变。 <span class="evidence-id">[A3]</span></li><li>首尔病毒作为一种与城市环境相关的汉坦病毒，正呈现出新的全球流行病学趋势。 <span class="evidence-id">[A5]</span></li><li>疫苗开发、监测和一体化健康策略的整合是当前汉坦病毒防控面临的重要挑战。 <span class="evidence-id">[A6]</span></li><li>加强多学科合作和早期检测对于减轻汉坦病毒感染的全球影响至关重要。 <span class="evidence-id">[A7]</span></li></ul><p><strong>意义：</strong>本综述强调了汉坦病毒感染在全球环境变化背景下的新兴流行病学特征及防控挑战，提示需加强多学科合作和一体化健康策略以有效应对。 <span class="evidence-id">[A3, A5, A6, A7]</span></p><h4>局限与证据缺口</h4><ul><li>缺乏具体的实验数据和临床试验结果。</li><li>未提供详细的流行病学统计数据。</li><li>全文不可用，分析仅基于摘要。</li></ul><p><strong>证据强度：</strong>moderate；基于文献综述，提供了广泛的知识总结，但缺乏原始数据支持。 <span class="evidence-id">[A1, A2, A3, A4, A5, A6, A7]</span></p><p class="muted"><strong>解读证据范围：</strong>abstract</p></details>
-      <div class="links"><a href="https://doi.org/10.1128/cmr.00062-09">DOI</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/42430118">PMID</a></div>
-      <div class="audit-note">翻译：github_models · passed · github_models:passed</div>
+      <div class="meta">Cureus · 当前可报道日期 2026-07-13（source_created_date）；期刊卷期日期 2026-06 · George S Zacharia, Mohammad A Masood, Muhammad H Ashraf, Saran Lal A Mokan Dasan</div>
+      <p class="content-status ok">证据等级 E2：已获得摘要和HTML/PDF 正文证据；解析方式：publisher_html。</p>
+      <details class="analysis-details"><summary>查看研究设计、关键发现与证据审计</summary><p class="muted">该文献尚无通过证据校验的深度解读。</p></details>
+      <div class="links"><a href="https://doi.org/10.7759/cureus.110352">DOI</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/42441034">PMID</a> · <a href="https://www.cureus.com/articles/501388-spectrum-of-gastrointestinal-hepatobiliary-and-pancreatic-involvement-in-hantavirus-infection-a-narrative-review">开放全文证据</a></div>
+      <div class="audit-note">翻译：github_models · passed · github_models:failed → gemini:failed → groq:failed</div>
     </article>
-    </div></section><section><h2>疫情与公共卫生</h2><div class="columns">
-    <article class="story event bilingual-card" id="event-event-43364f29ffb706aa37b9c469">
-      <div class="kicker">公共卫生事件 · unconfirmed</div>
+    
+    <article class="story paper bilingual-card" id="work-work-b26a31446c4e97be9b22232e">
+      <div class="kicker">学术文献 · headline · <span class="translation-status">中文默认</span></div>
+      
+      <div class="lang-panel lang-zh" data-lang="zh">
+        <h3>2026 年邮轮关联的安第斯 hantavirus 爆发及公共卫生应对。</h3>
+        <p>本研究回顾了 2026 年在 MV Hondius 邮轮上发生的安第斯 hantavirus（ANDV）爆发，旨在总结该病毒的流行病学特征并评估在封闭高密度环境中的传播模式。 通过 WHO 等机构的公开报告和基因组分析，确认了 13 例感染（11 例确诊、2 例疑似）和 3 例死亡，且病毒序列差异不超过一个 SNP，提示一次或少数动物溢出后的人际传播，估计有效再生数为 0.7。 高龄（平均约 65 岁）、共享舱房和密切护理是主要风险因素。 研究强调了快速识别、国际协调和风险沟通在控制此类爆发中的重要性，并提出了旅行史评估和快速诊断的防控建议。</p>
+      </div>
+      <div class="lang-panel lang-en" data-lang="en" hidden>
+        <h3>2026 Cruise Ship-associated Andes Hantavirus Outbreak and Public Health Response.</h3>
+        <p>This review examines the 2026 Andes hantavirus outbreak on the MV Hondius cruise ship, summarizing epidemiological features and transmission in a closed, high‑density setting. Public reports and genomic analysis identified 13 cases (11 confirmed, 2 probable) with three deaths, minimal SNP differences indicating limited spillover followed by human‑to‑human spread and an estimated effective reproduction number of 0.7. Advanced age, shared cabins, and close caregiving were key risk factors. The authors highlight rapid detection, international coordination, and risk communication as essential for outbreak control and recommend travel‑history screening and rapid diagnostics for preparedness.</p>
+      </div>
+      <button type="button" class="language-toggle" data-card-id="work-work-b26a31446c4e97be9b22232e" aria-expanded="false" aria-label="显示英文" title="显示英文">en</button>
+    
+      <div class="meta">Public health weekly report · 当前可报道日期 2026-07-11（source_created_date）；期刊卷期日期 2026 · Jin Yong Kim</div>
+      <p class="content-status ok">证据等级 E2：已获得摘要和HTML/PDF 正文证据；解析方式：pymupdf。</p>
+      <details class="analysis-details"><summary>查看研究设计、关键发现与证据审计</summary><p class="muted">该文献尚无通过证据校验的深度解读。</p></details>
+      <div class="links"><a href="https://doi.org/10.1007/s12539-020-00413-4">DOI</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/42434045">PMID</a> · <a href="https://link.springer.com/content/pdf/10.1007/s12539-020-00413-4.pdf">开放全文证据</a></div>
+      <div class="audit-note">翻译：groq · passed · github_models:failed → gemini:failed → groq:failed</div>
+    </article>
+    
+    <article class="story paper bilingual-card" id="work-work-c145b9916eed0f2d5ed7de3b">
+      <div class="kicker">学术文献 · headline · <span class="translation-status unavailable">中文翻译未通过校验</span></div>
       
       <div class="lang-panel lang-zh" data-lang="zh">
         <h3>中文标题暂不可用</h3>
-        <p class="muted">中文摘要暂不可用；系统不会根据标题编造内容。可点击“显示英文”查看原文。</p>
+        <p class="muted">中文摘要暂不可用；系统不会根据标题编造内容。可点击右上角“en”查看原文。</p>
+      </div>
+      <div class="lang-panel lang-en" data-lang="en" hidden>
+        <h3>Hantavirus: A Comprehensive Contemporary Review of Virology, Global Epidemiology, Clinical Variants, Diagnosis, Treatment, and Intensive Care Management.</h3>
+        <p>Hantaviruses are negative-sense, single-stranded RNA viruses of the family Hantaviridae that cause two potentially lethal zoonotic syndromes: Hemorrhagic fever with renal syndrome (HFRS) and hantavirus cardiopulmonary syndrome (HCPS). With approximately 2,00,000 reported cases of HFRS annually worldwide and case-fatality rates reaching 36-40% in severe HCPS, hantaviruses constitute a significant global public health burden. Rodent excreta are the principal source of human infection through inhalation of infectious aerosols. A comprehensive literature search was conducted using PubMed, Embase, WHO databases, and CDC surveillance reports (1993-2025) to synthesize current evidence on hantavirus taxonomy, epidemiology, pathogenesis, clinical features, diagnosis, treatment, and intensive care unit (ICU) management. More than 50 distinct hantavirus species are now recognized, classified broadl…</p>
+      </div>
+      <button type="button" class="language-toggle" data-card-id="work-work-c145b9916eed0f2d5ed7de3b" aria-expanded="false" aria-label="显示英文" title="显示英文">en</button>
+    
+      <div class="meta">Indian journal of critical care medicine : peer-reviewed, official publication of Indian Society of Critical Care Medicine · 当前可报道日期 2026-07-08（source_created_date）；期刊卷期日期 2026 · As Anoop Kumar, Joshua John</div>
+      <p class="content-status ok">证据等级 E2：已获得摘要和HTML/PDF 正文证据；解析方式：pymupdf。</p>
+      <details class="analysis-details"><summary>查看研究设计、关键发现与证据审计</summary><p class="muted">该文献尚无通过证据校验的深度解读。</p></details>
+      <div class="links"><a href="https://doi.org/10.3389/fmicb.2015.01326">DOI</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/42415885">PMID</a> · <a href="https://www.frontiersin.org/journals/microbiology/articles/10.3389/fmicb.2015.01326/pdf">开放全文证据</a></div>
+      <div class="audit-note">翻译：deterministic · translation_unavailable_after_all_providers · github_models:failed → gemini:failed → groq:failed</div>
+    </article>
+    </div></section><section><h2>疫情与公共卫生</h2><div class="columns">
+    <article class="story event bilingual-card" id="event-event-f6855b99bb28ae38a6599bed">
+      <div class="kicker">公共卫生事件 · unconfirmed</div>
+      
+      <div class="lang-panel lang-zh" data-lang="zh">
+        <h3>与邮轮相关的汉坦病毒疫情已正式结束</h3>
+        <p>报道指出，荷兰旗帜的邮轮 MV Hondius 上爆发的汉坦病毒疫情已由世界卫生组织正式宣布结束。WHO 表示，最后一名暴露者完成 42 天隔离并检测阴性后，疫情宣告结束，累计追踪超过 600 人，其中确认 13 例（12 例确诊、1 例可能）并导致 3 例死亡，所有病例均为船上乘客或船员。Tedros 透露，已在 33 个国家和地区跟进超过 650 名接触者，并启动涉及 21 国的研究以深化对该病毒的了解。官方确认疫情已结束且未出现持续的人际传播，但对疫情起始时间、具体传播路径仍存不确定性。</p>
       </div>
       <div class="lang-panel lang-en" data-lang="en" hidden>
         <h3>Hantavirus Outbreak Connected to Cruise Ship is Officially Over</h3>
-        <p>Despite early alarm and intense media coverage, the incident followed a predictable course for a rare zoonotic pathogen rather than escalating into a broader public health crisis. Legal Insurrection readers may recall that I followed the events related to a hantavirus outbreak that occurred on the Dutch-flagged cruise ship MV Hondius, which caused several severe illnesses and at least three deaths. Based on my previous coverage of this pathogen, I noted that, despite media drama, this outbreak would not morph into the next global pandemic . Absent a surge in secondary cases or clear evidence of sustained human-to-human transmission, this story lacks the fuel needed to dominate headlines for six full weeks. Hantavirus, particularly the Andes strain, is serious but very limited in its ability to spread, and the data simply do not support a pandemic-scale alarm. As competing news cycles inevitably crowd in, the narrative will shift, the “six feet” chatter will fade, and the episode will quietly resolve into what it appears to be: a contained, closely watched incident rather than the next global crisis. In fact, the media’s attention span ran out long before the CDC’s 42-day monitoring window. The World Health Organization has declared the cruise ship-linked hantavirus outbreak over after the final exposed individual completed the recommended 42-day quarantine, tested negative, and returned home. pic.twitter.com/AX3q83XJUz There has been little news of hantavirus recently, and now the World Health Organization (WHO) has officially declared the cruise-ship-connected outbreak over . The reported illnesses this spring initially looked like the spread of a typical stomach bug on a luxury ocean liner, but the situation quickly escalated to a fatal outbreak of hantavirus, a rare rodent-borne pathogen, leading to weekslong quarantines for the ship’s passengers and a global health alert. But the outbreak is now over, the World Health Organization announced on Thursday. Overall, there were 12 confirmed cases and one probable case aboard the cruise ship, including three deaths. The declaration was made after the final contact of a passenger completed a quarantine period and t…</p>
+        <p>The WHO has officially declared the hantavirus outbreak on the Dutch‑flagged cruise ship MV Hondius over after the last exposed individual completed a 42‑day quarantine and tested negative. The agency reported 13 cases (12 confirmed, 1 probable) and three deaths, with over 600 contacts tracked and more than 650 followed up in 33 countries. Tedros announced ongoing studies with 21 countries to better understand the disease. Official confirmation confirms the outbreak’s end, but details on its origin and transmission remain uncertain.</p>
       </div>
-      <button type="button" class="language-toggle" data-card-id="event-event-43364f29ffb706aa37b9c469" aria-expanded="false">显示英文</button>
+      <button type="button" class="language-toggle" data-card-id="event-event-f6855b99bb28ae38a6599bed" aria-expanded="false" aria-label="显示英文" title="显示英文">en</button>
     
-      <div class="meta">China · outbreak · 确诊 12</div>
+      <div class="meta">地点待核验 · outbreak · 病例数字未明确报告</div>
       <p class="event-note">该事件由 1 篇文章聚合；事件版本 v1。</p>
+      <p class="content-status ok">已抓取并聚焦提取与本病原直接相关的正文。</p>
       <details class="analysis-details"><summary>查看正文理解、官方确认与不确定性</summary><p class="muted">该事件尚无通过证据校验的正文级解读。</p></details>
       <div class="links"><a href="https://wattsupwiththat.com/2026/07/07/hantavirus-outbreak-connected-to-cruise-ship-is-officially-over">GDELT DOC 2.0</a></div>
-      <div class="audit-note">翻译：deterministic · translation_unavailable_after_all_providers · github_models:failed → gemini:failed → groq:failed</div>
+      <div class="audit-note">翻译：groq · passed · github_models:failed → gemini:failed → groq:failed</div>
     </article>
     
-    <article class="story event bilingual-card" id="event-event-4b6ef807bbe74eeb33a66c7d">
-      <div class="kicker">公共卫生事件 · unconfirmed</div>
-      
-      <div class="lang-panel lang-zh" data-lang="zh">
-        <h3>沙特阿拉伯呼吁旅客在夏季遵守健康准则 – Shafaqna 英文</h3>
-        <p>沙特阿拉伯当局在一篇新闻稿中呼吁旅客在夏季遵守健康准则。报道指出，当局正与国际卫生组织合作，监测全球流行病学形势。文中提及多国出现汉坦病毒、埃博拉病毒病、黄热病和季节性流感疫情，但未提供官方确认。未提及确诊病例、疑似病例或死亡人数。报道未包含任何行动建议或进一步措施。</p>
-      </div>
-      <div class="lang-panel lang-en" data-lang="en" hidden>
-        <h3>Saudi Arabia calls on travelers to follow health guideline during summer – Shafaqna English</h3>
-        <p>Saudi authorities urged travelers to follow health guidelines during summer. They said they are monitoring the global epidemiological situation with international health organizations, citing outbreaks of hantavirus, Ebola, yellow fever, and seasonal influenza in several countries. No official confirmation of these outbreaks or case counts is provided. No further actions or measures are mentioned.</p>
-      </div>
-      <button type="button" class="language-toggle" data-card-id="event-event-4b6ef807bbe74eeb33a66c7d" aria-expanded="false">显示英文</button>
-    
-      <div class="meta">地点待核验 · outbreak · 病例数字未明确报告</div>
-      <p class="event-note">该事件由 1 篇文章聚合；事件版本 v1。</p>
-      <details class="analysis-details"><summary>查看正文理解、官方确认与不确定性</summary><h4>已确认说法</h4><ul><li>Saudi Arabian authorities advised travelers to follow health guidelines during the summer <span class="evidence-id">[N1]</span></li><li>Saudi Arabian authorities continue to monitor the global epidemiological situation in coordination with international health organizations, including outbreaks of Hantavirus, Ebola virus disease, yellow fever, and seasonal influenza in several countries <span class="evidence-id">[N2]</span></li></ul><h4>报道引用的权威机构</h4><ul><li>Saudi Arabian authorities：advised travelers to follow health guidelines during the summer <span class="evidence-id">[N1]</span></li><li>Saudi Arabian authorities：continues to monitor the global epidemiological situation in coordination with international health organizations, including outbreaks of Hantavirus, Ebola virus disease, yellow fever, and seasonal influenza in several countries <span class="evidence-id">[N2]</span></li></ul><p class="muted"><strong>正文覆盖：</strong>full；</p><h4>不确定性</h4><ul><li>No official confirmation of the mentioned outbreaks or case counts is provided</li></ul></details>
-      <div class="links"><a href="https://en.shafaqna.com/462081/saudi-arabia-calls-on-travelers-to-follow-health-guideline-during-summer">GDELT DOC 2.0</a></div>
-      <div class="audit-note">翻译：groq · passed · github_models:failed → gemini:failed → groq:passed</div>
-    </article>
-    
-    <article class="story event bilingual-card" id="event-event-af1e43e3338091184fb67bc2">
+    <article class="story event bilingual-card" id="event-event-b48e49f0a7bcc25cadfcef0c">
       <div class="kicker">公共卫生事件 · unconfirmed</div>
       
       <div class="lang-panel lang-zh" data-lang="zh">
         <h3>中文标题暂不可用</h3>
-        <p class="muted">中文摘要暂不可用；系统不会根据标题编造内容。可点击“显示英文”查看原文。</p>
-      </div>
-      <div class="lang-panel lang-en" data-lang="en" hidden>
-        <h3>Public to be told how to prepare for cyber - attack and weather emergencies</h3>
-        <p>The public will be urged to take "small but important steps" to prepare for food or water shortages in the event of a cyber-attack or severe weather, the government has said as it updated Parliament on its national resilience plans. Cabinet Office Minister Darren Jones said a public awareness campaign would be launched later this year to help people prepare for emergencies. He also said the government would carry out the "largest UK home defence exercise in several decades" next year to ensure the UK is ready "should the worst ever happen". Separately, the national risk register , external has been updated with seven new risks including the threat of a cyber-attack on water infrastructure. The threat of "digital resilience failure" - such as the global CrowdStrike outage which crippled more than eight million computers - has also been added to the list of the most acute risks facing the UK, which totals 95. One risk has been removed from the register. The threat of disruption to Russian gas supplies is no longer on the list "reflecting that the UK has reduced its reliance on Russian gas". The introduction of the risk register said the country's resilience had been "tested like never before" by global events, pointing to disruption to oil supplies, the Russia-Ukraine conflict, an outbreak of hantavirus and rapid AI developments. UK lacks plan to defend itself from invasion, MPs warn A pandemic is here. What else should we be worried about? Pandemic and extreme weather among key UK risks Jones said: "Throughout our history, the UK has overcome challenges from plagues and pandemics to war and our fair share of wet weather. "It is right that we consistently evaluate the risks we could face and plan for what may come. "This year we saw temperatures across the UK breaking records in May, only to be exceeded again in June, and AI offers new ways for criminals to carry out cyber-attacks against us, as well as offering huge opportunities for our economy and security. "The government will do all it can and we are well prepared â but we can all play our part to keep ourselves and our loved ones safe." He said a nationwide resilience public awareness campaign would tell p…</p>
-      </div>
-      <button type="button" class="language-toggle" data-card-id="event-event-af1e43e3338091184fb67bc2" aria-expanded="false">显示英文</button>
-    
-      <div class="meta">Russia · outbreak · 病例数字未明确报告</div>
-      <p class="event-note">该事件由 1 篇文章聚合；事件版本 v1。</p>
-      <details class="analysis-details"><summary>查看正文理解、官方确认与不确定性</summary><p class="muted">该事件尚无通过证据校验的正文级解读。</p></details>
-      <div class="links"><a href="https://www.bbc.co.uk/news/articles/cp3x37lw1ndo">GDELT DOC 2.0</a></div>
-      <div class="audit-note">翻译：deterministic · translation_unavailable_after_all_providers · github_models:failed → gemini:failed → groq:failed</div>
-    </article>
-    
-    <article class="story event bilingual-card" id="event-event-d7a64bad8c1d4510997fbb52">
-      <div class="kicker">公共卫生事件 · unconfirmed</div>
-      
-      <div class="lang-panel lang-zh" data-lang="zh">
-        <h3>中文标题暂不可用</h3>
-        <p class="muted">中文摘要暂不可用；系统不会根据标题编造内容。可点击“显示英文”查看原文。</p>
-      </div>
-      <div class="lang-panel lang-en" data-lang="en" hidden>
-        <h3>Gene Hackman and Betsy Arakawa Receive Grave Plaques After Tragic Deaths</h3>
-        <p>Finally, Gene Hackman can rest in peace. While the actor's grave sat unmarked for more than a year after his death, RadarOnline.com can reveal it now has a headstone. Inscribed with the words "Husband, Father, Artist," the plaque replaces a conch shell that had previously been used to signal his burial spot alongside his wife, Betsy Arakawa, at Santa Fe Memorial Gardens in New Mexico.Gene Hackman and Wife Betsy Arakawa HonoredThe couple was found dead at their home in February 2025, with officials ultimately determining that Hackman, 95, succumbed to heart disease and Alzheimer's following his 65-year-old spouse's sudden passing from a rare illness contracted through rodents. A private memorial was held for the couple last spring. However, a legal battle over the couple's wills seemed to prevent a proper interment. Arakawa's plot only recently received a headstone as well. Wed to the Oscar winner since 1991, the former pianist is remembered on her marker as "Beloved Wife, A Beautiful Soul."Autopsy Reports ReleasedAs Radar previously reported, the couple's autopsy reports were released in March and April 2025. Betsy died from hantavirus pulmonary syndrome, a rare and severe respiratory illness linked to exposure to rodent droppings. Investigators believe she died around mid-February 2025 after experiencing flu-like symptoms. Hackman died from hypertensive and atherosclerotic cardiovascular disease, with advanced Alzheimer's disease listed as a significant contributing factor. Following the investigation, authorities have claimed he died around February 18, 2025, roughly one week after his wife.</p>
-      </div>
-      <button type="button" class="language-toggle" data-card-id="event-event-d7a64bad8c1d4510997fbb52" aria-expanded="false">显示英文</button>
-    
-      <div class="meta">地点待核验 · other · 病例数字未明确报告</div>
-      <p class="event-note">该事件由 1 篇文章聚合；事件版本 v1。</p>
-      <details class="analysis-details"><summary>查看正文理解、官方确认与不确定性</summary><p class="muted">该事件尚无通过证据校验的正文级解读。</p></details>
-      <div class="links"><a href="https://radaronline.com/p/gene-hackman-betsy-arakawa-grave-plaques-honored-deaths">GDELT DOC 2.0</a></div>
-      <div class="audit-note">翻译：deterministic · translation_unavailable_after_all_providers · github_models:failed → gemini:failed → groq:failed</div>
-    </article>
-    
-    <article class="story event bilingual-card" id="event-event-f9a54b940eaa783f92566d20">
-      <div class="kicker">公共卫生事件 · unconfirmed</div>
-      
-      <div class="lang-panel lang-zh" data-lang="zh">
-        <h3>汉坦病毒感染的神经系统影响被发现</h3>
-        <p>报道介绍了一项关于汉坦病毒感染神经系统影响的研究。研究指出，虽然神经系统表现不常见，但可能非常严重。文章强调需要通过前瞻性研究和实验模型来深入了解这些表现的机制，寻找治疗方法，并制定相应的管理指南。该报道未提供具体病例数据或官方确认信息，相关结论仍需进一步验证。</p>
-      </div>
-      <div class="lang-panel lang-en" data-lang="en" hidden>
-        <h3>Hantavirus Infection Neurological Effects Uncovered</h3>
-        <p>The report discusses a study on neurological effects of hantavirus infection, noting that such manifestations are uncommon but can be severe. It highlights the need for prospective studies and experimental models to better characterize these effects, understand pathophysiology, identify therapeutic targets, and develop management guidelines. No specific case data or official confirmation is provided, and findings require further validation.</p>
-      </div>
-      <button type="button" class="language-toggle" data-card-id="event-event-f9a54b940eaa783f92566d20" aria-expanded="false">显示英文</button>
-    
-      <div class="meta">地点待核验 · other · 病例数字未明确报告</div>
-      <p class="event-note">该事件由 1 篇文章聚合；事件版本 v1。</p>
-      <details class="analysis-details"><summary>查看正文理解、官方确认与不确定性</summary><h4>待核实说法</h4><ul><li>Prospective studies and experimental models are needed to better characterize these manifestations, understand pathophysiology, identify therapeutic targets, and develop guidelines for management. <span class="evidence-id">[N2]</span></li></ul><h4>已确认说法</h4><ul><li>Neurological manifestations of hantavirus infection are uncommon but can be severe. <span class="evidence-id">[N1]</span></li></ul><p class="muted"><strong>正文覆盖：</strong>partial；Only a brief summary of a study is provided without detailed data or official statements.</p><h4>不确定性</h4><ul><li>No specific case counts or locations are provided.</li><li>No official confirmation or detailed study results are included.</li></ul></details>
-      <div class="links"><a href="https://www.miragenews.com/hantavirus-infections-neurological-effects-1709818">GDELT DOC 2.0</a></div>
-      <div class="audit-note">翻译：github_models · passed · github_models:passed</div>
-    </article>
-    
-    <article class="story event bilingual-card" id="event-event-079ec8abc463bbb934681fcd">
-      <div class="kicker">公共卫生事件 · unconfirmed</div>
-      
-      <div class="lang-panel lang-zh" data-lang="zh">
-        <h3>中文标题暂不可用</h3>
-        <p class="muted">中文摘要暂不可用；系统不会根据标题编造内容。可点击“显示英文”查看原文。</p>
-      </div>
-      <div class="lang-panel lang-en" data-lang="en" hidden>
-        <h3>Trial by virus – Winnipeg Free Press</h3>
-        <p>OTTAWA — The whirlwind that has been Dr. Joss Reimer’s career has officially touched down in Building 62. *First annual payment billed as $205.00 + GST for one year. This annual subscription will automatically renew at $233.00 + GST every 52 weeks (10% off the regular annual price of $259.35). Offer available to new and qualified returning subscribers only. Cancel any time. *Your next Brandon Sun subscription payment will increase by $1.00 and you will be charged $17.95 plus GST for four weeks. After four weeks, your payment will increase to $24.95 plus GST every four weeks. A modern, non-descript complex in a suburban industrial park, Building 62 is the only name given to the headquarters of the Public Health Agency of Canada, and Reimer’s new home as the country’s chief public health officer. For the record, whirlwind is hardly an exaggeration. Seven years ago, Reimer was a well-respected, somewhat low-key obstetrician and medical educator in Winnipeg. Along the way, she spent time as a YouTube public-health influencer, the Winnipeg Regional Health Authority’s medical director for public health, the provincial government’s medical officer of health and — in the role most familiar to Manitobans — the medical lead and official spokesperson for the provincial COVID-19 vaccine implementation task force. Reimer gained national attention in August 2023 when, along with serving as the WRHA’s chief medical officer, she was elected president of the Canadian Medical Association, an advocacy organization for Canadian physicians. Her three-year CMA term was interrupted in April when it was announced she had been appointed Canada’s chief public health officer. JUSTIN TANG / FREE PRESS Dr. Joss Reimer, Canada’s chief public health officer, currently faces emerging threats such as Ebola and hantavirus, so she’s unlikely to get much downtime. Dr. Joss Reimer, Canada’s chief public health officer, currently faces emerging threats such as Ebola and hantavirus, so she’s unlikely to get much downtime. Now in Ottawa full time, Reimer says she’s still adjusting to the city and new job. She hasn’t completely settled into her new home, and as a result, hasn’t been able to keep up her…</p>
-      </div>
-      <button type="button" class="language-toggle" data-card-id="event-event-079ec8abc463bbb934681fcd" aria-expanded="false">显示英文</button>
-    
-      <div class="meta">Argentina · outbreak · 病例数字未明确报告</div>
-      <p class="event-note">该事件由 2 篇文章聚合；事件版本 v1。</p>
-      <details class="analysis-details"><summary>查看正文理解、官方确认与不确定性</summary><p class="muted">该事件尚无通过证据校验的正文级解读。</p></details>
-      <div class="links"><a href="https://www.winnipegfreepress.com/breakingnews/2026/07/09/trial-by-virus">GDELT DOC 2.0</a></div>
-      <div class="audit-note">翻译：deterministic · translation_unavailable_after_all_providers · github_models:failed → gemini:failed → groq:failed</div>
-    </article>
-    
-    <article class="story event bilingual-card" id="event-event-a02968a8d69dc5dbcbf967ec">
-      <div class="kicker">公共卫生事件 · unconfirmed</div>
-      
-      <div class="lang-panel lang-zh" data-lang="zh">
-        <h3>中文标题暂不可用</h3>
-        <p class="muted">中文摘要暂不可用；系统不会根据标题编造内容。可点击“显示英文”查看原文。</p>
-      </div>
-      <div class="lang-panel lang-en" data-lang="en" hidden>
-        <h3>US Citizen Tests Positive for Ebola in Africa : CDC</h3>
-        <p>A U.S. citizen has Ebola, the U.S. Centers for Disease Control and Prevention stated on July 10. “CDC is aware of a U.S. citizen working for a humanitarian organization in the Democratic Republic of the Congo (DRC) who has tested positive for Bundibugyo virus, a type of Ebola,” the public health agency said in a statement. “CDC is working with the patient’s employing organization, other U.S. federal agencies, public health authorities, and partners in DRC to help prevent further transmission by supporting contact tracing and performing risk assessments to identify high-risk contacts.” Details such as the name of the humanitarian organization for which the person works, the person’s condition, and whether they will remain in Congo have not been disclosed. The CDC and the U.S. State Department did not respond to requests for more information. The outbreak of Ebola caused by the Bundibugyo virus was detected in May and believed to have started weeks or months earlier. The number of cases in Congo reached 1,830, with 648 deaths, authorities in the central African country said on July 10. Twenty confirmed cases and two confirmed deaths have been recorded in Uganda, which shares a border with Congo. An American doctor, Dr. Peter Stafford, working for the Christian nonprofit Serge earlier in the outbreak, tested positive and suffered symptoms. He was flown to Germany for treatment and has since recovered. Stafford’s family members and another doctor working for Serge were exposed and flown to Europe for monitoring but never tested positive. U.S. authorities had a plan to develop a quarantine center in Kenya for Americans exposed to Ebola during the outbreak but shelved that plan after a Kenyan court ordered officials to stop construction of the center. The United States has multiple quarantine and isolation facilities for infectious diseases, two of which were utilized this year for people flown from a cruise ship on which a hantavirus outbreak occurred. “We’re not ruling out moving people out to the United States if we believe that case requires more intensive management,” he said at the time.</p>
-      </div>
-      <button type="button" class="language-toggle" data-card-id="event-event-a02968a8d69dc5dbcbf967ec" aria-expanded="false">显示英文</button>
-    
-      <div class="meta">United States · outbreak · 确诊 56；死亡 648</div>
-      <p class="event-note">该事件由 2 篇文章聚合；事件版本 v1。</p>
-      <details class="analysis-details"><summary>查看正文理解、官方确认与不确定性</summary><p class="muted">该事件尚无通过证据校验的正文级解读。</p></details>
-      <div class="links"><a href="https://www.theepochtimes.com/us/us-citizen-tests-positive-for-ebola-in-africa-cdc-6060423">GDELT DOC 2.0</a></div>
-      <div class="audit-note">翻译：deterministic · translation_unavailable_after_all_providers · github_models:failed → gemini:failed → groq:failed</div>
-    </article>
-    
-    <article class="story event bilingual-card" id="event-event-1d2222e804399fbec38e145f">
-      <div class="kicker">公共卫生事件 · unconfirmed</div>
-      
-      <div class="lang-panel lang-zh" data-lang="zh">
-        <h3>中文标题暂不可用</h3>
-        <p class="muted">中文摘要暂不可用；系统不会根据标题编造内容。可点击“显示英文”查看原文。</p>
-      </div>
-      <div class="lang-panel lang-en" data-lang="en" hidden>
-        <h3>A matter of time : SA hospitals are ready for Ebola cases if they arrive</h3>
-        <p>The health department is preparing for Ebola cases to present in South Africa, which top infectious disease expert Prof Salim Abdool Karim says is “only a matter of time” if the disease is not contained. The outbreak of Ebola disease caused by the Bundibugyo virus in Democratic Republic of the Congo (DRC) and less so in Uganda, has infected about 1,600 people so far and has claimed more than 500 lives. The health department is concerned about the implications of the disease for South African citizens who may be working, studying, living in, or returning from, affected areas. The outbreak is one of the biggest recorded to date. Health minister Aaron Motsoaledi gave details about the steps taken to prepare for cases in a recent television interview. Dedicated hospitals to receive Ebola patients in South Africa have been earmarked, three specialised committees have been established and the Border Management Authority (BMA), which is on high alert, has been equipped with personal protective equipment (PPE) to deal with arrivals from affected areas. “Twenty-four public sector and 12 private sector hospitals have been identified to receive patients suspected or confirmed to have contracted Ebola, and all identified public hospitals are now ready to receive patients. Our points of entry are on alert to screen persons entering the country from affected areas by land, air and sea,” health department spokesperson Foster Mohale told Business Day. “South Africa’s preparedness measures are focused on early detection, risk assessment, safe referral, laboratory confirmation, contact tracing and rapid response, rather than routine quarantine of all returnees. “Priority points of entry such as OR Tambo International Airport remain central to this approach, with port health, the BMA, the national department of health, the National Institute for Communicable Diseases (NICD), the National Health Laboratory Services, emergency medical services and airport stakeholders applying a co-ordinated risk-based approach to identify and safely manage any suspected imported case.” Mohale said the health department had established three pandemic preparedness committees, including: The hospital…</p>
-      </div>
-      <button type="button" class="language-toggle" data-card-id="event-event-1d2222e804399fbec38e145f" aria-expanded="false">显示英文</button>
-    
-      <div class="meta">地点待核验 · outbreak · 病例数字未明确报告</div>
-      <p class="event-note">该事件由 1 篇文章聚合；事件版本 v1。</p>
-      <details class="analysis-details"><summary>查看正文理解、官方确认与不确定性</summary><p class="muted">该事件尚无通过证据校验的正文级解读。</p></details>
-      <div class="links"><a href="https://www.timeslive.co.za/news/2026-07-08-a-matter-of-time-sas-hospitals-are-ready-for-ebola-cases-if-they-arrive">GDELT DOC 2.0</a></div>
-      <div class="audit-note">翻译：deterministic · translation_unavailable_after_all_providers · github_models:failed → gemini:failed → groq:failed</div>
-    </article>
-    
-    <article class="story event bilingual-card" id="event-event-015c532cc4f9714e4eefcd55">
-      <div class="kicker">公共卫生事件 · unconfirmed</div>
-      
-      <div class="lang-panel lang-zh" data-lang="zh">
-        <h3>中文标题暂不可用</h3>
-        <p class="muted">中文摘要暂不可用；系统不会根据标题编造内容。可点击“显示英文”查看原文。</p>
-      </div>
-      <div class="lang-panel lang-en" data-lang="en" hidden>
-        <h3>Health Matters newsletter : What happens when your disease isnt simple ?</h3>
-        <p>(In the weekly Health Matters newsletter, Zubeda Hamid writes about getting to good health, and staying there. You can subscribe here to get the newsletter in your inbox.) For the past couple of months, a lot of our focus at the health desk has been on infectious diseases, going by the sheer number that have afflicted countries across the globe: the Hantavirus outbreak aboard a cruise ship, the Ebola epidemic in the Democratic Republic of Congo and Uganda, measles in Bangladesh and dengue in Sri Lanka. And while these developments continue to be in the news – with good news on the Ebola front – this week, we thought we’d focus on cancer, as well as conditions that often don’t make it to the news – rare diseases. Let’s start with cancer. Despite its growing burden in our country and the fact that it is increasingly affecting younger populations, cancer is still not a notifiable disease in India. The heartening news is that 17 States have now made it notifiable, with Telangana being the latest to join the list, but, as our edit points out, the heart of the issue remains the lack of country-level data. The government, it says, must pay heed to its own scientific agencies that have recommended making cancer a notifiable disease – this could be a crucial step in crafting an evidence-based response to the burden. If you want more details about how Telangana is mapping cancer, do read this story by Siddharth Kumar Singh . When it comes to cancer stories, research is always on this list. This week we had a fascinating story by Dr. K. Ganapathy on if and how space oncology – a field investigating how microgravity and cosmic radiation impact cancer progression and treatment – could revolutionise care. And while such research is vital, it’s also important to recognise and acknowledge the needs of cancer patients in the here and now: one of these being, dealing with pain. Dr. Arvind Krishnamurthy , in this piece (first published in our e-book ), explores the profound impact of pain on the lives of cancer patients and details ways to manage it. Moving on to rare and neglected diseases, have you ever wondered what happens when a loved one is diagnosed with a rare condition? T…</p>
-      </div>
-      <button type="button" class="language-toggle" data-card-id="event-event-015c532cc4f9714e4eefcd55" aria-expanded="false">显示英文</button>
-    
-      <div class="meta">地点待核验 · outbreak · 病例数字未明确报告</div>
-      <p class="event-note">该事件由 1 篇文章聚合；事件版本 v1。</p>
-      <details class="analysis-details"><summary>查看正文理解、官方确认与不确定性</summary><p class="muted">该事件尚无通过证据校验的正文级解读。</p></details>
-      <div class="links"><a href="https://www.thehindu.com/sci-tech/health/health-matters-newsletter-what-happens-when-your-disease-isnt-simple/article71192513.ece">GDELT DOC 2.0</a></div>
-      <div class="audit-note">翻译：deterministic · translation_unavailable_after_all_providers · github_models:failed → gemini:failed → groq:failed</div>
-    </article>
-    
-    <article class="story event bilingual-card" id="event-event-3092072eb672e563b653db57">
-      <div class="kicker">公共卫生事件 · unconfirmed</div>
-      
-      <div class="lang-panel lang-zh" data-lang="zh">
-        <h3>PABS：世卫组织敦促成员国敲定防范未来大流行的协议</h3>
-        <p>世界卫生组织总干事谭德塞敦促成员国尽快完成《病原体获取与利益共享》（PABS）协议的谈判，该协议是世卫组织大流行病协议的附件。谭德塞强调，尽管谈判未能如期完成，但多边合作依然强劲，成员国应保持建设性对话，确保快速共享病原体样本和信息，并公平分配利益。他警告，延迟敲定协议将使世界对未来公共卫生紧急事件的准备不足。报道中提及刚果民主共和国的埃博拉疫情和近期与游轮相关的汉坦病毒疫情，作为传染病威胁持续存在及国际合作有效性的例证。该报道未显示官方已正式确认PABS协议完成。</p>
-      </div>
-      <div class="lang-panel lang-en" data-lang="en" hidden>
-        <h3>PABS : Finalise agreement against future pandemics , WHO tells member states</h3>
-        <p>WHO Director-General Dr. Tedros Adhanom Ghebreyesus urged member states to finalize negotiations on the Pathogen Access and Benefit-Sharing (PABS) annex of the WHO Pandemic Agreement, warning that the world remains vulnerable to future pandemics. Despite delays, he praised ongoing multilateral cooperation and called for continued constructive dialogue to establish a system for rapid sharing of pathogen samples and equitable benefit distribution. He highlighted the Ebola outbreak in the Democratic Republic of the Congo and a recent hantavirus outbreak linked to a cruise ship as reminders of ongoing infectious disease threats and the importance of international cooperation. The report does not indicate official confirmation of the agreement's completion.</p>
-      </div>
-      <button type="button" class="language-toggle" data-card-id="event-event-3092072eb672e563b653db57" aria-expanded="false">显示英文</button>
-    
-      <div class="meta">地点待核验 · outbreak · 病例数字未明确报告</div>
-      <p class="event-note">该事件由 1 篇文章聚合；事件版本 v1。</p>
-      <details class="analysis-details"><summary>查看正文理解、官方确认与不确定性</summary><p class="muted">该事件尚无通过证据校验的正文级解读。</p></details>
-      <div class="links"><a href="https://blueprint.ng/pabs-finalise-agreement-against-future-pandemics-who-tells-member-states">GDELT DOC 2.0</a></div>
-      <div class="audit-note">翻译：github_models · failed · github_models:failed → gemini:failed → groq:failed</div>
-    </article>
-    
-    <article class="story event bilingual-card" id="event-event-8f2cd59be79ca3a66d6f8daf">
-      <div class="kicker">公共卫生事件 · unconfirmed</div>
-      
-      <div class="lang-panel lang-zh" data-lang="zh">
-        <h3>中文标题暂不可用</h3>
-        <p class="muted">中文摘要暂不可用；系统不会根据标题编造内容。可点击“显示英文”查看原文。</p>
-      </div>
-      <div class="lang-panel lang-en" data-lang="en" hidden>
-        <h3>Exclusive | Here how to keep NYC rats at bay</h3>
-        <p>See more of our coverage in your search results. Tourists won’t be the only thing hogging the Big Apple sidewalks this summer. When people think of New York City rats , they usually picture woodchuck-size vermin darting through alleyways, or bursting through basement ceilings a la “Ratatouille.” During a recent ride-along with veteran exterminator Favio Ulloa, The Post didn’t spot a single rodent —we must’ve gotten lucky. But our lack of sightings wasn’t evidence that they weren’t there. What was discovered was the almost imperceptible cracks in the wall they exploit, the poison used to dispatch them and the constant snake-and-mongoose battle between Gothamites and the city’s most resilient varmint — all telltale signs that we were in the presence of the city’s furry arch-nemesis “They have to [block the holes] with mesh,” said Ulloa, owner of Prestige Pest Services, as he points to gaps in the plumbing at an infested Bronx laundromat. “If you close an opening with just sheet rock, the rats eat through it. They eat through sheet rock like paper.” By shadowing Ulloa, who has spent 25 years waging the war on rats, on a hot summer day, The Post was able to glean a behind-the-scenes look at why these beasts thrive in NYC, how to know if a rat problem is in one’s vicinity and what New Yorkers can do to keep our unofficial mascot at bay. According to experts, summer is when these fun-size squatters become especially active. “At the beginning of the season, we do see a hurricane season for rats,” Gil Bloom, the president of NYC extermination company Standard Pest Management, told The Post. “So you’re always going to see an increase in rodents and rodent activity as we head into summer.” They breed more in warmer, but not scorching, weather, food is plentiful, and humans spend more time outdoors and are more likely to notice them, causing 311 complaints to climb. However, Bloom quipped that many supposed infestations could simply be the same animal running back and forth. Whether New Yorkers are facing more rat-ivity than years past depends on who you ask. Through June 28, the city’s 311 hotline had received 7,960 reports of rat sightings, down from 10,492 for the same…</p>
-      </div>
-      <button type="button" class="language-toggle" data-card-id="event-event-8f2cd59be79ca3a66d6f8daf" aria-expanded="false">显示英文</button>
-    
-      <div class="meta">地点待核验 · other · 病例数字未明确报告</div>
-      <p class="event-note">该事件由 1 篇文章聚合；事件版本 v1。</p>
-      <details class="analysis-details"><summary>查看正文理解、官方确认与不确定性</summary><p class="muted">该事件尚无通过证据校验的正文级解读。</p></details>
-      <div class="links"><a href="https://nypost.com/2026/07/09/lifestyle/heres-how-to-keep-nyc-rats-at-bay">GDELT DOC 2.0</a></div>
-      <div class="audit-note">翻译：deterministic · translation_unavailable_after_all_providers · github_models:failed → gemini:failed → groq:failed</div>
-    </article>
-    
-    <article class="story event bilingual-card" id="event-event-d467085e6690c6a700e7051c">
-      <div class="kicker">公共卫生事件 · unconfirmed</div>
-      
-      <div class="lang-panel lang-zh" data-lang="zh">
-        <h3>中文标题暂不可用</h3>
-        <p class="muted">中文摘要暂不可用；系统不会根据标题编造内容。可点击“显示英文”查看原文。</p>
-      </div>
-      <div class="lang-panel lang-en" data-lang="en" hidden>
-        <h3>The Infectious Disease Frenzy</h3>
-        <p>COVID-19 mandate protestors at Iowa's state capitol January 11, 2021. In our enlightened age, the public seems tirelessly bombarded with warnings of existential threat from infectious disease. Another distant outbreak is spreading, this time it could be Disease X – “…and there is no vaccine!” How, one might ask, is our species still extant? A few decades ago, life was less torn by impending doom. Public health officials were investigating diarrhoea outbreaks linked to the local café. The Woodstock festival happened during the last large influenza pandemic, and no one really noticed, let alone wore a mask. They just listened to the music, lived as their ancestors had, and somehow managed to expand the species. Medical technology and biotech innovation have blossomed since Woodstock. If you had a heart attack in the 1960s, you got some morphine for pain and a firm mattress, a bit of nitroglycerin under the tongue, or some basic drugs to steady an erratic heartbeat. Now you will be rushed into a maze of tubes and monitors, clot-dissolving drugs and pacing wires, multiple modes of imaging followed perhaps by rapid surgery to remove a persisting blockage. Far fewer people die; it’s all good and considered worth the money. The world of infectious diseases is very different. It faces an intrinsic market failure. While an increasingly old and fat population ensures a growing cardiac disease market, infectious diseases are on an inexorable decline. Biotech innovation has churned out all manner of new tests to allow us to distinguish pathogens, strains of pathogens, and variants of strains, but from a declining background of illness. Germs develop resistance but we keep developing new antibiotics to replace those failing, imperfectly but sufficient to maintain the decline. Vaccine development in this context is a bright spot amidst a dismal outlook – the golden egg that can be sold to the healthy rather than a declining market of the sick. Modified-RNA genetic therapeutics, reclassified as vaccines, now allow companies to virtually print new vaccines in months. But it’s still necessary to convince people who are under no imminent threat to become consumers. Additionally,…</p>
-      </div>
-      <button type="button" class="language-toggle" data-card-id="event-event-d467085e6690c6a700e7051c" aria-expanded="false">显示英文</button>
-    
-      <div class="meta">地点待核验 · outbreak · 病例数字未明确报告</div>
-      <p class="event-note">该事件由 1 篇文章聚合；事件版本 v1。</p>
-      <details class="analysis-details"><summary>查看正文理解、官方确认与不确定性</summary><p class="muted">该事件尚无通过证据校验的正文级解读。</p></details>
-      <div class="links"><a href="https://www.rcreader.com/commentary/the-infectious-disease-frenzy-david-bell">GDELT DOC 2.0</a></div>
-      <div class="audit-note">翻译：deterministic · translation_unavailable_after_all_providers · github_models:failed → gemini:failed → groq:failed</div>
-    </article>
-    
-    <article class="story event bilingual-card" id="event-event-d189959c10d6d0c0eaa65c37">
-      <div class="kicker">公共卫生事件 · unconfirmed</div>
-      
-      <div class="lang-panel lang-zh" data-lang="zh">
-        <h3>Keystone Health 分享汉坦病毒预防和安全指导 - 富兰克林县自由报</h3>
-        <p>据富兰克林县自由报报道，Keystone Health 分享了有关汉坦病毒的预防和安全指导。报道中未提供具体的病例数或死亡数据，也未提及官方确认的疫情爆发。该报道主要聚焦于预防措施和安全建议，尚无进一步的官方确认信息。</p>
+        <p class="muted">中文摘要暂不可用；系统不会根据标题编造内容。可点击右上角“en”查看原文。</p>
       </div>
       <div class="lang-panel lang-en" data-lang="en" hidden>
         <h3>Keystone Health Shares Hantavirus Prevention and Safety Guidance - Franklin County Free Press</h3>
-        <p>Keystone Health has shared prevention and safety guidance regarding hantavirus, as reported by Franklin County Free Press. The report does not provide specific case or death counts, nor does it mention any official outbreak confirmation. The focus is on prevention measures and safety advice, with no further official confirmation available.</p>
+        <p>Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News.</p>
       </div>
-      <button type="button" class="language-toggle" data-card-id="event-event-d189959c10d6d0c0eaa65c37" aria-expanded="false">显示英文</button>
+      <button type="button" class="language-toggle" data-card-id="event-event-b48e49f0a7bcc25cadfcef0c" aria-expanded="false" aria-label="显示英文" title="显示英文">en</button>
     
       <div class="meta">地点待核验 · other · 病例数字未明确报告</div>
       <p class="event-note">该事件由 1 篇文章聚合；事件版本 v1。</p>
-      <details class="analysis-details"><summary>查看正文理解、官方确认与不确定性</summary><h4>已确认说法</h4><ul><li>Keystone Health shares hantavirus prevention and safety guidance <span class="evidence-id">[N1]</span></li></ul><h4>报道引用的权威机构</h4><ul><li>Keystone Health：Shares hantavirus prevention and safety guidance <span class="evidence-id">[N1]</span></li></ul><p class="muted"><strong>正文覆盖：</strong>title_or_snippet_only；Only title and a single snippet sentence are provided without detailed content.</p><h4>不确定性</h4><ul><li>No specific case or death counts are provided.</li><li>No official confirmation of an outbreak or public health event is mentioned.</li></ul></details>
-      <div class="links"><a href="https://news.google.com/rss/articles/CBMilgFBVV95cUxQakUzSlNQU2NNcEwxX3NnN1FDeVRxcklONm44TDdxc1BPTmp0QUhJTnM2Z09NSlhnVThRcTlyVkxRQ3FTM1Uxb0pXb3FpbG43WnJTU3hvQzJTbHExUVNZR1VOYjl6NVB1X1RBNTJMUl9wYlRwUkhMS2RYZTNXZHdEMTk0d0pnamd0Wll3RXVweHluSkVUbWc?oc=5">Google News RSS English</a></div>
-      <div class="audit-note">翻译：github_models · passed · github_models:passed</div>
+      <p class="content-status missing">未抓获可分析正文；本条仅基于标题、RSS 摘要或来源元数据，不能视为正文级解读。</p>
+      <details class="analysis-details"><summary>查看正文理解、官方确认与不确定性</summary><p class="muted">该事件尚无通过证据校验的正文级解读。</p></details>
+      <div class="links"><a href="https://news.google.com/rss/articles/CBMilgFBVV95cUxQakUzSlNQU2NNcEwxX3NnN1FDeVRxcklONm44TDdxc1BPTmp0QUhJTnM2Z09NSlhnVThRcTlyVkxRQ3FTM1Uxb0pXb3FpbG43WnJTU3hvQzJTbHExUVNZR1VOYjl6NVB1X1RBNTJMUl9wYlRwUkhMS2RYZTNXZHdEMTk0d0pnamd0Wll3RXVweHluSkVUbWc?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US%3Aen">Google News RSS English</a></div>
+      <div class="audit-note">翻译：deterministic · translation_unavailable_after_all_providers · github_models:failed → gemini:failed → groq:failed</div>
     </article>
     
-    <article class="story event bilingual-card" id="event-event-08ef411c1ba02d516b3d6947">
+    <article class="story event bilingual-card" id="event-event-397d4677580b0b910359a856">
       <div class="kicker">公共卫生事件 · unconfirmed</div>
       
       <div class="lang-panel lang-zh" data-lang="zh">
-        <h3>揭示汉坦病毒感染相关的神经系统症状 - Bioengineer.org</h3>
-        <p>据Bioengineer.org报道，汉坦病毒感染与神经系统症状有关联。报道未提供具体的病例数、死亡数或官方确认信息。该信息基于新闻标题和简短内容，缺乏详细数据和权威声明，需进一步确认。</p>
-      </div>
-      <div class="lang-panel lang-en" data-lang="en" hidden>
-        <h3>Neurological Symptoms Linked to Hantavirus Infection Revealed - Bioengineer.org</h3>
-        <p>Bioengineer.org reports a link between hantavirus infection and neurological symptoms. No specific case numbers, deaths, or official confirmations are provided. The information is based on the news title and brief content, lacking detailed data and authoritative statements, requiring further verification.</p>
-      </div>
-      <button type="button" class="language-toggle" data-card-id="event-event-08ef411c1ba02d516b3d6947" aria-expanded="false">显示英文</button>
-    
-      <div class="meta">地点待核验 · other · 病例数字未明确报告</div>
-      <p class="event-note">该事件由 1 篇文章聚合；事件版本 v1。</p>
-      <details class="analysis-details"><summary>查看正文理解、官方确认与不确定性</summary><h4>待核实说法</h4><ul><li>Neurological symptoms are linked to hantavirus infection <span class="evidence-id">[T0, N1]</span></li></ul><p class="muted"><strong>正文覆盖：</strong>title_or_snippet_only；Only the article title and a brief snippet are available, lacking detailed content.</p><h4>不确定性</h4><ul><li>No detailed data on cases, deaths, or official confirmation.</li><li>No specific locations or dates provided.</li></ul></details>
-      <div class="links"><a href="https://news.google.com/rss/articles/CBMijwFBVV95cUxPVXJ0Q2d4c1Q2cGpTZVlRam0yUnkxUWw3UmdwYUxHVVRQdFIwYmJ3LXpudmtJVjhJa2J5aEJYSDBCVmlhbENDcHpScGg3ZW9pRUkzQi1iM0VheWhnOVlGWmFiaDJUWWpYYkZZQkh3YzRuWVA4WG8tWU5obDBrdjZPRDlPS0Ewa0YtUThBM3Y1bw?oc=5">Google News RSS English</a></div>
-      <div class="audit-note">翻译：github_models · passed · github_models:passed</div>
-    </article>
-    
-    <article class="story event bilingual-card" id="event-event-49dec3433c7148c7844bbe7d">
-      <div class="kicker">公共卫生事件 · unconfirmed</div>
-      
-      <div class="lang-panel lang-zh" data-lang="zh">
-        <h3>你需要了解的汉坦病毒早期症状 - MSN</h3>
-        <p>该报道标题为“你需要了解的汉坦病毒早期症状”，来源为MSN新闻。内容仅为标题和链接，未提供具体的病例数据、官方确认或权威引用。报道涉及的病原体为汉坦病毒，但无具体时间、地点或病例信息。该报道未确认任何官方声明或疫情爆发，仅为一般性健康信息提示。</p>
-      </div>
-      <div class="lang-panel lang-en" data-lang="en" hidden>
-        <h3>Early signs of hantavirus you need to know - MSN</h3>
-        <p>The report titled 'Early signs of hantavirus you need to know' from MSN provides general information about hantavirus early symptoms. No specific case numbers, locations, dates, or official confirmations are provided. The content is limited to a headline and link without detailed evidence or authority statements.</p>
-      </div>
-      <button type="button" class="language-toggle" data-card-id="event-event-49dec3433c7148c7844bbe7d" aria-expanded="false">显示英文</button>
-    
-      <div class="meta">地点待核验 · other · 病例数字未明确报告</div>
-      <p class="event-note">该事件由 1 篇文章聚合；事件版本 v1。</p>
-      <details class="analysis-details"><summary>查看正文理解、官方确认与不确定性</summary><p class="muted"><strong>正文覆盖：</strong>title_or_snippet_only；Only headline and link provided, no detailed content.</p></details>
-      <div class="links"><a href="https://news.google.com/rss/articles/CBMiyAFBVV95cUxQRE9KS2tiajNRUTdzNURwMTRqU0dyMjYzSURhU1J4ZFFudTA4eW1IamVfUkNqUzkxLUR5N1JydXFIZW9pWW1nV29BMUJZSUtxNEV2NFg2NFZXODlJa1dPUDc2RFZPRVZlTXJlZElHWXZLMDdPcFEyZDVxZURUYS1SSW1GMEJQX2duUDVXWG5SLXRHS2ctc25hRGIzWGM5V1lVb3ROYkZlY2hoSFc0UUxrcUZ1QUdoNmtka3RJeWR0Rzllb3J4NENnaw?oc=5">Google News RSS English</a></div>
-      <div class="audit-note">翻译：github_models · passed · github_models:passed</div>
-    </article>
-    
-    <article class="story event bilingual-card" id="event-event-5a1755d2ac739c5e4c89baa1">
-      <div class="kicker">公共卫生事件 · unconfirmed</div>
-      
-      <div class="lang-panel lang-zh" data-lang="zh">
-        <h3>汉坦病毒疫情引发对工业在公共卫生紧急事件中作用的关注 - Think Global Health</h3>
-        <p>报道标题指出汉坦病毒疫情引发了对工业在公共卫生紧急事件中作用的关注，来源为Think Global Health。当前仅有标题信息，缺乏具体的疫情时间、地点、病例数或死亡数等详细数据。报道中未见官方确认该疫情的声明，也未引用权威机构的具体言论。整体信息有限，无法确认疫情的规模或影响。</p>
+        <h3>汉坦病毒疫情引发对行业在卫生紧急事件中的作用的关注 - Think Global Health</h3>
+        <p>Think Global Health 讨论了汉坦病毒疫情如何引发对行业在卫生紧急事件中的作用的关注。文章由 Google 新闻从世界各地来源汇总，提供了全面最新新闻报道。</p>
       </div>
       <div class="lang-panel lang-en" data-lang="en" hidden>
         <h3>Hantavirus Outbreak Calls Attention to Industry’s Role in Health Emergencies - Think Global Health</h3>
-        <p>The report titled 'Hantavirus Outbreak Calls Attention to Industry’s Role in Health Emergencies' from Think Global Health highlights concerns about industry involvement in health emergencies related to hantavirus. Only the title is provided without detailed information on the outbreak's timing, location, case counts, or official confirmation. No authoritative statements or official data are included, leaving the outbreak's scope and impact unverified.</p>
+        <p>Think Global Health discusses how the hantavirus outbreak highlights the role of industry in health emergencies. The article provides comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News.</p>
       </div>
-      <button type="button" class="language-toggle" data-card-id="event-event-5a1755d2ac739c5e4c89baa1" aria-expanded="false">显示英文</button>
+      <button type="button" class="language-toggle" data-card-id="event-event-397d4677580b0b910359a856" aria-expanded="false" aria-label="显示英文" title="显示英文">en</button>
     
       <div class="meta">地点待核验 · outbreak · 病例数字未明确报告</div>
       <p class="event-note">该事件由 1 篇文章聚合；事件版本 v1。</p>
-      <details class="analysis-details"><summary>查看正文理解、官方确认与不确定性</summary><h4>待核实说法</h4><ul><li>There is a hantavirus outbreak <span class="evidence-id">[T0, N1]</span></li><li>Industry plays a role in health emergencies related to hantavirus <span class="evidence-id">[T0, N1]</span></li></ul><p class="muted"><strong>正文覆盖：</strong>title_or_snippet_only；Only the article title and source are provided without detailed content.</p><h4>不确定性</h4><ul><li>No specific date or location for the hantavirus outbreak is provided.</li><li>No case counts or death numbers are reported.</li><li>No official confirmation or authoritative statements are included.</li></ul></details>
-      <div class="links"><a href="https://news.google.com/rss/articles/CBMicEFVX3lxTE53RVktbmlUSVJOc1lrYWVTSjRlNGRTcllPYnRfNmJubEVrZnV5dEUzYU5WTVp6ejZMOVFXTENwVTAwR3R6WDFfdURGMGhzZks0SlM5SVBpbTNjaFd4M3dmVW05RmR4TV9ibVN1cUpKQ2I?oc=5">Google News RSS English</a></div>
-      <div class="audit-note">翻译：github_models · passed · github_models:passed</div>
-    </article>
-    
-    <article class="story event bilingual-card" id="event-event-294366222a9250cfed72eac4">
-      <div class="kicker">公共卫生事件 · unconfirmed</div>
-      
-      <div class="lang-panel lang-zh" data-lang="zh">
-        <h3>汉坦病毒爆发为下一次大流行提供教训 - Earth.com</h3>
-        <p>文章讨论了汉坦病毒爆发事件，并指出该事件为未来可能发生的大流行提供了宝贵的经验教训。具体的教训内容和细节未在文本中详细说明。</p>
-      </div>
-      <div class="lang-panel lang-en" data-lang="en" hidden>
-        <h3>Hantavirus outbreak offers lessons for the next pandemic - Earth.com</h3>
-        <p>The article discusses a hantavirus outbreak and suggests it offers valuable lessons for the next pandemic. Specific details of these lessons are not provided in the text.</p>
-      </div>
-      <button type="button" class="language-toggle" data-card-id="event-event-294366222a9250cfed72eac4" aria-expanded="false">显示英文</button>
-    
-      <div class="meta">地点待核验 · outbreak · 病例数字未明确报告</div>
-      <p class="event-note">该事件由 1 篇文章聚合；事件版本 v1。</p>
+      <p class="content-status missing">未抓获可分析正文；本条仅基于标题、RSS 摘要或来源元数据，不能视为正文级解读。</p>
       <details class="analysis-details"><summary>查看正文理解、官方确认与不确定性</summary><p class="muted">该事件尚无通过证据校验的正文级解读。</p></details>
-      <div class="links"><a href="https://news.google.com/rss/articles/CBMijAFBVV95cUxPbDg0al82bmRNblpsR1k3bGhoaHFzOUluZGlxcG1idWVJS295RGszUVAteE5rMVQzMFdDVVdoNG5UQWtIQUItYXpyR3FsUTFlZ3RjUGhyeU9hdWVReHZsR19YdkhKb3VlU0hKM05FMFB6ZFE5Y2ZPNzRmNTlJQ3IzVXZWLXNqVFp0NDVZOQ?oc=5">Google News RSS English</a></div>
+      <div class="links"><a href="https://news.google.com/rss/articles/CBMicEFVX3lxTE53RVktbmlUSVJOc1lrYWVTSjRlNGRTcllPYnRfNmJubEVrZnV5dEUzYU5WTVp6ejZMOVFXTENwVTAwR3R6WDFfdURGMGhzZks0SlM5SVBpbTNjaFd4M3dmVW05RmR4TV9ibVN1cUpKQ2I?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US%3Aen">Google News RSS English</a></div>
       <div class="audit-note">翻译：github_models · passed · github_models:passed</div>
     </article>
     
-    <article class="story event bilingual-card" id="event-event-5a0e5a8bfa33e5d4ec48f5e0">
+    <article class="story event bilingual-card" id="event-event-e3756490debe95bc3cf087b5">
       <div class="kicker">公共卫生事件 · unconfirmed</div>
       
       <div class="lang-panel lang-zh" data-lang="zh">
-        <h3>世卫组织宣布邮轮汉坦病毒疫情结束 - TRT世界</h3>
-        <p>世卫组织宣布邮轮上的汉坦病毒疫情已经结束。该报道来自TRT世界。文章未提供具体疫情细节或病例数。</p>
-      </div>
-      <div class="lang-panel lang-en" data-lang="en" hidden>
-        <h3>WHO declares cruise ship hantavirus outbreak over - TRT World</h3>
-        <p>The WHO has declared the hantavirus outbreak on a cruise ship over. The report is from TRT World. No specific details or case numbers are provided in the text.</p>
-      </div>
-      <button type="button" class="language-toggle" data-card-id="event-event-5a0e5a8bfa33e5d4ec48f5e0" aria-expanded="false">显示英文</button>
-    
-      <div class="meta">地点待核验 · outbreak · 病例数字未明确报告</div>
-      <p class="event-note">该事件由 1 篇文章聚合；事件版本 v1。</p>
-      <details class="analysis-details"><summary>查看正文理解、官方确认与不确定性</summary><p class="muted">该事件尚无通过证据校验的正文级解读。</p></details>
-      <div class="links"><a href="https://news.google.com/rss/articles/CBMiWEFVX3lxTE9laFZWU01nbjB1a1VnekVveTlfbEJRcmduYlhsVnZVb2R3VUhxT3ZnX0c3ODBMYXhJZnU1bGQzamlUSHcwQjJYWWVBSE9rVnl2RFlUX001Z2M?oc=5">Google News RSS English</a></div>
-      <div class="audit-note">翻译：github_models · passed · github_models:passed</div>
-    </article>
-    
-    <article class="story event bilingual-card" id="event-event-5cc4d04242a4d835b1881320">
-      <div class="kicker">公共卫生事件 · unconfirmed</div>
-      
-      <div class="lang-panel lang-zh" data-lang="zh">
-        <h3>地图：受邮轮汉坦病毒疫情影响的国家，该疫情已导致三人死亡 - AOL.com</h3>
-        <p>该报道提供了一张地图，显示了受邮轮汉坦病毒疫情影响的国家。该疫情已造成三人死亡。报道来自AOL.com，但未提供更多具体细节。</p>
-      </div>
-      <div class="lang-panel lang-en" data-lang="en" hidden>
-        <h3>Mapped: The countries affected by the cruise ship Hantavirus outbreak that has killed three people - AOL.com</h3>
-        <p>The article provides a map showing countries affected by the cruise ship hantavirus outbreak. The outbreak has resulted in three deaths. The source is AOL.com, with no further details given.</p>
-      </div>
-      <button type="button" class="language-toggle" data-card-id="event-event-5cc4d04242a4d835b1881320" aria-expanded="false">显示英文</button>
-    
-      <div class="meta">地点待核验 · outbreak · 病例数字未明确报告</div>
-      <p class="event-note">该事件由 1 篇文章聚合；事件版本 v1。</p>
-      <details class="analysis-details"><summary>查看正文理解、官方确认与不确定性</summary><p class="muted">该事件尚无通过证据校验的正文级解读。</p></details>
-      <div class="links"><a href="https://news.google.com/rss/articles/CBMigwFBVV95cUxPR05YaE5fQXpjZHFZdTk0a1hhSTFuUlJKU25McGtmOGpDMUQ1Wngxc1g3M3E0aHhwbkNrT1VKaUtNeW5HMkxuM3pHSUUxeWg5ejE3NjgwaGIzQ1p6dGlVMjZ2cU5fWFZ1cEx1SGNDSmFQT25tUDh5N2lncC1XemEwQS1STQ?oc=5">Google News RSS English</a></div>
-      <div class="audit-note">翻译：github_models · passed · github_models:passed</div>
-    </article>
-    
-    <article class="story event bilingual-card" id="event-event-aac525b17e6e6ae255add6ae">
-      <div class="kicker">公共卫生事件 · unconfirmed</div>
-      
-      <div class="lang-panel lang-zh" data-lang="zh">
-        <h3>美国公民在内布拉斯加医学中心接受汉坦病毒邮轮监测 - 美国医院协会</h3>
-        <p>报道指出，美国公民因汉坦病毒邮轮疫情在内布拉斯加医学中心接受监测。该信息来自美国医院协会，未提供具体病例数或监测结果。</p>
+        <h3>美国公民在汉坦病毒游轮上接受内布拉斯加医学中心监测 - 美国医院协会</h3>
+        <p>美国公民在汉坦病毒游轮上接受内布拉斯加医学中心的监测。报道未提供具体细节。</p>
       </div>
       <div class="lang-panel lang-en" data-lang="en" hidden>
         <h3>U.S. citizens on hantavirus cruise ship monitored at Nebraska Medicine - American Hospital Association</h3>
-        <p>U.S. citizens from the hantavirus-affected cruise ship are being monitored at Nebraska Medicine. The report is from the American Hospital Association, with no specific case numbers or monitoring outcomes provided.</p>
+        <p>U.S. citizens on a hantavirus-affected cruise ship are being monitored at Nebraska Medicine. No further details are provided in the text.</p>
       </div>
-      <button type="button" class="language-toggle" data-card-id="event-event-aac525b17e6e6ae255add6ae" aria-expanded="false">显示英文</button>
+      <button type="button" class="language-toggle" data-card-id="event-event-e3756490debe95bc3cf087b5" aria-expanded="false" aria-label="显示英文" title="显示英文">en</button>
     
-      <div class="meta">United States · other · 病例数字未明确报告</div>
+      <div class="meta">地点待核验 · other · 病例数字未明确报告</div>
       <p class="event-note">该事件由 1 篇文章聚合；事件版本 v1。</p>
+      <p class="content-status missing">未抓获可分析正文；本条仅基于标题、RSS 摘要或来源元数据，不能视为正文级解读。</p>
       <details class="analysis-details"><summary>查看正文理解、官方确认与不确定性</summary><p class="muted">该事件尚无通过证据校验的正文级解读。</p></details>
-      <div class="links"><a href="https://news.google.com/rss/articles/CBMiigFBVV95cUxObThPUXJIallvX2NlWFlKamszaUZ4cTcxSG41akhqQmNTblNVWDVoUmVSUTV3cnd0LW9xdzlFVUs4ekgtRTBjNDQ0emxtdUJNTkxSM1pMeG9sUGVmYldPOUNLZFJQNEhWZWNGd2lGRHFHLU1jZkVWUVVXTnpSLVJkY2xINnB0TVNMNnc?oc=5">Google News RSS English</a></div>
+      <div class="links"><a href="https://news.google.com/rss/articles/CBMiigFBVV95cUxObThPUXJIallvX2NlWFlKamszaUZ4cTcxSG41akhqQmNTblNVWDVoUmVSUTV3cnd0LW9xdzlFVUs4ekgtRTBjNDQ0emxtdUJNTkxSM1pMeG9sUGVmYldPOUNLZFJQNEhWZWNGd2lGRHFHLU1jZkVWUVVXTnpSLVJkY2xINnB0TVNMNnc?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US%3Aen">Google News RSS English</a></div>
       <div class="audit-note">翻译：github_models · passed · github_models:passed</div>
     </article>
     
-    <article class="story event bilingual-card" id="event-event-95260297f153d5fa0c22aa69">
+    <article class="story event bilingual-card" id="event-event-edad6048ba332f8db9b84b3f">
       <div class="kicker">公共卫生事件 · unconfirmed</div>
       
       <div class="lang-panel lang-zh" data-lang="zh">
-        <h3>邮轮汉坦病毒疫情正式结束 - The Star</h3>
-        <p>The Star报道，邮轮上的汉坦病毒疫情已正式结束。文章未提供疫情期间的具体数据或后续措施。</p>
+        <h3>明显汉坦病毒疫情在游轮上导致 3 人死亡，至少 3 人患病 - AOL.com</h3>
+        <p>游轮上明显汉坦病毒疫情导致 3 人死亡，至少 3 人患病。报道未提供具体细节。</p>
       </div>
       <div class="lang-panel lang-en" data-lang="en" hidden>
-        <h3>Hantavirus outbreak from cruise ship officially ends - The Star</h3>
-        <p>The Star reports that the hantavirus outbreak on the cruise ship has officially ended. No specific data or follow-up measures are detailed in the article.</p>
+        <h3>Apparent hantavirus outbreak kills 3 on cruise ship, sickens at least 3 more - AOL.com</h3>
+        <p>An apparent hantavirus outbreak on a cruise ship has killed 3 and sickened at least 3 more. No further details are provided in the text.</p>
       </div>
-      <button type="button" class="language-toggle" data-card-id="event-event-95260297f153d5fa0c22aa69" aria-expanded="false">显示英文</button>
+      <button type="button" class="language-toggle" data-card-id="event-event-edad6048ba332f8db9b84b3f" aria-expanded="false" aria-label="显示英文" title="显示英文">en</button>
     
       <div class="meta">地点待核验 · outbreak · 病例数字未明确报告</div>
       <p class="event-note">该事件由 1 篇文章聚合；事件版本 v1。</p>
+      <p class="content-status missing">未抓获可分析正文；本条仅基于标题、RSS 摘要或来源元数据，不能视为正文级解读。</p>
       <details class="analysis-details"><summary>查看正文理解、官方确认与不确定性</summary><p class="muted">该事件尚无通过证据校验的正文级解读。</p></details>
-      <div class="links"><a href="https://news.google.com/rss/articles/CBMiqwFBVV95cUxPNC1UZ0tfaEphYXNYX29BZXcwRHVXMGFqMXRfWFBBeGxhMWR6dk1YaHR5M1M1NWJKamZYeWw3UVQ1WXJwX0ZrRFlHREZ4S0hUOVU2eTVFWV9TVXR4aVBYTEVsVDBDcVl5RTF1bXZXMDY2RDhLeVRybHFiT3R1dHJpbXVRZ1VmXzFSbWVlNHpoUWVpU3hBWFVHNFFLVDUzSmh5Z1E0Z1B0a0l2aHM?oc=5">Google News RSS English</a></div>
+      <div class="links"><a href="https://news.google.com/rss/articles/CBMigAJBVV95cUxNbnZ1U1BRNVNhOEdXQzRlWHdnMDRHT0lPU1lGTWczeXY4cWlrYllCcVRqV0oydmVfM0RRNU9sZEZybHpMWGdrcEdqUnN1YW5vMmtpMEV5LS1PLWQzR2lCSURSbUEzb3EyTG01ZVpZSldnUGpNSUQ1V1dzUS1sU21wTEt3QkcyNUdPeUVCS0JXRndER2J4OTZKbl91U2V3Rng1VU1HVWhNZDhFZzZob20tVmc3cUdibFBCR2paS3J1Ny1SUG9Kd0tlVERITG42OTRtUnVaUHAwVVVlWk9mUy1PcmhmOXlTSnNEQ0RVZHdOZEFDUHlDNW5WaHpEcVRrQjdR?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US%3Aen">Google News RSS English</a></div>
       <div class="audit-note">翻译：github_models · passed · github_models:passed</div>
     </article>
     
-    <article class="story event bilingual-card" id="event-event-990467ecf8eb7120850b541e">
+    <article class="story event bilingual-card" id="event-event-91989a1645d8ee23266c41b4">
       <div class="kicker">公共卫生事件 · unconfirmed</div>
       
       <div class="lang-panel lang-zh" data-lang="zh">
-        <h3>特朗普称伊朗袭击为‘小事’，以及汉坦病毒疫情最新情况 - Mshale</h3>
-        <p>该报道包含特朗普对伊朗袭击的评论及汉坦病毒疫情的最新情况。具体疫情细节未在文本中体现。</p>
+        <h3>特朗普称伊朗袭击为‘小事’，以及六旗汉坦病毒疫情的最新情况 (o8ggSUz5AN) - Mshale</h3>
+        <p>Mshale报道了特朗普对伊朗袭击的评论以及六旗汉坦病毒疫情的最新情况。谷歌新闻提供了来自全球的全面最新新闻报道。</p>
       </div>
       <div class="lang-panel lang-en" data-lang="en" hidden>
         <h3>Trump Calls Iran Strikes A ‘Trifle,’ And The Latest On The Hantavirus Outbreak Six Flags (o8ggSUz5AN) - Mshale</h3>
-        <p>The article includes Trump's comment on Iran strikes and the latest on the hantavirus outbreak. Specific details about the outbreak are not provided in the text.</p>
+        <p>Mshale reports on Trump's comments about Iran strikes and the latest on the hantavirus outbreak at Six Flags. Google News provides comprehensive up-to-date news coverage from sources worldwide.</p>
       </div>
-      <button type="button" class="language-toggle" data-card-id="event-event-990467ecf8eb7120850b541e" aria-expanded="false">显示英文</button>
+      <button type="button" class="language-toggle" data-card-id="event-event-91989a1645d8ee23266c41b4" aria-expanded="false" aria-label="显示英文" title="显示英文">en</button>
     
       <div class="meta">地点待核验 · outbreak · 病例数字未明确报告</div>
       <p class="event-note">该事件由 1 篇文章聚合；事件版本 v1。</p>
+      <p class="content-status missing">未抓获可分析正文；本条仅基于标题、RSS 摘要或来源元数据，不能视为正文级解读。</p>
       <details class="analysis-details"><summary>查看正文理解、官方确认与不确定性</summary><p class="muted">该事件尚无通过证据校验的正文级解读。</p></details>
-      <div class="links"><a href="https://news.google.com/rss/articles/CBMiYEFVX3lxTFBINlJ3b0R2WG1YLW5nSUdxN05kMDlsaEtRQUxNdVliVW9xdkZTVlZQSk9JZnNfT2lUQ0gzS0R0WEtzQmNfVGtuZl9vcWFVclA5bzBuUlpaQXMzcHU1ZGQ1Rg?oc=5">Google News RSS English</a></div>
+      <div class="links"><a href="https://news.google.com/rss/articles/CBMiYEFVX3lxTFBINlJ3b0R2WG1YLW5nSUdxN05kMDlsaEtRQUxNdVliVW9xdkZTVlZQSk9JZnNfT2lUQ0gzS0R0WEtzQmNfVGtuZl9vcWFVclA5bzBuUlpaQXMzcHU1ZGQ1Rg?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US%3Aen">Google News RSS English</a></div>
       <div class="audit-note">翻译：github_models · passed · github_models:passed</div>
     </article>
     
-    <article class="story event bilingual-card" id="event-event-26e7dd1b81fc7bc46018f409">
+    <article class="story event bilingual-card" id="event-event-1c60c459b06ac539b94df4c3">
       <div class="kicker">公共卫生事件 · unconfirmed</div>
       
       <div class="lang-panel lang-zh" data-lang="zh">
-        <h3>五名来自汉坦病毒感染邮轮的乘客解除奥马哈隔离 - 奥马哈世界先驱报</h3>
-        <p>奥马哈世界先驱报报道，五名来自受汉坦病毒影响邮轮的乘客已解除隔离。报道未提供这些乘客的健康状况或后续监测信息。</p>
+        <h3>五名来自汉坦病毒肆虐游轮的乘客在奥马哈解除隔离 - 奥马哈世界先驱报</h3>
+        <p>五名来自汉坦病毒肆虐游轮的乘客在奥马哈解除隔离。报道由谷歌新闻从世界各地来源汇总。没有提供关于解除隔离的具体细节或汉坦病毒的进一步信息。</p>
       </div>
       <div class="lang-panel lang-en" data-lang="en" hidden>
         <h3>Five passengers from hantavirus-stricken cruise ship depart quarantine in Omaha - Omaha World-Herald</h3>
-        <p>Five passengers from the hantavirus-affected cruise ship have been released from quarantine in Omaha. The report does not provide information on their health status or follow-up monitoring.</p>
+        <p>Five passengers from a hantavirus-stricken cruise ship have been released from quarantine in Omaha. The news is aggregated from sources all over the world by Google News. No details are provided about the release or further information on the hantavirus.</p>
       </div>
-      <button type="button" class="language-toggle" data-card-id="event-event-26e7dd1b81fc7bc46018f409" aria-expanded="false">显示英文</button>
+      <button type="button" class="language-toggle" data-card-id="event-event-1c60c459b06ac539b94df4c3" aria-expanded="false" aria-label="显示英文" title="显示英文">en</button>
     
       <div class="meta">地点待核验 · other · 病例数字未明确报告</div>
       <p class="event-note">该事件由 1 篇文章聚合；事件版本 v1。</p>
+      <p class="content-status missing">未抓获可分析正文；本条仅基于标题、RSS 摘要或来源元数据，不能视为正文级解读。</p>
       <details class="analysis-details"><summary>查看正文理解、官方确认与不确定性</summary><p class="muted">该事件尚无通过证据校验的正文级解读。</p></details>
-      <div class="links"><a href="https://news.google.com/rss/articles/CBMioAFBVV95cUxPMFhrVTRKdWFVd2lLTmpaT0NLOVdOaGktZGxEX1NYbUxnNFZ3bDRFdEtDcFMzWTJSVE9FOHRCeGlXa05ZamxjQVMwVE5UU0ZoY0xHVU8xRC02YTNxS3RTdXBEVjBQd2RSV18yVkRVdURuaTFoaDA5VWN6Zl9KanZUMnlXc1pTTllmR01XYWlzOEtxcXNjWXgybzZEMVJ0aTM1?oc=5">Google News RSS English</a></div>
+      <div class="links"><a href="https://news.google.com/rss/articles/CBMioAFBVV95cUxPMFhrVTRKdWFVd2lLTmpaT0NLOVdOaGktZGxEX1NYbUxnNFZ3bDRFdEtDcFMzWTJSVE9FOHRCeGlXa05ZamxjQVMwVE5UU0ZoY0xHVU8xRC02YTNxS3RTdXBEVjBQd2RSV18yVkRVdURuaTFoaDA5VWN6Zl9KanZUMnlXc1pTTllmR01XYWlzOEtxcXNjWXgybzZEMVJ0aTM1?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US%3Aen">Google News RSS English</a></div>
       <div class="audit-note">翻译：github_models · passed · github_models:passed</div>
     </article>
     
-    <article class="story event bilingual-card" id="event-event-5b9560c986d176c8b4e6d91c">
-      <div class="kicker">公共卫生事件 · unconfirmed</div>
-      
-      <div class="lang-panel lang-zh" data-lang="zh">
-        <h3>汉坦病毒爆发后，邮轮旅客应知事项 - MSN</h3>
-        <p>本文标题为“汉坦病毒爆发后，邮轮旅客应知事项”，由MSN发布。文章内容涉及汉坦病毒爆发事件及其对邮轮旅客的影响。具体细节未在摘要中提供，全文链接可供进一步阅读。</p>
-      </div>
-      <div class="lang-panel lang-en" data-lang="en" hidden>
-        <h3>After the hantavirus outbreak, here’s what cruise travelers should know - MSN</h3>
-        <p>The article titled 'After the hantavirus outbreak, here’s what cruise travelers should know' was published by MSN. It discusses the hantavirus outbreak and its implications for cruise travelers. Detailed content is not provided in the summary, but a link to the full article is available.</p>
-      </div>
-      <button type="button" class="language-toggle" data-card-id="event-event-5b9560c986d176c8b4e6d91c" aria-expanded="false">显示英文</button>
-    
-      <div class="meta">地点待核验 · outbreak · 病例数字未明确报告</div>
-      <p class="event-note">该事件由 1 篇文章聚合；事件版本 v1。</p>
-      <details class="analysis-details"><summary>查看正文理解、官方确认与不确定性</summary><p class="muted">该事件尚无通过证据校验的正文级解读。</p></details>
-      <div class="links"><a href="https://news.google.com/rss/articles/CBMigwNBVV95cUxOWnhYT3RsOGIzYWZqSmpJTElZSmxRYldWV1ljMmRGMVBWV3BENWZWLWd2UzhjRl9xQUJzdkloSDBDQXcxcEJNeUFoWU9Yb1Q4ZGxPOU9Ob1NBbXJaSG9IV0dranRpUWRXVS0tMExKRzZqcHdVOXJhb3otb19SMWVLNy1KXzFQb1o1Y0gwZjY0bEFyVmlyX3FCZUFDLW1kekNrdFEtT1l2c0l4OFlCWkRfcjdRYllkcV92TXhmcDV5OGNxSFk0dVQxZ196LUJrWXRSNXJ5SzZEODc4UFJaeDhOZWgzR01mMHFHRE5hcW1GZzhSYlVtSS1CaHRSQndqRUd3VThEMjBiclZaUE1hUzIteGlYUnY4bVk3UC1aZFQxVW1IOENPVzhjUHhKTkh1aGhsRGRKT3YzTHVnalRNVHg4SWlkU282Z0VrSWVXWkNNNnBaSzd4NnlfZVM1Y01Rd2RrUGpfXzBhbDlfbTBfZ2tDb2xMVms4VUxsM1BmTENYQTV5WnM?oc=5">Google News RSS English</a></div>
-      <div class="audit-note">翻译：github_models · passed · github_models:passed</div>
-    </article>
-    
-    <article class="story event bilingual-card" id="event-event-56c515a82d2d8b036a2528b3">
-      <div class="kicker">公共卫生事件 · unconfirmed</div>
-      
-      <div class="lang-panel lang-zh" data-lang="zh">
-        <h3>Bend医生在受汉坦病毒影响的邮轮上帮助乘客，Bynum说 - 中俄勒冈日报</h3>
-        <p>Bend医生在受汉坦病毒影响的邮轮上协助乘客。</p>
-      </div>
-      <div class="lang-panel lang-en" data-lang="en" hidden>
-        <h3>Bend doctor helping passengers while stuck on hantavirus-stricken cruise ship, Bynum says - Central Oregon Daily</h3>
-        <p>A Bend doctor is helping passengers on a cruise ship affected by hantavirus, according to Bynum.</p>
-      </div>
-      <button type="button" class="language-toggle" data-card-id="event-event-56c515a82d2d8b036a2528b3" aria-expanded="false">显示英文</button>
-    
-      <div class="meta">地点待核验 · other · 病例数字未明确报告</div>
-      <p class="event-note">该事件由 1 篇文章聚合；事件版本 v1。</p>
-      <details class="analysis-details"><summary>查看正文理解、官方确认与不确定性</summary><p class="muted">该事件尚无通过证据校验的正文级解读。</p></details>
-      <div class="links"><a href="https://news.google.com/rss/articles/CBMi1gFBVV95cUxQSVVURFp4N2lpV1JRSjZfMEtXMDRBVTNNSFhkejYxZV9MVWVQbnNhNjBDTUFvVDQ0eFcwYUJOQ1JWU1F4OGVWVzFqSmJQZ1BXdEJBNjk3d0hrTVBQSDNuTHVNcW9BS05rbGppOXRoYTFGU2xiRXhWOXZ3ZkdweUJTMmhRVF9halREcGcydlQ0bkZUeTdzWU5BaG0yQl9YY1pzV1p5Ty1ZMDhISWpxcFlIVjJoRnRlRDlqUjJVaFN2MU81T0ZJVTdUaDVBX3J3UHJLSFI5VC13?oc=5">Google News RSS English</a></div>
-      <div class="audit-note">翻译：github_models · passed</div>
-    </article>
-    
-    <article class="story event bilingual-card" id="event-event-52a54fef6d889a3c2cde19a3">
-      <div class="kicker">公共卫生事件 · unconfirmed</div>
-      
-      <div class="lang-panel lang-zh" data-lang="zh">
-        <h3>汉坦病毒感染的游轮停靠荷兰进行消毒 - 1019por.com</h3>
-        <p>汉坦病毒感染的游轮停靠荷兰港口进行消毒处理。</p>
-      </div>
-      <div class="lang-panel lang-en" data-lang="en" hidden>
-        <h3>Hantavirus-stricken cruise ship docks in the Netherlands for disinfection - 1019por.com</h3>
-        <p>A cruise ship infected with hantavirus docked in the Netherlands for disinfection.</p>
-      </div>
-      <button type="button" class="language-toggle" data-card-id="event-event-52a54fef6d889a3c2cde19a3" aria-expanded="false">显示英文</button>
-    
-      <div class="meta">地点待核验 · other · 病例数字未明确报告</div>
-      <p class="event-note">该事件由 1 篇文章聚合；事件版本 v1。</p>
-      <details class="analysis-details"><summary>查看正文理解、官方确认与不确定性</summary><p class="muted">该事件尚无通过证据校验的正文级解读。</p></details>
-      <div class="links"><a href="https://news.google.com/rss/articles/CBMiqgFBVV95cUxQblVYclJDMG93U18zUDY4UU0yeFB6MU5icjAxbzAyWDFsNHIzcS04M0w3bUVmeUtRVEx0NXdjWG9MTEFqbWF0N1ROOXdPMlJmZzZhVXRXQVpnSHNYN1lwb1ZVQlJTdHRUZGNTTlNjSG16d2hmWFZMTnQtLXhtOFhkZ0libVdYTG15UVFYaUM3aTVndzlFWl8xWVlyVFFCWnJVMDZsNS1ON04zdw?oc=5">Google News RSS English</a></div>
-      <div class="audit-note">翻译：github_models · passed</div>
-    </article>
-    
-    <article class="story event bilingual-card" id="event-event-005a059e9e7c417faf566763">
+    <article class="story event bilingual-card" id="event-event-26b602c8258690bc846fe75c">
       <div class="kicker">公共卫生事件 · unconfirmed</div>
       
       <div class="lang-panel lang-zh" data-lang="zh">
         <h3>中文标题暂不可用</h3>
-        <p class="muted">中文摘要暂不可用；系统不会根据标题编造内容。可点击“显示英文”查看原文。</p>
+        <p class="muted">中文摘要暂不可用；系统不会根据标题编造内容。可点击右上角“en”查看原文。</p>
       </div>
       <div class="lang-panel lang-en" data-lang="en" hidden>
-        <h3>Apparent hantavirus outbreak kills 3 on cruise ship, sickens at least 3 more - AOL.com</h3>
-        <p>Apparent hantavirus outbreak kills 3 on cruise ship, sickens at least 3 more AOL.com</p>
+        <h3>Hantavirus-stricken cruise ship docks in the Netherlands for disinfection - 1019por.com</h3>
+        <p>Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News.</p>
       </div>
-      <button type="button" class="language-toggle" data-card-id="event-event-005a059e9e7c417faf566763" aria-expanded="false">显示英文</button>
+      <button type="button" class="language-toggle" data-card-id="event-event-26b602c8258690bc846fe75c" aria-expanded="false" aria-label="显示英文" title="显示英文">en</button>
     
-      <div class="meta">地点待核验 · outbreak · 病例数字未明确报告</div>
+      <div class="meta">Netherlands · other · 病例数字未明确报告</div>
       <p class="event-note">该事件由 1 篇文章聚合；事件版本 v1。</p>
+      <p class="content-status missing">未抓获可分析正文；本条仅基于标题、RSS 摘要或来源元数据，不能视为正文级解读。</p>
       <details class="analysis-details"><summary>查看正文理解、官方确认与不确定性</summary><p class="muted">该事件尚无通过证据校验的正文级解读。</p></details>
-      <div class="links"><a href="https://news.google.com/rss/articles/CBMigAJBVV95cUxNbnZ1U1BRNVNhOEdXQzRlWHdnMDRHT0lPU1lGTWczeXY4cWlrYllCcVRqV0oydmVfM0RRNU9sZEZybHpMWGdrcEdqUnN1YW5vMmtpMEV5LS1PLWQzR2lCSURSbUEzb3EyTG01ZVpZSldnUGpNSUQ1V1dzUS1sU21wTEt3QkcyNUdPeUVCS0JXRndER2J4OTZKbl91U2V3Rng1VU1HVWhNZDhFZzZob20tVmc3cUdibFBCR2paS3J1Ny1SUG9Kd0tlVERITG42OTRtUnVaUHAwVVVlWk9mUy1PcmhmOXlTSnNEQ0RVZHdOZEFDUHlDNW5WaHpEcVRrQjdR?oc=5">Google News RSS English</a></div>
+      <div class="links"><a href="https://news.google.com/rss/articles/CBMiqgFBVV95cUxQblVYclJDMG93U18zUDY4UU0yeFB6MU5icjAxbzAyWDFsNHIzcS04M0w3bUVmeUtRVEx0NXdjWG9MTEFqbWF0N1ROOXdPMlJmZzZhVXRXQVpnSHNYN1lwb1ZVQlJTdHRUZGNTTlNjSG16d2hmWFZMTnQtLXhtOFhkZ0libVdYTG15UVFYaUM3aTVndzlFWl8xWVlyVFFCWnJVMDZsNS1ON04zdw?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US%3Aen">Google News RSS English</a></div>
       <div class="audit-note">翻译：deterministic · translation_unavailable_after_all_providers · github_models:failed → gemini:failed → groq:failed</div>
     </article>
     
-    <article class="story event bilingual-card" id="event-event-f5626c18508f4245845ad9f5">
+    <article class="story event bilingual-card" id="event-event-33549c5795112a93e676a38b">
       <div class="kicker">公共卫生事件 · unconfirmed</div>
       
       <div class="lang-panel lang-zh" data-lang="zh">
-        <h3>世卫组织称与船只相关的汉坦病毒爆发已结束 - MSN</h3>
-        <p>世卫组织宣布与船只相关的汉坦病毒爆发已结束。</p>
-      </div>
-      <div class="lang-panel lang-en" data-lang="en" hidden>
-        <h3>WHO says hantavirus outbreak linked to ship is over - MSN</h3>
-        <p>WHO states that the hantavirus outbreak linked to the ship is over.</p>
-      </div>
-      <button type="button" class="language-toggle" data-card-id="event-event-f5626c18508f4245845ad9f5" aria-expanded="false">显示英文</button>
-    
-      <div class="meta">地点待核验 · outbreak · 病例数字未明确报告</div>
-      <p class="event-note">该事件由 1 篇文章聚合；事件版本 v1。</p>
-      <details class="analysis-details"><summary>查看正文理解、官方确认与不确定性</summary><p class="muted">该事件尚无通过证据校验的正文级解读。</p></details>
-      <div class="links"><a href="https://news.google.com/rss/articles/CBMi_AJBVV95cUxPekxRQVJZMkI5QXBQcjNPdXEyNE52Vzd1ZG5QRGFUQ0tnalFNZ3pGMUs3VXRlSU9EVW9LbGwzMzhaMFRLOWRQWHVXRmdIRUFoeTZzd3RhbDZscTBuMTlicTd3dGZKU19EdFFVUHpUbUJmb2RFUlgwX0lydFJRZTlQZ2FZUXFEYXJpdWlVeTJKMkhhS25mTXItekpwdnFYTUNKU08ydy0yQ2c2X1FseEQxdGlkdndSaXh4LUw5akhvSFFPOVdCbUFHdGJuX19wbll6YmZlY0tPbzVfSzFQOU4wdkJuS2d3TnVnMEoxczE1Mkk5Rkhfcm1FUjZrcTI4WGZEVDEzTVVqSkJPWVJFRldESTBlSTk1LTNJdU5LT3AwRU5EQUtXUk16b2NqZTV0bUVQUGZRY0NaZ0xCenNKVmlKdVowcXZlUnpwaTEzRldId3lLZ0V4bWgwVnRacVg0QUpxX0d1WURhOFBfSWNBUnUyXzZXTWR1emxsTUtaUA?oc=5">Google News RSS English</a></div>
-      <div class="audit-note">翻译：github_models · passed</div>
-    </article>
-    
-    <article class="story event bilingual-card" id="event-event-ba7c988a663ccb06a0f81eb0">
-      <div class="kicker">公共卫生事件 · unconfirmed</div>
-      
-      <div class="lang-panel lang-zh" data-lang="zh">
-        <h3>从汉坦病毒到医疗准备：新兴健康威胁如何重塑感染预防和患者信任 - Medical Tourism Magazine</h3>
-        <p>标题为“从汉坦病毒到医疗准备：新兴健康威胁如何重塑感染预防和患者信任”，由Medical Tourism Magazine发布。文章探讨了新兴健康威胁对感染预防措施和患者信任的影响。具体内容未在摘要中详细说明，全文链接可供查阅。</p>
+        <h3>中文标题暂不可用</h3>
+        <p class="muted">中文摘要暂不可用；系统不会根据标题编造内容。可点击右上角“en”查看原文。</p>
       </div>
       <div class="lang-panel lang-en" data-lang="en" hidden>
         <h3>From Hantavirus to Healthcare Preparedness: How Emerging Health Threats Are Reshaping Infection Prevention and Patient Trust - Medical Tourism Magazine</h3>
-        <p>The article titled 'From Hantavirus to Healthcare Preparedness: How Emerging Health Threats Are Reshaping Infection Prevention and Patient Trust' was published by Medical Tourism Magazine. It discusses how emerging health threats impact infection prevention and patient trust. Detailed content is not provided in the summary, but a link to the full article is available.</p>
+        <p>Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News.</p>
       </div>
-      <button type="button" class="language-toggle" data-card-id="event-event-ba7c988a663ccb06a0f81eb0" aria-expanded="false">显示英文</button>
+      <button type="button" class="language-toggle" data-card-id="event-event-33549c5795112a93e676a38b" aria-expanded="false" aria-label="显示英文" title="显示英文">en</button>
     
       <div class="meta">地点待核验 · other · 病例数字未明确报告</div>
       <p class="event-note">该事件由 1 篇文章聚合；事件版本 v1。</p>
+      <p class="content-status missing">未抓获可分析正文；本条仅基于标题、RSS 摘要或来源元数据，不能视为正文级解读。</p>
       <details class="analysis-details"><summary>查看正文理解、官方确认与不确定性</summary><p class="muted">该事件尚无通过证据校验的正文级解读。</p></details>
-      <div class="links"><a href="https://news.google.com/rss/articles/CBMigAJBVV95cUxOU2lBY196cTROSlZydzFVaEJ1RU9pVWV6b1h5ZzBJZm55Q3RWSFdXOThibm5QdUtmbHZ6VlpYdm96LTB4cnVVUW5CbWx4TjJ1eFNrS3dxZk5XWEFFbmpZSEI0eUdYX1I0ODBTalZWWmFBQno0WllZZ2htNmtBVzVabW9BazIyYlBEUGR2NlNSc0Q4Z0NvTzNaOHVveXU2ODVlRVluak01Y1lWSnpqQmJDVks4dmgxYzMzQi1KNzA4NlNnVXFNMlFkb1JCMXEwcVlHcFd6SmZlS0IzTUwza3pnLTZIM01JNGZPYTJ5bjNkeHl6eWNCNVFXUm53dVJjaGRU?oc=5">Google News RSS English</a></div>
-      <div class="audit-note">翻译：github_models · passed · github_models:passed</div>
+      <div class="links"><a href="https://news.google.com/rss/articles/CBMigAJBVV95cUxOU2lBY196cTROSlZydzFVaEJ1RU9pVWV6b1h5ZzBJZm55Q3RWSFdXOThibm5QdUtmbHZ6VlpYdm96LTB4cnVVUW5CbWx4TjJ1eFNrS3dxZk5XWEFFbmpZSEI0eUdYX1I0ODBTalZWWmFBQno0WllZZ2htNmtBVzVabW9BazIyYlBEUGR2NlNSc0Q4Z0NvTzNaOHVveXU2ODVlRVluak01Y1lWSnpqQmJDVks4dmgxYzMzQi1KNzA4NlNnVXFNMlFkb1JCMXEwcVlHcFd6SmZlS0IzTUwza3pnLTZIM01JNGZPYTJ5bjNkeHl6eWNCNVFXUm53dVJjaGRU?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US%3Aen">Google News RSS English</a></div>
+      <div class="audit-note">翻译：deterministic · translation_unavailable_after_all_providers · github_models:failed → gemini:failed → groq:failed</div>
     </article>
     
-    <article class="story event bilingual-card" id="event-event-2366198c49f5736420192412">
+    <article class="story event bilingual-card" id="event-event-ab46cb86d2ebbf1fe1d19eaf">
       <div class="kicker">公共卫生事件 · unconfirmed</div>
       
       <div class="lang-panel lang-zh" data-lang="zh">
-        <h3>西班牙将接纳船上发生汉坦病毒爆发的游轮</h3>
-        <p>西班牙将接纳一艘船上发生汉坦病毒爆发的游轮。</p>
-      </div>
-      <div class="lang-panel lang-en" data-lang="en" hidden>
-        <h3>Spain to accept cruise ship with hantavirus outbreak on board - Turkmenportal.com</h3>
-        <p>Spain will accept a cruise ship with a hantavirus outbreak on board.</p>
-      </div>
-      <button type="button" class="language-toggle" data-card-id="event-event-2366198c49f5736420192412" aria-expanded="false">显示英文</button>
-    
-      <div class="meta">地点待核验 · outbreak · 病例数字未明确报告</div>
-      <p class="event-note">该事件由 1 篇文章聚合；事件版本 v1。</p>
-      <details class="analysis-details"><summary>查看正文理解、官方确认与不确定性</summary><p class="muted">该事件尚无通过证据校验的正文级解读。</p></details>
-      <div class="links"><a href="https://news.google.com/rss/articles/CBMinAJBVV95cUxNMkxuZjZuS0xyRkw2dlNRRTVsYkxTdTFmZ1VsSmZUMjlIaTQ3S2N1SnBZZmFxVV9rSEQ5Ml96a24zNEQxVWxVRXRvYndUaXBrSnF0dnBuQWpna2xZUDhIeFc4Rk1jbGN1SVZEWkJ4NDVnd1p1RGRyS1JTblNWaF9kMFVJeXFCZFJ4YWNyd0VBb29NVTFQcmh4dTNRUXBjN2dtTFN6VEc0ZzNCRE96Xzg5bG15Vkp3Qkx2a0xhWkRDc3JiM254RmU4MHlEVGUtM214VzQxaHBrcUE2ZnlaUFpMdldGaFJ6VmVDUHBpRndBMmRkODZNaE04MEg1cUVwblh1RHVmOEtLYXdMMzJjNW1vaTBvcHJhYkpQZC1YXw?oc=5">Google News RSS English</a></div>
-      <div class="audit-note">翻译：github_models · passed</div>
-    </article>
-    
-    <article class="story event bilingual-card" id="event-event-893fd07227150587a47c6fcc">
-      <div class="kicker">公共卫生事件 · unconfirmed</div>
-      
-      <div class="lang-panel lang-zh" data-lang="zh">
-        <h3>世卫确认至少一例病例，大西洋邮轮疑似发生汉坦病毒爆发 - Goodreturns</h3>
-        <p>世卫组织确认大西洋邮轮上至少出现一例汉坦病毒感染病例。该报道来自Goodreturns，指出邮轮上疑似发生汉坦病毒爆发。具体病例数和疫情发展情况未在文本中详细说明。</p>
+        <h3>中文标题暂不可用</h3>
+        <p class="muted">中文摘要暂不可用；系统不会根据标题编造内容。可点击右上角“en”查看原文。</p>
       </div>
       <div class="lang-panel lang-en" data-lang="en" hidden>
         <h3>Hantavirus outbreak suspected on Atlantic cruise ship as WHO confirms at least one case - Goodreturns</h3>
-        <p>The WHO has confirmed at least one case of hantavirus infection on an Atlantic cruise ship. The report from Goodreturns indicates a suspected hantavirus outbreak on the ship. Specific case numbers and outbreak details are not provided in the text.</p>
+        <p>Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News.</p>
       </div>
-      <button type="button" class="language-toggle" data-card-id="event-event-893fd07227150587a47c6fcc" aria-expanded="false">显示英文</button>
+      <button type="button" class="language-toggle" data-card-id="event-event-ab46cb86d2ebbf1fe1d19eaf" aria-expanded="false" aria-label="显示英文" title="显示英文">en</button>
     
       <div class="meta">地点待核验 · outbreak · 病例数字未明确报告</div>
       <p class="event-note">该事件由 1 篇文章聚合；事件版本 v1。</p>
+      <p class="content-status missing">未抓获可分析正文；本条仅基于标题、RSS 摘要或来源元数据，不能视为正文级解读。</p>
       <details class="analysis-details"><summary>查看正文理解、官方确认与不确定性</summary><p class="muted">该事件尚无通过证据校验的正文级解读。</p></details>
-      <div class="links"><a href="https://news.google.com/rss/articles/CBMirwFBVV95cUxPTWpHc3RCNlZONngySm00dXFPbVdybzRzYkdhTVMyZGtkbG1nRVVIbEdrczFQS0NHNjBYVmJTa3RaLTI3cFBOWFcxVFpOM1FoeWNXTDJDZkxkblVyN1JjakdhTndzamJveXVuQUVsbGZJNVVIeHh5NFFRVm9VQXM2aHFibWczeU5oZGZ4eGhaTVZhSEQtVmwxdTNaQnNyTkI1Z3FtVDB3YlJHMElLYW9v?oc=5">Google News RSS English</a></div>
-      <div class="audit-note">翻译：github_models · passed · github_models:passed</div>
+      <div class="links"><a href="https://news.google.com/rss/articles/CBMirwFBVV95cUxPTWpHc3RCNlZONngySm00dXFPbVdybzRzYkdhTVMyZGtkbG1nRVVIbEdrczFQS0NHNjBYVmJTa3RaLTI3cFBOWFcxVFpOM1FoeWNXTDJDZkxkblVyN1JjakdhTndzamJveXVuQUVsbGZJNVVIeHh5NFFRVm9VQXM2aHFibWczeU5oZGZ4eGhaTVZhSEQtVmwxdTNaQnNyTkI1Z3FtVDB3YlJHMElLYW9v?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US%3Aen">Google News RSS English</a></div>
+      <div class="audit-note">翻译：deterministic · translation_unavailable_after_all_providers · github_models:failed → gemini:failed → groq:failed</div>
     </article>
     
-    <article class="story event bilingual-card" id="event-event-18f46ce4e14246a3ffa46d17">
+    <article class="story event bilingual-card" id="event-event-272bdcebe566ec98a899f498">
       <div class="kicker">公共卫生事件 · unconfirmed</div>
       
       <div class="lang-panel lang-zh" data-lang="zh">
-        <h3>斐济监测致命汉坦病毒爆发 - 斐济太阳报</h3>
-        <p>斐济正在监测一起致命的汉坦病毒爆发。该报道来自斐济太阳报，关注当地对汉坦病毒疫情的监控。具体疫情规模和防控措施未在文本中详细说明。</p>
+        <h3>中文标题暂不可用</h3>
+        <p class="muted">中文摘要暂不可用；系统不会根据标题编造内容。可点击右上角“en”查看原文。</p>
       </div>
       <div class="lang-panel lang-en" data-lang="en" hidden>
-        <h3>Fiji monitors deadly hantavirus outbreak - Fiji Sun</h3>
-        <p>Fiji is monitoring a deadly hantavirus outbreak. The report from Fiji Sun focuses on local surveillance of the hantavirus situation. Specific outbreak scale and control measures are not detailed in the text.</p>
+        <h3>Hantavirus outbreak suspected on MV Hondius as Cape Verde blocks passengers from disembarking - Goodreturns</h3>
+        <p>Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News.</p>
       </div>
-      <button type="button" class="language-toggle" data-card-id="event-event-18f46ce4e14246a3ffa46d17" aria-expanded="false">显示英文</button>
+      <button type="button" class="language-toggle" data-card-id="event-event-272bdcebe566ec98a899f498" aria-expanded="false" aria-label="显示英文" title="显示英文">en</button>
     
       <div class="meta">地点待核验 · outbreak · 病例数字未明确报告</div>
       <p class="event-note">该事件由 1 篇文章聚合；事件版本 v1。</p>
+      <p class="content-status missing">未抓获可分析正文；本条仅基于标题、RSS 摘要或来源元数据，不能视为正文级解读。</p>
       <details class="analysis-details"><summary>查看正文理解、官方确认与不确定性</summary><p class="muted">该事件尚无通过证据校验的正文级解读。</p></details>
-      <div class="links"><a href="https://news.google.com/rss/articles/CBMigAFBVV95cUxOWHUzZmRGbHRGYnBSUG5yNUl5Y2hKWlNPVnRyNmdQRkFUcml6VkZhRXRYWFpxUzAtQ1FQTUhuMndtSEluck0xOGk5bkJJN2M0T284aUUwY3pDYjRlRjBwTWljTHZwT1dJUWd1eXdFSnVuTzJfa2ZtMEVZcjB4SmZXTQ?oc=5">Google News RSS English</a></div>
-      <div class="audit-note">翻译：github_models · passed · github_models:passed</div>
+      <div class="links"><a href="https://news.google.com/rss/articles/CBMisgFBVV95cUxPcTVYN0NVMHBUUTFXejNDa092MVRtMXl6VGRjdkRrZzNBSUp0dWhIVDJodmRIQmZkYmpJWm9BZ09tOVRzMmYwVlhpYVlzVGIyYUR4RW40djg3VTIzanRsb1l0SU5teE1lSDE2LXZBdTFKUjNydWYxYUc1cGVqVmRpSVZKdWpYZUoyUXVhVmI0R2R0MkV4S2dkYUY2ZXZOVXJHazlvOGh2c1hSTVdNUVQyQ3VR?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US%3Aen">Google News RSS English</a></div>
+      <div class="audit-note">翻译：deterministic · translation_unavailable_after_all_providers · github_models:failed → gemini:failed → groq:failed</div>
     </article>
     
-    <article class="story event bilingual-card" id="event-event-aeb2e1fde570e7a530cbd5c5">
+    <article class="story event bilingual-card" id="event-event-93ddc22d7ee772e09637d168">
       <div class="kicker">公共卫生事件 · unconfirmed</div>
       
       <div class="lang-panel lang-zh" data-lang="zh">
-        <h3>美国监测汉坦病毒邮轮乘客；首例死亡后数十人离船 - MSN</h3>
-        <p>美国正在监测汉坦病毒感染的邮轮乘客。首例死亡事件发生后，数十名乘客离开了邮轮。该报道来自MSN，未详细说明疫情的具体情况和后续措施。</p>
+        <h3>中文标题暂不可用</h3>
+        <p class="muted">中文摘要暂不可用；系统不会根据标题编造内容。可点击右上角“en”查看原文。</p>
       </div>
       <div class="lang-panel lang-en" data-lang="en" hidden>
-        <h3>US monitoring hantavirus cruise passengers; dozens left ship after 1st death - MSN</h3>
-        <p>The U.S. is monitoring cruise passengers for hantavirus infection. After the first death, dozens of passengers left the ship. The report is from MSN and does not detail the outbreak specifics or follow-up actions.</p>
+        <h3>CDC ends US hantavirus response - MSN</h3>
+        <p>Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News.</p>
       </div>
-      <button type="button" class="language-toggle" data-card-id="event-event-aeb2e1fde570e7a530cbd5c5" aria-expanded="false">显示英文</button>
+      <button type="button" class="language-toggle" data-card-id="event-event-93ddc22d7ee772e09637d168" aria-expanded="false" aria-label="显示英文" title="显示英文">en</button>
     
       <div class="meta">地点待核验 · other · 病例数字未明确报告</div>
       <p class="event-note">该事件由 1 篇文章聚合；事件版本 v1。</p>
+      <p class="content-status missing">未抓获可分析正文；本条仅基于标题、RSS 摘要或来源元数据，不能视为正文级解读。</p>
       <details class="analysis-details"><summary>查看正文理解、官方确认与不确定性</summary><p class="muted">该事件尚无通过证据校验的正文级解读。</p></details>
-      <div class="links"><a href="https://news.google.com/rss/articles/CBMi2wFBVV95cUxPZVV3a2FRS1pDb25WNWxQLWRXcHpuUFMtNHN6Y0gyU0daZGo2bnpPV3B5T3JqblpHNkZlNnlIM1JDQTNNMzBmcjl5TnJhSFhnZ2tpVmVVLWwzZ0J6d21MMGpCOVRyMFp4QzlZUXh0UFpJOGYwcGxMa2FLR2JtSlNlUjFmTTBpRWF6dXJkMzY4VnJicnhEM2QtUVU4TjdXSmhEb19FbGh4QUs0UlcxNUxFQTN1c3FmcGtwWGxjTHNyb3ZMc084eHVOSDRRdHpnLV9NalBxREloWWZ2OVk?oc=5">Google News RSS English</a></div>
-      <div class="audit-note">翻译：github_models · passed · github_models:passed</div>
+      <div class="links"><a href="https://news.google.com/rss/articles/CBMitwJBVV95cUxPSWEtcXRVUVpBMU9YUjBXWHA3UHRsbC1QaC1PUnVOd1B5MXBTYWN5WVc1UVA5NkI5OXVGczI0eEhKZFlOaHBXMV8ySWlFZ2lOWjBDUWVvN3FHWTIxVE5sbllSa2tsUWswemVQU0NWY2puNkx2bG1CcEp2OGZiUi1udlQybFFfdlhSLXJST3ZSRU1SaS1aX3V2ZzhSUTFPRlJzY195RlFMX29XSFlHeEJzQktVZHg0VUFrV3lFNFpFLUU1MGU5MTdkbmh1TldQZ3lOUDJqcW1tNllhdVNzZHFQc2g5UHowRDVXdkpQMXA5QzZOLWZYVGdWV1JSRDEzc2R5LVp6QWI2NGJkZENrVHo2X1BnMzJXbnctdzVFQ0U4amQyNW5TU0R6a2RNZ3pzZTE5X0QyWEMxaw?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US%3Aen">Google News RSS English</a></div>
+      <div class="audit-note">翻译：deterministic · translation_unavailable_after_all_providers · github_models:failed → gemini:failed → groq:failed</div>
     </article>
     
-    <article class="story event bilingual-card" id="event-event-c46464efb63e9a4abadb16c1">
+    <article class="story event bilingual-card" id="event-event-d2233985b9d2c3fd8720b902">
       <div class="kicker">公共卫生事件 · unconfirmed</div>
       
       <div class="lang-panel lang-zh" data-lang="zh">
-        <h3>涉汉坦病毒邮轮乘客陆续疏散归国 世卫组织：全球传播风险“低” - 财联社</h3>
-        <p>涉汉坦病毒邮轮乘客陆续疏散归国 世卫组织：全球传播风险“低” 财联社</p>
+        <h3>每日简报：美国人感染汉塔病毒 - MSN</h3>
+        <p>文章标题为《每日简报：美国人感染汉塔病毒 - MSN》。文章内容为综合最新的新闻报道，汇总自全球各地的来源，由Google News提供。</p>
       </div>
       <div class="lang-panel lang-en" data-lang="en" hidden>
-        <h3>涉汉坦病毒邮轮乘客陆续疏散归国 世卫组织：全球传播风险“低” - 财联社</h3>
-        <p>涉汉坦病毒邮轮乘客陆续疏散归国 世卫组织：全球传播风险“低” 财联社</p>
+        <h3>Daily briefing: American positive for hantavirus - MSN</h3>
+        <p>The article title is 'Daily briefing: American positive for hantavirus - MSN'. The text is a comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News.</p>
       </div>
-      <button type="button" class="language-toggle" data-card-id="event-event-c46464efb63e9a4abadb16c1" aria-expanded="false">显示英文</button>
+      <button type="button" class="language-toggle" data-card-id="event-event-d2233985b9d2c3fd8720b902" aria-expanded="false" aria-label="显示英文" title="显示英文">en</button>
     
       <div class="meta">地点待核验 · other · 病例数字未明确报告</div>
       <p class="event-note">该事件由 1 篇文章聚合；事件版本 v1。</p>
+      <p class="content-status missing">未抓获可分析正文；本条仅基于标题、RSS 摘要或来源元数据，不能视为正文级解读。</p>
       <details class="analysis-details"><summary>查看正文理解、官方确认与不确定性</summary><p class="muted">该事件尚无通过证据校验的正文级解读。</p></details>
-      <div class="links"><a href="https://news.google.com/rss/articles/CBMiSEFVX3lxTFBQZENiY0p0NUpLZzFpWGhpd1lCUkZqeWs4SlByWEZvMnhjdVV4bWY4VDVSWk9kWXdReGVzWVdhVVBCNkRTbG8ycg?oc=5">Google News RSS Chinese</a></div>
-      <div class="audit-note">翻译：deterministic · source_already_chinese</div>
+      <div class="links"><a href="https://news.google.com/rss/articles/CBMijwNBVV95cUxOb1lWZTlKczB5aHJQOTUyQ28zWVEybzFKV2pBN3kwcXliTmNOSnc2bVZETDNhbk11SGV3OXdxWnFXZ2otQVd2TmNKblJLNnp0bkJ6QjZkWmpROVhaTUdDMVJUX1ZQaDRXV1NLZlpqU1J2ZWlGcW4yZW5HN2d5TV96UzBpeWRtWnJ1UVBQTzBqejhsRkJWN2R0bzJZRXF3UDcwQXRBMFBlRF8zeGdHYkw4aGRtU0d0R2VEajBueFl0NTdOWXpVYjRlQTk5LTAxWW0tX1RZTnUyNnA0U0x5Ti1ZUlRXeEVmUXNVd000UlZIQXhWaGJsNXlYTU5GTmtyWFFvNkFOdzl2WFdMT212TkswQ2cyeFJOWURFbnpyNmRVVG1TSVJzUmRGUHBjRDJ0VTBIeXlsRGJWRWRxaHlmbUtQLVRUZUE1cV9VMGhmUW16VzJfd2J6azVCRHpvSERBTkxpQmx5dlI5RUM5Zl9XZGgtaTZNNlBVNFJWekljaUxnaXYtM3kzb1VtRjAwNUhMM0k?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US%3Aen">Google News RSS English</a></div>
+      <div class="audit-note">翻译：github_models · passed · github_models:passed</div>
     </article>
     
-    <article class="story event bilingual-card" id="event-event-5ae9bd68779ca49e62a8effd">
+    <article class="story event bilingual-card" id="event-event-8b271d84ad93e74d4d44cc28">
       <div class="kicker">公共卫生事件 · unconfirmed</div>
       
       <div class="lang-panel lang-zh" data-lang="zh">
-        <h3>汉坦病毒邮轮疫情“零号病人”身份曝光 - 凤凰网</h3>
-        <p>汉坦病毒邮轮疫情“零号病人”身份曝光 凤凰网</p>
+        <h3>如果你在游轮上感染汉塔病毒，游轮公司可能不欠你一分钱——原因在这里 - MSN</h3>
+        <p>文章讨论了在游轮上感染汉塔病毒后，游轮公司可能不欠赔偿的原因。</p>
       </div>
       <div class="lang-panel lang-en" data-lang="en" hidden>
-        <h3>汉坦病毒邮轮疫情“零号病人”身份曝光 - 凤凰网</h3>
-        <p>汉坦病毒邮轮疫情“零号病人”身份曝光 凤凰网</p>
+        <h3>If you catch hantavirus on a cruise, the cruise line probably doesn't owe you a cent — here's why - MSN</h3>
+        <p>The article discusses the reasons why a cruise line may not owe compensation if you catch hantavirus on a cruise.</p>
       </div>
-      <button type="button" class="language-toggle" data-card-id="event-event-5ae9bd68779ca49e62a8effd" aria-expanded="false">显示英文</button>
+      <button type="button" class="language-toggle" data-card-id="event-event-8b271d84ad93e74d4d44cc28" aria-expanded="false" aria-label="显示英文" title="显示英文">en</button>
+    
+      <div class="meta">地点待核验 · other · 病例数字未明确报告</div>
+      <p class="event-note">该事件由 1 篇文章聚合；事件版本 v1。</p>
+      <p class="content-status missing">未抓获可分析正文；本条仅基于标题、RSS 摘要或来源元数据，不能视为正文级解读。</p>
+      <details class="analysis-details"><summary>查看正文理解、官方确认与不确定性</summary><p class="muted">该事件尚无通过证据校验的正文级解读。</p></details>
+      <div class="links"><a href="https://news.google.com/rss/articles/CBMi2wFBVV95cUxNM3dVd1gtSVN0SlZkSzRHYXozcW1UXzRtaTRfRmtIYXROeEhyd0Q5QWo1dFJzS0NYT2VtWFVRbVFjcU1nUV9Fd1pyTV9uYzRiZUlmTWZnZzhGcXdmTUtPaGN6a1lSUmZrWUplNVQtM3pxZi1jc2RJbVA1YjFFMzQ5dFNSNmVRZGZ2cjBnN0pMd3VwQ01Zd19iYnliNkFLUndDOGVoX1BUZjVfaHgzRGthVTlLQzNPcUZlOVdSZUNNQ1NRN1BoQjRWcnY3SWlEMmxvaEpaZl9NZWIxYUE?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US%3Aen">Google News RSS English</a></div>
+      <div class="audit-note">翻译：github_models · passed · github_models:passed</div>
+    </article>
+    
+    <article class="story event bilingual-card" id="event-event-1e0f5398e094794beb99c081">
+      <div class="kicker">公共卫生事件 · unconfirmed</div>
+      
+      <div class="lang-panel lang-zh" data-lang="zh">
+        <h3>中文标题暂不可用</h3>
+        <p class="muted">中文摘要暂不可用；系统不会根据标题编造内容。可点击右上角“en”查看原文。</p>
+      </div>
+      <div class="lang-panel lang-en" data-lang="en" hidden>
+        <h3>CDC classifies hantavirus outbreak as a 'Level 3' emergency response - MSN</h3>
+        <p>Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News.</p>
+      </div>
+      <button type="button" class="language-toggle" data-card-id="event-event-1e0f5398e094794beb99c081" aria-expanded="false" aria-label="显示英文" title="显示英文">en</button>
     
       <div class="meta">地点待核验 · outbreak · 病例数字未明确报告</div>
       <p class="event-note">该事件由 1 篇文章聚合；事件版本 v1。</p>
+      <p class="content-status missing">未抓获可分析正文；本条仅基于标题、RSS 摘要或来源元数据，不能视为正文级解读。</p>
       <details class="analysis-details"><summary>查看正文理解、官方确认与不确定性</summary><p class="muted">该事件尚无通过证据校验的正文级解读。</p></details>
-      <div class="links"><a href="https://news.google.com/rss/articles/CBMiWEFVX3lxTE5fdjRvZnY5RmdwcFFoMmhTcHpQZ00yTFJ6OWFsUm1JXzFOUThCT2VIZW1BME9BclV2cnFWeVVkY1Q2ODNHR3VOakZhcVZRRnk5ZDB2UlBlQWg?oc=5">Google News RSS Chinese</a></div>
-      <div class="audit-note">翻译：deterministic · source_already_chinese</div>
+      <div class="links"><a href="https://news.google.com/rss/articles/CBMiyAFBVV95cUxOdGs2QUl5T3AyeHZ5THFHRkZfSDhqbDlQLUdTVS04YzRMQmlfVU02cXp1TmZUcDhfcVdpcUFqVzF3MUZpb2NQYmh6OFQtRnlabG5OQkd6YTVPSi11WVBrVlIwb05uY1dydUttWTVmU1pRUlBoTGwxa2hRZXctZVZneDFUc2NpcWk3eW5JbXQ2a2E2MEVYUkVpVHVfNUQ2aHRaUG83d3RCVGpxVlY0NXhZY0VVcTZ5VXNRa1pUSlQ0Z0RBNlBSd3hyZA?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US%3Aen">Google News RSS English</a></div>
+      <div class="audit-note">翻译：deterministic · translation_unavailable_after_all_providers · github_models:failed → gemini:failed → groq:failed</div>
     </article>
     
-    <article class="story event bilingual-card" id="event-event-e78493ffc14aeae528f023d8">
+    <article class="story event bilingual-card" id="event-event-c473cca57dbd113a6b59df4d">
       <div class="kicker">公共卫生事件 · unconfirmed</div>
       
       <div class="lang-panel lang-zh" data-lang="zh">
-        <h3>病死率31.7%!阿根廷今年新增42例汉坦病毒感染病例,已向多国提供检测试剂以协助调查 - 新浪财经</h3>
-        <p>病死率31.7%!阿根廷今年新增42例汉坦病毒感染病例,已向多国提供检测试剂以协助调查 新浪财经</p>
+        <h3>特朗普担心宋病毒爆发，第三位英国人可能感染</h3>
+        <p>特朗普表示担心宋病毒爆发，第三位英国人可能感染。</p>
       </div>
       <div class="lang-panel lang-en" data-lang="en" hidden>
-        <h3>病死率31.7%!阿根廷今年新增42例汉坦病毒感染病例,已向多国提供检测试剂以协助调查 - 新浪财经</h3>
-        <p>病死率31.7%!阿根廷今年新增42例汉坦病毒感染病例,已向多国提供检测试剂以协助调查 新浪财经</p>
+        <h3>Trump says he's worried about hantavirus outbreak as a third Brit is feared to be infected - MSN</h3>
+        <p>Trump expresses concern about the hantavirus outbreak, with a third British person potentially infected.</p>
       </div>
-      <button type="button" class="language-toggle" data-card-id="event-event-e78493ffc14aeae528f023d8" aria-expanded="false">显示英文</button>
+      <button type="button" class="language-toggle" data-card-id="event-event-c473cca57dbd113a6b59df4d" aria-expanded="false" aria-label="显示英文" title="显示英文">en</button>
     
-      <div class="meta">Argentina · other · 病例数字未明确报告</div>
+      <div class="meta">地点待核验 · outbreak · 病例数字未明确报告</div>
       <p class="event-note">该事件由 1 篇文章聚合；事件版本 v1。</p>
+      <p class="content-status missing">未抓获可分析正文；本条仅基于标题、RSS 摘要或来源元数据，不能视为正文级解读。</p>
       <details class="analysis-details"><summary>查看正文理解、官方确认与不确定性</summary><p class="muted">该事件尚无通过证据校验的正文级解读。</p></details>
-      <div class="links"><a href="https://news.google.com/rss/articles/CBMihAFBVV95cUxPbVpfbXo4N2hFSXlIUEY2MkVXWmxyal9mYWwtY1p5c0U2c1pyZmRoVjdPaDcwZmhxTFliOUdaQkhUQ3lfT1JqdjJPc2FUcjZMN09XWGFDQkl4eXh3a0RjWEJ1S2RQU0xVSXllS1ZiTUdrbkU0U0h3NkVFYmphR0lsdGJObUo?oc=5">Google News RSS Chinese</a></div>
-      <div class="audit-note">翻译：deterministic · source_already_chinese</div>
+      <div class="links"><a href="https://news.google.com/rss/articles/CBMi6AFBVV95cUxPZGp0SEZNWHpON0tzZFFIZ2tiLUhReC1zVFVZZDgxQ3AyQkxxcmo3My1nd3pfZVZFOFp3aGpDZnJUSjRycFBJdmpxMlFSR25TTkpVRm52eEpDdzd3ZG4yMDhDb0V1bm1sTVpGMjdkc1B4NkVHR3dCeE85cDhoU0tVWjFRbHZ0azcxVk5xOVFtUUxKRVFudmJVdXR5QklMMWhwSDRpZUstbTNpZXN5M2c1Qmk1Y2l5S25MYnI5Rk1TWGoyUkhVS0hIR3dzNm1oYXVVLWxpSFVMdU85UTE2cjlkM1lHYkdKSmUt?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US%3Aen">Google News RSS English</a></div>
+      <div class="audit-note">翻译：github_models · passed · github_models:passed</div>
     </article>
     
-    <article class="story event bilingual-card" id="event-event-f73a567099489bb97583c34d">
+    <article class="story event bilingual-card" id="event-event-6340ddb1f2b1b9a16b01cb57">
+      <div class="kicker">公共卫生事件 · unconfirmed</div>
+      
+      <div class="lang-panel lang-zh" data-lang="zh">
+        <h3>WHO 宣布宋病毒爆发结束</h3>
+        <p>WHO 宣布宋病毒爆发结束。</p>
+      </div>
+      <div class="lang-panel lang-en" data-lang="en" hidden>
+        <h3>WHO declares deadly hantavirus outbreak over - MSN</h3>
+        <p>WHO declares the hantavirus outbreak over.</p>
+      </div>
+      <button type="button" class="language-toggle" data-card-id="event-event-6340ddb1f2b1b9a16b01cb57" aria-expanded="false" aria-label="显示英文" title="显示英文">en</button>
+    
+      <div class="meta">地点待核验 · outbreak · 病例数字未明确报告</div>
+      <p class="event-note">该事件由 1 篇文章聚合；事件版本 v1。</p>
+      <p class="content-status missing">未抓获可分析正文；本条仅基于标题、RSS 摘要或来源元数据，不能视为正文级解读。</p>
+      <details class="analysis-details"><summary>查看正文理解、官方确认与不确定性</summary><p class="muted">该事件尚无通过证据校验的正文级解读。</p></details>
+      <div class="links"><a href="https://news.google.com/rss/articles/CBMi4gFBVV95cUxNZFFFeEltTmp0WkhXX1NvYVc1Wm9nWUR0aXN6Yk1mQ2Nab2lqVWdNNkgxdHpaN2ZHbExwT21HdjRwOTB4bjBUTlhRSll2a0pBZmJKUEVrLVVqcnJaekM3aTlEMl83Y1pKS1BYQjBHdmFjU28wZzFOMWJDdnhiRkZ1enJVNGt0alhTWVVXUGtlV3AxQ1FLNlFMZEpaOV9DaU8zSldxamdBMDVRY0d0Tm50LTlzWHp0YkxYVEZFVGx2QndCYWJqUDIzOTYtWFdlNnQzbmJoS05OUGtfdERpOXdRX3Vn?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US%3Aen">Google News RSS English</a></div>
+      <div class="audit-note">翻译：github_models · passed · github_models:passed</div>
+    </article>
+    
+    <article class="story event bilingual-card" id="event-event-620c10166255d52020c1aef6">
+      <div class="kicker">公共卫生事件 · unconfirmed</div>
+      
+      <div class="lang-panel lang-zh" data-lang="zh">
+        <h3>中文标题暂不可用</h3>
+        <p class="muted">中文摘要暂不可用；系统不会根据标题编造内容。可点击右上角“en”查看原文。</p>
+      </div>
+      <div class="lang-panel lang-en" data-lang="en" hidden>
+        <h3>Cruise passengers isolated after hantavirus outbreak allowed to leave quarantine facility - MSN</h3>
+        <p>Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News.</p>
+      </div>
+      <button type="button" class="language-toggle" data-card-id="event-event-620c10166255d52020c1aef6" aria-expanded="false" aria-label="显示英文" title="显示英文">en</button>
+    
+      <div class="meta">地点待核验 · outbreak · 病例数字未明确报告</div>
+      <p class="event-note">该事件由 1 篇文章聚合；事件版本 v1。</p>
+      <p class="content-status missing">未抓获可分析正文；本条仅基于标题、RSS 摘要或来源元数据，不能视为正文级解读。</p>
+      <details class="analysis-details"><summary>查看正文理解、官方确认与不确定性</summary><p class="muted">该事件尚无通过证据校验的正文级解读。</p></details>
+      <div class="links"><a href="https://news.google.com/rss/articles/CBMimAJBVV95cUxNbUtod1FfS2dMTjRidS1SZTBzUGM1MnBkcXcwVkFzQzZ1YmJ4cF9VeHZ1M3NOTnlZMGhZT2JucG9mUkFqSjVkbTVUNXhDN3FVUEMxUVJEU3BYUjZ3cGhnQU5IYnd4YzBYN0hRb29VMWN2Z25ITTU0SmJ3eUljQ0twbHBjdWVsQlYyRzlIYzVBNVA3enNCS1JGeVJQTHRaellsQ2RrcFctTm50eW5oWEl2VEtXUk5UYlpudWFibll2M3RCNHlTRWMwVV9hazgwU1RYZzRnYjlRZVZteVp2QlYybzcycXNMdENjNF90VWVkRnZOTjdNR09FX25UUDY1SnNlblZKbklEeXZnRXV6TmVubmMtMWpjNHJt?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US%3Aen">Google News RSS English</a></div>
+      <div class="audit-note">翻译：deterministic · translation_unavailable_after_all_providers · github_models:failed → gemini:failed → groq:failed</div>
+    </article>
+    
+    <article class="story event bilingual-card" id="event-event-fe1e8ed3ff4d114ccd6deafd">
+      <div class="kicker">公共卫生事件 · unconfirmed</div>
+      
+      <div class="lang-panel lang-zh" data-lang="zh">
+        <h3>中文标题暂不可用</h3>
+        <p class="muted">中文摘要暂不可用；系统不会根据标题编造内容。可点击右上角“en”查看原文。</p>
+      </div>
+      <div class="lang-panel lang-en" data-lang="en" hidden>
+        <h3>Kansas monitoring 3 people tied to cruise ship hantavirus outbreak - MSN</h3>
+        <p>Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News.</p>
+      </div>
+      <button type="button" class="language-toggle" data-card-id="event-event-fe1e8ed3ff4d114ccd6deafd" aria-expanded="false" aria-label="显示英文" title="显示英文">en</button>
+    
+      <div class="meta">地点待核验 · outbreak · 病例数字未明确报告</div>
+      <p class="event-note">该事件由 1 篇文章聚合；事件版本 v1。</p>
+      <p class="content-status missing">未抓获可分析正文；本条仅基于标题、RSS 摘要或来源元数据，不能视为正文级解读。</p>
+      <details class="analysis-details"><summary>查看正文理解、官方确认与不确定性</summary><p class="muted">该事件尚无通过证据校验的正文级解读。</p></details>
+      <div class="links"><a href="https://news.google.com/rss/articles/CBMi3wJBVV95cUxNbmJELWVUZHVzdllJQUU3Ti00WkJIQnJOcDZrNG5LS1UxbEdFUmNlZWVJQnVRcTlmMmRvMTdkUGs4enFtaWo1dWpxZ1FnSGpmZjhISG9Jc29xdlJ0blJaNGNmeXJHS2JzNzQzX3Y4V2htTXlINk9jSjQ3TVBwcTZYcUNlQXlxUHRfTXRsa1ZlQ3ptb0JpVVZzLVUyczNzQlJKYVFJaEx3amNUNWxwT3NTWXIzdzByRnlaU0g0YVY5YlU2QWRCYjRoMm9hZkZYZjFYMkJHellOamt6RmRYOUNQVUR5c1RlaEVER0xmRTFudzJ5clNUUXlXc21pTXc1NzJTRkhCU2Z4ekRsZW9fX3c0SE5TWHBtVFlRVjcwVEtwVEg1eFJ2a1MtdUFXWW5BcGxLbWpxWDhXN013RDFZM19zaUlOb1V3RzkxR3AxUVF3RGROSE5BbHpicWRIczcxaFE?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US%3Aen">Google News RSS English</a></div>
+      <div class="audit-note">翻译：deterministic · translation_unavailable_after_all_providers · github_models:failed → gemini:failed → groq:failed</div>
+    </article>
+    
+    <article class="story event bilingual-card" id="event-event-6cff8b40dfd72fd1be3d2d53">
+      <div class="kicker">公共卫生事件 · unconfirmed</div>
+      
+      <div class="lang-panel lang-zh" data-lang="zh">
+        <h3>骗子已经利用汉坦病毒诈骗他人 - MSN</h3>
+        <p>骗子利用汉坦病毒进行诈骗。全球各地新闻来源的全面最新新闻报道，由 Google News 聚合。</p>
+      </div>
+      <div class="lang-panel lang-en" data-lang="en" hidden>
+        <h3>Scammers are already using the hantavirus to fleece people - MSN</h3>
+        <p>Scammers are using the hantavirus to defraud people. Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News.</p>
+      </div>
+      <button type="button" class="language-toggle" data-card-id="event-event-6cff8b40dfd72fd1be3d2d53" aria-expanded="false" aria-label="显示英文" title="显示英文">en</button>
+    
+      <div class="meta">地点待核验 · other · 病例数字未明确报告</div>
+      <p class="event-note">该事件由 1 篇文章聚合；事件版本 v1。</p>
+      <p class="content-status missing">未抓获可分析正文；本条仅基于标题、RSS 摘要或来源元数据，不能视为正文级解读。</p>
+      <details class="analysis-details"><summary>查看正文理解、官方确认与不确定性</summary><p class="muted">该事件尚无通过证据校验的正文级解读。</p></details>
+      <div class="links"><a href="https://news.google.com/rss/articles/CBMiqgFBVV95cUxOZEpyYU5RRHprWmVvRmF1WVlOZnMzYkdheVBHZkctUEE4T01ZckY2UnhadXIzZlhsN01uUDBGWi1CWlFtdnA1Z08xTzJwOTdrX1NiNERITk9veTR6eXpmaFhzWFpzbFhXVFFxb1hTV0ttZHMwWW9DbVhsQ3RmSUYzMXpvVTdOUkVTTi1MNXlfQkdLQmxNcHI5d0JNNV9PanNOeWhjUzNFVF9wUQ?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US%3Aen">Google News RSS English</a></div>
+      <div class="audit-note">翻译：github_models · passed · github_models:passed</div>
+    </article>
+    
+    <article class="story event bilingual-card" id="event-event-744e6e1fa522d3b0ed19752e">
+      <div class="kicker">公共卫生事件 · unconfirmed</div>
+      
+      <div class="lang-panel lang-zh" data-lang="zh">
+        <h3>北美确认首例邮轮上汉坦病毒病例 - MSN</h3>
+        <p>北美确认首例邮轮上汉坦病毒病例。全球各地新闻来源的全面最新新闻报道，由 Google News 聚合。</p>
+      </div>
+      <div class="lang-panel lang-en" data-lang="en" hidden>
+        <h3>First case of hantavirus from cruise ship confirmed in North America - MSN</h3>
+        <p>The first case of hantavirus from a cruise ship has been confirmed in North America. Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News.</p>
+      </div>
+      <button type="button" class="language-toggle" data-card-id="event-event-744e6e1fa522d3b0ed19752e" aria-expanded="false" aria-label="显示英文" title="显示英文">en</button>
+    
+      <div class="meta">地点待核验 · other · 病例数字未明确报告</div>
+      <p class="event-note">该事件由 1 篇文章聚合；事件版本 v1。</p>
+      <p class="content-status missing">未抓获可分析正文；本条仅基于标题、RSS 摘要或来源元数据，不能视为正文级解读。</p>
+      <details class="analysis-details"><summary>查看正文理解、官方确认与不确定性</summary><p class="muted">该事件尚无通过证据校验的正文级解读。</p></details>
+      <div class="links"><a href="https://news.google.com/rss/articles/CBMiywFBVV95cUxNX1c3SWVmNGxjWjhTRFJlZFJQd0NjRGhiYVdDWkdPSzRkbENOWndoZi1TNmdYejhzbFVFalcyYXNocU5PLV84aWNFdm01a20tNmNfTTZwR0pPU2NrVml0aFpoMjZvNTVGTnZrcnNoSmZBM2F2RFFCdWJSbXpKSXpTYzJGNERVTnhvamN0XzE3d2JpMGxuTzF0RUp6clJ5NDZSZDRSNXk5MjlleWl5Q2kwb284R1lXUlNTa0FUb25tNXdaeDY4YjAxZ2tYWQ?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US%3Aen">Google News RSS English</a></div>
+      <div class="audit-note">翻译：github_models · passed · github_models:passed</div>
+    </article>
+    
+    <article class="story event bilingual-card" id="event-event-987d719be6edec46323c7c7c">
+      <div class="kicker">公共卫生事件 · unconfirmed</div>
+      
+      <div class="lang-panel lang-zh" data-lang="zh">
+        <h3>观点：汉坦病毒让我重新考虑世界卫生组织。特朗普也应该这样做。 - MSN</h3>
+        <p>汉坦病毒让作者重新考虑世界卫生组织。全球各地新闻来源的全面最新新闻报道，由 Google News 聚合。</p>
+      </div>
+      <div class="lang-panel lang-en" data-lang="en" hidden>
+        <h3>Opinion: Hantavirus made me reconsider the World Health Organization. Trump should too. - MSN</h3>
+        <p>Hantavirus made the author reconsider the World Health Organization. Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News.</p>
+      </div>
+      <button type="button" class="language-toggle" data-card-id="event-event-987d719be6edec46323c7c7c" aria-expanded="false" aria-label="显示英文" title="显示英文">en</button>
+    
+      <div class="meta">地点待核验 · other · 病例数字未明确报告</div>
+      <p class="event-note">该事件由 1 篇文章聚合；事件版本 v1。</p>
+      <p class="content-status missing">未抓获可分析正文；本条仅基于标题、RSS 摘要或来源元数据，不能视为正文级解读。</p>
+      <details class="analysis-details"><summary>查看正文理解、官方确认与不确定性</summary><p class="muted">该事件尚无通过证据校验的正文级解读。</p></details>
+      <div class="links"><a href="https://news.google.com/rss/articles/CBMi5wFBVV95cUxNVjV0emtVSGhkdmt0bjFaNHQ3U21MeVMwWDctVFFjOG5QazhOTHRqQUoyc3Y0dVhtajUwSVQ0eXBEYjFCZUZwUE1XOEEyQnlfbmJZZVhBOS1EMDNtM2hBOGlZZk05elJkVHJnRXpESk93ZWNUTkZqX0Z3Y2dQbndOb0JKYlI5bWIzYzFYTXJyM25EanZzVmIzNmdpQ2IxSldrcEY1VllaRjBVV3JsbF9VcGRpcnVWVmpmUGxXMlVNWF9vbkl4OEMxcU5jWlJvbkc1d1ZNdHZMalRXeEctNzBfWmRzVXduRXM?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US%3Aen">Google News RSS English</a></div>
+      <div class="audit-note">翻译：github_models · passed · github_models:passed</div>
+    </article>
+    
+    <article class="story event bilingual-card" id="event-event-4f158359be7dbb6ef3cb5708">
+      <div class="kicker">公共卫生事件 · unconfirmed</div>
+      
+      <div class="lang-panel lang-zh" data-lang="zh">
+        <h3>因汉塔病毒关闭美国而威胁大规模枪击案，阿肯色州男子被捕 - MSN</h3>
+        <p>阿肯色州一男子因威胁如果汉塔病毒关闭美国将进行大规模枪击而被捕。该男子的威胁行为引起了当局的注意。报道由 Google News 聚合，提供全球各地的最新综合新闻。</p>
+      </div>
+      <div class="lang-panel lang-en" data-lang="en" hidden>
+        <h3>Arkansas man arrested after allegedly threatening mass shooting if hantavirus shuts down US - MSN</h3>
+        <p>An Arkansas man was arrested for allegedly threatening a mass shooting if hantavirus shuts down the US. The man's threat was reported by Google News, which aggregates comprehensive up-to-date news coverage from sources all over the world.</p>
+      </div>
+      <button type="button" class="language-toggle" data-card-id="event-event-4f158359be7dbb6ef3cb5708" aria-expanded="false" aria-label="显示英文" title="显示英文">en</button>
+    
+      <div class="meta">地点待核验 · other · 病例数字未明确报告</div>
+      <p class="event-note">该事件由 1 篇文章聚合；事件版本 v1。</p>
+      <p class="content-status missing">未抓获可分析正文；本条仅基于标题、RSS 摘要或来源元数据，不能视为正文级解读。</p>
+      <details class="analysis-details"><summary>查看正文理解、官方确认与不确定性</summary><p class="muted">该事件尚无通过证据校验的正文级解读。</p></details>
+      <div class="links"><a href="https://news.google.com/rss/articles/CBMilANBVV95cUxPQllqanp6dDhEaGViVEhodmtyaFQ4T2FOVWdpdmp5WVVhWWRpRHg0WE5vbzZwczhTZXcwRTdsZkc2Z2xzUVpRSXNRSFlkLUJPMl9zeFlvNzFFeVRHQkNnWG1XLWt2NXowMlhhZXRxTGc2YXdPN00yV2luNmxFVm9SVGlqZnpLbWJ2V0hlLWR0X0hZTGdoS2dkLUg1dWJLS0JMUWxpRzBvMEc2Ty1yTUdzUElSaFdmbUc0ZHRkWTRvbTlEYzd0UGh3WDNMWjA5MFR2NW5vaC1acFRHdnd2U2hpUlEwV1ZlWkVFaFdYcHJDVFB6czN3TURJck13UGRLQk1FVW00LTVoZGNCaWwzYTJIcTlXTTNNeGwxc25oRDVWSERGUXByT3Q5UVlUY2VVOXpXbnhqdGxTaGlfdVlIQXBRVVVhVTB0UmlpbHpacHpTVEZxVGVaMklfUjd5dEN3UFhqSjdqZ1cyY0M1WHV1RldjNUE0ZDkzOU1NVHNQTndPTlFnUXdkYXE1Y1hyN1AzeDRXSUVmSA?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US%3Aen">Google News RSS English</a></div>
+      <div class="audit-note">翻译：github_models · passed · github_models:passed</div>
+    </article>
+    
+    <article class="story event bilingual-card" id="event-event-a482cf3a72992f3a283152b4">
       <div class="kicker">公共卫生事件 · unconfirmed</div>
       
       <div class="lang-panel lang-zh" data-lang="zh">
         <h3>综述：人工智能在汉坦病毒肺综合征胸部影像中的应用：罕见疾病影像实践考量 - 生物通</h3>
-        <p>综述：人工智能在汉坦病毒肺综合征胸部影像中的应用：罕见疾病影像实践考量 生物通</p>
+        <p>Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News.</p>
       </div>
       <div class="lang-panel lang-en" data-lang="en" hidden>
         <h3>综述：人工智能在汉坦病毒肺综合征胸部影像中的应用：罕见疾病影像实践考量 - 生物通</h3>
-        <p>综述：人工智能在汉坦病毒肺综合征胸部影像中的应用：罕见疾病影像实践考量 生物通</p>
+        <p>Comprehensive up-to-date news coverage, aggregated from sources all over the world by Google News.</p>
       </div>
-      <button type="button" class="language-toggle" data-card-id="event-event-f73a567099489bb97583c34d" aria-expanded="false">显示英文</button>
+      <button type="button" class="language-toggle" data-card-id="event-event-a482cf3a72992f3a283152b4" aria-expanded="false" aria-label="显示英文" title="显示英文">en</button>
     
       <div class="meta">地点待核验 · other · 病例数字未明确报告</div>
       <p class="event-note">该事件由 1 篇文章聚合；事件版本 v1。</p>
+      <p class="content-status missing">未抓获可分析正文；本条仅基于标题、RSS 摘要或来源元数据，不能视为正文级解读。</p>
       <details class="analysis-details"><summary>查看正文理解、官方确认与不确定性</summary><p class="muted">该事件尚无通过证据校验的正文级解读。</p></details>
-      <div class="links"><a href="https://news.google.com/rss/articles/CBMibEFVX3lxTE42amhkOFFXcGU0TU5jN1B0QVFmWWlNZFFfWENWdHVoeTBmamVMa2tzRDlYOGFLTmZoRDhFaUh1MGxuVVJlU3hvZTNHMEZCRVFrbmJDSHEtVHBhLXFTaFh6VVV1QU1KZGdtSEIzYg?oc=5">Google News RSS Chinese</a></div>
+      <div class="links"><a href="https://news.google.com/rss/articles/CBMibEFVX3lxTE42amhkOFFXcGU0TU5jN1B0QVFmWWlNZFFfWENWdHVoeTBmamVMa2tzRDlYOGFLTmZoRDhFaUh1MGxuVVJlU3hvZTNHMEZCRVFrbmJDSHEtVHBhLXFTaFh6VVV1QU1KZGdtSEIzYg?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US%3Aen">Google News RSS Chinese</a></div>
       <div class="audit-note">翻译：deterministic · source_already_chinese</div>
     </article>
     
-    <article class="story event bilingual-card" id="event-event-a21311e7a80c6c2f1966e80f">
+    <article class="story event bilingual-card" id="event-event-ff6b7516cfba3bf56e1f1898">
       <div class="kicker">公共卫生事件 · unconfirmed</div>
       
       <div class="lang-panel lang-zh" data-lang="zh">
-        <h3>突发公共卫生警报！豪华探险邮轮疑现汉坦病毒疫情，3人死亡、世卫组织紧急介入 - FX168</h3>
-        <p>突发公共卫生警报！豪华探险邮轮疑现汉坦病毒疫情，3人死亡、世卫组织紧急介入 FX168</p>
+        <h3>杰克曼·格雷和贝丝·阿拉卡瓦获得悲剧死亡的纪念牌</h3>
+        <p>杰克曼·格雷和贝丝·阿拉卡瓦因与鼠疫相关的严重呼吸系统疾病而获得纪念牌。调查人员认为她在2025年2月中旬因类似流感的症状去世。</p>
       </div>
       <div class="lang-panel lang-en" data-lang="en" hidden>
-        <h3>突发公共卫生警报！豪华探险邮轮疑现汉坦病毒疫情，3人死亡、世卫组织紧急介入 - FX168</h3>
-        <p>突发公共卫生警报！豪华探险邮轮疑现汉坦病毒疫情，3人死亡、世卫组织紧急介入 FX168</p>
+        <h3>Gene Hackman and Betsy Arakawa Receive Grave Plaques After Tragic Deaths</h3>
+        <p>Gene Hackman and Betsy Arakawa received memorial plaques after their tragic deaths. As previously reported by Radar, Betsy died from hantavirus pulmonary syndrome, a rare and severe respiratory illness linked to exposure to rodent droppings. Investigators believe she died around mid-February 2025 after experiencing flu-like symptoms.</p>
       </div>
-      <button type="button" class="language-toggle" data-card-id="event-event-a21311e7a80c6c2f1966e80f" aria-expanded="false">显示英文</button>
-    
-      <div class="meta">地点待核验 · outbreak · 病例数字未明确报告</div>
-      <p class="event-note">该事件由 1 篇文章聚合；事件版本 v1。</p>
-      <details class="analysis-details"><summary>查看正文理解、官方确认与不确定性</summary><p class="muted">该事件尚无通过证据校验的正文级解读。</p></details>
-      <div class="links"><a href="https://news.google.com/rss/articles/CBMihAFBVV95cUxQRXh6TGh6RHkzUkQ3YTVSeldodDRqSmRvMXdfWWlaaVF6ZWRWcmg5R0Z6Nmd3akRUbHl0OXJpNm9OVXgtMVR1THptRlZsWnViMzZKR185MVQtV0dDX2hrZUNRYUJ1dEpCdVNRenBMUUpXSDVQYlhCNHdfZFp6eTVHWlRaZXo?oc=5">Google News RSS Chinese</a></div>
-      <div class="audit-note">翻译：deterministic · source_already_chinese</div>
-    </article>
-    
-    <article class="story event bilingual-card" id="event-event-a580ffd5c3d07545fa00ee2a">
-      <div class="kicker">公共卫生事件 · unconfirmed</div>
-      
-      <div class="lang-panel lang-zh" data-lang="zh">
-        <h3>当地时间2日，世卫组织总干事谭德塞宣布，与邮轮有关的汉坦病毒疫情已结束，最后一名接触者完成了隔离且病毒检测结果呈阴性。此次疫情共导致13人感染、3人死亡。 - 搜狐网</h3>
-        <p>当地时间2日，世卫组织总干事谭德塞宣布，与邮轮有关的汉坦病毒疫情已结束，最后一名接触者完成了隔离且病毒检测结果呈阴性。此次疫情共导致13人感染、3人死亡。 搜狐网</p>
-      </div>
-      <div class="lang-panel lang-en" data-lang="en" hidden>
-        <h3>当地时间2日，世卫组织总干事谭德塞宣布，与邮轮有关的汉坦病毒疫情已结束，最后一名接触者完成了隔离且病毒检测结果呈阴性。此次疫情共导致13人感染、3人死亡。 - 搜狐网</h3>
-        <p>当地时间2日，世卫组织总干事谭德塞宣布，与邮轮有关的汉坦病毒疫情已结束，最后一名接触者完成了隔离且病毒检测结果呈阴性。此次疫情共导致13人感染、3人死亡。 搜狐网</p>
-      </div>
-      <button type="button" class="language-toggle" data-card-id="event-event-a580ffd5c3d07545fa00ee2a" aria-expanded="false">显示英文</button>
-    
-      <div class="meta">地点待核验 · outbreak · 病例数字未明确报告</div>
-      <p class="event-note">该事件由 1 篇文章聚合；事件版本 v1。</p>
-      <details class="analysis-details"><summary>查看正文理解、官方确认与不确定性</summary><p class="muted">该事件尚无通过证据校验的正文级解读。</p></details>
-      <div class="links"><a href="https://news.google.com/rss/articles/CBMiVEFVX3lxTFA4QlVaeUxONUc1dkFGZG1EWGJxNlh3UEdzNlVsVjVoVDVfcHBMS1RWNjdyVGpnTXhLT3hWUmRhZFYtbFA5R1BBQ1dXNzdTMXRtVm9ySw?oc=5">Google News RSS Chinese</a></div>
-      <div class="audit-note">翻译：deterministic · source_already_chinese</div>
-    </article>
-    
-    <article class="story event bilingual-card" id="event-event-10c027eb3b8928947f1d4efe">
-      <div class="kicker">公共卫生事件 · unconfirmed</div>
-      
-      <div class="lang-panel lang-zh" data-lang="zh">
-        <h3>禽流感 埃博拉 汉坦病毒……为什么感觉传染病越来越多了？ - SBS</h3>
-        <p>禽流感 埃博拉 汉坦病毒……为什么感觉传染病越来越多了？ SBS</p>
-      </div>
-      <div class="lang-panel lang-en" data-lang="en" hidden>
-        <h3>禽流感 埃博拉 汉坦病毒……为什么感觉传染病越来越多了？ - SBS</h3>
-        <p>禽流感 埃博拉 汉坦病毒……为什么感觉传染病越来越多了？ SBS</p>
-      </div>
-      <button type="button" class="language-toggle" data-card-id="event-event-10c027eb3b8928947f1d4efe" aria-expanded="false">显示英文</button>
+      <button type="button" class="language-toggle" data-card-id="event-event-ff6b7516cfba3bf56e1f1898" aria-expanded="false" aria-label="显示英文" title="显示英文">en</button>
     
       <div class="meta">地点待核验 · other · 病例数字未明确报告</div>
       <p class="event-note">该事件由 1 篇文章聚合；事件版本 v1。</p>
+      <p class="content-status partial">仅抓获部分相关正文，解读范围受限。</p>
       <details class="analysis-details"><summary>查看正文理解、官方确认与不确定性</summary><p class="muted">该事件尚无通过证据校验的正文级解读。</p></details>
-      <div class="links"><a href="https://news.google.com/rss/articles/CBMipwFBVV95cUxPc1BTczl3NGZ5MjNrR3ZQc3E3VUtuV0hpc1JnU2p6cWtoOFZoMVNnZmhvRFFZcHlKeVhNSWpEZGFkTTBqZTBpVmZaTGxlUlB3UU9sTWNjbDhYUHlHTjhMR0JEQV9lTGZzWVE3Ym1nQXV5TFdjdElXTEZXVmNPYnVWazdqc3djRGNuZld5Y3VIWHg3QjVZdTZDdlN6MTZoVU5DT05Rd00yTQ?oc=5">Google News RSS Chinese</a></div>
-      <div class="audit-note">翻译：deterministic · source_already_chinese</div>
+      <div class="links"><a href="https://radaronline.com/p/gene-hackman-betsy-arakawa-grave-plaques-honored-deaths">GDELT DOC 2.0</a></div>
+      <div class="audit-note">翻译：github_models · passed · github_models:passed</div>
     </article>
     
-    <article class="story event bilingual-card" id="event-event-cc5073548c66ca0c1e8b73ef">
+    <article class="story event bilingual-card" id="event-event-864478194902cb98ed04dd8e">
       <div class="kicker">公共卫生事件 · unconfirmed</div>
       
       <div class="lang-panel lang-zh" data-lang="zh">
-        <h3>涉汉坦病毒邮轮随船医生感染，肿瘤医生游客接手 - 快媒体</h3>
-        <p>涉汉坦病毒邮轮随船医生感染，肿瘤医生游客接手 快媒体</p>
+        <h3>病毒试验 - 温尼伯自由新闻</h3>
+        <p>报道指出，加拿大首席公共卫生官乔斯·赖默正面临埃博拉和汉坦病毒等新兴威胁。世界卫生组织在五月初确认了汉坦病毒的暴发，并在5月14日确认了刚果民主共和国的重大埃博拉疫情。文章还提到其他乘客出现疾病并死亡的情况，但未提供官方数据。赖默在新岗位上预计不会有太多空闲时间，且需准备应对下一场全球大流行。</p>
       </div>
       <div class="lang-panel lang-en" data-lang="en" hidden>
-        <h3>涉汉坦病毒邮轮随船医生感染，肿瘤医生游客接手 - 快媒体</h3>
-        <p>涉汉坦病毒邮轮随船医生感染，肿瘤医生游客接手 快媒体</p>
+        <h3>Trial by virus – Winnipeg Free Press</h3>
+        <p>The article reports that Canada’s chief public health officer, Dr. Joss Reimer, is confronting emerging threats such as Ebola and hantavirus. The World Health Organization confirmed a hantavirus outbreak in early May and an Ebola outbreak in the Democratic Republic of Congo on May 14. No official case numbers are provided, and Reimer is said to have little downtime in her new role while preparing for future pandemics.</p>
       </div>
-      <button type="button" class="language-toggle" data-card-id="event-event-cc5073548c66ca0c1e8b73ef" aria-expanded="false">显示英文</button>
+      <button type="button" class="language-toggle" data-card-id="event-event-864478194902cb98ed04dd8e" aria-expanded="false" aria-label="显示英文" title="显示英文">en</button>
+    
+      <div class="meta">Canada · outbreak · 病例数字未明确报告</div>
+      <p class="event-note">该事件由 1 篇文章聚合；事件版本 v1。</p>
+      <p class="content-status partial">仅抓获部分相关正文，解读范围受限。</p>
+      <details class="analysis-details"><summary>查看正文理解、官方确认与不确定性</summary><p class="muted">该事件尚无通过证据校验的正文级解读。</p></details>
+      <div class="links"><a href="https://www.winnipegfreepress.com/breakingnews/2026/07/09/trial-by-virus">GDELT DOC 2.0</a></div>
+      <div class="audit-note">翻译：groq · passed · github_models:failed → gemini:failed → groq:failed</div>
+    </article>
+    
+    <article class="story event bilingual-card" id="event-event-6e71d44bf871054e3f83f432">
+      <div class="kicker">公共卫生事件 · unconfirmed</div>
+      
+      <div class="lang-panel lang-zh" data-lang="zh">
+        <h3>中文标题暂不可用</h3>
+        <p class="muted">中文摘要暂不可用；系统不会根据标题编造内容。可点击右上角“en”查看原文。</p>
+      </div>
+      <div class="lang-panel lang-en" data-lang="en" hidden>
+        <h3>Health</h3>
+        <p>New public restrooms unveiled before World Cup Anna Boiko-Weyrauch Seattle inaugurated four new public toilets made by the company, Throne Labs, Friday in Pioneer Square and next to Lumen Field. Health 3 King County residents being monitored for hantavirus Sami West Three King County residents may have been exposed to the hantavirus that has killed and sickened passengers aboard the MV Hondius cruise ship. Health Shellfish recalled in Washington, Oregon over possible norovirus contamination Adia White/Northwest News Network The Food and Drug Administration is recalling oysters and clams that were harvested in Drayton Harbor, Washington between Feb.</p>
+      </div>
+      <button type="button" class="language-toggle" data-card-id="event-event-6e71d44bf871054e3f83f432" aria-expanded="false" aria-label="显示英文" title="显示英文">en</button>
     
       <div class="meta">地点待核验 · other · 病例数字未明确报告</div>
       <p class="event-note">该事件由 1 篇文章聚合；事件版本 v1。</p>
+      <p class="content-status partial">仅抓获部分相关正文，解读范围受限。</p>
       <details class="analysis-details"><summary>查看正文理解、官方确认与不确定性</summary><p class="muted">该事件尚无通过证据校验的正文级解读。</p></details>
-      <div class="links"><a href="https://news.google.com/rss/articles/CBMicEFVX3lxTE5SaWtheUJfTVVndi1SN1lhTVpQZS1XYTdfT1Vzdm41TGJPcDI3QjQtRUtQbXRXSUktMkRFNEtOWm5JY3ZCTmhjaU9pU1FrWmpVVzl3akUxNFNTeE1kQWoxZE5uT2ZFZlN5MVpGU2lNU3Y?oc=5">Google News RSS Chinese</a></div>
-      <div class="audit-note">翻译：deterministic · source_already_chinese</div>
+      <div class="links"><a href="https://www.kuow.org/health">GDELT DOC 2.0</a></div>
+      <div class="audit-note">翻译：deterministic · translation_unavailable_after_all_providers · github_models:failed → gemini:failed → groq:failed</div>
     </article>
     </div></section><section><h2>学术文献</h2><div class="columns">
-    <article class="story paper bilingual-card" id="work-work-df793002d26be893c01a7f77">
+    <article class="story paper bilingual-card" id="work-work-e8c49c70d612a14f1cce05da">
+      <div class="kicker">学术文献 · headline · <span class="translation-status">中文默认</span></div>
+      
+      <div class="lang-panel lang-zh" data-lang="zh">
+        <h3>汉坦病毒感染中胃肠道、肝胆道和胰腺受累的谱系：叙述性综述。</h3>
+        <p>本研究旨在综述汉坦病毒感染中胃肠道、肝胆道和胰腺的受累情况。通过对2000年至2026年5月间的文献进行全面回顾，发现胃肠症状是汉坦病毒疾病最早和最常见的前驱表现，恶心、呕吐、腹痛和腹泻常在器官特异性并发症前几天出现。肝脏受累主要表现为转氨酶水平的短暂升高。尽管现有管理策略主要是支持性的，但早期的胃肠症状可能与更严重的疾病相关。当前证据有限，主要来自小规模研究，强调了需要进行大型前瞻性研究以进一步了解这些表现的机制和预后意义。</p>
+      </div>
+      <div class="lang-panel lang-en" data-lang="en" hidden>
+        <h3>Spectrum of Gastrointestinal, Hepatobiliary, and Pancreatic Involvement in Hantavirus Infection: A Narrative Review.</h3>
+        <p>This study aims to review gastrointestinal, hepatobiliary, and pancreatic involvement in hantavirus infection. A comprehensive literature review from 2000 to May 2026 found gastrointestinal symptoms to be among the earliest and most common prodromal manifestations, with nausea, vomiting, abdominal pain, and diarrhea often preceding organ-specific complications. Hepatic involvement primarily manifests as transient elevations in aminotransferase levels. Although current management strategies are mainly supportive, early gastrointestinal symptoms may be associated with more severe disease. Existing evidence is limited, primarily from small studies, highlighting the need for large prospective studies to further understand the mechanisms and prognostic significance of these manifestations.</p>
+      </div>
+      <button type="button" class="language-toggle" data-card-id="work-work-e8c49c70d612a14f1cce05da" aria-expanded="false" aria-label="显示英文" title="显示英文">en</button>
+    
+      <div class="meta">Cureus · 当前可报道日期 2026-07-13（source_created_date）；期刊卷期日期 2026-06 · George S Zacharia, Mohammad A Masood, Muhammad H Ashraf, Saran Lal A Mokan Dasan</div>
+      <p class="content-status ok">证据等级 E2：已获得摘要和HTML/PDF 正文证据；解析方式：publisher_html。</p>
+      <details class="analysis-details"><summary>查看研究设计、关键发现与证据审计</summary><p class="muted">该文献尚无通过证据校验的深度解读。</p></details>
+      <div class="links"><a href="https://doi.org/10.7759/cureus.110352">DOI</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/42441034">PMID</a> · <a href="https://www.cureus.com/articles/501388-spectrum-of-gastrointestinal-hepatobiliary-and-pancreatic-involvement-in-hantavirus-infection-a-narrative-review">开放全文证据</a></div>
+      <div class="audit-note">翻译：github_models · passed · github_models:failed → gemini:failed → groq:failed</div>
+    </article>
+    
+    <article class="story paper bilingual-card" id="work-work-b26a31446c4e97be9b22232e">
+      <div class="kicker">学术文献 · headline · <span class="translation-status">中文默认</span></div>
+      
+      <div class="lang-panel lang-zh" data-lang="zh">
+        <h3>2026 年邮轮关联的安第斯 hantavirus 爆发及公共卫生应对。</h3>
+        <p>本研究回顾了 2026 年在 MV Hondius 邮轮上发生的安第斯 hantavirus（ANDV）爆发，旨在总结该病毒的流行病学特征并评估在封闭高密度环境中的传播模式。 通过 WHO 等机构的公开报告和基因组分析，确认了 13 例感染（11 例确诊、2 例疑似）和 3 例死亡，且病毒序列差异不超过一个 SNP，提示一次或少数动物溢出后的人际传播，估计有效再生数为 0.7。 高龄（平均约 65 岁）、共享舱房和密切护理是主要风险因素。 研究强调了快速识别、国际协调和风险沟通在控制此类爆发中的重要性，并提出了旅行史评估和快速诊断的防控建议。</p>
+      </div>
+      <div class="lang-panel lang-en" data-lang="en" hidden>
+        <h3>2026 Cruise Ship-associated Andes Hantavirus Outbreak and Public Health Response.</h3>
+        <p>This review examines the 2026 Andes hantavirus outbreak on the MV Hondius cruise ship, summarizing epidemiological features and transmission in a closed, high‑density setting. Public reports and genomic analysis identified 13 cases (11 confirmed, 2 probable) with three deaths, minimal SNP differences indicating limited spillover followed by human‑to‑human spread and an estimated effective reproduction number of 0.7. Advanced age, shared cabins, and close caregiving were key risk factors. The authors highlight rapid detection, international coordination, and risk communication as essential for outbreak control and recommend travel‑history screening and rapid diagnostics for preparedness.</p>
+      </div>
+      <button type="button" class="language-toggle" data-card-id="work-work-b26a31446c4e97be9b22232e" aria-expanded="false" aria-label="显示英文" title="显示英文">en</button>
+    
+      <div class="meta">Public health weekly report · 当前可报道日期 2026-07-11（source_created_date）；期刊卷期日期 2026 · Jin Yong Kim</div>
+      <p class="content-status ok">证据等级 E2：已获得摘要和HTML/PDF 正文证据；解析方式：pymupdf。</p>
+      <details class="analysis-details"><summary>查看研究设计、关键发现与证据审计</summary><p class="muted">该文献尚无通过证据校验的深度解读。</p></details>
+      <div class="links"><a href="https://doi.org/10.1007/s12539-020-00413-4">DOI</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/42434045">PMID</a> · <a href="https://link.springer.com/content/pdf/10.1007/s12539-020-00413-4.pdf">开放全文证据</a></div>
+      <div class="audit-note">翻译：groq · passed · github_models:failed → gemini:failed → groq:failed</div>
+    </article>
+    
+    <article class="story paper bilingual-card" id="work-work-c145b9916eed0f2d5ed7de3b">
       <div class="kicker">学术文献 · headline · <span class="translation-status unavailable">中文翻译未通过校验</span></div>
       
       <div class="lang-panel lang-zh" data-lang="zh">
         <h3>中文标题暂不可用</h3>
-        <p class="muted">中文摘要暂不可用；系统不会根据标题编造内容。可点击“显示英文”查看原文。</p>
+        <p class="muted">中文摘要暂不可用；系统不会根据标题编造内容。可点击右上角“en”查看原文。</p>
       </div>
       <div class="lang-panel lang-en" data-lang="en" hidden>
-        <h3>Neurological Manifestations of Hantavirus Infection: A Review.</h3>
-        <p>Hantaviruses have caused several recent human disease outbreaks. They carry a high mortality rate, and some species can spread from person to person although they are typically spread from rodents to humans. Neurological complications have been documented but are poorly understood. Broadly, 2 types of syndromes have been associated with hantaviruses. The pulmonary syndrome carries a high mortality rate and can result in pulmonary and cardiac failure. Neurological involvement is typically secondary to hypoxic and ischemic injury or metabolic dysfunction. Another manifestation of the infection that is associated with some species of the virus is termed hemorrhagic fever with renal syndrome. Some patients may develop a meningoencephalitis or pituitary apoplexy resulting in sudden visual loss and pituitary dysfunction. Rarely, seizures, myelitis, and peripheral neuropathy may occur. Although…</p>
+        <h3>Hantavirus: A Comprehensive Contemporary Review of Virology, Global Epidemiology, Clinical Variants, Diagnosis, Treatment, and Intensive Care Management.</h3>
+        <p>Hantaviruses are negative-sense, single-stranded RNA viruses of the family Hantaviridae that cause two potentially lethal zoonotic syndromes: Hemorrhagic fever with renal syndrome (HFRS) and hantavirus cardiopulmonary syndrome (HCPS). With approximately 2,00,000 reported cases of HFRS annually worldwide and case-fatality rates reaching 36-40% in severe HCPS, hantaviruses constitute a significant global public health burden. Rodent excreta are the principal source of human infection through inhalation of infectious aerosols. A comprehensive literature search was conducted using PubMed, Embase, WHO databases, and CDC surveillance reports (1993-2025) to synthesize current evidence on hantavirus taxonomy, epidemiology, pathogenesis, clinical features, diagnosis, treatment, and intensive care unit (ICU) management. More than 50 distinct hantavirus species are now recognized, classified broadl…</p>
       </div>
-      <button type="button" class="language-toggle" data-card-id="work-work-df793002d26be893c01a7f77" aria-expanded="false">显示英文</button>
+      <button type="button" class="language-toggle" data-card-id="work-work-c145b9916eed0f2d5ed7de3b" aria-expanded="false" aria-label="显示英文" title="显示英文">en</button>
     
-      <div class="meta">JAMA neurology · 2026-07-14 · Avindra Nath</div>
+      <div class="meta">Indian journal of critical care medicine : peer-reviewed, official publication of Indian Society of Critical Care Medicine · 当前可报道日期 2026-07-08（source_created_date）；期刊卷期日期 2026 · As Anoop Kumar, Joshua John</div>
+      <p class="content-status ok">证据等级 E2：已获得摘要和HTML/PDF 正文证据；解析方式：pymupdf。</p>
       <details class="analysis-details"><summary>查看研究设计、关键发现与证据审计</summary><p class="muted">该文献尚无通过证据校验的深度解读。</p></details>
-      <div class="links"><a href="https://doi.org/10.1001/jamaneurol.2026.2437">DOI</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/42446888">PMID</a></div>
+      <div class="links"><a href="https://doi.org/10.3389/fmicb.2015.01326">DOI</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/42415885">PMID</a> · <a href="https://www.frontiersin.org/journals/microbiology/articles/10.3389/fmicb.2015.01326/pdf">开放全文证据</a></div>
+      <div class="audit-note">翻译：deterministic · translation_unavailable_after_all_providers · github_models:failed → gemini:failed → groq:failed</div>
+    </article>
+    
+    <article class="story paper bilingual-card" id="work-work-fb272e575c9aa9e9f3f71b3b">
+      <div class="kicker">学术文献 · headline · <span class="translation-status unavailable">中文翻译未通过校验</span></div>
+      
+      <div class="lang-panel lang-zh" data-lang="zh">
+        <h3>中文标题暂不可用</h3>
+        <p class="muted">中文摘要暂不可用；系统不会根据标题编造内容。可点击右上角“en”查看原文。</p>
+      </div>
+      <div class="lang-panel lang-en" data-lang="en" hidden>
+        <h3>Hantavirus Infection: Review of Clinical Management.</h3>
+        <p>Hantavirus infection is a rodent-borne zoonotic disease that can present as Hemorrhagic Fever with Renal Syndrome (HFRS) or Hantavirus Cardiopulmonary Syndrome (HCPS). Both diseases are associated with substantial morbidity and mortality. The rise of new Hantavirus species and recurrent outbreaks worldwide has renewed interest in the epidemiology, pathogenesis, diagnosis, and management of this viral infection. A narrative literature review was conducted using published articles, review papers, epidemiological reports, and clinical studies on Hantavirus up to 2026. Relevant evidence regarding epidemiology, pathogenesis, clinical manifestations, diagnostic approaches, treatment, complications, and prevention was analyzed and synthesized. Hantaviruses primarily infect endothelial cells, leading to increased vascular permeability, thrombocytopenia, and capillary leakage through immune-media…</p>
+      </div>
+      <button type="button" class="language-toggle" data-card-id="work-work-fb272e575c9aa9e9f3f71b3b" aria-expanded="false" aria-label="显示英文" title="显示英文">en</button>
+    
+      <div class="meta">Acta medica Indonesiana · 当前可报道日期 2026-07-09（source_created_date）；期刊卷期日期 2026-04 · Robert Sinto, Adeline Intan Pasaribu, Sharifah Shakinah, Bernadine Gracia Duindrahajeng</div>
+      <p class="content-status partial">证据等级 E1：已获得摘要；系统已尝试结构化全文、开放 HTML 和 PDF 兜底，但暂未获得可分析全文。</p>
+      <details class="analysis-details"><summary>查看研究设计、关键发现与证据审计</summary><p class="muted">该文献尚无通过证据校验的深度解读。</p></details>
+      <div class="links"><a href="https://pubmed.ncbi.nlm.nih.gov/42421388">PMID</a></div>
       <div class="audit-note">翻译：deterministic · translation_unavailable_after_all_providers · github_models:failed → gemini:failed → groq:failed</div>
     </article>
     
@@ -918,38 +729,80 @@ section{border-top:1px solid var(--ink);margin-top:26px;padding-top:7px} section
       <div class="kicker">学术文献 · headline · <span class="translation-status">中文默认</span></div>
       
       <div class="lang-panel lang-zh" data-lang="zh">
-        <h3>变化世界中的汉坦病毒感染：流行病学、发病机制与一体化健康挑战</h3>
-        <p>本综述旨在总结汉坦病毒感染的流行病学、发病机制及其在全球变化背景下的挑战。研究基于现有文献，涵盖汉坦病毒的传播途径、临床表现及治疗策略。发现汉坦病毒主要通过啮齿动物传播，导致两种主要疾病：出血热伴肾综合征和汉坦病毒心肺综合征。环境变化和人类活动增加导致流行病学模式变化，特别是首尔病毒在城市环境中的传播引起关注。文章强调了疫苗研发和监测的重要性，并提出整合一体化健康策略以应对未来挑战。研究指出加强多学科合作和早期诊断是控制汉坦病毒感染的关键，但未提供具体的实验数据或临床试验结果。</p>
+        <h3>变化世界中的汉坦病毒感染：流行病学、发病机制和一体化健康挑战。</h3>
+        <p>本文综述了汉坦病毒感染的流行病学、发病机制及其在变化世界中的挑战。汉坦病毒主要通过啮齿动物传播，导致出血热与肾综合征和汉坦病毒心肺综合征。文章还探讨了疫苗开发和监测等新兴挑战，以及一体化健康策略在预防和控制汉坦病毒感染中的重要性。</p>
       </div>
       <div class="lang-panel lang-en" data-lang="en" hidden>
         <h3>Hantavirus infections in a changing world: epidemiology, pathogenesis, and one health challenges.</h3>
-        <p>This review summarizes current knowledge on hantavirus infections, focusing on their epidemiology, pathogenesis, and emerging challenges in a changing world. It highlights that hantaviruses, primarily transmitted by rodent reservoirs, cause two main clinical syndromes: hemorrhagic fever with renal syndrome and hantavirus cardiopulmonary syndrome. Environmental changes and increased human-animal interactions have altered epidemiological patterns, notably with the urban-associated Seoul virus. The review underscores the importance of vaccine development, surveillance, and One Health strategies, emphasizing multidisciplinary approaches and early detection to mitigate global impacts. However, it does not present new experimental or clinical data.</p>
+        <p>This review summarizes the epidemiology, pathogenesis, and challenges of hantavirus infections in a changing world. Hantaviruses are primarily transmitted through rodent reservoirs and cause significant morbidity and mortality. The article also discusses emerging challenges related to vaccine development and the integration of One Health strategies.</p>
       </div>
-      <button type="button" class="language-toggle" data-card-id="work-work-dcbbc9fbd8008d9b406c3f47" aria-expanded="false">显示英文</button>
+      <button type="button" class="language-toggle" data-card-id="work-work-dcbbc9fbd8008d9b406c3f47" aria-expanded="false" aria-label="显示英文" title="显示英文">en</button>
     
-      <div class="meta">Infection · 2026-07-10 · A Vitiello, A Zovi</div>
-      <details class="analysis-details"><summary>查看研究设计、关键发现与证据审计</summary><p><strong>研究问题：</strong>汉坦病毒感染在全球环境变化背景下的流行病学特征、发病机制及防控挑战有哪些？ <span class="evidence-id">[A1, A3, A4, A6]</span></p><p><strong>研究设计：</strong>综述现有文献，汇总汉坦病毒的传播、流行病学、病理生理、临床表现及治疗进展。 <span class="evidence-id">[A4]</span></p><p><strong>样本或数据：</strong>基于全球范围内关于汉坦病毒的文献资料和研究报告。 <span class="evidence-id">[A4]</span></p><p><strong>研究类型：</strong>review</p><h4>方法</h4><ul><li>文献综述 <span class="evidence-id">[A4]</span></li></ul><h4>关键发现</h4><ul><li>汉坦病毒主要通过啮齿动物宿主传播，导致出血热伴肾综合征和汉坦病毒心肺综合征两种主要临床综合征。 <span class="evidence-id">[A1, A2]</span></li><li>环境变化、人类与动物接触增加及全球流动性增强，促使汉坦病毒流行病学模式发生演变。 <span class="evidence-id">[A3]</span></li><li>首尔病毒作为一种与城市环境相关的汉坦病毒，正呈现出新的全球流行病学趋势。 <span class="evidence-id">[A5]</span></li><li>疫苗开发、监测和一体化健康策略的整合是当前汉坦病毒防控面临的重要挑战。 <span class="evidence-id">[A6]</span></li><li>加强多学科合作和早期检测对于减轻汉坦病毒感染的全球影响至关重要。 <span class="evidence-id">[A7]</span></li></ul><p><strong>意义：</strong>本综述强调了汉坦病毒感染在全球环境变化背景下的新兴流行病学特征及防控挑战，提示需加强多学科合作和一体化健康策略以有效应对。 <span class="evidence-id">[A3, A5, A6, A7]</span></p><h4>局限与证据缺口</h4><ul><li>缺乏具体的实验数据和临床试验结果。</li><li>未提供详细的流行病学统计数据。</li><li>全文不可用，分析仅基于摘要。</li></ul><p><strong>证据强度：</strong>moderate；基于文献综述，提供了广泛的知识总结，但缺乏原始数据支持。 <span class="evidence-id">[A1, A2, A3, A4, A5, A6, A7]</span></p><p class="muted"><strong>解读证据范围：</strong>abstract</p></details>
+      <div class="meta">Infection · 当前可报道日期 2026-07-10（online_date） · A Vitiello, A Zovi</div>
+      <p class="content-status partial">证据等级 E1：已获得摘要；系统已尝试结构化全文、开放 HTML 和 PDF 兜底，但暂未获得可分析全文。</p>
+      <details class="analysis-details"><summary>查看研究设计、关键发现与证据审计</summary><p class="muted">该文献尚无通过证据校验的深度解读。</p></details>
       <div class="links"><a href="https://doi.org/10.1128/cmr.00062-09">DOI</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/42430118">PMID</a></div>
       <div class="audit-note">翻译：github_models · passed · github_models:passed</div>
     </article>
     
-    <article class="story paper bilingual-card" id="work-work-7da09839fc167eff558a71fb">
+    <article class="story paper bilingual-card" id="work-work-6eef5c5c90eeadcada4f4eb6">
       <div class="kicker">学术文献 · headline · <span class="translation-status unavailable">中文翻译未通过校验</span></div>
       
       <div class="lang-panel lang-zh" data-lang="zh">
         <h3>中文标题暂不可用</h3>
-        <p class="muted">中文摘要暂不可用；系统不会根据标题编造内容。可点击“显示英文”查看原文。</p>
+        <p class="muted">中文摘要暂不可用；系统不会根据标题编造内容。可点击右上角“en”查看原文。</p>
+      </div>
+      <div class="lang-panel lang-en" data-lang="en" hidden>
+        <h3>Neurological Manifestations of Hantavirus Infection: A Review.</h3>
+        <p>ImportanceHantaviruses have caused several recent human disease outbreaks. They carry a high mortality rate, and some species can spread from person to person although they are typically spread from rodents to humans. Neurological complications have been documented but are poorly understood.ObservationsBroadly, 2 types of syndromes have been associated with hantaviruses. The pulmonary syndrome carries a high mortality rate and can result in pulmonary and cardiac failure. Neurological involvement is typically secondary to hypoxic and ischemic injury or metabolic dysfunction. Another manifestation of the infection that is associated with some species of the virus is termed hemorrhagic fever with renal syndrome. Some patients may develop a meningoencephalitis or pituitary apoplexy resulting in sudden visual loss and pituitary dysfunction. Rarely, seizures, myelitis, and peripheral neuropath…</p>
+      </div>
+      <button type="button" class="language-toggle" data-card-id="work-work-6eef5c5c90eeadcada4f4eb6" aria-expanded="false" aria-label="显示英文" title="显示英文">en</button>
+    
+      <div class="meta">JAMA neurology · 当前可报道日期 2026-07-14（online_date） · Avindra Nath</div>
+      <p class="content-status partial">证据等级 E1：已获得摘要；系统已尝试结构化全文、开放 HTML 和 PDF 兜底，但暂未获得可分析全文。</p>
+      <details class="analysis-details"><summary>查看研究设计、关键发现与证据审计</summary><p class="muted">该文献尚无通过证据校验的深度解读。</p></details>
+      <div class="links"><a href="https://doi.org/10.1001/jamaneurol.2026.2437">DOI</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/42446888">PMID</a></div>
+      <div class="audit-note">翻译：deterministic · translation_unavailable_after_all_providers · github_models:failed → gemini:failed → groq:failed</div>
+    </article>
+    
+    <article class="story paper bilingual-card" id="work-work-7da09839fc167eff558a71fb">
+      <div class="kicker">学术文献 · headline · <span class="translation-status">中文默认</span></div>
+      
+      <div class="lang-panel lang-zh" data-lang="zh">
+        <h3>正黏病毒宿主的分布与丰富度：对南美洲南部人畜共患风险的启示</h3>
+        <p>本研究旨在绘制南美洲南部正黏病毒宿主及基因型的分布与丰富度，并评估人群暴露风险。作者汇总宿主出现记录并采用生态位模型预测潜在分布，进而生成宿主和基因型丰富度图，并结合人口数据估算暴露人数。结果显示，宿主主要分布于阿根廷东部和东北部、巴拉圭、乌拉圭及巴西南部，宿主丰富度热点位于潮湿查科地区，高基因型丰富度跨越查科-潘帕斯平原。保守情景下，约有超过 1300 万人可能暴露于 ≥7 种致病基因型。该工作为该地区的监测、风险绘图和防控提供了首个综合生态基线。</p>
       </div>
       <div class="lang-panel lang-en" data-lang="en" hidden>
         <h3>Distribution and richness of Orthohantavirus reservoir hosts: Implications for zoonotic risk in Southern South America.</h3>
-        <p>Orthohantaviruses represent a major zoonotic threat in Southern South America (SSA), where 13 native rodent species are recognized reservoir hosts of 15 different viral genotypes. The information on their geographic distribution remains scattered, limiting regional assessments of exposure risk. We compiled and curated occurrence records for the Orthohantavirus reservoir hosts in SSA and used ecological niche modeling to estimate their potential distributions. We integrated binary presence predictions to map reservoir and genotype richness as well as reservoir assemblages. The richness maps were combined with gridded human population data to estimate the number of people potentially exposed. Most Orthohantavirus reservoir species in SSA are distributed over eastern and northeastern Argentina, parts of Paraguay, Uruguay, and southern Brazil. Hotspots of reservoir richness were concentrated…</p>
+        <p>The study mapped the distribution and richness of Orthohantavirus reservoir hosts and viral genotypes across Southern South America and estimated human exposure. Using compiled occurrence records and ecological niche modeling, the authors produced richness maps and overlaid them with gridded population data. They found host hotspots in the Humid Chaco and high genotype richness across the Chaco‑Pampean plain, estimating that over 13 million people could be exposed to seven or more pathogenic genotypes. This provides a region‑wide ecological baseline for surveillance and risk mitigation.</p>
       </div>
-      <button type="button" class="language-toggle" data-card-id="work-work-7da09839fc167eff558a71fb" aria-expanded="false">显示英文</button>
+      <button type="button" class="language-toggle" data-card-id="work-work-7da09839fc167eff558a71fb" aria-expanded="false" aria-label="显示英文" title="显示英文">en</button>
     
-      <div class="meta">Acta tropica · 2026-07-11 · Juan Diego Pinotti, Verónica Andreo</div>
+      <div class="meta">Acta tropica · 当前可报道日期 2026-07-11（online_date） · Juan Diego Pinotti, Verónica Andreo</div>
+      <p class="content-status partial">证据等级 E1：已获得摘要；系统已尝试结构化全文、开放 HTML 和 PDF 兜底，但暂未获得可分析全文。</p>
       <details class="analysis-details"><summary>查看研究设计、关键发现与证据审计</summary><p class="muted">该文献尚无通过证据校验的深度解读。</p></details>
       <div class="links"><a href="https://doi.org/10.1016/j.actatropica.2026.108234">DOI</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/42435789">PMID</a></div>
-      <div class="audit-note">翻译：deterministic · translation_unavailable_after_all_providers · github_models:failed → gemini:failed → groq:failed</div>
+      <div class="audit-note">翻译：groq · passed · github_models:failed → gemini:failed → groq:failed</div>
+    </article>
+    
+    <article class="story paper bilingual-card" id="work-work-7cc638ddc8ee234f30b363ee">
+      <div class="kicker">学术文献 · headline · <span class="translation-status">中文默认</span></div>
+      
+      <div class="lang-panel lang-zh" data-lang="zh">
+        <h3>观看船只，忽视森林：为什么生态溢出、储存宿主生态学和环境变化仍是北美真正的汉坦病毒威胁。</h3>
+        <p>本研究探讨了生态溢出、储存宿主生态学和环境变化如何成为北美汉坦病毒的主要威胁。作者指出，汉坦病毒的出现受储存宿主生态学、环境变异、景观条件和人类暴露的相互作用影响。持续的环境变化增加了病毒溢出的机会，改变了风险地理分布，并对传统公共卫生监测系统构成挑战。该综述强调了生态因素在病毒传播中的核心作用，并提示需要改进监测方法以应对不断变化的风险。</p>
+      </div>
+      <div class="lang-panel lang-en" data-lang="en" hidden>
+        <h3>Watching the Ship, Missing the Forest: Why Ecological Spillover, Reservoir Ecology, and Environmental Change Remain the True Hantavirus Threats in North America.</h3>
+        <p>This review examines how ecological spillover, reservoir host ecology, and environmental change drive hantavirus emergence in North America. It highlights that ongoing environmental change increases spillover opportunities, alters risk geography, and challenges traditional public health surveillance systems.</p>
+      </div>
+      <button type="button" class="language-toggle" data-card-id="work-work-7cc638ddc8ee234f30b363ee" aria-expanded="false" aria-label="显示英文" title="显示英文">en</button>
+    
+      <div class="meta">The Journal of infectious diseases · 当前可报道日期 2026-07-10（online_date）；期刊卷期日期 2026-07-01 · Charles LE, Nuzzo JB, Bagdasarian N</div>
+      <p class="content-status partial">证据等级 E1：已获得摘要；系统已尝试结构化全文、开放 HTML 和 PDF 兜底，但暂未获得可分析全文。</p>
+      <details class="analysis-details"><summary>查看研究设计、关键发现与证据审计</summary><p><strong>研究问题：</strong>为什么生态溢出、储存宿主生态学和环境变化仍是北美真正的汉坦病毒威胁？ <span class="evidence-id">[A1]</span></p><p><strong>研究类型：</strong>Review</p><h4>关键发现</h4><ul><li>汉坦病毒在北美的出现受储存宿主生态学、环境变异、景观条件和人类暴露的相互作用驱动。 <span class="evidence-id">[A1]</span></li><li>持续的环境变化增加了病毒溢出的机会。 <span class="evidence-id">[A1]</span></li><li>环境变化改变了风险地理分布。 <span class="evidence-id">[A1]</span></li><li>传统公共卫生监测系统面临挑战。 <span class="evidence-id">[A1]</span></li></ul><p><strong>意义：</strong>本综述强调生态因素在汉坦病毒传播中的核心作用，并提示需要改进监测方法以应对不断变化的风险。 <span class="evidence-id">[A1]</span></p><p><strong>证据强度：</strong>unclear；No empirical data presented <span class="evidence-id">[A1]</span></p><p class="muted"><strong>解读证据范围：</strong>abstract</p></details>
+      <div class="links"><a href="https://doi.org/10.1093/infdis/jiag359">DOI</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/42430654">PMID</a></div>
+      <div class="audit-note">翻译：groq · passed · github_models:failed → gemini:failed → groq:passed</div>
     </article>
     
     <article class="story paper bilingual-card" id="work-work-09e9d4db3e9b27d5d04c4f8f">
@@ -957,15 +810,16 @@ section{border-top:1px solid var(--ink);margin-top:26px;padding-top:7px} section
       
       <div class="lang-panel lang-zh" data-lang="zh">
         <h3>中文标题暂不可用</h3>
-        <p class="muted">中文摘要暂不可用；系统不会根据标题编造内容。可点击“显示英文”查看原文。</p>
+        <p class="muted">中文摘要暂不可用；系统不会根据标题编造内容。可点击右上角“en”查看原文。</p>
       </div>
       <div class="lang-panel lang-en" data-lang="en" hidden>
         <h3>Drivers of Host-Pathogen Community Assemblages in European Forests and Urban Green Spaces.</h3>
         <p>Despite advances in understanding infectious diseases, the persistence and re-emergence of wildlife pathogens continue to raise public and veterinary health concerns. This study investigates the relationship between biodiversity and rodent-borne diseases in Europe, focusing on habitat alterations and their impact on rodent diversity. We present host-pathogen data from 21 temperate forest sites and eight urban green spaces throughout five European countries, environments where rodents are abundant and human/domestic animals-wildlife interactions are likely to occur. From 2020 to 2022, 3766 specimens comprising 15 different small mammal species were analyzed. Samples were screened for bacteria via 16S rRNA sequencing or PCR, and for viral antibodies using immunofluorescent assays. Pathogens from several genera, including Bartonella, Borrelia, Mycoplasma, Anaplasma, Neoehrlichia, Leptospira…</p>
       </div>
-      <button type="button" class="language-toggle" data-card-id="work-work-09e9d4db3e9b27d5d04c4f8f" aria-expanded="false">显示英文</button>
+      <button type="button" class="language-toggle" data-card-id="work-work-09e9d4db3e9b27d5d04c4f8f" aria-expanded="false" aria-label="显示英文" title="显示英文">en</button>
     
-      <div class="meta">Integrative zoology · 2026-07-13 · Sluydts V, Bouilloud M, Galan M, Alburkat H</div>
+      <div class="meta">Integrative zoology · 当前可报道日期 2026-07-13（online_date）；期刊卷期日期 2026-07-01 · Sluydts V, Bouilloud M, Galan M, Alburkat H</div>
+      <p class="content-status partial">证据等级 E1：已获得摘要；系统已尝试结构化全文、开放 HTML 和 PDF 兜底，但暂未获得可分析全文。</p>
       <details class="analysis-details"><summary>查看研究设计、关键发现与证据审计</summary><p class="muted">该文献尚无通过证据校验的深度解读。</p></details>
       <div class="links"><a href="https://doi.org/10.1111/1749-4877.70149">DOI</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/42439788">PMID</a></div>
       <div class="audit-note">翻译：deterministic · translation_unavailable_after_all_providers · github_models:failed → gemini:failed → groq:failed</div>
@@ -975,17 +829,18 @@ section{border-top:1px solid var(--ink);margin-top:26px;padding-top:7px} section
       <div class="kicker">学术文献 · brief · <span class="translation-status">中文默认</span></div>
       
       <div class="lang-panel lang-zh" data-lang="zh">
-        <h3>船上汉塔病毒：COVID-19 给我们的启示</h3>
-        <p>本研究旨在探讨安第斯病毒在邮轮及阿根廷疫情中的传播机制。作者对 MV Hondius 邮轮上以及阿根廷先前报告的疫情流行病学细节进行了描述性分析。研究发现，气溶胶传播可能是安第斯病毒在源病例与易感接触者之间传播的关键机制。此发现强调了在未来疫情防控中考虑气溶胶传播的重要性。研究仅基于有限的病例描述，缺乏更广泛的数据支持。</p>
+        <h3>郵輪上的漢他病毒：COVID-19 教給我們的教訓</h3>
+        <p>郵輪上的漢他病毒爆發與COVID-19大流行有相似的空氣傳播特徵。安第斯病毒（ANDV）在郵輪上的傳播和阿根廷以前報告的爆發中，顯示空氣傳播可能是ANDV傳播的關鍵機制。早期對空氣傳播機制的認識不充分，導致了早期非藥物干預措施的不充分建議。這些信息對於未來的公共衛生應對策略具有重要意義。漢他病毒的傳播方式與SARS-CoV-2有相似之處，了解這些相似之處可以幫助我們更好地應對未來的公共衛生挑戰。</p>
       </div>
       <div class="lang-panel lang-en" data-lang="en" hidden>
         <h3>Hantavirus on a Cruise Ship: What COVID-19 Taught Us.</h3>
-        <p>The authors review epidemiological details of Andes virus transmission on the MV Hondius cruise ship and prior outbreaks in Argentina. They suggest aerosol spread may be a key mechanism of transmission between source cases and susceptible contacts in permissible environmental settings. The findings highlight the importance of considering aerosol transmission in future outbreak investigations and control measures.</p>
+        <p>Delayed recognition of the mechanics of aerosol transmission - the primary mode of spread of SARS-CoV-2 - at the beginning of the COVID-19 pandemic led to inadequate early recommendations regarding nonpharmaceutical interventions and poor initial messaging about how to reduce infection risk. We highlight key epidemiological details of Andes virus (ANDV) transmission on the MV Hondius cruise ship and during prior reported outbreaks with confirmed person-to-person spread in Argentina, which, together, suggest aerosol spread may be a key mechanism of transmission of ANDV between source cases and susceptible contacts in permissible environmental settings.</p>
       </div>
-      <button type="button" class="language-toggle" data-card-id="work-work-eff16bd1991afc42885881ed" aria-expanded="false">显示英文</button>
+      <button type="button" class="language-toggle" data-card-id="work-work-eff16bd1991afc42885881ed" aria-expanded="false" aria-label="显示英文" title="显示英文">en</button>
     
-      <div class="meta">Clinical infectious diseases : an official publication of the Infectious Diseases Society of America · 2026-07-11 · Meyerowitz EA, Richterman A</div>
-      <details class="analysis-details"><summary>查看研究设计、关键发现与证据审计</summary><p><strong>研究问题：</strong>是否气溶胶传播是安第斯病毒在邮轮和阿根廷疫情中的关键传播机制？ <span class="evidence-id">[A2]</span></p><p><strong>研究设计：</strong>描述性分析疫情流行病学细节 <span class="evidence-id">[A2]</span></p><p><strong>样本或数据：</strong>MV Hondius 邮轮上的安第斯病毒传播事件及阿根廷先前报告的已确认人际传播疫情 <span class="evidence-id">[A2]</span></p><p><strong>研究类型：</strong>observational</p><h4>方法</h4><ul><li>流行病学细节回顾 <span class="evidence-id">[A2]</span></li></ul><h4>关键发现</h4><ul><li>气溶胶传播可能是安第斯病毒在源病例与易感接触者之间传播的关键机制。 <span class="evidence-id">[A2]</span></li></ul><p><strong>意义：</strong>此发现强调了在未来疫情防控中考虑气溶胶传播的重要性。 <span class="evidence-id">[A2]</span></p><p><strong>证据强度：</strong>unclear；仅基于摘要中的有限描述 <span class="evidence-id">[A2]</span></p><p class="muted"><strong>解读证据范围：</strong>abstract</p></details>
+      <div class="meta">Clinical infectious diseases : an official publication of the Infectious Diseases Society of America · 当前可报道日期 2026-07-11（online_date）；期刊卷期日期 2026-07-01 · Meyerowitz EA, Richterman A</div>
+      <p class="content-status partial">证据等级 E1：已获得摘要；系统已尝试结构化全文、开放 HTML 和 PDF 兜底，但暂未获得可分析全文。</p>
+      <details class="analysis-details"><summary>查看研究设计、关键发现与证据审计</summary><p class="muted">该文献尚无通过证据校验的深度解读。</p></details>
       <div class="links"><a href="https://doi.org/10.1093/cid/ciag428">DOI</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/42435452">PMID</a></div>
       <div class="audit-note">翻译：groq · passed · github_models:failed → gemini:failed → groq:passed</div>
     </article>
@@ -1001,31 +856,13 @@ section{border-top:1px solid var(--ink);margin-top:26px;padding-top:7px} section
         <h3>Preparing for the Next Pandemic: Learning From COVID-19 to Build What Comes Next.</h3>
         <p>The WHO is working to strengthen pandemic preparedness by drawing lessons from COVID-19 and the current outbreaks of avian influenza, hantavirus, and Ebola. By integrating these insights, the organization aims to develop more effective strategies for future pandemics.</p>
       </div>
-      <button type="button" class="language-toggle" data-card-id="work-work-24595e6f0f7e4676a68be705" aria-expanded="false">显示英文</button>
+      <button type="button" class="language-toggle" data-card-id="work-work-24595e6f0f7e4676a68be705" aria-expanded="false" aria-label="显示英文" title="显示英文">en</button>
     
-      <div class="meta">Open forum infectious diseases · 2026-07-10 · Van Kerkhove M</div>
+      <div class="meta">Open forum infectious diseases · 当前可报道日期 2026-07-10（online_date）；期刊卷期日期 2026-07-01 · Van Kerkhove M</div>
+      <p class="content-status partial">证据等级 E1：已获得摘要；系统已尝试结构化全文、开放 HTML 和 PDF 兜底，但暂未获得可分析全文。</p>
       <details class="analysis-details"><summary>查看研究设计、关键发现与证据审计</summary><p class="muted">该文献尚无通过证据校验的深度解读。</p></details>
       <div class="links"><a href="https://doi.org/10.1093/ofid/ofag348">DOI</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/42434385">PMID</a></div>
       <div class="audit-note">翻译：groq · passed · github_models:failed → gemini:failed → groq:passed</div>
-    </article>
-    
-    <article class="story paper bilingual-card" id="work-work-e3cb5c555876b2b40ccfb58a">
-      <div class="kicker">学术文献 · brief · <span class="translation-status">中文默认</span></div>
-      
-      <div class="lang-panel lang-zh" data-lang="zh">
-        <h3>只顾看船，忽视森林：为何生态溢出、宿主生态和环境变化仍是北美汉坦病毒的真正威胁</h3>
-        <p class="muted">中文摘要暂不可用；系统不会根据标题编造内容。可点击“显示英文”查看原文。</p>
-      </div>
-      <div class="lang-panel lang-en" data-lang="en" hidden>
-        <h3>Watching the Ship, Missing the Forest: Why Ecological Spillover, Reservoir Ecology, and Environmental Change Remain the True Hantavirus Threats in North America.</h3>
-        <p class="muted">Original abstract or excerpt is unavailable.</p>
-      </div>
-      <button type="button" class="language-toggle" data-card-id="work-work-e3cb5c555876b2b40ccfb58a" aria-expanded="false">显示英文</button>
-    
-      <div class="meta">The Journal of infectious diseases · 2026-07-10 · Charles LE, Nuzzo JB, Bagdasarian N</div>
-      <details class="analysis-details"><summary>查看研究设计、关键发现与证据审计</summary><p class="muted">该文献尚无通过证据校验的深度解读。</p></details>
-      <div class="links"><a href="https://doi.org/10.1093/infdis/jiag359">DOI</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/42430654">PMID</a></div>
-      <div class="audit-note">翻译：github_models · passed · github_models:passed</div>
     </article>
     
     <article class="story paper bilingual-card" id="work-work-42d5a401efd4a0641cc92f0b">
@@ -1033,17 +870,18 @@ section{border-top:1px solid var(--ink);margin-top:26px;padding-top:7px} section
       
       <div class="lang-panel lang-zh" data-lang="zh">
         <h3>中文标题暂不可用</h3>
-        <p class="muted">中文摘要暂不可用；系统不会根据标题编造内容。可点击“显示英文”查看原文。</p>
+        <p class="muted">中文摘要暂不可用；系统不会根据标题编造内容。可点击右上角“en”查看原文。</p>
       </div>
       <div class="lang-panel lang-en" data-lang="en" hidden>
         <h3>Serologic Evidence of Hantavirus Exposure in Humans, Italy, 2004-2018.</h3>
         <p>Rodentborne hantaviruses and lymphocytic choriomeningitis virus (LCMV) circulate in northern Italy but are rarely diagnosed. We tested samples collected from 371 patients during 2004-2018 and detected LCMV IgG in 2.7% of samples and hantavirus IgG in 7.3%. Puumala virus-neutralizing antibodies were confirmed in 10 cases, indicating unrecognized local hantavirus circulation.</p>
       </div>
-      <button type="button" class="language-toggle" data-card-id="work-work-42d5a401efd4a0641cc92f0b" aria-expanded="false">显示英文</button>
+      <button type="button" class="language-toggle" data-card-id="work-work-42d5a401efd4a0641cc92f0b" aria-expanded="false" aria-label="显示英文" title="显示英文">en</button>
     
-      <div class="meta">Emerging infectious diseases · 2026-07-09 · Faolotto G, Wasberg A, Iheozor-Ejiofor R, Korhonen EM</div>
+      <div class="meta">Emerging infectious diseases · 当前可报道日期 2026-07-09（online_date）；期刊卷期日期 2026-07-01 · Faolotto G, Wasberg A, Iheozor-Ejiofor R, Korhonen EM</div>
+      <p class="content-status ok">证据等级 E2：已获得摘要和HTML/PDF 正文证据；解析方式：publisher_html。</p>
       <details class="analysis-details"><summary>查看研究设计、关键发现与证据审计</summary><p class="muted">该文献尚无通过证据校验的深度解读。</p></details>
-      <div class="links"><a href="https://doi.org/10.3201/eid3209.260840">DOI</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/42426565">PMID</a></div>
+      <div class="links"><a href="https://doi.org/10.3201/eid3209.260840">DOI</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/42426565">PMID</a> · <a href="https://wwwnc.cdc.gov/eid/article/32/9/26-0840_article">开放全文证据</a></div>
       <div class="audit-note">翻译：deterministic · translation_unavailable_after_all_providers · github_models:failed → gemini:failed → groq:failed</div>
     </article>
     
@@ -1051,19 +889,20 @@ section{border-top:1px solid var(--ink);margin-top:26px;padding-top:7px} section
       <div class="kicker">学术文献 · brief · <span class="translation-status">中文默认</span></div>
       
       <div class="lang-panel lang-zh" data-lang="zh">
-        <h3>自然游轮上的汉坦病毒及大流行风险</h3>
-        <p class="muted">中文摘要暂不可用；系统不会根据标题编造内容。可点击“显示英文”查看原文。</p>
+        <h3>绹永永专中三永主。和不得一中为海永永永。</h3>
+        <p>讨论了2026年5月首次报告的汉坦病毒病例引起的恐慌,以及像埃博拉病毒这样的威胁。</p>
       </div>
       <div class="lang-panel lang-en" data-lang="en" hidden>
         <h3>Hantavirus on a Nature Cruise and the Risk of a Pandemic.</h3>
-        <p class="muted">Original abstract or excerpt is unavailable.</p>
+        <p>Discussing the alarm surrounding the hantavirus cases first reported in May 2026 and burgeoning threats, such as Ebola virus.</p>
       </div>
-      <button type="button" class="language-toggle" data-card-id="work-work-26d41b33804b556d0e838645" aria-expanded="false">显示英文</button>
+      <button type="button" class="language-toggle" data-card-id="work-work-26d41b33804b556d0e838645" aria-expanded="false" aria-label="显示英文" title="显示英文">en</button>
     
-      <div class="meta">JAMA internal medicine · 2026-07-09 · Morgan DJ, Palmore TN, Kwon JH</div>
+      <div class="meta">JAMA internal medicine · 当前可报道日期 2026-07-09（online_date）；期刊卷期日期 2026-07-01 · Morgan DJ, Palmore TN, Kwon JH</div>
+      <p class="content-status partial">证据等级 E1：已获得摘要；系统已尝试结构化全文、开放 HTML 和 PDF 兜底，但暂未获得可分析全文。</p>
       <details class="analysis-details"><summary>查看研究设计、关键发现与证据审计</summary><p class="muted">该文献尚无通过证据校验的深度解读。</p></details>
       <div class="links"><a href="https://doi.org/10.1001/jamainternmed.2026.3600">DOI</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/42424042">PMID</a></div>
-      <div class="audit-note">翻译：github_models · passed · github_models:passed</div>
+      <div class="audit-note">翻译：groq · passed · github_models:failed → gemini:failed → groq:passed</div>
     </article>
     
     <article class="story paper bilingual-card" id="work-work-412a01ebc11cdf225065abdc">
@@ -1071,37 +910,39 @@ section{border-top:1px solid var(--ink);margin-top:26px;padding-top:7px} section
       
       <div class="lang-panel lang-zh" data-lang="zh">
         <h3>中文标题暂不可用</h3>
-        <p class="muted">中文摘要暂不可用；系统不会根据标题编造内容。可点击“显示英文”查看原文。</p>
+        <p class="muted">中文摘要暂不可用；系统不会根据标题编造内容。可点击右上角“en”查看原文。</p>
       </div>
       <div class="lang-panel lang-en" data-lang="en" hidden>
         <h3>The 2026 Andes virus outbreak: What genomic stability reveals about virulence.</h3>
         <p class="muted">Original abstract or excerpt is unavailable.</p>
       </div>
-      <button type="button" class="language-toggle" data-card-id="work-work-412a01ebc11cdf225065abdc" aria-expanded="false">显示英文</button>
+      <button type="button" class="language-toggle" data-card-id="work-work-412a01ebc11cdf225065abdc" aria-expanded="false" aria-label="显示英文" title="显示英文">en</button>
     
-      <div class="meta">Virulence · 2026-07-09 · Kung JL, Sanchez DJ</div>
+      <div class="meta">Virulence · 当前可报道日期 2026-07-09（online_date）；期刊卷期日期 2026-12-01 · Kung JL, Sanchez DJ</div>
+      <p class="content-status ok">证据等级 E2：已获得摘要和HTML/PDF 正文证据；解析方式：publisher_html。</p>
       <details class="analysis-details"><summary>查看研究设计、关键发现与证据审计</summary><p class="muted">该文献尚无通过证据校验的深度解读。</p></details>
-      <div class="links"><a href="https://doi.org/10.1080/21505594.2026.2698897">DOI</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/42423644">PMID</a></div>
+      <div class="links"><a href="https://doi.org/10.1080/21505594.2026.2698897">DOI</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/42423644">PMID</a> · <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC13353777/">开放全文证据</a></div>
       <div class="audit-note">翻译：deterministic · translation_unavailable_after_all_providers · github_models:failed → gemini:failed → groq:failed</div>
     </article>
     
     <article class="story paper bilingual-card" id="work-work-332fb645e31ec2d1b01591bd">
-      <div class="kicker">学术文献 · brief · <span class="translation-status unavailable">中文翻译未通过校验</span></div>
+      <div class="kicker">学术文献 · brief · <span class="translation-status">中文默认</span></div>
       
       <div class="lang-panel lang-zh" data-lang="zh">
-        <h3>中文标题暂不可用</h3>
-        <p class="muted">中文摘要暂不可用；系统不会根据标题编造内容。可点击“显示英文”查看原文。</p>
+        <h3>首次在马来西亚的野生 Rattus 物种中检测和遗传特征分析猪圆环病毒 2</h3>
+        <p>本研究在马来西亚的野生 Rattus 物种中首次检测到猪圆环病毒 2 (PCV2)，并对其遗传特征进行分析。结果显示该病毒属于 PCV2d 基因型，提示野生老鼠可能在其环境循环中发挥作用，需持续监测其生态分布和潜在的人畜共患风险。</p>
       </div>
       <div class="lang-panel lang-en" data-lang="en" hidden>
         <h3>First detection and genetic characterisation of Porcine Circovirus 2 from wild Rattus species in Malaysia</h3>
-        <p>Abstract Porcine circovirus 2 (PCV2) is a major swine pathogen, and recent findings suggest a broader cross-species transmission potential for circoviruses. In a pathogen surveillance program in Selangor, Malaysia, 28 rats and 18 treeshrews were screened. While all samples tested negative for hantavirus, molecular screening unexpectedly detected PCV2 in one wild Rattus norvegicus . Phylogenetic and sequence analyses confirmed the virus belongs to the predominant PCV2d genotype, designated as strain Siew/Rat/Feces/2026. This study reports the first detection of PCV2 in a Rattus species in Malaysia. The detection implies that wild rats might play a role in the environmental circulation of PCV2d in Malaysia, highlighting the importance of continuous surveillance to monitor its ecological distribution and zoonotic potential.</p>
+        <p>This study reports the first detection of Porcine Circovirus 2 (PCV2) in a wild Rattus species in Malaysia and characterises its genetics. The virus belongs to the PCV2d genotype, suggesting that wild rats may contribute to its environmental circulation, highlighting the need for ongoing surveillance of its ecological distribution and zoonotic potential.</p>
       </div>
-      <button type="button" class="language-toggle" data-card-id="work-work-332fb645e31ec2d1b01591bd" aria-expanded="false">显示英文</button>
+      <button type="button" class="language-toggle" data-card-id="work-work-332fb645e31ec2d1b01591bd" aria-expanded="false" aria-label="显示英文" title="显示英文">en</button>
     
-      <div class="meta">2026-07-09 · Siew ZY, Wong ST</div>
+      <div class="meta">当前可报道日期 2026-07-09（first_publication_date） · Siew ZY, Wong ST</div>
+      <p class="content-status ok">证据等级 E2：已获得摘要和HTML/PDF 正文证据；解析方式：publisher_html。</p>
       <details class="analysis-details"><summary>查看研究设计、关键发现与证据审计</summary><p class="muted">该文献尚无通过证据校验的深度解读。</p></details>
-      <div class="links"><a href="https://doi.org/10.21203/rs.3.rs-10252549/v1">DOI</a></div>
-      <div class="audit-note">翻译：deterministic · translation_unavailable_after_all_providers · github_models:failed → gemini:failed → groq:failed</div>
+      <div class="links"><a href="https://doi.org/10.21203/rs.3.rs-10252549/v1">DOI</a> · <a href="https://www.researchsquare.com/article/rs-10252549/v1">开放全文证据</a></div>
+      <div class="audit-note">翻译：groq · passed · github_models:failed → gemini:failed → groq:passed</div>
     </article>
     
     <article class="story paper bilingual-card" id="work-work-261800c4a15fce7cab542257">
@@ -1109,22 +950,23 @@ section{border-top:1px solid var(--ink);margin-top:26px;padding-top:7px} section
       
       <div class="lang-panel lang-zh" data-lang="zh">
         <h3>汉坦病毒——再次成为新闻焦点</h3>
-        <p class="muted">中文摘要暂不可用；系统不会根据标题编造内容。可点击“显示英文”查看原文。</p>
+        <p class="muted">中文摘要暂不可用；系统不会根据标题编造内容。可点击右上角“en”查看原文。</p>
       </div>
       <div class="lang-panel lang-en" data-lang="en" hidden>
         <h3>Hantavirus - Once Again in the News.</h3>
         <p class="muted">Original abstract or excerpt is unavailable.</p>
       </div>
-      <button type="button" class="language-toggle" data-card-id="work-work-261800c4a15fce7cab542257" aria-expanded="false">显示英文</button>
+      <button type="button" class="language-toggle" data-card-id="work-work-261800c4a15fce7cab542257" aria-expanded="false" aria-label="显示英文" title="显示英文">en</button>
     
-      <div class="meta">Clinics in dermatology · 2026-07-08 · Dickinson GM</div>
+      <div class="meta">Clinics in dermatology · 当前可报道日期 2026-07-08（online_date）；期刊卷期日期 2026-07-01 · Dickinson GM</div>
+      <p class="content-status missing">证据等级 E0：未抓获摘要或可分析正文；本条仅展示经核验的书目信息与标题翻译。已执行 1 轮跨库/全文兜底；已进入后续补全重试队列。</p>
       <details class="analysis-details"><summary>查看研究设计、关键发现与证据审计</summary><p class="muted">该文献尚无通过证据校验的深度解读。</p></details>
       <div class="links"><a href="https://doi.org/10.1016/j.clindermatol.2026.07.001">DOI</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/42419496">PMID</a></div>
       <div class="audit-note">翻译：github_models · passed · github_models:passed</div>
     </article>
     </div></section>
-<section><h2>来源运行状态</h2><table><thead><tr><th>来源</th><th>状态</th><th>记录</th><th>错误摘要</th></tr></thead><tbody><tr><td>pubmed</td><td>success_with_results</td><td>4</td><td></td></tr><tr><td>europe_pmc</td><td>success_with_results</td><td>12</td><td></td></tr><tr><td>crossref</td><td>failed</td><td></td><td>400 Client Error: Bad Request for url: https://api.crossref.org/works?query.bibliographic=%28hantavirus+OR+Orthohantavirus+OR+Hantaviridae%29+-%22fictional%22&amp;filter=from-pub-date%3A2026-07-08%2Cuntil-pub-date%3A2026-07-14&amp;rows=25&amp;select=DOI%2Ctitle%2Cauthor%2Cpublished-online%2Cpublished-print%2Ccreated%2Ccontainer-title%2Cpublisher%2Cvolume%2Cissue%2Cpage%2Carticle-number%2CISSN%2Ctype%2CURL%2Crelation%2Cupdate-to%2Csubtype%2Cabstract%2Clanguage&amp;mailto=buildingzhang%40outlook.com; 400 Client Error: Bad Request for url: https://api.crossref.org/works?query.bibliographic=%22hantavirus+pulmonary+syndrome%22+OR+%22hemorrhagic+fever+with+renal+syndrome%22&amp;filter=from-pub-date%3A2026-07-08%2Cuntil-pub-date%3A2026-07-14&amp;rows=25&amp;select=DOI%2Ctitle%2Cauthor%2Cpublished-online%2Cpublished-print%2Ccreated%2Ccontainer-title%2Cpublisher%2Cvolume%2Cissue%2Cpage%2Carticle-number%2CISSN%2Ctype%2CURL%2Crelation%2Cupdate-to%2Csubtype%2Cabstract%2Clanguage&amp;mailto=buildingzhang%40outlook.com</td></tr><tr><td>semantic_scholar</td><td>partial</td><td>36</td><td>429 Client Error:  for url: https://api.semanticscholar.org/graph/v1/paper/search?query=%28hantavirus+OR+Orthohantavirus+OR+Hantaviridae%29+-%22fictional%22&amp;limit=20&amp;fields=paperId%2CexternalIds%2Ctitle%2Cabstract%2Cauthors%2Cvenue%2Cyear%2CpublicationDate%2CpublicationTypes%2Curl%2CopenAccessPdf%2CcitationCount%2CreferenceCount&amp;publicationDateOrYear=2026-07-08%3A2026-07-14; 429 Client Error:  for url: https://api.semanticscholar.org/graph/v1/paper/search?query=%22hantavirus+outbreak%22+OR+%22hantavirus+surveillance%22&amp;limit=20&amp;fields=paperId%2CexternalIds%2Ctitle%2Cabstract%2Cauthors%2Cvenue%2Cyear%2CpublicationDate%2CpublicationTypes%2Curl%2CopenAccessPdf%2CcitationCount%2CreferenceCount&amp;publicationDateOrYear=2026-07-08%3A2026-07-14</td></tr><tr><td>who_don</td><td>success_with_results</td><td>4</td><td></td></tr><tr><td>reliefweb</td><td>failed</td><td></td><td>400 Client Error: Bad Request for url: https://api.reliefweb.int/v2/reports; 400 Client Error: Bad Request for url: https://api.reliefweb.int/v2/reports</td></tr><tr><td>gdelt</td><td>partial</td><td>25</td><td>Invalid JSON: Expecting value: line 1 column 1 (char 0); 429 Client Error: Too Many Requests for url: https://api.gdeltproject.org/api/v2/doc/doc?query=%22hantavirus+pulmonary+syndrome%22+OR+%22hemorrhagic+fever+with+renal+syndrome%22&amp;mode=ArtList&amp;maxrecords=25&amp;format=json&amp;sort=HybridRel&amp;startdatetime=20260708000000&amp;enddatetime=20260714235959</td></tr><tr><td>google_news_en</td><td>success_with_results</td><td>30</td><td></td></tr><tr><td>google_news_zh</td><td>success_with_results</td><td>19</td><td></td></tr><tr><td>cdc_registry</td><td>disabled</td><td></td><td></td></tr><tr><td>ecdc_registry</td><td>disabled</td><td></td><td></td></tr></tbody></table></section>
-<section><h2>数据质量说明</h2><ul><li>部分文献尚无可用摘要，系统仅展示书目信息。</li><li>部分事件尚未找到 A 级官方原始来源，应继续核验。</li><li>本期存在接口失败或部分完成，来源覆盖并不完整。</li><li>部分或全部 AI 任务已降级为无模型模式。</li><li>2 篇新闻未能抓取到可分析正文，相关条目仅使用 RSS、元描述或已有摘要。</li><li>10 条翻译由备用模型在首选模型未通过校验后完成。</li><li>46 条内容尚无通过校验的中文翻译，页面将明确提示并保留英文原文按钮。</li></ul></section>
+<section><h2>来源运行状态</h2><table><thead><tr><th>来源</th><th>状态</th><th>记录</th><th>错误摘要</th></tr></thead><tbody><tr><td>pubmed</td><td>success_with_results</td><td>12</td><td></td></tr><tr><td>europe_pmc</td><td>success_with_results</td><td>14</td><td></td></tr><tr><td>crossref</td><td>failed</td><td></td><td>400 Client Error: Bad Request for url: https://api.crossref.org/works?query.bibliographic=%28hantavirus+OR+Orthohantavirus+OR+Hantaviridae%29+-%22fictional%22&amp;filter=from-created-date%3A2026-07-08%2Cuntil-created-date%3A2026-07-14&amp;rows=40&amp;select=DOI%2Ctitle%2Cauthor%2Cpublished-online%2Cpublished-print%2Cpublished%2Cissued%2Ccreated%2Cindexed%2Cdeposited%2Ccontainer-title%2Cpublisher%2Cvolume%2Cissue%2Cpage%2Carticle-number%2CISSN%2Ctype%2CURL%2Crelation%2Cupdate-to%2Csubtype%2Cabstract%2Clanguage%2Cscore%2Clink%2Clicense&amp;sort=score&amp;order=desc&amp;mailto=buildingzhang%40outlook.com; 400 Client Error: Bad Request for url: https://api.crossref.org/works?query.bibliographic=%28hantavirus+OR+Orthohantavirus+OR+Hantaviridae%29+-%22fictional%22&amp;filter=from-online-pub-date%3A2026-07-08%2Cuntil-online-pub-date%3A2026-07-14&amp;rows=40&amp;select=DOI%2Ctitle%2Cauthor%2Cpublished-online%2Cpublished-print%2Cpublished%2Cissued%2Ccreated%2Cindexed%2Cdeposited%2Ccontainer-title%2Cpublisher%2Cvolume%2Cissue%2Cpage%2Carticle-number%2CISSN%2Ctype%2CURL%2Crelation%2Cupdate-to%2Csubtype%2Cabstract%2Clanguage%2Cscore%2Clink%2Clicense&amp;sort=score&amp;order=desc&amp;mailto=buildingzhang%40outlook.com</td></tr><tr><td>semantic_scholar</td><td>partial</td><td>3</td><td>429 Client Error:  for url: https://api.semanticscholar.org/graph/v1/paper/search?query=%22hantavirus+pulmonary+syndrome%22+OR+%22hemorrhagic+fever+with+renal+syndrome%22&amp;limit=30&amp;fields=paperId%2CexternalIds%2Ctitle%2Cabstract%2Cauthors%2Cvenue%2Cyear%2CpublicationDate%2CpublicationTypes%2Curl%2CopenAccessPdf%2CcitationCount%2CreferenceCount&amp;publicationDateOrYear=2026-07-08%3A2026-07-14; 429 Client Error:  for url: https://api.semanticscholar.org/graph/v1/paper/search?query=%22hantavirus+genome+phylogeny%22&amp;limit=30&amp;fields=paperId%2CexternalIds%2Ctitle%2Cabstract%2Cauthors%2Cvenue%2Cyear%2CpublicationDate%2CpublicationTypes%2Curl%2CopenAccessPdf%2CcitationCount%2CreferenceCount&amp;publicationDateOrYear=2026-07-08%3A2026-07-14</td></tr><tr><td>who_don</td><td>success_with_results</td><td>3</td><td></td></tr><tr><td>reliefweb</td><td>failed</td><td></td><td>400 Client Error: Bad Request for url: https://api.reliefweb.int/v2/reports; 400 Client Error: Bad Request for url: https://api.reliefweb.int/v2/reports</td></tr><tr><td>gdelt</td><td>partial</td><td>28</td><td>429 Client Error: Too Many Requests for url: https://api.gdeltproject.org/api/v2/doc/doc?query=%28%E6%B1%89%E5%9D%A6%E7%97%85%E6%AF%92%29+-%22fictional%22&amp;mode=ArtList&amp;maxrecords=50&amp;format=json&amp;sort=HybridRel&amp;startdatetime=20260708000000&amp;enddatetime=20260714235959; 429 Client Error: Too Many Requests for url: https://api.gdeltproject.org/api/v2/doc/doc?query=%22hantavirus+pulmonary+syndrome%22+OR+%22hemorrhagic+fever+with+renal+syndrome%22&amp;mode=ArtList&amp;maxrecords=50&amp;format=json&amp;sort=HybridRel&amp;startdatetime=20260708000000&amp;enddatetime=20260714235959</td></tr><tr><td>google_news_en</td><td>success_with_results</td><td>44</td><td></td></tr><tr><td>google_news_zh</td><td>success_with_results</td><td>19</td><td></td></tr><tr><td>cdc_registry</td><td>disabled</td><td></td><td></td></tr><tr><td>ecdc_registry</td><td>disabled</td><td></td><td></td></tr></tbody></table></section>
+<section><h2>数据质量说明</h2><ul><li>部分文献尚无可用摘要或全文：记录仍被保留并进入后续补全队列，本期仅展示书目信息，且不生成研究结论。</li><li>部分事件尚未找到 A 级官方原始来源，应继续核验。</li><li>本期存在接口失败或部分完成，来源覆盖并不完整。</li><li>部分或全部 AI 任务已降级为无模型模式。</li><li>2 篇文献通过 PubMed、Europe PMC、Crossref、Semantic Scholar 或出版商元数据补回了摘要。</li><li>7 篇文献通过 PMC XML/BioC、开放 HTML、文本挖掘链接或合法开放 PDF 补充了正文证据。</li><li>1 篇文献当前仍为 E0 元数据级记录，已保留并安排后续补抓，未生成研究发现。</li><li>10 条翻译由备用模型在首选模型未通过校验后完成。</li><li>9 篇仅在背景中提及目标病原的文章已归档，不再生成公共卫生事件。</li><li>76 篇新闻仅获得标题或 RSS 摘要，页面将明确标记为未获得正文。</li><li>21 条内容尚无通过校验的中文翻译，页面将明确提示并保留英文原文按钮。</li></ul></section>
 <footer>本简报由自动化系统汇总公开文献与公共卫生信息，仅用于信息跟踪和科研参考，不替代官方公共卫生通报、临床诊断或专业决策。重要事件请以原始官方来源为准。</footer>
 </main>
 <script>
@@ -1137,8 +979,10 @@ section{border-top:1px solid var(--ink);margin-top:26px;padding-top:7px} section
     const showEnglish = language === 'en';
     zh.hidden = showEnglish;
     en.hidden = !showEnglish;
-    button.textContent = showEnglish ? '显示中文' : '显示英文';
+    button.textContent = showEnglish ? 'zh' : 'en';
     button.setAttribute('aria-expanded', String(showEnglish));
+    button.setAttribute('aria-label', showEnglish ? '显示中文' : '显示英文');
+    button.setAttribute('title', showEnglish ? '显示中文' : '显示英文');
   }
   document.querySelectorAll('.language-toggle').forEach(function(button){
     button.addEventListener('click', function(){
