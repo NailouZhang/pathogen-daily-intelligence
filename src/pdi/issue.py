@@ -145,6 +145,13 @@ def build_daily_issue(
             bool((a.get("translation_audit") or {}).get("fallback_used")) and bool(a.get("title", {}).get("translated_zh"))
             for a in articles
         ),
+        "local_mt_translation_successes": sum(
+            (w.get("translation_audit") or {}).get("provider") == "local_marian" and bool(w.get("title", {}).get("translated_zh"))
+            for w in works
+        ) + sum(
+            (a.get("translation_audit") or {}).get("provider") == "local_marian" and bool(a.get("title", {}).get("translated_zh"))
+            for a in articles
+        ),
         "translation_unavailable": sum(not bool(w.get("title", {}).get("translated_zh")) for w in works)
         + sum(not bool(a.get("title", {}).get("translated_zh")) for a in articles),
         "news_content_fetch_attempted": (content_audit.get("news") or {}).get("attempted", 0),

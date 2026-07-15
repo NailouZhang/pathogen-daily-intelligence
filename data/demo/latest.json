@@ -11,7 +11,7 @@
     "end": "2026-07-14",
     "timezone": "Asia/Shanghai"
   },
-  "generated_at": "2026-07-15T01:25:55+00:00",
+  "generated_at": "2026-07-15T03:10:22+00:00",
   "statistics": {
     "scholarly_raw": 3,
     "scholarly_unique": 2,
@@ -152,7 +152,7 @@
         "error": "LLM disabled; validated source or demo translations were retained.",
         "retry_count": 0,
         "fallback_used": false,
-        "generated_at": "2026-07-15T01:25:55+00:00",
+        "generated_at": "2026-07-15T03:10:22+00:00",
         "validation_status": "not_applicable",
         "unsupported_claim_count": 0
       }
@@ -202,7 +202,7 @@
       "daily_synthesis",
       "render_and_publish"
     ],
-    "content_hash": "4702111447d9113cfe401b66c7f4aae3"
+    "content_hash": "843b48493e43584c41da24dd38615601"
   },
   "outputs": {
     "latest_json": "data/latest.json",

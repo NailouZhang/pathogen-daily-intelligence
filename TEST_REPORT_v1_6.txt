@@ -1,0 +1,45 @@
+Pathogen Daily Intelligence v1.6.0
+=================================
+
+Scope
+-----
+- Python/MarianMT final translation fallback after GitHub Models, Gemini and Groq.
+- Local reference translation as an independent quality signal for remote LLM titles.
+- Deterministic terminology, Chinese-language, uncertainty, negation, number and boilerplate validation.
+- Google News boilerplate removed before translation.
+- Title-only news records do not receive generated pseudo-summaries.
+- Translation audit separated from content-analysis audit.
+- DOI occurrence alone cannot override a conflicting title/author identity check.
+- Existing compact top-right en/zh card control retained.
+
+Executed checks
+---------------
+1. Python compileall: PASS
+2. Project/YAML/schema validation: PASS
+3. Pytest: 49 tests PASS
+4. Deterministic demo pipeline: PASS
+5. Static GitHub Pages HTML generation: PASS
+6. Streamlit source import/health path covered by existing tests: PASS
+7. Prompt production/review mirror equality: PASS
+8. Google News boilerplate removal regression: PASS
+9. Known wrong translations (宋病毒/汉塔病毒 etc.) repair/rejection regression: PASS
+10. Uncertainty marker preservation regression: PASS
+11. Local-MT title-only fallback with no fake summary regression: PASS
+12. Wrong-PDF DOI-only identity acceptance regression: PASS
+13. GitHub workflow and shell syntax validation: PASS
+
+Live-model verification boundary
+--------------------------------
+- `torch`, `transformers`, `sentencepiece`, `sacremoses` and OpenCC dependencies were installed successfully in the packaging environment.
+- A live download of `Helsinki-NLP/opus-mt-en-zh` was attempted, but the packaging environment could not resolve `huggingface.co`; therefore no claim is made that live model weights were executed here.
+- The GitHub Actions workflow installs CPU PyTorch, downloads the model on first real use and caches `~/.cache/huggingface` with `actions/cache@v5`.
+- If Hugging Face or the local model is unavailable, the failure is audited and publication continues with honest untranslated placeholders.
+
+Recommended real-run acceptance checks
+--------------------------------------
+- Confirm `local_mt_translation_successes` in `data/latest.json` when remote providers fail.
+- Inspect `data/audit/object_audit.jsonl` for provider `local_marian` and statuses `passed_local_mt` or `passed_local_mt_with_glossary_repair`.
+- Confirm no cards contain: 宋病毒, 汉塔病毒, 韩坦病毒, 明显汉坦病毒疫情, 汉坦病毒肆虐游轮.
+- Confirm Google News boilerplate is not shown as a Chinese summary.
+- Confirm a title-only item displays the fixed no-content notice instead of a generated event summary.
+- Confirm translation and content-analysis statuses are shown separately.

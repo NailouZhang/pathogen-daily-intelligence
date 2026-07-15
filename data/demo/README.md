@@ -1,11 +1,5 @@
-# v1.5 Demo 数据
+# v1.6 deterministic demo
 
-该目录由 `scripts/run_daily.py --demo --disable-llm` 生成，用于离线检查：
+This directory is generated with `--demo --disable-llm` to validate JSON, HTML, RSS, bilingual controls and audit output without network credentials.
 
-- 中文默认双语卡片；
-- 每卡片右上角小型 `en/zh` 字符切换；
-- 科学上下标安全渲染；
-- 文献 E0–E3 证据状态展示；
-- GitHub Pages、Streamlit、RSS 和审计数据结构。
-
-Demo 不调用外部文献接口或在线大模型，因此不验证真实 PDF 获取、API 权限、模型额度或在线网站可访问性。
+The local MarianMT path is covered by isolated fake-model regression tests. The current packaging environment could install the Python dependencies but could not resolve `huggingface.co`, so live model-weight download was not falsely reported as tested. GitHub Actions will download and cache the configured model during the first real run.

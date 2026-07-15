@@ -1,0 +1,5 @@
+# Installed by the daily GitHub Actions workflow only.
+transformers>=4.48,<5
+sentencepiece>=0.2,<1
+sacremoses>=0.1,<1
+opencc-python-reimplemented>=0.1.7,<1

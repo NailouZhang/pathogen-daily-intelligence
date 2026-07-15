@@ -12,21 +12,30 @@ from .markup import (
     strip_scientific_markup,
 )
 from .utils import content_hash, ensure_dict_field, normalize_space, utc_now_iso
+from .translation_quality import (
+    assess_translation,
+    clean_translation_source,
+    literal_card_summary,
+    repair_translation_fields,
+)
 
-TRANSLATION_PROMPT_VERSION = "bilingual-translation-v1.5"
+TRANSLATION_PROMPT_VERSION = "bilingual-translation-v1.6"
 
 
 def _source_fields(item: dict[str, Any], kind: str) -> tuple[str, str | None, str | None]:
     if kind == "work":
         return (
             str((item.get("title") or {}).get("original") or ""),
-            (item.get("abstract") or {}).get("original"),
+            clean_translation_source((item.get("abstract") or {}).get("original"), kind="work"),
             (item.get("title") or {}).get("language"),
         )
     return (
         str((item.get("title") or {}).get("original") or ""),
-        (item.get("content") or {}).get("translation_text")
-        or (item.get("content") or {}).get("excerpt"),
+        clean_translation_source(
+            (item.get("content") or {}).get("translation_text")
+            or (item.get("content") or {}).get("excerpt"),
+            kind="article",
+        ),
         (item.get("title") or {}).get("language"),
     )
 
@@ -34,7 +43,7 @@ def _source_fields(item: dict[str, Any], kind: str) -> tuple[str, str | None, st
 def translation_cache_key(item: dict[str, Any], kind: str) -> str:
     title, body, language = _source_fields(item, kind)
     identity = item.get("work_id") if kind == "work" else item.get("article_id")
-    return f"translation:{kind}:{identity}:{content_hash({'title': title, 'body': body, 'language': language})}"
+    return f"translation:{TRANSLATION_PROMPT_VERSION}:{kind}:{identity}:{content_hash({'title': title, 'body': body, 'language': language})}"
 
 
 def prepare_translation_item(item: dict[str, Any], kind: str) -> tuple[dict[str, Any], dict[str, str]]:
@@ -163,8 +172,6 @@ def validate_translation_fields(
         errors.append("MISSING_TRANSLATED_TITLE_ZH")
     if source_text and (not isinstance(translated_text, str) or not translated_text.strip()):
         errors.append("MISSING_TRANSLATED_TEXT_ZH")
-    if source_text and (not isinstance(summary_zh, str) or not summary_zh.strip()):
-        errors.append("MISSING_DISPLAY_SUMMARY_ZH")
 
     combined = "\n".join(str(raw_fields.get(key) or "") for key in raw_fields)
     if mapping and not placeholders_preserved(combined, mapping):
@@ -187,6 +194,54 @@ def validate_translation_fields(
     return {"valid": not errors, "errors": errors[:30]}
 
 
+def review_translation_candidate(
+    source_title: str,
+    source_text: str | None,
+    raw_fields: dict[str, Any],
+    mapping: dict[str, str],
+    *,
+    glossary: dict[str, Any] | None = None,
+    local_translator: Any | None = None,
+) -> dict[str, Any]:
+    structural = validate_translation_fields(source_title, source_text, raw_fields, mapping)
+    restored = restore_translation_fields(raw_fields, mapping)
+    repaired, repairs = repair_translation_fields(source_title, source_text, restored, glossary)
+    local_reference = None
+    local_reference_audit: dict[str, Any] | None = None
+    if structural["valid"] and local_translator is not None:
+        local_reference, local_reference_audit = local_translator.reference_title(source_title)
+    title_quality = assess_translation(
+        source_title,
+        repaired.get("translated_title_zh"),
+        field_name="title",
+        glossary=glossary,
+        local_reference=local_reference,
+    )
+    text_quality = (
+        assess_translation(
+            source_text,
+            repaired.get("translated_text_zh"),
+            field_name="text",
+            glossary=glossary,
+        )
+        if source_text
+        else {"valid": True, "errors": [], "warnings": [], "metrics": {}}
+    )
+    errors = list(structural["errors"]) + list(title_quality["errors"]) + list(text_quality["errors"])
+    if source_text and not repaired.get("display_summary_zh"):
+        repaired["display_summary_zh"] = literal_card_summary(repaired.get("translated_text_zh"))
+    return {
+        "valid": not errors,
+        "errors": errors[:40],
+        "warnings": (title_quality["warnings"] + text_quality["warnings"])[:40],
+        "fields": repaired,
+        "repairs": repairs,
+        "quality_metrics": {"title": title_quality["metrics"], "text": text_quality["metrics"]},
+        "local_reference": local_reference,
+        "local_reference_audit": local_reference_audit,
+    }
+
+
 def apply_translation(
     item: dict[str, Any],
     kind: str,
@@ -206,8 +261,17 @@ def apply_translation(
         ensure_dict_field(item, "abstract")["translated_zh"] = translated_text
     else:
         ensure_dict_field(item, "content")["translated_excerpt_zh"] = translated_text
+    pure_translation = audit.get("task_name") in {
+        "bilingual_translation_batch",
+        "translation_repair",
+        "local_machine_translation",
+    }
+    if pure_translation:
+        summary_zh = literal_card_summary(translated_text) if body else None
+    else:
+        summary_zh = fields.get("display_summary_zh") or literal_card_summary(translated_text)
     item["display_summary"] = {
-        "zh": fields.get("display_summary_zh") or translated_text,
+        "zh": summary_zh,
         "en": summary_en,
     }
     item["translation_audit"] = {
@@ -258,8 +322,11 @@ def apply_event_bilingual(events: list[dict[str, Any]], articles: Iterable[dict[
         display = (primary or {}).get("display_summary") or {}
         event["display_summary"] = {
             "zh": display.get("zh"),
-            "en": display.get("en") or ((primary or {}).get("content") or {}).get("excerpt"),
+            "en": display.get("en") or _source_fields(primary or {}, "article")[1],
         }
         event["translation_audit"] = (primary or {}).get("translation_audit")
         event["ai_analysis"] = (primary or {}).get("ai_analysis")
+        event["processing_audit"] = {
+            "llm_analysis": ((primary or {}).get("processing_audit") or {}).get("llm_analysis")
+        }
         event["analysis_source_article_id"] = primary_id

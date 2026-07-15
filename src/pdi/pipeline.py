@@ -17,6 +17,8 @@ from .filters import classify_article, classify_work, relevance
 from .http import HttpClient
 from .issue import build_daily_issue
 from .llm import ModelRouter
+from .local_mt import LocalMachineTranslator
+from .translation_quality import clean_translation_source
 from .query_planner import build_query_tasks
 from .render import build_email_html, build_report_html, build_rss
 from .sources.news import collect_news
@@ -33,6 +35,8 @@ from .translation import (
     restore_translation_fields,
     translation_cache_key,
     validate_translation_fields,
+    review_translation_candidate,
+    TRANSLATION_PROMPT_VERSION,
 )
 from .utils import content_hash, ensure_dict_field, utc_now_iso, write_json
 from .validation import validate_ai_output, validate_schema
@@ -283,6 +287,16 @@ def _apply_model_translation(
     return True, []
 
 
+def _translation_attempt_chain(attempts: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    chain: list[dict[str, Any]] = []
+    for attempt in attempts:
+        row = dict(attempt)
+        row["validation_status"] = attempt.get("translation_validation_status") or attempt.get("validation_status")
+        row["validation_errors"] = attempt.get("translation_validation_errors") or attempt.get("validation_errors") or []
+        chain.append(row)
+    return chain
+
+
 def _aggregate_attempt_audit(
     task_name: str,
     record_id: str,
@@ -315,10 +329,12 @@ def _run_validated_analysis(
     evidence: list[dict[str, str]],
     approved_terms: list[str],
     cache: dict[str, Any],
+    local_translator: LocalMachineTranslator | None = None,
+    translation_glossary: dict[str, Any] | None = None,
 ) -> tuple[dict[str, Any], dict[str, Any]]:
     """Run one provider at a time and stop at the first fully validated result."""
     record_id = str(item.get("work_id") if kind == "work" else item.get("article_id"))
-    cache_key = f"analysis:{task_name}:" + content_hash(payload)
+    cache_key = f"analysis:{TRANSLATION_PROMPT_VERSION}:{task_name}:" + content_hash(payload)
     cached, cached_audit = _cache_hit(cache, cache_key)
     _prepared, mapping = prepare_translation_item(item, kind)
     validation_evidence = evidence + [
@@ -350,26 +366,38 @@ def _run_validated_analysis(
 
         ai_validation = validate_ai_output(output, validation_evidence, approved_terms)
         raw_fields = extract_translation_fields(output, kind)
-        translation_validation = validate_translation_fields(
+        translation_review = review_translation_candidate(
             (item.get("title") or {}).get("original") or "",
             source_text,
             raw_fields,
             mapping,
+            glossary=translation_glossary,
+            local_translator=local_translator,
         )
-        errors = list(ai_validation["errors"]) + list(translation_validation["errors"])
+        analysis_errors = list(ai_validation["errors"])
+        translation_errors = list(translation_review["errors"])
+        errors = analysis_errors + translation_errors
+        attempt["translation_validation_status"] = "passed" if not translation_errors else "failed"
+        attempt["translation_validation_errors"] = translation_errors[:40]
+        attempt["translation_validation_warnings"] = translation_review["warnings"]
+        attempt["translation_repairs"] = translation_review["repairs"]
+        attempt["translation_quality_metrics"] = translation_review["quality_metrics"]
+        attempt["local_reference_audit"] = translation_review["local_reference_audit"]
+        attempt["analysis_validation_status"] = "passed" if not analysis_errors else "failed"
+        attempt["analysis_validation_errors"] = analysis_errors[:40]
         attempt["validation_status"] = "passed" if not errors else "failed"
         attempt["validation_errors"] = errors[:40]
         attempt["unsupported_claim_count"] = ai_validation["unsupported_claim_count"]
         attempts.append(attempt)
         all_errors.extend(f"{attempt.get('provider')}:{error}" for error in errors)
 
-        if translation_validation["valid"] and best_translation is None:
-            best_translation = (output, attempt)
+        if translation_review["valid"] and best_translation is None:
+            best_translation = (translation_review["fields"], attempt)
         if errors:
             return None
 
-        restored_audit = {**attempt, "attempt_chain": list(attempts)}
-        _apply_model_translation(item, kind, output, mapping, restored_audit)
+        restored_audit = {**attempt, "attempt_chain": _translation_attempt_chain(attempts)}
+        apply_translation(item, kind, translation_review["fields"], restored_audit)
         restored_output = restore_scientific_object(output, mapping)
         item["ai_analysis"] = restored_output
         accepted_audit = _aggregate_attempt_audit(
@@ -417,21 +445,15 @@ def _run_validated_analysis(
     # analytical claim. Keep only the validated translation and discard the
     # analytical output.
     if best_translation is not None and not _has_valid_existing_translation(item, kind):
-        output, attempt = best_translation
+        reviewed_fields, attempt = best_translation
         translation_only_audit = {
             **attempt,
             "status": "success_translation_only",
             "validation_status": "passed",
             "analysis_validation_status": "failed",
-            "attempt_chain": list(attempts),
+            "attempt_chain": _translation_attempt_chain(attempts),
         }
-        _apply_model_translation(
-            item,
-            kind,
-            output,
-            mapping,
-            translation_only_audit,
-        )
+        apply_translation(item, kind, reviewed_fields, translation_only_audit)
     item["ai_analysis"] = None
     final_audit = _aggregate_attempt_audit(
         task_name, record_id, attempts, None, all_errors
@@ -444,6 +466,8 @@ def _run_analysis_for_work(
     work: dict[str, Any],
     approved_terms: list[str],
     cache: dict[str, Any],
+    local_translator: LocalMachineTranslator | None = None,
+    translation_glossary: dict[str, Any] | None = None,
 ) -> tuple[dict[str, Any], dict[str, Any]]:
     prepared, mapping = prepare_translation_item(work, "work")
     evidence = _evidence_for_work(work)
@@ -472,7 +496,8 @@ def _run_analysis_for_work(
         "protected_placeholders": prepared["protected_placeholders"],
     }
     return _run_validated_analysis(
-        router, "literature_analysis", payload, work, "work", evidence, approved_terms, cache
+        router, "literature_analysis", payload, work, "work", evidence, approved_terms, cache,
+        local_translator, translation_glossary
     )
 
 
@@ -481,6 +506,8 @@ def _run_analysis_for_article(
     article: dict[str, Any],
     approved_terms: list[str],
     cache: dict[str, Any],
+    local_translator: LocalMachineTranslator | None = None,
+    translation_glossary: dict[str, Any] | None = None,
 ) -> tuple[dict[str, Any], dict[str, Any]]:
     prepared, mapping = prepare_translation_item(article, "article")
     evidence = _evidence_for_article(article)
@@ -509,14 +536,18 @@ def _run_analysis_for_article(
         "protected_placeholders": prepared["protected_placeholders"],
     }
     return _run_validated_analysis(
-        router, task, payload, article, "article", evidence, approved_terms, cache
+        router, task, payload, article, "article", evidence, approved_terms, cache,
+        local_translator, translation_glossary
     )
 
 
 def _translation_source_text(item: dict[str, Any], kind: str) -> str | None:
     if kind == "work":
-        return (item.get("abstract") or {}).get("original")
-    return (item.get("content") or {}).get("translation_text") or (item.get("content") or {}).get("excerpt")
+        return clean_translation_source((item.get("abstract") or {}).get("original"), kind="work")
+    return clean_translation_source(
+        (item.get("content") or {}).get("translation_text") or (item.get("content") or {}).get("excerpt"),
+        kind="article",
+    )
 
 
 def _translate_remaining_items(
@@ -525,6 +556,8 @@ def _translate_remaining_items(
     cache: dict[str, Any],
     audits: list[dict[str, Any]],
     policy: dict[str, Any],
+    local_translator: LocalMachineTranslator | None = None,
+    translation_glossary: dict[str, Any] | None = None,
 ) -> None:
     pending: dict[str, tuple[dict[str, Any], str, dict[str, Any], dict[str, str], str]] = {}
     attempt_history: dict[str, list[dict[str, Any]]] = {}
@@ -550,9 +583,25 @@ def _translate_remaining_items(
         cache_key = translation_cache_key(item, kind)
         cached_fields, cached_audit = _cache_hit(cache, cache_key)
         if cached_fields is not None:
-            apply_translation(item, kind, cached_fields, cached_audit or {})
-            audits.append(cached_audit or {})
-            continue
+            cache_review = review_translation_candidate(
+                (item.get("title") or {}).get("original") or "",
+                _translation_source_text(item, kind),
+                cached_fields,
+                {},
+                glossary=translation_glossary,
+                local_translator=local_translator,
+            )
+            if cache_review["valid"]:
+                cache_audit = dict(cached_audit or {})
+                cache_audit.update({
+                    "validation_status": "passed_cache_revalidated",
+                    "translation_repairs": cache_review["repairs"],
+                    "translation_quality_metrics": cache_review["quality_metrics"],
+                })
+                apply_translation(item, kind, cache_review["fields"], cache_audit)
+                audits.append(cache_audit)
+                continue
+            cache.pop(cache_key, None)
         prepared, mapping = prepare_translation_item(item, kind)
         pending[record_id] = (item, kind, prepared, mapping, cache_key)
         attempt_history[record_id] = []
@@ -632,24 +681,32 @@ def _translate_remaining_items(
                         validation_errors.append(f"{record_id}:MISSING_RECORD_IN_MODEL_OUTPUT")
                         continue
                     fields = extract_translation_fields(raw, kind)
-                    validation = validate_translation_fields(
+                    review = review_translation_candidate(
                         (item.get("title") or {}).get("original") or "",
                         _translation_source_text(item, kind),
                         fields,
                         mapping,
+                        glossary=translation_glossary,
+                        local_translator=local_translator,
                     )
                     item_attempt.update(
                         {
                             "record_id": record_id,
-                            "validation_status": "passed" if validation["valid"] else "failed",
-                            "validation_errors": validation["errors"],
+                            "translation_validation_status": "passed" if review["valid"] else "failed",
+                            "translation_validation_errors": review["errors"],
+                            "translation_validation_warnings": review["warnings"],
+                            "translation_repairs": review["repairs"],
+                            "translation_quality_metrics": review["quality_metrics"],
+                            "local_reference_audit": review["local_reference_audit"],
+                            "validation_status": "passed" if review["valid"] else "failed",
+                            "validation_errors": review["errors"],
                         }
                     )
                     attempt_history[record_id].append(item_attempt)
-                    if not validation["valid"]:
-                        validation_errors.extend(f"{record_id}:{error}" for error in validation["errors"])
+                    if not review["valid"]:
+                        validation_errors.extend(f"{record_id}:{error}" for error in review["errors"])
                         continue
-                    restored = restore_translation_fields(fields, mapping)
+                    restored = review["fields"]
                     item_audit = {
                         **item_attempt,
                         "status": "success",
@@ -686,6 +743,24 @@ def _translate_remaining_items(
             # dynamically discovered model in the same provider on the next round.
             if not any_valid_translation and provider_round + 1 >= rounds:
                 break
+
+    # Final Python/local machine-translation fallback.  It translates only source
+    # text that was actually retrieved; a title-only news record stays title-only.
+    if pending and local_translator is not None:
+        for record_id in list(pending):
+            item, kind, _prepared, _mapping, cache_key = pending[record_id]
+            local_result = local_translator.translate_record(item, kind)
+            local_audit = dict(local_result.audit)
+            local_audit["record_id"] = record_id
+            attempt_history[record_id].append(local_audit)
+            audits.append(local_audit)
+            if local_result.status != "success" or not local_result.fields:
+                continue
+            local_audit["attempt_chain"] = list(attempt_history[record_id])
+            apply_translation(item, kind, local_result.fields, local_audit)
+            ensure_dict_field(item, "processing_audit")["translation"] = dict(local_audit)
+            _save_cache(cache, cache_key, local_result.fields, local_audit)
+            pending.pop(record_id, None)
 
     for record_id, (item, kind, _prepared, _mapping, _cache_key) in pending.items():
         ensure_bilingual_placeholders(item, kind)
@@ -792,6 +867,8 @@ def _translate_and_analyse(
     router = ModelRouter(root, policy)
     audits: list[dict[str, Any]] = []
     cache = dict(previous_cache or {})
+    translation_glossary = profile.get("translation_glossary") or {}
+    local_translator = LocalMachineTranslator(policy, translation_glossary)
     max_analysis_items = int(policy.get("max_items_per_issue", 18))
     analysis_candidates: list[tuple[float, str, dict[str, Any]]] = []
     for work in works:
@@ -815,10 +892,14 @@ def _translate_and_analyse(
     ]
 
     for work in selected_works:
-        _, audit = _run_analysis_for_work(router, work, approved_terms, cache)
+        _, audit = _run_analysis_for_work(
+            router, work, approved_terms, cache, local_translator, translation_glossary
+        )
         audits.append(audit)
     for article in selected_articles:
-        _, audit = _run_analysis_for_article(router, article, approved_terms, cache)
+        _, audit = _run_analysis_for_article(
+            router, article, approved_terms, cache, local_translator, translation_glossary
+        )
         audits.append(audit)
 
     _translate_remaining_items(
@@ -827,6 +908,8 @@ def _translate_and_analyse(
         cache,
         audits,
         policy,
+        local_translator,
+        translation_glossary,
     )
     apply_event_bilingual(events, articles)
 

@@ -110,6 +110,13 @@ llm_policy:
     groq: 8
   model_timeout_seconds: 75
   daily_synthesis: true
+  enable_local_mt: true
+  verify_llm_with_local_mt: true
+  local_mt_model: Helsinki-NLP/opus-mt-en-zh
+  local_mt_back_model: Helsinki-NLP/opus-mt-zh-en
+  local_mt_backtranslate: false
+  local_mt_max_chars: 6000
+  local_mt_chunk_chars: 420
 content_policy:
   # Only public, directly retrievable pages are processed. The system does not
   # bypass paywalls or access controls and retains bounded evidence excerpts.

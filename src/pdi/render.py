@@ -57,6 +57,20 @@ def _attempt_chain(audit: dict[str, Any]) -> str:
     return " → ".join(labels)
 
 
+def _translation_audit_note(audit: dict[str, Any], analysis_audit: dict[str, Any] | None = None) -> str:
+    provider = audit.get("provider") or "不可用"
+    status = audit.get("validation_status") or "unknown"
+    parts = [f"翻译：{_e(provider)} · {_e(status)}"]
+    chain = _attempt_chain(audit)
+    if chain:
+        parts.append(_e(chain))
+    if analysis_audit:
+        analysis_status = analysis_audit.get("validation_status") or analysis_audit.get("status")
+        if analysis_status:
+            parts.append(f"内容解读：{_e(analysis_status)}")
+    return " · ".join(parts)
+
+
 def _work_analysis_details(work: dict[str, Any]) -> str:
     analysis = work.get("ai_analysis") or {}
     if not analysis:
@@ -161,7 +175,7 @@ def _language_panels(
     if zh_summary:
         zh_summary_html = f"<p>{safe_scientific_html(zh_summary)}</p>"
     else:
-        zh_summary_html = '<p class="muted">中文摘要暂不可用；系统不会根据标题编造内容。可点击右上角“en”查看原文。</p>'
+        zh_summary_html = '<p class="muted">未抓获可翻译的摘要或正文；当前仅提供标题，不根据标题扩写内容。可点击右上角“en”查看原文。</p>'
     en_title_html = safe_scientific_html(en_title or "English title unavailable")
     if en_summary:
         en_summary_html = f"<p>{safe_scientific_html(en_summary)}</p>"
@@ -260,7 +274,6 @@ def _work_card(work: dict[str, Any]) -> str:
         if not zh_title
         else '<span class="translation-status">中文默认</span>'
     )
-    chain = _attempt_chain(audit) or _attempt_chain(analysis_audit)
     return f"""
     <article class="story paper bilingual-card" id="{_e(card_id)}">
       <div class="kicker">学术文献 · {_e(work.get('filter_result', {}).get('decision', 'archive'))} · {translation_note}</div>
@@ -269,7 +282,7 @@ def _work_card(work: dict[str, Any]) -> str:
       {_work_content_note(work)}
       <details class="analysis-details"><summary>查看研究设计、关键发现与证据审计</summary>{_work_analysis_details(work)}</details>
       <div class="links">{' · '.join(links)}</div>
-      <div class="audit-note">翻译：{_e(audit.get('provider') or '不可用')} · {_e(audit.get('validation_status') or 'unknown')}{' · '+_e(chain) if chain else ''}</div>
+      <div class="audit-note">{_translation_audit_note(audit, analysis_audit)}</div>
     </article>
     """
 
@@ -306,7 +319,7 @@ def _event_card(event: dict[str, Any]) -> str:
       {_event_content_note(event)}
       <details class="analysis-details"><summary>查看正文理解、官方确认与不确定性</summary>{_event_analysis_details(event)}</details>
       <div class="links">{link}</div>
-      <div class="audit-note">翻译：{_e(audit.get('provider') or '不可用')} · {_e(audit.get('validation_status') or 'unknown')}{' · '+_e(chain) if chain else ''}</div>
+      <div class="audit-note">{_translation_audit_note(audit, (event.get("processing_audit") or {}).get("llm_analysis"))}</div>
     </article>
     """
 

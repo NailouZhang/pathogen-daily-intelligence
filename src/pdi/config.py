@@ -43,6 +43,8 @@ def load_profile(profile_id: str = "hantavirus", root: Path | None = None) -> di
     profile["lexicon"] = read_json(paths.lexicon, []) or []
     profile["query_groups"] = read_json(paths.query_groups, {}) or {}
     profile["source_registry"] = read_json(paths.source_registry, {}) or {}
+    glossary_path = paths.profile_dir / "translation_glossary.json"
+    profile["translation_glossary"] = read_json(glossary_path, {}) or {}
     return profile
 
 

@@ -71,14 +71,19 @@ def _identity_check(work: dict[str, Any], text: str, discovered_title: str | Non
         if parts:
             author_tokens.append(parts[-1])
     author_hits = sum(bool(token and len(token) >= 3 and token in text_low[:12000]) for token in author_tokens)
+    identifier_conflict = bool(doi_match and title_score < 45 and partial_score < 58 and author_hits == 0)
+    # A DOI string can occur in references, related-article widgets, or a wrongly
+    # associated provider record.  DOI presence alone therefore never overrides a
+    # strong title/author contradiction.
     accepted = bool(
-        doi_match
-        or title_score >= 72
-        or partial_score >= 82
-        or (title_score >= 58 and author_hits >= 1)
+        title_score >= 78
+        or partial_score >= 88
+        or (title_score >= 62 and author_hits >= 1)
+        or (doi_match and not identifier_conflict and (title_score >= 58 or partial_score >= 72 or author_hits >= 1))
     )
     return {
         "accepted": accepted,
+        "identifier_conflict": identifier_conflict,
         "title_score": title_score,
         "partial_title_score": partial_score,
         "doi_match": doi_match,
