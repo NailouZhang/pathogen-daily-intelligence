@@ -144,11 +144,21 @@ def _canonical_number_token(token: str) -> str:
     token = str(token or "").replace("，", ",").replace("％", "%")
     suffix = "%" if token.endswith("%") else ""
     core = token[:-1] if suffix else token
-    # Commas between three-digit groups are thousands separators; decimal dots
-    # remain meaningful.  Translation may legitimately omit thousands commas.
+    # Commas inside an all-digit number are grouping separators, not part of
+    # the value. The previous version only recognised strict Western
+    # thousands grouping (groups of exactly 3 digits after the first), so a
+    # source number written in Indian/Hindi grouping (e.g. "2,00,000") or any
+    # other convention was left with its commas intact. The translated text
+    # then legitimately renders it as "200,000" or "200000", the literal
+    # substring never matches, and validate_translation_fields raises a false
+    # TITLE_NUMBER_CHANGED_OR_DROPPED / TEXT_NUMBER_CHANGED_OR_DROPPED error —
+    # which silently fails otherwise-correct translations across every
+    # provider. Comparing on digits only (regardless of grouping convention)
+    # still catches genuine value changes while accepting any legitimate
+    # regrouping or removal of separators.
     if "," in core and "." not in core:
         parts = core.split(",")
-        if len(parts) > 1 and all(part.isdigit() for part in parts) and all(len(part) == 3 for part in parts[1:]):
+        if len(parts) > 1 and all(part.isdigit() for part in parts):
             core = "".join(parts)
     return core + suffix
 

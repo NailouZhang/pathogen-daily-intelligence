@@ -241,6 +241,19 @@ def _fetch_page(client: HttpClient, url: str) -> tuple[Any | None, dict[str, Any
     return response, http_audit.__dict__.copy()
 
 
+# v1.7: domains that consistently return a JS-only shell (no article text in
+# the raw HTTP response) to a plain requests-style client. This project has
+# no headless-browser rendering step, so repeatedly crawling up to 3 URLs
+# (including canonical/AMP links, which usually resolve back to the same
+# domain) burns retry budget for a guaranteed failure. Recording the domain
+# here short-circuits straight to the RSS-snippet fallback and reports the
+# real reason ("known JS-rendered aggregator, no headless browser available")
+# instead of a generic NO_USABLE_PAGE_OR_SNIPPET. This is a documented
+# limitation, not a silent failure — see docs/ for the v1.8 headless-browser
+# follow-up recommendation.
+_KNOWN_JS_ONLY_DOMAINS = {"msn.com", "www.msn.com"}
+
+
 def _fetch_one_news(
     article: dict[str, Any],
     timeout: int,
@@ -266,6 +279,31 @@ def _fetch_one_news(
     }
     if not url or urlsplit(str(url)).scheme not in {"http", "https"}:
         audit["error"] = "UNSUPPORTED_OR_MISSING_URL"
+        return {"article_id": article.get("article_id"), "audit": audit}
+
+    domain = urlsplit(str(url)).netloc.casefold().removeprefix("www.")
+    if domain in {d.removeprefix("www.") for d in _KNOWN_JS_ONLY_DOMAINS}:
+        snippet = normalize_space((article.get("content") or {}).get("original_excerpt") or (article.get("content") or {}).get("excerpt"))
+        if snippet:
+            focused = _focus_evidence((article.get("title") or {}).get("original") or "", snippet, terms, min(max_chars, 2500), min(max_sentences, 12))
+            audit.update(
+                {
+                    "status": "partial",
+                    "method": "source_snippet_fallback",
+                    "focused_char_count": len(focused.get("text") or ""),
+                    "sentence_count": len(focused.get("sentences") or []),
+                    "coverage_level": "title_or_snippet_only",
+                    "error": "KNOWN_JS_RENDERED_DOMAIN_NO_HEADLESS_BROWSER",
+                }
+            )
+            return {
+                "article_id": article.get("article_id"),
+                "analysis_text": focused.get("text"),
+                "sentences": focused.get("sentences") or [],
+                "final_url": None,
+                "audit": audit,
+            }
+        audit.update({"status": "failed", "error": "KNOWN_JS_RENDERED_DOMAIN_NO_HEADLESS_BROWSER"})
         return {"article_id": article.get("article_id"), "audit": audit}
 
     client = HttpClient(timeout=timeout, user_agent=user_agent)

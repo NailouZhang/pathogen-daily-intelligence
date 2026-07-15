@@ -181,21 +181,29 @@ def build_daily_issue(
         ),
     }
 
+    lead_item_ids = {
+        x["item_id"] for x in lead_candidates[: profile.get("editorial_preferences", {}).get("max_headlines", 3)]
+    }
+    # v1.7 fix: items promoted into "今日要闻" used to also render as full,
+    # identical cards in "疫情与公共卫生"/"学术文献" below (100% duplication
+    # whenever the day's story count was small). The lead section is a
+    # highlights rail, not a separate pool of content, so it must not
+    # re-consume the same item_ids in the category sections that follow.
     sections = [
         {
             "section_id": "lead",
             "title": "今日要闻",
-            "item_ids": [x["item_id"] for x in lead_candidates[: profile.get("editorial_preferences", {}).get("max_headlines", 3)]],
+            "item_ids": [x["item_id"] for x in lead_candidates if x["item_id"] in lead_item_ids],
         },
         {
             "section_id": "events",
             "title": "疫情与公共卫生",
-            "item_ids": [e["event_id"] for e in headline_events + brief_events],
+            "item_ids": [e["event_id"] for e in headline_events + brief_events if e["event_id"] not in lead_item_ids],
         },
         {
             "section_id": "research",
             "title": "学术文献",
-            "item_ids": [w["work_id"] for w in headline_works + brief_works],
+            "item_ids": [w["work_id"] for w in headline_works + brief_works if w["work_id"] not in lead_item_ids],
         },
     ]
     if not profile.get("editorial_preferences", {}).get("show_empty_sections", False):

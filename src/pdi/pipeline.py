@@ -374,9 +374,20 @@ def _run_validated_analysis(
             glossary=translation_glossary,
             local_translator=local_translator,
         )
+        # v1.7 fix: analysis and translation are validated separately now.
+        # translation_review here is diagnostic only (kept in the audit for
+        # transparency/debugging) — it no longer blocks acceptance of the
+        # analysis, and its output is never written back via
+        # apply_translation(). The card's displayed translation always comes
+        # from the earlier, dedicated _translate_remaining_items() pass, so
+        # a stricter or unlucky analysis-time re-translation can no longer
+        # take an already-translated item back to "translation unavailable",
+        # and a passing analysis is no longer contingent on the model's
+        # bundled translation happening to also satisfy the translation
+        # validator.
         analysis_errors = list(ai_validation["errors"])
         translation_errors = list(translation_review["errors"])
-        errors = analysis_errors + translation_errors
+        errors = analysis_errors
         attempt["translation_validation_status"] = "passed" if not translation_errors else "failed"
         attempt["translation_validation_errors"] = translation_errors[:40]
         attempt["translation_validation_warnings"] = translation_review["warnings"]
@@ -396,8 +407,6 @@ def _run_validated_analysis(
         if errors:
             return None
 
-        restored_audit = {**attempt, "attempt_chain": _translation_attempt_chain(attempts)}
-        apply_translation(item, kind, translation_review["fields"], restored_audit)
         restored_output = restore_scientific_object(output, mapping)
         item["ai_analysis"] = restored_output
         accepted_audit = _aggregate_attempt_audit(
@@ -441,19 +450,12 @@ def _run_validated_analysis(
             fallback_used = True
         fallback_used = True
 
-    # A provider may have produced a valid faithful translation but an invalid
-    # analytical claim. Keep only the validated translation and discard the
-    # analytical output.
-    if best_translation is not None and not _has_valid_existing_translation(item, kind):
-        reviewed_fields, attempt = best_translation
-        translation_only_audit = {
-            **attempt,
-            "status": "success_translation_only",
-            "validation_status": "passed",
-            "analysis_validation_status": "failed",
-            "attempt_chain": _translation_attempt_chain(attempts),
-        }
-        apply_translation(item, kind, reviewed_fields, translation_only_audit)
+    # v1.7 fix: no more translation-rescue side effect here. Translation was
+    # already attempted (and, in the vast majority of cases, applied) by the
+    # dedicated pass that runs before analysis; `best_translation` is kept
+    # above only so it still shows up in the analysis attempt's own audit
+    # trail for debugging, but this function no longer calls
+    # apply_translation() under any circumstance.
     item["ai_analysis"] = None
     final_audit = _aggregate_attempt_audit(
         task_name, record_id, attempts, None, all_errors
@@ -891,6 +893,39 @@ def _translate_and_analyse(
         if term.get("status") == "accepted_for_search" and term.get("term")
     ]
 
+    # v1.7 fix: deep analysis used to run BEFORE plain translation. Analysis
+    # bundles translation together with much stricter, evidence-based
+    # validation (unsupported claims, evidence IDs, etc.). When analysis
+    # failed but its bundled translation happened to be valid, the old code
+    # applied that translation as a side effect of the *analysis* attempt
+    # chain — so a card could show "github_models:passed" followed by
+    # "github_models:failed → gemini:failed → groq:failed" for the very same
+    # provider, which was really the analysis task's own retries bleeding
+    # into the translation audit trail. Worse, when every analysis attempt
+    # failed validation end-to-end (translation portion included), the item
+    # was left with no translation at all even though a plain translation
+    # pass would very likely have succeeded on the first try. Running plain
+    # translation first decouples the two concerns: translation gets its own
+    # clean, fast attempt chain, and analysis becomes a strictly additive
+    # step that can never take a translated card back to "translation
+    # unavailable".
+    _translate_remaining_items(
+        router,
+        [(work, "work") for work in works] + [(article, "article") for article in articles],
+        cache,
+        audits,
+        policy,
+        local_translator,
+        translation_glossary,
+    )
+
+    # Deep analysis now runs strictly after translation. review_translation_
+    # candidate() inside _run_analysis_for_work/_run_analysis_for_article
+    # still re-validates the bundled translation fields for internal
+    # consistency, but apply_translation() is no longer reachable from the
+    # analysis path (see _run_validated_analysis) — analysis can only add
+    # ai_analysis / processing_audit.llm_analysis, never rewrite an item's
+    # translation_audit.
     for work in selected_works:
         _, audit = _run_analysis_for_work(
             router, work, approved_terms, cache, local_translator, translation_glossary
@@ -902,15 +937,6 @@ def _translate_and_analyse(
         )
         audits.append(audit)
 
-    _translate_remaining_items(
-        router,
-        [(work, "work") for work in works] + [(article, "article") for article in articles],
-        cache,
-        audits,
-        policy,
-        local_translator,
-        translation_glossary,
-    )
     apply_event_bilingual(events, articles)
 
     support_ids = {work["work_id"] for work in works} | {event["event_id"] for event in events}

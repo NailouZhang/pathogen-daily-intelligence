@@ -32,8 +32,6 @@ def _compatible_event_type(a: str | None, b: str | None) -> bool:
 def _similar(a: dict[str, Any], b: dict[str, Any]) -> float:
     ea = a.get("entities", {})
     eb = b.get("entities", {})
-    if not _compatible_event_type(ea.get("event_type"), eb.get("event_type")):
-        return 0.0
     pathogens_a = set(ea.get("pathogens") or [])
     pathogens_b = set(eb.get("pathogens") or [])
     if pathogens_a and pathogens_b and not (pathogens_a & pathogens_b):
@@ -42,8 +40,36 @@ def _similar(a: dict[str, Any], b: dict[str, Any]) -> float:
     country_a, country_b = ea.get("country"), eb.get("country")
     if country_a and country_b and country_a != country_b:
         return 0.0
-    location = 1.0 if country_a and country_a == country_b else 0.45
-    event = 1.0 if ea.get("event_type") == eb.get("event_type") else 0.65
+    # v1.7 fix: two articles that both failed to resolve a country (very
+    # common for cruise-ship / in-transit outbreaks, or when location
+    # extraction simply misses) used to be scored the same 0.45 as two
+    # articles with genuinely different, resolved countries. That is too
+    # harsh when combined with the event-type cutoff below: a batch of
+    # wire-service rewrites about one real outbreak (e.g. four MSN articles
+    # about the same cruise-ship hantavirus cluster) would each land in its
+    # own event card instead of clustering into one. When neither side has a
+    # resolved country we no longer penalise as heavily as a true mismatch
+    # would, since "unknown vs unknown" carries far less disambiguating
+    # signal than "France vs Peru".
+    if country_a and country_a == country_b:
+        location = 1.0
+    elif not country_a and not country_b:
+        location = 0.6
+    else:
+        location = 0.45
+    # v1.7 fix: event_type family mismatch used to hard-zero the whole
+    # similarity score, so a single wire article mistagged "other" instead
+    # of "outbreak" could never cluster with its siblings even when
+    # pathogen, title, and date all matched strongly. Downgrade to a
+    # penalty instead of a short-circuit; pathogen/title/date can still
+    # carry a same-story pair over the merge threshold, while genuinely
+    # unrelated pairs (different pathogen or very different titles) still
+    # won't reach it.
+    same_family = _compatible_event_type(ea.get("event_type"), eb.get("event_type"))
+    if not same_family:
+        event = 0.1
+    else:
+        event = 1.0 if ea.get("event_type") == eb.get("event_type") else 0.65
     da, db = _day(a.get("published_at")), _day(b.get("published_at"))
     date_score = 0.5
     if da and db:
