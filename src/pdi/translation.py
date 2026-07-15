@@ -13,7 +13,7 @@ from .markup import (
 )
 from .utils import content_hash, ensure_dict_field, normalize_space, utc_now_iso
 
-TRANSLATION_PROMPT_VERSION = "bilingual-translation-v1.3.1"
+TRANSLATION_PROMPT_VERSION = "bilingual-translation-v1.5"
 
 
 def _source_fields(item: dict[str, Any], kind: str) -> tuple[str, str | None, str | None]:
@@ -131,6 +131,23 @@ def restore_translation_fields(fields: dict[str, Any], mapping: dict[str, str]) 
     return restored
 
 
+def _canonical_number_token(token: str) -> str:
+    token = str(token or "").replace("，", ",").replace("％", "%")
+    suffix = "%" if token.endswith("%") else ""
+    core = token[:-1] if suffix else token
+    # Commas between three-digit groups are thousands separators; decimal dots
+    # remain meaningful.  Translation may legitimately omit thousands commas.
+    if "," in core and "." not in core:
+        parts = core.split(",")
+        if len(parts) > 1 and all(part.isdigit() for part in parts) and all(len(part) == 3 for part in parts[1:]):
+            core = "".join(parts)
+    return core + suffix
+
+
+def _canonical_number_set(value: Any) -> set[str]:
+    return {_canonical_number_token(token) for token in number_tokens(value)}
+
+
 def validate_translation_fields(
     source_title: str,
     source_text: str | None,
@@ -154,16 +171,16 @@ def validate_translation_fields(
         missing = [token for token in mapping if token not in combined]
         errors.append("MISSING_SCIENTIFIC_PLACEHOLDERS:" + ",".join(missing))
 
-    title_numbers = number_tokens(source_title)
-    translated_title_numbers = number_tokens(title or "")
-    for token in title_numbers:
+    title_numbers = _canonical_number_set(source_title)
+    translated_title_numbers = _canonical_number_set(title or "")
+    for token in sorted(title_numbers):
         if token not in translated_title_numbers:
             errors.append(f"TITLE_NUMBER_CHANGED_OR_DROPPED:{token}")
 
     if source_text:
-        text_numbers = number_tokens(source_text)
-        translated_numbers = number_tokens(translated_text or "")
-        for token in text_numbers:
+        text_numbers = _canonical_number_set(source_text)
+        translated_numbers = _canonical_number_set(translated_text or "")
+        for token in sorted(text_numbers):
             if token not in translated_numbers:
                 errors.append(f"TEXT_NUMBER_CHANGED_OR_DROPPED:{token}")
 

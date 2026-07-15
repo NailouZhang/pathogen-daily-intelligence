@@ -1,17 +1,17 @@
 {
-  "schema_version": "1.3",
+  "schema_version": "1.5",
   "issue_id": "hantavirus:2026-07-15:r1",
   "issue_revision": 1,
   "issue_date": "2026-07-15",
   "issue_number": null,
   "profile_id": "hantavirus",
-  "profile_version": "1.3.0",
+  "profile_version": "1.5.0",
   "coverage_window": {
     "start": "2026-07-08",
     "end": "2026-07-14",
     "timezone": "Asia/Shanghai"
   },
-  "generated_at": "2026-07-14T22:56:03+00:00",
+  "generated_at": "2026-07-15T01:25:55+00:00",
   "statistics": {
     "scholarly_raw": 3,
     "scholarly_unique": 2,
@@ -40,24 +40,34 @@
     "news_content_fetch_attempted": 0,
     "news_content_fetch_success": 0,
     "news_content_fetch_failed": 0,
+    "scholarly_recovery_attempted": 0,
+    "scholarly_abstract_recovered": 0,
+    "scholarly_fulltext_recovered": 0,
+    "scholarly_metadata_only": 0,
+    "scholarly_abstract_only": 0,
+    "scholarly_partial_fulltext": 0,
+    "scholarly_structured_fulltext": 0,
     "open_fulltext_fetch_attempted": 0,
     "open_fulltext_fetch_success": 0,
     "validated_work_analyses": 1,
-    "validated_article_analyses": 1
+    "validated_article_analyses": 1,
+    "news_background_mentions_archived": 0,
+    "news_title_or_snippet_only": 3,
+    "scholarly_identifier_conflicts": 0
   },
   "lead_story": {
     "item_type": "public_health_event",
-    "item_id": "event-69c8aee084c29f3476f0bacb",
+    "item_id": "event-60c9a9ebe3a650196456aef5",
     "title": "实验室确认智利 2 例汉坦病毒肺综合征病例",
     "title_original": "Laboratory confirms 2 hantavirus pulmonary syndrome cases in Chile",
-    "score": 1.05
+    "score": 1.18
   },
   "sections": [
     {
       "section_id": "lead",
       "title": "今日要闻",
       "item_ids": [
-        "event-69c8aee084c29f3476f0bacb",
+        "event-60c9a9ebe3a650196456aef5",
         "event-b87be16dc51d2fc35341cfca",
         "work-73f1eaf696703fc538cfea5a"
       ]
@@ -66,7 +76,7 @@
       "section_id": "events",
       "title": "疫情与公共卫生",
       "item_ids": [
-        "event-69c8aee084c29f3476f0bacb",
+        "event-60c9a9ebe3a650196456aef5",
         "event-b87be16dc51d2fc35341cfca"
       ]
     },
@@ -123,15 +133,16 @@
     }
   ],
   "data_quality_notes": [
-    "部分文献尚无可用摘要，系统仅展示书目信息。",
-    "部分或全部 AI 任务已降级为无模型模式。"
+    "部分文献尚无可用摘要或全文：记录仍被保留并进入后续补全队列，本期仅展示书目信息，且不生成研究结论。",
+    "部分或全部 AI 任务已降级为无模型模式。",
+    "3 篇新闻仅获得标题或 RSS 摘要，页面将明确标记为未获得正文。"
   ],
   "watchlist": [],
   "generation_audit": {
-    "schema_version": "1.3",
-    "profile_version": "1.3.0",
-    "rule_version": "1.3",
-    "prompt_version": "1.3",
+    "schema_version": "1.5",
+    "profile_version": "1.5.0",
+    "rule_version": "1.5",
+    "prompt_version": "1.5",
     "llm_runs": [
       {
         "task_name": "all",
@@ -141,7 +152,7 @@
         "error": "LLM disabled; validated source or demo translations were retained.",
         "retry_count": 0,
         "fallback_used": false,
-        "generated_at": "2026-07-14T22:56:03+00:00",
+        "generated_at": "2026-07-15T01:25:55+00:00",
         "validation_status": "not_applicable",
         "unsupported_claim_count": 0
       }
@@ -150,6 +161,7 @@
       "scholarly": {
         "raw": 3,
         "identifier_tokens": 4,
+        "identifier_conflicts": 0,
         "groups": 2,
         "merged": 1,
         "unique": 2
@@ -178,9 +190,11 @@
     "pipeline_stages": [
       "profile_and_query_plan",
       "multi_source_collection",
-      "entity_deduplication",
-      "bounded_content_enrichment",
+      "conservative_entity_deduplication",
+      "current_availability_date_selection",
+      "bounded_multistrategy_content_enrichment",
       "rule_entity_annotation",
+      "precluster_relevance_filtering",
       "event_clustering",
       "editorial_filtering",
       "sequential_multimodel_translation_and_analysis",
@@ -188,7 +202,7 @@
       "daily_synthesis",
       "render_and_publish"
     ],
-    "content_hash": "6a9a608195f05ea3d8513b0c30aa030b"
+    "content_hash": "4702111447d9113cfe401b66c7f4aae3"
   },
   "outputs": {
     "latest_json": "data/latest.json",

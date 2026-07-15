@@ -9,32 +9,77 @@ from .normalization import make_scholarly_work, normalize_news_article
 from .utils import canonicalize_doi, normalize_title
 
 
-def _identifier_tokens(rec: dict[str, Any]) -> set[str]:
+def _identifier_map(rec: dict[str, Any]) -> dict[str, str]:
     ids = rec.get("identifiers") or {}
-    tokens: set[str] = set()
+    out: dict[str, str] = {}
     for key in ("pmid", "doi", "pmcid", "europe_pmc_id", "semantic_scholar_id", "arxiv"):
         value = ids.get(key)
         if key == "doi":
             value = canonicalize_doi(value)
         if value:
-            tokens.add(f"{key}:{str(value).strip().casefold()}")
-    return tokens
+            out[key] = str(value).strip().casefold()
+    return out
+
+
+def _years(rec: dict[str, Any]) -> set[int]:
+    values = [
+        rec.get("published_date"),
+        rec.get("online_date"),
+        rec.get("print_date"),
+        rec.get("issue_date"),
+    ]
+    out: set[int] = set()
+    for value in values:
+        token = str(value or "")[:4]
+        if token.isdigit():
+            out.add(int(token))
+    return out
+
+
+def _title_score(a: dict[str, Any], b: dict[str, Any]) -> float:
+    return token_set_ratio(normalize_title(a.get("title")), normalize_title(b.get("title"))) / 100
+
+
+def _author_overlap(a: dict[str, Any], b: dict[str, Any]) -> float:
+    auth_a = {(x or "").casefold() for x in a.get("authors", [])[:12] if x}
+    auth_b = {(x or "").casefold() for x in b.get("authors", [])[:12] if x}
+    if not auth_a or not auth_b:
+        return 0.0
+    return len(auth_a & auth_b) / max(1, min(len(auth_a), len(auth_b)))
+
+
+def _date_compatible(a: dict[str, Any], b: dict[str, Any], tolerance: int = 2) -> bool:
+    ya, yb = _years(a), _years(b)
+    if not ya or not yb:
+        return True
+    return min(abs(x - y) for x in ya for y in yb) <= tolerance
+
+
+def _identifier_merge_safe(a: dict[str, Any], b: dict[str, Any], shared_key: str) -> bool:
+    """Prevent a bad identifier from transitively merging unrelated works."""
+    title = _title_score(a, b)
+    authors = _author_overlap(a, b)
+    dates_ok = _date_compatible(a, b)
+    # PMID/PMCID are strong, but an extreme title/date contradiction is still audited
+    # rather than silently merged. DOI metadata can be mistyped by providers, so it
+    # requires explicit bibliographic compatibility.
+    if shared_key in {"pmid", "pmcid"}:
+        return dates_ok and (title >= 0.68 or authors >= 0.5)
+    if shared_key == "doi":
+        return dates_ok and (title >= 0.82 or (title >= 0.70 and authors >= 0.5))
+    return dates_ok and title >= 0.82
 
 
 def _bibliographic_match(a: dict[str, Any], b: dict[str, Any]) -> bool:
-    title_score = token_set_ratio(normalize_title(a.get("title")), normalize_title(b.get("title"))) / 100
-    auth_a = {(x or "").casefold() for x in a.get("authors", [])[:8] if x}
-    auth_b = {(x or "").casefold() for x in b.get("authors", [])[:8] if x}
-    overlap = len(auth_a & auth_b) / max(1, min(len(auth_a), len(auth_b)))
-    year_a = (a.get("published_date") or "")[:4]
-    year_b = (b.get("published_date") or "")[:4]
-    year_ok = not year_a or not year_b or year_a == year_b
-    return title_score >= 0.95 and overlap >= 0.5 and year_ok
+    title = _title_score(a, b)
+    authors = _author_overlap(a, b)
+    return title >= 0.95 and authors >= 0.5 and _date_compatible(a, b, tolerance=1)
 
 
 def deduplicate_scholarly(records: list[dict[str, Any]]) -> tuple[list[dict[str, Any]], dict[str, int]]:
     n = len(records)
     parent = list(range(n))
+    conflicts: list[dict[str, Any]] = []
 
     def find(x: int) -> int:
         while parent[x] != x:
@@ -47,15 +92,26 @@ def deduplicate_scholarly(records: list[dict[str, Any]]) -> tuple[list[dict[str,
         if ra != rb:
             parent[rb] = ra
 
-    owner: dict[str, int] = {}
+    owners: dict[tuple[str, str], list[int]] = {}
     for i, rec in enumerate(records):
-        for token in _identifier_tokens(rec):
-            if token in owner:
-                union(i, owner[token])
-            else:
-                owner[token] = i
+        for key, value in _identifier_map(rec).items():
+            token = (key, value)
+            for other in owners.get(token, []):
+                if _identifier_merge_safe(rec, records[other], key):
+                    union(i, other)
+                else:
+                    conflicts.append(
+                        {
+                            "identifier_type": key,
+                            "identifier": value,
+                            "record_a": rec.get("source_record_id"),
+                            "record_b": records[other].get("source_record_id"),
+                            "reason": "IDENTIFIER_BIBLIOGRAPHY_CONFLICT",
+                        }
+                    )
+            owners.setdefault(token, []).append(i)
 
-    # Bibliographic pass is deliberately conservative and supplements absent cross-identifiers.
+    # Conservative bibliographic pass supplements records without shared identifiers.
     for i in range(n):
         for j in range(i + 1, n):
             if find(i) == find(j):
@@ -69,7 +125,8 @@ def deduplicate_scholarly(records: list[dict[str, Any]]) -> tuple[list[dict[str,
     works = [make_scholarly_work(group) for _, group in sorted(groups.items())]
     return works, {
         "raw": len(records),
-        "identifier_tokens": len(owner),
+        "identifier_tokens": len(owners),
+        "identifier_conflicts": len(conflicts),
         "groups": len(groups),
         "merged": len(records) - len(works),
         "unique": len(works),
@@ -88,7 +145,7 @@ def deduplicate_news(records: list[dict[str, Any]]) -> tuple[list[dict[str, Any]
             continue
         norm = normalize_title(article["title"]["original"])
         duplicate = False
-        for existing in articles[-200:]:
+        for existing in articles[-300:]:
             ex = normalize_title(existing["title"]["original"])
             if token_set_ratio(norm, ex) >= 96 and SequenceMatcher(None, norm, ex).ratio() >= 0.92:
                 duplicate = True

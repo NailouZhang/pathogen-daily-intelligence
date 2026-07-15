@@ -10,3 +10,5 @@ python-dateutil>=2.9,<3
 jsonschema>=4.23,<5
 rapidfuzz>=3.10,<4
 pytest>=8.3,<10
+PyMuPDF>=1.24,<2
+pypdf>=5,<7

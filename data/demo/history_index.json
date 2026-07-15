@@ -31,10 +31,20 @@
       "news_content_fetch_attempted": 0,
       "news_content_fetch_success": 0,
       "news_content_fetch_failed": 0,
+      "scholarly_recovery_attempted": 0,
+      "scholarly_abstract_recovered": 0,
+      "scholarly_fulltext_recovered": 0,
+      "scholarly_metadata_only": 0,
+      "scholarly_abstract_only": 0,
+      "scholarly_partial_fulltext": 0,
+      "scholarly_structured_fulltext": 0,
       "open_fulltext_fetch_attempted": 0,
       "open_fulltext_fetch_success": 0,
       "validated_work_analyses": 1,
-      "validated_article_analyses": 1
+      "validated_article_analyses": 1,
+      "news_background_mentions_archived": 0,
+      "news_title_or_snippet_only": 3,
+      "scholarly_identifier_conflicts": 0
     }
   }
 ]

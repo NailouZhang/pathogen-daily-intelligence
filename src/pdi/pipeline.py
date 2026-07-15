@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import json
 import os
+from datetime import date, timedelta
 from pathlib import Path
 from typing import Any, Callable
 
@@ -37,6 +38,125 @@ from .utils import content_hash, ensure_dict_field, utc_now_iso, write_json
 from .validation import validate_ai_output, validate_schema
 
 
+def _parse_iso_date(value: str | None) -> date | None:
+    try:
+        return date.fromisoformat(str(value or "")[:10])
+    except ValueError:
+        return None
+
+
+def _recovery_queue_records(previous_state: dict[str, Any], issue_date: str) -> list[dict[str, Any]]:
+    """Rehydrate due metadata-only/abstract-only works for evidence recovery.
+
+    The queue contains only bibliographic metadata and bounded prior abstracts;
+    it never persists publisher PDFs or complete copyrighted full text.
+    """
+    today = _parse_iso_date(issue_date)
+    if today is None:
+        return []
+    records: list[dict[str, Any]] = []
+    for entry in previous_state.get("scholarly_recovery_queue") or []:
+        if not isinstance(entry, dict):
+            continue
+        due = _parse_iso_date(entry.get("next_retry_date"))
+        expires = _parse_iso_date(entry.get("expires_date"))
+        if due and due > today:
+            continue
+        if expires and expires < today:
+            continue
+        record = entry.get("source_record")
+        if isinstance(record, dict):
+            row = dict(record)
+            row["retrieved_at"] = utc_now_iso()
+            row["recovery_context"] = {
+                "attempt_count": entry.get("attempt_count", 0),
+                "previous_evidence_level": entry.get("evidence_level", "E0"),
+                "first_queued_date": entry.get("first_queued_date"),
+            }
+            records.append(row)
+    return records
+
+
+def _queue_source_record(work: dict[str, Any]) -> dict[str, Any]:
+    bib = work.get("bibliography") or {}
+    source_url = next((row.get("url") for row in work.get("source_records") or [] if row.get("url") and row.get("source_id") != "recovery_queue"), None)
+    return {
+        "record_type": "scholarly_source",
+        "source_id": "recovery_queue",
+        "source_record_id": work.get("work_id"),
+        "query_group": "recovery_retry",
+        "query": "internal evidence recovery queue",
+        "identifiers": dict(work.get("identifiers") or {}),
+        "title": (work.get("title") or {}).get("original"),
+        "abstract": (work.get("abstract") or {}).get("original"),
+        "abstract_sentences": (work.get("abstract") or {}).get("sentences") or [],
+        "authors": list(work.get("authors") or []),
+        "journal": bib.get("journal"),
+        "publisher": bib.get("publisher"),
+        "published_date": bib.get("published_date") or bib.get("availability_date"),
+        "published_date_precision": bib.get("published_date_precision", "unknown"),
+        "availability_date": bib.get("availability_date") or bib.get("published_date"),
+        "availability_basis": bib.get("availability_basis"),
+        "online_date": bib.get("online_date"),
+        "print_date": bib.get("print_date"),
+        "issue_date": bib.get("issue_date"),
+        "publication_types": bib.get("publication_types") or [],
+        "language": (work.get("title") or {}).get("language"),
+        "url": source_url,
+        "retrieved_at": utc_now_iso(),
+        "recovery_context": dict(work.get("recovery_context") or {}),
+    }
+
+
+def _build_recovery_queue(
+    works: list[dict[str, Any]],
+    previous_state: dict[str, Any],
+    issue_date: str,
+    profile: dict[str, Any],
+) -> list[dict[str, Any]]:
+    policy = profile.get("content_policy") or {}
+    delays = [int(value) for value in policy.get("scholarly_recovery_retry_days", [1, 3, 7, 14]) if int(value) >= 0]
+    max_age = int(policy.get("scholarly_recovery_queue_max_age_days", 30))
+    max_items = int(policy.get("scholarly_recovery_queue_max_items", 200))
+    today = _parse_iso_date(issue_date) or date.today()
+    previous = {
+        str(entry.get("work_id")): entry
+        for entry in previous_state.get("scholarly_recovery_queue") or []
+        if isinstance(entry, dict) and entry.get("work_id")
+    }
+    queue: list[dict[str, Any]] = []
+    for work in works:
+        acquisition = work.get("evidence_acquisition") or {}
+        level = str(acquisition.get("evidence_level") or "E0")
+        # E0 retries missing abstract/full text. E1 retries richer full text. E2/E3
+        # already have analysable body evidence and leave the queue.
+        if level not in {"E0", "E1"}:
+            continue
+        prior = previous.get(str(work.get("work_id"))) or {}
+        attempts = max(int(prior.get("attempt_count") or 0) + 1, int(acquisition.get("attempt_count") or 1))
+        if attempts > max(1, len(delays) + 1):
+            continue
+        first_queued = _parse_iso_date(prior.get("first_queued_date")) or today
+        if (today - first_queued).days > max_age:
+            continue
+        delay = delays[min(max(0, attempts - 1), len(delays) - 1)] if delays else 1
+        queue.append(
+            {
+                "work_id": work.get("work_id"),
+                "evidence_level": level,
+                "attempt_count": attempts,
+                "first_queued_date": first_queued.isoformat(),
+                "last_attempt_date": today.isoformat(),
+                "next_retry_date": (today + timedelta(days=delay)).isoformat(),
+                "expires_date": (first_queued + timedelta(days=max_age)).isoformat(),
+                "reason_codes": acquisition.get("reason_codes") or [],
+                "source_record": _queue_source_record(work),
+            }
+        )
+    queue.sort(key=lambda row: (row.get("next_retry_date") or "9999", row.get("work_id") or ""))
+    return queue[:max_items]
+
+
 def _evidence_for_work(work: dict[str, Any]) -> list[dict[str, str]]:
     evidence = list((work.get("abstract") or {}).get("sentences") or [])
     for section in (work.get("full_text") or {}).get("sections", []):
@@ -70,7 +190,7 @@ def _live_collect(
         timeout=int(profile.get("search_policy", {}).get("request_timeout_seconds", 20)),
         user_agent=os.getenv(
             "PDI_USER_AGENT",
-            "PathogenDailyIntelligence/1.3 (research monitoring; contact configured by operator)",
+            "PathogenDailyIntelligence/1.5 (research monitoring; contact configured by operator)",
         ),
     )
     scholarly_records: list[dict[str, Any]] = []
@@ -268,18 +388,29 @@ def _run_validated_analysis(
         cache.pop(cache_key, None)
 
     fallback_used = bool(attempts)
+    validation_rounds = getattr(router, "policy", {}).get("validation_model_attempts_per_provider") or {
+        "github_models": 1,
+        "gemini": 1,
+        "groq": 1,
+    }
     for provider in router.provider_sequence(task_name):
         if provider == "deterministic":
             break
-        run = router.run_provider(
-            task_name,
-            payload,
-            provider,
-            fallback_used=fallback_used,
-        )
-        accepted = evaluate(run.output, run.audit())
-        if accepted is not None:
-            return accepted
+        for provider_round in range(max(1, int(validation_rounds.get(provider, 1)))):
+            run = router.run_provider(
+                task_name,
+                payload,
+                provider,
+                fallback_used=fallback_used or provider_round > 0,
+            )
+            accepted = evaluate(run.output, run.audit())
+            if accepted is not None:
+                return accepted
+            if run.output and hasattr(router, "reject_model"):
+                router.reject_model(provider, task_name, run.model, "analysis_validation_failed")
+            if not run.output:
+                break
+            fallback_used = True
         fallback_used = True
 
     # A provider may have produced a valid faithful translation but an invalid
@@ -287,12 +418,19 @@ def _run_validated_analysis(
     # analytical output.
     if best_translation is not None and not _has_valid_existing_translation(item, kind):
         output, attempt = best_translation
+        translation_only_audit = {
+            **attempt,
+            "status": "success_translation_only",
+            "validation_status": "passed",
+            "analysis_validation_status": "failed",
+            "attempt_chain": list(attempts),
+        }
         _apply_model_translation(
             item,
             kind,
             output,
             mapping,
-            {**attempt, "attempt_chain": list(attempts)},
+            translation_only_audit,
         )
     item["ai_analysis"] = None
     final_audit = _aggregate_attempt_audit(
@@ -321,6 +459,15 @@ def _run_analysis_for_work(
             mapping,
         ),
         "source_metadata": work.get("source_records", []),
+        "content_retrieval_status": {
+            "abstract_available": bool((work.get("abstract") or {}).get("original")),
+            "abstract_status": (work.get("abstract") or {}).get("availability_status"),
+            "full_text_available": bool((work.get("full_text") or {}).get("available")),
+            "full_text_status": (work.get("full_text") or {}).get("availability_status"),
+            "evidence_level": (work.get("evidence_acquisition") or {}).get("evidence_level"),
+            "acquisition_status": (work.get("evidence_acquisition") or {}).get("status"),
+            "retrieval_attempt_count": (work.get("evidence_acquisition") or {}).get("attempt_count"),
+        },
         "full_text_available": bool(work.get("full_text", {}).get("available")),
         "protected_placeholders": prepared["protected_placeholders"],
     }
@@ -352,6 +499,12 @@ def _run_analysis_for_article(
         "translation_source_text": prepared.get("text"),
         "content_sentences": _protect_evidence(evidence, mapping),
         "content_extraction_audit": (article.get("retrieval_audit") or {}).get("content_fetch"),
+        "content_retrieval_status": {
+            "availability_status": (article.get("content") or {}).get("availability_status"),
+            "coverage_level": (article.get("content") or {}).get("coverage_level"),
+            "analysis_text_available": bool((article.get("content") or {}).get("analysis_text")),
+            "evidence_sentence_count": len(evidence),
+        },
         "entities_from_rules": article.get("entities", {}),
         "protected_placeholders": prepared["protected_placeholders"],
     }
@@ -404,12 +557,16 @@ def _translate_remaining_items(
         pending[record_id] = (item, kind, prepared, mapping, cache_key)
         attempt_history[record_id] = []
 
-    # Backward compatibility for v1.2 callers/tests that supplied only a batch-size integer.
     if isinstance(policy, int):
         policy = {"translation_provider_batch_sizes": {"legacy": max(1, policy)}}
     provider_sizes = policy.get("translation_provider_batch_sizes") or {
-        "github_models": 6,
+        "github_models": 3,
         "gemini": 2,
+        "groq": 1,
+    }
+    validation_rounds = policy.get("validation_model_attempts_per_provider") or {
+        "github_models": 1,
+        "gemini": 1,
         "groq": 1,
     }
     if hasattr(router, "provider_sequence") and hasattr(router, "run_provider"):
@@ -419,102 +576,131 @@ def _translate_remaining_items(
             if provider != "deterministic"
         ]
     else:
-        # Legacy router contract: one validated call, no hidden parallelism.
         providers = ["legacy"]
+
     for provider_index, provider in enumerate(providers):
         if not pending:
             break
-        batch_size = max(1, int(provider_sizes.get(provider, 1)))
         task_name = "bilingual_translation_batch" if provider_index == 0 else "translation_repair"
-        record_ids = list(pending)
-        for start in range(0, len(record_ids), batch_size):
-            batch_ids = [record_id for record_id in record_ids[start : start + batch_size] if record_id in pending]
-            if not batch_ids:
-                continue
-            batch = [pending[record_id] for record_id in batch_ids]
-            payload = {"items": [entry[2] for entry in batch]}
-            if provider == "legacy":
-                run = router.run("bilingual_translation_batch", payload)
-            else:
-                run = router.run_provider(
-                    task_name,
-                    payload,
-                    provider,
-                    fallback_used=provider_index > 0,
-                )
-            run_audit = run.audit()
-            output_items = {
-                str(row.get("record_id")): row
-                for row in (run.output or {}).get("items", [])
-                if isinstance(row, dict) and row.get("record_id")
-            }
-            translated_in_call = 0
-            validation_errors: list[str] = []
-            for record_id in batch_ids:
-                item, kind, prepared, mapping, cache_key = pending[record_id]
-                raw = output_items.get(record_id)
-                item_attempt = dict(run_audit)
-                if not raw:
+        rounds = max(1, int(validation_rounds.get(provider, 1)))
+        for provider_round in range(rounds):
+            if not pending:
+                break
+            batch_size = max(1, int(provider_sizes.get(provider, 1)))
+            record_ids = list(pending)
+            any_model_output = False
+            any_valid_translation = False
+            for start_index in range(0, len(record_ids), batch_size):
+                batch_ids = [record_id for record_id in record_ids[start_index : start_index + batch_size] if record_id in pending]
+                if not batch_ids:
+                    continue
+                batch = [pending[record_id] for record_id in batch_ids]
+                payload = {"items": [entry[2] for entry in batch]}
+                if provider == "legacy":
+                    run = router.run("bilingual_translation_batch", payload)
+                else:
+                    run = router.run_provider(
+                        task_name,
+                        payload,
+                        provider,
+                        fallback_used=provider_index > 0 or provider_round > 0,
+                    )
+                run_audit = run.audit()
+                if run.output:
+                    any_model_output = True
+                output_items = {
+                    str(row.get("record_id")): row
+                    for row in (run.output or {}).get("items", [])
+                    if isinstance(row, dict) and row.get("record_id")
+                }
+                translated_in_call = 0
+                validation_errors: list[str] = []
+                for record_id in batch_ids:
+                    item, kind, _prepared, mapping, cache_key = pending[record_id]
+                    raw = output_items.get(record_id)
+                    item_attempt = dict(run_audit)
+                    item_attempt["provider_validation_round"] = provider_round + 1
+                    if not raw:
+                        item_attempt.update(
+                            {
+                                "record_id": record_id,
+                                "validation_status": "failed",
+                                "validation_errors": ["MISSING_RECORD_IN_MODEL_OUTPUT"],
+                            }
+                        )
+                        attempt_history[record_id].append(item_attempt)
+                        validation_errors.append(f"{record_id}:MISSING_RECORD_IN_MODEL_OUTPUT")
+                        continue
+                    fields = extract_translation_fields(raw, kind)
+                    validation = validate_translation_fields(
+                        (item.get("title") or {}).get("original") or "",
+                        _translation_source_text(item, kind),
+                        fields,
+                        mapping,
+                    )
                     item_attempt.update(
                         {
                             "record_id": record_id,
-                            "validation_status": "failed",
-                            "validation_errors": ["MISSING_RECORD_IN_MODEL_OUTPUT"],
+                            "validation_status": "passed" if validation["valid"] else "failed",
+                            "validation_errors": validation["errors"],
                         }
                     )
                     attempt_history[record_id].append(item_attempt)
-                    validation_errors.append(f"{record_id}:MISSING_RECORD_IN_MODEL_OUTPUT")
-                    continue
-                fields = extract_translation_fields(raw, kind)
-                validation = validate_translation_fields(
-                    (item.get("title") or {}).get("original") or "",
-                    _translation_source_text(item, kind),
-                    fields,
-                    mapping,
-                )
-                item_attempt.update(
-                    {
-                        "record_id": record_id,
-                        "validation_status": "passed" if validation["valid"] else "failed",
-                        "validation_errors": validation["errors"],
+                    if not validation["valid"]:
+                        validation_errors.extend(f"{record_id}:{error}" for error in validation["errors"])
+                        continue
+                    restored = restore_translation_fields(fields, mapping)
+                    item_audit = {
+                        **item_attempt,
+                        "status": "success",
+                        "fallback_used": provider_index > 0 or provider_round > 0,
+                        "attempt_chain": list(attempt_history[record_id]),
+                        "accepted_provider_index": provider_index,
                     }
-                )
-                attempt_history[record_id].append(item_attempt)
-                if not validation["valid"]:
-                    validation_errors.extend(f"{record_id}:{error}" for error in validation["errors"])
-                    continue
-                restored = restore_translation_fields(fields, mapping)
-                item_audit = {
-                    **item_attempt,
-                    "fallback_used": provider_index > 0,
-                    "attempt_chain": attempt_history[record_id],
-                    "accepted_provider_index": provider_index,
-                }
-                apply_translation(item, kind, restored, item_audit)
-                ensure_dict_field(item, "processing_audit")["translation"] = item_audit
-                _save_cache(cache, cache_key, restored, item_audit)
-                translated_in_call += 1
-                pending.pop(record_id, None)
+                    apply_translation(item, kind, restored, item_audit)
+                    ensure_dict_field(item, "processing_audit")["translation"] = item_audit
+                    _save_cache(cache, cache_key, restored, item_audit)
+                    translated_in_call += 1
+                    any_valid_translation = True
+                    pending.pop(record_id, None)
 
-            call_audit = {
-                **run_audit,
-                "task_name": task_name,
-                "requested_items": len(batch_ids),
-                "translated_items": translated_in_call,
-                "validation_status": "passed" if translated_in_call == len(batch_ids) else "partial",
-                "validation_errors": validation_errors[:50],
-                "unresolved_after_call": len(pending),
-            }
-            audits.append(call_audit)
+                call_audit = {
+                    **run_audit,
+                    "task_name": task_name,
+                    "provider_validation_round": provider_round + 1,
+                    "requested_items": len(batch_ids),
+                    "translated_items": translated_in_call,
+                    "validation_status": "passed" if translated_in_call == len(batch_ids) else "partial",
+                    "validation_errors": validation_errors[:50],
+                    "unresolved_after_call": len(pending),
+                }
+                audits.append(call_audit)
+                if validation_errors and hasattr(router, "reject_model"):
+                    router.reject_model(provider, task_name, run.model, "translation_validation_failed")
+
+            # API/model discovery failed without output: run_provider has already
+            # rotated through its active model candidates, so move to provider fallback.
+            if not any_model_output:
+                break
+            # If every outstanding record failed semantic validation, try the next
+            # dynamically discovered model in the same provider on the next round.
+            if not any_valid_translation and provider_round + 1 >= rounds:
+                break
 
     for record_id, (item, kind, _prepared, _mapping, _cache_key) in pending.items():
         ensure_bilingual_placeholders(item, kind)
         translation_audit = ensure_dict_field(item, "translation_audit")
+        content_status = (
+            (item.get("abstract") or {}).get("availability_status")
+            if kind == "work"
+            else (item.get("content") or {}).get("availability_status")
+        )
         translation_audit.update(
             {
                 "attempt_chain": attempt_history.get(record_id, []),
                 "fallback_used": bool(attempt_history.get(record_id)),
                 "validation_status": "translation_unavailable_after_all_providers",
+                "content_retrieval_status": content_status,
             }
         )
         ensure_dict_field(item, "processing_audit")["translation"] = dict(translation_audit)
@@ -607,18 +793,21 @@ def _translate_and_analyse(
     audits: list[dict[str, Any]] = []
     cache = dict(previous_cache or {})
     max_analysis_items = int(policy.get("max_items_per_issue", 18))
-    selected_works = [
-        work
-        for work in works
-        if work.get("filter_result", {}).get("decision") in {"headline", "brief", "review"}
-        and _evidence_for_work(work)
-    ][:max_analysis_items]
-    selected_articles = [
-        article
-        for article in articles
-        if article.get("classification", {}).get("decision") in {"headline", "brief", "review"}
-        and _evidence_for_article(article)
-    ][:max_analysis_items]
+    analysis_candidates: list[tuple[float, str, dict[str, Any]]] = []
+    for work in works:
+        if work.get("filter_result", {}).get("decision") in {"headline", "brief", "review"} and _evidence_for_work(work):
+            analysis_candidates.append((float(work.get("filter_result", {}).get("score") or 0), "work", work))
+    for article in articles:
+        if (
+            article.get("classification", {}).get("decision") in {"headline", "brief", "review"}
+            and _evidence_for_article(article)
+            and (article.get("content") or {}).get("coverage_level") in {"full_relevant_extract", "focused_partial"}
+        ):
+            analysis_candidates.append((float(article.get("classification", {}).get("score") or 0), "article", article))
+    analysis_candidates.sort(key=lambda row: row[0], reverse=True)
+    selected = analysis_candidates[:max_analysis_items]
+    selected_works = [item for _score, kind, item in selected if kind == "work"]
+    selected_articles = [item for _score, kind, item in selected if kind == "article"]
     approved_terms = [
         term.get("term")
         for term in profile.get("lexicon", [])
@@ -708,6 +897,14 @@ def _write_audit_outputs(
                 "object_id": work.get("work_id"),
                 "translation_audit": work.get("translation_audit"),
                 "processing_audit": work.get("processing_audit"),
+                "evidence_acquisition": work.get("evidence_acquisition"),
+                "full_text": {
+                    "available": (work.get("full_text") or {}).get("available"),
+                    "source": (work.get("full_text") or {}).get("source"),
+                    "evidence_level": (work.get("full_text") or {}).get("evidence_level"),
+                    "extraction_method": (work.get("full_text") or {}).get("extraction_method"),
+                    "temporary_file_persisted": (work.get("full_text") or {}).get("temporary_file_persisted"),
+                },
             }
         )
     for article in articles:
@@ -791,6 +988,19 @@ def run_daily_pipeline(
         scholarly_records, news_records, source_health = demo_source_results(window.issue_date)
     else:
         scholarly_records, news_records, source_health = _live_collect(profile, window)
+        recovery_records = _recovery_queue_records(previous_state, window.issue_date)
+        if recovery_records:
+            scholarly_records.extend(recovery_records)
+            source_health.append(
+                {
+                    "source_id": "scholarly_recovery_queue",
+                    "status": "success",
+                    "record_count": len(recovery_records),
+                    "query_count": 0,
+                    "errors": [],
+                    "audits": [],
+                }
+            )
 
     works, scholarly_counts = deduplicate_scholarly(scholarly_records)
     articles, news_counts = deduplicate_news(news_records)
@@ -811,10 +1021,18 @@ def run_daily_pipeline(
 
     seen_works = set(previous_state.get("work_ids", []))
     works = [classify_work(work, profile, is_new=work["work_id"] not in seen_works) for work in works]
+
+    # Classify before clustering.  Background mentions, generic rodent stories,
+    # and unrelated outbreaks must never become PublicHealthEvent objects merely
+    # because the word hantavirus appears once deep in the page.
+    articles = [classify_article(article, profile, None) for article in articles]
     event_candidates = [
         article
         for article in articles
-        if relevance(article, profile, "article")[0] in {"strong", "combined"}
+        if article.get("classification", {}).get("decision") in {"headline", "brief", "review"}
+        and article.get("classification", {}).get("relevance") in {"strong", "combined"}
+        and (article.get("classification", {}).get("pathogen_prominence") or {}).get("level")
+        in {"title_focus", "lead_focus", "body_focus"}
     ]
     events, event_state = cluster_events(event_candidates, previous_state)
     event_map = {event["event_id"]: event for event in events}
@@ -896,13 +1114,14 @@ def run_daily_pipeline(
         )
 
     state = {
-        "schema_version": "1.3.1",
+        "schema_version": "1.5.0",
         "updated_at": utc_now_iso(),
         "work_ids": sorted(seen_works | {work["work_id"] for work in works}),
         "article_ids": sorted(
             set(previous_state.get("article_ids", [])) | {article["article_id"] for article in articles}
         ),
         "events": event_state.get("events", []),
+        "scholarly_recovery_queue": _build_recovery_queue(works, previous_state, window.issue_date, profile),
         "llm_cache": llm_cache,
     }
     issue = build_daily_issue(

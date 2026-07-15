@@ -78,6 +78,7 @@ jobs:
           DISABLE_LLM: ${{ inputs.disable_llm || 'false' }}
           NCBI_API_KEY: ${{ secrets.NCBI_API_KEY }}
           CROSSREF_MAILTO: ${{ secrets.CROSSREF_MAILTO }}
+          UNPAYWALL_EMAIL: ${{ secrets.UNPAYWALL_EMAIL }}
           SEMANTIC_SCHOLAR_API_KEY: ${{ secrets.SEMANTIC_SCHOLAR_API_KEY }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GOOGLE_AI_STUDIO_API_KEY: ${{ secrets.GOOGLE_AI_STUDIO_API_KEY }}

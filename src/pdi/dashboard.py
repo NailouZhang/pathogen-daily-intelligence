@@ -132,7 +132,9 @@ def works_dataframe() -> pd.DataFrame:
                 or "中文翻译暂不可用",
                 "英文标题": strip_scientific_markup(work.get("title", {}).get("original")),
                 "期刊": work.get("bibliography", {}).get("journal"),
-                "发表日期": work.get("bibliography", {}).get("published_date"),
+                "当前可报道日期": work.get("bibliography", {}).get("availability_date") or work.get("bibliography", {}).get("published_date"),
+                "日期依据": work.get("bibliography", {}).get("availability_basis"),
+                "期刊卷期日期": work.get("bibliography", {}).get("issue_date") or work.get("bibliography", {}).get("print_date"),
                 "版面决策": work.get("filter_result", {}).get("decision"),
                 "评分": work.get("filter_result", {}).get("score"),
                 "来源数": work.get("quality", {}).get("source_count"),
@@ -185,7 +187,7 @@ def _streamlit_bilingual_values(item: dict[str, Any], kind: str) -> dict[str, An
                 str(value)
                 for value in [
                     item.get("bibliography", {}).get("journal"),
-                    item.get("bibliography", {}).get("published_date"),
+                    item.get("bibliography", {}).get("availability_date") or item.get("bibliography", {}).get("published_date"),
                     ", ".join(item.get("authors", [])[:4]),
                 ]
                 if value
@@ -322,24 +324,30 @@ def render_bilingual_card(item: dict[str, Any], kind: str, key_prefix: str = "ca
     values = _streamlit_bilingual_values(item, kind)
     item_id = str(values["id"] or "unknown")
     with st.container(border=False):
-        show_english = st.toggle(
-            "显示英文",
-            value=False,
-            key=f"{key_prefix}_{kind}_{item_id}",
-            help="默认显示经过校验的中文翻译；打开后显示英文原题和原始摘要/摘录。",
-        )
+        body_col, language_col = st.columns([20, 1], vertical_alignment="top")
+        with language_col:
+            language = st.segmented_control(
+                "语言",
+                options=["zh", "en"],
+                default="zh",
+                key=f"{key_prefix}_{kind}_{item_id}",
+                label_visibility="collapsed",
+                help="zh：中文；en：英文原题和原始摘要/摘录。",
+            ) or "zh"
+        show_english = language == "en"
         if show_english:
             title = values["en_title"] or "English title unavailable"
             summary = values["en_summary"] or "Original abstract or excerpt is unavailable."
         else:
             title = values["zh_title"] or "中文标题暂不可用"
             summary = values["zh_summary"] or "中文摘要暂不可用；系统不会根据标题编造内容。"
-        st.markdown(
-            f'<div class="pdi-card"><h3>{safe_scientific_html(title)}</h3>'
-            f'<div class="small-muted">{safe_scientific_html(values["meta"])}</div>'
-            f'<p>{safe_scientific_html(summary)}</p></div>',
-            unsafe_allow_html=True,
-        )
+        with body_col:
+            st.markdown(
+                f'<div class="pdi-card"><h3>{safe_scientific_html(title)}</h3>'
+                f'<div class="small-muted">{safe_scientific_html(values["meta"])}</div>'
+                f'<p>{safe_scientific_html(summary)}</p></div>',
+                unsafe_allow_html=True,
+            )
         _render_analysis_details(item, kind)
         if values.get("url"):
             st.link_button("查看原始来源", str(values["url"]))
@@ -351,14 +359,36 @@ def render_bilingual_card(item: dict[str, Any], kind: str, key_prefix: str = "ca
         )
         if kind == "article":
             fetch = item.get("retrieval_audit", {}).get("content_fetch") or {}
+            coverage = (item.get("content") or {}).get("coverage_level")
+            if coverage in {"title_only", "title_or_snippet_only", "unavailable"}:
+                st.warning("未抓获可分析正文；本条仅基于标题、RSS 摘要或来源元数据。")
+            elif coverage == "focused_partial":
+                st.info("仅抓获部分与目标病原直接相关的正文，解读范围受限。")
+            else:
+                st.success("已抓取并聚焦提取与目标病原直接相关的正文证据。")
             st.caption(
                 f"正文抓取：{fetch.get('status') or '未执行'} · {fetch.get('method') or '无'} · "
-                f"证据句 {fetch.get('sentence_count') or len(item.get('content', {}).get('sentences') or [])}"
+                f"覆盖 {coverage or 'unknown'} · 证据句 {fetch.get('sentence_count') or len(item.get('content', {}).get('sentences') or [])}"
             )
         elif kind == "work":
             full = item.get("full_text") or {}
+            abstract = item.get("abstract") or {}
+            acquisition = item.get("evidence_acquisition") or {}
+            level = acquisition.get("evidence_level") or full.get("evidence_level") or ("E1" if abstract.get("original") else "E0")
+            if not abstract.get("original") and not full.get("available"):
+                st.warning("证据等级 E0：未抓获摘要或可分析正文；文献仍保留并进入补全重试队列，当前不得生成研究发现。")
+            elif full.get("available"):
+                st.success(f"证据等级 {level}：已获得摘要及 {full.get('source') or '开放全文'} 正文证据。")
+            else:
+                st.info("证据等级 E1：已获得摘要；已尝试开放 XML/HTML/PDF 兜底，暂未获得可分析全文。")
             st.caption(
-                "文献证据：" + ("摘要 + Europe PMC 开放全文片段" if full.get("available") else "标题/摘要")
+                f"内容补全：{acquisition.get('status') or 'unknown'} · 尝试轮次 {acquisition.get('attempt_count') or 0} · "
+                f"解析 {full.get('extraction_method') or '无'} · 临时 PDF 不持久化"
+            )
+            bib = item.get("bibliography") or {}
+            st.caption(
+                f"当前可报道日期：{bib.get('availability_date') or bib.get('published_date') or '未知'}"
+                f"（{bib.get('availability_basis') or 'unknown'}）；期刊卷期日期：{bib.get('issue_date') or bib.get('print_date') or '未提供'}"
             )
 
 

@@ -24,7 +24,7 @@ def _language_of(text: str) -> str:
 def build_query_tasks(profile: dict[str, Any], source: dict[str, Any]) -> list[QueryTask]:
     groups = profile.get("query_groups", {}).get("groups", [])
     allowed_languages = set(source.get("languages") or profile.get("priority_languages") or ["en", "zh"])
-    max_groups = int(profile.get("search_policy", {}).get("max_query_groups_per_source", 8))
+    max_groups = int(source.get("max_query_groups") or profile.get("search_policy", {}).get("max_query_groups_per_source", 8))
     default_limit = int(profile.get("search_policy", {}).get("max_results_per_group", 25))
     tasks: list[QueryTask] = []
     for group in sorted(groups, key=lambda g: int(g.get("priority", 0)), reverse=True):

@@ -161,7 +161,7 @@ def _language_panels(
     if zh_summary:
         zh_summary_html = f"<p>{safe_scientific_html(zh_summary)}</p>"
     else:
-        zh_summary_html = '<p class="muted">中文摘要暂不可用；系统不会根据标题编造内容。可点击“显示英文”查看原文。</p>'
+        zh_summary_html = '<p class="muted">中文摘要暂不可用；系统不会根据标题编造内容。可点击右上角“en”查看原文。</p>'
     en_title_html = safe_scientific_html(en_title or "English title unavailable")
     if en_summary:
         en_summary_html = f"<p>{safe_scientific_html(en_summary)}</p>"
@@ -176,9 +176,56 @@ def _language_panels(
         <h3>{en_title_html}</h3>
         {en_summary_html}
       </div>
-      <button type="button" class="language-toggle" data-card-id="{_e(card_id)}" aria-expanded="false">显示英文</button>
+      <button type="button" class="language-toggle" data-card-id="{_e(card_id)}" aria-expanded="false" aria-label="显示英文" title="显示英文">en</button>
     """
 
+
+
+
+def _work_content_note(work: dict[str, Any]) -> str:
+    abstract = work.get("abstract") or {}
+    full_text = work.get("full_text") or {}
+    acquisition = work.get("evidence_acquisition") or {}
+    level = acquisition.get("evidence_level") or full_text.get("evidence_level") or ("E1" if abstract.get("original") else "E0")
+    source = full_text.get("source")
+    if full_text.get("available"):
+        label = "结构化开放全文" if level == "E3" else "HTML/PDF 正文证据"
+        method = full_text.get("extraction_method")
+        suffix = f"；解析方式：{_e(method)}" if method else ""
+        return f'<p class="content-status ok">证据等级 { _e(level) }：已获得摘要和{label}{suffix}。</p>'
+    if abstract.get("original"):
+        return '<p class="content-status partial">证据等级 E1：已获得摘要；系统已尝试结构化全文、开放 HTML 和 PDF 兜底，但暂未获得可分析全文。</p>'
+    attempts = int(acquisition.get("attempt_count") or 0)
+    retry = "；已进入后续补全重试队列" if acquisition.get("retry_recommended") else ""
+    return f'<p class="content-status missing">证据等级 E0：未抓获摘要或可分析正文；本条仅展示经核验的书目信息与标题翻译。已执行 {attempts} 轮跨库/全文兜底{retry}。</p>'
+
+
+def _event_content_note(event: dict[str, Any]) -> str:
+    content = event.get("content_availability") or {}
+    coverage = content.get("coverage_level")
+    if coverage == "full_relevant_extract":
+        return '<p class="content-status ok">已抓取并聚焦提取与本病原直接相关的正文。</p>'
+    if coverage == "focused_partial":
+        return '<p class="content-status partial">仅抓获部分相关正文，解读范围受限。</p>'
+    return '<p class="content-status missing">未抓获可分析正文；本条仅基于标题、RSS 摘要或来源元数据，不能视为正文级解读。</p>'
+
+
+def _availability_meta(work: dict[str, Any]) -> str:
+    bib = work.get("bibliography") or {}
+    current = bib.get("availability_date") or bib.get("published_date")
+    basis = bib.get("availability_basis")
+    parts = []
+    if current:
+        label = f"当前可报道日期 {current}"
+        if basis:
+            label += f"（{basis}）"
+        parts.append(label)
+    issue_date = bib.get("issue_date")
+    print_date = bib.get("print_date")
+    future = issue_date or print_date
+    if future and future != current:
+        parts.append(f"期刊卷期日期 {future}")
+    return "；".join(parts)
 
 def _work_card(work: dict[str, Any]) -> str:
     card_id = f"work-{work.get('work_id', '')}"
@@ -203,7 +250,7 @@ def _work_card(work: dict[str, Any]) -> str:
         links.append(f'<a href="{_e(source_links[0])}">原始记录</a>')
     meta = " · ".join(
         value
-        for value in [bib.get("journal"), bib.get("published_date"), ", ".join(work.get("authors", [])[:4])]
+        for value in [bib.get("journal"), _availability_meta(work), ", ".join(work.get("authors", [])[:4])]
         if value
     )
     audit = work.get("translation_audit") or {}
@@ -219,6 +266,7 @@ def _work_card(work: dict[str, Any]) -> str:
       <div class="kicker">学术文献 · {_e(work.get('filter_result', {}).get('decision', 'archive'))} · {translation_note}</div>
       {_language_panels(card_id, zh_title, zh_summary, en_title, en_summary)}
       <div class="meta">{_e(meta)}</div>
+      {_work_content_note(work)}
       <details class="analysis-details"><summary>查看研究设计、关键发现与证据审计</summary>{_work_analysis_details(work)}</details>
       <div class="links">{' · '.join(links)}</div>
       <div class="audit-note">翻译：{_e(audit.get('provider') or '不可用')} · {_e(audit.get('validation_status') or 'unknown')}{' · '+_e(chain) if chain else ''}</div>
@@ -255,6 +303,7 @@ def _event_card(event: dict[str, Any]) -> str:
       {_language_panels(card_id, zh_title, zh_summary, en_title, en_summary)}
       <div class="meta">{_e(loc)} · {_e(event.get('event_type'))} · {_e(count_line)}</div>
       <p class="event-note">该事件由 {len(event.get('source_articles', []))} 篇文章聚合；事件版本 v{_e(event.get('event_version'))}。</p>
+      {_event_content_note(event)}
       <details class="analysis-details"><summary>查看正文理解、官方确认与不确定性</summary>{_event_analysis_details(event)}</details>
       <div class="links">{link}</div>
       <div class="audit-note">翻译：{_e(audit.get('provider') or '不可用')} · {_e(audit.get('validation_status') or 'unknown')}{' · '+_e(chain) if chain else ''}</div>
@@ -312,9 +361,9 @@ def build_report_html(
 *{{box-sizing:border-box}} body{{margin:0;background:var(--paper);color:var(--ink);font-family:"Noto Serif SC","Source Han Serif SC","Songti SC",STSong,SimSun,serif;line-height:1.72}}
 a{{color:var(--red)}} sub,sup{{line-height:0;font-size:.72em}} .page{{max-width:1280px;margin:auto;padding:24px 34px 70px}} .mast{{text-align:center;border-top:5px double var(--ink);border-bottom:2px solid var(--ink);padding:18px 0 12px}}
 .mast h1{{font-size:clamp(34px,6vw,68px);letter-spacing:.12em;margin:0}} .mast p{{margin:.2rem 0;color:var(--muted);letter-spacing:.12em}} .date{{font-size:14px;border-bottom:1px solid var(--line);padding:10px 0;text-align:center}}
-.toolbar{{display:flex;justify-content:flex-end;gap:8px;padding:10px 0;border-bottom:1px solid var(--line)}} button{{font:inherit}} .global-language,.language-toggle{{border:1px solid var(--line);background:var(--button);color:var(--ink);padding:5px 10px;cursor:pointer;border-radius:0}} .global-language:hover,.language-toggle:hover{{border-color:var(--red);color:var(--red)}}
+.toolbar{{display:flex;justify-content:flex-end;gap:8px;padding:10px 0;border-bottom:1px solid var(--line)}} button{{font:inherit}} .global-language{{border:1px solid var(--line);background:var(--button);color:var(--ink);padding:5px 10px;cursor:pointer;border-radius:0}} .global-language:hover{{border-color:var(--red);color:var(--red)}}
 .stats{{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:2px solid var(--ink)}} .stats div{{text-align:center;padding:14px;border-right:1px solid var(--line)}} .stats div:last-child{{border-right:0}} .stats strong{{font-size:27px;display:block;color:var(--red)}} .stats span{{font-size:13px}}
-section{{border-top:1px solid var(--ink);margin-top:26px;padding-top:7px}} section h2{{font-size:22px;letter-spacing:.12em;margin:0 0 12px}} .columns{{columns:3 290px;column-gap:30px;column-rule:1px solid var(--line)}} .story{{break-inside:avoid;border-bottom:1px solid var(--line);padding:0 0 18px;margin:0 0 18px}} .story h3{{font-size:20px;line-height:1.38;margin:.25rem 0}} .story p{{margin:.45rem 0}} .kicker{{font-size:12px;color:var(--red);font-weight:700;letter-spacing:.06em}} .meta,.muted,.audit-note{{color:var(--muted);font-size:13px}} .audit-note{{margin-top:6px;font-size:11px}} .links{{font-size:13px;margin-top:7px}} .language-toggle{{margin:5px 0 8px;font-size:12px}} .translation-status{{color:var(--red)}} .translation-status.unavailable{{color:var(--muted)}} .event-note{{font-size:13px}} .analysis-details{{border-top:1px dotted var(--line);border-bottom:1px dotted var(--line);margin:10px 0;padding:7px 0;font-size:13px}} .analysis-details summary{{cursor:pointer;color:var(--red);font-weight:700}} .analysis-details h4{{margin:.65rem 0 .2rem;font-size:14px}} .analysis-details ul{{margin:.2rem 0 .6rem;padding-left:1.2rem}} .evidence-id{{color:var(--muted);font-size:11px}} table{{width:100%;border-collapse:collapse;font-size:13px}} th,td{{text-align:left;border-bottom:1px solid var(--line);padding:7px}} footer{{border-top:3px double var(--ink);margin-top:35px;padding-top:16px;font-size:12px;color:var(--muted)}}
+section{{border-top:1px solid var(--ink);margin-top:26px;padding-top:7px}} section h2{{font-size:22px;letter-spacing:.12em;margin:0 0 12px}} .columns{{columns:3 290px;column-gap:30px;column-rule:1px solid var(--line)}} .story{{position:relative;break-inside:avoid;border-bottom:1px solid var(--line);padding:0 30px 18px 0;margin:0 0 18px}} .story h3{{font-size:20px;line-height:1.38;margin:.25rem 0}} .story p{{margin:.45rem 0}} .kicker{{font-size:12px;color:var(--red);font-weight:700;letter-spacing:.06em;padding-right:2px}} .meta,.muted,.audit-note{{color:var(--muted);font-size:13px}} .audit-note{{margin-top:6px;font-size:11px}} .links{{font-size:13px;margin-top:7px}} .language-toggle{{position:absolute;top:0;right:0;z-index:2;display:inline-flex;align-items:center;justify-content:center;min-width:24px;height:20px;padding:0 3px;margin:0;border:0;border-bottom:1px solid var(--line);background:transparent;color:var(--muted);font:600 10px/1 system-ui,sans-serif;letter-spacing:.02em;cursor:pointer;text-transform:lowercase}} .language-toggle:hover,.language-toggle:focus-visible{{color:var(--red);border-color:var(--red);outline:none}} .translation-status{{color:var(--red)}} .translation-status.unavailable{{color:var(--muted)}} .event-note{{font-size:13px}} .content-status{{font-size:12px;padding:5px 7px;border-left:3px solid var(--line);background:rgba(255,255,255,.22)}} .content-status.ok{{border-color:#476b46}} .content-status.partial{{border-color:#a06a19}} .content-status.missing{{border-color:var(--red);color:var(--muted)}} .analysis-details{{border-top:1px dotted var(--line);border-bottom:1px dotted var(--line);margin:10px 0;padding:7px 0;font-size:13px}} .analysis-details summary{{cursor:pointer;color:var(--red);font-weight:700}} .analysis-details h4{{margin:.65rem 0 .2rem;font-size:14px}} .analysis-details ul{{margin:.2rem 0 .6rem;padding-left:1.2rem}} .evidence-id{{color:var(--muted);font-size:11px}} table{{width:100%;border-collapse:collapse;font-size:13px}} th,td{{text-align:left;border-bottom:1px solid var(--line);padding:7px}} footer{{border-top:3px double var(--ink);margin-top:35px;padding-top:16px;font-size:12px;color:var(--muted)}}
 [hidden]{{display:none!important}}
 @media(max-width:800px){{.page{{padding:15px 18px 45px}}.stats{{grid-template-columns:repeat(2,1fr)}}.columns{{columns:1}}.toolbar{{justify-content:center}}}}
 @media print{{body{{background:white}}.page{{max-width:none;padding:0}}a{{color:black;text-decoration:none}}.toolbar,.language-toggle,.audit-note{{display:none!important}}.lang-en{{display:none!important}}.lang-zh{{display:block!important}}}}
@@ -338,8 +387,10 @@ section{{border-top:1px solid var(--ink);margin-top:26px;padding-top:7px}} secti
     const showEnglish = language === 'en';
     zh.hidden = showEnglish;
     en.hidden = !showEnglish;
-    button.textContent = showEnglish ? '显示中文' : '显示英文';
+    button.textContent = showEnglish ? 'zh' : 'en';
     button.setAttribute('aria-expanded', String(showEnglish));
+    button.setAttribute('aria-label', showEnglish ? '显示中文' : '显示英文');
+    button.setAttribute('title', showEnglish ? '显示中文' : '显示英文');
   }}
   document.querySelectorAll('.language-toggle').forEach(function(button){{
     button.addEventListener('click', function(){{
@@ -389,7 +440,7 @@ def build_email_html(
             f'<strong>{safe_scientific_html(zh_title)}</strong>'
             + (f'<br><span>{safe_scientific_html(zh_summary)}</span>' if zh_summary else '<br><span style="color:#6a6259">摘要暂不可用</span>')
             + f'<br><span style="color:#6a6259;font-size:12px">English: {safe_scientific_html(en_title)}</span>'
-            + f'<br><span style="color:#6a6259;font-size:13px">{_e(work.get("bibliography",{}).get("journal"))} · {_e(work.get("bibliography",{}).get("published_date"))}</span></td></tr>'
+            + f'<br><span style="color:#6a6259;font-size:13px">{_e(work.get("bibliography",{}).get("journal"))} · {_e((work.get("bibliography",{}).get("availability_date") or work.get("bibliography",{}).get("published_date")))}</span></td></tr>'
         )
     if not rows:
         rows.append('<tr><td style="padding:14px 0">今日未发现符合入选条件的新记录。</td></tr>')

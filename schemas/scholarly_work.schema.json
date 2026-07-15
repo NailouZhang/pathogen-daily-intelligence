@@ -133,6 +133,45 @@
             "string",
             "null"
           ]
+        },
+        "evidence_level": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "content_version": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "license": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "sha256": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "extraction_method": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "temporary_file_persisted": {
+          "type": "boolean"
+        },
+        "availability_status": {
+          "type": [
+            "string",
+            "null"
+          ]
         }
       },
       "additionalProperties": true
@@ -145,6 +184,72 @@
     },
     "processing_audit": {
       "type": "object"
+    },
+    "evidence_acquisition": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "evidence_level": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "E0",
+            "E1",
+            "E2",
+            "E3",
+            "E4",
+            null
+          ]
+        },
+        "analysis_eligible": {
+          "type": "boolean"
+        },
+        "attempt_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "last_attempt_at": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "retry_recommended": {
+          "type": "boolean"
+        },
+        "reason_codes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "failed_stages": {
+          "type": "array",
+          "items": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "attempts": {
+          "type": "array"
+        },
+        "copyright_policy": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": true
     }
   },
   "additionalProperties": true

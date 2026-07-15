@@ -112,7 +112,8 @@ def placeholders_preserved(value: Any, mapping: dict[str, str]) -> bool:
 
 
 def number_tokens(value: Any) -> list[str]:
-    return _NUMBER_RE.findall(strip_scientific_markup(value))
+    text = strip_scientific_markup(value).replace("，", ",").replace("％", "%")
+    return _NUMBER_RE.findall(text)
 
 
 def contains_cjk(value: Any) -> bool:

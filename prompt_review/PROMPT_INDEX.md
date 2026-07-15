@@ -1,4 +1,4 @@
-# v1.3 生产提示词审查索引
+# v1.5 生产提示词审查索引
 
 `production_prompts/` 中的文件与项目根目录 `prompts/` **逐字一致**。修改提示词时，应同步修改两处并运行 `tests/test_prompt_review.py`；测试会阻止两份内容不一致的版本进入 GitHub。
 

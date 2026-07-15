@@ -11,7 +11,8 @@
       "languages": [
         "en"
       ],
-      "base_url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/"
+      "base_url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/",
+      "max_query_groups": 8
     },
     {
       "source_id": "europe_pmc",
@@ -23,7 +24,8 @@
       "languages": [
         "en"
       ],
-      "base_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/"
+      "base_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/",
+      "max_query_groups": 8
     },
     {
       "source_id": "crossref",
@@ -35,7 +37,8 @@
       "languages": [
         "en"
       ],
-      "base_url": "https://api.crossref.org/"
+      "base_url": "https://api.crossref.org/",
+      "max_query_groups": 8
     },
     {
       "source_id": "semantic_scholar",
@@ -47,7 +50,8 @@
       "languages": [
         "en"
       ],
-      "base_url": "https://api.semanticscholar.org/graph/v1/"
+      "base_url": "https://api.semanticscholar.org/graph/v1/",
+      "max_query_groups": 8
     },
     {
       "source_id": "who_don",
@@ -65,7 +69,8 @@
       "allowed_domains": [
         "who.int"
       ],
-      "list_url": "https://www.who.int/emergencies/disease-outbreak-news"
+      "list_url": "https://www.who.int/emergencies/disease-outbreak-news",
+      "max_query_groups": 3
     },
     {
       "source_id": "reliefweb",
@@ -79,7 +84,8 @@
       "languages": [
         "en"
       ],
-      "base_url": "https://api.reliefweb.int/v2/reports"
+      "base_url": "https://api.reliefweb.int/v2/reports",
+      "max_query_groups": 3
     },
     {
       "source_id": "gdelt",
@@ -94,7 +100,8 @@
         "en",
         "zh"
       ],
-      "base_url": "https://api.gdeltproject.org/api/v2/doc/doc"
+      "base_url": "https://api.gdeltproject.org/api/v2/doc/doc",
+      "max_query_groups": 5
     },
     {
       "source_id": "google_news_en",
@@ -112,7 +119,8 @@
         "hl": "en-US",
         "gl": "US",
         "ceid": "US:en"
-      }
+      },
+      "max_query_groups": 5
     },
     {
       "source_id": "google_news_zh",
@@ -130,7 +138,8 @@
         "hl": "zh-CN",
         "gl": "CN",
         "ceid": "CN:zh-Hans"
-      }
+      },
+      "max_query_groups": 5
     },
     {
       "source_id": "cdc_registry",

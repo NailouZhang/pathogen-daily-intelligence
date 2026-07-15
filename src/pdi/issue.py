@@ -150,10 +150,28 @@ def build_daily_issue(
         "news_content_fetch_attempted": (content_audit.get("news") or {}).get("attempted", 0),
         "news_content_fetch_success": (content_audit.get("news") or {}).get("success", 0),
         "news_content_fetch_failed": (content_audit.get("news") or {}).get("failed", 0),
+        "scholarly_recovery_attempted": (content_audit.get("scholarly") or {}).get("attempted", 0),
+        "scholarly_abstract_recovered": (content_audit.get("scholarly") or {}).get("abstract_recovered", 0),
+        "scholarly_fulltext_recovered": (content_audit.get("scholarly") or {}).get("fulltext_success", 0),
+        "scholarly_metadata_only": (content_audit.get("scholarly") or {}).get("metadata_only", 0),
+        "scholarly_abstract_only": (content_audit.get("scholarly") or {}).get("abstract_only", 0),
+        "scholarly_partial_fulltext": (content_audit.get("scholarly") or {}).get("pdf_or_html_fulltext", 0),
+        "scholarly_structured_fulltext": (content_audit.get("scholarly") or {}).get("structured_fulltext", 0),
+        # Backward-compatible aliases retained for downstream dashboards.
         "open_fulltext_fetch_attempted": (content_audit.get("scholarly") or {}).get("attempted", 0),
         "open_fulltext_fetch_success": (content_audit.get("scholarly") or {}).get("success", 0),
         "validated_work_analyses": sum(bool(w.get("ai_analysis")) for w in works),
         "validated_article_analyses": sum(bool(a.get("ai_analysis")) for a in articles),
+        "news_background_mentions_archived": sum(
+            (a.get("classification") or {}).get("relevance") == "background" for a in articles
+        ),
+        "news_title_or_snippet_only": sum(
+            (a.get("content") or {}).get("coverage_level") in {"title_only", "title_or_snippet_only"}
+            for a in articles
+        ),
+        "scholarly_identifier_conflicts": sum(
+            bool((w.get("quality") or {}).get("identifier_conflict")) for w in works
+        ),
     }
 
     sections = [
@@ -178,7 +196,9 @@ def build_daily_issue(
 
     data_quality_notes: list[str] = []
     if any(not w.get("abstract", {}).get("original") for w in works):
-        data_quality_notes.append("部分文献尚无可用摘要，系统仅展示书目信息。")
+        data_quality_notes.append(
+            "部分文献尚无可用摘要或全文：记录仍被保留并进入后续补全队列，本期仅展示书目信息，且不生成研究结论。"
+        )
     if any(e.get("official_status") != "official" for e in events):
         data_quality_notes.append("部分事件尚未找到 A 级官方原始来源，应继续核验。")
     if statistics["source_failures"]:
@@ -189,13 +209,33 @@ def build_daily_issue(
         data_quality_notes.append(
             f"{statistics['news_content_fetch_failed']} 篇新闻未能抓取到可分析正文，相关条目仅使用 RSS、元描述或已有摘要。"
         )
-    if statistics["open_fulltext_fetch_success"]:
+    if statistics["scholarly_abstract_recovered"]:
         data_quality_notes.append(
-            f"{statistics['open_fulltext_fetch_success']} 篇开放获取文献补充了 Europe PMC 全文中的方法、结果、讨论或结论证据。"
+            f"{statistics['scholarly_abstract_recovered']} 篇文献通过 PubMed、Europe PMC、Crossref、Semantic Scholar 或出版商元数据补回了摘要。"
+        )
+    if statistics["scholarly_fulltext_recovered"]:
+        data_quality_notes.append(
+            f"{statistics['scholarly_fulltext_recovered']} 篇文献通过 PMC XML/BioC、开放 HTML、文本挖掘链接或合法开放 PDF 补充了正文证据。"
+        )
+    if statistics["scholarly_metadata_only"]:
+        data_quality_notes.append(
+            f"{statistics['scholarly_metadata_only']} 篇文献当前仍为 E0 元数据级记录，已保留并安排后续补抓，未生成研究发现。"
         )
     if statistics["translation_fallback_successes"]:
         data_quality_notes.append(
             f"{statistics['translation_fallback_successes']} 条翻译由备用模型在首选模型未通过校验后完成。"
+        )
+    if statistics["news_background_mentions_archived"]:
+        data_quality_notes.append(
+            f"{statistics['news_background_mentions_archived']} 篇仅在背景中提及目标病原的文章已归档，不再生成公共卫生事件。"
+        )
+    if statistics["news_title_or_snippet_only"]:
+        data_quality_notes.append(
+            f"{statistics['news_title_or_snippet_only']} 篇新闻仅获得标题或 RSS 摘要，页面将明确标记为未获得正文。"
+        )
+    if statistics["scholarly_identifier_conflicts"]:
+        data_quality_notes.append(
+            f"{statistics['scholarly_identifier_conflicts']} 篇文献存在跨来源标识符或书目冲突，已进入复核而不是静默合并。"
         )
     missing_zh = [w for w in works if not w.get("title", {}).get("translated_zh")]
     missing_zh += [e for e in events if not e.get("summary_zh")]
@@ -204,7 +244,7 @@ def build_daily_issue(
 
     generated_at = utc_now_iso()
     issue = {
-        "schema_version": "1.3",
+        "schema_version": "1.5",
         "issue_id": issue_id,
         "issue_revision": 1,
         "issue_date": window.issue_date,
@@ -232,10 +272,10 @@ def build_daily_issue(
         "data_quality_notes": data_quality_notes,
         "watchlist": synthesis.get("watchlist", []) if synthesis else [],
         "generation_audit": {
-            "schema_version": "1.3",
+            "schema_version": "1.5",
             "profile_version": profile.get("profile_version"),
-            "rule_version": "1.3",
-            "prompt_version": "1.3",
+            "rule_version": "1.5",
+            "prompt_version": "1.5",
             "llm_runs": llm_audit,
             "dedup_counts": dedup_counts,
             "partial_failures": [h for h in source_health if h.get("status") in {"failed", "partial"}],
@@ -246,9 +286,11 @@ def build_daily_issue(
             "pipeline_stages": [
                 "profile_and_query_plan",
                 "multi_source_collection",
-                "entity_deduplication",
-                "bounded_content_enrichment",
+                "conservative_entity_deduplication",
+                "current_availability_date_selection",
+                "bounded_multistrategy_content_enrichment",
                 "rule_entity_annotation",
+                "precluster_relevance_filtering",
                 "event_clustering",
                 "editorial_filtering",
                 "sequential_multimodel_translation_and_analysis",

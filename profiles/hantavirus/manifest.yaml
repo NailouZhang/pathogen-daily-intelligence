@@ -1,6 +1,6 @@
 schema_version: "1.0"
 profile_id: hantavirus
-profile_version: "1.3.0"
+profile_version: "1.5.0"
 lifecycle_status: approved_for_search
 display_names:
   zh: 汉坦病毒
@@ -74,8 +74,8 @@ known_official_domains:
 search_policy:
   window_days: 7
   timezone: Asia/Shanghai
-  max_query_groups_per_source: 8
-  max_results_per_group: 25
+  max_query_groups_per_source: 10
+  max_results_per_group: 50
   request_timeout_seconds: 20
   max_runtime_minutes: 35
 llm_policy:
@@ -92,25 +92,49 @@ llm_policy:
     daily_synthesis: [gemini, github_models, groq, deterministic]
     pathogen_bootstrap: [gemini, github_models, groq, deterministic]
   translation_provider_batch_sizes:
-    github_models: 6
+    github_models: 3
     gemini: 2
     groq: 1
-  max_items_per_issue: 18
+  max_items_per_issue: 36
   translation_cache_max_entries: 3500
   max_retries_per_provider: 1
+  # After a model returns syntactically valid JSON that fails evidence or
+  # translation validation, try another discovered model in the same provider.
+  validation_model_attempts_per_provider:
+    github_models: 2
+    gemini: 2
+    groq: 4
+  max_models_per_provider:
+    github_models: 3
+    gemini: 3
+    groq: 8
   model_timeout_seconds: 75
   daily_synthesis: true
 content_policy:
   # Only public, directly retrievable pages are processed. The system does not
   # bypass paywalls or access controls and retains bounded evidence excerpts.
-  max_news_fetches_per_issue: 24
+  max_news_fetches_per_issue: 60
   max_news_analysis_chars: 12000
-  max_news_translation_chars: 4500
+  max_news_translation_chars: 2800
   max_news_evidence_sentences: 40
-  news_fetch_workers: 4
-  max_open_fulltext_fetches_per_issue: 6
+  news_fetch_workers: 6
+  max_abstract_recovery_fetches_per_issue: 30
+  max_open_fulltext_fetches_per_issue: 12
   max_open_fulltext_analysis_chars: 14000
-  max_open_fulltext_evidence_sentences: 45
+  max_open_fulltext_evidence_sentences: 50
+  # Scholarly evidence recovery: metadata APIs -> PMC XML/BioC -> Crossref TDM
+  # -> Unpaywall/Semantic Scholar/publisher HTML or public PDF.
+  max_scholarly_recovery_works_per_issue: 20
+  max_fulltext_candidates_per_work: 8
+  max_pdf_bytes: 25000000
+  max_pdf_pages: 80
+  # OCR is attempted only when tesseract is already available on the runner.
+  # It remains disabled by default to keep the daily job fast and stable.
+  enable_pdf_ocr: false
+  max_pdf_ocr_pages: 4
+  scholarly_recovery_retry_days: [1, 3, 7, 14]
+  scholarly_recovery_queue_max_age_days: 30
+  scholarly_recovery_queue_max_items: 200
 editorial_preferences:
   website_title: 汉坦病毒每日情报
   website_subtitle: Hantavirus Daily Intelligence
@@ -118,8 +142,8 @@ editorial_preferences:
   show_empty_sections: false
   image_policy: disabled_by_default
   max_headlines: 3
-  max_events: 8
-  max_papers: 10
+  max_events: 12
+  max_papers: 20
   default_content_language: zh-CN
   per_card_english_toggle: true
   scientific_markup_allowlist: [sub, sup, i, em, strong, b, br]

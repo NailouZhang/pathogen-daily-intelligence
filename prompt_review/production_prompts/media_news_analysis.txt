@@ -44,3 +44,10 @@ Return JSON only:
   "uncertainties": [],
   "evidence_ids": []
 }
+
+CONTENT RETRIEVAL RULES
+- Read content_retrieval_status before analysis.
+- If analysis_text_available is false, do not produce a正文级 summary or claim that the article was understood. Translate the title and any explicitly supplied RSS/source snippet only; set source_content_quality.level to title_or_snippet_only and state that正文 was not retrieved.
+- If coverage_level is title_or_snippet_only, do not infer case counts, locations, official confirmation, authority chains, causes, or actions beyond the supplied snippet.
+- Ignore unrelated diseases, counts, countries, and events that occur elsewhere in the page. Extract a count/location only when its evidence sentence explicitly concerns the monitored pathogen/disease.
+- A background mention of a previous hantavirus event inside an Ebola, cyber-security, rodent-control, obituary, newsletter, or general commentary article is not a new hantavirus public-health event.

@@ -24,3 +24,8 @@ Required structure:
     }
   ]
 }
+
+CONTENT AVAILABILITY
+- If text_available is false, repair the title only and return null for translated_text_zh and summaries.
+- Do not turn a title or RSS snippet into an invented article summary.
+- Preserve numeric value exactly; conventional thousands-separator formatting may differ, but no digit, decimal, percent sign, comparison sign, or unit may change.

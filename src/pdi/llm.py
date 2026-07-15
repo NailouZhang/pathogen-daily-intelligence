@@ -3,7 +3,7 @@ from __future__ import annotations
 import json
 import os
 import time
-from dataclasses import asdict, dataclass
+from dataclasses import asdict, dataclass, field
 from pathlib import Path
 from typing import Any, Iterable
 
@@ -23,6 +23,7 @@ class LLMRun:
     input_hash: str
     generated_at: str
     task_name: str
+    model_attempts: list[dict[str, Any]] = field(default_factory=list)
 
     def audit(self) -> dict[str, Any]:
         data = asdict(self)
@@ -31,11 +32,11 @@ class LLMRun:
 
 
 class ModelRouter:
-    """Task-aware sequential model router.
+    """Task-aware sequential provider router with intra-provider model rotation.
 
-    A provider is never called in parallel with another provider for the same
-    task.  The next provider is attempted only after transport failure,
-    unusable JSON, or caller-side validation rejection.
+    Providers are still strictly sequential for a task.  Within one provider,
+    several currently available models may be tried in ranked order when a
+    default model is retired, unsupported, rate-limited, or returns invalid JSON.
     """
 
     def __init__(self, root: Path, policy: dict[str, Any], client: HttpClient | None = None) -> None:
@@ -48,7 +49,8 @@ class ModelRouter:
         if "deterministic" not in self.default_providers:
             self.default_providers.append("deterministic")
         self._model_lists: dict[str, list[str]] = {}
-        self._selected_models: dict[str, str | None] = {}
+        self._successful_model: dict[tuple[str, str], str] = {}
+        self._rejected_models: dict[tuple[str, str], set[str]] = {}
 
     def _prompt(self, name: str) -> str:
         return (self.root / "prompts" / f"{name}.txt").read_text(encoding="utf-8")
@@ -73,10 +75,8 @@ class ModelRouter:
             params={"key": key},
             max_attempts=2,
         )
-        if not data:
-            return []
         models: list[str] = []
-        for model in data.get("models", []):
+        for model in (data or {}).get("models", []):
             if "generateContent" in (model.get("supportedGenerationMethods") or []):
                 name = str(model.get("name") or "").removeprefix("models/")
                 if name:
@@ -89,44 +89,38 @@ class ModelRouter:
             headers={
                 "Authorization": f"Bearer {token}",
                 "Accept": "application/vnd.github+json",
-                "X-GitHub-Api-Version": "2026-03-10",
+                "X-GitHub-Api-Version": "2022-11-28",
             },
             max_attempts=2,
         )
-        return [str(x.get("id")) for x in (data or []) if x.get("id")]
+        models: list[str] = []
+        for row in data or []:
+            model_id = str(row.get("id") or "")
+            task = str(row.get("task") or row.get("task_type") or "").casefold()
+            if model_id and (not task or "chat" in task or "completion" in task or "text" in task):
+                models.append(model_id)
+        return models
 
     def _groq_models(self, key: str) -> list[str]:
         data, _ = self.client.get_json(
             "https://api.groq.com/openai/v1/models",
-            headers={"Authorization": f"Bearer {key}"},
+            headers={"Authorization": f"Bearer {key}", "Content-Type": "application/json"},
             max_attempts=2,
         )
-        return [str(x.get("id")) for x in (data or {}).get("data", []) if x.get("id")]
-
-    @staticmethod
-    def _choose(models: list[str], preferred: str | None, keywords: Iterable[str]) -> str | None:
-        if preferred and preferred in models:
-            return preferred
-        for keyword in keywords:
-            hit = next((model for model in models if keyword.casefold() in model.casefold()), None)
-            if hit:
-                return hit
-        return models[0] if models else preferred
+        excluded = ("whisper", "guard", "orpheus", "tts", "speech", "embedding", "moderation")
+        models: list[str] = []
+        for row in (data or {}).get("data", []):
+            model_id = str(row.get("id") or "")
+            active = row.get("active", True)
+            if not model_id or active is False or any(token in model_id.casefold() for token in excluded):
+                continue
+            models.append(model_id)
+        return models
 
     @staticmethod
     def _route_key(task_name: str) -> str:
         if task_name in {"bilingual_translation_batch", "translation_repair"}:
             return "translation"
-        if task_name == "literature_analysis":
-            return "literature_analysis"
-        if task_name == "official_notice_analysis":
-            return "official_notice_analysis"
-        if task_name == "media_news_analysis":
-            return "media_news_analysis"
-        if task_name == "daily_synthesis":
-            return "daily_synthesis"
-        if task_name == "pathogen_bootstrap":
-            return "pathogen_bootstrap"
         return task_name
 
     def provider_sequence(self, task_name: str) -> list[str]:
@@ -150,15 +144,7 @@ class ModelRouter:
             return os.getenv("GROQ_API_KEY", ""), os.getenv("GROQ_MODEL")
         return "", None
 
-    def _model_for(self, provider: str) -> tuple[str, str]:
-        if provider in self._selected_models and self._selected_models[provider]:
-            key, _ = self._provider_credentials(provider)
-            return key, str(self._selected_models[provider])
-
-        key, preferred = self._provider_credentials(provider)
-        if not key:
-            raise RuntimeError(f"Missing credentials for {provider}")
-
+    def _discover_models(self, provider: str, key: str) -> list[str]:
         if provider not in self._model_lists:
             if provider == "gemini":
                 self._model_lists[provider] = self._gemini_models(key)
@@ -168,37 +154,67 @@ class ModelRouter:
                 self._model_lists[provider] = self._groq_models(key)
             else:
                 raise RuntimeError(f"Unsupported provider: {provider}")
+        return list(self._model_lists[provider])
 
+    @staticmethod
+    def _rank(models: list[str], preferred: str | None, keywords: Iterable[str]) -> list[str]:
+        unique: list[str] = []
+        for model in models:
+            if model and model not in unique:
+                unique.append(model)
+        keyword_list = list(keywords)
+
+        def score(model: str) -> tuple[int, int, str]:
+            if preferred and model == preferred:
+                return (0, 0, model)
+            low = model.casefold()
+            for index, keyword in enumerate(keyword_list, 1):
+                if keyword.casefold() in low:
+                    return (1, index, model)
+            return (2, 999, model)
+
+        return sorted(unique, key=score)
+
+    def _model_candidates(self, provider: str, task_name: str) -> tuple[str, list[str]]:
+        key, preferred = self._provider_credentials(provider)
+        if not key:
+            raise RuntimeError(f"Missing credentials for {provider}")
+        models = self._discover_models(provider, key)
+        if provider == "groq":
+            excluded = ("whisper", "guard", "orpheus", "tts", "speech", "embedding", "moderation")
+            models = [model for model in models if not any(token in model.casefold() for token in excluded)]
+        task_key = self._route_key(task_name)
         preferences = {
-            "github_models": ["gpt-4.1-mini", "gpt-4o-mini", "phi-4-mini", "phi", "llama"],
-            "gemini": ["flash-lite", "flash", "pro"],
-            "groq": ["gpt-oss-20b", "qwen", "llama", "gemma"],
+            "github_models": {
+                "translation": ["gpt-4.1-mini", "gpt-4o-mini", "phi-4", "llama", "qwen"],
+                "default": ["gpt-4.1-mini", "gpt-4o-mini", "llama", "phi", "qwen"],
+            },
+            "gemini": {
+                "translation": ["flash-lite", "flash", "pro"],
+                "default": ["flash", "flash-lite", "pro"],
+            },
+            "groq": {
+                "translation": ["qwen", "gpt-oss-20b", "llama-4", "llama-3", "gemma"],
+                "default": ["gpt-oss-120b", "qwen", "gpt-oss-20b", "llama-4", "llama-3", "gemma", "compound"],
+            },
         }
-        model = self._choose(self._model_lists[provider], preferred, preferences.get(provider, []))
-        if not model:
-            raise RuntimeError(f"No usable {provider} model available")
-        self._selected_models[provider] = model
-        return key, model
+        provider_pref = preferences.get(provider, {})
+        ranked = self._rank(models, preferred, provider_pref.get(task_key, provider_pref.get("default", [])))
+        rejected = self._rejected_models.get((provider, task_key), set())
+        ranked = [model for model in ranked if model not in rejected]
+        successful = self._successful_model.get((provider, task_key))
+        if successful in ranked:
+            ranked.remove(successful)
+            ranked.insert(0, successful)
+        max_models_cfg = self.policy.get("max_models_per_provider") or {}
+        maximum = max(1, int(max_models_cfg.get(provider, 1 if provider != "groq" else 4)))
+        return key, ranked[:maximum]
 
     def _call_gemini(self, key: str, model: str, prompt: str, payload: dict[str, Any]) -> dict[str, Any]:
         url = f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent"
         body = {
-            "contents": [
-                {
-                    "role": "user",
-                    "parts": [
-                        {
-                            "text": prompt
-                            + "\n\nINPUT JSON:\n"
-                            + json.dumps(payload, ensure_ascii=False)
-                        }
-                    ],
-                }
-            ],
-            "generationConfig": {
-                "temperature": 0.0,
-                "responseMimeType": "application/json",
-            },
+            "contents": [{"role": "user", "parts": [{"text": prompt + "\n\nINPUT JSON:\n" + json.dumps(payload, ensure_ascii=False)}]}],
+            "generationConfig": {"temperature": 0.0, "responseMimeType": "application/json"},
         }
         data, audit = self.client.post_json(url, params={"key": key}, json=body, max_attempts=1)
         if not data:
@@ -219,10 +235,7 @@ class ModelRouter:
         payload: dict[str, Any],
         headers: dict[str, str] | None = None,
     ) -> dict[str, Any]:
-        request_headers = {
-            "Authorization": f"Bearer {key}",
-            "Content-Type": "application/json",
-        }
+        request_headers = {"Authorization": f"Bearer {key}", "Content-Type": "application/json"}
         request_headers.update(headers or {})
         body = {
             "model": model,
@@ -234,10 +247,24 @@ class ModelRouter:
             "response_format": {"type": "json_object"},
         }
         data, audit = self.client.post_json(url, headers=request_headers, json=body, max_attempts=1)
+        if not data and audit.status_code in {400, 404, 422}:
+            # Some otherwise usable hosted models do not implement response_format.
+            # Retry once without it and parse the JSON object from plain text.
+            body.pop("response_format", None)
+            data, audit = self.client.post_json(url, headers=request_headers, json=body, max_attempts=1)
         if not data:
             raise RuntimeError(audit.error or f"Model HTTP {audit.status_code}")
-        text = data.get("choices", [{}])[0].get("message", {}).get("content", "")
+        text = ((data.get("choices") or [{}])[0].get("message") or {}).get("content", "")
         return self._json_from_text(text)
+
+    def reject_model(self, provider: str, task_name: str, model: str | None, reason: str = "validation_failed") -> None:
+        """Exclude a model for the rest of this workflow after semantic validation fails."""
+        if not model:
+            return
+        task_key = self._route_key(task_name)
+        self._rejected_models.setdefault((provider, task_key), set()).add(model)
+        if self._successful_model.get((provider, task_key)) == model:
+            self._successful_model.pop((provider, task_key), None)
 
     def run_provider(
         self,
@@ -263,15 +290,14 @@ class ModelRouter:
             )
 
         prompt = self._prompt(task_name)
-        max_retries = int(self.policy.get("max_retries_per_provider", 1))
-        model: str | None = None
-        last_error: Exception | None = None
+        max_retries = int(self.policy.get("max_retries_per_model", self.policy.get("max_retries_per_provider", 1)))
+        model_attempts: list[dict[str, Any]] = []
         try:
-            key, model = self._model_for(provider)
+            key, models = self._model_candidates(provider, task_name)
         except Exception as exc:
             return LLMRun(
                 provider=provider,
-                model=model,
+                model=None,
                 status="unavailable",
                 output=None,
                 error=f"{type(exc).__name__}: {exc}",
@@ -280,62 +306,86 @@ class ModelRouter:
                 input_hash=input_hash,
                 generated_at=utc_now_iso(),
                 task_name=task_name,
+                model_attempts=model_attempts,
+            )
+        if not models:
+            return LLMRun(
+                provider=provider,
+                model=None,
+                status="unavailable",
+                output=None,
+                error=f"No usable {provider} model available after dynamic discovery",
+                retry_count=0,
+                fallback_used=fallback_used,
+                input_hash=input_hash,
+                generated_at=utc_now_iso(),
+                task_name=task_name,
+                model_attempts=model_attempts,
             )
 
-        for attempt in range(max_retries + 1):
-            try:
-                if provider == "gemini":
-                    output = self._call_gemini(key, model, prompt, payload)
-                elif provider == "github_models":
-                    output = self._call_openai_compatible(
-                        "https://models.github.ai/inference/chat/completions",
-                        key,
-                        model,
-                        prompt,
-                        payload,
-                        {
-                            "Accept": "application/vnd.github+json",
-                            "X-GitHub-Api-Version": "2026-03-10",
-                        },
+        total_retries = 0
+        last_error: Exception | None = None
+        for model in models:
+            for attempt in range(max_retries + 1):
+                started = time.monotonic()
+                try:
+                    if provider == "gemini":
+                        output = self._call_gemini(key, model, prompt, payload)
+                    elif provider == "github_models":
+                        output = self._call_openai_compatible(
+                            "https://models.github.ai/inference/chat/completions",
+                            key,
+                            model,
+                            prompt,
+                            payload,
+                            {"Accept": "application/vnd.github+json", "X-GitHub-Api-Version": "2022-11-28"},
+                        )
+                    elif provider == "groq":
+                        output = self._call_openai_compatible(
+                            "https://api.groq.com/openai/v1/chat/completions",
+                            key,
+                            model,
+                            prompt,
+                            payload,
+                        )
+                    else:
+                        raise RuntimeError(f"Unsupported provider: {provider}")
+                    model_attempts.append({"model": model, "status": "success", "retry": attempt, "elapsed_ms": int((time.monotonic() - started) * 1000)})
+                    self._successful_model[(provider, self._route_key(task_name))] = model
+                    return LLMRun(
+                        provider=provider,
+                        model=model,
+                        status="success",
+                        output=output,
+                        error=None,
+                        retry_count=total_retries,
+                        fallback_used=fallback_used,
+                        input_hash=input_hash,
+                        generated_at=utc_now_iso(),
+                        task_name=task_name,
+                        model_attempts=model_attempts,
                     )
-                elif provider == "groq":
-                    output = self._call_openai_compatible(
-                        "https://api.groq.com/openai/v1/chat/completions",
-                        key,
-                        model,
-                        prompt,
-                        payload,
-                    )
-                else:
-                    raise RuntimeError(f"Unsupported provider: {provider}")
-                return LLMRun(
-                    provider=provider,
-                    model=model,
-                    status="success",
-                    output=output,
-                    error=None,
-                    retry_count=attempt,
-                    fallback_used=fallback_used,
-                    input_hash=input_hash,
-                    generated_at=utc_now_iso(),
-                    task_name=task_name,
-                )
-            except Exception as exc:
-                last_error = exc
-                if attempt < max_retries:
-                    time.sleep(min(8, 2**attempt))
+                except Exception as exc:
+                    last_error = exc
+                    total_retries += 1
+                    model_attempts.append({"model": model, "status": "failed", "retry": attempt, "elapsed_ms": int((time.monotonic() - started) * 1000), "error": f"{type(exc).__name__}: {exc}"})
+                    if attempt < max_retries:
+                        time.sleep(min(8, 2**attempt))
+            # The current model failed all retries. Continue to the next active
+            # model in the same provider before escalating to another provider.
 
         return LLMRun(
             provider=provider,
-            model=model,
+            model=models[-1] if models else None,
             status="failed",
             output=None,
-            error=f"{type(last_error).__name__}: {last_error}" if last_error else "Unknown model error",
-            retry_count=max_retries,
+            error=f"{type(last_error).__name__}: {last_error}" if last_error else "All dynamically discovered models failed",
+            retry_count=total_retries,
             fallback_used=fallback_used,
             input_hash=input_hash,
             generated_at=utc_now_iso(),
             task_name=task_name,
+            model_attempts=model_attempts,
         )
 
     def run(self, task_name: str, payload: dict[str, Any]) -> LLMRun:

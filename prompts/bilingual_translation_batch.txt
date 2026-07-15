@@ -34,3 +34,8 @@ Return JSON only, with exactly one output object for every input record_id:
     }
   ]
 }
+
+CONTENT AVAILABILITY
+- When text_available is false, translate the title only; translated_text_zh and both summaries may be null. Do not fabricate a summary.
+- When the supplied text is an RSS snippet or bounded relevant excerpt, translate only that text and never imply that the full article was retrieved.
+- Thousands separators may be rendered in conventional Chinese formatting, but the numeric value, sign, decimal, percentage, and unit must remain unchanged.

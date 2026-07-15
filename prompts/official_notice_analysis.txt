@@ -44,3 +44,9 @@ Return JSON only:
   "uncertainties": [],
   "evidence_ids": []
 }
+
+CONTENT RETRIEVAL RULES
+- Read content_retrieval_status before analysis.
+- If analysis_text_available is false, translate only the title and supplied source snippet. Set source_content_quality.level to title_or_snippet_only and explicitly state that正文 was not retrieved.
+- Do not infer an official action, case count, location, or laboratory finding from a title alone.
+- Extract numbers and geography only from evidence sentences that explicitly concern the monitored pathogen/disease.

@@ -47,7 +47,7 @@ else:
         st.download_button(
             "下载全部生产提示词合订本",
             combined_path.read_text(encoding="utf-8"),
-            file_name="PDI_v1.3_生产提示词合订本.md",
+            file_name="PDI_v1.5_生产提示词合订本.md",
             mime="text/markdown",
         )
 

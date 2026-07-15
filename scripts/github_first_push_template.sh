@@ -1,42 +1,22 @@
 #!/usr/bin/env bash
+ZIP_FILE="$HOME/下载/pathogen_daily_intelligence_v1_5_scholarly_recovery_compact_language.zip"
+NEW_DIR="$HOME/下载/pathogen-daily-intelligence"
+REPO_NAME="pathogen-daily-intelligence"
+COMMIT_MSG="v1.5：上线当前可报道日期、多策略正文抓取与动态多模型兜底版本"
 set -euo pipefail
 
-ZIP_FILE="$HOME/下载/pathogen_daily_intelligence_v1_3_1_null_safe_audit_recovery.zip"
-NEW_DIR="$HOME/下载/pathogen-daily-intelligence"
-GITHUB_OWNER="请替换为你的GitHub用户名"
-REPO_NAME="pathogen-daily-intelligence"
-COMMIT_MSG="v1.3.1：上线空值安全审计与全模型失败兜底版本"
-
-TMP_DIR="$(mktemp -d)"
-trap 'rm -rf "$TMP_DIR"' EXIT
+gh auth status
+OWNER="$(gh api user --jq .login)"
+[ ! -e "$NEW_DIR/.git" ] || { echo "错误：$NEW_DIR 已经是 Git 仓库。"; exit 1; }
+[ -f "$ZIP_FILE" ] || { echo "错误：未找到 $ZIP_FILE"; exit 1; }
+TMP_DIR="$(mktemp -d)"; trap 'rm -rf "$TMP_DIR"' EXIT
 unzip -q "$ZIP_FILE" -d "$TMP_DIR"
-SRC_DIR="$(find "$TMP_DIR" -type f -name app.py -printf '%h\n' | head -n 1)"
-
-if [ -z "$SRC_DIR" ] || [ ! -f "$SRC_DIR/app.py" ]; then
-  echo "错误：ZIP 中未找到 app.py"
-  exit 1
-fi
-
+SRC_DIR="$(find "$TMP_DIR" -type f -name app.py -printf '%h\n' | head -n1)"
+[ -n "$SRC_DIR" ] || { echo "错误：ZIP 中未找到 app.py。"; exit 1; }
 mkdir -p "$NEW_DIR"
-rsync -av --delete \
-  --exclude '.git/' \
-  --exclude '.streamlit/secrets.toml' \
-  --exclude 'runtime/*' \
-  "$SRC_DIR"/ "$NEW_DIR"/
-
+rsync -av --delete --exclude .git/ --exclude .streamlit/secrets.toml --exclude 'runtime/*' --exclude .env "$SRC_DIR"/ "$NEW_DIR"/
 cd "$NEW_DIR"
 git init -b main
-git config user.name "${GIT_AUTHOR_NAME:-Buildingzhang}"
-git config user.email "${GIT_AUTHOR_EMAIL:-buildingzhang@outlook.com}"
 git add -A
 git commit -m "$COMMIT_MSG"
-
-if command -v gh >/dev/null 2>&1; then
-  gh auth status
-  gh repo create "$GITHUB_OWNER/$REPO_NAME" --public --source=. --remote=origin --push
-else
-  echo "未检测到 gh。请先在 GitHub 网页创建空仓库：$GITHUB_OWNER/$REPO_NAME"
-  echo "然后运行："
-  echo "git remote add origin https://github.com/$GITHUB_OWNER/$REPO_NAME.git"
-  echo "git push -u origin main"
-fi
+gh repo create "$OWNER/$REPO_NAME" --public --source=. --remote=origin --push

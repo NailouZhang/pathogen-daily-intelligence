@@ -1,13 +1,11 @@
-# v1.3 离线 Demo
+# v1.5 Demo 数据
 
-该目录由 `scripts/run_daily.py --demo --disable-llm` 生成，用于在尚未连接 `intelligence-data` 分支时启动 Streamlit。
+该目录由 `scripts/run_daily.py --demo --disable-llm` 生成，用于离线检查：
 
-Demo 有意包含：
+- 中文默认双语卡片；
+- 每卡片右上角小型 `en/zh` 字符切换；
+- 科学上下标安全渲染；
+- 文献 E0–E3 证据状态展示；
+- GitHub Pages、Streamlit、RSS 和审计数据结构。
 
-- 默认中文标题和摘要；
-- 每卡片英文切换；
-- `G<sub>N</sub>/G<sub>C</sub>` 科学下标；
-- 两个文献实体、三篇新闻文章和两个事件；
-- 人类病例与啮齿动物宿主监测的硬边界。
-
-这些均为演示数据，不是现实公共卫生通报。
+Demo 不调用外部文献接口或在线大模型，因此不验证真实 PDF 获取、API 权限、模型额度或在线网站可访问性。
