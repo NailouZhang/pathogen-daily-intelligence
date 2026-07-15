@@ -11,15 +11,15 @@
     "end": "2026-07-14",
     "timezone": "Asia/Shanghai"
   },
-  "generated_at": "2026-07-15T03:52:19+00:00",
+  "generated_at": "2026-07-15T05:53:27+00:00",
   "statistics": {
-    "scholarly_raw": 26,
-    "scholarly_unique": 16,
+    "scholarly_raw": 29,
+    "scholarly_unique": 18,
     "scholarly_selected": 16,
-    "news_raw": 72,
-    "news_unique": 68,
-    "public_health_events": 41,
-    "new_or_updated_events": 4,
+    "news_raw": 70,
+    "news_unique": 67,
+    "public_health_events": 38,
+    "new_or_updated_events": 2,
     "official_events": 0,
     "countries": 10,
     "pathogens": 14,
@@ -30,40 +30,40 @@
       "diagnosis": 1,
       "intervention": 1,
       "identity": 12,
-      "host_ecology": 2
+      "host_ecology": 5
     },
     "source_failures": 4,
     "llm_fallbacks": 1,
     "llm_validated_runs": 0,
     "llm_failed_runs": 0,
-    "translated_works": 2,
-    "translated_articles": 18,
-    "translated_events": 7,
-    "translation_fallback_successes": 1,
+    "translated_works": 0,
+    "translated_articles": 19,
+    "translated_events": 8,
+    "translation_fallback_successes": 0,
     "local_mt_translation_successes": 0,
-    "translation_unavailable": 64,
+    "translation_unavailable": 66,
     "news_content_fetch_attempted": 60,
     "news_content_fetch_success": 0,
     "news_content_fetch_failed": 0,
-    "scholarly_recovery_attempted": 16,
+    "scholarly_recovery_attempted": 18,
     "scholarly_abstract_recovered": 2,
-    "scholarly_fulltext_recovered": 4,
+    "scholarly_fulltext_recovered": 5,
     "scholarly_metadata_only": 2,
-    "scholarly_abstract_only": 10,
-    "scholarly_partial_fulltext": 4,
+    "scholarly_abstract_only": 11,
+    "scholarly_partial_fulltext": 5,
     "scholarly_structured_fulltext": 0,
-    "open_fulltext_fetch_attempted": 16,
-    "open_fulltext_fetch_success": 4,
-    "validated_work_analyses": 1,
+    "open_fulltext_fetch_attempted": 18,
+    "open_fulltext_fetch_success": 5,
+    "validated_work_analyses": 0,
     "validated_article_analyses": 0,
     "news_background_mentions_archived": 0,
-    "news_title_or_snippet_only": 68,
+    "news_title_or_snippet_only": 67,
     "scholarly_identifier_conflicts": 0
   },
   "lead_story": {
     "item_type": "scholarly_work",
     "item_id": "work-e8c49c70d612a14f1cce05da",
-    "title": "汉坦病毒感染中胃肠道、肝胆道和胰腺受累谱：叙述性综述。",
+    "title": "中文标题暂不可用",
     "title_original": "Spectrum of Gastrointestinal, Hepatobiliary, and Pancreatic Involvement in Hantavirus Infection: A Narrative Review.",
     "score": 0.85
   },
@@ -81,27 +81,22 @@
       "section_id": "events",
       "title": "疫情与公共卫生",
       "item_ids": [
-        "event-5b9560c986d176c8b4e6d91c",
-        "event-d5e0105a8cc17f1d62a6d580",
-        "event-2314a24f3c1e2e2b192cf6c4",
-        "event-5b666e99815f96d2e4c459ad"
+        "event-1e0f5398e094794beb99c081",
+        "event-a580ffd5c3d07545fa00ee2a"
       ]
     },
     {
       "section_id": "research",
       "title": "学术文献",
       "item_ids": [
-        "work-e8c49c70d612a14f1cce05da",
-        "work-b26a31446c4e97be9b22232e",
-        "work-c145b9916eed0f2d5ed7de3b",
         "work-fb272e575c9aa9e9f3f71b3b",
         "work-dcbbc9fbd8008d9b406c3f47",
         "work-6eef5c5c90eeadcada4f4eb6",
         "work-7da09839fc167eff558a71fb",
+        "work-7cc638ddc8ee234f30b363ee",
         "work-09e9d4db3e9b27d5d04c4f8f",
         "work-eff16bd1991afc42885881ed",
         "work-24595e6f0f7e4676a68be705",
-        "work-e3cb5c555876b2b40ccfb58a",
         "work-42d5a401efd4a0641cc92f0b",
         "work-26d41b33804b556d0e838645",
         "work-412a01ebc11cdf225065abdc",
@@ -122,7 +117,7 @@
         {
           "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi",
           "status_code": 200,
-          "elapsed_ms": 216,
+          "elapsed_ms": 317,
           "attempts": 1,
           "error": null,
           "response_headers": {
@@ -132,27 +127,7 @@
         {
           "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi",
           "status_code": 200,
-          "elapsed_ms": 181,
-          "attempts": 1,
-          "error": null,
-          "response_headers": {
-            "Content-Type": "application/json; charset=UTF-8"
-          }
-        },
-        {
-          "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi",
-          "status_code": 200,
-          "elapsed_ms": 211,
-          "attempts": 1,
-          "error": null,
-          "response_headers": {
-            "Content-Type": "text/xml; charset=UTF-8"
-          }
-        },
-        {
-          "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi",
-          "status_code": 200,
-          "elapsed_ms": 175,
+          "elapsed_ms": 130,
           "attempts": 1,
           "error": null,
           "response_headers": {
@@ -162,7 +137,7 @@
         {
           "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi",
           "status_code": 200,
-          "elapsed_ms": 194,
+          "elapsed_ms": 225,
           "attempts": 1,
           "error": null,
           "response_headers": {
@@ -172,7 +147,7 @@
         {
           "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi",
           "status_code": 200,
-          "elapsed_ms": 151,
+          "elapsed_ms": 205,
           "attempts": 1,
           "error": null,
           "response_headers": {
@@ -182,7 +157,7 @@
         {
           "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi",
           "status_code": 200,
-          "elapsed_ms": 121,
+          "elapsed_ms": 149,
           "attempts": 1,
           "error": null,
           "response_headers": {
@@ -192,17 +167,7 @@
         {
           "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi",
           "status_code": 200,
-          "elapsed_ms": 132,
-          "attempts": 1,
-          "error": null,
-          "response_headers": {
-            "Content-Type": "application/json; charset=UTF-8"
-          }
-        },
-        {
-          "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi",
-          "status_code": 200,
-          "elapsed_ms": 170,
+          "elapsed_ms": 202,
           "attempts": 1,
           "error": null,
           "response_headers": {
@@ -212,7 +177,7 @@
         {
           "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi",
           "status_code": 200,
-          "elapsed_ms": 127,
+          "elapsed_ms": 146,
           "attempts": 1,
           "error": null,
           "response_headers": {
@@ -222,7 +187,17 @@
         {
           "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi",
           "status_code": 200,
-          "elapsed_ms": 188,
+          "elapsed_ms": 232,
+          "attempts": 1,
+          "error": null,
+          "response_headers": {
+            "Content-Type": "application/json; charset=UTF-8"
+          }
+        },
+        {
+          "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi",
+          "status_code": 200,
+          "elapsed_ms": 201,
           "attempts": 1,
           "error": null,
           "response_headers": {
@@ -232,7 +207,7 @@
         {
           "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi",
           "status_code": 200,
-          "elapsed_ms": 157,
+          "elapsed_ms": 138,
           "attempts": 1,
           "error": null,
           "response_headers": {
@@ -242,7 +217,27 @@
         {
           "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi",
           "status_code": 200,
-          "elapsed_ms": 143,
+          "elapsed_ms": 270,
+          "attempts": 1,
+          "error": null,
+          "response_headers": {
+            "Content-Type": "application/json; charset=UTF-8"
+          }
+        },
+        {
+          "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi",
+          "status_code": 200,
+          "elapsed_ms": 290,
+          "attempts": 1,
+          "error": null,
+          "response_headers": {
+            "Content-Type": "text/xml; charset=UTF-8"
+          }
+        },
+        {
+          "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi",
+          "status_code": 200,
+          "elapsed_ms": 155,
           "attempts": 1,
           "error": null,
           "response_headers": {
@@ -261,7 +256,7 @@
         {
           "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search",
           "status_code": 200,
-          "elapsed_ms": 953,
+          "elapsed_ms": 1287,
           "attempts": 1,
           "error": null,
           "response_headers": {
@@ -271,7 +266,7 @@
         {
           "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search",
           "status_code": 200,
-          "elapsed_ms": 169,
+          "elapsed_ms": 192,
           "attempts": 1,
           "error": null,
           "response_headers": {
@@ -281,7 +276,7 @@
         {
           "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search",
           "status_code": 200,
-          "elapsed_ms": 130,
+          "elapsed_ms": 154,
           "attempts": 1,
           "error": null,
           "response_headers": {
@@ -291,7 +286,7 @@
         {
           "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search",
           "status_code": 200,
-          "elapsed_ms": 133,
+          "elapsed_ms": 158,
           "attempts": 1,
           "error": null,
           "response_headers": {
@@ -301,7 +296,7 @@
         {
           "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search",
           "status_code": 200,
-          "elapsed_ms": 149,
+          "elapsed_ms": 147,
           "attempts": 1,
           "error": null,
           "response_headers": {
@@ -311,7 +306,7 @@
         {
           "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search",
           "status_code": 200,
-          "elapsed_ms": 138,
+          "elapsed_ms": 147,
           "attempts": 1,
           "error": null,
           "response_headers": {
@@ -321,7 +316,7 @@
         {
           "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search",
           "status_code": 200,
-          "elapsed_ms": 120,
+          "elapsed_ms": 136,
           "attempts": 1,
           "error": null,
           "response_headers": {
@@ -331,7 +326,7 @@
         {
           "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search",
           "status_code": 200,
-          "elapsed_ms": 127,
+          "elapsed_ms": 140,
           "attempts": 1,
           "error": null,
           "response_headers": {
@@ -356,7 +351,7 @@
         {
           "url": "https://api.crossref.org/works",
           "status_code": 400,
-          "elapsed_ms": 26,
+          "elapsed_ms": 40,
           "attempts": 3,
           "error": "400 Client Error: Bad Request for url: https://api.crossref.org/works?query.bibliographic=%28hantavirus+OR+Orthohantavirus+OR+Hantaviridae%29+-%22fictional%22&filter=from-created-date%3A2026-07-08%2Cuntil-created-date%3A2026-07-14&rows=40&select=DOI%2Ctitle%2Cauthor%2Cpublished-online%2Cpublished-print%2Cpublished%2Cissued%2Ccreated%2Cindexed%2Cdeposited%2Ccontainer-title%2Cpublisher%2Cvolume%2Cissue%2Cpage%2Carticle-number%2CISSN%2Ctype%2CURL%2Crelation%2Cupdate-to%2Csubtype%2Cabstract%2Clanguage%2Cscore%2Clink%2Clicense&sort=score&order=desc&mailto=buildingzhang%40outlook.com",
           "response_headers": {
@@ -366,7 +361,7 @@
         {
           "url": "https://api.crossref.org/works",
           "status_code": 400,
-          "elapsed_ms": 26,
+          "elapsed_ms": 40,
           "attempts": 3,
           "error": "400 Client Error: Bad Request for url: https://api.crossref.org/works?query.bibliographic=%28hantavirus+OR+Orthohantavirus+OR+Hantaviridae%29+-%22fictional%22&filter=from-online-pub-date%3A2026-07-08%2Cuntil-online-pub-date%3A2026-07-14&rows=40&select=DOI%2Ctitle%2Cauthor%2Cpublished-online%2Cpublished-print%2Cpublished%2Cissued%2Ccreated%2Cindexed%2Cdeposited%2Ccontainer-title%2Cpublisher%2Cvolume%2Cissue%2Cpage%2Carticle-number%2CISSN%2Ctype%2CURL%2Crelation%2Cupdate-to%2Csubtype%2Cabstract%2Clanguage%2Cscore%2Clink%2Clicense&sort=score&order=desc&mailto=buildingzhang%40outlook.com",
           "response_headers": {
@@ -376,7 +371,7 @@
         {
           "url": "https://api.crossref.org/works",
           "status_code": 400,
-          "elapsed_ms": 25,
+          "elapsed_ms": 39,
           "attempts": 3,
           "error": "400 Client Error: Bad Request for url: https://api.crossref.org/works?query.bibliographic=%22hantavirus+pulmonary+syndrome%22+OR+%22hemorrhagic+fever+with+renal+syndrome%22&filter=from-created-date%3A2026-07-08%2Cuntil-created-date%3A2026-07-14&rows=40&select=DOI%2Ctitle%2Cauthor%2Cpublished-online%2Cpublished-print%2Cpublished%2Cissued%2Ccreated%2Cindexed%2Cdeposited%2Ccontainer-title%2Cpublisher%2Cvolume%2Cissue%2Cpage%2Carticle-number%2CISSN%2Ctype%2CURL%2Crelation%2Cupdate-to%2Csubtype%2Cabstract%2Clanguage%2Cscore%2Clink%2Clicense&sort=score&order=desc&mailto=buildingzhang%40outlook.com",
           "response_headers": {
@@ -386,7 +381,7 @@
         {
           "url": "https://api.crossref.org/works",
           "status_code": 400,
-          "elapsed_ms": 25,
+          "elapsed_ms": 39,
           "attempts": 3,
           "error": "400 Client Error: Bad Request for url: https://api.crossref.org/works?query.bibliographic=%22hantavirus+pulmonary+syndrome%22+OR+%22hemorrhagic+fever+with+renal+syndrome%22&filter=from-online-pub-date%3A2026-07-08%2Cuntil-online-pub-date%3A2026-07-14&rows=40&select=DOI%2Ctitle%2Cauthor%2Cpublished-online%2Cpublished-print%2Cpublished%2Cissued%2Ccreated%2Cindexed%2Cdeposited%2Ccontainer-title%2Cpublisher%2Cvolume%2Cissue%2Cpage%2Carticle-number%2CISSN%2Ctype%2CURL%2Crelation%2Cupdate-to%2Csubtype%2Cabstract%2Clanguage%2Cscore%2Clink%2Clicense&sort=score&order=desc&mailto=buildingzhang%40outlook.com",
           "response_headers": {
@@ -396,7 +391,7 @@
         {
           "url": "https://api.crossref.org/works",
           "status_code": 400,
-          "elapsed_ms": 27,
+          "elapsed_ms": 39,
           "attempts": 3,
           "error": "400 Client Error: Bad Request for url: https://api.crossref.org/works?query.bibliographic=%22hantavirus+outbreak%22+OR+%22hantavirus+surveillance%22&filter=from-created-date%3A2026-07-08%2Cuntil-created-date%3A2026-07-14&rows=40&select=DOI%2Ctitle%2Cauthor%2Cpublished-online%2Cpublished-print%2Cpublished%2Cissued%2Ccreated%2Cindexed%2Cdeposited%2Ccontainer-title%2Cpublisher%2Cvolume%2Cissue%2Cpage%2Carticle-number%2CISSN%2Ctype%2CURL%2Crelation%2Cupdate-to%2Csubtype%2Cabstract%2Clanguage%2Cscore%2Clink%2Clicense&sort=score&order=desc&mailto=buildingzhang%40outlook.com",
           "response_headers": {
@@ -406,7 +401,7 @@
         {
           "url": "https://api.crossref.org/works",
           "status_code": 400,
-          "elapsed_ms": 26,
+          "elapsed_ms": 39,
           "attempts": 3,
           "error": "400 Client Error: Bad Request for url: https://api.crossref.org/works?query.bibliographic=%22hantavirus+outbreak%22+OR+%22hantavirus+surveillance%22&filter=from-online-pub-date%3A2026-07-08%2Cuntil-online-pub-date%3A2026-07-14&rows=40&select=DOI%2Ctitle%2Cauthor%2Cpublished-online%2Cpublished-print%2Cpublished%2Cissued%2Ccreated%2Cindexed%2Cdeposited%2Ccontainer-title%2Cpublisher%2Cvolume%2Cissue%2Cpage%2Carticle-number%2CISSN%2Ctype%2CURL%2Crelation%2Cupdate-to%2Csubtype%2Cabstract%2Clanguage%2Cscore%2Clink%2Clicense&sort=score&order=desc&mailto=buildingzhang%40outlook.com",
           "response_headers": {
@@ -416,7 +411,7 @@
         {
           "url": "https://api.crossref.org/works",
           "status_code": 400,
-          "elapsed_ms": 26,
+          "elapsed_ms": 39,
           "attempts": 3,
           "error": "400 Client Error: Bad Request for url: https://api.crossref.org/works?query.bibliographic=%22hantavirus+rodent+reservoir%22&filter=from-created-date%3A2026-07-08%2Cuntil-created-date%3A2026-07-14&rows=40&select=DOI%2Ctitle%2Cauthor%2Cpublished-online%2Cpublished-print%2Cpublished%2Cissued%2Ccreated%2Cindexed%2Cdeposited%2Ccontainer-title%2Cpublisher%2Cvolume%2Cissue%2Cpage%2Carticle-number%2CISSN%2Ctype%2CURL%2Crelation%2Cupdate-to%2Csubtype%2Cabstract%2Clanguage%2Cscore%2Clink%2Clicense&sort=score&order=desc&mailto=buildingzhang%40outlook.com",
           "response_headers": {
@@ -426,7 +421,7 @@
         {
           "url": "https://api.crossref.org/works",
           "status_code": 400,
-          "elapsed_ms": 25,
+          "elapsed_ms": 39,
           "attempts": 3,
           "error": "400 Client Error: Bad Request for url: https://api.crossref.org/works?query.bibliographic=%22hantavirus+rodent+reservoir%22&filter=from-online-pub-date%3A2026-07-08%2Cuntil-online-pub-date%3A2026-07-14&rows=40&select=DOI%2Ctitle%2Cauthor%2Cpublished-online%2Cpublished-print%2Cpublished%2Cissued%2Ccreated%2Cindexed%2Cdeposited%2Ccontainer-title%2Cpublisher%2Cvolume%2Cissue%2Cpage%2Carticle-number%2CISSN%2Ctype%2CURL%2Crelation%2Cupdate-to%2Csubtype%2Cabstract%2Clanguage%2Cscore%2Clink%2Clicense&sort=score&order=desc&mailto=buildingzhang%40outlook.com",
           "response_headers": {
@@ -436,7 +431,7 @@
         {
           "url": "https://api.crossref.org/works",
           "status_code": 400,
-          "elapsed_ms": 26,
+          "elapsed_ms": 39,
           "attempts": 3,
           "error": "400 Client Error: Bad Request for url: https://api.crossref.org/works?query.bibliographic=%22hantavirus+genome+phylogeny%22&filter=from-created-date%3A2026-07-08%2Cuntil-created-date%3A2026-07-14&rows=40&select=DOI%2Ctitle%2Cauthor%2Cpublished-online%2Cpublished-print%2Cpublished%2Cissued%2Ccreated%2Cindexed%2Cdeposited%2Ccontainer-title%2Cpublisher%2Cvolume%2Cissue%2Cpage%2Carticle-number%2CISSN%2Ctype%2CURL%2Crelation%2Cupdate-to%2Csubtype%2Cabstract%2Clanguage%2Cscore%2Clink%2Clicense&sort=score&order=desc&mailto=buildingzhang%40outlook.com",
           "response_headers": {
@@ -446,7 +441,7 @@
         {
           "url": "https://api.crossref.org/works",
           "status_code": 400,
-          "elapsed_ms": 28,
+          "elapsed_ms": 40,
           "attempts": 3,
           "error": "400 Client Error: Bad Request for url: https://api.crossref.org/works?query.bibliographic=%22hantavirus+genome+phylogeny%22&filter=from-online-pub-date%3A2026-07-08%2Cuntil-online-pub-date%3A2026-07-14&rows=40&select=DOI%2Ctitle%2Cauthor%2Cpublished-online%2Cpublished-print%2Cpublished%2Cissued%2Ccreated%2Cindexed%2Cdeposited%2Ccontainer-title%2Cpublisher%2Cvolume%2Cissue%2Cpage%2Carticle-number%2CISSN%2Ctype%2CURL%2Crelation%2Cupdate-to%2Csubtype%2Cabstract%2Clanguage%2Cscore%2Clink%2Clicense&sort=score&order=desc&mailto=buildingzhang%40outlook.com",
           "response_headers": {
@@ -456,7 +451,7 @@
         {
           "url": "https://api.crossref.org/works",
           "status_code": 400,
-          "elapsed_ms": 26,
+          "elapsed_ms": 39,
           "attempts": 3,
           "error": "400 Client Error: Bad Request for url: https://api.crossref.org/works?query.bibliographic=%22hantavirus+diagnosis+PCR+serology%22&filter=from-created-date%3A2026-07-08%2Cuntil-created-date%3A2026-07-14&rows=40&select=DOI%2Ctitle%2Cauthor%2Cpublished-online%2Cpublished-print%2Cpublished%2Cissued%2Ccreated%2Cindexed%2Cdeposited%2Ccontainer-title%2Cpublisher%2Cvolume%2Cissue%2Cpage%2Carticle-number%2CISSN%2Ctype%2CURL%2Crelation%2Cupdate-to%2Csubtype%2Cabstract%2Clanguage%2Cscore%2Clink%2Clicense&sort=score&order=desc&mailto=buildingzhang%40outlook.com",
           "response_headers": {
@@ -466,7 +461,7 @@
         {
           "url": "https://api.crossref.org/works",
           "status_code": 400,
-          "elapsed_ms": 26,
+          "elapsed_ms": 41,
           "attempts": 3,
           "error": "400 Client Error: Bad Request for url: https://api.crossref.org/works?query.bibliographic=%22hantavirus+diagnosis+PCR+serology%22&filter=from-online-pub-date%3A2026-07-08%2Cuntil-online-pub-date%3A2026-07-14&rows=40&select=DOI%2Ctitle%2Cauthor%2Cpublished-online%2Cpublished-print%2Cpublished%2Cissued%2Ccreated%2Cindexed%2Cdeposited%2Ccontainer-title%2Cpublisher%2Cvolume%2Cissue%2Cpage%2Carticle-number%2CISSN%2Ctype%2CURL%2Crelation%2Cupdate-to%2Csubtype%2Cabstract%2Clanguage%2Cscore%2Clink%2Clicense&sort=score&order=desc&mailto=buildingzhang%40outlook.com",
           "response_headers": {
@@ -476,7 +471,7 @@
         {
           "url": "https://api.crossref.org/works",
           "status_code": 400,
-          "elapsed_ms": 25,
+          "elapsed_ms": 40,
           "attempts": 3,
           "error": "400 Client Error: Bad Request for url: https://api.crossref.org/works?query.bibliographic=%22hantavirus+vaccine+treatment%22&filter=from-created-date%3A2026-07-08%2Cuntil-created-date%3A2026-07-14&rows=40&select=DOI%2Ctitle%2Cauthor%2Cpublished-online%2Cpublished-print%2Cpublished%2Cissued%2Ccreated%2Cindexed%2Cdeposited%2Ccontainer-title%2Cpublisher%2Cvolume%2Cissue%2Cpage%2Carticle-number%2CISSN%2Ctype%2CURL%2Crelation%2Cupdate-to%2Csubtype%2Cabstract%2Clanguage%2Cscore%2Clink%2Clicense&sort=score&order=desc&mailto=buildingzhang%40outlook.com",
           "response_headers": {
@@ -486,7 +481,7 @@
         {
           "url": "https://api.crossref.org/works",
           "status_code": 400,
-          "elapsed_ms": 27,
+          "elapsed_ms": 40,
           "attempts": 3,
           "error": "400 Client Error: Bad Request for url: https://api.crossref.org/works?query.bibliographic=%22hantavirus+vaccine+treatment%22&filter=from-online-pub-date%3A2026-07-08%2Cuntil-online-pub-date%3A2026-07-14&rows=40&select=DOI%2Ctitle%2Cauthor%2Cpublished-online%2Cpublished-print%2Cpublished%2Cissued%2Ccreated%2Cindexed%2Cdeposited%2Ccontainer-title%2Cpublisher%2Cvolume%2Cissue%2Cpage%2Carticle-number%2CISSN%2Ctype%2CURL%2Crelation%2Cupdate-to%2Csubtype%2Cabstract%2Clanguage%2Cscore%2Clink%2Clicense&sort=score&order=desc&mailto=buildingzhang%40outlook.com",
           "response_headers": {
@@ -496,7 +491,7 @@
         {
           "url": "https://api.crossref.org/works",
           "status_code": 400,
-          "elapsed_ms": 27,
+          "elapsed_ms": 39,
           "attempts": 3,
           "error": "400 Client Error: Bad Request for url: https://api.crossref.org/works?query.bibliographic=%22hantavirus+climate+land+use+risk%22&filter=from-created-date%3A2026-07-08%2Cuntil-created-date%3A2026-07-14&rows=40&select=DOI%2Ctitle%2Cauthor%2Cpublished-online%2Cpublished-print%2Cpublished%2Cissued%2Ccreated%2Cindexed%2Cdeposited%2Ccontainer-title%2Cpublisher%2Cvolume%2Cissue%2Cpage%2Carticle-number%2CISSN%2Ctype%2CURL%2Crelation%2Cupdate-to%2Csubtype%2Cabstract%2Clanguage%2Cscore%2Clink%2Clicense&sort=score&order=desc&mailto=buildingzhang%40outlook.com",
           "response_headers": {
@@ -506,7 +501,7 @@
         {
           "url": "https://api.crossref.org/works",
           "status_code": 400,
-          "elapsed_ms": 25,
+          "elapsed_ms": 39,
           "attempts": 3,
           "error": "400 Client Error: Bad Request for url: https://api.crossref.org/works?query.bibliographic=%22hantavirus+climate+land+use+risk%22&filter=from-online-pub-date%3A2026-07-08%2Cuntil-online-pub-date%3A2026-07-14&rows=40&select=DOI%2Ctitle%2Cauthor%2Cpublished-online%2Cpublished-print%2Cpublished%2Cissued%2Ccreated%2Cindexed%2Cdeposited%2Ccontainer-title%2Cpublisher%2Cvolume%2Cissue%2Cpage%2Carticle-number%2CISSN%2Ctype%2CURL%2Crelation%2Cupdate-to%2Csubtype%2Cabstract%2Clanguage%2Cscore%2Clink%2Clicense&sort=score&order=desc&mailto=buildingzhang%40outlook.com",
           "response_headers": {
@@ -517,23 +512,23 @@
     },
     {
       "source_id": "semantic_scholar",
-      "status": "failed",
-      "record_count": 0,
+      "status": "partial",
+      "record_count": 3,
       "query_count": 8,
       "errors": [
-        "429 Client Error:  for url: https://api.semanticscholar.org/graph/v1/paper/search?query=%28hantavirus+OR+Orthohantavirus+OR+Hantaviridae%29+-%22fictional%22&limit=30&fields=paperId%2CexternalIds%2Ctitle%2Cabstract%2Cauthors%2Cvenue%2Cyear%2CpublicationDate%2CpublicationTypes%2Curl%2CopenAccessPdf%2CcitationCount%2CreferenceCount&publicationDateOrYear=2026-07-08%3A2026-07-14",
         "429 Client Error:  for url: https://api.semanticscholar.org/graph/v1/paper/search?query=%22hantavirus+pulmonary+syndrome%22+OR+%22hemorrhagic+fever+with+renal+syndrome%22&limit=30&fields=paperId%2CexternalIds%2Ctitle%2Cabstract%2Cauthors%2Cvenue%2Cyear%2CpublicationDate%2CpublicationTypes%2Curl%2CopenAccessPdf%2CcitationCount%2CreferenceCount&publicationDateOrYear=2026-07-08%3A2026-07-14",
-        "429 Client Error:  for url: https://api.semanticscholar.org/graph/v1/paper/search?query=%22hantavirus+rodent+reservoir%22&limit=30&fields=paperId%2CexternalIds%2Ctitle%2Cabstract%2Cauthors%2Cvenue%2Cyear%2CpublicationDate%2CpublicationTypes%2Curl%2CopenAccessPdf%2CcitationCount%2CreferenceCount&publicationDateOrYear=2026-07-08%3A2026-07-14",
+        "429 Client Error:  for url: https://api.semanticscholar.org/graph/v1/paper/search?query=%22hantavirus+outbreak%22+OR+%22hantavirus+surveillance%22&limit=30&fields=paperId%2CexternalIds%2Ctitle%2Cabstract%2Cauthors%2Cvenue%2Cyear%2CpublicationDate%2CpublicationTypes%2Curl%2CopenAccessPdf%2CcitationCount%2CreferenceCount&publicationDateOrYear=2026-07-08%3A2026-07-14",
         "429 Client Error:  for url: https://api.semanticscholar.org/graph/v1/paper/search?query=%22hantavirus+genome+phylogeny%22&limit=30&fields=paperId%2CexternalIds%2Ctitle%2Cabstract%2Cauthors%2Cvenue%2Cyear%2CpublicationDate%2CpublicationTypes%2Curl%2CopenAccessPdf%2CcitationCount%2CreferenceCount&publicationDateOrYear=2026-07-08%3A2026-07-14",
-        "429 Client Error:  for url: https://api.semanticscholar.org/graph/v1/paper/search?query=%22hantavirus+diagnosis+PCR+serology%22&limit=30&fields=paperId%2CexternalIds%2Ctitle%2Cabstract%2Cauthors%2Cvenue%2Cyear%2CpublicationDate%2CpublicationTypes%2Curl%2CopenAccessPdf%2CcitationCount%2CreferenceCount&publicationDateOrYear=2026-07-08%3A2026-07-14"
+        "429 Client Error:  for url: https://api.semanticscholar.org/graph/v1/paper/search?query=%22hantavirus+vaccine+treatment%22&limit=30&fields=paperId%2CexternalIds%2Ctitle%2Cabstract%2Cauthors%2Cvenue%2Cyear%2CpublicationDate%2CpublicationTypes%2Curl%2CopenAccessPdf%2CcitationCount%2CreferenceCount&publicationDateOrYear=2026-07-08%3A2026-07-14",
+        "429 Client Error:  for url: https://api.semanticscholar.org/graph/v1/paper/search?query=%22hantavirus+climate+land+use+risk%22&limit=30&fields=paperId%2CexternalIds%2Ctitle%2Cabstract%2Cauthors%2Cvenue%2Cyear%2CpublicationDate%2CpublicationTypes%2Curl%2CopenAccessPdf%2CcitationCount%2CreferenceCount&publicationDateOrYear=2026-07-08%3A2026-07-14"
       ],
       "audits": [
         {
           "url": "https://api.semanticscholar.org/graph/v1/paper/search",
-          "status_code": 429,
-          "elapsed_ms": 68,
-          "attempts": 3,
-          "error": "429 Client Error:  for url: https://api.semanticscholar.org/graph/v1/paper/search?query=%28hantavirus+OR+Orthohantavirus+OR+Hantaviridae%29+-%22fictional%22&limit=30&fields=paperId%2CexternalIds%2Ctitle%2Cabstract%2Cauthors%2Cvenue%2Cyear%2CpublicationDate%2CpublicationTypes%2Curl%2CopenAccessPdf%2CcitationCount%2CreferenceCount&publicationDateOrYear=2026-07-08%3A2026-07-14",
+          "status_code": 200,
+          "elapsed_ms": 316,
+          "attempts": 2,
+          "error": null,
           "response_headers": {
             "Content-Type": "application/json"
           }
@@ -541,7 +536,7 @@
         {
           "url": "https://api.semanticscholar.org/graph/v1/paper/search",
           "status_code": 429,
-          "elapsed_ms": 153,
+          "elapsed_ms": 177,
           "attempts": 3,
           "error": "429 Client Error:  for url: https://api.semanticscholar.org/graph/v1/paper/search?query=%22hantavirus+pulmonary+syndrome%22+OR+%22hemorrhagic+fever+with+renal+syndrome%22&limit=30&fields=paperId%2CexternalIds%2Ctitle%2Cabstract%2Cauthors%2Cvenue%2Cyear%2CpublicationDate%2CpublicationTypes%2Curl%2CopenAccessPdf%2CcitationCount%2CreferenceCount&publicationDateOrYear=2026-07-08%3A2026-07-14",
           "response_headers": {
@@ -550,8 +545,38 @@
         },
         {
           "url": "https://api.semanticscholar.org/graph/v1/paper/search",
+          "status_code": 429,
+          "elapsed_ms": 167,
+          "attempts": 3,
+          "error": "429 Client Error:  for url: https://api.semanticscholar.org/graph/v1/paper/search?query=%22hantavirus+outbreak%22+OR+%22hantavirus+surveillance%22&limit=30&fields=paperId%2CexternalIds%2Ctitle%2Cabstract%2Cauthors%2Cvenue%2Cyear%2CpublicationDate%2CpublicationTypes%2Curl%2CopenAccessPdf%2CcitationCount%2CreferenceCount&publicationDateOrYear=2026-07-08%3A2026-07-14",
+          "response_headers": {
+            "Content-Type": "application/json"
+          }
+        },
+        {
+          "url": "https://api.semanticscholar.org/graph/v1/paper/search",
           "status_code": 200,
-          "elapsed_ms": 227,
+          "elapsed_ms": 627,
+          "attempts": 1,
+          "error": null,
+          "response_headers": {
+            "Content-Type": "application/json"
+          }
+        },
+        {
+          "url": "https://api.semanticscholar.org/graph/v1/paper/search",
+          "status_code": 429,
+          "elapsed_ms": 164,
+          "attempts": 3,
+          "error": "429 Client Error:  for url: https://api.semanticscholar.org/graph/v1/paper/search?query=%22hantavirus+genome+phylogeny%22&limit=30&fields=paperId%2CexternalIds%2Ctitle%2Cabstract%2Cauthors%2Cvenue%2Cyear%2CpublicationDate%2CpublicationTypes%2Curl%2CopenAccessPdf%2CcitationCount%2CreferenceCount&publicationDateOrYear=2026-07-08%3A2026-07-14",
+          "response_headers": {
+            "Content-Type": "application/json"
+          }
+        },
+        {
+          "url": "https://api.semanticscholar.org/graph/v1/paper/search",
+          "status_code": 200,
+          "elapsed_ms": 250,
           "attempts": 3,
           "error": null,
           "response_headers": {
@@ -561,37 +586,7 @@
         {
           "url": "https://api.semanticscholar.org/graph/v1/paper/search",
           "status_code": 429,
-          "elapsed_ms": 152,
-          "attempts": 3,
-          "error": "429 Client Error:  for url: https://api.semanticscholar.org/graph/v1/paper/search?query=%22hantavirus+rodent+reservoir%22&limit=30&fields=paperId%2CexternalIds%2Ctitle%2Cabstract%2Cauthors%2Cvenue%2Cyear%2CpublicationDate%2CpublicationTypes%2Curl%2CopenAccessPdf%2CcitationCount%2CreferenceCount&publicationDateOrYear=2026-07-08%3A2026-07-14",
-          "response_headers": {
-            "Content-Type": "application/json"
-          }
-        },
-        {
-          "url": "https://api.semanticscholar.org/graph/v1/paper/search",
-          "status_code": 429,
-          "elapsed_ms": 155,
-          "attempts": 3,
-          "error": "429 Client Error:  for url: https://api.semanticscholar.org/graph/v1/paper/search?query=%22hantavirus+genome+phylogeny%22&limit=30&fields=paperId%2CexternalIds%2Ctitle%2Cabstract%2Cauthors%2Cvenue%2Cyear%2CpublicationDate%2CpublicationTypes%2Curl%2CopenAccessPdf%2CcitationCount%2CreferenceCount&publicationDateOrYear=2026-07-08%3A2026-07-14",
-          "response_headers": {
-            "Content-Type": "application/json"
-          }
-        },
-        {
-          "url": "https://api.semanticscholar.org/graph/v1/paper/search",
-          "status_code": 429,
-          "elapsed_ms": 160,
-          "attempts": 3,
-          "error": "429 Client Error:  for url: https://api.semanticscholar.org/graph/v1/paper/search?query=%22hantavirus+diagnosis+PCR+serology%22&limit=30&fields=paperId%2CexternalIds%2Ctitle%2Cabstract%2Cauthors%2Cvenue%2Cyear%2CpublicationDate%2CpublicationTypes%2Curl%2CopenAccessPdf%2CcitationCount%2CreferenceCount&publicationDateOrYear=2026-07-08%3A2026-07-14",
-          "response_headers": {
-            "Content-Type": "application/json"
-          }
-        },
-        {
-          "url": "https://api.semanticscholar.org/graph/v1/paper/search",
-          "status_code": 429,
-          "elapsed_ms": 153,
+          "elapsed_ms": 166,
           "attempts": 3,
           "error": "429 Client Error:  for url: https://api.semanticscholar.org/graph/v1/paper/search?query=%22hantavirus+vaccine+treatment%22&limit=30&fields=paperId%2CexternalIds%2Ctitle%2Cabstract%2Cauthors%2Cvenue%2Cyear%2CpublicationDate%2CpublicationTypes%2Curl%2CopenAccessPdf%2CcitationCount%2CreferenceCount&publicationDateOrYear=2026-07-08%3A2026-07-14",
           "response_headers": {
@@ -601,7 +596,7 @@
         {
           "url": "https://api.semanticscholar.org/graph/v1/paper/search",
           "status_code": 429,
-          "elapsed_ms": 153,
+          "elapsed_ms": 173,
           "attempts": 3,
           "error": "429 Client Error:  for url: https://api.semanticscholar.org/graph/v1/paper/search?query=%22hantavirus+climate+land+use+risk%22&limit=30&fields=paperId%2CexternalIds%2Ctitle%2Cabstract%2Cauthors%2Cvenue%2Cyear%2CpublicationDate%2CpublicationTypes%2Curl%2CopenAccessPdf%2CcitationCount%2CreferenceCount&publicationDateOrYear=2026-07-08%3A2026-07-14",
           "response_headers": {
@@ -620,7 +615,7 @@
         {
           "url": "https://www.who.int/emergencies/disease-outbreak-news",
           "status_code": 200,
-          "elapsed_ms": 397,
+          "elapsed_ms": 253,
           "attempts": 1,
           "error": null,
           "response_headers": {
@@ -632,7 +627,7 @@
         {
           "url": "https://www.who.int/mega-menu/emergencies/news/disease-outbreak-news",
           "status_code": 200,
-          "elapsed_ms": 38,
+          "elapsed_ms": 192,
           "attempts": 1,
           "error": null,
           "response_headers": {
@@ -644,25 +639,25 @@
         {
           "url": "https://www.who.int/mega-menu/emergencies/who-in-emergencies/surveillance",
           "status_code": 200,
-          "elapsed_ms": 38,
+          "elapsed_ms": 344,
           "attempts": 1,
           "error": null,
           "response_headers": {
             "Content-Type": "text/html; charset=utf-8",
-            "ETag": "\"88b1703a-b491-41dc-b921-822a345e9b12\"",
-            "Last-Modified": "Wed, 15 Jul 2026 02:44:34 GMT"
+            "ETag": "\"840f0d73-db09-4815-a29f-145182337c9c\"",
+            "Last-Modified": "Wed, 15 Jul 2026 05:45:21 GMT"
           }
         },
         {
           "url": "https://www.who.int/emergencies/surveillance",
           "status_code": 200,
-          "elapsed_ms": 18,
+          "elapsed_ms": 47,
           "attempts": 1,
           "error": null,
           "response_headers": {
             "Content-Type": "text/html; charset=utf-8",
-            "ETag": "\"88b1703a-b491-41dc-b921-822a345e9b12\"",
-            "Last-Modified": "Wed, 15 Jul 2026 02:44:34 GMT"
+            "ETag": "\"840f0d73-db09-4815-a29f-145182337c9c\"",
+            "Last-Modified": "Wed, 15 Jul 2026 05:45:21 GMT"
           }
         }
       ]
@@ -681,6 +676,16 @@
         {
           "url": "https://api.reliefweb.int/v2/reports",
           "status_code": 400,
+          "elapsed_ms": 40,
+          "attempts": 3,
+          "error": "400 Client Error: Bad Request for url: https://api.reliefweb.int/v2/reports",
+          "response_headers": {
+            "Content-Type": "application/json"
+          }
+        },
+        {
+          "url": "https://api.reliefweb.int/v2/reports",
+          "status_code": 400,
           "elapsed_ms": 43,
           "attempts": 3,
           "error": "400 Client Error: Bad Request for url: https://api.reliefweb.int/v2/reports",
@@ -691,17 +696,7 @@
         {
           "url": "https://api.reliefweb.int/v2/reports",
           "status_code": 400,
-          "elapsed_ms": 37,
-          "attempts": 3,
-          "error": "400 Client Error: Bad Request for url: https://api.reliefweb.int/v2/reports",
-          "response_headers": {
-            "Content-Type": "application/json"
-          }
-        },
-        {
-          "url": "https://api.reliefweb.int/v2/reports",
-          "status_code": 400,
-          "elapsed_ms": 34,
+          "elapsed_ms": 40,
           "attempts": 3,
           "error": "400 Client Error: Bad Request for url: https://api.reliefweb.int/v2/reports",
           "response_headers": {
@@ -717,49 +712,55 @@
       "query_count": 5,
       "errors": [
         "429 Client Error: Too Many Requests for url: https://api.gdeltproject.org/api/v2/doc/doc?query=%28hantavirus+OR+Orthohantavirus+OR+Hantaviridae%29+-%22fictional%22&mode=ArtList&maxrecords=50&format=json&sort=HybridRel&startdatetime=20260708000000&enddatetime=20260714235959",
-        "429 Client Error: Too Many Requests for url: https://api.gdeltproject.org/api/v2/doc/doc?query=%28%E6%B1%89%E5%9D%A6%E7%97%85%E6%AF%92%29+-%22fictional%22&mode=ArtList&maxrecords=50&format=json&sort=HybridRel&startdatetime=20260708000000&enddatetime=20260714235959",
-        "429 Client Error: Too Many Requests for url: https://api.gdeltproject.org/api/v2/doc/doc?query=%22hantavirus+pulmonary+syndrome%22+OR+%22hemorrhagic+fever+with+renal+syndrome%22&mode=ArtList&maxrecords=50&format=json&sort=HybridRel&startdatetime=20260708000000&enddatetime=20260714235959",
-        "429 Client Error: Too Many Requests for url: https://api.gdeltproject.org/api/v2/doc/doc?query=%E6%B1%89%E5%9D%A6%E7%97%85%E6%AF%92%E8%82%BA%E7%BB%BC%E5%90%88%E5%BE%81+OR+%E8%82%BE%E7%BB%BC%E5%90%88%E5%BE%81%E5%87%BA%E8%A1%80%E7%83%AD&mode=ArtList&maxrecords=50&format=json&sort=HybridRel&startdatetime=20260708000000&enddatetime=20260714235959",
+        "Invalid JSON: Expecting value: line 1 column 1 (char 0)",
+        "Invalid JSON: Expecting value: line 1 column 1 (char 0)",
+        "Invalid JSON: Expecting value: line 1 column 1 (char 0)",
         "Invalid JSON: Expecting value: line 1 column 1 (char 0)"
       ],
       "audits": [
         {
           "url": "https://api.gdeltproject.org/api/v2/doc/doc",
           "status_code": 429,
-          "elapsed_ms": 1213,
+          "elapsed_ms": 11284,
           "attempts": 3,
           "error": "429 Client Error: Too Many Requests for url: https://api.gdeltproject.org/api/v2/doc/doc?query=%28hantavirus+OR+Orthohantavirus+OR+Hantaviridae%29+-%22fictional%22&mode=ArtList&maxrecords=50&format=json&sort=HybridRel&startdatetime=20260708000000&enddatetime=20260714235959",
           "response_headers": {}
         },
         {
           "url": "https://api.gdeltproject.org/api/v2/doc/doc",
-          "status_code": 429,
-          "elapsed_ms": 9791,
-          "attempts": 3,
-          "error": "429 Client Error: Too Many Requests for url: https://api.gdeltproject.org/api/v2/doc/doc?query=%28%E6%B1%89%E5%9D%A6%E7%97%85%E6%AF%92%29+-%22fictional%22&mode=ArtList&maxrecords=50&format=json&sort=HybridRel&startdatetime=20260708000000&enddatetime=20260714235959",
-          "response_headers": {}
-        },
-        {
-          "url": "https://api.gdeltproject.org/api/v2/doc/doc",
-          "status_code": 429,
-          "elapsed_ms": 11318,
-          "attempts": 3,
-          "error": "429 Client Error: Too Many Requests for url: https://api.gdeltproject.org/api/v2/doc/doc?query=%22hantavirus+pulmonary+syndrome%22+OR+%22hemorrhagic+fever+with+renal+syndrome%22&mode=ArtList&maxrecords=50&format=json&sort=HybridRel&startdatetime=20260708000000&enddatetime=20260714235959",
-          "response_headers": {}
-        },
-        {
-          "url": "https://api.gdeltproject.org/api/v2/doc/doc",
-          "status_code": 429,
-          "elapsed_ms": 9880,
-          "attempts": 3,
-          "error": "429 Client Error: Too Many Requests for url: https://api.gdeltproject.org/api/v2/doc/doc?query=%E6%B1%89%E5%9D%A6%E7%97%85%E6%AF%92%E8%82%BA%E7%BB%BC%E5%90%88%E5%BE%81+OR+%E8%82%BE%E7%BB%BC%E5%90%88%E5%BE%81%E5%87%BA%E8%A1%80%E7%83%AD&mode=ArtList&maxrecords=50&format=json&sort=HybridRel&startdatetime=20260708000000&enddatetime=20260714235959",
-          "response_headers": {}
+          "status_code": 200,
+          "elapsed_ms": 12590,
+          "attempts": 2,
+          "error": "Invalid JSON: Expecting value: line 1 column 1 (char 0)",
+          "response_headers": {
+            "Content-Type": "text/html; charset=utf-8"
+          }
         },
         {
           "url": "https://api.gdeltproject.org/api/v2/doc/doc",
           "status_code": 200,
-          "elapsed_ms": 2241,
+          "elapsed_ms": 12080,
+          "attempts": 3,
+          "error": "Invalid JSON: Expecting value: line 1 column 1 (char 0)",
+          "response_headers": {
+            "Content-Type": "text/html; charset=utf-8"
+          }
+        },
+        {
+          "url": "https://api.gdeltproject.org/api/v2/doc/doc",
+          "status_code": 200,
+          "elapsed_ms": 14135,
           "attempts": 1,
+          "error": "Invalid JSON: Expecting value: line 1 column 1 (char 0)",
+          "response_headers": {
+            "Content-Type": "text/html; charset=utf-8"
+          }
+        },
+        {
+          "url": "https://api.gdeltproject.org/api/v2/doc/doc",
+          "status_code": 200,
+          "elapsed_ms": 12516,
+          "attempts": 2,
           "error": "Invalid JSON: Expecting value: line 1 column 1 (char 0)",
           "response_headers": {
             "Content-Type": "text/html; charset=utf-8"
@@ -770,14 +771,14 @@
     {
       "source_id": "google_news_en",
       "status": "success_with_results",
-      "record_count": 50,
+      "record_count": 47,
       "query_count": 5,
       "errors": [],
       "audits": [
         {
           "url": "https://news.google.com/rss/search?q=%28%28hantavirus+OR+Orthohantavirus+OR+Hantaviridae%29+-%22fictional%22%29+when%3A7d&hl=en-US&gl=US&ceid=US%3Aen",
           "status_code": 200,
-          "elapsed_ms": 297,
+          "elapsed_ms": 347,
           "attempts": 1,
           "error": null,
           "response_headers": {
@@ -787,7 +788,7 @@
         {
           "url": "https://news.google.com/rss/search?q=%28%22hantavirus+pulmonary+syndrome%22+OR+%22hemorrhagic+fever+with+renal+syndrome%22%29+when%3A7d&hl=en-US&gl=US&ceid=US%3Aen",
           "status_code": 200,
-          "elapsed_ms": 180,
+          "elapsed_ms": 202,
           "attempts": 1,
           "error": null,
           "response_headers": {
@@ -797,7 +798,7 @@
         {
           "url": "https://news.google.com/rss/search?q=%28%22hantavirus+outbreak%22+OR+%22hantavirus+surveillance%22%29+when%3A7d&hl=en-US&gl=US&ceid=US%3Aen",
           "status_code": 200,
-          "elapsed_ms": 300,
+          "elapsed_ms": 327,
           "attempts": 1,
           "error": null,
           "response_headers": {
@@ -807,7 +808,7 @@
         {
           "url": "https://news.google.com/rss/search?q=%28%22hantavirus+rodent+reservoir%22%29+when%3A7d&hl=en-US&gl=US&ceid=US%3Aen",
           "status_code": 200,
-          "elapsed_ms": 227,
+          "elapsed_ms": 137,
           "attempts": 1,
           "error": null,
           "response_headers": {
@@ -817,7 +818,7 @@
         {
           "url": "https://news.google.com/rss/search?q=%28%22hantavirus+genome+phylogeny%22%29+when%3A7d&hl=en-US&gl=US&ceid=US%3Aen",
           "status_code": 200,
-          "elapsed_ms": 160,
+          "elapsed_ms": 177,
           "attempts": 1,
           "error": null,
           "response_headers": {
@@ -829,14 +830,14 @@
     {
       "source_id": "google_news_zh",
       "status": "success_with_results",
-      "record_count": 19,
+      "record_count": 20,
       "query_count": 5,
       "errors": [],
       "audits": [
         {
           "url": "https://news.google.com/rss/search?q=%28%28%E6%B1%89%E5%9D%A6%E7%97%85%E6%AF%92%29+-%22fictional%22%29+when%3A7d&hl=zh-CN&gl=CN&ceid=CN%3Azh-Hans",
           "status_code": 200,
-          "elapsed_ms": 276,
+          "elapsed_ms": 236,
           "attempts": 1,
           "error": null,
           "response_headers": {
@@ -846,7 +847,7 @@
         {
           "url": "https://news.google.com/rss/search?q=%28%E6%B1%89%E5%9D%A6%E7%97%85%E6%AF%92%E8%82%BA%E7%BB%BC%E5%90%88%E5%BE%81+OR+%E8%82%BE%E7%BB%BC%E5%90%88%E5%BE%81%E5%87%BA%E8%A1%80%E7%83%AD%29+when%3A7d&hl=zh-CN&gl=CN&ceid=CN%3Azh-Hans",
           "status_code": 200,
-          "elapsed_ms": 178,
+          "elapsed_ms": 204,
           "attempts": 1,
           "error": null,
           "response_headers": {
@@ -856,7 +857,7 @@
         {
           "url": "https://news.google.com/rss/search?q=%28%22%E6%B1%89%E5%9D%A6%E7%97%85%E6%AF%92+%E7%97%85%E4%BE%8B%22+OR+%22%E6%B1%89%E5%9D%A6%E7%97%85%E6%AF%92+%E7%9B%91%E6%B5%8B%22%29+when%3A7d&hl=zh-CN&gl=CN&ceid=CN%3Azh-Hans",
           "status_code": 200,
-          "elapsed_ms": 153,
+          "elapsed_ms": 198,
           "attempts": 1,
           "error": null,
           "response_headers": {
@@ -866,7 +867,7 @@
         {
           "url": "https://news.google.com/rss/search?q=%28%22%E6%B1%89%E5%9D%A6%E7%97%85%E6%AF%92+%E5%95%AE%E9%BD%BF%E5%8A%A8%E7%89%A9%22%29+when%3A7d&hl=zh-CN&gl=CN&ceid=CN%3Azh-Hans",
           "status_code": 200,
-          "elapsed_ms": 171,
+          "elapsed_ms": 169,
           "attempts": 1,
           "error": null,
           "response_headers": {
@@ -876,7 +877,7 @@
         {
           "url": "https://news.google.com/rss/search?q=%28%22%E6%B1%89%E5%9D%A6%E7%97%85%E6%AF%92+%E5%9F%BA%E5%9B%A0%E7%BB%84%22%29+when%3A7d&hl=zh-CN&gl=CN&ceid=CN%3Azh-Hans",
           "status_code": 200,
-          "elapsed_ms": 172,
+          "elapsed_ms": 194,
           "attempts": 1,
           "error": null,
           "response_headers": {
@@ -908,10 +909,9 @@
     "本期存在接口失败或部分完成，来源覆盖并不完整。",
     "部分或全部 AI 任务已降级为无模型模式。",
     "2 篇文献通过 PubMed、Europe PMC、Crossref、Semantic Scholar 或出版商元数据补回了摘要。",
-    "4 篇文献通过 PMC XML/BioC、开放 HTML、文本挖掘链接或合法开放 PDF 补充了正文证据。",
+    "5 篇文献通过 PMC XML/BioC、开放 HTML、文本挖掘链接或合法开放 PDF 补充了正文证据。",
     "2 篇文献当前仍为 E0 元数据级记录，已保留并安排后续补抓，未生成研究发现。",
-    "1 条翻译由备用模型在首选模型未通过校验后完成。",
-    "68 篇新闻仅获得标题或 RSS 摘要，页面将明确标记为未获得正文。",
+    "67 篇新闻仅获得标题或 RSS 摘要，页面将明确标记为未获得正文。",
     "48 条内容尚无通过校验的中文翻译，页面将明确提示并保留英文原文按钮。"
   ],
   "watchlist": [],
@@ -929,24 +929,24 @@
         "error": "TypeError: sentence_split() missing 1 required positional argument: 'prefix'",
         "retry_count": 0,
         "fallback_used": true,
-        "generated_at": "2026-07-15T03:52:19+00:00",
+        "generated_at": "2026-07-15T05:53:27+00:00",
         "validation_status": "orchestration_failed_fallback_published",
         "unsupported_claim_count": 0
       }
     ],
     "dedup_counts": {
       "scholarly": {
-        "raw": 26,
-        "identifier_tokens": 47,
+        "raw": 29,
+        "identifier_tokens": 53,
         "identifier_conflicts": 0,
-        "groups": 16,
-        "merged": 10,
-        "unique": 16
+        "groups": 18,
+        "merged": 11,
+        "unique": 18
       },
       "news": {
-        "raw": 72,
-        "duplicates": 4,
-        "unique": 68
+        "raw": 70,
+        "duplicates": 3,
+        "unique": 67
       }
     },
     "partial_failures": [
@@ -966,7 +966,7 @@
           {
             "url": "https://api.crossref.org/works",
             "status_code": 400,
-            "elapsed_ms": 26,
+            "elapsed_ms": 40,
             "attempts": 3,
             "error": "400 Client Error: Bad Request for url: https://api.crossref.org/works?query.bibliographic=%28hantavirus+OR+Orthohantavirus+OR+Hantaviridae%29+-%22fictional%22&filter=from-created-date%3A2026-07-08%2Cuntil-created-date%3A2026-07-14&rows=40&select=DOI%2Ctitle%2Cauthor%2Cpublished-online%2Cpublished-print%2Cpublished%2Cissued%2Ccreated%2Cindexed%2Cdeposited%2Ccontainer-title%2Cpublisher%2Cvolume%2Cissue%2Cpage%2Carticle-number%2CISSN%2Ctype%2CURL%2Crelation%2Cupdate-to%2Csubtype%2Cabstract%2Clanguage%2Cscore%2Clink%2Clicense&sort=score&order=desc&mailto=buildingzhang%40outlook.com",
             "response_headers": {
@@ -976,7 +976,7 @@
           {
             "url": "https://api.crossref.org/works",
             "status_code": 400,
-            "elapsed_ms": 26,
+            "elapsed_ms": 40,
             "attempts": 3,
             "error": "400 Client Error: Bad Request for url: https://api.crossref.org/works?query.bibliographic=%28hantavirus+OR+Orthohantavirus+OR+Hantaviridae%29+-%22fictional%22&filter=from-online-pub-date%3A2026-07-08%2Cuntil-online-pub-date%3A2026-07-14&rows=40&select=DOI%2Ctitle%2Cauthor%2Cpublished-online%2Cpublished-print%2Cpublished%2Cissued%2Ccreated%2Cindexed%2Cdeposited%2Ccontainer-title%2Cpublisher%2Cvolume%2Cissue%2Cpage%2Carticle-number%2CISSN%2Ctype%2CURL%2Crelation%2Cupdate-to%2Csubtype%2Cabstract%2Clanguage%2Cscore%2Clink%2Clicense&sort=score&order=desc&mailto=buildingzhang%40outlook.com",
             "response_headers": {
@@ -986,7 +986,7 @@
           {
             "url": "https://api.crossref.org/works",
             "status_code": 400,
-            "elapsed_ms": 25,
+            "elapsed_ms": 39,
             "attempts": 3,
             "error": "400 Client Error: Bad Request for url: https://api.crossref.org/works?query.bibliographic=%22hantavirus+pulmonary+syndrome%22+OR+%22hemorrhagic+fever+with+renal+syndrome%22&filter=from-created-date%3A2026-07-08%2Cuntil-created-date%3A2026-07-14&rows=40&select=DOI%2Ctitle%2Cauthor%2Cpublished-online%2Cpublished-print%2Cpublished%2Cissued%2Ccreated%2Cindexed%2Cdeposited%2Ccontainer-title%2Cpublisher%2Cvolume%2Cissue%2Cpage%2Carticle-number%2CISSN%2Ctype%2CURL%2Crelation%2Cupdate-to%2Csubtype%2Cabstract%2Clanguage%2Cscore%2Clink%2Clicense&sort=score&order=desc&mailto=buildingzhang%40outlook.com",
             "response_headers": {
@@ -996,7 +996,7 @@
           {
             "url": "https://api.crossref.org/works",
             "status_code": 400,
-            "elapsed_ms": 25,
+            "elapsed_ms": 39,
             "attempts": 3,
             "error": "400 Client Error: Bad Request for url: https://api.crossref.org/works?query.bibliographic=%22hantavirus+pulmonary+syndrome%22+OR+%22hemorrhagic+fever+with+renal+syndrome%22&filter=from-online-pub-date%3A2026-07-08%2Cuntil-online-pub-date%3A2026-07-14&rows=40&select=DOI%2Ctitle%2Cauthor%2Cpublished-online%2Cpublished-print%2Cpublished%2Cissued%2Ccreated%2Cindexed%2Cdeposited%2Ccontainer-title%2Cpublisher%2Cvolume%2Cissue%2Cpage%2Carticle-number%2CISSN%2Ctype%2CURL%2Crelation%2Cupdate-to%2Csubtype%2Cabstract%2Clanguage%2Cscore%2Clink%2Clicense&sort=score&order=desc&mailto=buildingzhang%40outlook.com",
             "response_headers": {
@@ -1006,7 +1006,7 @@
           {
             "url": "https://api.crossref.org/works",
             "status_code": 400,
-            "elapsed_ms": 27,
+            "elapsed_ms": 39,
             "attempts": 3,
             "error": "400 Client Error: Bad Request for url: https://api.crossref.org/works?query.bibliographic=%22hantavirus+outbreak%22+OR+%22hantavirus+surveillance%22&filter=from-created-date%3A2026-07-08%2Cuntil-created-date%3A2026-07-14&rows=40&select=DOI%2Ctitle%2Cauthor%2Cpublished-online%2Cpublished-print%2Cpublished%2Cissued%2Ccreated%2Cindexed%2Cdeposited%2Ccontainer-title%2Cpublisher%2Cvolume%2Cissue%2Cpage%2Carticle-number%2CISSN%2Ctype%2CURL%2Crelation%2Cupdate-to%2Csubtype%2Cabstract%2Clanguage%2Cscore%2Clink%2Clicense&sort=score&order=desc&mailto=buildingzhang%40outlook.com",
             "response_headers": {
@@ -1016,7 +1016,7 @@
           {
             "url": "https://api.crossref.org/works",
             "status_code": 400,
-            "elapsed_ms": 26,
+            "elapsed_ms": 39,
             "attempts": 3,
             "error": "400 Client Error: Bad Request for url: https://api.crossref.org/works?query.bibliographic=%22hantavirus+outbreak%22+OR+%22hantavirus+surveillance%22&filter=from-online-pub-date%3A2026-07-08%2Cuntil-online-pub-date%3A2026-07-14&rows=40&select=DOI%2Ctitle%2Cauthor%2Cpublished-online%2Cpublished-print%2Cpublished%2Cissued%2Ccreated%2Cindexed%2Cdeposited%2Ccontainer-title%2Cpublisher%2Cvolume%2Cissue%2Cpage%2Carticle-number%2CISSN%2Ctype%2CURL%2Crelation%2Cupdate-to%2Csubtype%2Cabstract%2Clanguage%2Cscore%2Clink%2Clicense&sort=score&order=desc&mailto=buildingzhang%40outlook.com",
             "response_headers": {
@@ -1026,7 +1026,7 @@
           {
             "url": "https://api.crossref.org/works",
             "status_code": 400,
-            "elapsed_ms": 26,
+            "elapsed_ms": 39,
             "attempts": 3,
             "error": "400 Client Error: Bad Request for url: https://api.crossref.org/works?query.bibliographic=%22hantavirus+rodent+reservoir%22&filter=from-created-date%3A2026-07-08%2Cuntil-created-date%3A2026-07-14&rows=40&select=DOI%2Ctitle%2Cauthor%2Cpublished-online%2Cpublished-print%2Cpublished%2Cissued%2Ccreated%2Cindexed%2Cdeposited%2Ccontainer-title%2Cpublisher%2Cvolume%2Cissue%2Cpage%2Carticle-number%2CISSN%2Ctype%2CURL%2Crelation%2Cupdate-to%2Csubtype%2Cabstract%2Clanguage%2Cscore%2Clink%2Clicense&sort=score&order=desc&mailto=buildingzhang%40outlook.com",
             "response_headers": {
@@ -1036,7 +1036,7 @@
           {
             "url": "https://api.crossref.org/works",
             "status_code": 400,
-            "elapsed_ms": 25,
+            "elapsed_ms": 39,
             "attempts": 3,
             "error": "400 Client Error: Bad Request for url: https://api.crossref.org/works?query.bibliographic=%22hantavirus+rodent+reservoir%22&filter=from-online-pub-date%3A2026-07-08%2Cuntil-online-pub-date%3A2026-07-14&rows=40&select=DOI%2Ctitle%2Cauthor%2Cpublished-online%2Cpublished-print%2Cpublished%2Cissued%2Ccreated%2Cindexed%2Cdeposited%2Ccontainer-title%2Cpublisher%2Cvolume%2Cissue%2Cpage%2Carticle-number%2CISSN%2Ctype%2CURL%2Crelation%2Cupdate-to%2Csubtype%2Cabstract%2Clanguage%2Cscore%2Clink%2Clicense&sort=score&order=desc&mailto=buildingzhang%40outlook.com",
             "response_headers": {
@@ -1046,7 +1046,7 @@
           {
             "url": "https://api.crossref.org/works",
             "status_code": 400,
-            "elapsed_ms": 26,
+            "elapsed_ms": 39,
             "attempts": 3,
             "error": "400 Client Error: Bad Request for url: https://api.crossref.org/works?query.bibliographic=%22hantavirus+genome+phylogeny%22&filter=from-created-date%3A2026-07-08%2Cuntil-created-date%3A2026-07-14&rows=40&select=DOI%2Ctitle%2Cauthor%2Cpublished-online%2Cpublished-print%2Cpublished%2Cissued%2Ccreated%2Cindexed%2Cdeposited%2Ccontainer-title%2Cpublisher%2Cvolume%2Cissue%2Cpage%2Carticle-number%2CISSN%2Ctype%2CURL%2Crelation%2Cupdate-to%2Csubtype%2Cabstract%2Clanguage%2Cscore%2Clink%2Clicense&sort=score&order=desc&mailto=buildingzhang%40outlook.com",
             "response_headers": {
@@ -1056,7 +1056,7 @@
           {
             "url": "https://api.crossref.org/works",
             "status_code": 400,
-            "elapsed_ms": 28,
+            "elapsed_ms": 40,
             "attempts": 3,
             "error": "400 Client Error: Bad Request for url: https://api.crossref.org/works?query.bibliographic=%22hantavirus+genome+phylogeny%22&filter=from-online-pub-date%3A2026-07-08%2Cuntil-online-pub-date%3A2026-07-14&rows=40&select=DOI%2Ctitle%2Cauthor%2Cpublished-online%2Cpublished-print%2Cpublished%2Cissued%2Ccreated%2Cindexed%2Cdeposited%2Ccontainer-title%2Cpublisher%2Cvolume%2Cissue%2Cpage%2Carticle-number%2CISSN%2Ctype%2CURL%2Crelation%2Cupdate-to%2Csubtype%2Cabstract%2Clanguage%2Cscore%2Clink%2Clicense&sort=score&order=desc&mailto=buildingzhang%40outlook.com",
             "response_headers": {
@@ -1066,7 +1066,7 @@
           {
             "url": "https://api.crossref.org/works",
             "status_code": 400,
-            "elapsed_ms": 26,
+            "elapsed_ms": 39,
             "attempts": 3,
             "error": "400 Client Error: Bad Request for url: https://api.crossref.org/works?query.bibliographic=%22hantavirus+diagnosis+PCR+serology%22&filter=from-created-date%3A2026-07-08%2Cuntil-created-date%3A2026-07-14&rows=40&select=DOI%2Ctitle%2Cauthor%2Cpublished-online%2Cpublished-print%2Cpublished%2Cissued%2Ccreated%2Cindexed%2Cdeposited%2Ccontainer-title%2Cpublisher%2Cvolume%2Cissue%2Cpage%2Carticle-number%2CISSN%2Ctype%2CURL%2Crelation%2Cupdate-to%2Csubtype%2Cabstract%2Clanguage%2Cscore%2Clink%2Clicense&sort=score&order=desc&mailto=buildingzhang%40outlook.com",
             "response_headers": {
@@ -1076,7 +1076,7 @@
           {
             "url": "https://api.crossref.org/works",
             "status_code": 400,
-            "elapsed_ms": 26,
+            "elapsed_ms": 41,
             "attempts": 3,
             "error": "400 Client Error: Bad Request for url: https://api.crossref.org/works?query.bibliographic=%22hantavirus+diagnosis+PCR+serology%22&filter=from-online-pub-date%3A2026-07-08%2Cuntil-online-pub-date%3A2026-07-14&rows=40&select=DOI%2Ctitle%2Cauthor%2Cpublished-online%2Cpublished-print%2Cpublished%2Cissued%2Ccreated%2Cindexed%2Cdeposited%2Ccontainer-title%2Cpublisher%2Cvolume%2Cissue%2Cpage%2Carticle-number%2CISSN%2Ctype%2CURL%2Crelation%2Cupdate-to%2Csubtype%2Cabstract%2Clanguage%2Cscore%2Clink%2Clicense&sort=score&order=desc&mailto=buildingzhang%40outlook.com",
             "response_headers": {
@@ -1086,7 +1086,7 @@
           {
             "url": "https://api.crossref.org/works",
             "status_code": 400,
-            "elapsed_ms": 25,
+            "elapsed_ms": 40,
             "attempts": 3,
             "error": "400 Client Error: Bad Request for url: https://api.crossref.org/works?query.bibliographic=%22hantavirus+vaccine+treatment%22&filter=from-created-date%3A2026-07-08%2Cuntil-created-date%3A2026-07-14&rows=40&select=DOI%2Ctitle%2Cauthor%2Cpublished-online%2Cpublished-print%2Cpublished%2Cissued%2Ccreated%2Cindexed%2Cdeposited%2Ccontainer-title%2Cpublisher%2Cvolume%2Cissue%2Cpage%2Carticle-number%2CISSN%2Ctype%2CURL%2Crelation%2Cupdate-to%2Csubtype%2Cabstract%2Clanguage%2Cscore%2Clink%2Clicense&sort=score&order=desc&mailto=buildingzhang%40outlook.com",
             "response_headers": {
@@ -1096,7 +1096,7 @@
           {
             "url": "https://api.crossref.org/works",
             "status_code": 400,
-            "elapsed_ms": 27,
+            "elapsed_ms": 40,
             "attempts": 3,
             "error": "400 Client Error: Bad Request for url: https://api.crossref.org/works?query.bibliographic=%22hantavirus+vaccine+treatment%22&filter=from-online-pub-date%3A2026-07-08%2Cuntil-online-pub-date%3A2026-07-14&rows=40&select=DOI%2Ctitle%2Cauthor%2Cpublished-online%2Cpublished-print%2Cpublished%2Cissued%2Ccreated%2Cindexed%2Cdeposited%2Ccontainer-title%2Cpublisher%2Cvolume%2Cissue%2Cpage%2Carticle-number%2CISSN%2Ctype%2CURL%2Crelation%2Cupdate-to%2Csubtype%2Cabstract%2Clanguage%2Cscore%2Clink%2Clicense&sort=score&order=desc&mailto=buildingzhang%40outlook.com",
             "response_headers": {
@@ -1106,7 +1106,7 @@
           {
             "url": "https://api.crossref.org/works",
             "status_code": 400,
-            "elapsed_ms": 27,
+            "elapsed_ms": 39,
             "attempts": 3,
             "error": "400 Client Error: Bad Request for url: https://api.crossref.org/works?query.bibliographic=%22hantavirus+climate+land+use+risk%22&filter=from-created-date%3A2026-07-08%2Cuntil-created-date%3A2026-07-14&rows=40&select=DOI%2Ctitle%2Cauthor%2Cpublished-online%2Cpublished-print%2Cpublished%2Cissued%2Ccreated%2Cindexed%2Cdeposited%2Ccontainer-title%2Cpublisher%2Cvolume%2Cissue%2Cpage%2Carticle-number%2CISSN%2Ctype%2CURL%2Crelation%2Cupdate-to%2Csubtype%2Cabstract%2Clanguage%2Cscore%2Clink%2Clicense&sort=score&order=desc&mailto=buildingzhang%40outlook.com",
             "response_headers": {
@@ -1116,7 +1116,7 @@
           {
             "url": "https://api.crossref.org/works",
             "status_code": 400,
-            "elapsed_ms": 25,
+            "elapsed_ms": 39,
             "attempts": 3,
             "error": "400 Client Error: Bad Request for url: https://api.crossref.org/works?query.bibliographic=%22hantavirus+climate+land+use+risk%22&filter=from-online-pub-date%3A2026-07-08%2Cuntil-online-pub-date%3A2026-07-14&rows=40&select=DOI%2Ctitle%2Cauthor%2Cpublished-online%2Cpublished-print%2Cpublished%2Cissued%2Ccreated%2Cindexed%2Cdeposited%2Ccontainer-title%2Cpublisher%2Cvolume%2Cissue%2Cpage%2Carticle-number%2CISSN%2Ctype%2CURL%2Crelation%2Cupdate-to%2Csubtype%2Cabstract%2Clanguage%2Cscore%2Clink%2Clicense&sort=score&order=desc&mailto=buildingzhang%40outlook.com",
             "response_headers": {
@@ -1127,23 +1127,23 @@
       },
       {
         "source_id": "semantic_scholar",
-        "status": "failed",
-        "record_count": 0,
+        "status": "partial",
+        "record_count": 3,
         "query_count": 8,
         "errors": [
-          "429 Client Error:  for url: https://api.semanticscholar.org/graph/v1/paper/search?query=%28hantavirus+OR+Orthohantavirus+OR+Hantaviridae%29+-%22fictional%22&limit=30&fields=paperId%2CexternalIds%2Ctitle%2Cabstract%2Cauthors%2Cvenue%2Cyear%2CpublicationDate%2CpublicationTypes%2Curl%2CopenAccessPdf%2CcitationCount%2CreferenceCount&publicationDateOrYear=2026-07-08%3A2026-07-14",
           "429 Client Error:  for url: https://api.semanticscholar.org/graph/v1/paper/search?query=%22hantavirus+pulmonary+syndrome%22+OR+%22hemorrhagic+fever+with+renal+syndrome%22&limit=30&fields=paperId%2CexternalIds%2Ctitle%2Cabstract%2Cauthors%2Cvenue%2Cyear%2CpublicationDate%2CpublicationTypes%2Curl%2CopenAccessPdf%2CcitationCount%2CreferenceCount&publicationDateOrYear=2026-07-08%3A2026-07-14",
-          "429 Client Error:  for url: https://api.semanticscholar.org/graph/v1/paper/search?query=%22hantavirus+rodent+reservoir%22&limit=30&fields=paperId%2CexternalIds%2Ctitle%2Cabstract%2Cauthors%2Cvenue%2Cyear%2CpublicationDate%2CpublicationTypes%2Curl%2CopenAccessPdf%2CcitationCount%2CreferenceCount&publicationDateOrYear=2026-07-08%3A2026-07-14",
+          "429 Client Error:  for url: https://api.semanticscholar.org/graph/v1/paper/search?query=%22hantavirus+outbreak%22+OR+%22hantavirus+surveillance%22&limit=30&fields=paperId%2CexternalIds%2Ctitle%2Cabstract%2Cauthors%2Cvenue%2Cyear%2CpublicationDate%2CpublicationTypes%2Curl%2CopenAccessPdf%2CcitationCount%2CreferenceCount&publicationDateOrYear=2026-07-08%3A2026-07-14",
           "429 Client Error:  for url: https://api.semanticscholar.org/graph/v1/paper/search?query=%22hantavirus+genome+phylogeny%22&limit=30&fields=paperId%2CexternalIds%2Ctitle%2Cabstract%2Cauthors%2Cvenue%2Cyear%2CpublicationDate%2CpublicationTypes%2Curl%2CopenAccessPdf%2CcitationCount%2CreferenceCount&publicationDateOrYear=2026-07-08%3A2026-07-14",
-          "429 Client Error:  for url: https://api.semanticscholar.org/graph/v1/paper/search?query=%22hantavirus+diagnosis+PCR+serology%22&limit=30&fields=paperId%2CexternalIds%2Ctitle%2Cabstract%2Cauthors%2Cvenue%2Cyear%2CpublicationDate%2CpublicationTypes%2Curl%2CopenAccessPdf%2CcitationCount%2CreferenceCount&publicationDateOrYear=2026-07-08%3A2026-07-14"
+          "429 Client Error:  for url: https://api.semanticscholar.org/graph/v1/paper/search?query=%22hantavirus+vaccine+treatment%22&limit=30&fields=paperId%2CexternalIds%2Ctitle%2Cabstract%2Cauthors%2Cvenue%2Cyear%2CpublicationDate%2CpublicationTypes%2Curl%2CopenAccessPdf%2CcitationCount%2CreferenceCount&publicationDateOrYear=2026-07-08%3A2026-07-14",
+          "429 Client Error:  for url: https://api.semanticscholar.org/graph/v1/paper/search?query=%22hantavirus+climate+land+use+risk%22&limit=30&fields=paperId%2CexternalIds%2Ctitle%2Cabstract%2Cauthors%2Cvenue%2Cyear%2CpublicationDate%2CpublicationTypes%2Curl%2CopenAccessPdf%2CcitationCount%2CreferenceCount&publicationDateOrYear=2026-07-08%3A2026-07-14"
         ],
         "audits": [
           {
             "url": "https://api.semanticscholar.org/graph/v1/paper/search",
-            "status_code": 429,
-            "elapsed_ms": 68,
-            "attempts": 3,
-            "error": "429 Client Error:  for url: https://api.semanticscholar.org/graph/v1/paper/search?query=%28hantavirus+OR+Orthohantavirus+OR+Hantaviridae%29+-%22fictional%22&limit=30&fields=paperId%2CexternalIds%2Ctitle%2Cabstract%2Cauthors%2Cvenue%2Cyear%2CpublicationDate%2CpublicationTypes%2Curl%2CopenAccessPdf%2CcitationCount%2CreferenceCount&publicationDateOrYear=2026-07-08%3A2026-07-14",
+            "status_code": 200,
+            "elapsed_ms": 316,
+            "attempts": 2,
+            "error": null,
             "response_headers": {
               "Content-Type": "application/json"
             }
@@ -1151,7 +1151,7 @@
           {
             "url": "https://api.semanticscholar.org/graph/v1/paper/search",
             "status_code": 429,
-            "elapsed_ms": 153,
+            "elapsed_ms": 177,
             "attempts": 3,
             "error": "429 Client Error:  for url: https://api.semanticscholar.org/graph/v1/paper/search?query=%22hantavirus+pulmonary+syndrome%22+OR+%22hemorrhagic+fever+with+renal+syndrome%22&limit=30&fields=paperId%2CexternalIds%2Ctitle%2Cabstract%2Cauthors%2Cvenue%2Cyear%2CpublicationDate%2CpublicationTypes%2Curl%2CopenAccessPdf%2CcitationCount%2CreferenceCount&publicationDateOrYear=2026-07-08%3A2026-07-14",
             "response_headers": {
@@ -1160,8 +1160,38 @@
           },
           {
             "url": "https://api.semanticscholar.org/graph/v1/paper/search",
+            "status_code": 429,
+            "elapsed_ms": 167,
+            "attempts": 3,
+            "error": "429 Client Error:  for url: https://api.semanticscholar.org/graph/v1/paper/search?query=%22hantavirus+outbreak%22+OR+%22hantavirus+surveillance%22&limit=30&fields=paperId%2CexternalIds%2Ctitle%2Cabstract%2Cauthors%2Cvenue%2Cyear%2CpublicationDate%2CpublicationTypes%2Curl%2CopenAccessPdf%2CcitationCount%2CreferenceCount&publicationDateOrYear=2026-07-08%3A2026-07-14",
+            "response_headers": {
+              "Content-Type": "application/json"
+            }
+          },
+          {
+            "url": "https://api.semanticscholar.org/graph/v1/paper/search",
             "status_code": 200,
-            "elapsed_ms": 227,
+            "elapsed_ms": 627,
+            "attempts": 1,
+            "error": null,
+            "response_headers": {
+              "Content-Type": "application/json"
+            }
+          },
+          {
+            "url": "https://api.semanticscholar.org/graph/v1/paper/search",
+            "status_code": 429,
+            "elapsed_ms": 164,
+            "attempts": 3,
+            "error": "429 Client Error:  for url: https://api.semanticscholar.org/graph/v1/paper/search?query=%22hantavirus+genome+phylogeny%22&limit=30&fields=paperId%2CexternalIds%2Ctitle%2Cabstract%2Cauthors%2Cvenue%2Cyear%2CpublicationDate%2CpublicationTypes%2Curl%2CopenAccessPdf%2CcitationCount%2CreferenceCount&publicationDateOrYear=2026-07-08%3A2026-07-14",
+            "response_headers": {
+              "Content-Type": "application/json"
+            }
+          },
+          {
+            "url": "https://api.semanticscholar.org/graph/v1/paper/search",
+            "status_code": 200,
+            "elapsed_ms": 250,
             "attempts": 3,
             "error": null,
             "response_headers": {
@@ -1171,37 +1201,7 @@
           {
             "url": "https://api.semanticscholar.org/graph/v1/paper/search",
             "status_code": 429,
-            "elapsed_ms": 152,
-            "attempts": 3,
-            "error": "429 Client Error:  for url: https://api.semanticscholar.org/graph/v1/paper/search?query=%22hantavirus+rodent+reservoir%22&limit=30&fields=paperId%2CexternalIds%2Ctitle%2Cabstract%2Cauthors%2Cvenue%2Cyear%2CpublicationDate%2CpublicationTypes%2Curl%2CopenAccessPdf%2CcitationCount%2CreferenceCount&publicationDateOrYear=2026-07-08%3A2026-07-14",
-            "response_headers": {
-              "Content-Type": "application/json"
-            }
-          },
-          {
-            "url": "https://api.semanticscholar.org/graph/v1/paper/search",
-            "status_code": 429,
-            "elapsed_ms": 155,
-            "attempts": 3,
-            "error": "429 Client Error:  for url: https://api.semanticscholar.org/graph/v1/paper/search?query=%22hantavirus+genome+phylogeny%22&limit=30&fields=paperId%2CexternalIds%2Ctitle%2Cabstract%2Cauthors%2Cvenue%2Cyear%2CpublicationDate%2CpublicationTypes%2Curl%2CopenAccessPdf%2CcitationCount%2CreferenceCount&publicationDateOrYear=2026-07-08%3A2026-07-14",
-            "response_headers": {
-              "Content-Type": "application/json"
-            }
-          },
-          {
-            "url": "https://api.semanticscholar.org/graph/v1/paper/search",
-            "status_code": 429,
-            "elapsed_ms": 160,
-            "attempts": 3,
-            "error": "429 Client Error:  for url: https://api.semanticscholar.org/graph/v1/paper/search?query=%22hantavirus+diagnosis+PCR+serology%22&limit=30&fields=paperId%2CexternalIds%2Ctitle%2Cabstract%2Cauthors%2Cvenue%2Cyear%2CpublicationDate%2CpublicationTypes%2Curl%2CopenAccessPdf%2CcitationCount%2CreferenceCount&publicationDateOrYear=2026-07-08%3A2026-07-14",
-            "response_headers": {
-              "Content-Type": "application/json"
-            }
-          },
-          {
-            "url": "https://api.semanticscholar.org/graph/v1/paper/search",
-            "status_code": 429,
-            "elapsed_ms": 153,
+            "elapsed_ms": 166,
             "attempts": 3,
             "error": "429 Client Error:  for url: https://api.semanticscholar.org/graph/v1/paper/search?query=%22hantavirus+vaccine+treatment%22&limit=30&fields=paperId%2CexternalIds%2Ctitle%2Cabstract%2Cauthors%2Cvenue%2Cyear%2CpublicationDate%2CpublicationTypes%2Curl%2CopenAccessPdf%2CcitationCount%2CreferenceCount&publicationDateOrYear=2026-07-08%3A2026-07-14",
             "response_headers": {
@@ -1211,7 +1211,7 @@
           {
             "url": "https://api.semanticscholar.org/graph/v1/paper/search",
             "status_code": 429,
-            "elapsed_ms": 153,
+            "elapsed_ms": 173,
             "attempts": 3,
             "error": "429 Client Error:  for url: https://api.semanticscholar.org/graph/v1/paper/search?query=%22hantavirus+climate+land+use+risk%22&limit=30&fields=paperId%2CexternalIds%2Ctitle%2Cabstract%2Cauthors%2Cvenue%2Cyear%2CpublicationDate%2CpublicationTypes%2Curl%2CopenAccessPdf%2CcitationCount%2CreferenceCount&publicationDateOrYear=2026-07-08%3A2026-07-14",
             "response_headers": {
@@ -1234,6 +1234,16 @@
           {
             "url": "https://api.reliefweb.int/v2/reports",
             "status_code": 400,
+            "elapsed_ms": 40,
+            "attempts": 3,
+            "error": "400 Client Error: Bad Request for url: https://api.reliefweb.int/v2/reports",
+            "response_headers": {
+              "Content-Type": "application/json"
+            }
+          },
+          {
+            "url": "https://api.reliefweb.int/v2/reports",
+            "status_code": 400,
             "elapsed_ms": 43,
             "attempts": 3,
             "error": "400 Client Error: Bad Request for url: https://api.reliefweb.int/v2/reports",
@@ -1244,17 +1254,7 @@
           {
             "url": "https://api.reliefweb.int/v2/reports",
             "status_code": 400,
-            "elapsed_ms": 37,
-            "attempts": 3,
-            "error": "400 Client Error: Bad Request for url: https://api.reliefweb.int/v2/reports",
-            "response_headers": {
-              "Content-Type": "application/json"
-            }
-          },
-          {
-            "url": "https://api.reliefweb.int/v2/reports",
-            "status_code": 400,
-            "elapsed_ms": 34,
+            "elapsed_ms": 40,
             "attempts": 3,
             "error": "400 Client Error: Bad Request for url: https://api.reliefweb.int/v2/reports",
             "response_headers": {
@@ -1270,49 +1270,55 @@
         "query_count": 5,
         "errors": [
           "429 Client Error: Too Many Requests for url: https://api.gdeltproject.org/api/v2/doc/doc?query=%28hantavirus+OR+Orthohantavirus+OR+Hantaviridae%29+-%22fictional%22&mode=ArtList&maxrecords=50&format=json&sort=HybridRel&startdatetime=20260708000000&enddatetime=20260714235959",
-          "429 Client Error: Too Many Requests for url: https://api.gdeltproject.org/api/v2/doc/doc?query=%28%E6%B1%89%E5%9D%A6%E7%97%85%E6%AF%92%29+-%22fictional%22&mode=ArtList&maxrecords=50&format=json&sort=HybridRel&startdatetime=20260708000000&enddatetime=20260714235959",
-          "429 Client Error: Too Many Requests for url: https://api.gdeltproject.org/api/v2/doc/doc?query=%22hantavirus+pulmonary+syndrome%22+OR+%22hemorrhagic+fever+with+renal+syndrome%22&mode=ArtList&maxrecords=50&format=json&sort=HybridRel&startdatetime=20260708000000&enddatetime=20260714235959",
-          "429 Client Error: Too Many Requests for url: https://api.gdeltproject.org/api/v2/doc/doc?query=%E6%B1%89%E5%9D%A6%E7%97%85%E6%AF%92%E8%82%BA%E7%BB%BC%E5%90%88%E5%BE%81+OR+%E8%82%BE%E7%BB%BC%E5%90%88%E5%BE%81%E5%87%BA%E8%A1%80%E7%83%AD&mode=ArtList&maxrecords=50&format=json&sort=HybridRel&startdatetime=20260708000000&enddatetime=20260714235959",
+          "Invalid JSON: Expecting value: line 1 column 1 (char 0)",
+          "Invalid JSON: Expecting value: line 1 column 1 (char 0)",
+          "Invalid JSON: Expecting value: line 1 column 1 (char 0)",
           "Invalid JSON: Expecting value: line 1 column 1 (char 0)"
         ],
         "audits": [
           {
             "url": "https://api.gdeltproject.org/api/v2/doc/doc",
             "status_code": 429,
-            "elapsed_ms": 1213,
+            "elapsed_ms": 11284,
             "attempts": 3,
             "error": "429 Client Error: Too Many Requests for url: https://api.gdeltproject.org/api/v2/doc/doc?query=%28hantavirus+OR+Orthohantavirus+OR+Hantaviridae%29+-%22fictional%22&mode=ArtList&maxrecords=50&format=json&sort=HybridRel&startdatetime=20260708000000&enddatetime=20260714235959",
             "response_headers": {}
           },
           {
             "url": "https://api.gdeltproject.org/api/v2/doc/doc",
-            "status_code": 429,
-            "elapsed_ms": 9791,
-            "attempts": 3,
-            "error": "429 Client Error: Too Many Requests for url: https://api.gdeltproject.org/api/v2/doc/doc?query=%28%E6%B1%89%E5%9D%A6%E7%97%85%E6%AF%92%29+-%22fictional%22&mode=ArtList&maxrecords=50&format=json&sort=HybridRel&startdatetime=20260708000000&enddatetime=20260714235959",
-            "response_headers": {}
-          },
-          {
-            "url": "https://api.gdeltproject.org/api/v2/doc/doc",
-            "status_code": 429,
-            "elapsed_ms": 11318,
-            "attempts": 3,
-            "error": "429 Client Error: Too Many Requests for url: https://api.gdeltproject.org/api/v2/doc/doc?query=%22hantavirus+pulmonary+syndrome%22+OR+%22hemorrhagic+fever+with+renal+syndrome%22&mode=ArtList&maxrecords=50&format=json&sort=HybridRel&startdatetime=20260708000000&enddatetime=20260714235959",
-            "response_headers": {}
-          },
-          {
-            "url": "https://api.gdeltproject.org/api/v2/doc/doc",
-            "status_code": 429,
-            "elapsed_ms": 9880,
-            "attempts": 3,
-            "error": "429 Client Error: Too Many Requests for url: https://api.gdeltproject.org/api/v2/doc/doc?query=%E6%B1%89%E5%9D%A6%E7%97%85%E6%AF%92%E8%82%BA%E7%BB%BC%E5%90%88%E5%BE%81+OR+%E8%82%BE%E7%BB%BC%E5%90%88%E5%BE%81%E5%87%BA%E8%A1%80%E7%83%AD&mode=ArtList&maxrecords=50&format=json&sort=HybridRel&startdatetime=20260708000000&enddatetime=20260714235959",
-            "response_headers": {}
+            "status_code": 200,
+            "elapsed_ms": 12590,
+            "attempts": 2,
+            "error": "Invalid JSON: Expecting value: line 1 column 1 (char 0)",
+            "response_headers": {
+              "Content-Type": "text/html; charset=utf-8"
+            }
           },
           {
             "url": "https://api.gdeltproject.org/api/v2/doc/doc",
             "status_code": 200,
-            "elapsed_ms": 2241,
+            "elapsed_ms": 12080,
+            "attempts": 3,
+            "error": "Invalid JSON: Expecting value: line 1 column 1 (char 0)",
+            "response_headers": {
+              "Content-Type": "text/html; charset=utf-8"
+            }
+          },
+          {
+            "url": "https://api.gdeltproject.org/api/v2/doc/doc",
+            "status_code": 200,
+            "elapsed_ms": 14135,
             "attempts": 1,
+            "error": "Invalid JSON: Expecting value: line 1 column 1 (char 0)",
+            "response_headers": {
+              "Content-Type": "text/html; charset=utf-8"
+            }
+          },
+          {
+            "url": "https://api.gdeltproject.org/api/v2/doc/doc",
+            "status_code": 200,
+            "elapsed_ms": 12516,
+            "attempts": 2,
             "error": "Invalid JSON: Expecting value: line 1 column 1 (char 0)",
             "response_headers": {
               "Content-Type": "text/html; charset=utf-8"
@@ -1327,16 +1333,16 @@
         "success": 0,
         "partial": 60,
         "failed": 0,
-        "skipped_budget": 8
+        "skipped_budget": 7
       },
       "scholarly": {
-        "attempted": 16,
+        "attempted": 18,
         "abstract_recovered": 2,
-        "fulltext_success": 4,
-        "success": 4,
+        "fulltext_success": 5,
+        "success": 5,
         "metadata_only": 2,
-        "abstract_only": 10,
-        "pdf_or_html_fulltext": 4,
+        "abstract_only": 11,
+        "pdf_or_html_fulltext": 5,
         "structured_fulltext": 0,
         "failed": 2
       }
@@ -1356,7 +1362,7 @@
       "daily_synthesis",
       "render_and_publish"
     ],
-    "content_hash": "4d348683ed407c79ca1b78c6691792f6"
+    "content_hash": "612d516da67a1aeef3f40bf1adf4003e"
   },
   "outputs": {
     "latest_json": "data/latest.json",
